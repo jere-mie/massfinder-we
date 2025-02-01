@@ -33,24 +33,51 @@
  * @property {Array<Adoration>} adoration - An array of Adoration objects.
  */
 
-import { churches } from './churches.js'; 
+import { churches } from './churches.js';
+import * as L from './leaflet/leaflet-src.esm.js';
 
-var map = L.map('map').setView([42.16132298808876, -82.92932437200604], 11);
+export const map = L.map('map', {
+    zoomControl: false // disable default zoom control
+}).setView([42.16132298808876, -82.92932437200604], 11);
+
+// Add OpenStreetMap tiles
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     minZoom: 9,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+// Add zoom control
+L.control.zoom({
+    position: 'bottomright'
+}).addTo(map);
+
+/**
+ * 
+ * @param {string} phoneNumber 
+ * @returns {string}
+ */
 function formatPhoneNumber(phoneNumber) {
     return phoneNumber.replace(/\D/g, '').replace(/(\d{1})(\d{3})(\d{3})(\d{4})/, '($2) $3-$4');
 }
+
+/**
+ * 
+ * @param {string} url 
+ * @returns {string}
+ */
 function formatUrl(url) {
     return url.replace(/^(https?:\/\/)?/i, '').replace(/\/$/, '');
 }
+
+/**
+ * 
+ * @param {Church} church 
+ * @returns {string}
+ */
 function addConfessions(church) {
-        return !church.confession ? '' :
-            `<h2>Confessions</h2>
+    return !church.confession ? '' :
+        `<h2>Confession Times</h2>
                 <ul>
                 ${church.confession.map(c => `<li>
                     ${c.day} - ${c.start} - ${c.end}
@@ -58,9 +85,15 @@ function addConfessions(church) {
                 </li>`).join('')}
             </ul>`;
 }
+
+/**
+ * 
+ * @param {Church} church 
+ * @returns {string}
+ */
 function addAdorations(church) {
     return !church.adoration ? '' :
-        `<h2>Adorations</h2>
+        `<h2>Adoration Times</h2>
         <ul>
             ${church.adoration.map(a => `<li>
                 ${a.day} - ${a.start} - ${a.end}
@@ -68,6 +101,12 @@ function addAdorations(church) {
             </li>`).join('')}
         </ul>`;
 }
+
+/**
+ * 
+ * @param {Church} church 
+ * @returns {string}
+ */
 function addMasses(church) {
     return !church.masses ? '' :
         `<h2>Masses</h2>
@@ -78,6 +117,12 @@ function addMasses(church) {
             </li>`).join('')}
         </ul>`;
 }
+
+/**
+ * 
+ * @param {Church} church 
+ * @returns {string}
+ */
 function addDailyMasses(church) {
     return !church.daily_masses ? '' :
         `<h2>Daily Masses</h2>
@@ -88,10 +133,14 @@ function addDailyMasses(church) {
             </li>`).join('')}
         </ul>`;
 }
-for (var i = 0; i < churches.length; i++) {
-    /** @type {Church} */
-    const church = churches[i];
-    L.marker(church.coordinates).addTo(map).bindPopup(`
+
+/**
+ * 
+ * @param {Church} church 
+ * @returns {string}
+ */
+function createPopup(church) {
+    return `
     <div class="churchPopup">            
         <h1>${church.name}</h1>
         <p><i class="fas fa-map-marker-alt"></i> ${church.address}</p>
@@ -102,5 +151,11 @@ for (var i = 0; i < churches.length; i++) {
         ${addConfessions(church)}
         ${addAdorations(church)}
     </div>
-    `);
+    `
+}
+// adding the markers
+for (var i = 0; i < churches.length; i++) {
+    /** @type {Church} */
+    const church = churches[i];
+    L.marker(church.coordinates).addTo(map).bindPopup(createPopup(church));
 }
