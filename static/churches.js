@@ -18,6 +18,16 @@ export const churches = [
                 time: "11:00 AM",
             },
         ],
+        daily_masses: [
+            {
+                day: "Wednesday",
+                time: "9:00 AM",
+            },
+            {
+                day: "Friday",
+                time: "9:00 AM",
+            },
+        ],
         confession: [
             {
                 day: "Saturday",
@@ -45,6 +55,16 @@ export const churches = [
                 time: "9:00 AM",
             },
         ],
+        daily_masses: [
+            {
+                day: "Tuesday",
+                time: "5:00 PM",
+            },
+            {
+                day: "Thursday",
+                time: "5:00 PM",
+            },
+        ],
     },
     {
         name: "St. Clement",
@@ -56,6 +76,12 @@ export const churches = [
             {
                 day: "Sunday",
                 time: "9:45 AM",
+            },
+        ],
+        daily_masses: [
+            {
+                day: "Tuesday",
+                time: "7:00 PM",
             },
         ],
         confession: [
@@ -99,6 +125,16 @@ export const churches = [
                 time: "11:00 AM",
             },
         ],
+        daily_masses: [
+            {
+                day: "Friday",
+                time: "9:45 AM",
+            },
+            {
+                day: "Saturday",
+                time: "8:30 AM",
+            }
+        ],
         confession: [
             {
                 day: "Saturday",
@@ -126,6 +162,12 @@ export const churches = [
                 time: "8:30 AM",
             },
         ],
+        daily_masses: [
+            {
+                day: "Thursday",
+                time: "9:30 AM",
+            },
+        ],
         confession: [
             {
                 day: "Thursday",
@@ -144,6 +186,13 @@ export const churches = [
             {
                 day: "Saturday",
                 time: "4:30 PM",
+            },
+        ],
+        daily_masses: [
+            {
+                day: "Wednesday",
+                time: "9:30 AM",
+                note: "Rosary",
             },
         ],
         confession: [
@@ -171,6 +220,17 @@ export const churches = [
                 time: "12:00 PM",
             },
         ],
+        daily_masses: [
+            {
+                day: "Wednesday",
+                time: "9:00 AM",
+            },
+            {
+                day: "Friday",
+                time: "9:00 AM",
+                note: "In French. Every second Friday, Mass is celebrated at Mon Augustine Caron.",
+            }
+        ]
     },
     {
         name: "Sacred Heart",
@@ -182,6 +242,12 @@ export const churches = [
             {
                 day: "Sunday",
                 time: "8:30 AM",
+            },
+        ],
+        daily_masses: [
+            {
+                day: "Thursday",
+                time: "9:00 AM",
             },
         ],
         confession: [
@@ -216,6 +282,12 @@ export const churches = [
             {
                 day: "Saturday",
                 time: "4:30 PM",
+            },
+        ],
+        daily_masses: [
+            {
+                day: "Tuesday",
+                time: "6:30 PM",
             },
         ],
         confession: [
@@ -254,6 +326,16 @@ export const churches = [
                 time: "11:00 AM",
             },
         ],
+        daily_masses: [
+            {
+                day: "Tuesday",
+                time: "7:00 PM",
+            },
+            {
+                day: "Thursday",
+                time: "8:30 AM",
+            },
+        ],
         confession: [
             {
                 day: "Tuesday",
@@ -283,6 +365,16 @@ export const churches = [
                 time: "11:00 AM",
             },
         ],
+        daily_masses: [
+            {
+                day: "Wednesday",
+                time: "8:30 AM",
+            },
+            {
+                day: "Friday",
+                time: "8:30 AM",
+            },
+        ],
         confession: [
             {
                 day: "Friday",
@@ -291,6 +383,78 @@ export const churches = [
                 note: "This is also a Holy Hour, starts after weekday Mass",
             },
         ],
+    },
+    {
+        name: "St. Philip Minh & St. Anne Thanh Vietnamese Parish",
+        address: "1630 Partington Ave, Windsor, ON N9B 2R1",
+        coordinates: [42.291335235391514, -83.04840956534997],
+        website: "http://www.vithia.net/gxvn/",
+        phone: "+15192545552",
+        masses: [
+            {
+                day: "Saturday",
+                time: "5:30 PM",
+                note: "Vietnamese",
+            },
+            {
+                day: "Sunday",
+                time: "11:00 AM",
+                note: "Vietnamese",
+            },
+        ],
+        daily_masses: [
+            {
+                day: "Tuesday",
+                time: "5:30 PM",
+                note: "Vietnamese",
+            },
+            {
+                day: "Wednesday",
+                time: "5:30 PM",
+                note: "Vietnamese",
+            },
+            {
+                day: "Thursday",
+                time: "5:30 PM",
+                note: "Vietnamese",
+            },
+            {
+                day: "Friday",
+                time: "5:30 PM",
+                note: "Vietnamese",
+            },
+            {
+                day: "Saturday",
+                time: "9:30 PM",
+                note: "Vietnamese, first Saturday of the month",
+            },
+        ],
+        confession: [
+            {
+                day: "Friday",
+                start: "6:00 PM",
+                end: "6:30 PM",
+                note: "Starts after Mass",
+            },
+            {
+                day: "Sunday",
+                start: "10:45 AM",
+                end: "11:15 AM",
+            },
+        ],
+        adoration: [
+            {
+                day: "Friday",
+                start: "5:00 PM",
+                end: "6:00 PM",
+            },
+            {
+                day: "Sunday",
+                start: "10:30 AM",
+                end: "11:00 AM",
+                note: "First Sunday of the month",
+            }
+        ]
     },
     {
         name: "Our Lady of Perpetual Help",
@@ -306,6 +470,16 @@ export const churches = [
             {
                 day: "Sunday",
                 time: "10:30 AM",
+            },
+        ],
+        daily_masses: [
+            {
+                day: "Tuesday",
+                time: "6:00 PM",
+            },
+            {
+                day: "Thursday",
+                time: "6:00 PM",
             },
         ],
         confession: [
@@ -330,6 +504,16 @@ export const churches = [
             {
                 day: "Sunday",
                 time: "12:30 PM",
+            },
+        ],
+        daily_masses: [
+            {
+                day: "Wednesday",
+                time: "12:00 PM",
+            },
+            {
+                day: "Friday",
+                time: "8:00 AM",
             },
         ],
         confession: [
@@ -361,6 +545,28 @@ export const churches = [
                 time: "11:00 AM",
                 note: "Croatian",
             },
+        ],
+        daily_masses: [
+            {
+                day: "Tuesday",
+                time: "6:00 PM",
+                note: "Croatian",
+            },
+            {
+                day: "Wednesday",
+                time: "6:00 PM",
+                note: "Croatian",
+            },
+            {
+                day: "Thursday",
+                time: "6:00 PM",
+                note: "Croatian",
+            },
+            {
+                day: "Friday",
+                time: "6:00 PM",
+                note: "Croatian",
+            },
         ]
     },
     {
@@ -384,6 +590,37 @@ export const churches = [
                 time: "12:30 PM",
                 note: "Polish",
             }
+        ],
+        daily_masses: [
+            {
+                day: "Monday",
+                time: "7:00 PM",
+                note: "Polish",
+            },
+            {
+                day: "Tuesday",
+                time: "7:00 PM",
+                note: "Polish",
+            },
+            {
+                day: "Wednesday",
+                time: "7:00 PM",
+                note: "Polish",
+            },
+            {
+                day: "Thursday",
+                time: "7:00 PM",
+                note: "Polish",
+            },
+            {
+                day: "Friday",
+                time: "7:00 PM",
+                note: "Polish",
+            },
+            {
+                day: "Saturday",
+                time: "8:00 AM",
+            },
         ],
         adoration: [
             {
@@ -414,6 +651,12 @@ export const churches = [
                 time: "12:30 PM",
             },
         ],
+        daily_masses: [
+            {
+                day: "Wednesday",
+                time: "9:30 AM",
+            },
+        ],
         adoration: [
             {
                 day: "Wednesday",
@@ -437,6 +680,16 @@ export const churches = [
                 day: "Sunday",
                 time: "11:00 AM",
                 note: "ASL Available",
+            },
+        ],
+        daily_masses: [
+            {
+                day: "Thursday",
+                time: "8:30 AM",
+            },
+            {
+                day: "Friday",
+                time: "8:30 AM",
             },
         ],
         confession: [
@@ -469,6 +722,12 @@ export const churches = [
             {
                 day: "Sunday",
                 time: "9:00 AM",
+            },
+        ],
+        daily_masses: [
+            {
+                day: "Tuesday",
+                time: "7:00 PM",
             },
         ],
         confession: [
@@ -511,6 +770,24 @@ export const churches = [
                 day: "Sunday",
                 time: "7:30 PM",
             }
+        ],
+        daily_masses: [
+            {
+                day: "Tuesday",
+                time: "8:00 AM",
+            },
+            {
+                day: "Wednesday",
+                time: "8:00 AM",
+            },
+            {
+                day: "Thursday",
+                time: "8:00 AM",
+            },
+            {
+                day: "Friday",
+                time: "8:00 AM",
+            },
         ],
         confession: [
             {
@@ -562,6 +839,13 @@ export const churches = [
                 note: "Latin, High Mass",
             },
         ],
+        daily_masses: [
+            {
+                day: "Tuesday",
+                time: "7:00 PM",
+                note: "Latin, Low Mass",
+            },
+        ],
     },
     {
         name: "St. Alphonsus",
@@ -586,6 +870,20 @@ export const churches = [
             {
                 day: "Sunday",
                 time: "5:30 PM",
+            },
+        ],
+        daily_masses: [
+            {
+                day: "Wednesday",
+                time: "12:00 PM",
+            },
+            {
+                day: "Thursday",
+                time: "12:00 PM",
+            },
+            {
+                day: "Friday",
+                time: "12:00 PM",
             },
         ],
         confession: [
@@ -631,6 +929,26 @@ export const churches = [
                 time: "11:30 AM",
             },
         ],
+        daily_masses: [
+            {
+                day: "Monday",
+                time: "7:00 PM",
+            },
+            {
+                day: "Tuesday",
+                time: "7:00 PM",
+            },
+            {
+                day: "Wednesday",
+                time: "7:00 PM",
+                note: "Italian",
+            },
+            {
+                day: "Thursday",
+                time: "7:00 PM",
+                note: "Italian",
+            },
+        ],
         confession: [
             {
                 day: "Wednesday",
@@ -671,6 +989,16 @@ export const churches = [
                 time: "10:30 AM",
             },
         ],
+        daily_masses: [
+            {
+                day: "Wednesday",
+                time: "9:00 AM",
+            },
+            {
+                day: "Friday",
+                time: "9:00 AM",
+            },
+        ],
         confession: [
             {
                 day: "Saturday",
@@ -699,6 +1027,16 @@ export const churches = [
                 day: "Sunday",
                 time: "11:30 AM",
                 note: "Every 3rd Sunday of the month. Part of St. Anthony of Padua Hungarian Community",
+            },
+        ],
+        daily_masses: [
+            {
+                day: "Tuesday",
+                time: "9:00 AM",
+            },
+            {
+                day: "Thursday",
+                time: "9:00 AM",
             },
         ],
         confession: [
@@ -733,6 +1071,38 @@ export const churches = [
             {
                 day: "Sunday",
                 time: "12:00 PM",
+            },
+        ],
+        daily_masses: [
+            {
+                day: "Monday",
+                time: "8:30 AM",
+                note: "Livestreamed",
+            },
+            {
+                day: "Tuesday",
+                time: "8:30 AM",
+                note: "Livestreamed",
+            },
+            {
+                day: "Wednesday",
+                time: "8:30 AM",
+                note: "Livestreamed",
+            },
+            {
+                day: "Thursday",
+                time: "8:30 AM",
+                note: "Livestreamed",
+            },
+            {
+                day: "Friday",
+                time: "8:30 AM",
+                note: "Livestreamed",
+            },
+            {
+                day: "Saturday",
+                time: "8:30 AM",
+                note: "Livestreamed",
             },
         ],
         confession: [
@@ -790,6 +1160,17 @@ export const churches = [
                 time: "11:15 AM",
             },
         ],
+        daily_masses: [
+            {
+                day: "Wednesday",
+                time: "12:15 PM",
+            },
+            {
+                day: "Thursday",
+                time: "6:30 PM",
+                note: "Livestreamed"
+            },
+        ],
         confession: [
             {
                 day: "Wednesday",
@@ -823,6 +1204,13 @@ export const churches = [
                 day: "Sunday",
                 time: "10:00 AM",
                 note: "French",
+            },
+        ],
+        daily_masses: [
+            {
+                day: "Tuesday",
+                time: "12:30 PM",
+                note: "French, celebrated at Residence Richelieu third Thursday of the month",
             },
         ],
         confession: [
@@ -866,6 +1254,20 @@ export const churches = [
                 time: "10:30 AM",
             },
         ],
+        daily_masses: [
+            {
+                day: "Tuesday",
+                time: "8:30 AM",
+            },
+            {
+                day: "Thursday",
+                time: "8:30 AM",
+            },
+            {
+                day: "Friday",
+                time: "9:30 AM",
+            },
+        ],
         confession: [
             {
                 day: "Friday",
@@ -900,6 +1302,16 @@ export const churches = [
             {
                 day: "Sunday",
                 time: "8:30 AM",
+            },
+        ],
+        daily_masses: [
+            {
+                day: "Wednesday",
+                time: "6:30 PM",
+            },
+            {
+                day: "Friday",
+                time: "9:30 AM",
             },
         ],
         confession: [
@@ -962,6 +1374,20 @@ export const churches = [
             {
                 day: "Sunday",
                 time: "6:30 PM",
+            },
+        ],
+        daily_masses: [
+            {
+                day: "Tuesday",
+                time: "6:30 PM",
+            },
+            {
+                day: "Wednesday",
+                time: "8:30 AM",
+            },
+            {
+                day: "Thursday",
+                time: "8:30 AM",
             },
         ],
         confession: [
@@ -1035,6 +1461,13 @@ export const churches = [
                 time: "11:00 AM",
             },
         ],
+        daily_masses: [
+            {
+                day: "Wednesday",
+                time: "6:30 PM",
+                note: "Only for the first Wednesday of every month",
+            },
+        ],
         confession: [
             {
                 day: "Wednesday",
@@ -1055,12 +1488,19 @@ export const churches = [
         coordinates: [41.75576515224483, -82.6662130530946],
         website: "https://esscatholic.ca/",
         phone: "+15197336591",
+        daily_masses: [
+            {
+                day: "Thursday",
+                time: "6:30 PM",
+                note: "Every other week",
+            },
+        ],
         confession: [
             {
                 day: "Thursday",
                 start: "6:00 PM",
                 end: "6:30 PM",
-                note: "This is also a Holy Hour",
+                note: "Every other week, this is also a Holy Hour",
             },
         ],
         adoration: [
@@ -1068,7 +1508,7 @@ export const churches = [
                 day: "Thursday",
                 start: "6:00 PM",
                 end: "6:30 PM",
-                note: "This is a Holy Hour",
+                note: "Every other week, this is a Holy Hour",
             },
         ],
     }

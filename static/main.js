@@ -78,6 +78,16 @@ function addMasses(church) {
             </li>`).join('')}
         </ul>`;
 }
+function addDailyMasses(church) {
+    return !church.daily_masses ? '' :
+        `<h2>Daily Masses</h2>
+        <ul>
+            ${church.daily_masses.map(m => `<li>
+                ${m.day} - ${m.time}
+                ${m.note ? `<ul class="sublist"><li>${m.note}</li></ul>` : ''}
+            </li>`).join('')}
+        </ul>`;
+}
 for (var i = 0; i < churches.length; i++) {
     /** @type {Church} */
     const church = churches[i];
@@ -88,6 +98,7 @@ for (var i = 0; i < churches.length; i++) {
         <p><i class="fas fa-phone"></i> ${formatPhoneNumber(church.phone)}</p>
         <p><i class="fas fa-globe"></i> <a href="${church.website}" target="_blank">${formatUrl(church.website)}</a></p>
         ${addMasses(church)}
+        ${addDailyMasses(church)}
         ${addConfessions(church)}
         ${addAdorations(church)}
     </div>
