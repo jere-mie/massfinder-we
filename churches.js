@@ -22,16 +22,16 @@ export const churches = [
             {
                 day: "Saturday",
                 start: "9:45 AM",
-                end: "10:30 AM"
-            }
+                end: "10:30 AM",
+            },
         ],
         adoration: [
             {
                 day: "Wednesday",
                 start: "9:30 AM",
-                end: "9:30 PM"
-            }
-        ]
+                end: "9:30 PM",
+            },
+        ],
     },
     {
         name: "St. Anthony of Padua",
@@ -44,7 +44,7 @@ export const churches = [
                 day: "Sunday",
                 time: "9:00 AM",
             },
-        ]
+        ],
     },
     {
         name: "St. Clement",
@@ -62,14 +62,14 @@ export const churches = [
             {
                 day: "Tuesday",
                 start: "6:15 PM",
-                end: "6:45 PM"
-            }
+                end: "6:45 PM",
+            },
         ],
         adoration: [
             {
                 day: "Sunday",
                 start: "2:00 PM",
-                end: "4:00 PM"
+                end: "4:00 PM",
             },
             {
                 day: "Tuesday",
@@ -80,9 +80,9 @@ export const churches = [
             {
                 day: "Wednesday",
                 start: "2:00 PM",
-                end: "4:00 PM"
-            }
-        ]
+                end: "4:00 PM",
+            },
+        ],
     },
     {
         name: "Holy Name of Jesus",
@@ -104,16 +104,16 @@ export const churches = [
             {
                 day: "Saturday",
                 start: "9:00 AM",
-                end: "9:30 AM"
-            }
+                end: "9:30 AM",
+            },
         ],
         adoration: [
             {
                 day: "Friday",
                 start: "8:30 AM",
-                end: "9:30 AM"
-            }
-        ]
+                end: "9:30 AM",
+            },
+        ],
     },
     {
         name: "St. Mary's",
@@ -131,9 +131,9 @@ export const churches = [
             {
                 day: "Thursday",
                 start: "9:00 AM",
-                end: "9:30 AM"
-            }
-        ]
+                end: "9:30 AM",
+            },
+        ],
     },
     {
         name: "St. John the Evangelist",
@@ -151,9 +151,9 @@ export const churches = [
             {
                 day: "Saturday",
                 start: "3:45 PM",
-                end: "4:15 PM"
-            }
-        ]
+                end: "4:15 PM",
+            },
+        ],
     },
     {
         name: "St. Joseph",
@@ -171,7 +171,7 @@ export const churches = [
                 day: "Sunday",
                 time: "12:00 PM",
             },
-        ]
+        ],
     },
     {
         name: "Sacred Heart",
@@ -197,15 +197,15 @@ export const churches = [
                 day: "Monday",
                 start: "7:00 PM",
                 end: "8:00 PM",
-                note: "First Monday of every month"
+                note: "First Monday of every month",
             },
             {
                 day: "Wednesday",
                 start: "9:30 AM",
                 end: "10:30 AM",
-                note: "Third Wednesday of every month, or fourth Wednesday if there are 5 Wednesdays"
-            }
-        ]
+                note: "Third Wednesday of every month, or fourth Wednesday if there are 5 Wednesdays",
+            },
+        ],
     },
     {
         name: "St. Paul's",
@@ -223,7 +223,7 @@ export const churches = [
             {
                 day: "Tuesday",
                 start: "5:45 PM",
-                end: "6:15 PM"
+                end: "6:15 PM",
             }
         ],
         adoration: [
@@ -231,9 +231,9 @@ export const churches = [
                 day: "Tuesday",
                 start: "1:00 PM",
                 end: "2:00 PM",
-                note: "Second Tuesday of every month"
-            }
-        ]
+                note: "Second Tuesday of every month",
+            },
+        ],
     },
     {
         name: "Our Lady of Mt Carmel",
@@ -260,9 +260,9 @@ export const churches = [
                 day: "Tuesday",
                 start: "7:30 PM",
                 end: "8:30 PM",
-                note: "This is also a Holy Hour, starts after weekday Mass"
-            }
-        ]
+                note: "This is also a Holy Hour, starts after weekday Mass",
+            },
+        ],
     },
     {
         name: "Corpus Christi",
@@ -289,9 +289,9 @@ export const churches = [
                 day: "Friday",
                 start: "9:00 AM",
                 end: "10:00 AM",
-                note: "This is also a Holy Hour, starts after weekday Mass"
-            }
-        ]
+                note: "This is also a Holy Hour, starts after weekday Mass",
+            },
+        ],
     },
     {
         name: "Our Lady of Perpetual Help",
@@ -313,9 +313,9 @@ export const churches = [
             {
                 day: "Tuesday",
                 start: "5:00 PM",
-                end: "5:45 PM"
-            }
-        ]
+                end: "5:45 PM",
+            },
+        ],
     },
     {
         name: "Immaculate Heart / St. Michael's",
@@ -337,9 +337,9 @@ export const churches = [
             {
                 day: "Saturday",
                 start: "2:00 PM",
-                end: "3:00 PM"
-            }
-        ]
+                end: "3:00 PM",
+            },
+        ],
     },
     {
         name: "St. Francis of Assisi",
