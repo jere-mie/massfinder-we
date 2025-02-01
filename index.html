@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WE Catholic Mass List</title>
+
+    <meta property="og:site_name" content="WE Catholic Mass List" />
+    <meta property="og:title" content="Windsor-Essex County Catholic Mass List" />
+    <meta property="og:description" content="A list of Catholic Masses held in the Windsor-Essex area" />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="leaflet.1.9.4.css">
+    <script src="leaflet.1.9.4.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        h1 {
+            font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        #map { height: 80vh; }
+
+        .churchPopup {
+            p {
+                margin: 0;
+                padding: 0;
+            }
+            h2 {
+             margin-bottom: 0;   
+            }
+            ul {
+                margin-top: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        <i class="fas fa-bible"></i>
+        Windsor-Essex County Catholic Mass List
+        <a href="https://github.com/jere-mie/tiny-web/tree/master/mass" target="_blank">
+            <i class="fab fa-github"></i>
+        </a>
+    </h1>
+    <div id="map"></div>
+    <script type="module">
+        /**
+         * @typedef {Object} Mass
+         * @property {string} day - The day of the mass.
+         * @property {string} time - The time of the mass.
+         * @property {string | undefined} [note] - An optional note about the mass.
+         */
+
+        /**
+         * @typedef {Object} Church
+         * @property {string} name - The name of the church.
+         * @property {string} address - The address of the church.
+         * @property {Array<number>} coordinates - An array representing the coordinates [latitude, longitude].
+         * @property {string} website - The website of the church.
+         * @property {string} phone - The phone number of the church.
+         * @property {Array<Mass>} masses - An array of mass objects.
+         */
+
+        import { churches } from './churches.js'; 
+        var map = L.map('map').setView([42.16132298808876, -82.92932437200604], 11);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        function formatPhoneNumber(phoneNumber) {
+            return phoneNumber.replace(/\D/g, '').replace(/(\d{1})(\d{3})(\d{3})(\d{4})/, '($2) $3-$4');
+        }
+        function formatUrl(url) {
+            return url.replace(/^(https?:\/\/)?/i, '').replace(/\/$/, '');
+        }
+        for (var i = 0; i < churches.length; i++) {
+            /** @type {Church} */
+            const church = churches[i];
+            L.marker(church.coordinates).addTo(map).bindPopup(`
+            <div class="churchPopup">            
+                <h1>${church.name}</h1>
+                <p><i class="fas fa-map-marker-alt"></i> ${church.address}</p>
+                <p><i class="fas fa-phone"></i> ${formatPhoneNumber(church.phone)}</p>
+                <p><i class="fas fa-globe"></i> <a href="${church.website}" target="_blank">${formatUrl(church.website)}</a></p>
+                <h2>Masses</h2>
+                <ul>
+                    ${church.masses.map(mass => `<li>${mass.day} - ${mass.time} ${mass.note ? ` (${mass.note})` : ''}</li>`).join('')}
+                </ul>
+            </div>
+            `);
+        }
+
+    </script>
+</body>
+
+</html>
