@@ -10,6 +10,7 @@
     <meta property="og:title" content="Windsor-Essex County Catholic Mass List" />
     <meta property="og:description" content="A list of Catholic Masses held in the Windsor-Essex area" />
     <meta property="og:type" content="website" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <link rel="stylesheet" href="leaflet.1.9.4.css">
     <script src="leaflet.1.9.4.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -32,8 +33,13 @@
              margin-bottom: 0;   
             }
             ul {
-                margin-top: 8px;
+                margin-top: 0.5rem;
             }
+        }
+        .sublist {
+            margin-top: 2px !important;
+            margin-bottom: 4px;
+            padding-inline-start: 1.5rem !important;
         }
     </style>
 </head>
@@ -50,9 +56,25 @@
     <script type="module">
         /**
          * @typedef {Object} Mass
-         * @property {string} day - The day of the mass.
-         * @property {string} time - The time of the mass.
-         * @property {string | undefined} [note] - An optional note about the mass.
+         * @property {string} day - The day of the Mass.
+         * @property {string} time - The time of the Mass.
+         * @property {string | undefined} [note] - An optional note about the Mass.
+         */
+
+        /**
+         * @typedef {Object} Confession
+         * @property {string} dat - The day of confession.
+         * @property {string} start - The starting time of confession.
+         * @property {string} end - The ending time of confession.
+         * @property {string | undefined} [note] - An optional note about the confession.
+         */
+        
+        /**
+         * @typedef {Object} Adoration
+         * @property {string} dat - The day of adoration.
+         * @property {string} start - The starting time of adoration.
+         * @property {string} end - The ending time of adoration.
+         * @property {string | undefined} [note] - An optional note about the adoration.
          */
 
         /**
@@ -62,7 +84,9 @@
          * @property {Array<number>} coordinates - An array representing the coordinates [latitude, longitude].
          * @property {string} website - The website of the church.
          * @property {string} phone - The phone number of the church.
-         * @property {Array<Mass>} masses - An array of mass objects.
+         * @property {Array<Mass>} masses - An array of Mass objects.
+         * @property {Array<Confession>} confession - An array of Confession objects.
+         * @property {Array<Adoration>} adoration - An array of Adoration objects.
          */
 
         import { churches } from './churches.js'; 
@@ -78,6 +102,45 @@
         function formatUrl(url) {
             return url.replace(/^(https?:\/\/)?/i, '').replace(/\/$/, '');
         }
+        function addConfessions(church) {
+            var content = "";
+            if (church.hasOwnProperty("confession")) {
+                content = `<h2>Confessions</h2>
+                    <ul>
+                        ${church.confession.map(c => `<li>
+                            ${c.day} - ${c.start} - ${c.end}
+                            ${c.note ? `<ul class="sublist"><li>${c.note}</li></ul>` : ''}
+                        </li>`).join('')}
+                    </ul>`;
+            }
+            return content;
+        }
+        function addAdorations(church) {
+            var content = "";
+            if (church.hasOwnProperty("adoration")) {
+                content = `<h2>Adorations</h2>
+                    <ul>
+                        ${church.adoration.map(a => `<li>
+                            ${a.day} - ${a.start} - ${a.end}
+                            ${a.note ? `<ul class="sublist"><li>${a.note}</li></ul>` : ''}
+                        </li>`).join('')}
+                    </ul>`;
+            }
+            return content;
+        }
+        function addMasses(church) {
+            var content = "";
+            if (church.masses.length > 0) {
+                content = `<h2>Masses</h2>
+                    <ul>
+                        ${church.masses.map(m => `<li>
+                            ${m.day} - ${m.time}
+                            ${m.note ? `<ul class="sublist"><li>${m.note}</li></ul>` : ''}
+                        </li>`).join('')}
+                    </ul>`;
+            }
+            return content;
+        }
         for (var i = 0; i < churches.length; i++) {
             /** @type {Church} */
             const church = churches[i];
@@ -87,10 +150,9 @@
                 <p><i class="fas fa-map-marker-alt"></i> ${church.address}</p>
                 <p><i class="fas fa-phone"></i> ${formatPhoneNumber(church.phone)}</p>
                 <p><i class="fas fa-globe"></i> <a href="${church.website}" target="_blank">${formatUrl(church.website)}</a></p>
-                <h2>Masses</h2>
-                <ul>
-                    ${church.masses.map(mass => `<li>${mass.day} - ${mass.time} ${mass.note ? ` (${mass.note})` : ''}</li>`).join('')}
-                </ul>
+                ${addMasses(church)}
+                ${addConfessions(church)}
+                ${addAdorations(church)}
             </div>
             `);
         }
