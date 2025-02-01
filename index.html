@@ -103,7 +103,7 @@
             return url.replace(/^(https?:\/\/)?/i, '').replace(/\/$/, '');
         }
         function addConfessions(church) {
-            var content = "";
+            let content = "";
             if (church.hasOwnProperty("confession")) {
                 content = `<h2>Confessions</h2>
                     <ul>
@@ -116,7 +116,7 @@
             return content;
         }
         function addAdorations(church) {
-            var content = "";
+            let content = "";
             if (church.hasOwnProperty("adoration")) {
                 content = `<h2>Adorations</h2>
                     <ul>
@@ -129,7 +129,7 @@
             return content;
         }
         function addMasses(church) {
-            var content = "";
+            let content = "";
             if (church.masses.length > 0) {
                 content = `<h2>Masses</h2>
                     <ul>
