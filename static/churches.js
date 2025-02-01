@@ -17,7 +17,21 @@ export const churches = [
                 day: "Sunday",
                 time: "11:00 AM",
             },
-        ]
+        ],
+        confession: [
+            {
+                day: "Saturday",
+                start: "9:45 AM",
+                end: "10:30 AM",
+            },
+        ],
+        adoration: [
+            {
+                day: "Wednesday",
+                start: "9:30 AM",
+                end: "9:30 PM",
+            },
+        ],
     },
     {
         name: "St. Anthony of Padua",
@@ -30,7 +44,7 @@ export const churches = [
                 day: "Sunday",
                 time: "9:00 AM",
             },
-        ]
+        ],
     },
     {
         name: "St. Clement",
@@ -43,7 +57,31 @@ export const churches = [
                 day: "Sunday",
                 time: "9:45 AM",
             },
-        ]
+        ],
+        confession: [
+            {
+                day: "Tuesday",
+                start: "6:15 PM",
+                end: "6:45 PM",
+            },
+        ],
+        adoration: [
+            {
+                day: "Sunday",
+                start: "2:00 PM",
+                end: "4:00 PM",
+            },
+            {
+                day: "Tuesday",
+                start: "7:30 PM",
+                end: "8:30 PM",
+            },
+            {
+                day: "Wednesday",
+                start: "2:00 PM",
+                end: "4:00 PM",
+            },
+        ],
     },
     {
         name: "Holy Name of Jesus",
@@ -60,7 +98,21 @@ export const churches = [
                 day: "Sunday",
                 time: "11:00 AM",
             },
-        ]
+        ],
+        confession: [
+            {
+                day: "Saturday",
+                start: "9:00 AM",
+                end: "9:30 AM",
+            },
+        ],
+        adoration: [
+            {
+                day: "Friday",
+                start: "8:30 AM",
+                end: "9:30 AM",
+            },
+        ],
     },
     {
         name: "St. Mary's",
@@ -73,7 +125,14 @@ export const churches = [
                 day: "Sunday",
                 time: "8:30 AM",
             },
-        ]
+        ],
+        confession: [
+            {
+                day: "Thursday",
+                start: "9:00 AM",
+                end: "9:30 AM",
+            },
+        ],
     },
     {
         name: "St. John the Evangelist",
@@ -86,7 +145,14 @@ export const churches = [
                 day: "Saturday",
                 time: "4:30 PM",
             },
-        ]
+        ],
+        confession: [
+            {
+                day: "Saturday",
+                start: "3:45 PM",
+                end: "4:15 PM",
+            },
+        ],
     },
     {
         name: "St. Joseph",
@@ -104,7 +170,7 @@ export const churches = [
                 day: "Sunday",
                 time: "12:00 PM",
             },
-        ]
+        ],
     },
     {
         name: "Sacred Heart",
@@ -117,7 +183,28 @@ export const churches = [
                 day: "Sunday",
                 time: "8:30 AM",
             },
-        ]
+        ],
+        confession: [
+            {
+                day: "Saturday",
+                start: "11:00 AM",
+                end: "11:45 AM",
+            }
+        ],
+        adoration: [
+            {
+                day: "Monday",
+                start: "7:00 PM",
+                end: "8:00 PM",
+                note: "First Monday of every month",
+            },
+            {
+                day: "Wednesday",
+                start: "9:30 AM",
+                end: "10:30 AM",
+                note: "Third Wednesday of every month, or fourth Wednesday if there are 5 Wednesdays",
+            },
+        ],
     },
     {
         name: "St. Paul's",
@@ -130,7 +217,22 @@ export const churches = [
                 day: "Saturday",
                 time: "4:30 PM",
             },
-        ]
+        ],
+        confession: [
+            {
+                day: "Tuesday",
+                start: "5:45 PM",
+                end: "6:15 PM",
+            }
+        ],
+        adoration: [
+            {
+                day: "Tuesday",
+                start: "1:00 PM",
+                end: "2:00 PM",
+                note: "Second Tuesday of every month",
+            },
+        ],
     },
     {
         name: "Our Lady of Mt Carmel",
@@ -151,7 +253,15 @@ export const churches = [
                 day: "Sunday",
                 time: "11:00 AM",
             },
-        ]
+        ],
+        confession: [
+            {
+                day: "Tuesday",
+                start: "7:30 PM",
+                end: "8:30 PM",
+                note: "This is also a Holy Hour, starts after weekday Mass",
+            },
+        ],
     },
     {
         name: "Corpus Christi",
@@ -172,7 +282,15 @@ export const churches = [
                 day: "Sunday",
                 time: "11:00 AM",
             },
-        ]
+        ],
+        confession: [
+            {
+                day: "Friday",
+                start: "9:00 AM",
+                end: "10:00 AM",
+                note: "This is also a Holy Hour, starts after weekday Mass",
+            },
+        ],
     },
     {
         name: "Our Lady of Perpetual Help",
@@ -189,7 +307,14 @@ export const churches = [
                 day: "Sunday",
                 time: "10:30 AM",
             },
-        ]
+        ],
+        confession: [
+            {
+                day: "Tuesday",
+                start: "5:00 PM",
+                end: "5:45 PM",
+            },
+        ],
     },
     {
         name: "Immaculate Heart / St. Michael's",
@@ -205,7 +330,15 @@ export const churches = [
             {
                 day: "Sunday",
                 time: "12:30 PM",
-            },]
+            },
+        ],
+        confession: [
+            {
+                day: "Saturday",
+                start: "2:00 PM",
+                end: "3:00 PM",
+            },
+        ],
     },
     {
         name: "St. Francis of Assisi",
@@ -251,7 +384,15 @@ export const churches = [
                 time: "12:30 PM",
                 note: "Polish",
             }
-        ]
+        ],
+        adoration: [
+            {
+                day: "Friday",
+                start: "6:00 PM",
+                end: "7:00 PM",
+                note: "First Friday of every month, one hour before daily Mass",
+            },
+        ],
     },
     {
         name: "Our Lady of Guadalupe / San Juan Diego",
@@ -271,8 +412,15 @@ export const churches = [
             {
                 day: "Sunday",
                 time: "12:30 PM",
-            }
-        ]
+            },
+        ],
+        adoration: [
+            {
+                day: "Wednesday",
+                start: "10:30 AM",
+                end: "3:00 PM",
+            },
+        ],
     },
     {
         name: "Most Precious Blood",
@@ -290,7 +438,22 @@ export const churches = [
                 time: "11:00 AM",
                 note: "ASL Available",
             },
-        ]
+        ],
+        confession: [
+            {
+                day: "Saturday",
+                start: "11:00 AM",
+                end: "11:30 AM",
+            },
+        ],
+        adoration: [
+            {
+                day: "Thursday",
+                start: "10:00 AM",
+                end: "3:00 PM",
+                note: "Benediction starts at 3:00 after Adoration",
+            },
+        ],
     },
     {
         name: "St. Theresa's",
@@ -307,7 +470,14 @@ export const churches = [
                 day: "Sunday",
                 time: "9:00 AM",
             },
-        ]
+        ],
+        confession: [
+            {
+                day: "Tuesday",
+                start: "6:30 PM",
+                end: "7:00 PM",
+            },
+        ],
     },
     {
         name: "Sts. Cyril And Methodius",
@@ -341,6 +511,42 @@ export const churches = [
                 day: "Sunday",
                 time: "7:30 PM",
             }
+        ],
+        confession: [
+            {
+                day: "Saturday",
+                start: "11:00 AM",
+                end: "12:00 PM"
+            },
+            {
+                day: "Sunday",
+                start: "6:30 PM",
+                end: "7:15 PM",
+            }
+        ],
+        adoration: [
+            {
+                day: "Tuesday",
+                start: "8:30 AM",
+                end: "9:30 AM",
+                note: "Rosary Chapel is open until 4:00 PM for prayers",
+            },
+            {
+                day: "Wednesday",
+                start: "8:30 AM",
+                end: "8:00 PM",
+            },
+            {
+                day: "Thursday",
+                start: "8:30 AM",
+                end: "9:30 AM",
+                note: "Rosary Chapel is open until 4:00 PM for prayers",
+            },
+            {
+                day: "Friday",
+                start: "8:30 AM",
+                end: "4:00 PM",
+            }
         ]
     },
     {
@@ -355,7 +561,7 @@ export const churches = [
                 time: "2:00 PM",
                 note: "Latin, High Mass",
             },
-        ]
+        ],
     },
     {
         name: "St. Alphonsus",
@@ -381,6 +587,26 @@ export const churches = [
                 day: "Sunday",
                 time: "5:30 PM",
             },
+        ],
+        confession: [
+            {
+                day: "Thursday",
+                start: "11:00 AM",
+                end: "11:45 AM",
+            },
+            {
+                day: "Saturday",
+                start: "3:45 PM",
+                end: "4:45 PM",
+            },
+        ],
+        adoration: [
+            {
+                day: "Thursday",
+                start: "12:30 PM",
+                end: "1:00 PM",
+                note: "Follows after 12:00 PM Mass",
+            }
         ]
     },
     {
@@ -393,7 +619,7 @@ export const churches = [
             {
                 day: "Saturday",
                 time: "4:30 PM",
-                note: "Italian",
+                note: "English and Italian",
             },
             {
                 day: "Sunday",
@@ -404,7 +630,26 @@ export const churches = [
                 day: "Sunday",
                 time: "11:30 AM",
             },
-        ]
+        ],
+        confession: [
+            {
+                day: "Wednesday",
+                start: "6:30 PM",
+                end: "6:55 PM",
+            },
+            {
+                day: "Saturday",
+                start: "3:30 PM",
+                end: "4:15 PM",
+            },
+        ],
+        adoration: [
+            {
+                day: "Wednesday",
+                start: "6:00 PM",
+                end: "7:00 PM",
+            },
+        ],
     },
     {
         name: "Our Lady of the Atonement",
@@ -425,7 +670,15 @@ export const churches = [
                 day: "Sunday",
                 time: "10:30 AM",
             },
-        ]
+        ],
+        confession: [
+            {
+                day: "Saturday",
+                start: "11:00 AM",
+                end: "12:00 PM",
+                note: "Third Saturday of every month",
+            },
+        ],
     },
     {
         name: "St. John Vianney",
@@ -447,7 +700,15 @@ export const churches = [
                 time: "11:30 AM",
                 note: "Every 3rd Sunday of the month. Part of St. Anthony of Padua Hungarian Community",
             },
-        ]
+        ],
+        confession: [
+            {
+                day: "Saturday",
+                start: "11:00 AM",
+                end: "12:00 PM",
+                note: "First Saturday of every month",
+            },
+        ],
     },
     {
         name: "Ste. Anne",
@@ -473,7 +734,41 @@ export const churches = [
                 day: "Sunday",
                 time: "12:00 PM",
             },
-        ]
+        ],
+        confession: [
+            {
+                day: "Saturday",
+                start: "9:00 AM",
+                end: "10:30 AM",
+            }
+        ],
+        adoration: [
+            {
+                day: "Monday",
+                start: "9:00 AM",
+                end: "10:00 AM",
+            },
+            {
+                day: "Tuesday",
+                start: "9:00 AM",
+                end: "10:00 AM",
+            },
+            {
+                day: "Wednesday",
+                start: "9:00 AM",
+                end: "10:00 AM",
+            },
+            {
+                day: "Thursday",
+                start: "9:00 AM",
+                end: "10:00 AM",
+            },
+            {
+                day: "Friday",
+                start: "9:00 AM",
+                end: "9:00 PM",
+            },
+        ],
     },
     {
         name: "Good Shepherd",
@@ -494,7 +789,28 @@ export const churches = [
                 day: "Sunday",
                 time: "11:15 AM",
             },
-        ]
+        ],
+        confession: [
+            {
+                day: "Wednesday",
+                start: "11:45 AM",
+                end: "12:15 PM",
+            },
+            {
+                day: "Thursday",
+                start: "6:00 PM",
+                end: "6:30 PM",
+                note: "Prior to monthly Healing Mass at 6:30 PM - 7:30 PM",
+            },
+        ],
+        adoration: [
+            {
+                day: "Every day",
+                start: "12:00 AM",
+                end: "11:59 PM",
+                note: "Requires access card for use after hours",
+            },
+        ],
     },
     {
         name: "St. Jerome",
@@ -508,7 +824,26 @@ export const churches = [
                 time: "10:00 AM",
                 note: "French",
             },
-        ]
+        ],
+        confession: [
+            {
+                day: "Saturday",
+                start: "11:00 AM",
+                end: "12:00 PM",
+            },
+        ],
+        adoration: [
+            {
+                day: "Saturday",
+                start: "11:00 AM",
+                end: "12:00 PM",
+            },
+            {
+                day: "Sunday",
+                start: "9:00 AM",
+                end: "9:45 AM",
+            },
+        ],
     },
     {
         name: "St. Simon & St. Jude",
@@ -529,8 +864,27 @@ export const churches = [
             {
                 day: "Sunday",
                 time: "10:30 AM",
-            }
-        ]
+            },
+        ],
+        confession: [
+            {
+                day: "Friday",
+                start: "8:15 AM",
+                end: "9:15 AM",
+            },
+            {
+                day: "Saturday",
+                start: "3:45 PM",
+                end: "4:15 PM",
+            },
+        ],
+        adoration: [
+            {
+                day: "Friday",
+                start: "8:15 AM",
+                end: "9:15 AM",
+            },
+        ],
     },
     {
         name: "St. John de Brebeuf",
@@ -547,7 +901,43 @@ export const churches = [
                 day: "Sunday",
                 time: "8:30 AM",
             },
-        ]
+        ],
+        confession: [
+            {
+                day: "Wednesday",
+                start: "6:00 PM",
+                end: "6:30 PM",
+            },
+            {
+                day: "Friday",
+                start: "9:00 AM",
+                end: "9:30 AM",
+            },
+            {
+                day: "Saturday",
+                start: "4:30 PM",
+                end: "5:00 PM",
+            },
+            {
+                day: "Sunday",
+                start: "8:00 AM",
+                end: "8:30 AM",
+            },
+        ],
+        adoration: [
+            {
+                day: "Wednesday",
+                start: "7:00 PM",
+                end: "8:00 PM",
+                note: "This is a Holy Hour",
+            },
+            {
+                day: "Friday",
+                start: "10:00 AM",
+                end: "11:00 AM",
+                note: "This is a Holy Hour",
+            },
+        ],
     },
     {
         name: "St. Michael's",
@@ -573,6 +963,64 @@ export const churches = [
                 day: "Sunday",
                 time: "6:30 PM",
             },
+        ],
+        confession: [
+            {
+                day: "Tuesday",
+                start: "6:00 PM",
+                end: "6:30 PM",
+            },
+            {
+                day: "Wednesday",
+                start: "8:00 AM",
+                end: "8:30 AM",
+            },
+            {
+                day: "Thursday",
+                start: "8:00 AM",
+                end: "8:30 AM",
+            },
+            {
+                day: "Saturday",
+                start: "4:30 PM",
+                end: "5:00 PM",
+            },
+            {
+                day: "Sunday",
+                start: "9:30 AM",
+                end: "10:00 AM",
+            },
+            {
+                day: "Sunday",
+                start: "2:30 PM",
+                end: "3:00 PM",
+                note: "Spanish",
+            },
+            {
+                day: "Sunday",
+                start: "6:00 PM",
+                end: "6:30 PM"
+            }
+        ],
+        adoration: [
+            {
+                day: "Tuesday",
+                start: "7:00 PM",
+                end: "8:00 PM",
+                note: "This is a Holy Hour",
+            },
+            {
+                day: "Wednesday",
+                start: "9:00 AM",
+                end: "10:00 AM",
+                note: "This is a Holy Hour",
+            },
+            {
+                day: "Thursday",
+                start: "9:00 AM",
+                end: "10:00 AM",
+                note: "This is a Holy Hour",
+            },
         ]
     },
     {
@@ -586,7 +1034,43 @@ export const churches = [
                 day: "Sunday",
                 time: "11:00 AM",
             },
-        ]
+        ],
+        confession: [
+            {
+                day: "Wednesday",
+                start: "6:00 PM",
+                end: "6:30 PM",
+                note: "Only for the first Wednesday of every month",
+            },
+            {
+                day: "Sunday",
+                start: "10:30 AM",
+                end: "11:00 AM",
+            },
+        ],
+    },
+    {
+        name: "Our Lady Star of the Sea",
+        address: "374 East West Rd, Pelee Island, ON N0R 1M0",
+        coordinates: [41.75576515224483, -82.6662130530946],
+        website: "https://esscatholic.ca/",
+        phone: "+15197336591",
+        confession: [
+            {
+                day: "Thursday",
+                start: "6:00 PM",
+                end: "6:30 PM",
+                note: "This is also a Holy Hour",
+            },
+        ],
+        adoration: [
+            {
+                day: "Thursday",
+                start: "6:00 PM",
+                end: "6:30 PM",
+                note: "This is a Holy Hour",
+            },
+        ],
     }
 ];
 
