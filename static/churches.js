@@ -75,7 +75,6 @@ export const churches = [
                 day: "Tuesday",
                 start: "7:30 PM",
                 end: "8:30 PM",
-                note: "Starts after weekly Mass"
             },
             {
                 day: "Wednesday",
@@ -523,7 +522,6 @@ export const churches = [
                 day: "Sunday",
                 start: "6:30 PM",
                 end: "7:15 PM",
-                note: "Starts before Mass",
             }
         ],
         adoration: [
@@ -562,11 +560,6 @@ export const churches = [
                 day: "Sunday",
                 time: "2:00 PM",
                 note: "Latin, High Mass",
-            },
-            {
-                day: "Tuesday",
-                time: "7:00 PM",
-                note: "Latin, Low Mass",
             },
         ],
     },
@@ -626,7 +619,7 @@ export const churches = [
             {
                 day: "Saturday",
                 time: "4:30 PM",
-                note: "This Mass is bilingual, both English and Italian",
+                note: "English and Italian",
             },
             {
                 day: "Sunday",
@@ -648,7 +641,6 @@ export const churches = [
                 day: "Saturday",
                 start: "3:30 PM",
                 end: "4:15 PM",
-                note: "Starts before Mass",
             },
         ],
         adoration: [
@@ -915,7 +907,6 @@ export const churches = [
                 day: "Wednesday",
                 start: "6:00 PM",
                 end: "6:30 PM",
-                note: "This and all confession times start a half-hour before Mass",
             },
             {
                 day: "Friday",
@@ -978,7 +969,6 @@ export const churches = [
                 day: "Tuesday",
                 start: "6:00 PM",
                 end: "6:30 PM",
-                note: "This and all confession times start a half-hour before Mass",
             },
             {
                 day: "Wednesday",
@@ -1017,17 +1007,19 @@ export const churches = [
                 day: "Tuesday",
                 start: "7:00 PM",
                 end: "8:00 PM",
-                note: "This and all following times are Holy Hours",
+                note: "This is a Holy Hour",
             },
             {
                 day: "Wednesday",
                 start: "9:00 AM",
                 end: "10:00 AM",
+                note: "This is a Holy Hour",
             },
             {
                 day: "Thursday",
                 start: "9:00 AM",
                 end: "10:00 AM",
+                note: "This is a Holy Hour",
             },
         ]
     },
@@ -1054,7 +1046,6 @@ export const churches = [
                 day: "Sunday",
                 start: "10:30 AM",
                 end: "11:00 AM",
-                note: "Mass follows at 11:00 AM",
             },
         ],
     },
@@ -1064,7 +1055,6 @@ export const churches = [
         coordinates: [41.75576515224483, -82.6662130530946],
         website: "https://esscatholic.ca/",
         phone: "+15197336591",
-        masses: [],
         confession: [
             {
                 day: "Thursday",
@@ -1078,7 +1068,7 @@ export const churches = [
                 day: "Thursday",
                 start: "6:00 PM",
                 end: "6:30 PM",
-                note: "Confessions are also held at the same time",
+                note: "This is a Holy Hour",
             },
         ],
     }
