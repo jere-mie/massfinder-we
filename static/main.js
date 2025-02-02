@@ -72,6 +72,19 @@ function formatUrl(url) {
 
 /**
  * 
+ * @param {string} time 
+ * @returns {string}
+ */
+function formatTime(time) {
+    const hours = time.slice(0, 2);
+    const minutes = time.slice(2);
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    const formattedHours = hours % 12 || 12;
+    return `${formattedHours}:${minutes} ${ampm}`;
+}
+
+/**
+ * 
  * @param {Church} church 
  * @returns {string}
  */
@@ -80,7 +93,7 @@ function addConfessions(church) {
         `<h2>Confession Times</h2>
                 <ul>
                 ${church.confession.map(c => `<li>
-                    ${c.day} - ${c.start} - ${c.end}
+                    ${c.day} - ${formatTime(c.start)} - ${formatTime(c.end)}
                     ${c.note ? `<ul class="sublist"><li>${c.note}</li></ul>` : ''}
                 </li>`).join('')}
             </ul>`;
@@ -96,7 +109,7 @@ function addAdorations(church) {
         `<h2>Adoration Times</h2>
         <ul>
             ${church.adoration.map(a => `<li>
-                ${a.day} - ${a.start} - ${a.end}
+                ${a.day} - ${formatTime(a.start)} - ${formatTime(a.end)}
                 ${a.note ? `<ul class="sublist"><li>${a.note}</li></ul>` : ''}
             </li>`).join('')}
         </ul>`;
@@ -112,7 +125,7 @@ function addMasses(church) {
         `<h2>Masses</h2>
         <ul>
             ${church.masses.map(m => `<li>
-                ${m.day} - ${m.time}
+                ${m.day} - ${formatTime(m.time)}
                 ${m.note ? `<ul class="sublist"><li>${m.note}</li></ul>` : ''}
             </li>`).join('')}
         </ul>`;
@@ -128,7 +141,7 @@ function addDailyMasses(church) {
         `<h2>Daily Masses</h2>
         <ul>
             ${church.daily_masses.map(m => `<li>
-                ${m.day} - ${m.time}
+                ${m.day} - ${formatTime(m.time)}
                 ${m.note ? `<ul class="sublist"><li>${m.note}</li></ul>` : ''}
             </li>`).join('')}
         </ul>`;
@@ -154,7 +167,7 @@ function createPopup(church) {
     `
 }
 // adding the markers
-for (var i = 0; i < churches.length; i++) {
+for (let i = 0; i < churches.length; i++) {
     /** @type {Church} */
     const church = churches[i];
     L.marker(church.coordinates).addTo(map).bindPopup(createPopup(church));

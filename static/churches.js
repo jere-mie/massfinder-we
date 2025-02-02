@@ -1,5 +1,5 @@
 /**
- * @type {{ name: string, address: string }[]}
+ * @type {{ name: string, address: string }[]},
  */
 export const churches = [
     {
@@ -11,35 +11,35 @@ export const churches = [
         masses: [
             {
                 day: "Saturday",
-                time: "5:00 PM",
+                time: "1700",
             },
             {
                 day: "Sunday",
-                time: "11:00 AM",
+                time: "1100",
             },
         ],
         daily_masses: [
             {
                 day: "Wednesday",
-                time: "9:00 AM",
+                time: "0900",
             },
             {
                 day: "Friday",
-                time: "9:00 AM",
+                time: "0900",
             },
         ],
         confession: [
             {
                 day: "Saturday",
-                start: "9:45 AM",
-                end: "10:30 AM",
+                start: "0945",
+                end: "1030",
             },
         ],
         adoration: [
             {
                 day: "Wednesday",
-                start: "9:30 AM",
-                end: "9:30 PM",
+                start: "0930",
+                end: "2130",
             },
         ],
     },
@@ -52,17 +52,17 @@ export const churches = [
         masses: [
             {
                 day: "Sunday",
-                time: "9:00 AM",
+                time: "0900",
             },
         ],
         daily_masses: [
             {
                 day: "Tuesday",
-                time: "5:00 PM",
+                time: "1700",
             },
             {
                 day: "Thursday",
-                time: "5:00 PM",
+                time: "1700",
             },
         ],
     },
@@ -75,37 +75,37 @@ export const churches = [
         masses: [
             {
                 day: "Sunday",
-                time: "9:45 AM",
+                time: "0945",
             },
         ],
         daily_masses: [
             {
                 day: "Tuesday",
-                time: "7:00 PM",
+                time: "1900",
             },
         ],
         confession: [
             {
                 day: "Tuesday",
-                start: "6:15 PM",
-                end: "6:45 PM",
+                start: "1815",
+                end: "1845",
             },
         ],
         adoration: [
             {
                 day: "Sunday",
-                start: "2:00 PM",
-                end: "4:00 PM",
+                start: "1400",
+                end: "1600",
             },
             {
                 day: "Tuesday",
-                start: "7:30 PM",
-                end: "8:30 PM",
+                start: "1930",
+                end: "2030",
             },
             {
                 day: "Wednesday",
-                start: "2:00 PM",
-                end: "4:00 PM",
+                start: "1400",
+                end: "1600",
             },
         ],
     },
@@ -118,35 +118,35 @@ export const churches = [
         masses: [
             {
                 day: "Saturday",
-                time: "6:00 PM",
+                time: "1800",
             },
             {
                 day: "Sunday",
-                time: "11:00 AM",
+                time: "1100",
             },
         ],
         daily_masses: [
             {
                 day: "Friday",
-                time: "9:45 AM",
+                time: "0945",
             },
             {
                 day: "Saturday",
-                time: "8:30 AM",
-            }
+                time: "0830",
+            },
         ],
         confession: [
             {
                 day: "Saturday",
-                start: "9:00 AM",
-                end: "9:30 AM",
+                start: "0900",
+                end: "0930",
             },
         ],
         adoration: [
             {
                 day: "Friday",
-                start: "8:30 AM",
-                end: "9:30 AM",
+                start: "0830",
+                end: "0930",
             },
         ],
     },
@@ -159,20 +159,20 @@ export const churches = [
         masses: [
             {
                 day: "Sunday",
-                time: "8:30 AM",
+                time: "0830",
             },
         ],
         daily_masses: [
             {
                 day: "Thursday",
-                time: "9:30 AM",
+                time: "0930",
             },
         ],
         confession: [
             {
                 day: "Thursday",
-                start: "9:00 AM",
-                end: "9:30 AM",
+                start: "0900",
+                end: "0930",
             },
         ],
     },
@@ -185,21 +185,21 @@ export const churches = [
         masses: [
             {
                 day: "Saturday",
-                time: "4:30 PM",
+                time: "1630",
             },
         ],
         daily_masses: [
             {
                 day: "Wednesday",
-                time: "9:30 AM",
+                time: "0930",
                 note: "Rosary",
             },
         ],
         confession: [
             {
                 day: "Saturday",
-                start: "3:45 PM",
-                end: "4:15 PM",
+                start: "1545",
+                end: "1615",
             },
         ],
     },
@@ -212,25 +212,25 @@ export const churches = [
         masses: [
             {
                 day: "Sunday",
-                time: "10:15 AM",
+                time: "1015",
                 note: "French",
             },
             {
                 day: "Sunday",
-                time: "12:00 PM",
+                time: "1200",
             },
         ],
         daily_masses: [
             {
                 day: "Wednesday",
-                time: "9:00 AM",
+                time: "0900",
             },
             {
                 day: "Friday",
-                time: "9:00 AM",
+                time: "0900",
                 note: "In French. Every second Friday, Mass is celebrated at Mon Augustine Caron.",
-            }
-        ]
+            },
+        ],
     },
     {
         name: "Sacred Heart",
@@ -241,33 +241,33 @@ export const churches = [
         masses: [
             {
                 day: "Sunday",
-                time: "8:30 AM",
+                time: "0830",
             },
         ],
         daily_masses: [
             {
                 day: "Thursday",
-                time: "9:00 AM",
+                time: "0900",
             },
         ],
         confession: [
             {
                 day: "Saturday",
-                start: "11:00 AM",
-                end: "11:45 AM",
-            }
+                start: "1100",
+                end: "1145",
+            },
         ],
         adoration: [
             {
                 day: "Monday",
-                start: "7:00 PM",
-                end: "8:00 PM",
+                start: "1900",
+                end: "2000",
                 note: "First Monday of every month",
             },
             {
                 day: "Wednesday",
-                start: "9:30 AM",
-                end: "10:30 AM",
+                start: "0930",
+                end: "1030",
                 note: "Third Wednesday of every month, or fourth Wednesday if there are 5 Wednesdays",
             },
         ],
@@ -281,27 +281,27 @@ export const churches = [
         masses: [
             {
                 day: "Saturday",
-                time: "4:30 PM",
+                time: "1630",
             },
         ],
         daily_masses: [
             {
                 day: "Tuesday",
-                time: "6:30 PM",
+                time: "1830",
             },
         ],
         confession: [
             {
                 day: "Tuesday",
-                start: "5:45 PM",
-                end: "6:15 PM",
-            }
+                start: "1745",
+                end: "1815",
+            },
         ],
         adoration: [
             {
                 day: "Tuesday",
-                start: "1:00 PM",
-                end: "2:00 PM",
+                start: "1300",
+                end: "1400",
                 note: "Second Tuesday of every month",
             },
         ],
@@ -315,32 +315,32 @@ export const churches = [
         masses: [
             {
                 day: "Saturday",
-                time: "5:00 PM",
+                time: "1700",
             },
             {
                 day: "Sunday",
-                time: "9:00 AM",
+                time: "0900",
             },
             {
                 day: "Sunday",
-                time: "11:00 AM",
+                time: "1100",
             },
         ],
         daily_masses: [
             {
                 day: "Tuesday",
-                time: "7:00 PM",
+                time: "1900",
             },
             {
                 day: "Thursday",
-                time: "8:30 AM",
+                time: "0830",
             },
         ],
         confession: [
             {
                 day: "Tuesday",
-                start: "7:30 PM",
-                end: "8:30 PM",
+                start: "1930",
+                end: "2030",
                 note: "This is also a Holy Hour, starts after weekday Mass",
             },
         ],
@@ -354,32 +354,32 @@ export const churches = [
         masses: [
             {
                 day: "Saturday",
-                time: "5:00 PM",
+                time: "1700",
             },
             {
                 day: "Sunday",
-                time: "9:00 AM",
+                time: "0900",
             },
             {
                 day: "Sunday",
-                time: "11:00 AM",
+                time: "1100",
             },
         ],
         daily_masses: [
             {
                 day: "Wednesday",
-                time: "8:30 AM",
+                time: "0830",
             },
             {
                 day: "Friday",
-                time: "8:30 AM",
+                time: "0830",
             },
         ],
         confession: [
             {
                 day: "Friday",
-                start: "9:00 AM",
-                end: "10:00 AM",
+                start: "0900",
+                end: "1000",
                 note: "This is also a Holy Hour, starts after weekday Mass",
             },
         ],
@@ -393,68 +393,68 @@ export const churches = [
         masses: [
             {
                 day: "Saturday",
-                time: "5:30 PM",
+                time: "1730",
                 note: "Vietnamese",
             },
             {
                 day: "Sunday",
-                time: "11:00 AM",
+                time: "1100",
                 note: "Vietnamese",
             },
         ],
         daily_masses: [
             {
                 day: "Tuesday",
-                time: "5:30 PM",
+                time: "1730",
                 note: "Vietnamese",
             },
             {
                 day: "Wednesday",
-                time: "5:30 PM",
+                time: "1730",
                 note: "Vietnamese",
             },
             {
                 day: "Thursday",
-                time: "5:30 PM",
+                time: "1730",
                 note: "Vietnamese",
             },
             {
                 day: "Friday",
-                time: "5:30 PM",
+                time: "1730",
                 note: "Vietnamese",
             },
             {
                 day: "Saturday",
-                time: "9:30 PM",
+                time: "2130",
                 note: "Vietnamese, first Saturday of the month",
             },
         ],
         confession: [
             {
                 day: "Friday",
-                start: "6:00 PM",
-                end: "6:30 PM",
+                start: "1800",
+                end: "1830",
                 note: "Starts after Mass",
             },
             {
                 day: "Sunday",
-                start: "10:45 AM",
-                end: "11:15 AM",
+                start: "1045",
+                end: "1115",
             },
         ],
         adoration: [
             {
                 day: "Friday",
-                start: "5:00 PM",
-                end: "6:00 PM",
+                start: "1700",
+                end: "1800",
             },
             {
                 day: "Sunday",
-                start: "10:30 AM",
-                end: "11:00 AM",
+                start: "1030",
+                end: "1100",
                 note: "First Sunday of the month",
-            }
-        ]
+            },
+        ],
     },
     {
         name: "Our Lady of Perpetual Help",
@@ -465,28 +465,28 @@ export const churches = [
         masses: [
             {
                 day: "Saturday",
-                time: "5:00 PM",
+                time: "1700",
             },
             {
                 day: "Sunday",
-                time: "10:30 AM",
+                time: "1030",
             },
         ],
         daily_masses: [
             {
                 day: "Tuesday",
-                time: "6:00 PM",
+                time: "1800",
             },
             {
                 day: "Thursday",
-                time: "6:00 PM",
+                time: "1800",
             },
         ],
         confession: [
             {
                 day: "Tuesday",
-                start: "5:00 PM",
-                end: "5:45 PM",
+                start: "1700",
+                end: "1745",
             },
         ],
     },
@@ -499,28 +499,28 @@ export const churches = [
         masses: [
             {
                 day: "Saturday",
-                time: "5:00 PM",
+                time: "1700",
             },
             {
                 day: "Sunday",
-                time: "12:30 PM",
+                time: "1230",
             },
         ],
         daily_masses: [
             {
                 day: "Wednesday",
-                time: "12:00 PM",
+                time: "1200",
             },
             {
                 day: "Friday",
-                time: "8:00 AM",
+                time: "0800",
             },
         ],
         confession: [
             {
                 day: "Saturday",
-                start: "2:00 PM",
-                end: "3:00 PM",
+                start: "1400",
+                end: "1500",
             },
         ],
     },
@@ -533,41 +533,41 @@ export const churches = [
         masses: [
             {
                 day: "Saturday",
-                time: "5:00 PM",
+                time: "1700",
                 note: "Croatian",
             },
             {
                 day: "Sunday",
-                time: "9:00 AM",
+                time: "0900",
             },
             {
                 day: "Sunday",
-                time: "11:00 AM",
+                time: "1100",
                 note: "Croatian",
             },
         ],
         daily_masses: [
             {
                 day: "Tuesday",
-                time: "6:00 PM",
+                time: "1800",
                 note: "Croatian",
             },
             {
                 day: "Wednesday",
-                time: "6:00 PM",
+                time: "1800",
                 note: "Croatian",
             },
             {
                 day: "Thursday",
-                time: "6:00 PM",
+                time: "1800",
                 note: "Croatian",
             },
             {
                 day: "Friday",
-                time: "6:00 PM",
+                time: "1800",
                 note: "Croatian",
             },
-        ]
+        ],
     },
     {
         name: "Holy Trinity",
@@ -578,55 +578,55 @@ export const churches = [
         masses: [
             {
                 day: "Sunday",
-                time: "9:00 AM",
+                time: "0900",
             },
             {
                 day: "Sunday",
-                time: "10:30 AM",
+                time: "1030",
                 note: "Polish",
             },
             {
                 day: "Sunday",
-                time: "12:30 PM",
+                time: "1230",
                 note: "Polish",
-            }
+            },
         ],
         daily_masses: [
             {
                 day: "Monday",
-                time: "7:00 PM",
+                time: "1900",
                 note: "Polish",
             },
             {
                 day: "Tuesday",
-                time: "7:00 PM",
+                time: "1900",
                 note: "Polish",
             },
             {
                 day: "Wednesday",
-                time: "7:00 PM",
+                time: "1900",
                 note: "Polish",
             },
             {
                 day: "Thursday",
-                time: "7:00 PM",
+                time: "1900",
                 note: "Polish",
             },
             {
                 day: "Friday",
-                time: "7:00 PM",
+                time: "1900",
                 note: "Polish",
             },
             {
                 day: "Saturday",
-                time: "8:00 AM",
+                time: "0800",
             },
         ],
         adoration: [
             {
                 day: "Friday",
-                start: "6:00 PM",
-                end: "7:00 PM",
+                start: "1800",
+                end: "1900",
                 note: "First Friday of every month, one hour before daily Mass",
             },
         ],
@@ -640,28 +640,28 @@ export const churches = [
         masses: [
             {
                 day: "Saturday",
-                time: "5:00 PM",
+                time: "1700",
             },
             {
                 day: "Sunday",
-                time: "10:00 AM",
+                time: "1000",
             },
             {
                 day: "Sunday",
-                time: "12:30 PM",
+                time: "1230",
             },
         ],
         daily_masses: [
             {
                 day: "Wednesday",
-                time: "9:30 AM",
+                time: "0930",
             },
         ],
         adoration: [
             {
                 day: "Wednesday",
-                start: "10:30 AM",
-                end: "3:00 PM",
+                start: "1030",
+                end: "1500",
             },
         ],
     },
@@ -674,36 +674,36 @@ export const churches = [
         masses: [
             {
                 day: "Satuday",
-                time: "5:00 PM",
+                time: "1700",
             },
             {
                 day: "Sunday",
-                time: "11:00 AM",
+                time: "1100",
                 note: "ASL Available",
             },
         ],
         daily_masses: [
             {
                 day: "Thursday",
-                time: "8:30 AM",
+                time: "0830",
             },
             {
                 day: "Friday",
-                time: "8:30 AM",
+                time: "0830",
             },
         ],
         confession: [
             {
                 day: "Saturday",
-                start: "11:00 AM",
-                end: "11:30 AM",
+                start: "1100",
+                end: "1130",
             },
         ],
         adoration: [
             {
                 day: "Thursday",
-                start: "10:00 AM",
-                end: "3:00 PM",
+                start: "1000",
+                end: "1500",
                 note: "Benediction starts at 3:00 after Adoration",
             },
         ],
@@ -717,24 +717,24 @@ export const churches = [
         masses: [
             {
                 day: "Saturday",
-                time: "5:00 PM",
+                time: "1700",
             },
             {
                 day: "Sunday",
-                time: "9:00 AM",
+                time: "0900",
             },
         ],
         daily_masses: [
             {
                 day: "Tuesday",
-                time: "7:00 PM",
+                time: "1900",
             },
         ],
         confession: [
             {
                 day: "Tuesday",
-                start: "6:30 PM",
-                end: "7:00 PM",
+                start: "1830",
+                end: "1900",
             },
         ],
     },
@@ -747,9 +747,9 @@ export const churches = [
         masses: [
             {
                 day: "Sunday",
-                time: "11:30 AM",
+                time: "1130",
             },
-        ]
+        ],
     },
     {
         name: "Our Lady of the Assumption",
@@ -760,71 +760,71 @@ export const churches = [
         masses: [
             {
                 day: "Sunday",
-                time: "9:00 AM",
+                time: "0900",
             },
             {
                 day: "Sunday",
-                time: "11:00 AM",
+                time: "1100",
             },
             {
                 day: "Sunday",
-                time: "7:30 PM",
-            }
+                time: "1930",
+            },
         ],
         daily_masses: [
             {
                 day: "Tuesday",
-                time: "8:00 AM",
+                time: "0800",
             },
             {
                 day: "Wednesday",
-                time: "8:00 AM",
+                time: "0800",
             },
             {
                 day: "Thursday",
-                time: "8:00 AM",
+                time: "0800",
             },
             {
                 day: "Friday",
-                time: "8:00 AM",
+                time: "0800",
             },
         ],
         confession: [
             {
                 day: "Saturday",
-                start: "11:00 AM",
-                end: "12:00 PM"
+                start: "1100",
+                end: "1200",
             },
             {
                 day: "Sunday",
-                start: "6:30 PM",
-                end: "7:15 PM",
-            }
+                start: "1830",
+                end: "1915",
+            },
         ],
         adoration: [
             {
                 day: "Tuesday",
-                start: "8:30 AM",
-                end: "9:30 AM",
+                start: "0830",
+                end: "0930",
                 note: "Rosary Chapel is open until 4:00 PM for prayers",
             },
             {
                 day: "Wednesday",
-                start: "8:30 AM",
-                end: "8:00 PM",
+                start: "0830",
+                end: "2000",
             },
             {
                 day: "Thursday",
-                start: "8:30 AM",
-                end: "9:30 AM",
+                start: "0830",
+                end: "0930",
                 note: "Rosary Chapel is open until 4:00 PM for prayers",
             },
             {
                 day: "Friday",
-                start: "8:30 AM",
-                end: "4:00 PM",
-            }
-        ]
+                start: "0830",
+                end: "1600",
+            },
+        ],
     },
     {
         name: "Holy Name of Mary / St. Benedict",
@@ -835,14 +835,14 @@ export const churches = [
         masses: [
             {
                 day: "Sunday",
-                time: "2:00 PM",
+                time: "1400",
                 note: "Latin, High Mass",
             },
         ],
         daily_masses: [
             {
                 day: "Tuesday",
-                time: "7:00 PM",
+                time: "1900",
                 note: "Latin, Low Mass",
             },
         ],
@@ -856,56 +856,56 @@ export const churches = [
         masses: [
             {
                 day: "Saturday",
-                time: "5:00 PM",
+                time: "1700",
             },
             {
                 day: "Sunday",
-                time: "12:00 PM",
+                time: "1200",
             },
             {
                 day: "Sunday",
-                time: "2:00 PM",
+                time: "1400",
                 note: "First Sunday of each month. Part of the St. Daniel community: https://stdaniel.ca/.",
             },
             {
                 day: "Sunday",
-                time: "5:30 PM",
+                time: "1730",
             },
         ],
         daily_masses: [
             {
                 day: "Wednesday",
-                time: "12:00 PM",
+                time: "1200",
             },
             {
                 day: "Thursday",
-                time: "12:00 PM",
+                time: "1200",
             },
             {
                 day: "Friday",
-                time: "12:00 PM",
+                time: "1200",
             },
         ],
         confession: [
             {
                 day: "Thursday",
-                start: "11:00 AM",
-                end: "11:45 AM",
+                start: "1100",
+                end: "1145",
             },
             {
                 day: "Saturday",
-                start: "3:45 PM",
-                end: "4:45 PM",
+                start: "1545",
+                end: "1645",
             },
         ],
         adoration: [
             {
                 day: "Thursday",
-                start: "12:30 PM",
-                end: "1:00 PM",
+                start: "1230",
+                end: "1300",
                 note: "Follows after 12:00 PM Mass",
-            }
-        ]
+            },
+        ],
     },
     {
         name: "St. Angela Merici",
@@ -916,56 +916,56 @@ export const churches = [
         masses: [
             {
                 day: "Saturday",
-                time: "4:30 PM",
+                time: "1630",
                 note: "English and Italian",
             },
             {
                 day: "Sunday",
-                time: "9:30 AM",
+                time: "0930",
                 note: "Italian",
             },
             {
                 day: "Sunday",
-                time: "11:30 AM",
+                time: "1130",
             },
         ],
         daily_masses: [
             {
                 day: "Monday",
-                time: "7:00 PM",
+                time: "1900",
             },
             {
                 day: "Tuesday",
-                time: "7:00 PM",
+                time: "1900",
             },
             {
                 day: "Wednesday",
-                time: "7:00 PM",
+                time: "1900",
                 note: "Italian",
             },
             {
                 day: "Thursday",
-                time: "7:00 PM",
+                time: "1900",
                 note: "Italian",
             },
         ],
         confession: [
             {
                 day: "Wednesday",
-                start: "6:30 PM",
-                end: "6:55 PM",
+                start: "1830",
+                end: "1855",
             },
             {
                 day: "Saturday",
-                start: "3:30 PM",
-                end: "4:15 PM",
+                start: "1530",
+                end: "1615",
             },
         ],
         adoration: [
             {
                 day: "Wednesday",
-                start: "6:00 PM",
-                end: "7:00 PM",
+                start: "1800",
+                end: "1900",
             },
         ],
     },
@@ -978,32 +978,32 @@ export const churches = [
         masses: [
             {
                 day: "Saturday",
-                time: "5:00 PM",
+                time: "1700",
             },
             {
                 day: "Sunday",
-                time: "8:30 AM",
+                time: "0830",
             },
             {
                 day: "Sunday",
-                time: "10:30 AM",
+                time: "1030",
             },
         ],
         daily_masses: [
             {
                 day: "Wednesday",
-                time: "9:00 AM",
+                time: "0900",
             },
             {
                 day: "Friday",
-                time: "9:00 AM",
+                time: "0900",
             },
         ],
         confession: [
             {
                 day: "Saturday",
-                start: "11:00 AM",
-                end: "12:00 PM",
+                start: "1100",
+                end: "1200",
                 note: "Third Saturday of every month",
             },
         ],
@@ -1017,33 +1017,33 @@ export const churches = [
         masses: [
             {
                 day: "Saturday",
-                time: "5:00 PM",
+                time: "1700",
             },
             {
                 day: "Sunday",
-                time: "9:30 AM",
+                time: "0930",
             },
             {
                 day: "Sunday",
-                time: "11:30 AM",
+                time: "1130",
                 note: "Every 3rd Sunday of the month. Part of St. Anthony of Padua Hungarian Community",
             },
         ],
         daily_masses: [
             {
                 day: "Tuesday",
-                time: "9:00 AM",
+                time: "0900",
             },
             {
                 day: "Thursday",
-                time: "9:00 AM",
+                time: "0900",
             },
         ],
         confession: [
             {
                 day: "Saturday",
-                start: "11:00 AM",
-                end: "12:00 PM",
+                start: "1100",
+                end: "1200",
                 note: "First Saturday of every month",
             },
         ],
@@ -1057,86 +1057,86 @@ export const churches = [
         masses: [
             {
                 day: "Saturday",
-                time: "4:30 PM",
+                time: "1630",
                 note: "French",
             },
             {
                 day: "Saturday",
-                time: "6:00 PM",
+                time: "1800",
             },
             {
                 day: "Sunday",
-                time: "9:30 AM",
+                time: "0930",
             },
             {
                 day: "Sunday",
-                time: "12:00 PM",
+                time: "1200",
             },
         ],
         daily_masses: [
             {
                 day: "Monday",
-                time: "8:30 AM",
+                time: "0830",
                 note: "Livestreamed",
             },
             {
                 day: "Tuesday",
-                time: "8:30 AM",
+                time: "0830",
                 note: "Livestreamed",
             },
             {
                 day: "Wednesday",
-                time: "8:30 AM",
+                time: "0830",
                 note: "Livestreamed",
             },
             {
                 day: "Thursday",
-                time: "8:30 AM",
+                time: "0830",
                 note: "Livestreamed",
             },
             {
                 day: "Friday",
-                time: "8:30 AM",
+                time: "0830",
                 note: "Livestreamed",
             },
             {
                 day: "Saturday",
-                time: "8:30 AM",
+                time: "0830",
                 note: "Livestreamed",
             },
         ],
         confession: [
             {
                 day: "Saturday",
-                start: "9:00 AM",
-                end: "10:30 AM",
-            }
+                start: "0900",
+                end: "1030",
+            },
         ],
         adoration: [
             {
                 day: "Monday",
-                start: "9:00 AM",
-                end: "10:00 AM",
+                start: "0900",
+                end: "1000",
             },
             {
                 day: "Tuesday",
-                start: "9:00 AM",
-                end: "10:00 AM",
+                start: "0900",
+                end: "1000",
             },
             {
                 day: "Wednesday",
-                start: "9:00 AM",
-                end: "10:00 AM",
+                start: "0900",
+                end: "1000",
             },
             {
                 day: "Thursday",
-                start: "9:00 AM",
-                end: "10:00 AM",
+                start: "0900",
+                end: "1000",
             },
             {
                 day: "Friday",
-                start: "9:00 AM",
-                end: "9:00 PM",
+                start: "0900",
+                end: "2100",
             },
         ],
     },
@@ -1149,46 +1149,46 @@ export const churches = [
         masses: [
             {
                 day: "Saturday",
-                time: "5:00 PM",
+                time: "1700",
             },
             {
                 day: "Sunday",
-                time: "8:30 AM",
+                time: "0830",
             },
             {
                 day: "Sunday",
-                time: "11:15 AM",
+                time: "1115",
             },
         ],
         daily_masses: [
             {
                 day: "Wednesday",
-                time: "12:15 PM",
+                time: "1215",
             },
             {
                 day: "Thursday",
-                time: "6:30 PM",
-                note: "Livestreamed"
+                time: "1830",
+                note: "Livestreamed",
             },
         ],
         confession: [
             {
                 day: "Wednesday",
-                start: "11:45 AM",
-                end: "12:15 PM",
+                start: "1145",
+                end: "1215",
             },
             {
                 day: "Thursday",
-                start: "6:00 PM",
-                end: "6:30 PM",
+                start: "1800",
+                end: "1830",
                 note: "Prior to monthly Healing Mass at 6:30 PM - 7:30 PM",
             },
         ],
         adoration: [
             {
                 day: "Every day",
-                start: "12:00 AM",
-                end: "11:59 PM",
+                start: "0000",
+                end: "2359",
                 note: "Requires access card for use after hours",
             },
         ],
@@ -1202,34 +1202,34 @@ export const churches = [
         masses: [
             {
                 day: "Sunday",
-                time: "10:00 AM",
+                time: "1000",
                 note: "French",
             },
         ],
         daily_masses: [
             {
                 day: "Tuesday",
-                time: "12:30 PM",
+                time: "1230",
                 note: "French, celebrated at Residence Richelieu third Thursday of the month",
             },
         ],
         confession: [
             {
                 day: "Saturday",
-                start: "11:00 AM",
-                end: "12:00 PM",
+                start: "1100",
+                end: "1200",
             },
         ],
         adoration: [
             {
                 day: "Saturday",
-                start: "11:00 AM",
-                end: "12:00 PM",
+                start: "1100",
+                end: "1200",
             },
             {
                 day: "Sunday",
-                start: "9:00 AM",
-                end: "9:45 AM",
+                start: "0900",
+                end: "0945",
             },
         ],
     },
@@ -1242,49 +1242,49 @@ export const churches = [
         masses: [
             {
                 day: "Saturday",
-                time: "4:30 PM",
+                time: "1630",
             },
             {
                 day: "Sunday",
-                time: "9:00 AM",
+                time: "0900",
                 note: "French, held once per month",
             },
             {
                 day: "Sunday",
-                time: "10:30 AM",
+                time: "1030",
             },
         ],
         daily_masses: [
             {
                 day: "Tuesday",
-                time: "8:30 AM",
+                time: "0830",
             },
             {
                 day: "Thursday",
-                time: "8:30 AM",
+                time: "0830",
             },
             {
                 day: "Friday",
-                time: "9:30 AM",
+                time: "0930",
             },
         ],
         confession: [
             {
                 day: "Friday",
-                start: "8:15 AM",
-                end: "9:15 AM",
+                start: "0815",
+                end: "0915",
             },
             {
                 day: "Saturday",
-                start: "3:45 PM",
-                end: "4:15 PM",
+                start: "1545",
+                end: "1615",
             },
         ],
         adoration: [
             {
                 day: "Friday",
-                start: "8:15 AM",
-                end: "9:15 AM",
+                start: "0815",
+                end: "0915",
             },
         ],
     },
@@ -1297,56 +1297,56 @@ export const churches = [
         masses: [
             {
                 day: "Saturday",
-                time: "5:00 PM",
+                time: "1700",
             },
             {
                 day: "Sunday",
-                time: "8:30 AM",
+                time: "0830",
             },
         ],
         daily_masses: [
             {
                 day: "Wednesday",
-                time: "6:30 PM",
+                time: "1830",
             },
             {
                 day: "Friday",
-                time: "9:30 AM",
+                time: "0930",
             },
         ],
         confession: [
             {
                 day: "Wednesday",
-                start: "6:00 PM",
-                end: "6:30 PM",
+                start: "1800",
+                end: "1830",
             },
             {
                 day: "Friday",
-                start: "9:00 AM",
-                end: "9:30 AM",
+                start: "0900",
+                end: "0930",
             },
             {
                 day: "Saturday",
-                start: "4:30 PM",
-                end: "5:00 PM",
+                start: "1630",
+                end: "1700",
             },
             {
                 day: "Sunday",
-                start: "8:00 AM",
-                end: "8:30 AM",
+                start: "0800",
+                end: "0830",
             },
         ],
         adoration: [
             {
                 day: "Wednesday",
-                start: "7:00 PM",
-                end: "8:00 PM",
+                start: "1900",
+                end: "2000",
                 note: "This is a Holy Hour",
             },
             {
                 day: "Friday",
-                start: "10:00 AM",
-                end: "11:00 AM",
+                start: "1000",
+                end: "1100",
                 note: "This is a Holy Hour",
             },
         ],
@@ -1360,94 +1360,94 @@ export const churches = [
         masses: [
             {
                 day: "Saturday",
-                time: "5:00 PM",
+                time: "1700",
             },
             {
                 day: "Sunday",
-                time: "10:00 AM",
+                time: "1000",
             },
             {
                 day: "Sunday",
-                time: "3:00 PM",
+                time: "1500",
                 note: "Spanish",
             },
             {
                 day: "Sunday",
-                time: "6:30 PM",
+                time: "1830",
             },
         ],
         daily_masses: [
             {
                 day: "Tuesday",
-                time: "6:30 PM",
+                time: "1830",
             },
             {
                 day: "Wednesday",
-                time: "8:30 AM",
+                time: "0830",
             },
             {
                 day: "Thursday",
-                time: "8:30 AM",
+                time: "0830",
             },
         ],
         confession: [
             {
                 day: "Tuesday",
-                start: "6:00 PM",
-                end: "6:30 PM",
+                start: "1800",
+                end: "1830",
             },
             {
                 day: "Wednesday",
-                start: "8:00 AM",
-                end: "8:30 AM",
+                start: "0800",
+                end: "0830",
             },
             {
                 day: "Thursday",
-                start: "8:00 AM",
-                end: "8:30 AM",
+                start: "0800",
+                end: "0830",
             },
             {
                 day: "Saturday",
-                start: "4:30 PM",
-                end: "5:00 PM",
+                start: "1630",
+                end: "1700",
             },
             {
                 day: "Sunday",
-                start: "9:30 AM",
-                end: "10:00 AM",
+                start: "0930",
+                end: "1000",
             },
             {
                 day: "Sunday",
-                start: "2:30 PM",
-                end: "3:00 PM",
+                start: "1430",
+                end: "1500",
                 note: "Spanish",
             },
             {
                 day: "Sunday",
-                start: "6:00 PM",
-                end: "6:30 PM"
-            }
+                start: "1800",
+                end: "1830",
+            },
         ],
         adoration: [
             {
                 day: "Tuesday",
-                start: "7:00 PM",
-                end: "8:00 PM",
+                start: "1900",
+                end: "2000",
                 note: "This is a Holy Hour",
             },
             {
                 day: "Wednesday",
-                start: "9:00 AM",
-                end: "10:00 AM",
+                start: "0900",
+                end: "1000",
                 note: "This is a Holy Hour",
             },
             {
                 day: "Thursday",
-                start: "9:00 AM",
-                end: "10:00 AM",
+                start: "0900",
+                end: "1000",
                 note: "This is a Holy Hour",
             },
-        ]
+        ],
     },
     {
         name: "Our Lady of the Most Blessed Sacrament",
@@ -1458,27 +1458,27 @@ export const churches = [
         masses: [
             {
                 day: "Sunday",
-                time: "11:00 AM",
+                time: "1100",
             },
         ],
         daily_masses: [
             {
                 day: "Wednesday",
-                time: "6:30 PM",
+                time: "1830",
                 note: "Only for the first Wednesday of every month",
             },
         ],
         confession: [
             {
                 day: "Wednesday",
-                start: "6:00 PM",
-                end: "6:30 PM",
+                start: "1800",
+                end: "1830",
                 note: "Only for the first Wednesday of every month",
             },
             {
                 day: "Sunday",
-                start: "10:30 AM",
-                end: "11:00 AM",
+                start: "1030",
+                end: "1100",
             },
         ],
     },
@@ -1491,27 +1491,27 @@ export const churches = [
         daily_masses: [
             {
                 day: "Thursday",
-                time: "6:30 PM",
+                time: "1830",
                 note: "Every other week",
             },
         ],
         confession: [
             {
                 day: "Thursday",
-                start: "6:00 PM",
-                end: "6:30 PM",
+                start: "1800",
+                end: "1830",
                 note: "Every other week, this is also a Holy Hour",
             },
         ],
         adoration: [
             {
                 day: "Thursday",
-                start: "6:00 PM",
-                end: "6:30 PM",
+                start: "1800",
+                end: "1830",
                 note: "Every other week, this is a Holy Hour",
             },
         ],
-    }
+    },
 ];
 
 const empty = {
@@ -1526,5 +1526,5 @@ const empty = {
             time: "",
             note: "",
         },
-    ]
-}
+    ],
+};
