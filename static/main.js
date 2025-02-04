@@ -182,6 +182,53 @@ document.addEventListener("DOMContentLoaded", () => {
 //
 //
 
+function sortMasses(masses) {
+    const orderOfDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    masses.sort((a, b) => {
+        const dayComparison = orderOfDays.indexOf(a.day) - orderOfDays.indexOf(b.day);
+        return dayComparison !== 0 ? dayComparison : a.time.localeCompare(b.time);
+    });
+}
+
+function sortTimeRange(elms) {
+    const orderOfDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    elms.sort((a, b) => {
+        const dayComparison = orderOfDays.indexOf(a.day) - orderOfDays.indexOf(b.day);
+        return dayComparison !== 0 ? dayComparison : a.start.localeCompare(b.start);
+    });
+}
+
+function massesToHTML(masses) {
+    let newHTML = "";
+    masses.forEach(mass => {
+        newHTML += `
+        <tr>
+            <td>${mass.name}</td>
+            <td>${mass.address}</td>
+            <td>${mass.day}</td>
+            <td>${formatTime(mass.time)}</td>
+            <td>${mass.note ? mass.note : ''}</td>
+        </tr>
+        `
+    });
+    return newHTML;
+}
+
+function timeRangeToHTML(elms) {
+    let newHTML = "";
+    elms.forEach(elm => {
+        newHTML += `
+        <tr>
+            <td>${elm.name}</td>
+            <td>${elm.address}</td>
+            <td>${elm.day}</td>
+            <td>${formatTime(elm.start)} - ${formatTime(elm.end)}</td>
+            <td>${elm.note ? elm.note : ''}</td>
+        </tr>
+        `
+    });
+    return newHTML;
+}
 
 // Add elements to the list.
 document.addEventListener("DOMContentLoaded", () => {
@@ -194,29 +241,41 @@ document.addEventListener("DOMContentLoaded", () => {
             address: church.address
         }))
     );
+
+    const dailyList = churches.flatMap(church => 
+        church.daily_masses.map(mass => ({
+            ...mass,
+            name: church.name,
+            address: church.address
+        }))
+    );
+
+    const confessionList = churches.flatMap(church => 
+        church.confession.map(confession => ({
+            ...confession,
+            name: church.name,
+            address: church.address
+        }))
+    );
+
+    const adorationList = churches.flatMap(church => 
+        church.adoration.map(adoration => ({
+            ...adoration,
+            name: church.name,
+            address: church.address
+        }))
+    );
     
     // Sort by "time" in ascending order
-    const orderOfDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-    massesList.sort((a, b) => {
-        const dayComparison = orderOfDays.indexOf(a.day) - orderOfDays.indexOf(b.day);
-        return dayComparison !== 0 ? dayComparison : a.time.localeCompare(b.time);
-    });
-    console.log(massesList);
+    sortMasses(massesList);
+    sortMasses(dailyList);
+    sortTimeRange(confessionList);
+    sortTimeRange(adorationList);
 
-    let newHTML = "";
-    massesList.forEach(mass => {
-        newHTML += `
-        <tr>
-            <td>${mass.name}</td>
-            <td>${mass.address}</td>
-            <td>${mass.day}</td>
-            <td>${formatTime(mass.time)}</td>
-            <td>${mass.note ? mass.note : ''}</td>
-        </tr>
-        `
-    });
-
-    document.getElementById('masses-body').innerHTML = newHTML;
+    document.getElementById('masses-body').innerHTML = massesToHTML(massesList);
+    document.getElementById('daily-body').innerHTML = massesToHTML(dailyList);
+    document.getElementById('confession-body').innerHTML = timeRangeToHTML(confessionList);
+    document.getElementById('adoration-body').innerHTML = timeRangeToHTML(adorationList);
 });
 
 // Add various event listeners to the buttons to toggle the map and list.
