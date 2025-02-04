@@ -83,6 +83,11 @@ function formatTime(time) {
     return `${formattedHours}:${minutes} ${ampm}`;
 }
 
+function getCurrentDay() {
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    return daysOfWeek[new Date().getDay()];
+}
+
 /**
  * 
  * @param {Church} church 
@@ -200,9 +205,10 @@ function sortTimeRange(elms) {
 
 function massesToHTML(masses) {
     let newHTML = "";
+    let day = getCurrentDay();
     masses.forEach(mass => {
         newHTML += `
-        <tr>
+        <tr class="${day === mass.day ? "today" : "other-day"}">
             <td class="text-wrap">${mass.name}</td>
             <td class="text-wrap">${mass.address}</td>
             <td class="text-nowrap">${mass.day}</td>
@@ -216,9 +222,10 @@ function massesToHTML(masses) {
 
 function timeRangeToHTML(elms) {
     let newHTML = "";
+    let day = getCurrentDay();
     elms.forEach(elm => {
         newHTML += `
-        <tr>
+        <tr class="${day === elm.day ? "today" : "other-day"}">
             <td class="text-wrap">${elm.name}</td>
             <td class="text-wrap">${elm.address}</td>
             <td class="text-nowrap">${elm.day}</td>
@@ -284,6 +291,12 @@ document.getElementById('to-map').addEventListener('touchstart', toMap);
 document.getElementById('to-list').addEventListener('click', toList);
 document.getElementById('to-list').addEventListener('touchstart', toList);
 
+// Other button listeners.
+document.getElementById('today-only').addEventListener('click', todayOnly);
+document.getElementById('today-only').addEventListener('touchstart', todayOnly);
+document.getElementById('show-all').addEventListener('click', showAll);
+document.getElementById('show-all').addEventListener('touchstart', showAll);
+
 function toMap(e) {
     document.getElementById('map').classList.remove('d-none');
     document.getElementById('list').classList.add('d-none');
@@ -292,4 +305,16 @@ function toMap(e) {
 function toList(e) {
     document.getElementById('list').classList.remove('d-none');
     document.getElementById('map').classList.add('d-none');
+}
+
+function todayOnly(e) {
+    document.querySelectorAll('.other-day').forEach(elm => {
+        elm.classList.add("d-none");
+    });
+}
+
+function showAll(e) {
+    document.querySelectorAll('.other-day').forEach(elm => {
+        elm.classList.remove("d-none");
+    });
 }
