@@ -673,7 +673,7 @@ export const churches = [
         phone: "+15199484133",
         masses: [
             {
-                day: "Satuday",
+                day: "Saturday",
                 time: "1700",
             },
             {
@@ -828,7 +828,7 @@ export const churches = [
     },
     {
         name: "Holy Name of Mary / St. Benedict",
-        address: "",
+        address: "681 McEwan Ave, Windsor, ON N9B 1H8, Canada",
         coordinates: [42.30670322593854, -83.05441174959954],
         website: "http://www.windsorlatinmass.org/",
         phone: "+15192532493",
@@ -1488,6 +1488,7 @@ export const churches = [
         coordinates: [41.75576515224483, -82.6662130530946],
         website: "https://esscatholic.ca/",
         phone: "+15197336591",
+        masses: [],
         daily_masses: [
             {
                 day: "Thursday",

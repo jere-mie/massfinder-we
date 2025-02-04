@@ -121,7 +121,7 @@ function addAdorations(church) {
  * @returns {string}
  */
 function addMasses(church) {
-    return !church.masses ? '' :
+    return church.masses.length == 0 ? '' :
         `<h2>Masses</h2>
         <ul>
             ${church.masses.map(m => `<li>
@@ -166,9 +166,71 @@ function createPopup(church) {
     </div>
     `
 }
+
 // adding the markers
-for (let i = 0; i < churches.length; i++) {
-    /** @type {Church} */
-    const church = churches[i];
-    L.marker(church.coordinates).addTo(map).bindPopup(createPopup(church));
+document.addEventListener("DOMContentLoaded", () => {
+    for (var i = 0; i < churches.length; i++) {
+        /** @type {Church} */
+        const church = churches[i];
+        L.marker(church.coordinates).addTo(map).bindPopup(createPopup(church));
+    }
+});
+
+//
+//
+// // Grid
+//
+//
+
+
+// Add elements to the list.
+document.addEventListener("DOMContentLoaded", () => {
+    let elm = document.getElementById("list");
+    
+    const massesList = churches.flatMap(church => 
+        church.masses.map(mass => ({
+            ...mass,
+            name: church.name,
+            address: church.address
+        }))
+    );
+    
+    // Sort by "time" in ascending order
+    const orderOfDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    massesList.sort((a, b) => {
+        const dayComparison = orderOfDays.indexOf(a.day) - orderOfDays.indexOf(b.day);
+        return dayComparison !== 0 ? dayComparison : a.time.localeCompare(b.time);
+    });
+    console.log(massesList);
+
+    let newHTML = "";
+    massesList.forEach(mass => {
+        newHTML += `
+        <tr>
+            <td>${mass.name}</td>
+            <td>${mass.address}</td>
+            <td>${mass.day}</td>
+            <td>${formatTime(mass.time)}</td>
+            <td>${mass.note ? mass.note : ''}</td>
+        </tr>
+        `
+    });
+
+    document.getElementById('masses-body').innerHTML = newHTML;
+});
+
+// Add various event listeners to the buttons to toggle the map and list.
+document.getElementById('to-map').addEventListener('click', toMap);
+document.getElementById('to-map').addEventListener('touchstart', toMap);
+document.getElementById('to-list').addEventListener('click', toList);
+document.getElementById('to-list').addEventListener('touchstart', toList);
+
+function toMap(e) {
+    document.getElementById('map').classList.remove('d-none');
+    document.getElementById('list').classList.add('d-none');
+}
+
+function toList(e) {
+    document.getElementById('list').classList.remove('d-none');
+    document.getElementById('map').classList.add('d-none');
 }
