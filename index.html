@@ -25,12 +25,20 @@
                 <i class="fab fa-github"></i>
             </a>
         </h1>
-        <div id="buttons">
-            <button id="to-map" type="button" class="btn btn-primary">Map</button>
-            <button id="to-list" type="button" class="btn btn-primary">List</button>
-        </div>
+        <ul class="nav nav-tabs" id="viewTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="to-map" data-bs-toggle="tab" data-bs-target="#map" type="button" role="tab">
+                    Map
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="to-list" data-bs-toggle="tab" data-bs-target="#list" type="button" role="tab">
+                    List
+                </button>
+            </li>
+        </ul>
     </div>
-    <div id="content" class="container">
+    <div id="content" class="tab-content container">
         <div id="map"></div>
         <div id="list" class="d-none">
             <div class="text-center mb-3">
