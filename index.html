@@ -34,8 +34,21 @@
         <div id="map"></div>
         <div id="list" class="d-none">
             <div class="text-center mb-3">
-                <button id="today-only" type="button" class="btn btn-secondary">Show Today</button>
-                <button id="show-all" type="button" class="btn btn-secondary">Show All</button>
+                <div class="dropdown" id="day-dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="select-day" data-bs-toggle="dropdown" aria-expanded="false">
+                        Show All
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="select-day">
+                        <li><a class="dropdown-item" href="#" data-value="Show All">Show All</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="Sunday">Sunday</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="Monday">Monday</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="Tuesday">Tuesday</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="Wednesday">Wednesday</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="Thursday">Thursday</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="Friday">Friday</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="Saturday">Saturday</a></li>
+                    </ul>
+                </div>
             </div>
             <h2 class="text-center">Mass Times</h2>
             <div class="table-responsive">

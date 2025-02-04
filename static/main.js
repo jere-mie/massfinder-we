@@ -205,10 +205,9 @@ function sortTimeRange(elms) {
 
 function massesToHTML(masses) {
     let newHTML = "";
-    let day = getCurrentDay();
     masses.forEach(mass => {
         newHTML += `
-        <tr class="${day === mass.day ? "today" : "other-day"}">
+        <tr class="list-entry ${mass.day}">
             <td class="text-wrap">${mass.name}</td>
             <td class="text-wrap">${mass.address}</td>
             <td class="text-nowrap">${mass.day}</td>
@@ -222,10 +221,9 @@ function massesToHTML(masses) {
 
 function timeRangeToHTML(elms) {
     let newHTML = "";
-    let day = getCurrentDay();
     elms.forEach(elm => {
         newHTML += `
-        <tr class="${day === elm.day ? "today" : "other-day"}">
+        <tr class="list-entry ${elm.day}">
             <td class="text-wrap">${elm.name}</td>
             <td class="text-wrap">${elm.address}</td>
             <td class="text-nowrap">${elm.day}</td>
@@ -287,15 +285,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Add various event listeners to the buttons to toggle the map and list.
 document.getElementById('to-map').addEventListener('click', toMap);
-document.getElementById('to-map').addEventListener('touchstart', toMap);
+document.getElementById('to-map').addEventListener('touchstart', toMap, { passive: true });
 document.getElementById('to-list').addEventListener('click', toList);
-document.getElementById('to-list').addEventListener('touchstart', toList);
+document.getElementById('to-list').addEventListener('touchstart', toList, { passive: true });
 
-// Other button listeners.
-document.getElementById('today-only').addEventListener('click', todayOnly);
-document.getElementById('today-only').addEventListener('touchstart', todayOnly);
-document.getElementById('show-all').addEventListener('click', showAll);
-document.getElementById('show-all').addEventListener('touchstart', showAll);
+document.querySelectorAll("#day-dropdown > ul .dropdown-item").forEach(item => {
+    item.addEventListener("click", selectDay);
+});
 
 function toMap(e) {
     document.getElementById('map').classList.remove('d-none');
@@ -307,14 +303,19 @@ function toList(e) {
     document.getElementById('map').classList.add('d-none');
 }
 
-function todayOnly(e) {
-    document.querySelectorAll('.other-day').forEach(elm => {
-        elm.classList.add("d-none");
-    });
-}
+function selectDay(e) {
+    e.preventDefault();
 
-function showAll(e) {
-    document.querySelectorAll('.other-day').forEach(elm => {
-        elm.classList.remove("d-none");
-    });
+    console.log(e);
+
+    const day = this.getAttribute("data-value");
+    document.getElementById("select-day").textContent = day;
+
+    const rows = document.querySelectorAll(".list-entry");
+    if (day === "Show All") {
+        rows.forEach(row => row.classList.remove("d-none"));
+    } else {
+        rows.forEach(row => row.classList.add("d-none"));
+        document.querySelectorAll(`.list-entry.${day}`).forEach(row => row.classList.remove("d-none"));
+    }
 }
