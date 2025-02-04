@@ -24,7 +24,9 @@ a {
 
 .leaflet-popup-content {
     margin: 0;
-    padding: 1.25rem 0.45rem 0.75rem 1rem;
+    padding: 1.25rem 0.25rem 0.75rem 1rem;
+    min-width: 25vw;
+    max-width: 40vw;
 }
 
 .churchPopup {
