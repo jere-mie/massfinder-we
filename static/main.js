@@ -203,11 +203,11 @@ function massesToHTML(masses) {
     masses.forEach(mass => {
         newHTML += `
         <tr>
-            <td>${mass.name}</td>
-            <td>${mass.address}</td>
-            <td>${mass.day}</td>
-            <td>${formatTime(mass.time)}</td>
-            <td>${mass.note ? mass.note : ''}</td>
+            <td class="text-wrap">${mass.name}</td>
+            <td class="text-wrap">${mass.address}</td>
+            <td class="text-nowrap">${mass.day}</td>
+            <td class="text-nowrap">${formatTime(mass.time)}</td>
+            <td class="text-wrap">${mass.note ? mass.note : ''}</td>
         </tr>
         `
     });
@@ -219,11 +219,11 @@ function timeRangeToHTML(elms) {
     elms.forEach(elm => {
         newHTML += `
         <tr>
-            <td>${elm.name}</td>
-            <td>${elm.address}</td>
-            <td>${elm.day}</td>
-            <td>${formatTime(elm.start)} - ${formatTime(elm.end)}</td>
-            <td>${elm.note ? elm.note : ''}</td>
+            <td class="text-wrap">${elm.name}</td>
+            <td class="text-wrap">${elm.address}</td>
+            <td class="text-nowrap">${elm.day}</td>
+            <td class="text-nowrap">${formatTime(elm.start)} - ${formatTime(elm.end)}</td>
+            <td class="text-wrap">${elm.note ? elm.note : ''}</td>
         </tr>
         `
     });
