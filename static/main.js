@@ -293,6 +293,10 @@ document.querySelectorAll("#day-dropdown > ul .dropdown-item").forEach(item => {
     item.addEventListener("click", selectDay);
 });
 
+document.querySelectorAll("#section-dropdown > ul .dropdown-item").forEach(item => {
+    item.addEventListener("click", selectSection);
+});
+
 function toMap(e) {
     document.getElementById('map').classList.remove('d-none');
     document.getElementById('list').classList.add('d-none');
@@ -306,8 +310,6 @@ function toList(e) {
 function selectDay(e) {
     e.preventDefault();
 
-    console.log(e);
-
     const day = this.getAttribute("data-value");
     document.getElementById("select-day").textContent = day;
 
@@ -317,5 +319,20 @@ function selectDay(e) {
     } else {
         rows.forEach(row => row.classList.add("d-none"));
         document.querySelectorAll(`.list-entry.${day}`).forEach(row => row.classList.remove("d-none"));
+    }
+}
+
+function selectSection(e) {
+    e.preventDefault();
+
+    const section = this.getAttribute("data-value");
+    document.getElementById("select-section").textContent = this.textContent;
+
+    const tables = document.querySelectorAll(".section-table");
+    if (section === "show-all-sections") {
+        tables.forEach(table => table.classList.remove("d-none"));
+    } else {
+        tables.forEach(table => table.classList.add("d-none"));
+        document.querySelectorAll(`.section-table.${section}`).forEach(table => table.classList.remove("d-none"));
     }
 }
