@@ -83,6 +83,10 @@ function formatTime(time) {
     return `${formattedHours}:${minutes} ${ampm}`;
 }
 
+/**
+ * 
+ * @returns {string}
+ */
 function getCurrentDay() {
     const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     return daysOfWeek[new Date().getDay()];
@@ -94,7 +98,7 @@ function getCurrentDay() {
  * @returns {string}
  */
 function addConfessions(church) {
-    return !church.confession ? '' :
+    return church.confession.length == 0 ? '' :
         `<h2>Confession Times</h2>
                 <ul>
                 ${church.confession.map(c => `<li>
@@ -110,7 +114,7 @@ function addConfessions(church) {
  * @returns {string}
  */
 function addAdorations(church) {
-    return !church.adoration ? '' :
+    return church.adoration.length == 0 ? '' :
         `<h2>Adoration Times</h2>
         <ul>
             ${church.adoration.map(a => `<li>
@@ -142,7 +146,7 @@ function addMasses(church) {
  * @returns {string}
  */
 function addDailyMasses(church) {
-    return !church.daily_masses ? '' :
+    return church.daily_masses.length == 0 ? '' :
         `<h2>Daily Masses</h2>
         <ul>
             ${church.daily_masses.map(m => `<li>
@@ -174,19 +178,14 @@ function createPopup(church) {
 
 // adding the markers
 document.addEventListener("DOMContentLoaded", () => {
-    for (var i = 0; i < churches.length; i++) {
+    for (let i = 0; i < churches.length; i++) {
         /** @type {Church} */
         const church = churches[i];
         L.marker(church.coordinates).addTo(map).bindPopup(createPopup(church));
     }
 });
 
-//
-//
-// // Grid
-//
-//
-
+// Grid
 function sortMasses(masses) {
     const orderOfDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     masses.sort((a, b) => {
@@ -314,7 +313,7 @@ function selectDay(e) {
     document.getElementById("select-day").textContent = day;
 
     const rows = document.querySelectorAll(".list-entry");
-    if (day === "Show All") {
+    if (day === "Show All Days") {
         rows.forEach(row => row.classList.remove("d-none"));
     } else {
         rows.forEach(row => row.classList.add("d-none"));
