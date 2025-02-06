@@ -65,6 +65,8 @@ export const churches = [
                 time: "1700",
             },
         ],
+        confession: [],
+        adoration: [],
     },
     {
         name: "St. Clement",
@@ -175,6 +177,7 @@ export const churches = [
                 end: "0930",
             },
         ],
+        adoration: [],
     },
     {
         name: "St. John the Evangelist",
@@ -202,6 +205,7 @@ export const churches = [
                 end: "1615",
             },
         ],
+        adoration: [],
     },
     {
         name: "St. Joseph",
@@ -231,6 +235,8 @@ export const churches = [
                 note: "In French. Every second Friday, Mass is celebrated at Mon Augustine Caron.",
             },
         ],
+        confession: [],
+        adoration: [],
     },
     {
         name: "Sacred Heart",
@@ -344,6 +350,7 @@ export const churches = [
                 note: "This is also a Holy Hour, starts after weekday Mass",
             },
         ],
+        adoration: [],
     },
     {
         name: "Corpus Christi",
@@ -383,6 +390,7 @@ export const churches = [
                 note: "This is also a Holy Hour, starts after weekday Mass",
             },
         ],
+        adoration: [],
     },
     {
         name: "St. Philip Minh & St. Anne Thanh Vietnamese Parish",
@@ -489,6 +497,7 @@ export const churches = [
                 end: "1745",
             },
         ],
+        adoration: [],
     },
     {
         name: "Immaculate Heart / St. Michael's",
@@ -523,6 +532,7 @@ export const churches = [
                 end: "1500",
             },
         ],
+        adoration: [],
     },
     {
         name: "St. Francis of Assisi",
@@ -568,6 +578,8 @@ export const churches = [
                 note: "Croatian",
             },
         ],
+        confession: [],
+        adoration: [],
     },
     {
         name: "Holy Trinity",
@@ -622,6 +634,7 @@ export const churches = [
                 time: "0800",
             },
         ],
+        confession: [],
         adoration: [
             {
                 day: "Friday",
@@ -657,6 +670,7 @@ export const churches = [
                 time: "0930",
             },
         ],
+        confession: [],
         adoration: [
             {
                 day: "Wednesday",
@@ -673,7 +687,7 @@ export const churches = [
         phone: "+15199484133",
         masses: [
             {
-                day: "Satuday",
+                day: "Saturday",
                 time: "1700",
             },
             {
@@ -737,6 +751,7 @@ export const churches = [
                 end: "1900",
             },
         ],
+        adoration: [],
     },
     {
         name: "Sts. Cyril And Methodius",
@@ -750,6 +765,9 @@ export const churches = [
                 time: "1130",
             },
         ],
+        daily_masses: [],
+        confession: [],
+        adoration: [],
     },
     {
         name: "Our Lady of the Assumption",
@@ -828,7 +846,7 @@ export const churches = [
     },
     {
         name: "Holy Name of Mary / St. Benedict",
-        address: "",
+        address: "681 McEwan Ave, Windsor, ON N9B 1H8, Canada",
         coordinates: [42.30670322593854, -83.05441174959954],
         website: "http://www.windsorlatinmass.org/",
         phone: "+15192532493",
@@ -846,6 +864,8 @@ export const churches = [
                 note: "Latin, Low Mass",
             },
         ],
+        confession: [],
+        adoration: [],
     },
     {
         name: "St. Alphonsus",
@@ -1007,6 +1027,7 @@ export const churches = [
                 note: "Third Saturday of every month",
             },
         ],
+        adoration: [],
     },
     {
         name: "St. John Vianney",
@@ -1047,6 +1068,7 @@ export const churches = [
                 note: "First Saturday of every month",
             },
         ],
+        adoration: [],
     },
     {
         name: "Ste. Anne",
@@ -1481,6 +1503,7 @@ export const churches = [
                 end: "1100",
             },
         ],
+        adoration: [],
     },
     {
         name: "Our Lady Star of the Sea",
@@ -1488,6 +1511,7 @@ export const churches = [
         coordinates: [41.75576515224483, -82.6662130530946],
         website: "https://esscatholic.ca/",
         phone: "+15197336591",
+        masses: [],
         daily_masses: [
             {
                 day: "Thursday",
@@ -1524,6 +1548,29 @@ const empty = {
         {
             day: "",
             time: "",
+            note: "",
+        },
+    ],
+    daily_masses: [
+        {
+            day: "",
+            time: "",
+            note: "",
+        },
+    ],
+    confession: [
+        {
+            day: "",
+            start: "",
+            end: "",
+            note: "",
+        },
+    ],
+    adoration: [
+        {
+            day: "",
+            start: "",
+            end: "",
             note: "",
         },
     ],

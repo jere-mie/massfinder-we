@@ -13,17 +13,140 @@
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <link rel="stylesheet" href="static/leaflet/leaflet.1.9.4.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="static/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="static/style.css" />
 </head>
 <body>
-    <h1>
-        <i class="fas fa-bible"></i>
-        Windsor-Essex County Catholic Mass List
-        <a href="https://github.com/jere-mie/massfinder-we/" target="_blank">
-            <i class="fab fa-github"></i>
-        </a>
-    </h1>
-    <div id="map"></div>
+    <div class="container text-center my-3">
+        <h1>
+            <i class="fas fa-bible"></i>
+            Windsor-Essex County Catholic Mass List
+            <a href="https://github.com/jere-mie/massfinder-we/" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+        </h1>
+        <ul class="nav nav-tabs" id="viewTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="to-map" data-bs-toggle="tab" data-bs-target="#map" type="button" role="tab">
+                    Map
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="to-list" data-bs-toggle="tab" data-bs-target="#list" type="button" role="tab">
+                    List
+                </button>
+            </li>
+        </ul>
+    </div>
+    <div id="content" class="tab-content container">
+        <div id="map"></div>
+        <div id="list" class="d-none">
+            <div class="text-center mb-3">
+                <div class="d-flex gap-2 justify-content-center">
+                    <div class="dropdown" id="day-dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="select-day" data-bs-toggle="dropdown" aria-expanded="false">
+                            Show All Days
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="select-day">
+                            <li><a class="dropdown-item" href="#" data-value="Show All Days">Show All Days</a></li>
+                            <li><a class="dropdown-item" href="#" data-value="Sunday">Sunday</a></li>
+                            <li><a class="dropdown-item" href="#" data-value="Monday">Monday</a></li>
+                            <li><a class="dropdown-item" href="#" data-value="Tuesday">Tuesday</a></li>
+                            <li><a class="dropdown-item" href="#" data-value="Wednesday">Wednesday</a></li>
+                            <li><a class="dropdown-item" href="#" data-value="Thursday">Thursday</a></li>
+                            <li><a class="dropdown-item" href="#" data-value="Friday">Friday</a></li>
+                            <li><a class="dropdown-item" href="#" data-value="Saturday">Saturday</a></li>
+                        </ul>
+                    </div>
+                    <div class="dropdown" id="section-dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="select-section" data-bs-toggle="dropdown" aria-expanded="false">
+                            Show All Sections
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="select-section">
+                            <li><a class="dropdown-item" href="#" data-value="show-all-sections">Show All Sections</a></li>
+                            <li><a class="dropdown-item" href="#" data-value="mass-times">Mass Times</a></li>
+                            <li><a class="dropdown-item" href="#" data-value="daily-masses">Daily Masses</a></li>
+                            <li><a class="dropdown-item" href="#" data-value="confession-times">Confession Times</a></li>
+                            <li><a class="dropdown-item" href="#" data-value="adoration-times">Adoration Times</a></li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            <div class="section-table mass-times">
+                <h2 class="text-center">Mass Times</h2>
+                <div class="table-responsive">
+                    <table class="table" id="masses">
+                        <thead>
+                            <tr>
+                                <th scope="col">Church</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Day</th>
+                                <th scope="col">Time</th>
+                                <th scope="col">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="masses-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="section-table daily-masses">
+                <h2 class="text-center">Daily Masses</h2>
+                <div class="table-responsive">
+                    <table class="table" id="daily">
+                        <thead>
+                            <tr>
+                                <th scope="col">Church</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Day</th>
+                                <th scope="col">Time</th>
+                                <th scope="col">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="daily-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="section-table confession-times">
+                <h2 class="text-center">Confession Times</h2>
+                <div class="table-responsive">
+                    <table class="table" id="confession">
+                        <thead>
+                            <tr>
+                                <th scope="col">Church</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Day</th>
+                                <th scope="col">Time</th>
+                                <th scope="col">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="confession-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="section-table adoration-times">
+            <h2 class="text-center">Adoration Times</h2>
+                <div class="table-responsive">
+                    <table class="table" id="adoration">
+                        <thead>
+                            <tr>
+                                <th scope="col">Church</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Day</th>
+                                <th scope="col">Time</th>
+                                <th scope="col">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adoration-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
     <script type="module" src="static/main.js"></script>
+    <script src="static/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,6 +1,16 @@
 h1 {
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 2em;
+    font-weight: bold;
+    line-height: 110%;
 }
+
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 0.83em;
+}
+
 a {
     text-decoration: none;
     color: black;
@@ -15,6 +25,8 @@ a {
 .leaflet-popup-content {
     margin: 0;
     padding: 1.25rem 0.25rem 0.75rem 1rem;
+    min-width: 25vw;
+    max-width: 40vw;
 }
 
 .churchPopup {

@@ -85,11 +85,20 @@ function formatTime(time) {
 
 /**
  * 
+ * @returns {string}
+ */
+function getCurrentDay() {
+    const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    return daysOfWeek[new Date().getDay()];
+}
+
+/**
+ * 
  * @param {Church} church 
  * @returns {string}
  */
 function addConfessions(church) {
-    return !church.confession ? '' :
+    return church.confession.length == 0 ? '' :
         `<h2>Confession Times</h2>
                 <ul>
                 ${church.confession.map(c => `<li>
@@ -105,7 +114,7 @@ function addConfessions(church) {
  * @returns {string}
  */
 function addAdorations(church) {
-    return !church.adoration ? '' :
+    return church.adoration.length == 0 ? '' :
         `<h2>Adoration Times</h2>
         <ul>
             ${church.adoration.map(a => `<li>
@@ -121,7 +130,7 @@ function addAdorations(church) {
  * @returns {string}
  */
 function addMasses(church) {
-    return !church.masses ? '' :
+    return church.masses.length == 0 ? '' :
         `<h2>Masses</h2>
         <ul>
             ${church.masses.map(m => `<li>
@@ -137,7 +146,7 @@ function addMasses(church) {
  * @returns {string}
  */
 function addDailyMasses(church) {
-    return !church.daily_masses ? '' :
+    return church.daily_masses.length == 0 ? '' :
         `<h2>Daily Masses</h2>
         <ul>
             ${church.daily_masses.map(m => `<li>
@@ -166,9 +175,163 @@ function createPopup(church) {
     </div>
     `
 }
+
 // adding the markers
-for (let i = 0; i < churches.length; i++) {
-    /** @type {Church} */
-    const church = churches[i];
-    L.marker(church.coordinates).addTo(map).bindPopup(createPopup(church));
+document.addEventListener("DOMContentLoaded", () => {
+    for (let i = 0; i < churches.length; i++) {
+        /** @type {Church} */
+        const church = churches[i];
+        L.marker(church.coordinates).addTo(map).bindPopup(createPopup(church));
+    }
+});
+
+// Grid
+function sortMasses(masses) {
+    const orderOfDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    masses.sort((a, b) => {
+        const dayComparison = orderOfDays.indexOf(a.day) - orderOfDays.indexOf(b.day);
+        return dayComparison !== 0 ? dayComparison : a.time.localeCompare(b.time);
+    });
+}
+
+function sortTimeRange(elms) {
+    const orderOfDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    elms.sort((a, b) => {
+        const dayComparison = orderOfDays.indexOf(a.day) - orderOfDays.indexOf(b.day);
+        return dayComparison !== 0 ? dayComparison : a.start.localeCompare(b.start);
+    });
+}
+
+function massesToHTML(masses) {
+    let newHTML = "";
+    masses.forEach(mass => {
+        newHTML += `
+        <tr class="list-entry ${mass.day}">
+            <td class="text-wrap">${mass.name}</td>
+            <td class="text-wrap">${mass.address}</td>
+            <td class="text-nowrap">${mass.day}</td>
+            <td class="text-nowrap">${formatTime(mass.time)}</td>
+            <td class="text-wrap">${mass.note ? mass.note : ''}</td>
+        </tr>
+        `
+    });
+    return newHTML;
+}
+
+function timeRangeToHTML(elms) {
+    let newHTML = "";
+    elms.forEach(elm => {
+        newHTML += `
+        <tr class="list-entry ${elm.day}">
+            <td class="text-wrap">${elm.name}</td>
+            <td class="text-wrap">${elm.address}</td>
+            <td class="text-nowrap">${elm.day}</td>
+            <td class="text-nowrap">${formatTime(elm.start)} - ${formatTime(elm.end)}</td>
+            <td class="text-wrap">${elm.note ? elm.note : ''}</td>
+        </tr>
+        `
+    });
+    return newHTML;
+}
+
+// Add elements to the list.
+document.addEventListener("DOMContentLoaded", () => {
+    let elm = document.getElementById("list");
+    
+    const massesList = churches.flatMap(church => 
+        church.masses.map(mass => ({
+            ...mass,
+            name: church.name,
+            address: church.address
+        }))
+    );
+
+    const dailyList = churches.flatMap(church => 
+        church.daily_masses.map(mass => ({
+            ...mass,
+            name: church.name,
+            address: church.address
+        }))
+    );
+
+    const confessionList = churches.flatMap(church => 
+        church.confession.map(confession => ({
+            ...confession,
+            name: church.name,
+            address: church.address
+        }))
+    );
+
+    const adorationList = churches.flatMap(church => 
+        church.adoration.map(adoration => ({
+            ...adoration,
+            name: church.name,
+            address: church.address
+        }))
+    );
+    
+    // Sort by "time" in ascending order
+    sortMasses(massesList);
+    sortMasses(dailyList);
+    sortTimeRange(confessionList);
+    sortTimeRange(adorationList);
+
+    document.getElementById('masses-body').innerHTML = massesToHTML(massesList);
+    document.getElementById('daily-body').innerHTML = massesToHTML(dailyList);
+    document.getElementById('confession-body').innerHTML = timeRangeToHTML(confessionList);
+    document.getElementById('adoration-body').innerHTML = timeRangeToHTML(adorationList);
+});
+
+// Add various event listeners to the buttons to toggle the map and list.
+document.getElementById('to-map').addEventListener('click', toMap);
+document.getElementById('to-map').addEventListener('touchstart', toMap, { passive: true });
+document.getElementById('to-list').addEventListener('click', toList);
+document.getElementById('to-list').addEventListener('touchstart', toList, { passive: true });
+
+document.querySelectorAll("#day-dropdown > ul .dropdown-item").forEach(item => {
+    item.addEventListener("click", selectDay);
+});
+
+document.querySelectorAll("#section-dropdown > ul .dropdown-item").forEach(item => {
+    item.addEventListener("click", selectSection);
+});
+
+function toMap(e) {
+    document.getElementById('map').classList.remove('d-none');
+    document.getElementById('list').classList.add('d-none');
+}
+
+function toList(e) {
+    document.getElementById('list').classList.remove('d-none');
+    document.getElementById('map').classList.add('d-none');
+}
+
+function selectDay(e) {
+    e.preventDefault();
+
+    const day = this.getAttribute("data-value");
+    document.getElementById("select-day").textContent = day;
+
+    const rows = document.querySelectorAll(".list-entry");
+    if (day === "Show All Days") {
+        rows.forEach(row => row.classList.remove("d-none"));
+    } else {
+        rows.forEach(row => row.classList.add("d-none"));
+        document.querySelectorAll(`.list-entry.${day}`).forEach(row => row.classList.remove("d-none"));
+    }
+}
+
+function selectSection(e) {
+    e.preventDefault();
+
+    const section = this.getAttribute("data-value");
+    document.getElementById("select-section").textContent = this.textContent;
+
+    const tables = document.querySelectorAll(".section-table");
+    if (section === "show-all-sections") {
+        tables.forEach(table => table.classList.remove("d-none"));
+    } else {
+        tables.forEach(table => table.classList.add("d-none"));
+        document.querySelectorAll(`.section-table.${section}`).forEach(table => table.classList.remove("d-none"));
+    }
 }
