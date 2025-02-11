@@ -52,6 +52,8 @@ L.control.zoom({
     position: 'bottomright'
 }).addTo(map);
 
+var markers = []; // Contains all the markers in the map.
+
 /**
  * 
  * @param {string} phoneNumber 
@@ -181,7 +183,8 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < churches.length; i++) {
         /** @type {Church} */
         const church = churches[i];
-        L.marker(church.coordinates).addTo(map).bindPopup(createPopup(church));
+        let marker = L.marker(church.coordinates).addTo(map).bindPopup(createPopup(church));
+        markers.push(marker);
     }
 });
 
