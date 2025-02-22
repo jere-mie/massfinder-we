@@ -180,13 +180,67 @@ function createPopup(church) {
 
 // adding the markers
 document.addEventListener("DOMContentLoaded", () => {
+    addMarkers(churches);
+});
+
+function addMarkers(churches) {
     for (let i = 0; i < churches.length; i++) {
         /** @type {Church} */
         const church = churches[i];
         let marker = L.marker(church.coordinates).addTo(map).bindPopup(createPopup(church));
         markers.push({church: church, marker: marker});
     }
-});
+}
+
+function clearMarkers() {
+    for (let i = 0; i < markers.length; i++) {
+        map.removeLayer(markers[i].marker);
+    }
+    markers = [];
+}
+
+function updateFilters() {
+    let filteredChurches = churches;
+    const filterType = document.getElementById("filter-type").value;
+    const filterDay = document.getElementById("filter-day").value;
+    const filterBeforeTime = document.getElementById("filter-before-time").value;
+    const filterAfterTime = document.getElementById("filter-after-time").value;
+
+    if (filterType == "masses") {
+        if (filterDay == "all") {
+            filteredChurches = filteredChurches.filter(church => {
+                const masses = church.masses.concat(church.daily_masses);
+                return masses.filter(mass => {
+                    return mass.time >= filterAfterTime && mass.time <= filterBeforeTime;
+                }).length > 0;
+            });
+        } else {
+            filteredChurches = filteredChurches.filter(church => {
+                const masses = church.masses.concat(church.daily_masses);
+                return masses.filter(mass => {
+                    return mass.day == filterDay && mass.time >= filterAfterTime && mass.time <= filterBeforeTime;
+                }).length > 0;
+            });
+        }
+    } else {
+        // 'adoration' or 'confession'
+        if (filterDay == "all") {
+            filteredChurches = filteredChurches.filter(church => {
+                return church[filterType].filter(a => {
+                    return (a.start >= filterAfterTime && a.start <= filterBeforeTime) || (a.end >= filterAfterTime && a.end <= filterBeforeTime);
+                }).length > 0;
+            });
+        } else {
+            filteredChurches = filteredChurches.filter(church => {
+                return church[filterType].filter(a => {
+                    return a.day == filterDay && ((a.start >= filterAfterTime && a.start <= filterBeforeTime) || (a.end >= filterAfterTime && a.end <= filterBeforeTime));
+                }).length > 0;
+            });
+        }
+    }
+    clearMarkers();
+    addMarkers(filteredChurches);
+}
 
 // Grid
 function sortMasses(masses) {
@@ -210,7 +264,7 @@ function massesToHTML(masses) {
     masses.forEach(mass => {
         newHTML += `
         <tr class="list-entry ${mass.day}">
-            <td class="text-wrap church-name">${mass.name}</td>
+            <td class="text-wrap"><span class="church-name btn btn-sm btn-link">${mass.name}</span></td>
             <td class="text-wrap">${mass.address}</td>
             <td class="text-nowrap">${mass.day}</td>
             <td class="text-nowrap">${formatTime(mass.time)}</td>
@@ -303,11 +357,15 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".church-name").forEach(item => {
         item.addEventListener("click", selectChurch);
     });
+
+    document.querySelectorAll(".mapfilter").forEach(item => {
+        item.addEventListener("change", updateFilters);
+    });
 });
 
 
 function toMap(e) {
-    document.getElementById('map').classList.remove('d-none');
+    document.getElementById('maptab').classList.remove('d-none');
     document.getElementById('list').classList.add('d-none');
     document.getElementById('to-map').classList.add('active');
     document.getElementById('to-list').classList.remove('active');
@@ -315,7 +373,7 @@ function toMap(e) {
 
 function toList(e) {
     document.getElementById('list').classList.remove('d-none');
-    document.getElementById('map').classList.add('d-none');
+    document.getElementById('maptab').classList.add('d-none');
     document.getElementById('to-list').classList.add('active');
     document.getElementById('to-map').classList.remove('active');
 }
