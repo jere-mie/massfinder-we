@@ -368,6 +368,11 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".mapfilter").forEach(item => {
         item.addEventListener("change", updateFilters);
     });
+
+    document.getElementById('reset-filters-btn').addEventListener('click', () => {
+        resetFilters();
+        updateFilters();
+    });
 });
 
 
