@@ -52,6 +52,8 @@ L.control.zoom({
     position: 'bottomright'
 }).addTo(map);
 
+var markers = []; // Contains all the markers in the map.
+
 /**
  * 
  * @param {string} phoneNumber 
@@ -181,7 +183,8 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < churches.length; i++) {
         /** @type {Church} */
         const church = churches[i];
-        L.marker(church.coordinates).addTo(map).bindPopup(createPopup(church));
+        let marker = L.marker(church.coordinates).addTo(map).bindPopup(createPopup(church));
+        markers.push({church: church, marker: marker});
     }
 });
 
@@ -207,7 +210,7 @@ function massesToHTML(masses) {
     masses.forEach(mass => {
         newHTML += `
         <tr class="list-entry ${mass.day}">
-            <td class="text-wrap">${mass.name}</td>
+            <td class="text-wrap church-name">${mass.name}</td>
             <td class="text-wrap">${mass.address}</td>
             <td class="text-nowrap">${mass.day}</td>
             <td class="text-nowrap">${formatTime(mass.time)}</td>
@@ -223,7 +226,7 @@ function timeRangeToHTML(elms) {
     elms.forEach(elm => {
         newHTML += `
         <tr class="list-entry ${elm.day}">
-            <td class="text-wrap">${elm.name}</td>
+            <td class="text-wrap church-name">${elm.name}</td>
             <td class="text-wrap">${elm.address}</td>
             <td class="text-nowrap">${elm.day}</td>
             <td class="text-nowrap">${formatTime(elm.start)} - ${formatTime(elm.end)}</td>
@@ -283,27 +286,38 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Add various event listeners to the buttons to toggle the map and list.
-document.getElementById('to-map').addEventListener('click', toMap);
-document.getElementById('to-map').addEventListener('touchstart', toMap, { passive: true });
-document.getElementById('to-list').addEventListener('click', toList);
-document.getElementById('to-list').addEventListener('touchstart', toList, { passive: true });
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById('to-map').addEventListener('click', toMap);
+    document.getElementById('to-map').addEventListener('touchstart', toMap, { passive: true });
+    document.getElementById('to-list').addEventListener('click', toList);
+    document.getElementById('to-list').addEventListener('touchstart', toList, { passive: true });
 
-document.querySelectorAll("#day-dropdown > ul .dropdown-item").forEach(item => {
-    item.addEventListener("click", selectDay);
+    document.querySelectorAll("#day-dropdown > ul .dropdown-item").forEach(item => {
+        item.addEventListener("click", selectDay);
+    });
+
+    document.querySelectorAll("#section-dropdown > ul .dropdown-item").forEach(item => {
+        item.addEventListener("click", selectSection);
+    });
+
+    document.querySelectorAll(".church-name").forEach(item => {
+        item.addEventListener("click", selectChurch);
+    });
 });
 
-document.querySelectorAll("#section-dropdown > ul .dropdown-item").forEach(item => {
-    item.addEventListener("click", selectSection);
-});
 
 function toMap(e) {
     document.getElementById('map').classList.remove('d-none');
     document.getElementById('list').classList.add('d-none');
+    document.getElementById('to-map').classList.add('active');
+    document.getElementById('to-list').classList.remove('active');
 }
 
 function toList(e) {
     document.getElementById('list').classList.remove('d-none');
     document.getElementById('map').classList.add('d-none');
+    document.getElementById('to-list').classList.add('active');
+    document.getElementById('to-map').classList.remove('active');
 }
 
 function selectDay(e) {
@@ -334,4 +348,13 @@ function selectSection(e) {
         tables.forEach(table => table.classList.add("d-none"));
         document.querySelectorAll(`.section-table.${section}`).forEach(table => table.classList.remove("d-none"));
     }
+}
+
+function selectChurch(e) {
+    const name = this.textContent.trim();
+    const marker = markers.find(m => m.church.name === name);
+    if (!marker) return;
+
+    toMap(e);
+    marker.marker.openPopup();
 }
