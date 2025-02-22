@@ -242,6 +242,13 @@ function updateFilters() {
     addMarkers(filteredChurches);
 }
 
+function resetFilters() {
+    document.querySelectorAll(".mapfilter").forEach(item => {
+        item.selectedIndex = 0;
+    });
+    updateFilters();
+}
+
 // Grid
 function sortMasses(masses) {
     const orderOfDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
@@ -376,6 +383,10 @@ function toList(e) {
     document.getElementById('maptab').classList.add('d-none');
     document.getElementById('to-list').classList.add('active');
     document.getElementById('to-map').classList.remove('active');
+    // reset markers
+    resetFilters();
+    clearMarkers();
+    addMarkers(churches);
 }
 
 function selectDay(e) {
