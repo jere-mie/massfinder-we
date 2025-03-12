@@ -165,7 +165,7 @@ function createPopup(church) {
     return `
     <div class="churchPopup">            
         <h1>${church.name}</h1>
-        <p><i class="fas fa-map-marker-alt"></i> ${church.address}</p>
+        <p><i class="fas fa-map-marker-alt"></i> <a href="${church.map}" target="_blank">${church.address}</a></p>
         <p><i class="fas fa-phone"></i> ${formatPhoneNumber(church.phone)}</p>
         <p><i class="fas fa-globe"></i> <a href="${church.website}" target="_blank">${formatUrl(church.website)}</a></p>
         ${addMasses(church)}
