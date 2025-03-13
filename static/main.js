@@ -33,8 +33,23 @@
  * @property {Array<Adoration>} adoration - An array of Adoration objects.
  */
 
-import { churches } from './churches.js';
+let churches = [];
 import * as L from './leaflet/leaflet-src.esm.js';
+
+fetch("/static/churches.json")
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json(); // Parse JSON
+    })
+    .then(data => {
+        churches = data;
+        addMarkers(churches);
+        populateList(churches);
+        addListEventListeners();
+    })
+    .catch(error => console.error("Error fetching Church data:", error));
 
 export const map = L.map('map', {
     zoomControl: false // disable default zoom control
@@ -178,11 +193,6 @@ function createPopup(church) {
     `
 }
 
-// adding the markers
-document.addEventListener("DOMContentLoaded", () => {
-    addMarkers(churches);
-});
-
 function addMarkers(churches) {
     for (let i = 0; i < churches.length; i++) {
         /** @type {Church} */
@@ -287,7 +297,7 @@ function timeRangeToHTML(elms) {
     elms.forEach(elm => {
         newHTML += `
         <tr class="list-entry ${elm.day}">
-            <td class="text-wrap church-name">${elm.name}</td>
+            <td class="text-wrap church-name"><span class="church-name btn btn-sm btn-link">${elm.name}</span></td>
             <td class="text-wrap">${elm.address}</td>
             <td class="text-nowrap">${elm.day}</td>
             <td class="text-nowrap">${formatTime(elm.start)} - ${formatTime(elm.end)}</td>
@@ -299,7 +309,7 @@ function timeRangeToHTML(elms) {
 }
 
 // Add elements to the list.
-document.addEventListener("DOMContentLoaded", () => {
+function populateList(churches) {
     let elm = document.getElementById("list");
     
     const massesList = churches.flatMap(church => 
@@ -344,10 +354,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('daily-body').innerHTML = massesToHTML(dailyList);
     document.getElementById('confession-body').innerHTML = timeRangeToHTML(confessionList);
     document.getElementById('adoration-body').innerHTML = timeRangeToHTML(adorationList);
-});
+}
 
 // Add various event listeners to the buttons to toggle the map and list.
-document.addEventListener("DOMContentLoaded", () => {
+function addListEventListeners() {
     document.getElementById('to-map').addEventListener('click', toMap);
     document.getElementById('to-map').addEventListener('touchstart', toMap, { passive: true });
     document.getElementById('to-list').addEventListener('click', toList);
@@ -373,7 +383,7 @@ document.addEventListener("DOMContentLoaded", () => {
         resetFilters();
         updateFilters();
     });
-});
+}
 
 
 function toMap(e) {
