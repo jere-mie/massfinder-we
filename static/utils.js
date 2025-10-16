@@ -33,7 +33,7 @@ export function formatUrl(url) {
  * formatTime("0900") // Returns: "9:00 AM"
  */
 export function formatTime(time) {
-    const hours = parseInt(time.slice(0, 2));
+    const hours = parseInt(time.slice(0, 2), 10);
     const minutes = time.slice(2);
     const ampm = hours >= 12 ? 'PM' : 'AM';
     const formattedHours = hours % 12 || 12;
