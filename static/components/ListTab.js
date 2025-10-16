@@ -25,7 +25,7 @@ function DataTable({ title, headers, rows, selectedDay, onChurchClick }) {
         <div class="mb-4">
             <h2 class="text-center">${title}</h2>
             <div class="table-responsive">
-                <table class="table" aria-label="${title} schedule">
+                <table class="table">
                     <caption class="visually-hidden">${title} for Windsor-Essex County churches</caption>
                     <thead>
                         <tr>
