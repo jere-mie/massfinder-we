@@ -817,13 +817,7 @@
                 "time": "1900"
             }
         ],
-        "confession": [
-            {
-                "day": "Tuesday",
-                "start": "1830",
-                "end": "1900"
-            }
-        ],
+        "confession": [],
         "adoration": []
     },
     {
