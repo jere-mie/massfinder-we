@@ -1050,21 +1050,11 @@
             {
                 "day": "Tuesday",
                 "time": "1900"
-            },
-            {
-                "day": "Wednesday",
-                "time": "1900",
-                "note": "Italian"
-            },
-            {
-                "day": "Thursday",
-                "time": "1900",
-                "note": "Italian"
             }
         ],
         "confession": [
             {
-                "day": "Wednesday",
+                "day": "Tuesday",
                 "start": "1830",
                 "end": "1855"
             },
