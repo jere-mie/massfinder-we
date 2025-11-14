@@ -2,7 +2,22 @@
 
 Analyzes church bulletins with LLM to identify discrepancies with churches.json database.
 
-## Quick Start
+## Quick Start (GitHub Action)
+
+The easiest way to run the scraper is via the GitHub Action:
+
+🚀 **[Run the Bulletin Scraper Action](https://github.com/jere-mie/massfinder-we/actions/workflows/scraper.yml)**
+
+1. Click the link above
+2. Click **"Run workflow"** button
+3. The action will run the full analysis and create a GitHub issue with the results
+
+**Prerequisites:**
+- `OPENROUTER_API_KEY` must be configured as a [GitHub secret](https://github.com/jere-mie/massfinder-we/settings/secrets/actions)
+
+## Local Setup (Manual)
+
+To run the scraper locally:
 
 ```bash
 # Install dependencies
@@ -30,6 +45,20 @@ python app.py --log-level DEBUG --workers 8 --output results.md
 - `--workers` - Parallel workers (default: 10)
 - `--output` - Output file (default: bulletins_analysis.md)
 - `--churches-path` - Path to churches.json (default: ../static/churches.json)
+
+## GitHub Action Workflow
+
+The **Bulletin Scraper & Analysis** action automatically:
+1. Runs the scraper with your configured API key
+2. Generates an analysis report
+3. Creates a GitHub issue titled `Sync churches.json {YYYY-MM-DD}` with the results
+4. Tags the issue with `bulletin-sync` and `automated` labels
+
+**To use:**
+- Go to [Actions → Bulletin Scraper & Analysis](https://github.com/jere-mie/massfinder-we/actions/workflows/scraper.yml)
+- Click **"Run workflow"**
+- Check the Actions tab for execution status
+- Review the created issue for analysis results
 
 ## How It Works
 
