@@ -1,4 +1,7 @@
 bulletins*.txt
+bulletins/
+*.pdf
+bulletins_analysis.md
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
