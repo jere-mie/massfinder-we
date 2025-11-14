@@ -11,6 +11,7 @@ import json
 import argparse
 from pathlib import Path
 from datetime import datetime
+from urllib.parse import quote
 
 # Import utilities
 from utils import scraping, llm
@@ -86,78 +87,89 @@ def main():
         logger.warning("No bulletins downloaded. Exiting.")
         return 0
     
-    # Step 4: Analyze each bulletin with LLM and collect results
+    # Step 4: Analyze each bulletin with LLM and collect markdown results
     logger.info("Analyzing bulletins with LLM...")
-    all_suggestions = []
+    markdown_results = {}  # Dict: bulletin_website -> {markdown, church_names, churches, pdf_link}
     
-    for website, pdf_path in downloaded:
-        # Find matching church(es) for this bulletin website
-        matching_churches = [
+    for idx, (website, pdf_link, pdf_path) in enumerate(downloaded, 1):
+        # Find ALL churches that use this bulletin website
+        churches_for_bulletin = [
             c for c in churches 
             if c.get('bulletin_website') == website
         ]
         
-        if not matching_churches:
+        if not churches_for_bulletin:
             logger.warning(f"No church found for website {website}, skipping")
             continue
         
-        # Analyze PDF
-        extracted = llm.analyze_bulletin(pdf_path, churches)
+        # Pass all churches that share this bulletin to the LLM at once
+        markdown = llm.analyze_bulletin(pdf_path, churches_for_bulletin)
         
-        if extracted:
-            # Generate suggestions for each matching church
-            for church in matching_churches:
-                suggestions = llm.compare_to_churches(extracted, church)
-                all_suggestions.append(suggestions)
-        else:
-            logger.warning(f"Failed to analyze PDF for {website}")
+        if markdown is None:
+            church_names = [c.get('name', 'Unknown') for c in churches_for_bulletin]
+            logger.warning(f"Failed to analyze PDF for churches: {', '.join(church_names)}")
+        elif markdown:  # Only add if there are differences (non-empty string)
+            church_names = [c.get('name', 'Unknown') for c in churches_for_bulletin]
+            markdown_results[website] = {
+                'markdown': markdown,
+                'church_names': church_names,
+                'churches': churches_for_bulletin,
+                'pdf_link': pdf_link
+            }
+            logger.info(f"Found differences for: {', '.join(church_names)}")
     
     # Step 5: Write results to markdown file
     try:
-        write_analysis_report(output_path, all_suggestions)
+        write_analysis_report(output_path, markdown_results)
         logger.info(f"Analysis complete. Results saved to {output_path}")
     except Exception as e:
         logger.error(f"Failed to write analysis report: {e}")
         return 1
     
-    # Cleanup: remove temporary bulletin files (optional)
-    # import shutil
-    # shutil.rmtree(bulletins_dir, ignore_errors=True)
-    # logger.debug(f"Cleaned up {bulletins_dir}")
+    # Summary
+    if markdown_results:
+        logger.info(f"Found {len(markdown_results)} bulletin(s) with differences")
+    else:
+        logger.info("No differences found across all bulletins ✓")
     
     return 0
 
 
-def write_analysis_report(output_path, suggestions):
-    """Write analysis suggestions to markdown file"""
+def write_analysis_report(output_path, markdown_results):
+    """Write markdown results to file, grouped by bulletin website"""
     logger = logging.getLogger(__name__)
     logger.info(f"Writing analysis report to {output_path}")
     
     with open(output_path, 'w', encoding='utf-8') as f:
-        f.write(f"# Bulletin Analysis Report\n\n")
+        # Write header
+        f.write("# Bulletin Analysis Report\n\n")
         f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
-        f.write(f"## Summary\n\n")
-        f.write(f"Total churches analyzed: {len(suggestions)}\n")
-        f.write(f"Churches with suggested changes: {sum(1 for s in suggestions if s['changes'])}\n\n")
         
-        f.write(f"## Detailed Suggestions\n\n")
-        
-        for suggestion in suggestions:
-            f.write(f"### {suggestion['name']}\n\n")
+        # Write summary
+        if not markdown_results:
+            f.write("## Summary\n\n")
+            f.write("✓ No differences found! All bulletins match the database.\n\n")
+        else:
+            f.write("## Summary\n\n")
+            f.write(f"Found differences in **{len(markdown_results)}** bulletin(s).\n\n")
+            f.write("## Differences Found\n\n")
             
-            if not suggestion['changes']:
-                f.write("✓ No changes suggested.\n\n")
-            else:
-                for change in suggestion['changes']:
-                    field = change['field']
-                    current = change['current']
-                    suggested = change['suggested']
-                    
-                    f.write(f"**{field}**\n\n")
-                    f.write(f"Current:\n```json\n{json.dumps(current, indent=2)}\n```\n\n")
-                    f.write(f"Suggested:\n```json\n{json.dumps(suggested, indent=2)}\n```\n\n")
+            # Group and write results by bulletin website
+            for website, result in markdown_results.items():
+                markdown = result['markdown']
+                pdf_link = result.get('pdf_link', website)  # Fall back to website if pdf_link missing
+                # URL-encode the link to handle spaces and special characters
+                encoded_link = quote(pdf_link, safe=':/?#[]@!$&\'()*+,;=')
+                
+                # Write bulletin link as main header
+                f.write(f"## [Bulletin]({encoded_link})\n\n")
+                
+                # Write the markdown table(s) which include church names as headers
+                f.write(markdown)
+                f.write("\n\n")
         
-        f.write(f"---\n\nEnd of report.\n")
+        # Write footer
+        f.write("*End of report.*\n")
 
 
 if __name__ == '__main__':

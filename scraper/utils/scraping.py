@@ -154,7 +154,7 @@ def download_pdf(pdf_url, output_path):
 def download_all_pdfs(website_cache, output_dir):
     """
     Download all PDFs from the website cache.
-    Returns a list of (website, pdf_path) tuples for successful downloads.
+    Returns a list of (website, pdf_link, pdf_path) tuples for successful downloads.
     """
     logger.info("Downloading bulletins...")
     
@@ -168,7 +168,7 @@ def download_all_pdfs(website_cache, output_dir):
         
         output_path = os.path.join(output_dir, f'bulletin_{idx}.pdf')
         if download_pdf(pdf_link, output_path):
-            downloaded.append((website, output_path))
+            downloaded.append((website, pdf_link, output_path))
     
     logger.info(f"Downloaded {len(downloaded)} bulletins")
     return downloaded

@@ -1,5 +1,6 @@
 """
 LLM interaction utilities for analyzing church bulletins.
+Compares bulletin PDFs to existing church JSON data and returns markdown.
 """
 
 import base64
@@ -22,36 +23,66 @@ PREFERRED_MODEL = 'google/gemini-2.5-flash-lite-preview-09-2025'
 FALLBACK_MODEL = 'google/gemini-2.5-flash-lite'
 
 
-def analyze_bulletin(pdf_path, churches_json_data):
+def analyze_bulletin(pdf_path, churches_data):
     """
-    Send a bulletin PDF to the LLM for analysis.
-    Returns the LLM's extracted data as a dictionary.
+    Send a bulletin PDF to the LLM and ask it to compare against existing church data.
+    Returns markdown with any differences found, or empty string if no differences.
+    
+    Args:
+        pdf_path: Path to the bulletin PDF file
+        churches_data: Either a single church dict or a list of church dicts that share this bulletin
+    
+    Returns:
+        Markdown string with differences (empty if no differences), or None on error
     """
     if not os.path.exists(pdf_path):
         logger.error(f"PDF not found: {pdf_path}")
         return None
+    
+    # Ensure we have a list
+    if isinstance(churches_data, dict):
+        churches_list = [churches_data]
+    else:
+        churches_list = churches_data
+    
+    church_names = ', '.join([c.get('name', 'Unknown') for c in churches_list])
     
     try:
         # Encode PDF as base64
         with open(pdf_path, 'rb') as f:
             pdf_base64 = base64.b64encode(f.read()).decode('utf-8')
         
-        logger.info(f"Analyzing {os.path.basename(pdf_path)} with LLM")
+        # Create data URL for OpenRouter
+        data_url = f"data:application/pdf;base64,{pdf_base64}"
         
-        # Prepare prompt
-        prompt = f"""You are analyzing a Catholic church bulletin PDF. 
+        logger.info(f"Analyzing {os.path.basename(pdf_path)} for: {church_names}")
         
-Extract the following information and return ONLY a valid JSON object (no other text):
-- mass_times: Array of objects with 'day' and 'time' fields
-- confession_times: Array of objects with 'day', 'start_time', 'end_time', and optional 'note' fields
-- adoration_times: Array of objects with 'day', 'start_time', 'end_time' fields
+        # Prepare the comparison prompt
+        prompt = f"""ONLY OUTPUT FINAL TABLES. NO EXPLANATIONS. NO PREAMBLE.
 
-Here is the current church data from our database for reference:
-{json.dumps(churches_json_data, indent=2)}
+Database:
+{json.dumps(churches_list, indent=2)}
 
-Return ONLY valid JSON, no markdown, no code blocks.
-Example format:
-{{"mass_times": [{{"day": "Sunday", "time": "0900"}}], "confession_times": [], "adoration_times": []}}"""
+Compare PDF to database. Output ONLY:
+
+"NO DIFFERENCES" if all times match exactly.
+
+OR table format with ONLY actual differences:
+
+### Church Name
+
+| Field | Bulletin | Database | Page | Note |
+|-------|----------|----------|------|------|
+| Saturday Mass | 1700 | 1730 | 1 | Optional |
+
+RULES:
+- Only include rows where Bulletin value DIFFERS from Database value
+- Do NOT include rows where both are empty/missing
+- Do NOT include rows where both match
+- Convert all times to 24-hour format
+- Be concise in Note field
+- Page number required
+- No text before or after tables"""
 
         # Call OpenRouter API
         headers = {
@@ -72,13 +103,18 @@ Example format:
                         {
                             'type': 'file',
                             'file': {
-                                "filename": "bulletins_merged.pdf",
-                                "file_data": pdf_base64
+                                'filename': 'bulletin.pdf',
+                                'file_data': data_url
                             }
                         }
                     ]
                 }
             ],
+              "reasoning": {
+                "max_tokens": 3000,
+                "exclude": True,
+                "enabled": True
+            }
         }
         
         response = requests.post(OPENROUTER_API_URL, json=payload, headers=headers, timeout=120)
@@ -88,99 +124,25 @@ Example format:
         
         # Extract response content
         if 'choices' in result and len(result['choices']) > 0:
-            content = result['choices'][0]['message']['content']
+            content = result['choices'][0]['message']['content'].strip()
             
-            # Parse JSON from response
-            try:
-                extracted = json.loads(content)
-                logger.debug(f"✓ Successfully extracted data from {os.path.basename(pdf_path)}")
-                return extracted
-            except json.JSONDecodeError:
-                # Try to extract JSON from the content
-                logger.warning(f"Failed to parse JSON response, attempting recovery")
-                extracted = extract_json_from_text(content)
-                if extracted:
-                    return extracted
-                return None
+            logger.debug(f"LLM Raw Response:\n{content}")
+            
+            # Check if no differences
+            if content == "NO DIFFERENCES":
+                logger.debug(f"✓ No differences found for: {church_names}")
+                return ""  # Return empty string for no differences
+            
+            # Return the markdown response
+            logger.info(f"✓ Found differences for: {church_names}")
+            return content
         else:
-            logger.error("No response from LLM")
+            logger.error(f"No response from LLM for: {church_names}")
             return None
     
     except requests.exceptions.RequestException as e:
-        logger.error(f"API request failed: {str(e)[:100]}")
+        logger.error(f"API request failed for {church_names}: {str(e)[:100]}")
         return None
     except Exception as e:
-        logger.error(f"Error analyzing bulletin: {str(e)[:100]}")
+        logger.error(f"Error analyzing bulletin for {church_names}: {str(e)[:100]}")
         return None
-
-
-def extract_json_from_text(text):
-    """
-    Attempt to extract JSON object from text response.
-    Handles cases where LLM wraps JSON in markdown code blocks.
-    """
-    # Remove markdown code blocks if present
-    if '```json' in text:
-        text = text.split('```json')[1].split('```')[0]
-    elif '```' in text:
-        text = text.split('```')[1].split('```')[0]
-    
-    text = text.strip()
-    
-    try:
-        return json.loads(text)
-    except json.JSONDecodeError:
-        logger.warning("Could not extract JSON from LLM response")
-        return None
-
-
-def compare_to_churches(extracted_data, original_church_data):
-    """
-    Compare extracted data from bulletin to original church data.
-    Returns a dict with suggested updates.
-    """
-    suggestions = {
-        'name': original_church_data.get('name', 'Unknown'),
-        'changes': []
-    }
-    
-    if not extracted_data:
-        return suggestions
-    
-    # Check mass times
-    if 'mass_times' in extracted_data:
-        original_masses = original_church_data.get('masses', [])
-        extracted_masses = extracted_data.get('mass_times', [])
-        
-        if extracted_masses != original_masses:
-            suggestions['changes'].append({
-                'field': 'masses',
-                'current': original_masses,
-                'suggested': extracted_masses
-            })
-    
-    # Check confession times
-    if 'confession_times' in extracted_data:
-        original_confession = original_church_data.get('confession', [])
-        extracted_confession = extracted_data.get('confession_times', [])
-        
-        if extracted_confession != original_confession:
-            suggestions['changes'].append({
-                'field': 'confession',
-                'current': original_confession,
-                'suggested': extracted_confession
-            })
-    
-    # Check adoration times
-    if 'adoration_times' in extracted_data:
-        original_adoration = original_church_data.get('adoration', [])
-        extracted_adoration = extracted_data.get('adoration_times', [])
-        
-        if extracted_adoration != original_adoration:
-            suggestions['changes'].append({
-                'field': 'adoration',
-                'current': original_adoration,
-                'suggested': extracted_adoration
-            })
-    
-    return suggestions
