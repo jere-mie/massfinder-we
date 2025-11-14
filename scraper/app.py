@@ -12,10 +12,32 @@ import argparse
 from pathlib import Path
 from datetime import datetime
 from urllib.parse import quote
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Import utilities
 from utils import scraping, llm
 from utils.logging_config import setup_logging
+
+
+def analyze_bulletin_task(website, pdf_link, pdf_path, churches_for_bulletin):
+    """
+    Helper function to analyze a single bulletin.
+    Returns (website, pdf_link, markdown, church_names, churches) tuple.
+    """
+    logger = logging.getLogger(__name__)
+    
+    # Pass all churches that share this bulletin to the LLM at once
+    markdown = llm.analyze_bulletin(pdf_path, churches_for_bulletin)
+    church_names = [c.get('name', 'Unknown') for c in churches_for_bulletin]
+    
+    if markdown is None:
+        logger.warning(f"Failed to analyze PDF for churches: {', '.join(church_names)}")
+        return (website, pdf_link, None, church_names, churches_for_bulletin)
+    elif markdown:  # Only return if there are differences
+        logger.info(f"Found differences for: {', '.join(church_names)}")
+        return (website, pdf_link, markdown, church_names, churches_for_bulletin)
+    else:
+        return (website, pdf_link, None, church_names, churches_for_bulletin)
 
 
 def main():
@@ -38,6 +60,12 @@ def main():
         '--churches-path',
         default='../static/churches.json',
         help='Path to churches.json (default: ../static/churches.json)'
+    )
+    parser.add_argument(
+        '--workers',
+        type=int,
+        default=10,
+        help='Number of parallel workers for LLM analysis (default: 10)'
     )
     
     args = parser.parse_args()
@@ -87,11 +115,13 @@ def main():
         logger.warning("No bulletins downloaded. Exiting.")
         return 0
     
-    # Step 4: Analyze each bulletin with LLM and collect markdown results
-    logger.info("Analyzing bulletins with LLM...")
+    # Step 4: Analyze each bulletin with LLM in parallel
+    logger.info(f"Analyzing {len(downloaded)} bulletin(s) with LLM (using {args.workers} workers)...")
     markdown_results = {}  # Dict: bulletin_website -> {markdown, church_names, churches, pdf_link}
     
-    for idx, (website, pdf_link, pdf_path) in enumerate(downloaded, 1):
+    # Prepare analysis tasks
+    tasks = []
+    for website, pdf_link, pdf_path in downloaded:
         # Find ALL churches that use this bulletin website
         churches_for_bulletin = [
             c for c in churches 
@@ -102,21 +132,31 @@ def main():
             logger.warning(f"No church found for website {website}, skipping")
             continue
         
-        # Pass all churches that share this bulletin to the LLM at once
-        markdown = llm.analyze_bulletin(pdf_path, churches_for_bulletin)
+        tasks.append((website, pdf_link, pdf_path, churches_for_bulletin))
+    
+    # Execute analysis tasks in parallel
+    with ThreadPoolExecutor(max_workers=args.workers) as executor:
+        # Submit all tasks
+        futures = {
+            executor.submit(analyze_bulletin_task, website, pdf_link, pdf_path, churches_for_bulletin): (website, pdf_link, churches_for_bulletin)
+            for website, pdf_link, pdf_path, churches_for_bulletin in tasks
+        }
         
-        if markdown is None:
-            church_names = [c.get('name', 'Unknown') for c in churches_for_bulletin]
-            logger.warning(f"Failed to analyze PDF for churches: {', '.join(church_names)}")
-        elif markdown:  # Only add if there are differences (non-empty string)
-            church_names = [c.get('name', 'Unknown') for c in churches_for_bulletin]
-            markdown_results[website] = {
-                'markdown': markdown,
-                'church_names': church_names,
-                'churches': churches_for_bulletin,
-                'pdf_link': pdf_link
-            }
-            logger.info(f"Found differences for: {', '.join(church_names)}")
+        # Process results as they complete
+        for future in as_completed(futures):
+            try:
+                website, pdf_link, markdown, church_names, churches_for_bulletin = future.result()
+                
+                if markdown:  # Only add if there are differences
+                    markdown_results[website] = {
+                        'markdown': markdown,
+                        'church_names': church_names,
+                        'churches': churches_for_bulletin,
+                        'pdf_link': pdf_link
+                    }
+            except Exception as e:
+                logger.error(f"Task failed: {e}")
+                continue
     
     # Step 5: Write results to markdown file
     try:

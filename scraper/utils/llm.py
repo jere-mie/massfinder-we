@@ -79,7 +79,7 @@ RULES:
 - Only include rows where Bulletin value DIFFERS from Database value
 - Do NOT include rows where both are empty/missing
 - Do NOT include rows where both match
-- Convert all times to 24-hour format
+- ALWAYS convert all times to 4-digit 24-hour format (e.g., 5:30 PM -> 1730, 9:45 AM -> 0945)
 - Be concise in Note field
 - Page number required
 - No text before or after tables"""
