@@ -33,8 +33,7 @@ def analyze_bulletin_task(website, pdf_link, pdf_path, churches_for_bulletin):
     if markdown is None:
         logger.warning(f"Failed to analyze PDF for churches: {', '.join(church_names)}")
         return (website, pdf_link, None, church_names, churches_for_bulletin)
-    elif markdown:  # Only return if there are differences
-        logger.info(f"Found differences for: {', '.join(church_names)}")
+    elif markdown:
         return (website, pdf_link, markdown, church_names, churches_for_bulletin)
     else:
         return (website, pdf_link, None, church_names, churches_for_bulletin)

@@ -1,170 +1,139 @@
 # Bulletin Analysis Application
 
-Automates the process of scraping church bulletin websites, downloading PDFs, and analyzing them with LLM to identify discrepancies with the churches.json database.
+Analyzes church bulletins with LLM to identify discrepancies with churches.json database.
 
-## Architecture
+## Quick Start
 
-```
-app.py              - Main orchestrator
-├── utils/scraping.py    - Website scraping and PDF downloading
-├── utils/llm.py         - LLM interaction for bulletin analysis
-└── churches.json        - Church database (from ../static/)
-```
-
-## Setup
-
-1. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-2. **Configure API key:**
-   Create a `.env` file in the scraper directory:
-   ```
-   OPENROUTER_API_KEY=your_api_key_here
-   ```
-
-## Usage
-
-**Basic run:**
 ```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Create .env file with API key
+echo "OPENROUTER_API_KEY=your_key_here" > .env
+
+# Run analysis
 python app.py
 ```
 
-**Advanced options:**
+## Usage
+
 ```bash
-# Set log level
-python app.py --log-level DEBUG
+# Basic
+python app.py
 
-# Custom output file
-python app.py --output my_report.md
-
-# Custom churches.json path
-python app.py --churches-path /path/to/churches.json
+# With options
+python app.py --log-level DEBUG --workers 8 --output results.md
 ```
+
+**Options:**
+- `--log-level` - DEBUG, INFO (default), WARNING, ERROR
+- `--workers` - Parallel workers (default: 10)
+- `--output` - Output file (default: bulletins_analysis.md)
+- `--churches-path` - Path to churches.json (default: ../static/churches.json)
 
 ## How It Works
 
-### 1. **Load Churches Data**
-   - Loads the master churches.json database
-   - Tracks all churches with bulletin_website field
-
-### 2. **Scrape Bulletin Links**
-   - Visits each unique bulletin_website URL
-   - Extracts all PDF links from the page
-   - **Prefers:** parishbulletins.com and files.ecatholic.com domains
-   - **Retry Logic:** Up to 5 attempts with exponential backoff (1, 2, 4, 8, 16 seconds)
-   - **Caching:** Avoids re-scraping the same website (10-15 actual scrapes for 34 churches)
-   - **Bot Detection Bypass:** Uses cloudscraper to bypass Cloudflare
-
-### 3. **Download PDFs**
-   - Downloads each PDF to a temporary directory (`bulletins/`)
-   - Handles download failures gracefully
-   - Preserves directory structure for analysis
-
-### 4. **LLM Analysis**
-   - Sends each PDF to OpenRouter API (Google Gemini 2.5 Flash by default)
-   - Extracts:
-     - Mass times (day + time)
-     - Confession times (day + start/end)
-     - Adoration times (day + start/end)
-   - Compares extracted data to churches.json
-   - Identifies discrepancies
-
-### 5. **Generate Report**
-   - Creates markdown file with all suggestions
-   - Groups by church
-   - Shows current vs. suggested data in JSON format
-   - Ready for manual review before updating churches.json
+1. **Load churches.json** - Master database with `bulletin_website` field
+2. **Scrape bulletin links** - Extracts PDFs from websites (cached, Cloudflare-safe)
+3. **Download PDFs** - Saves to `bulletins/` directory
+4. **Analyze with LLM** - Google Gemini 2.5 Flash Lite compares PDF vs. database (parallel)
+5. **Generate report** - Markdown output with differences grouped by bulletin
 
 ## Output
 
-**File:** `bulletins_analysis.md`
+Creates `bulletins_analysis.md` with:
+- Summary of differences found
+- Results grouped by bulletin website
+- Side-by-side comparison tables (Bulletin | Database)
+- Page references and notes
 
-Contains:
-- Summary statistics
-- Per-church analysis with suggested changes
-- Current data vs. extracted data comparison
-- Organized in JSON format for easy parsing
+Example:
+```markdown
+## [Bulletin](https://example.com/bulletin.pdf)
+
+### St. John
+| Field | Bulletin | Database | Page |
+|---|---|---|---|
+| Tuesday Mass | 1800 | 1700 | 1 |
+```
 
 ## Data Format
 
-### Input (churches.json)
+churches.json required fields:
 ```json
 {
-  "name": "St. John the Baptist",
+  "name": "Church Name",
+  "bulletin_website": "https://...",
   "masses": [{"day": "Sunday", "time": "0900"}],
   "confession": [{"day": "Saturday", "start": "0945", "end": "1030"}],
   "adoration": [{"day": "Wednesday", "start": "0930", "end": "2130"}]
 }
 ```
 
-### Time Format
-- Always 24-hour format: `"HHMM"` (e.g., `"1830"` for 6:30 PM)
+Times: 24-hour format `"HHMM"` (e.g., `"1830"` = 6:30 PM)
+
+## Configuration
+
+**Environment Variable:**
+```
+OPENROUTER_API_KEY=your_api_key_here
+```
+
+**LLM Models** (in `utils/llm.py`):
+```python
+PREFERRED_MODEL = 'google/gemini-2.5-flash-lite-preview-09-2025'
+FALLBACK_MODEL = 'google/gemini-2.5-flash-lite'
+```
 
 ## Features
 
-- **Robust Error Handling:** Retry logic with exponential backoff
-- **Performance:** Caching prevents re-scraping, processes multiple churches from same site efficiently
-- **Bot Detection:** Cloudscraper automatically bypasses Cloudflare protection
-- **Logging:** Configurable logging (DEBUG, INFO, WARNING, ERROR)
-- **LLM Integration:** Uses OpenRouter for flexible model selection
-- **Clean Architecture:** Modular separation of concerns (scraping, LLM, orchestration)
+- **Parallel LLM Analysis** - ThreadPoolExecutor with configurable workers
+- **Intelligent Caching** - Avoids re-scraping bulletin websites
+- **Cloudflare Bypass** - Automatic bot detection handling
+- **Retry Logic** - Exponential backoff (1, 2, 4, 8, 16 sec, max 5 attempts)
+- **Colored Logging** - Emoji indicators (🔍 DEBUG, ✓ INFO, ⚠ WARNING, ✗ ERROR)
 
-## Logging
+## Performance
 
-Control logging verbosity with `--log-level`:
-- `DEBUG` - Detailed execution information
-- `INFO` - Normal operation (default)
-- `WARNING` - Only warnings and errors
-- `ERROR` - Only errors
+Typical runtime for 34+ churches:
+- Scraping: ~14 seconds (heavy caching)
+- Downloading: ~10 seconds
+- LLM Analysis: ~38 seconds (10 workers)
+- Report Generation: <1 second
+- **Total: ~1 minute**
 
-Example:
-```bash
-python app.py --log-level DEBUG
-```
-
-## API Keys
-
-Uses OpenRouter.ai API. Get a free account at https://openrouter.ai
-
-**Required:** `OPENROUTER_API_KEY` in `.env` file
-
-**Models used:**
-- Primary: Google Gemini 2.5 Flash (fast, accurate, low cost)
-- Fallback: OpenAI GPT-4 Turbo (if primary unavailable)
+Analysis is highly parallelizable - more workers significantly reduce LLM analysis time.
 
 ## Troubleshooting
 
-### "403 Forbidden" errors
-- These are automatically handled by cloudscraper
-- If still occurring, check that cloudscraper is properly installed
+| Issue | Solution |
+|-------|----------|
+| 403 Forbidden | Automatic with cloudscraper, check internet |
+| PDF link not found | Verify `bulletin_website` URL manually |
+| LLM errors | Check API key in `.env` and quota at openrouter.ai |
+| Slow | Increase `--workers` value |
+| Debug | Use `--log-level DEBUG` |
 
-### "PDF link not found"
-- Some websites may have PDFs in non-standard locations
-- Check the website manually and add link to bulletin_website field if needed
+## Architecture
 
-### LLM API errors
-- Verify OPENROUTER_API_KEY is set correctly in .env
-- Check your API quota at https://openrouter.ai/account/usage
+```
+app.py              - Main orchestrator
+├── utils/scraping.py    - Scraping, downloading, caching
+├── utils/llm.py         - LLM API interaction
+└── utils/logging_config.py - Colored logging
+```
 
-### No output file generated
-- Ensure bulletins_analysis.md is writable
-- Check disk space availability
-- Review logs for specific errors
+## Dependencies
 
-## Performance Notes
+- `requests` - HTTP requests
+- `beautifulsoup4` - HTML parsing
+- `cloudscraper` - Cloudflare bypass
+- `python-dotenv` - Environment variables
 
-- **Scraping Time:** ~1-2 minutes (10-15 actual scrapes due to caching)
-- **PDF Downloads:** 2-5 minutes (depends on file sizes)
-- **LLM Analysis:** 1-3 minutes (depends on PDF complexity)
-- **Total Runtime:** ~5-10 minutes
+See `requirements.txt` for versions.
 
-## Future Enhancements
+## API
 
-- [ ] Batch LLM requests for faster processing
-- [ ] Store analysis results in database
-- [ ] Automated updates to churches.json
-- [ ] Email notifications for significant changes
-- [ ] Web UI for reviewing changes
-- [ ] Version control for churches.json changes
+Uses [OpenRouter.ai](https://openrouter.ai) - free account available.
+
+**Cost:** ~$0.01-0.02 USD per run (34 churches)

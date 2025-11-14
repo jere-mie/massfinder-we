@@ -130,7 +130,7 @@ RULES:
             
             # Check if no differences
             if content == "NO DIFFERENCES":
-                logger.debug(f"✓ No differences found for: {church_names}")
+                logger.info(f"✓ No differences found for: {church_names}")
                 return ""  # Return empty string for no differences
             
             # Return the markdown response
