@@ -113,7 +113,8 @@
             },
             {
                 "day": "Tuesday",
-                "start": "1800"
+                "start": "1800",
+                "end": "1900"
             },
             {
                 "day": "Wednesday",
@@ -163,7 +164,8 @@
         "adoration": [
             {
                 "day": "Friday",
-                "start": "0830"
+                "start": "0830",
+                "end": "0930"
             }
         ]
     },
@@ -193,7 +195,8 @@
         "confession": [
             {
                 "day": "Thursday",
-                "start": "0900"
+                "start": "0900",
+                "end": "0930"
             }
         ],
         "adoration": []
@@ -225,7 +228,8 @@
         "confession": [
             {
                 "day": "Wednesday",
-                "start": "0900"
+                "start": "0900",
+                "end": "0930"
             },
             {
                 "day": "Saturday",
@@ -273,6 +277,7 @@
             {
                 "day": "Wednesday",
                 "start": "0930",
+                "end": "1030",
                 "note": "Third Wednesday of every month"
             }
         ]
@@ -805,7 +810,8 @@
         "confession": [
             {
                 "day": "Saturday",
-                "start": "1100"
+                "start": "1100",
+                "end": "1130"
             }
         ],
         "adoration": [
