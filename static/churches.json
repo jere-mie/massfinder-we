@@ -65,11 +65,11 @@
         "daily_masses": [
             {
                 "day": "Tuesday",
-                "time": "1700"
+                "time": "1800"
             },
             {
                 "day": "Thursday",
-                "time": "1700"
+                "time": "0900"
             }
         ],
         "confession": [],
@@ -113,8 +113,7 @@
             },
             {
                 "day": "Tuesday",
-                "start": "1930",
-                "end": "2030"
+                "start": "1800"
             },
             {
                 "day": "Wednesday",
@@ -164,8 +163,7 @@
         "adoration": [
             {
                 "day": "Friday",
-                "start": "0830",
-                "end": "0930"
+                "start": "0830"
             }
         ]
     },
@@ -195,8 +193,7 @@
         "confession": [
             {
                 "day": "Thursday",
-                "start": "0900",
-                "end": "0930"
+                "start": "0900"
             }
         ],
         "adoration": []
@@ -226,6 +223,10 @@
             }
         ],
         "confession": [
+            {
+                "day": "Wednesday",
+                "start": "0900"
+            },
             {
                 "day": "Saturday",
                 "start": "1545",
@@ -263,12 +264,18 @@
             },
             {
                 "day": "Friday",
-                "time": "0900",
+                "time": "0930",
                 "note": "In French. Every second Friday, Mass is celebrated at Mon Augustine Caron."
             }
         ],
         "confession": [],
-        "adoration": []
+        "adoration": [
+            {
+                "day": "Wednesday",
+                "start": "0930",
+                "note": "Third Wednesday of every month"
+            }
+        ]
     },
     {
         "name": "Sacred Heart",
@@ -559,7 +566,13 @@
                 "end": "1745"
             }
         ],
-        "adoration": []
+        "adoration": [
+            {
+                "day": "Tuesday",
+                "start": "1700",
+                "end": "1750"
+            }
+        ]
     },
     {
         "name": "Immaculate Heart / St. Michael's",
@@ -717,7 +730,7 @@
                 "day": "Friday",
                 "start": "1800",
                 "end": "1900",
-                "note": "First Friday of every month, one hour before daily Mass"
+                "note": "First Friday only, one hour before daily Mass"
             }
         ]
     },
@@ -740,10 +753,6 @@
             {
                 "day": "Sunday",
                 "time": "1000"
-            },
-            {
-                "day": "Sunday",
-                "time": "1230"
             }
         ],
         "daily_masses": [
@@ -796,8 +805,7 @@
         "confession": [
             {
                 "day": "Saturday",
-                "start": "1100",
-                "end": "1130"
+                "start": "1100"
             }
         ],
         "adoration": [
@@ -821,10 +829,6 @@
         "bulletin_website": "https://z253oa.sites.ecatholic.com/bulletins",
         "phone": "+15199484133",
         "masses": [
-            {
-                "day": "Saturday",
-                "time": "1700"
-            },
             {
                 "day": "Sunday",
                 "time": "0900"
@@ -919,7 +923,7 @@
             {
                 "day": "Tuesday",
                 "start": "0830",
-                "end": "0930",
+                "end": "1530",
                 "note": "Rosary Chapel is open until 4:00 PM for prayers"
             },
             {
@@ -990,11 +994,6 @@
             },
             {
                 "day": "Sunday",
-                "time": "1400",
-                "note": "First Sunday of each month. Part of the St. Daniel community: https://stdaniel.ca/."
-            },
-            {
-                "day": "Sunday",
                 "time": "1730"
             }
         ],
@@ -1020,7 +1019,7 @@
             },
             {
                 "day": "Saturday",
-                "start": "1545",
+                "start": "1600",
                 "end": "1645"
             }
         ],
@@ -1028,7 +1027,7 @@
             {
                 "day": "Thursday",
                 "start": "1230",
-                "end": "1300",
+                "end": "1330",
                 "note": "Follows after 12:00 PM Mass"
             }
         ]
@@ -1357,7 +1356,7 @@
         "daily_masses": [
             {
                 "day": "Tuesday",
-                "time": "1230",
+                "time": "1200",
                 "note": "French, celebrated at Residence Richelieu third Thursday of the month"
             }
         ],
@@ -1465,7 +1464,7 @@
         "daily_masses": [
             {
                 "day": "Wednesday",
-                "time": "1830"
+                "time": "1900"
             },
             {
                 "day": "Friday",
