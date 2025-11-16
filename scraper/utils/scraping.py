@@ -61,6 +61,9 @@ def get_bulletin_links(churches):
             website_cache[bulletin_website] = None
             failed_count += 1
             logger.warning(f"✗ {church_name}: No PDF found after retries")
+        
+        # Add delay between requests to reduce 403 errors and rate limiting
+        time.sleep(1)
     
     logger.info(f"Scraping complete: {scraped_count} found, {failed_count} failed")
     return website_cache
@@ -102,8 +105,22 @@ def scrape_bulletin(bulletin_website):
     Uses cloudscraper to bypass Cloudflare.
     Returns the preferred PDF link or None.
     """
+    # Create scraper with explicit browser headers to mimic legitimate traffic
     scraper = cloudscraper.create_scraper()
-    response = scraper.get(bulletin_website, timeout=15)
+    
+    # Add custom headers to further reduce 403 errors
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Accept-Encoding': 'gzip, deflate',
+        'Referer': 'https://www.google.com/',
+        'DNT': '1',
+        'Connection': 'keep-alive',
+        'Upgrade-Insecure-Requests': '1'
+    }
+    
+    response = scraper.get(bulletin_website, headers=headers, timeout=15)
     response.raise_for_status()
     
     # Parse HTML
