@@ -65,11 +65,11 @@
         "daily_masses": [
             {
                 "day": "Tuesday",
-                "time": "1700"
+                "time": "1800"
             },
             {
                 "day": "Thursday",
-                "time": "1700"
+                "time": "0900"
             }
         ],
         "confession": [],
@@ -263,12 +263,18 @@
             },
             {
                 "day": "Friday",
-                "time": "0900",
+                "time": "0930",
                 "note": "In French. Every second Friday, Mass is celebrated at Mon Augustine Caron."
             }
         ],
         "confession": [],
-        "adoration": []
+        "adoration": [
+            {
+                "day": "Wednesday",
+                "start": "0930",
+                "end": "0930"
+            }
+        ]
     },
     {
         "name": "Sacred Heart",
@@ -559,7 +565,13 @@
                 "end": "1745"
             }
         ],
-        "adoration": []
+        "adoration": [
+            {
+                "day": "Tuesday",
+                "start": "1700",
+                "end": "1750"
+            }
+        ]
     },
     {
         "name": "Immaculate Heart / St. Michael's",
@@ -708,7 +720,8 @@
             },
             {
                 "day": "Saturday",
-                "time": "0800"
+                "time": "0800",
+                "note": "English"
             }
         ],
         "confession": [],
@@ -925,7 +938,7 @@
             {
                 "day": "Wednesday",
                 "start": "0830",
-                "end": "2000"
+                "end": "1600"
             },
             {
                 "day": "Thursday",
@@ -1357,7 +1370,7 @@
         "daily_masses": [
             {
                 "day": "Tuesday",
-                "time": "1230",
+                "time": "1200",
                 "note": "French, celebrated at Residence Richelieu third Thursday of the month"
             }
         ],
@@ -1396,11 +1409,6 @@
             {
                 "day": "Saturday",
                 "time": "1630"
-            },
-            {
-                "day": "Sunday",
-                "time": "0900",
-                "note": "French, held once per month"
             },
             {
                 "day": "Sunday",
@@ -1632,16 +1640,14 @@
         "daily_masses": [
             {
                 "day": "Wednesday",
-                "time": "1830",
-                "note": "Only for the first Wednesday of every month"
+                "time": "1830"
             }
         ],
         "confession": [
             {
                 "day": "Wednesday",
                 "start": "1800",
-                "end": "1830",
-                "note": "Only for the first Wednesday of every month"
+                "end": "1830"
             },
             {
                 "day": "Sunday",
@@ -1666,24 +1672,21 @@
         "daily_masses": [
             {
                 "day": "Thursday",
-                "time": "1830",
-                "note": "Every other week"
+                "time": "1830"
             }
         ],
         "confession": [
             {
                 "day": "Thursday",
                 "start": "1800",
-                "end": "1830",
-                "note": "Every other week, this is also a Holy Hour"
+                "end": "1830"
             }
         ],
         "adoration": [
             {
                 "day": "Thursday",
                 "start": "1800",
-                "end": "1830",
-                "note": "Every other week, this is a Holy Hour"
+                "end": "1830"
             }
         ]
     }
