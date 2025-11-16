@@ -61,7 +61,7 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           commit-message: 'chore: sync churches.json from bulletin analysis (${{ steps.date.outputs.timestamp }})'
-          title: 'chore: Sync churches.json from bulletin analysis (${{ steps.date.outputs.timestamp }})'
+          title: 'Sync churches.json with ${{ steps.date.outputs.timestamp }} bulletin analysis'
           body: ${{ steps.read_results.outputs.analysis_content }}
           branch: bulletin-sync-${{ github.run_number }}
           delete-branch: true
