@@ -14,8 +14,8 @@ import logging
 logger = logging.getLogger(__name__)
 
 PREFERRED_DOMAINS = ['parishbulletins.com', 'files.ecatholic.com']
-MAX_RETRIES = 5
-RETRY_DELAYS = [1, 2, 4, 8, 16]  # Exponential backoff in seconds
+MAX_RETRIES = 10
+RETRY_DELAYS = [1, 2, 4, 8, 16, 16, 16, 16, 16, 16]  # Exponential backoff in seconds
 
 
 def load_churches_json(churches_path):

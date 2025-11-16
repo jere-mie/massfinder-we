@@ -187,7 +187,7 @@ def main():
             
             # Write updated churches.json
             with open(churches_path, 'w', encoding='utf-8') as f:
-                json.dump(updated_churches, f, indent=2, ensure_ascii=False)
+                json.dump(updated_churches, f, indent=4, ensure_ascii=False)
             
             logger.info(f"✓ churches.json updated successfully: {churches_path}")
         except Exception as e:
