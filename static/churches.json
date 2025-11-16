@@ -69,7 +69,7 @@
             },
             {
                 "day": "Thursday",
-                "time": "1700"
+                "time": "0900"
             }
         ],
         "confession": [],
@@ -263,12 +263,18 @@
             },
             {
                 "day": "Friday",
-                "time": "0900",
+                "time": "0930",
                 "note": "In French. Every second Friday, Mass is celebrated at Mon Augustine Caron."
             }
         ],
         "confession": [],
-        "adoration": []
+        "adoration": [
+            {
+                "day": "Wednesday",
+                "start": "0930",
+                "end": "1030"
+            }
+        ]
     },
     {
         "name": "Sacred Heart",
@@ -559,7 +565,13 @@
                 "end": "1745"
             }
         ],
-        "adoration": []
+        "adoration": [
+            {
+                "day": "Tuesday",
+                "start": "1700",
+                "end": "1750"
+            }
+        ]
     },
     {
         "name": "Immaculate Heart / St. Michael's",
@@ -900,7 +912,7 @@
             },
             {
                 "day": "Friday",
-                "time": "0800"
+                "time": "1900"
             }
         ],
         "confession": [
@@ -1028,7 +1040,7 @@
             {
                 "day": "Thursday",
                 "start": "1230",
-                "end": "1300",
+                "end": "1330",
                 "note": "Follows after 12:00 PM Mass"
             }
         ]
@@ -1632,7 +1644,7 @@
         "daily_masses": [
             {
                 "day": "Wednesday",
-                "time": "1830",
+                "time": "0000",
                 "note": "Only for the first Wednesday of every month"
             }
         ],
