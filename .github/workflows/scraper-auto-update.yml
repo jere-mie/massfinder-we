@@ -1,0 +1,73 @@
+name: Bulletin Scraper Auto-Update
+
+on:
+  workflow_dispatch
+
+jobs:
+  scrape-analyze-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scraper/requirements.txt
+
+      - name: Run bulletin scraper with auto-update
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+        run: |
+          cd scraper
+          python app.py --modify-json
+
+      - name: Read analysis results
+        id: read_results
+        run: |
+          if [ -f "scraper/bulletins_analysis.md" ]; then
+            content=$(cat scraper/bulletins_analysis.md)
+            # Use EOF for multiline output
+            echo "analysis_content<<EOF" >> $GITHUB_OUTPUT
+            echo "$content" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          else
+            echo "ERROR: Analysis file not generated"
+            exit 1
+          fi
+
+      - name: Check if churches.json was modified
+        id: check_changes
+        run: |
+          if git diff --quiet static/churches.json; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "No changes detected in churches.json"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "Changes detected in churches.json"
+          fi
+
+      - name: Get current date
+        id: date
+        run: echo "timestamp=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+
+      - name: Create Pull Request
+        if: steps.check_changes.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: 'chore: sync churches.json from bulletin analysis (${{ steps.date.outputs.timestamp }})'
+          title: 'chore: Sync churches.json from bulletin analysis (${{ steps.date.outputs.timestamp }})'
+          body: ${{ steps.read_results.outputs.analysis_content }}
+          branch: bulletin-sync-${{ github.run_number }}
+          delete-branch: true
+          labels: 'bulletin-sync,automated'
+
+      - name: Notify if no changes
+        if: steps.check_changes.outputs.has_changes == 'false'
+        run: |
+          echo "✓ No differences found - no PR created"

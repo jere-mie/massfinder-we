@@ -66,6 +66,11 @@ def main():
         default=10,
         help='Number of parallel workers for LLM analysis (default: 10)'
     )
+    parser.add_argument(
+        '--modify-json',
+        action='store_true',
+        help='Apply LLM suggestions to update churches.json'
+    )
     
     args = parser.parse_args()
     
@@ -164,6 +169,30 @@ def main():
     except Exception as e:
         logger.error(f"Failed to write analysis report: {e}")
         return 1
+    
+    # Step 6: Optionally apply modifications to churches.json
+    if args.modify_json:
+        logger.info("--modify-json flag set. Applying LLM suggestions to churches.json...")
+        try:
+            # Read the generated markdown report
+            with open(output_path, 'r', encoding='utf-8') as f:
+                markdown_content = f.read()
+            
+            # Apply modifications
+            updated_churches = llm.update_churches_from_markdown(
+                churches,
+                markdown_content,
+                markdown_results
+            )
+            
+            # Write updated churches.json
+            with open(churches_path, 'w', encoding='utf-8') as f:
+                json.dump(updated_churches, f, indent=2, ensure_ascii=False)
+            
+            logger.info(f"✓ churches.json updated successfully: {churches_path}")
+        except Exception as e:
+            logger.error(f"Failed to modify churches.json: {e}")
+            return 1
     
     # Summary
     if markdown_results:

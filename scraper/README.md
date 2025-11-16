@@ -2,15 +2,33 @@
 
 Analyzes church bulletins with LLM to identify discrepancies with churches.json database.
 
-## Quick Start (GitHub Action)
+## Quick Start (GitHub Actions)
 
-The easiest way to run the scraper is via the GitHub Action:
+The easiest way to run the scraper is via GitHub Actions. Two workflows are available:
 
-🚀 **[Run the Bulletin Scraper Action](https://github.com/jere-mie/massfinder-we/actions/workflows/scraper.yml)**
+### 1. Analysis & Issue Reporting
+🚀 **[Bulletin Scraper & Analysis](https://github.com/jere-mie/massfinder-we/actions/workflows/scraper.yml)**
+
+Creates a GitHub issue with the bulletin analysis report.
 
 1. Click the link above
 2. Click **"Run workflow"** button
-3. The action will run the full analysis and create a GitHub issue with the results
+3. The action runs and creates an issue titled `Sync churches.json {YYYY-MM-DD}` with the analysis results
+4. Review the issue to see differences between bulletins and database
+
+### 2. Auto-Update with Pull Request
+🚀 **[Bulletin Scraper Auto-Update](https://github.com/jere-mie/massfinder-we/actions/workflows/scraper-auto-update.yml)**
+
+Automatically updates `churches.json` and creates a pull request for review.
+
+1. Click the link above
+2. Click **"Run workflow"** button
+3. The action runs the analysis with `--modify-json` flag
+4. If differences are found:
+   - Updates `churches.json` automatically
+   - Creates a PR with the analysis as the description
+   - Tags with `bulletin-sync` and `automated` labels
+5. Review and merge the PR to apply changes
 
 **Prerequisites:**
 - `OPENROUTER_API_KEY` must be configured as a [GitHub secret](https://github.com/jere-mie/massfinder-we/settings/secrets/actions)
@@ -33,11 +51,14 @@ python app.py
 ## Usage
 
 ```bash
-# Basic
+# Basic analysis (generates report only)
 python app.py
 
+# Analysis with automatic JSON updates
+python app.py --modify-json
+
 # With options
-python app.py --log-level DEBUG --workers 8 --output results.md
+python app.py --log-level DEBUG --workers 8 --output results.md --modify-json
 ```
 
 **Options:**
@@ -45,20 +66,95 @@ python app.py --log-level DEBUG --workers 8 --output results.md
 - `--workers` - Parallel workers (default: 10)
 - `--output` - Output file (default: bulletins_analysis.md)
 - `--churches-path` - Path to churches.json (default: ../static/churches.json)
+- `--modify-json` - Apply LLM suggestions to automatically update churches.json
 
-## GitHub Action Workflow
+## GitHub Action Workflows
 
-The **Bulletin Scraper & Analysis** action automatically:
-1. Runs the scraper with your configured API key
-2. Generates an analysis report
-3. Creates a GitHub issue titled `Sync churches.json {YYYY-MM-DD}` with the results
-4. Tags the issue with `bulletin-sync` and `automated` labels
+### Bulletin Scraper & Analysis
 
-**To use:**
-- Go to [Actions → Bulletin Scraper & Analysis](https://github.com/jere-mie/massfinder-we/actions/workflows/scraper.yml)
-- Click **"Run workflow"**
-- Check the Actions tab for execution status
-- Review the created issue for analysis results
+**Workflow:** `.github/workflows/scraper.yml`
+
+Analyzes bulletins and creates a GitHub issue with findings:
+1. Runs the scraper (`python app.py`)
+2. Generates analysis report (`bulletins_analysis.md`)
+3. Creates a GitHub issue with:
+   - Title: `Sync churches.json {YYYY-MM-DD}`
+   - Body: Full analysis markdown
+   - Labels: `bulletin-sync`, `automated`
+
+**When to use:**
+- Review-only reports without automatic changes
+- Archive analysis results as GitHub issues
+- Discussion and collaborative review
+
+### Bulletin Scraper Auto-Update
+
+**Workflow:** `.github/workflows/scraper-auto-update.yml`
+
+Analyzes bulletins, updates churches.json, and creates a pull request:
+1. Runs the scraper with `--modify-json` flag
+2. LLM automatically updates `churches.json` based on analysis
+3. Checks if changes were made
+4. If changes exist:
+   - Creates a PR with title: `chore: Sync churches.json from bulletin analysis`
+   - Uses analysis report as PR description
+   - Assigns labels: `bulletin-sync`, `automated`
+   - Auto-deletes branch after merge
+5. If no changes: Skips PR creation
+
+**When to use:**
+- Automated, hands-off updates for trusted sources
+- Batch process multiple church updates
+- Minimize manual data entry
+
+**Review checklist before merging:**
+- Verify times are in correct 24-hour format
+- Check that only documented differences are changed
+- Ensure no data was invented or assumed
+- Validate church details match source bulletins
+
+## Automatic JSON Updates
+
+The `--modify-json` flag enables intelligent updating of `churches.json` based on bulletin analysis:
+
+### How It Works
+
+1. **Analysis Phase**
+   - Scraper compares each bulletin against current database
+   - Generates markdown report with all differences found
+
+2. **Update Phase** (when `--modify-json` is used)
+   - Sends both `churches.json` and analysis report to LLM
+   - LLM reviews documented differences
+   - Updates church data accordingly
+
+3. **Safety Measures**
+   - LLM only modifies fields with confirmed differences
+   - Does not invent or assume data not in the report
+   - Returns complete updated JSON with all fields preserved
+   - No changes applied if analysis is uncertain
+
+### Usage Examples
+
+```bash
+# Analysis only (generates report, no modifications)
+python app.py
+
+# Analysis + automatic updates
+python app.py --modify-json
+
+# Combined with other options
+python app.py --log-level DEBUG --workers 8 --modify-json
+```
+
+### LLM Update Instructions
+
+The LLM is given specific rules:
+- Only modify fields with CONFIRMED differences in the analysis report
+- Use exact times from bulletins (24-hour HHMM format)
+- Maintain all existing fields and structure
+- Do NOT invent or assume data
+- Return valid JSON only
 
 ## How It Works
 
