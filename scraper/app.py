@@ -19,7 +19,7 @@ from utils import scraping, llm
 from utils.logging_config import setup_logging
 
 
-def analyze_bulletin_task(website, pdf_link, pdf_path, churches_for_bulletin):
+def analyze_bulletin_task(website, pdf_link, pdf_path, churches_for_bulletin, model=None):
     """
     Helper function to analyze a single bulletin.
     Returns (website, pdf_link, markdown, church_names, churches) tuple.
@@ -27,7 +27,7 @@ def analyze_bulletin_task(website, pdf_link, pdf_path, churches_for_bulletin):
     logger = logging.getLogger(__name__)
     
     # Pass all churches that share this bulletin to the LLM at once
-    markdown = llm.analyze_bulletin(pdf_path, churches_for_bulletin)
+    markdown = llm.analyze_bulletin(pdf_path, churches_for_bulletin, model=model)
     church_names = [c.get('name', 'Unknown') for c in churches_for_bulletin]
     
     if markdown is None:
@@ -67,6 +67,11 @@ def main():
         help='Number of parallel workers for LLM analysis (default: 10)'
     )
     parser.add_argument(
+        '--model',
+        default=None,
+        help='LLM model to use (overrides default in llm.py)'
+    )
+    parser.add_argument(
         '--modify-json',
         action='store_true',
         help='Apply LLM suggestions to update churches.json'
@@ -78,6 +83,10 @@ def main():
     log_level = getattr(logging, args.log_level)
     logger = setup_logging(log_level)
     logger.info(f"Starting bulletin analysis (log level: {args.log_level})")
+    
+    # Set model if provided
+    if args.model:
+        logger.info(f"Using custom model: {args.model}")
     
     # Resolve paths
     script_dir = Path(__file__).parent
@@ -142,7 +151,7 @@ def main():
     with ThreadPoolExecutor(max_workers=args.workers) as executor:
         # Submit all tasks
         futures = {
-            executor.submit(analyze_bulletin_task, website, pdf_link, pdf_path, churches_for_bulletin): (website, pdf_link, churches_for_bulletin)
+            executor.submit(analyze_bulletin_task, website, pdf_link, pdf_path, churches_for_bulletin, model=args.model): (website, pdf_link, churches_for_bulletin)
             for website, pdf_link, pdf_path, churches_for_bulletin in tasks
         }
         
@@ -191,7 +200,8 @@ def main():
             updated_churches = llm.update_churches_from_markdown(
                 churches,
                 markdown_content,
-                markdown_results
+                markdown_results,
+                model=args.model
             )
             
             # Write updated churches.json
