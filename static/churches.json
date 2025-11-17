@@ -152,6 +152,10 @@
             {
                 "day": "Saturday",
                 "time": "0830"
+            },
+            {
+                "day": "Thursday",
+                "time": "1900"
             }
         ],
         "confession": [
@@ -190,6 +194,10 @@
             {
                 "day": "Thursday",
                 "time": "0930"
+            },
+            {
+                "day": "Wednesday",
+                "time": "1900"
             }
         ],
         "confession": [
@@ -223,6 +231,10 @@
                 "day": "Wednesday",
                 "time": "0930",
                 "note": "Rosary"
+            },
+            {
+                "day": "Friday",
+                "time": "1900"
             }
         ],
         "confession": [
@@ -230,6 +242,11 @@
                 "day": "Saturday",
                 "start": "1545",
                 "end": "1615"
+            },
+            {
+                "day": "Wednesday",
+                "start": "0900",
+                "end": "0930"
             }
         ],
         "adoration": []
@@ -673,6 +690,10 @@
         "phone": "+15192580910",
         "masses": [
             {
+                "day": "Saturday",
+                "time": "0800"
+            },
+            {
                 "day": "Sunday",
                 "time": "0900"
             },
@@ -712,11 +733,6 @@
                 "day": "Friday",
                 "time": "1900",
                 "note": "Polish"
-            },
-            {
-                "day": "Saturday",
-                "time": "0800",
-                "note": "English"
             }
         ],
         "confession": [],
@@ -943,7 +959,7 @@
             {
                 "day": "Thursday",
                 "start": "0830",
-                "end": "1530",
+                "end": "0930",
                 "note": "Rosary Chapel is open until 4:00 PM for prayers"
             },
             {
@@ -1027,13 +1043,18 @@
         ],
         "confession": [
             {
+                "day": "Wednesday",
+                "start": "1100",
+                "end": "1145"
+            },
+            {
                 "day": "Thursday",
                 "start": "1100",
                 "end": "1145"
             },
             {
                 "day": "Saturday",
-                "start": "1545",
+                "start": "1600",
                 "end": "1645"
             }
         ],
@@ -1041,7 +1062,7 @@
             {
                 "day": "Thursday",
                 "start": "1230",
-                "end": "1300",
+                "end": "1330",
                 "note": "Follows after 12:00 PM Mass"
             }
         ]
