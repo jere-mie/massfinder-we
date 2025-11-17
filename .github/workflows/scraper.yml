@@ -1,7 +1,16 @@
 name: Bulletin Scraper & Analysis
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
+    inputs:
+      create_issue:
+        description: 'Create a GitHub issue with the analysis results'
+        required: false
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
 
 jobs:
   scrape-and-analyze:
@@ -41,7 +50,14 @@ jobs:
             exit 1
           fi
 
+      - name: Output analysis to terminal
+        run: |
+          echo "===== BULLETIN ANALYSIS RESULTS ====="
+          cat scraper/bulletins_analysis.md
+          echo "====================================="
+
       - name: Create GitHub Issue
+        if: github.event.inputs.create_issue == 'true'
         uses: actions/github-script@v7
         env:
           ANALYSIS_CONTENT: ${{ steps.read_results.outputs.analysis_content }}
@@ -62,3 +78,7 @@ jobs:
             });
             
             console.log(`Issue created: #${response.data.number}`);
+
+      - name: Skip issue creation
+        if: github.event.inputs.create_issue == 'false'
+        run: echo "Issue creation skipped by user input"

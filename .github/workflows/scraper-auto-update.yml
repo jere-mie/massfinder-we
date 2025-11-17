@@ -1,7 +1,16 @@
 name: Bulletin Scraper Auto-Update
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
+    inputs:
+      create_pr:
+        description: 'Create a pull request with the changes'
+        required: false
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
 
 jobs:
   scrape-analyze-update:
@@ -41,23 +50,33 @@ jobs:
             exit 1
           fi
 
+      - name: Output analysis to terminal
+        run: |
+          echo "===== BULLETIN ANALYSIS RESULTS ====="
+          cat scraper/bulletins_analysis.md
+          echo "====================================="
+
       - name: Check if churches.json was modified
         id: check_changes
         run: |
+          echo "===== CHECKING FOR CHANGES ====="
           if git diff --quiet static/churches.json; then
             echo "has_changes=false" >> $GITHUB_OUTPUT
             echo "No changes detected in churches.json"
           else
             echo "has_changes=true" >> $GITHUB_OUTPUT
             echo "Changes detected in churches.json"
+            echo "Diff preview:"
+            git diff --stat static/churches.json
           fi
+          echo "===================================="
 
       - name: Get current date
         id: date
         run: echo "timestamp=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
       - name: Create Pull Request
-        if: steps.check_changes.outputs.has_changes == 'true'
+        if: steps.check_changes.outputs.has_changes == 'true' && github.event.inputs.create_pr == 'true'
         uses: peter-evans/create-pull-request@v5
         with:
           commit-message: 'chore: sync churches.json from bulletin analysis (${{ steps.date.outputs.timestamp }})'
@@ -66,6 +85,10 @@ jobs:
           branch: bulletin-sync-${{ github.run_number }}
           delete-branch: true
           labels: 'bulletin-sync,automated'
+
+      - name: Skip PR creation
+        if: steps.check_changes.outputs.has_changes == 'true' && github.event.inputs.create_pr == 'false'
+        run: echo "PR creation skipped by user input (but churches.json changes are committed)"
 
       - name: Notify if no changes
         if: steps.check_changes.outputs.has_changes == 'false'
