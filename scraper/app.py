@@ -121,7 +121,7 @@ def main():
     
     # Step 4: Analyze each bulletin with LLM in parallel
     logger.info(f"Analyzing {len(downloaded)} bulletin(s) with LLM (using {args.workers} workers)...")
-    markdown_results = {}  # Dict: bulletin_website -> {markdown, church_names, churches, pdf_link}
+    markdown_results_unordered = {}  # Temporary dict to collect results from parallel execution
     
     # Prepare analysis tasks
     tasks = []
@@ -152,7 +152,7 @@ def main():
                 website, pdf_link, markdown, church_names, churches_for_bulletin = future.result()
                 
                 if markdown:  # Only add if there are differences
-                    markdown_results[website] = {
+                    markdown_results_unordered[website] = {
                         'markdown': markdown,
                         'church_names': church_names,
                         'churches': churches_for_bulletin,
@@ -161,6 +161,15 @@ def main():
             except Exception as e:
                 logger.error(f"Task failed: {e}")
                 continue
+    
+    # Reorder results to match the order of churches in churches.json using a list of tuples
+    markdown_results = []
+    seen_websites = set()
+    for church in churches:
+        bulletin_website = church.get('bulletin_website', '')
+        if bulletin_website in markdown_results_unordered and bulletin_website not in seen_websites:
+            markdown_results.append((bulletin_website, markdown_results_unordered[bulletin_website]))
+            seen_websites.add(bulletin_website)
     
     # Step 5: Write results to markdown file
     try:
@@ -204,7 +213,7 @@ def main():
 
 
 def write_analysis_report(output_path, markdown_results):
-    """Write markdown results to file, grouped by bulletin website"""
+    """Write markdown results to file, grouped by bulletin website in order"""
     logger = logging.getLogger(__name__)
     logger.info(f"Writing analysis report to {output_path}")
     
@@ -222,8 +231,8 @@ def write_analysis_report(output_path, markdown_results):
             f.write(f"Found differences in **{len(markdown_results)}** bulletin(s).\n\n")
             f.write("## Differences Found\n\n")
             
-            # Group and write results by bulletin website
-            for website, result in markdown_results.items():
+            # Write results in order (list of tuples preserves order)
+            for website, result in markdown_results:
                 markdown = result['markdown']
                 pdf_link = result.get('pdf_link', website)  # Fall back to website if pdf_link missing
                 # URL-encode the link to handle spaces and special characters
