@@ -65,11 +65,11 @@
         "daily_masses": [
             {
                 "day": "Tuesday",
-                "time": "1700"
+                "time": "1800"
             },
             {
                 "day": "Thursday",
-                "time": "1700"
+                "time": "0900"
             }
         ],
         "confession": [],
@@ -113,8 +113,8 @@
             },
             {
                 "day": "Tuesday",
-                "start": "1930",
-                "end": "2030"
+                "start": "1800",
+                "end": "1900"
             },
             {
                 "day": "Wednesday",
@@ -263,12 +263,19 @@
             },
             {
                 "day": "Friday",
-                "time": "0900",
+                "time": "0930",
                 "note": "In French. Every second Friday, Mass is celebrated at Mon Augustine Caron."
             }
         ],
         "confession": [],
-        "adoration": []
+        "adoration": [
+            {
+                "day": "Wednesday",
+                "start": "0930",
+                "end": "1030",
+                "note": "3rd Wednesday of the month."
+            }
+        ]
     },
     {
         "name": "Sacred Heart",
@@ -306,12 +313,6 @@
                 "start": "1900",
                 "end": "2000",
                 "note": "First Monday of every month"
-            },
-            {
-                "day": "Wednesday",
-                "start": "0930",
-                "end": "1030",
-                "note": "Third Wednesday of every month, or fourth Wednesday if there are 5 Wednesdays"
             }
         ]
     },
@@ -559,7 +560,13 @@
                 "end": "1745"
             }
         ],
-        "adoration": []
+        "adoration": [
+            {
+                "day": "Tuesday",
+                "start": "1700",
+                "end": "1750"
+            }
+        ]
     },
     {
         "name": "Immaculate Heart / St. Michael's",
@@ -708,7 +715,8 @@
             },
             {
                 "day": "Saturday",
-                "time": "0800"
+                "time": "0800",
+                "note": "English"
             }
         ],
         "confession": [],
@@ -739,11 +747,8 @@
             },
             {
                 "day": "Sunday",
-                "time": "1000"
-            },
-            {
-                "day": "Sunday",
-                "time": "1230"
+                "time": "1000",
+                "note": "Bilingual English/Spanish"
             }
         ],
         "daily_masses": [
@@ -905,38 +910,46 @@
         ],
         "confession": [
             {
+                "day": "Friday",
+                "start": "1800",
+                "end": "1900",
+                "note": "In rosary chapel."
+            },
+            {
                 "day": "Saturday",
                 "start": "1100",
-                "end": "1200"
+                "end": "1200",
+                "note": "In rosary chapel."
             },
             {
                 "day": "Sunday",
                 "start": "1830",
-                "end": "1915"
+                "end": "1915",
+                "note": "In rosary chapel."
             }
         ],
         "adoration": [
             {
                 "day": "Tuesday",
                 "start": "0830",
-                "end": "0930",
+                "end": "1530",
                 "note": "Rosary Chapel is open until 4:00 PM for prayers"
             },
             {
                 "day": "Wednesday",
                 "start": "0830",
-                "end": "2000"
+                "end": "1600"
             },
             {
                 "day": "Thursday",
                 "start": "0830",
-                "end": "0930",
+                "end": "1530",
                 "note": "Rosary Chapel is open until 4:00 PM for prayers"
             },
             {
                 "day": "Friday",
                 "start": "0830",
-                "end": "1600"
+                "end": "1900"
             }
         ]
     },
@@ -1078,7 +1091,7 @@
             },
             {
                 "day": "Saturday",
-                "start": "1530",
+                "start": "1545",
                 "end": "1615"
             }
         ],
@@ -1357,7 +1370,7 @@
         "daily_masses": [
             {
                 "day": "Tuesday",
-                "time": "1230",
+                "time": "1200",
                 "note": "French, celebrated at Residence Richelieu third Thursday of the month"
             }
         ],
@@ -1396,11 +1409,6 @@
             {
                 "day": "Saturday",
                 "time": "1630"
-            },
-            {
-                "day": "Sunday",
-                "time": "0900",
-                "note": "French, held once per month"
             },
             {
                 "day": "Sunday",
@@ -1633,15 +1641,14 @@
             {
                 "day": "Wednesday",
                 "time": "1830",
-                "note": "Only for the first Wednesday of every month"
+                "note": "First Wednesday of the month."
             }
         ],
         "confession": [
             {
                 "day": "Wednesday",
                 "start": "1800",
-                "end": "1830",
-                "note": "Only for the first Wednesday of every month"
+                "end": "1830"
             },
             {
                 "day": "Sunday",
@@ -1667,7 +1674,7 @@
             {
                 "day": "Thursday",
                 "time": "1830",
-                "note": "Every other week"
+                "note": "Every 2nd Thursday (seasonal)."
             }
         ],
         "confession": [
@@ -1675,16 +1682,9 @@
                 "day": "Thursday",
                 "start": "1800",
                 "end": "1830",
-                "note": "Every other week, this is also a Holy Hour"
+                "note": "Every 2nd Thursday (seasonal)."
             }
         ],
-        "adoration": [
-            {
-                "day": "Thursday",
-                "start": "1800",
-                "end": "1830",
-                "note": "Every other week, this is a Holy Hour"
-            }
-        ]
+        "adoration": []
     }
 ]
