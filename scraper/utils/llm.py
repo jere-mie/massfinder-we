@@ -86,6 +86,9 @@ RULES:
 - ALWAYS convert all times to 4-digit 24-hour format (e.g., 5:30 PM -> 1730, 9:45 AM -> 0945)
 - Be concise in Note field
 - Page number required
+- Ignore any non-mass/adoration/confession events
+- Ignore any special events/holidays
+- Ignore 'memorial masses' as they are not regular schedule
 - No text before or after tables"""
 
         # Call OpenRouter API
