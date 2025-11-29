@@ -1,0 +1,33 @@
+---
+import '../styles/global.css';
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" type="image/png" href="/icon.png" />
+		<meta name="generator" content={Astro.generator} />
+
+		<title>WE Catholic Mass List - Windsor-Essex County Mass Times</title>
+		<meta name="description" content="Find Catholic Mass times, confession, and adoration schedules for churches in Windsor-Essex County, Ontario. Interactive map and searchable listings.">
+
+		<!-- Open Graph / Social Media Meta Tags -->
+		<meta property="og:site_name" content="WE Catholic Mass List" />
+		<meta property="og:title" content="Windsor-Essex County Catholic Mass List" />
+		<meta property="og:description" content="A list of Catholic Masses held in the Windsor-Essex area" />
+		<meta property="og:type" content="website" />
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+</style>
