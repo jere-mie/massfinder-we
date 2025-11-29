@@ -68,9 +68,9 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(({ churches }, re
   };
 
   return (
-    <div role="region" aria-label="Map view">
+    <div role="region" aria-label="Map view" className="h-full flex flex-col">
       <button
-        className="mb-3 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors font-medium"
+        className="mb-3 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors font-medium self-start"
         type="button"
         onClick={() => setFiltersOpen(true)}
         aria-label="Open filter panel"
@@ -81,7 +81,7 @@ export const MapView = forwardRef<MapViewHandle, MapViewProps>(({ churches }, re
       </button>
 
       <div
-        className="h-[75vh] w-full rounded-lg overflow-hidden shadow-lg"
+        className="flex-1 min-h-0 w-full rounded-lg overflow-hidden shadow-lg"
         role="application"
         aria-label="Interactive map of Catholic churches in Windsor-Essex County"
       >

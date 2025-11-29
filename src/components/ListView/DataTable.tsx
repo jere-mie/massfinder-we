@@ -1,4 +1,5 @@
 import type { TableRow } from '../../types/church';
+import { getChurchPath } from '../../utils/slugify';
 
 interface DataTableProps {
   title: string;
@@ -38,13 +39,12 @@ export function DataTable({ title, headers, rows, onChurchClick }: DataTableProp
             {rows.map((row, idx) => (
               <tr key={idx} className="hover:bg-gray-50 transition-colors">
                 <td className="px-4 py-3 text-sm">
-                  <button
+                  <a
+                    href={getChurchPath(row.name)}
                     className="text-blue-600 hover:text-blue-800 hover:underline text-left font-medium"
-                    onClick={() => onChurchClick(row.name)}
-                    aria-label={`View ${row.name} on map`}
                   >
                     {row.name}
-                  </button>
+                  </a>
                 </td>
                 <td className="px-4 py-3 text-sm text-gray-600">{row.address}</td>
                 <td className="px-4 py-3 text-sm text-gray-600 whitespace-nowrap">{row.day}</td>

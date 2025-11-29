@@ -1,5 +1,6 @@
 import type { Church } from '../../types/church';
 import { formatPhoneNumber, formatUrl, formatTime, formatTimeRange } from '../../utils/formatting';
+import { getChurchPath } from '../../utils/slugify';
 
 interface ChurchPopupProps {
   church: Church;
@@ -12,7 +13,12 @@ export function ChurchPopup({ church }: ChurchPopupProps) {
   return (
     <div className="max-h-[50vh] overflow-y-auto pr-1 mt-2">
       <h1 className="text-lg font-bold text-gray-900 border-b-2 border-gray-200 pb-2 mb-3 mt-0">
-        {church.name}
+        <a 
+          href={getChurchPath(church.name)}
+          className="hover:text-blue-600 hover:underline"
+        >
+          {church.name}
+        </a>
       </h1>
 
       {/* Contact Info */}
@@ -115,6 +121,16 @@ export function ChurchPopup({ church }: ChurchPopupProps) {
           </ul>
         </>
       )}
+
+      {/* View Details Link */}
+      <div className="mt-4 pt-3 border-t border-gray-200">
+        <a
+          href={getChurchPath(church.name)}
+          className="text-sm text-blue-600 hover:text-blue-800 hover:underline font-medium"
+        >
+          View full details →
+        </a>
+      </div>
     </div>
   );
 }

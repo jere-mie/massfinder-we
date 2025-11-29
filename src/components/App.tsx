@@ -58,12 +58,12 @@ export function App() {
   }
 
   return (
-    <div>
+    <div className={activeTab === 'map' ? 'h-screen flex flex-col overflow-hidden' : ''}>
       <Header activeTab={activeTab} onTabChange={setActiveTab} />
-      <main className="mx-auto px-4 md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
+      <main className={activeTab === 'map' ? 'flex-1 min-h-0 px-4 pb-12 w-full max-w-6xl mx-auto' : 'mx-auto px-4 md:max-w-4xl lg:max-w-5xl xl:max-w-6xl'}>
         <div
           id="map-panel"
-          className={activeTab === 'map' ? '' : 'hidden'}
+          className={activeTab === 'map' ? 'h-full w-full flex flex-col' : 'hidden'}
           role="tabpanel"
           aria-labelledby="map-tab"
           aria-hidden={activeTab !== 'map'}

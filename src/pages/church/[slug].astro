@@ -1,0 +1,220 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { formatTime, formatTimeRange, formatPhoneNumber, formatUrl } from '../../utils/formatting';
+import type { Church } from '../../types/church';
+import fs from 'node:fs';
+import path from 'node:path';
+
+export function getStaticPaths() {
+  function slugify(name: string): string {
+    return name
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
+  }
+
+  // Read churches.json from public folder at build time
+  const churchesPath = path.join(process.cwd(), 'public', 'churches.json');
+  const churchesData = JSON.parse(fs.readFileSync(churchesPath, 'utf-8')) as Church[];
+  
+  return churchesData.map((church) => ({
+    params: { slug: slugify(church.name) },
+    props: { church },
+  }));
+}
+
+interface Props {
+  church: Church;
+}
+
+const { church } = Astro.props;
+
+// Build dynamic description based on church schedules
+const scheduleItems: string[] = [];
+if (church.masses.length > 0) scheduleItems.push('Mass times');
+if (church.daily_masses.length > 0) scheduleItems.push('daily Masses');
+if (church.confession.length > 0) scheduleItems.push('confession');
+if (church.adoration.length > 0) scheduleItems.push('adoration');
+
+const scheduleText = scheduleItems.length > 0 
+  ? `View ${scheduleItems.join(', ')} at ${church.name}.`
+  : `View schedule information for ${church.name}.`;
+
+const description = `${scheduleText} Located at ${church.address}.`;
+---
+
+<Layout 
+  title={`${church.name} - WE Catholic Mass List`}
+  description={description}
+>
+  <div class="mx-auto px-4 py-8 md:max-w-4xl">
+    <!-- Back Link -->
+    <a 
+      href="/" 
+      class="inline-flex items-center text-blue-600 hover:text-blue-800 hover:underline mb-6"
+    >
+      <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+      Back to all churches
+    </a>
+
+    <!-- Church Header -->
+    <header class="mb-8">
+      <h1 class="text-3xl font-bold text-gray-900 mb-4">{church.name}</h1>
+      
+      <div class="space-y-2 text-gray-600">
+        <p class="flex items-start">
+          <span class="mr-2">📍</span>
+          <a 
+            href={church.map} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="text-blue-600 hover:text-blue-800 hover:underline"
+          >
+            {church.address}
+          </a>
+        </p>
+        <p class="flex items-center">
+          <span class="mr-2">📞</span>
+          <a 
+            href={`tel:${church.phone}`}
+            class="text-blue-600 hover:text-blue-800 hover:underline"
+          >
+            {formatPhoneNumber(church.phone)}
+          </a>
+        </p>
+        <p class="flex items-center">
+          <span class="mr-2">🌐</span>
+          <a 
+            href={church.website} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="text-blue-600 hover:text-blue-800 hover:underline"
+          >
+            {formatUrl(church.website)}
+          </a>
+        </p>
+      </div>
+    </header>
+
+    <!-- Schedule Sections -->
+    <div class="space-y-8">
+      <!-- Sunday/Saturday Masses -->
+      {church.masses.length > 0 && (
+        <section class="bg-white rounded-lg border border-gray-200 shadow-sm p-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+            <span class="mr-2">⛪</span>
+            Mass Times
+          </h2>
+          <ul class="space-y-2">
+            {church.masses.map((mass) => (
+              <li class="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
+                <span class="font-medium text-gray-700">{mass.day}</span>
+                <span class="text-gray-600">{formatTime(mass.time)}</span>
+              </li>
+            ))}
+          </ul>
+          {church.masses.some(m => m.note) && (
+            <div class="mt-4 text-sm text-gray-500">
+              {church.masses.filter(m => m.note).map((m) => (
+                <p><strong>{m.day}:</strong> {m.note}</p>
+              ))}
+            </div>
+          )}
+        </section>
+      )}
+
+      <!-- Daily Masses -->
+      {church.daily_masses.length > 0 && (
+        <section class="bg-white rounded-lg border border-gray-200 shadow-sm p-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+            <span class="mr-2">📅</span>
+            Daily Masses
+          </h2>
+          <ul class="space-y-2">
+            {church.daily_masses.map((mass) => (
+              <li class="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
+                <span class="font-medium text-gray-700">{mass.day}</span>
+                <span class="text-gray-600">{formatTime(mass.time)}</span>
+              </li>
+            ))}
+          </ul>
+          {church.daily_masses.some(m => m.note) && (
+            <div class="mt-4 text-sm text-gray-500">
+              {church.daily_masses.filter(m => m.note).map((m) => (
+                <p><strong>{m.day}:</strong> {m.note}</p>
+              ))}
+            </div>
+          )}
+        </section>
+      )}
+
+      <!-- Confession -->
+      {church.confession.length > 0 && (
+        <section class="bg-white rounded-lg border border-gray-200 shadow-sm p-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+            <span class="mr-2">🙏</span>
+            Confession Times
+          </h2>
+          <ul class="space-y-2">
+            {church.confession.map((conf) => (
+              <li class="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
+                <span class="font-medium text-gray-700">{conf.day}</span>
+                <span class="text-gray-600">{formatTimeRange(conf.start, conf.end)}</span>
+              </li>
+            ))}
+          </ul>
+          {church.confession.some(c => c.note) && (
+            <div class="mt-4 text-sm text-gray-500">
+              {church.confession.filter(c => c.note).map((c) => (
+                <p><strong>{c.day}:</strong> {c.note}</p>
+              ))}
+            </div>
+          )}
+        </section>
+      )}
+
+      <!-- Adoration -->
+      {church.adoration.length > 0 && (
+        <section class="bg-white rounded-lg border border-gray-200 shadow-sm p-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+            <span class="mr-2">✨</span>
+            Adoration Times
+          </h2>
+          <ul class="space-y-2">
+            {church.adoration.map((ador) => (
+              <li class="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
+                <span class="font-medium text-gray-700">{ador.day}</span>
+                <span class="text-gray-600">{formatTimeRange(ador.start, ador.end)}</span>
+              </li>
+            ))}
+          </ul>
+          {church.adoration.some(a => a.note) && (
+            <div class="mt-4 text-sm text-gray-500">
+              {church.adoration.filter(a => a.note).map((a) => (
+                <p><strong>{a.day}:</strong> {a.note}</p>
+              ))}
+            </div>
+          )}
+        </section>
+      )}
+    </div>
+
+    <!-- Map Link -->
+    <div class="mt-8 text-center">
+      <a 
+        href={church.map}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+      >
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+        </svg>
+        View on Google Maps
+      </a>
+    </div>
+  </div>
+</Layout>
