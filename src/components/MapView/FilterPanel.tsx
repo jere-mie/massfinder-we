@@ -28,7 +28,7 @@ export function FilterPanel({
       {/* Backdrop */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/30 z-[1000] transition-opacity"
+          className="fixed inset-0 bg-black/30 z-1000 transition-opacity"
           onClick={onClose}
           aria-hidden="true"
         />
@@ -36,7 +36,7 @@ export function FilterPanel({
 
       {/* Panel */}
       <div
-        className={`fixed top-0 left-0 h-full w-80 max-w-full bg-white shadow-xl z-[1001] transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 left-0 h-full w-80 max-w-full bg-white shadow-xl z-1001 transform transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
         role="dialog"
