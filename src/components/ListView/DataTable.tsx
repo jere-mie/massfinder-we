@@ -40,7 +40,7 @@ export function DataTable({ title, headers, rows, onChurchClick }: DataTableProp
               <tr key={idx} className="hover:bg-gray-50 transition-colors">
                 <td className="px-4 py-3 text-sm">
                   <a
-                    href={getChurchPath(row.name)}
+                    href={getChurchPath(row.id)}
                     className="text-blue-600 hover:text-blue-800 hover:underline text-left font-medium"
                   >
                     {row.name}

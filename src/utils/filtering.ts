@@ -103,6 +103,7 @@ export function sortTimeRanges(items: TimeRange[]): TimeRange[] {
 export function massesToTableRows(churches: Church[], type: 'masses' | 'daily_masses'): TableRow[] {
   const rows = churches.flatMap((church) =>
     church[type].map((mass) => ({
+      id: church.id,
       name: church.name,
       address: church.address,
       day: mass.day,
@@ -130,6 +131,7 @@ export function timeRangesToTableRows(
 ): TableRow[] {
   const rows = churches.flatMap((church) =>
     church[type].map((item) => ({
+      id: church.id,
       name: church.name,
       address: church.address,
       day: item.day,

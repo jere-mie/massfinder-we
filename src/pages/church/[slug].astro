@@ -6,19 +6,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 export function getStaticPaths() {
-  function slugify(name: string): string {
-    return name
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, '-')
-      .replace(/(^-|-$)/g, '');
-  }
-
   // Read churches.json from public folder at build time
   const churchesPath = path.join(process.cwd(), 'public', 'churches.json');
   const churchesData = JSON.parse(fs.readFileSync(churchesPath, 'utf-8')) as Church[];
   
   return churchesData.map((church) => ({
-    params: { slug: slugify(church.name) },
+    params: { slug: church.id },
     props: { church },
   }));
 }

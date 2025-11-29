@@ -21,6 +21,7 @@ export interface TimeRange {
  * Represents a Catholic church with all its schedule information
  */
 export interface Church {
+  id: string; // Unique identifier (e.g., "st-john-the-baptist-amherstburg")
   name: string;
   address: string;
   coordinates: [number, number]; // [latitude, longitude]
@@ -61,6 +62,7 @@ export interface ListFilters {
  * Row data for list tables
  */
 export interface TableRow {
+  id: string; // Church unique identifier
   name: string;
   address: string;
   day: string;

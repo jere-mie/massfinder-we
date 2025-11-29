@@ -14,7 +14,7 @@ export function ChurchPopup({ church }: ChurchPopupProps) {
     <div className="max-h-[50vh] overflow-y-auto pr-1 mt-2">
       <h1 className="text-lg font-bold text-gray-900 border-b-2 border-gray-200 pb-2 mb-3 mt-0">
         <a 
-          href={getChurchPath(church.name)}
+          href={getChurchPath(church.id)}
           className="hover:text-blue-600 hover:underline"
         >
           {church.name}
@@ -125,7 +125,7 @@ export function ChurchPopup({ church }: ChurchPopupProps) {
       {/* View Details Link */}
       <div className="mt-4 pt-3 border-t border-gray-200">
         <a
-          href={getChurchPath(church.name)}
+          href={getChurchPath(church.id)}
           className="text-sm text-blue-600 hover:text-blue-800 hover:underline font-medium"
         >
           View full details →
