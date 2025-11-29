@@ -1,8 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Sample from '../components/Sample';
+import { App } from '../components/App';
 ---
 
 <Layout>
-	<Sample client:load />
+	<App client:only="react" />
 </Layout>

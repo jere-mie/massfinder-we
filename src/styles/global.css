@@ -1,1 +1,44 @@
 @import "tailwindcss";
+
+/* Leaflet popup styling */
+.leaflet-popup-content-wrapper {
+  @apply rounded-lg shadow-lg p-0;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  padding: 0.75rem 0.5rem 0.75rem 0.75rem !important;
+  min-width: 280px;
+}
+
+/* Improve popup close button visibility */
+.leaflet-popup-close-button {
+  font-size: 20px !important;
+  padding: 4px 8px !important;
+  color: #6b7280 !important;
+}
+
+.leaflet-popup-close-button:hover {
+  color: #1f2937 !important;
+}
+
+/* Better responsive popup sizing */
+@media (max-width: 768px) {
+  .leaflet-popup-content {
+    min-width: 85vw !important;
+    max-width: 85vw !important;
+  }
+}
+
+/* Screen reader only class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
