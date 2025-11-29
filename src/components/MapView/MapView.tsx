@@ -1,11 +1,24 @@
-import { useState, useRef, useImperativeHandle, forwardRef } from 'react';
+import { useState, useRef, useImperativeHandle, forwardRef, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from 'react-leaflet';
+import L from 'leaflet';
 import type { Map as LeafletMap, Marker as LeafletMarker } from 'leaflet';
 import type { Church, MapFilters } from '../../types/church';
 import { ChurchPopup } from './ChurchPopup';
 import { FilterPanel } from './FilterPanel';
 import { getFilteredChurches } from '../../utils/filtering';
 import { MAP_CENTER, MAP_ZOOM, MAP_MIN_ZOOM, MAP_MAX_ZOOM } from '../../utils/constants';
+
+// Fix Leaflet default icon paths
+import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
+import markerIcon from 'leaflet/dist/images/marker-icon.png';
+import markerShadow from 'leaflet/dist/images/marker-shadow.png';
+
+delete (L.Icon.Default.prototype as any)._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconUrl: markerIcon.src,
+  iconRetinaUrl: markerIcon2x.src,
+  shadowUrl: markerShadow.src,
+});
 
 interface MapViewProps {
   churches: Church[];
