@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useImperativeHandle, forwardRef } from 'react';
+import { useState, useRef, useImperativeHandle, forwardRef } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, ZoomControl } from 'react-leaflet';
 import type { Map as LeafletMap, Marker as LeafletMarker } from 'leaflet';
 import type { Church, MapFilters } from '../../types/church';
