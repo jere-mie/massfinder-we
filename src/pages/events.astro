@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { EventsView } from '../components/EventsView';
+---
+
+<Layout 
+	title="Parish Events - Deanery of Windsor-Essex"
+	description="Find upcoming Catholic parish events in Windsor-Essex County, Ontario. Browse community gatherings, fundraisers, educational programs, and special liturgies."
+>
+	<EventsView client:only="react" />
+</Layout>

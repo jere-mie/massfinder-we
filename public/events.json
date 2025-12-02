@@ -1,0 +1,3848 @@
+[
+    {
+        "id": "6oxnymmo",
+        "title": "Christmas Plants Donation Deadline (4 PM)",
+        "description": "Deadline to submit donation envelopes for poinsettias to adorn the four churches during the Christmas Season. Must be received by Dec 2nd at 4:00 p.m.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2025-12-02",
+        "start_time": null,
+        "end_time": "1600",
+        "location": null,
+        "tags": [
+            "other",
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20251130.pdf?t=1764424586000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:48.144963"
+    },
+    {
+        "id": "pst4fwz8",
+        "title": "Family of Parishes Giving Tree Donations Return Deadline",
+        "description": "Last day to return any donations for the Giving Tree envelopes to the collection or Parish Office.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2025-12-02",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "fundraiser",
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20251130.pdf?t=1764424586000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:48.144963"
+    },
+    {
+        "id": "r4mera2l",
+        "title": "Monthly Healing Mass",
+        "description": "All are invited to a Healing Mass presided by Fr. Gilbert Simard. Prayer teams will be available.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2025-12-05",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "St. Michael's Church",
+        "tags": [
+            "liturgy",
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20251130.pdf?t=1764424586000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:48.144963"
+    },
+    {
+        "id": "gwhj6znk",
+        "title": "Advent Food Drive Collection (Pasta/Sauce/Veggies/Fruit)",
+        "description": "First collection date for the annual Advent food drive benefiting St. Vincent de Paul.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2025-12-07",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20251130.pdf?t=1764424586000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:48.144963"
+    },
+    {
+        "id": "mzhbp56w",
+        "title": "Day of Confessions (English) @ OLOG",
+        "description": "Part of the Day of Confessions before Christmas. 10:00 a.m. - 11:15 a.m.",
+        "church_id": "our-lady-of-guadalupe-windsor",
+        "church_name": "Our Lady of Guadalupe / San Juan Diego",
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2025-12-09",
+        "start_time": "1000",
+        "end_time": "1115",
+        "location": "Our Lady of Guadalupe Church",
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20251130.pdf?t=1764424586000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:48.144963"
+    },
+    {
+        "id": "tescq2b4",
+        "title": "CWL Christmas Meeting/Luncheon",
+        "description": "Our Lady of Guadalupe Catholic Women's League Christmas Meeting/Luncheon. Bring canned goods for St. Vincent de Paul.",
+        "church_id": "our-lady-of-guadalupe-windsor",
+        "church_name": "Our Lady of Guadalupe / San Juan Diego",
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2025-12-09",
+        "start_time": "1030",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "social",
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20251130.pdf?t=1764424586000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:48.144963"
+    },
+    {
+        "id": "106fee0d",
+        "title": "Day of Confessions (English) @ MPB",
+        "description": "Part of the Day of Confessions before Christmas. 12:30 p.m. - 2:30 p.m.",
+        "church_id": "most-precious-blood-windsor",
+        "church_name": "Most Precious Blood",
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2025-12-09",
+        "start_time": "1230",
+        "end_time": "1430",
+        "location": "Most Precious Blood Church",
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20251130.pdf?t=1764424586000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:48.144963"
+    },
+    {
+        "id": "k95jr5pc",
+        "title": "Day of Confessions (English) @ St. Theresa's",
+        "description": "Part of the Day of Confessions before Christmas. 6:00 p.m. - 6:30 p.m. (before 7:00 p.m. Mass).",
+        "church_id": "st-theresas-windsor",
+        "church_name": "St. Theresa's",
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2025-12-09",
+        "start_time": "1800",
+        "end_time": "1830",
+        "location": "St. Theresa's Church",
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20251130.pdf?t=1764424586000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:48.144963"
+    },
+    {
+        "id": "5f40c7oa",
+        "title": "A Christmas to Believe In (Youth Ministry Event)",
+        "description": "Special evening hosted by NCWCF Youth Ministry featuring a heartfelt Christmas play, followed by light refreshments.",
+        "church_id": "our-lady-of-guadalupe-windsor",
+        "church_name": "Our Lady of Guadalupe / San Juan Diego",
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2025-12-13",
+        "start_time": "1830",
+        "end_time": null,
+        "location": "Our Lady of Guadalupe Church",
+        "tags": [
+            "social",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20251130.pdf?t=1764424586000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:48.144963"
+    },
+    {
+        "id": "b6wxnhm1",
+        "title": "St. Theresa Breakfast with Santa",
+        "description": "Annual family breakfast event to meet Santa and celebrate the holiday spirit. Voluntary Donation at the door.",
+        "church_id": "st-theresas-windsor",
+        "church_name": "St. Theresa's",
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2025-12-14",
+        "start_time": "1000",
+        "end_time": "1200",
+        "location": "St. Theresa Church Hall",
+        "tags": [
+            "social",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20251130.pdf?t=1764424586000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:48.144963"
+    },
+    {
+        "id": "axhsv250",
+        "title": "Advent Food Drive Collection (Canned Tuna/Meat)",
+        "description": "Second collection theme for the Advent food drive.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2025-12-14",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20251130.pdf?t=1764424586000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:48.144963"
+    },
+    {
+        "id": "724xx2na",
+        "title": "Confessions (Slovak) @ SCM",
+        "description": "Confessions for St. Cyril & Methodius following the 11:30 a.m. Mass with Father Juraj.",
+        "church_id": "sts-cyril-and-methodius-windsor",
+        "church_name": "Sts. Cyril And Methodius",
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2025-12-14",
+        "start_time": "1130",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20251130.pdf?t=1764424586000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:48.144963"
+    },
+    {
+        "id": "41bie8af",
+        "title": "Confessions (Spanish) @ SJD",
+        "description": "Confessions for San Juan Diego following the 10 a.m. Mass with Father Morand.",
+        "church_id": "our-lady-of-guadalupe-windsor",
+        "church_name": "Our Lady of Guadalupe / San Juan Diego",
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2025-12-21",
+        "start_time": "1000",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20251130.pdf?t=1764424586000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:48.144963"
+    },
+    {
+        "id": "hq9pfdwb",
+        "title": "Advent Food Drive Collection (Toiletries/Hygiene Products)",
+        "description": "Final collection theme for the Advent food drive.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2025-12-21",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20251130.pdf?t=1764424586000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:48.144963"
+    },
+    {
+        "id": "1t5z4078",
+        "title": "Giving Tuesday",
+        "description": "A global day dedicated to generosity and gratitude. Invitation to remember the parish community through a gift of any size to sustain ministries, care for those in need, and maintain our parish home.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "date": "2025-12-02",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "fundraiser",
+            "community"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:52.844451"
+    },
+    {
+        "id": "jp2uz5aj",
+        "title": "Men's Group",
+        "description": "Casual conversation for guys. 4:30 PM to 6:00 PM.",
+        "church_id": "st-alphonsus-windsor",
+        "church_name": "St. Alphonsus",
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "date": "2025-12-02",
+        "start_time": "1630",
+        "end_time": "1800",
+        "location": null,
+        "tags": [
+            "social",
+            "meeting"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:52.844451"
+    },
+    {
+        "id": "wgwfvw1q",
+        "title": "WSO Handel's Messiah",
+        "description": "Performance held at Assumption Church. Visit website for ticket information.",
+        "church_id": "our-lady-of-the-assumption-windsor",
+        "church_name": "Our Lady of the Assumption",
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "date": "2025-12-04",
+        "start_time": null,
+        "end_time": null,
+        "location": "Assumption Church",
+        "tags": [
+            "seasonal",
+            "other"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:52.844451"
+    },
+    {
+        "id": "2igo8eac",
+        "title": "Snowflakes and St. Nicholas Christmas Breakfast",
+        "description": "WHFOP Christmas Party: Breakfast, Ole St. Nick, and Face Painting. First Come, First Served. Held at Holy Name of Mary Church Building 711 McEwan.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "date": "2025-12-06",
+        "start_time": "1100",
+        "end_time": "1300",
+        "location": "Holy Name of Mary Church Building 711 McEwan",
+        "tags": [
+            "social",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:52.844451"
+    },
+    {
+        "id": "p0g6926v",
+        "title": "32nd Annual Celebration of Our Lady of Guadalupe Pilgrim Image",
+        "description": "Schedule includes Procession (6:15pm), Holy Rosary (6:35pm), Procession of the Nations (7:05pm), and Mass (7:30pm). Reception to follow.",
+        "church_id": "our-lady-of-the-assumption-windsor",
+        "church_name": "Our Lady of the Assumption",
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "date": "2025-12-12",
+        "start_time": null,
+        "end_time": null,
+        "location": "Assumption Church",
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:52.844451"
+    },
+    {
+        "id": "5youlglh",
+        "title": "Craft Day with Barb",
+        "description": "Christmas craft session. Starts at 10:30 AM. Registration required (10 spots available).",
+        "church_id": "st-alphonsus-windsor",
+        "church_name": "St. Alphonsus",
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "date": "2025-12-13",
+        "start_time": "1030",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "social",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:52.844451"
+    },
+    {
+        "id": "4aa1nerr",
+        "title": "Turkey Bingo",
+        "description": "Bingo session with prizes that include turkeys and fixings. Starts at 1:00 PM.",
+        "church_id": "st-alphonsus-windsor",
+        "church_name": "St. Alphonsus",
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "date": "2025-12-15",
+        "start_time": "1300",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "social",
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:52.844451"
+    },
+    {
+        "id": "ddvo6wlz",
+        "title": "The Christmas Gala",
+        "description": "Features DJ, hors d'oeuvres, drinks, and fun from 2:00 PM to 4:00 PM. Tickets required.",
+        "church_id": "st-alphonsus-windsor",
+        "church_name": "St. Alphonsus",
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "date": "2025-12-21",
+        "start_time": "1400",
+        "end_time": "1600",
+        "location": null,
+        "tags": [
+            "social",
+            "seasonal",
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:52.844451"
+    },
+    {
+        "id": "dhnz9ue7",
+        "title": "Stained Glass Ornaments Sale (Dec 6)",
+        "description": "Sale of stained glass ornaments crafted from shards of original windows (ca. 1874). Set up after the 5:00 PM Saturday mass. Cash only. Proceeds support restoration.",
+        "church_id": "st-john-the-baptist-amherstburg",
+        "church_name": "St. John the Baptist",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2025-12-06",
+        "start_time": "1700",
+        "end_time": null,
+        "location": "Brock St. entrance",
+        "tags": [
+            "fundraiser",
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20251130.pdf?t=1764357653000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:59.566050"
+    },
+    {
+        "id": "b6ezaae4",
+        "title": "Stained Glass Ornaments Sale (Dec 7)",
+        "description": "Sale continues if inventory remains, set up after the 11:00 AM Sunday mass. Cash only.",
+        "church_id": "st-john-the-baptist-amherstburg",
+        "church_name": "St. John the Baptist",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2025-12-07",
+        "start_time": "1100",
+        "end_time": null,
+        "location": "Brock St. entrance",
+        "tags": [
+            "fundraiser",
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20251130.pdf?t=1764357653000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:59.566050"
+    },
+    {
+        "id": "o7cecufs",
+        "title": "Confirmation Preparation Meeting",
+        "description": "Meeting for candidates. Requested to bring warm outside attire.",
+        "church_id": "st-john-the-baptist-amherstburg",
+        "church_name": "St. John the Baptist",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2025-12-07",
+        "start_time": "1300",
+        "end_time": "1430",
+        "location": "St. John the Baptist",
+        "tags": [
+            "education"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20251130.pdf?t=1764357653000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:59.566050"
+    },
+    {
+        "id": "e9tujs77",
+        "title": "ULTREYA: \"Mary did you know?\"",
+        "description": "Cursillistas and Babe Chicks welcome. Held at St. Joseph Parish.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2025-12-12",
+        "start_time": "1930",
+        "end_time": null,
+        "location": "St. Joseph Parish, 9399 N. Townline Rd., River Canard",
+        "tags": [
+            "education",
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20251130.pdf?t=1764357653000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:59.566050"
+    },
+    {
+        "id": "i7q9j0qq",
+        "title": "Amherstburg-Harrow Catholic Family of Parishes Christmas Concert",
+        "description": "Featuring St. Michael's Schola, St. Thomas of Villanova Choir, Carina Evon, and Holy Harmonizers. Free will donations accepted for the building fund. Bring canned goods. Doors open 6:30 PM.",
+        "church_id": "st-john-the-baptist-amherstburg",
+        "church_name": "St. John the Baptist",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2025-12-13",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "St. John the Baptist Church",
+        "tags": [
+            "seasonal",
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20251130.pdf?t=1764357653000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:59.566050"
+    },
+    {
+        "id": "jjrbu5e7",
+        "title": "High School Youth Group Meeting",
+        "description": "Meeting for all high school students in the Fr. Ware room.",
+        "church_id": "st-john-the-baptist-amherstburg",
+        "church_name": "St. John the Baptist",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2025-12-14",
+        "start_time": "1900",
+        "end_time": "2030",
+        "location": "Fr. Ware room at St. John the Baptist",
+        "tags": [
+            "social",
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20251130.pdf?t=1764357653000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:59.566050"
+    },
+    {
+        "id": "0txnlpso",
+        "title": "Amherstburg-Harrow Catholic Family of Parishes Christmas Party",
+        "description": "Casual party with games, activities, and snacks. Cost $5.00/person. Registration required.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2025-12-14",
+        "start_time": "1400",
+        "end_time": "1600",
+        "location": "Amherstburg Columbus Hall, 190 Richmond St.",
+        "tags": [
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20251130.pdf?t=1764357653000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:59.566050"
+    },
+    {
+        "id": "mm8kc2d8",
+        "title": "Communal Reconciliation Service",
+        "description": "Reconciliation session held at St. Anthony of Padua.",
+        "church_id": "st-anthony-of-padua-harrow",
+        "church_name": "St. Anthony of Padua",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2025-12-16",
+        "start_time": "1700",
+        "end_time": "1745",
+        "location": null,
+        "tags": [
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20251130.pdf?t=1764357653000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:59.566050"
+    },
+    {
+        "id": "caiwk8ep",
+        "title": "Communal Reconciliation Service",
+        "description": "Reconciliation session held at St. Anthony of Padua.",
+        "church_id": "st-anthony-of-padua-harrow",
+        "church_name": "St. Anthony of Padua",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2025-12-18",
+        "start_time": "0945",
+        "end_time": "1030",
+        "location": null,
+        "tags": [
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20251130.pdf?t=1764357653000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:59.566050"
+    },
+    {
+        "id": "zjeb6wvm",
+        "title": "Communal Reconciliation Service (Morning)",
+        "description": "Reconciliation session held at St. John the Baptist.",
+        "church_id": "st-john-the-baptist-amherstburg",
+        "church_name": "St. John the Baptist",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2025-12-19",
+        "start_time": "0930",
+        "end_time": "1100",
+        "location": null,
+        "tags": [
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20251130.pdf?t=1764357653000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:59.566050"
+    },
+    {
+        "id": "hktbpzs2",
+        "title": "Communal Reconciliation Service (Afternoon)",
+        "description": "Reconciliation session held at St. John the Baptist.",
+        "church_id": "st-john-the-baptist-amherstburg",
+        "church_name": "St. John the Baptist",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2025-12-19",
+        "start_time": "1330",
+        "end_time": "1500",
+        "location": null,
+        "tags": [
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20251130.pdf?t=1764357653000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:59.566050"
+    },
+    {
+        "id": "07nzhawz",
+        "title": "Communal Reconciliation Service (Evening)",
+        "description": "Reconciliation session held at St. John the Baptist.",
+        "church_id": "st-john-the-baptist-amherstburg",
+        "church_name": "St. John the Baptist",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2025-12-19",
+        "start_time": "1830",
+        "end_time": "2000",
+        "location": null,
+        "tags": [
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20251130.pdf?t=1764357653000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:59.566050"
+    },
+    {
+        "id": "ezkild2w",
+        "title": "Christmas Eve Mass (4:00 PM)",
+        "description": "Christmas Eve liturgy (Incense used).",
+        "church_id": "st-john-the-baptist-amherstburg",
+        "church_name": "St. John the Baptist",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2025-12-24",
+        "start_time": "1600",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "seasonal",
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20251130.pdf?t=1764357653000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:59.566050"
+    },
+    {
+        "id": "y34rupee",
+        "title": "Christmas Eve Mass (7:00 PM)",
+        "description": "Christmas Eve liturgy.",
+        "church_id": "st-john-the-baptist-amherstburg",
+        "church_name": "St. John the Baptist",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2025-12-24",
+        "start_time": "1900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "seasonal",
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20251130.pdf?t=1764357653000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:59.566050"
+    },
+    {
+        "id": "ewqn6d6q",
+        "title": "Christmas Eve Mass (Midnight)",
+        "description": "Christmas Eve liturgy (Incense used).",
+        "church_id": "st-john-the-baptist-amherstburg",
+        "church_name": "St. John the Baptist",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2025-12-24",
+        "start_time": "2400",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "seasonal",
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20251130.pdf?t=1764357653000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:59.566050"
+    },
+    {
+        "id": "r89g929z",
+        "title": "Christmas Eve Mass",
+        "description": "Christmas Eve liturgy.",
+        "church_id": "st-anthony-of-padua-harrow",
+        "church_name": "St. Anthony of Padua",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2025-12-24",
+        "start_time": "1600",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "seasonal",
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20251130.pdf?t=1764357653000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:59.566050"
+    },
+    {
+        "id": "m0fyaf2i",
+        "title": "Christmas Day Mass",
+        "description": "Christmas Day liturgy (Incense used).",
+        "church_id": "st-anthony-of-padua-harrow",
+        "church_name": "St. Anthony of Padua",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2025-12-25",
+        "start_time": "0900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "seasonal",
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20251130.pdf?t=1764357653000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:59.566050"
+    },
+    {
+        "id": "m33queac",
+        "title": "Christmas Day Mass",
+        "description": "Christmas Day liturgy (Incense used).",
+        "church_id": "st-john-the-baptist-amherstburg",
+        "church_name": "St. John the Baptist",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2025-12-25",
+        "start_time": "1100",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "seasonal",
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20251130.pdf?t=1764357653000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:59.566050"
+    },
+    {
+        "id": "yk2h0gj7",
+        "title": "Mary, Mother of God Mass",
+        "description": "Solemnity of Mary, Mother of God liturgy (Incense used).",
+        "church_id": "st-anthony-of-padua-harrow",
+        "church_name": "St. Anthony of Padua",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2025-12-31",
+        "start_time": "1700",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20251130.pdf?t=1764357653000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:59.566050"
+    },
+    {
+        "id": "mzfdwd0j",
+        "title": "Mary, Mother of God Mass",
+        "description": "Solemnity of Mary, Mother of God liturgy (Incense used).",
+        "church_id": "st-john-the-baptist-amherstburg",
+        "church_name": "St. John the Baptist",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2026-01-01",
+        "start_time": "1100",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20251130.pdf?t=1764357653000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:30:59.566050"
+    },
+    {
+        "id": "4ronm5mq",
+        "title": "CWL Tourtiere Pie Sale (Dec 1)",
+        "description": "The CWL (OLA) are selling their Tourtiere (Spiced Meat Pie). Small $7 & Large $15.",
+        "church_id": "our-lady-of-the-atonement-windsor",
+        "church_name": "Our Lady of the Atonement",
+        "family_of_parishes": "East Windsor Catholic Family of Parishes",
+        "date": "2025-12-01",
+        "start_time": "1300",
+        "end_time": "1500",
+        "location": null,
+        "tags": [
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:04.065211"
+    },
+    {
+        "id": "zepsrqpo",
+        "title": "Nursing Home Mass (Riverside Place)",
+        "description": "Special communal Mass celebrated at Riverside Place.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "East Windsor Catholic Family of Parishes",
+        "date": "2025-12-02",
+        "start_time": "1400",
+        "end_time": null,
+        "location": "Riverside Place",
+        "tags": [
+            "liturgy",
+            "community"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:04.065211"
+    },
+    {
+        "id": "jg0vxjh7",
+        "title": "Right to Life Christmas Cards Sale (Dec 2)",
+        "description": "Cards available for purchase ($10 for 10 cards) at 2541 Jefferson Blvd.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "East Windsor Catholic Family of Parishes",
+        "date": "2025-12-02",
+        "start_time": "1000",
+        "end_time": "1400",
+        "location": "2541 Jefferson Blvd",
+        "tags": [
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:04.065211"
+    },
+    {
+        "id": "lihhc94x",
+        "title": "Right to Life Christmas Cards Sale (Dec 3)",
+        "description": "Cards available for purchase ($10 for 10 cards) at 2541 Jefferson Blvd.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "East Windsor Catholic Family of Parishes",
+        "date": "2025-12-03",
+        "start_time": "1000",
+        "end_time": "1400",
+        "location": "2541 Jefferson Blvd",
+        "tags": [
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:04.065211"
+    },
+    {
+        "id": "r8wh4dp4",
+        "title": "Prayer Group Meeting",
+        "description": "Join for Christmas carols, prayer, a social with snacks and desserts.",
+        "church_id": "our-lady-of-the-atonement-windsor",
+        "church_name": "Our Lady of the Atonement",
+        "family_of_parishes": "East Windsor Catholic Family of Parishes",
+        "date": "2025-12-03",
+        "start_time": "1930",
+        "end_time": null,
+        "location": "St. Francis Hall",
+        "tags": [
+            "social",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:04.065211"
+    },
+    {
+        "id": "bwovoc1t",
+        "title": "Right to Life Christmas Cards Sale (Dec 4)",
+        "description": "Cards available for purchase ($10 for 10 cards) at 2541 Jefferson Blvd.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "East Windsor Catholic Family of Parishes",
+        "date": "2025-12-04",
+        "start_time": "1000",
+        "end_time": "1400",
+        "location": "2541 Jefferson Blvd",
+        "tags": [
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:04.065211"
+    },
+    {
+        "id": "peijeog7",
+        "title": "Young Adult Advent Retreat",
+        "description": "Weekend retreat designed to help grow deeper in faith through reflection, conversation, and activities. Doors open at 6:00 p.m., retreat begins 7:15 p.m. Friday. Ends 1:00 p.m. Sunday. Cost: $275.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "East Windsor Catholic Family of Parishes",
+        "date": "2025-12-05",
+        "start_time": "1915",
+        "end_time": "1300",
+        "location": "Holy Family Retreat House, 121 Victoria St RR#1, Harrow, ON N0R 1G0",
+        "tags": [
+            "education",
+            "retreat",
+            "social"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:04.065211"
+    },
+    {
+        "id": "pyqojhat",
+        "title": "Saturday Reconciliation (SJV)",
+        "description": "Additional scheduled Reconciliation time for Advent season.",
+        "church_id": "st-john-vianney-windsor",
+        "church_name": "St. John Vianney",
+        "family_of_parishes": "East Windsor Catholic Family of Parishes",
+        "date": "2025-12-06",
+        "start_time": "1100",
+        "end_time": "1200",
+        "location": null,
+        "tags": [
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:04.065211"
+    },
+    {
+        "id": "kl48gehj",
+        "title": "Saturday Reconciliation (OLA)",
+        "description": "Additional scheduled Reconciliation time for Advent season.",
+        "church_id": "our-lady-of-the-atonement-windsor",
+        "church_name": "Our Lady of the Atonement",
+        "family_of_parishes": "East Windsor Catholic Family of Parishes",
+        "date": "2025-12-06",
+        "start_time": "1100",
+        "end_time": "1200",
+        "location": null,
+        "tags": [
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:04.065211"
+    },
+    {
+        "id": "pbu7dn9k",
+        "title": "Advent Giving Tree Donation Deadline Weekend",
+        "description": "Last day to return gift cards or financial donations for the Advent Giving Tree (Donations can be placed in offertory basket this weekend).",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "East Windsor Catholic Family of Parishes",
+        "date": "2025-12-07",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "fundraiser",
+            "community"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:04.065211"
+    },
+    {
+        "id": "xj7ffnv2",
+        "title": "CWL Tourtiere Pie Sale (Dec 8)",
+        "description": "The CWL (OLA) are selling their Tourtiere (Spiced Meat Pie). Small $7 & Large $15.",
+        "church_id": "our-lady-of-the-atonement-windsor",
+        "church_name": "Our Lady of the Atonement",
+        "family_of_parishes": "East Windsor Catholic Family of Parishes",
+        "date": "2025-12-08",
+        "start_time": "0900",
+        "end_time": "1400",
+        "location": null,
+        "tags": [
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:04.065211"
+    },
+    {
+        "id": "vxcl6ee0",
+        "title": "Solemnity of the Immaculate Conception of Mary Mass",
+        "description": "Special Mass celebrating the Immaculate Conception. This is the Diocesan feast day and the feast day of Our Lady of the Atonement.",
+        "church_id": "our-lady-of-the-atonement-windsor",
+        "church_name": "Our Lady of the Atonement",
+        "family_of_parishes": "East Windsor Catholic Family of Parishes",
+        "date": "2025-12-08",
+        "start_time": "1800",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:04.065211"
+    },
+    {
+        "id": "txzjg723",
+        "title": "Nursing Home Mass (Heron Terrace)",
+        "description": "Special communal Mass celebrated at Heron Terrace.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "East Windsor Catholic Family of Parishes",
+        "date": "2025-12-09",
+        "start_time": "1400",
+        "end_time": null,
+        "location": "Heron Terrace",
+        "tags": [
+            "liturgy",
+            "community"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:04.065211"
+    },
+    {
+        "id": "b5g2sm6v",
+        "title": "AED (Defibrillator) Training",
+        "description": "Last call for interested volunteers to be trained in how to use the AED. Training is free.",
+        "church_id": "our-lady-of-the-atonement-windsor",
+        "church_name": "Our Lady of the Atonement",
+        "family_of_parishes": "East Windsor Catholic Family of Parishes",
+        "date": "2025-12-10",
+        "start_time": "1800",
+        "end_time": "2100",
+        "location": "Atonement Family Centre",
+        "tags": [
+            "meeting",
+            "community"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:04.065211"
+    },
+    {
+        "id": "hydda1ly",
+        "title": "Sacrament of Confirmation (St. John Vianney)",
+        "description": "Confirmation celebration. Regular mass time changed to 4:30 pm this day only.",
+        "church_id": "st-john-vianney-windsor",
+        "church_name": "St. John Vianney",
+        "family_of_parishes": "East Windsor Catholic Family of Parishes",
+        "date": "2025-12-13",
+        "start_time": "1630",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "sacramental"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:04.065211"
+    },
+    {
+        "id": "rxd3kxrd",
+        "title": "Sacrament of Confirmation (Our Lady of the Atonement)",
+        "description": "Confirmation celebration.",
+        "church_id": "our-lady-of-the-atonement-windsor",
+        "church_name": "Our Lady of the Atonement",
+        "family_of_parishes": "East Windsor Catholic Family of Parishes",
+        "date": "2025-12-14",
+        "start_time": "1230",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "sacramental"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:04.065211"
+    },
+    {
+        "id": "trzotri8",
+        "title": "Saturday Reconciliation (SJV & OLA)",
+        "description": "Additional scheduled Reconciliation time for Advent season.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "East Windsor Catholic Family of Parishes",
+        "date": "2025-12-20",
+        "start_time": "1100",
+        "end_time": "1200",
+        "location": null,
+        "tags": [
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:04.065211"
+    },
+    {
+        "id": "8bv9kxpr",
+        "title": "St. Anthony of Padua Hungarian Mass",
+        "description": "Special Mass celebrated in the Hungarian tradition.",
+        "church_id": "st-john-vianney-windsor",
+        "church_name": "St. John Vianney",
+        "family_of_parishes": "East Windsor Catholic Family of Parishes",
+        "date": "2025-12-21",
+        "start_time": "1130",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:04.065211"
+    },
+    {
+        "id": "gzgkpsqx",
+        "title": "Advent Monday Mass (Dec 1)",
+        "description": "Special Monday Mass during Advent, taking place at Noon.",
+        "church_id": "holy-name-of-jesus-essex",
+        "church_name": "Holy Name of Jesus",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2025-12-01",
+        "start_time": "1200",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20251130.pdf?t=1764339468000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.687051"
+    },
+    {
+        "id": "tp2vo1n4",
+        "title": "QUEST (Grades 3-5) Youth Group",
+        "description": "Weekly youth ministry session for grades 3-5.",
+        "church_id": "holy-name-of-jesus-essex",
+        "church_name": "Holy Name of Jesus",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2025-12-03",
+        "start_time": "1900",
+        "end_time": "2015",
+        "location": "Holy Name of Jesus",
+        "tags": [
+            "education",
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20251130.pdf?t=1764339468000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.687051"
+    },
+    {
+        "id": "1k93i6d7",
+        "title": "Lector Workshop",
+        "description": "Workshop for parishioners interested in serving as Lectors for weekend Masses.",
+        "church_id": "holy-name-of-jesus-essex",
+        "church_name": "Holy Name of Jesus",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2025-12-06",
+        "start_time": "1100",
+        "end_time": null,
+        "location": "Holy Name of Jesus Church",
+        "tags": [
+            "meeting",
+            "education"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20251130.pdf?t=1764339468000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.687051"
+    },
+    {
+        "id": "hgvljkis",
+        "title": "Essex K of C Fill-the-Cart Donations Deadline",
+        "description": "Last day to drop off canned goods for the Essex Food Bank.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2025-12-07",
+        "start_time": null,
+        "end_time": null,
+        "location": "Gather Space at Holy Name of Jesus Church",
+        "tags": [
+            "community",
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20251130.pdf?t=1764339468000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.687051"
+    },
+    {
+        "id": "yx48ivzq",
+        "title": "Essex CWL Christmas Raffle Draw",
+        "description": "Draw for raffle tickets purchased for prizes.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2025-12-07",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "fundraiser",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20251130.pdf?t=1764339468000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.687051"
+    },
+    {
+        "id": "i34wqwey",
+        "title": "Family of Parishes' Christmas Party",
+        "description": "Celebration hosted by the Essex K of C featuring brunch, movie, and crafts. Free admission.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2025-12-07",
+        "start_time": "1200",
+        "end_time": null,
+        "location": "Holy Name of Jesus parish hall",
+        "tags": [
+            "social",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20251130.pdf?t=1764339468000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.687051"
+    },
+    {
+        "id": "0brpe3t6",
+        "title": "THRIVE (Grades 9-12) Youth Group",
+        "description": "Weekly youth ministry session for grades 9-12.",
+        "church_id": "holy-name-of-jesus-essex",
+        "church_name": "Holy Name of Jesus",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2025-12-07",
+        "start_time": "2000",
+        "end_time": "2100",
+        "location": "Holy Name of Jesus",
+        "tags": [
+            "education",
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20251130.pdf?t=1764339468000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.687051"
+    },
+    {
+        "id": "0vyx9h3h",
+        "title": "Advent Monday Mass (Dec 8)",
+        "description": "Special Monday Mass during Advent.",
+        "church_id": "st-marys-maidstone",
+        "church_name": "St. Mary's",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2025-12-08",
+        "start_time": "1200",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20251130.pdf?t=1764339468000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.687051"
+    },
+    {
+        "id": "mikuz5b0",
+        "title": "Cursillo Ultreya",
+        "description": "Regular Cursillo meeting.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2025-12-12",
+        "start_time": "1930",
+        "end_time": null,
+        "location": "St. Joseph Church in River Canard",
+        "tags": [
+            "meeting",
+            "spiritual"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20251130.pdf?t=1764339468000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.687051"
+    },
+    {
+        "id": "3jtu6r9q",
+        "title": "St. John's Giving Tree Gift Return Deadline",
+        "description": "Deadline to return unwrapped gifts for residents at Country Village Nursing Home.",
+        "church_id": "st-john-the-evangelist-woodslee",
+        "church_name": "St. John the Evangelist",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2025-12-13",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20251130.pdf?t=1764339468000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.687051"
+    },
+    {
+        "id": "h884nma0",
+        "title": "St. Mary's Raffle & Bake Sale",
+        "description": "Raffle draw and sale of baked goods after Mass.",
+        "church_id": "st-marys-maidstone",
+        "church_name": "St. Mary's",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2025-12-14",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "social",
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20251130.pdf?t=1764339468000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.687051"
+    },
+    {
+        "id": "lo5mgj16",
+        "title": "St. Mary's Giving Tree Gift Return Deadline",
+        "description": "Deadline to return gifts for the Giving Tree.",
+        "church_id": "st-marys-maidstone",
+        "church_name": "St. Mary's",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2025-12-14",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20251130.pdf?t=1764339468000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.687051"
+    },
+    {
+        "id": "g4kaelu0",
+        "title": "St. Clement SVDP Gift Card Deadline",
+        "description": "Deadline for donating Gift Cards for Christmas food baskets.",
+        "church_id": "st-clement-mcgregor",
+        "church_name": "St. Clement",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2025-12-14",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "community",
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20251130.pdf?t=1764339468000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.687051"
+    },
+    {
+        "id": "6lqpnk1h",
+        "title": "Advent Monday Mass (Dec 15)",
+        "description": "Special Monday Mass during Advent.",
+        "church_id": "st-clement-mcgregor",
+        "church_name": "St. Clement",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2025-12-15",
+        "start_time": "1200",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20251130.pdf?t=1764339468000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.687051"
+    },
+    {
+        "id": "datu540w",
+        "title": "ROOTED (Grades 6-8) Youth Group",
+        "description": "Weekly youth ministry session for grades 6-8.",
+        "church_id": "holy-name-of-jesus-essex",
+        "church_name": "Holy Name of Jesus",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2025-12-17",
+        "start_time": "1900",
+        "end_time": "2030",
+        "location": "Holy Name of Jesus",
+        "tags": [
+            "education",
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20251130.pdf?t=1764339468000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.687051"
+    },
+    {
+        "id": "spbzytbg",
+        "title": "Healing Mass",
+        "description": "Special liturgy followed by Rosary beforehand.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2025-12-17",
+        "start_time": "1930",
+        "end_time": null,
+        "location": "Academie of Ste. Cecil Chapel on Cousineau Road, Windsor",
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20251130.pdf?t=1764339468000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.687051"
+    },
+    {
+        "id": "y9amdd6p",
+        "title": "Advent Monday Mass (Dec 22)",
+        "description": "Special Monday Mass during Advent.",
+        "church_id": "st-john-the-evangelist-woodslee",
+        "church_name": "St. John the Evangelist",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2025-12-22",
+        "start_time": "1200",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20251130.pdf?t=1764339468000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.687051"
+    },
+    {
+        "id": "tlsykhh3",
+        "title": "St. Peter's Seminary Annual Advent Appeal Collection Deadline",
+        "description": "Final deadline to drop checks for the annual appeal into your Home Parish collection basket.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "date": "2025-12-07",
+        "start_time": null,
+        "end_time": null,
+        "location": "Parish collection basket",
+        "tags": [
+            "fundraiser",
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2025/11/November 30  December 7 2025-1.pdf?t=1764180980000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.706904"
+    },
+    {
+        "id": "xx6ksmxp",
+        "title": "Christmas Caroling and Cookie Decorating",
+        "description": "Evening of caroling followed by cookie decorating and crafts for all ages.",
+        "church_id": "st-joseph-river-canard",
+        "church_name": "St. Joseph",
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "date": "2025-12-05",
+        "start_time": null,
+        "end_time": null,
+        "location": "St. Joseph Parish Halls",
+        "tags": [
+            "social",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2025/11/November 30  December 7 2025-1.pdf?t=1764180980000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.706904"
+    },
+    {
+        "id": "nksnr28h",
+        "title": "Advent Day of Confessions - St. Joseph",
+        "description": "Special extended reconciliation service during Advent.",
+        "church_id": "st-joseph-river-canard",
+        "church_name": "St. Joseph",
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "date": "2025-12-10",
+        "start_time": "0930",
+        "end_time": "1100",
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2025/11/November 30  December 7 2025-1.pdf?t=1764180980000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.706904"
+    },
+    {
+        "id": "qwi09qt5",
+        "title": "Advent Day of Confessions - St. Paul's",
+        "description": "Special extended reconciliation service during Advent.",
+        "church_id": "st-pauls-windsor",
+        "church_name": "St. Paul's",
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "date": "2025-12-10",
+        "start_time": "1300",
+        "end_time": "1430",
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2025/11/November 30  December 7 2025-1.pdf?t=1764180980000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.706904"
+    },
+    {
+        "id": "rq6mgk1m",
+        "title": "Advent Day of Confessions - Sacred Heart",
+        "description": "Special extended reconciliation service during Advent.",
+        "church_id": "sacred-heart-lasalle",
+        "church_name": "Sacred Heart",
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "date": "2025-12-10",
+        "start_time": "1830",
+        "end_time": "2000",
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2025/11/November 30  December 7 2025-1.pdf?t=1764180980000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.706904"
+    },
+    {
+        "id": "ho90t36u",
+        "title": "Giving Tree Donation Deadline",
+        "description": "Deadline to return gift cards and donations for the Giving Tree.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "date": "2025-12-07",
+        "start_time": null,
+        "end_time": null,
+        "location": "Parish office or collection basket",
+        "tags": [
+            "community",
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2025/11/November 30  December 7 2025-1.pdf?t=1764180980000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.706904"
+    },
+    {
+        "id": "tei9nrnl",
+        "title": "St. Joseph School Advent Mass",
+        "description": "Advent Mass celebrated by students from St. Joseph school, taking the place of the regular daily Mass.",
+        "church_id": "st-joseph-river-canard",
+        "church_name": "St. Joseph",
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "date": "2025-12-03",
+        "start_time": "0900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2025/11/November 30  December 7 2025-1.pdf?t=1764180980000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.706904"
+    },
+    {
+        "id": "wtnhstzj",
+        "title": "Sacred Heart School Advent Mass",
+        "description": "Advent Mass celebrated by students from Sacred Heart school, taking the place of the regular daily Mass.",
+        "church_id": "sacred-heart-lasalle",
+        "church_name": "Sacred Heart",
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "date": "2025-12-04",
+        "start_time": "0900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2025/11/November 30  December 7 2025-1.pdf?t=1764180980000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.706904"
+    },
+    {
+        "id": "7uafbr54",
+        "title": "Morning Prayer",
+        "description": "Join Deacon Art and Kelly for Morning Prayer.",
+        "church_id": "sacred-heart-lasalle",
+        "church_name": "Sacred Heart",
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "date": "2025-12-06",
+        "start_time": "0900",
+        "end_time": null,
+        "location": "Sacred Heart Church",
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2025/11/November 30  December 7 2025-1.pdf?t=1764180980000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.706904"
+    },
+    {
+        "id": "6lbdrmq8",
+        "title": "VON SMART Exercise (Last Class Before Christmas)",
+        "description": "The final VON Smart Exercise class before the Christmas break.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "date": "2025-12-09",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "social",
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2025/11/November 30  December 7 2025-1.pdf?t=1764180980000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.706904"
+    },
+    {
+        "id": "clh55dzp",
+        "title": "Special Christmas Senior Social",
+        "description": "The final Senior Social gathering before Christmas, a special seasonal event.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "date": "2025-12-16",
+        "start_time": "1000",
+        "end_time": "1200",
+        "location": null,
+        "tags": [
+            "social",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2025/11/November 30  December 7 2025-1.pdf?t=1764180980000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.706904"
+    },
+    {
+        "id": "8u641n9i",
+        "title": "Cursillo Ultreya",
+        "description": "Cursillo Ultreya meeting. Please bring a snack. Set up starts at 6:30pm.",
+        "church_id": "st-joseph-river-canard",
+        "church_name": "St. Joseph",
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "date": "2025-12-12",
+        "start_time": "1930",
+        "end_time": null,
+        "location": "St. Joseph Church",
+        "tags": [
+            "meeting",
+            "other"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2025/11/November 30  December 7 2025-1.pdf?t=1764180980000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.706904"
+    },
+    {
+        "id": "1whm0tx5",
+        "title": "Knights of Columbus Turkey Bingo",
+        "description": "KOC Council 9500 Bingo event. Doors open at 5pm. Raffles & 50/50 Draw available. Proceeds benefit area charities.",
+        "church_id": "sacred-heart-lasalle",
+        "church_name": "Sacred Heart",
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "date": "2025-12-07",
+        "start_time": "1800",
+        "end_time": null,
+        "location": "Sacred Heart Church Community Center",
+        "tags": [
+            "fundraiser",
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2025/11/November 30  December 7 2025-1.pdf?t=1764180980000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.706904"
+    },
+    {
+        "id": "o20yo02j",
+        "title": "K of C Christmas Potluck and Fraternal Benefit Night",
+        "description": "K of C hosting a Christmas Potluck, includes an Insurance Agent presentation. All parishioners from the Family of Parishes welcome.",
+        "church_id": "our-lady-of-perpetual-help-windsor",
+        "church_name": "Our Lady of Perpetual Help",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2025-12-02",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "OLPH Church Hall",
+        "tags": [
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20251130.pdf?t=1764347640000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.826105"
+    },
+    {
+        "id": "h0ankl1x",
+        "title": "SSVP Giving Tuesday Donation Drive",
+        "description": "Call for non-perishable food or monetary donations for the Society of St. Vincent de Paul to help feed those in need.",
+        "church_id": "immaculate-heart-windsor",
+        "church_name": "Immaculate Heart / St. Michael's",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2025-12-02",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "community",
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20251130.pdf?t=1764347640000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.826105"
+    },
+    {
+        "id": "m9koq83r",
+        "title": "Announced Mass",
+        "description": "Mass with specific intentions listed in the bulletin.",
+        "church_id": "our-lady-of-perpetual-help-windsor",
+        "church_name": "Our Lady of Perpetual Help",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2025-12-02",
+        "start_time": "1800",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20251130.pdf?t=1764347640000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.826105"
+    },
+    {
+        "id": "j6e13nn2",
+        "title": "Announced Mass",
+        "description": "Mass with specific intentions listed in the bulletin.",
+        "church_id": "immaculate-heart-windsor",
+        "church_name": "Immaculate Heart / St. Michael's",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2025-12-03",
+        "start_time": "1200",
+        "end_time": null,
+        "location": "Immaculate Heart/St. Michael's",
+        "tags": [
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20251130.pdf?t=1764347640000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.826105"
+    },
+    {
+        "id": "jxlsuj86",
+        "title": "Announced Mass",
+        "description": "Mass with specific intentions listed in the bulletin.",
+        "church_id": "our-lady-of-perpetual-help-windsor",
+        "church_name": "Our Lady of Perpetual Help",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2025-12-04",
+        "start_time": "1800",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20251130.pdf?t=1764347640000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.826105"
+    },
+    {
+        "id": "khvy7kbs",
+        "title": "OLPH CWL Pasta Dinner & Paddle Auction",
+        "description": "CWL event featuring a Pasta Dinner, Pasta Sauce Contest, and Paddle Auction ($10 entry). Tickets sold until Dec 7.",
+        "church_id": "our-lady-of-perpetual-help-windsor",
+        "church_name": "Our Lady of Perpetual Help",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2025-12-05",
+        "start_time": "1800",
+        "end_time": null,
+        "location": "OLPH Church hall",
+        "tags": [
+            "fundraiser",
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20251130.pdf?t=1764347640000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.826105"
+    },
+    {
+        "id": "npiv54l5",
+        "title": "Extended Adoration of the Blessed Sacrament",
+        "description": "Extended day of Adoration scheduled at Immaculate Heart/St. Michael's Church.",
+        "church_id": "immaculate-heart-windsor",
+        "church_name": "Immaculate Heart / St. Michael's",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2025-12-05",
+        "start_time": "0830",
+        "end_time": "1700",
+        "location": "2153 Parkwood Ave.",
+        "tags": [
+            "liturgy",
+            "other"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20251130.pdf?t=1764347640000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.826105"
+    },
+    {
+        "id": "9fpk85h0",
+        "title": "Healing Mass with Prayer Teams",
+        "description": "Special Healing Mass on Friday evening, with Confessions available starting at 6:15 PM.",
+        "church_id": "immaculate-heart-windsor",
+        "church_name": "Immaculate Heart / St. Michael's",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2025-12-05",
+        "start_time": "1900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "special service"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20251130.pdf?t=1764347640000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.826105"
+    },
+    {
+        "id": "rqml168g",
+        "title": "Announced Mass",
+        "description": "Mass with specific intentions listed in the bulletin.",
+        "church_id": "immaculate-heart-windsor",
+        "church_name": "Immaculate Heart / St. Michael's",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2025-12-05",
+        "start_time": "0800",
+        "end_time": null,
+        "location": "Immaculate Heart/St. Michael's",
+        "tags": [
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20251130.pdf?t=1764347640000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.826105"
+    },
+    {
+        "id": "jq8bn4m8",
+        "title": "Holy Trinity Mission Bazaar Take-out Lunch and Lottery",
+        "description": "Take-out lunch and lottery following the 9:00 AM and 10:30 AM Masses, and lunch after the 12:30 PM Mass.",
+        "church_id": "holy-trinity-windsor",
+        "church_name": "Holy Trinity",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2025-12-07",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "social",
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20251130.pdf?t=1764347640000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.826105"
+    },
+    {
+        "id": "yfldt1td",
+        "title": "OLPH Bingo Gaming Session",
+        "description": "Next assigned bingo session for OLPH Church at the All Star Gaming Centre.",
+        "church_id": "our-lady-of-perpetual-help-windsor",
+        "church_name": "Our Lady of Perpetual Help",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2025-12-07",
+        "start_time": "2200",
+        "end_time": "0000",
+        "location": "All Star Gaming Centre on Walker Rd.",
+        "tags": [
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20251130.pdf?t=1764347640000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.826105"
+    },
+    {
+        "id": "p90g2pze",
+        "title": "Immaculate Heart Christmas Turkey Lunch",
+        "description": "Turkey Lunch event hosted by IH/St. Michael's (tickets on sale Nov 29/30) with proceeds to SVDP.",
+        "church_id": "immaculate-heart-windsor",
+        "church_name": "Immaculate Heart / St. Michael's",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2025-12-14",
+        "start_time": "1330",
+        "end_time": null,
+        "location": "IH/St. Michael's Hall",
+        "tags": [
+            "social",
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20251130.pdf?t=1764347640000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.826105"
+    },
+    {
+        "id": "hlb3ispe",
+        "title": "Nativity Party (Free Event for IH & OLPH Families)",
+        "description": "Free Nativity Party for all families from Immaculate Heart and OLPH. RSVP required.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2025-12-14",
+        "start_time": "1400",
+        "end_time": null,
+        "location": "Our Lady of Perpetual Help Church - in the hall",
+        "tags": [
+            "social",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20251130.pdf?t=1764347640000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.826105"
+    },
+    {
+        "id": "g2zmst6i",
+        "title": "SSVP Christmas Box Packing Day",
+        "description": "Volunteer opportunity to help the Society of St. Vincent de Paul pack Christmas Boxes. Includes pizza for lunch.",
+        "church_id": "our-lady-of-perpetual-help-windsor",
+        "church_name": "Our Lady of Perpetual Help",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2025-12-16",
+        "start_time": "0900",
+        "end_time": "1200",
+        "location": "OLPH Hall",
+        "tags": [
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20251130.pdf?t=1764347640000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.826105"
+    },
+    {
+        "id": "ilee9az3",
+        "title": "Immaculate Heart Bingo Gaming Session",
+        "description": "Next assigned bingo session for Immaculate Heart Church at the All Star Gaming Centre.",
+        "church_id": "immaculate-heart-windsor",
+        "church_name": "Immaculate Heart / St. Michael's",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2025-12-17",
+        "start_time": "1400",
+        "end_time": "1600",
+        "location": "All Star Gaming Centre on Walker Rd.",
+        "tags": [
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20251130.pdf?t=1764347640000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.826105"
+    },
+    {
+        "id": "qyxrvbhs",
+        "title": "Christmas Eve Mass (Vigil)",
+        "description": "Christmas Vigil Mass celebrated at OLPH.",
+        "church_id": "our-lady-of-perpetual-help-windsor",
+        "church_name": "Our Lady of Perpetual Help",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2025-12-24",
+        "start_time": "1700",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20251130.pdf?t=1764347640000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.826105"
+    },
+    {
+        "id": "os4jozxg",
+        "title": "Christmas Eve Mass (Vigil)",
+        "description": "Christmas Vigil Mass celebrated at OLPH.",
+        "church_id": "our-lady-of-perpetual-help-windsor",
+        "church_name": "Our Lady of Perpetual Help",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2025-12-24",
+        "start_time": "1900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20251130.pdf?t=1764347640000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.826105"
+    },
+    {
+        "id": "47cl9o6u",
+        "title": "Christmas Eve Mass (Vigil)",
+        "description": "Christmas Vigil Mass celebrated at Immaculate Heart/St. Michael's.",
+        "church_id": "immaculate-heart-windsor",
+        "church_name": "Immaculate Heart / St. Michael's",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2025-12-24",
+        "start_time": "1700",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20251130.pdf?t=1764347640000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.826105"
+    },
+    {
+        "id": "sbb3moyn",
+        "title": "Midnight Mass",
+        "description": "Midnight Mass celebrated at Immaculate Heart/St. Michael's.",
+        "church_id": "immaculate-heart-windsor",
+        "church_name": "Immaculate Heart / St. Michael's",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2025-12-25",
+        "start_time": "0000",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20251130.pdf?t=1764347640000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.826105"
+    },
+    {
+        "id": "1kqcgr90",
+        "title": "Christmas Day Mass (Bilingual German & English)",
+        "description": "Christmas Day Mass celebrated at IH/St. Michael's.",
+        "church_id": "immaculate-heart-windsor",
+        "church_name": "Immaculate Heart / St. Michael's",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2025-12-25",
+        "start_time": "0900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20251130.pdf?t=1764347640000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.826105"
+    },
+    {
+        "id": "opolrxi7",
+        "title": "Christmas Day Mass",
+        "description": "Christmas Day Mass celebrated at IH/St. Michael's.",
+        "church_id": "immaculate-heart-windsor",
+        "church_name": "Immaculate Heart / St. Michael's",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2025-12-25",
+        "start_time": "1100",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20251130.pdf?t=1764347640000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.826105"
+    },
+    {
+        "id": "2qcdsavp",
+        "title": "Christmas Day Mass",
+        "description": "Christmas Day Mass celebrated at OLPH.",
+        "church_id": "our-lady-of-perpetual-help-windsor",
+        "church_name": "Our Lady of Perpetual Help",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2025-12-25",
+        "start_time": "1030",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20251130.pdf?t=1764347640000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.826105"
+    },
+    {
+        "id": "xp2vovyn",
+        "title": "Christmas (St. Michael's Special Mass)",
+        "description": "Special Mass on Christmas Day noted for St. Michael's.",
+        "church_id": "immaculate-heart-windsor",
+        "church_name": "Immaculate Heart / St. Michael's",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2025-12-25",
+        "start_time": "0900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20251130.pdf?t=1764347640000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.826105"
+    },
+    {
+        "id": "kf4shkix",
+        "title": "Christmas Party (St. Michael's hosting IH Parishioners)",
+        "description": "Annual Christmas party hosted by St. Michael's German parishioners for Immaculate Heart parishioners, featuring traditional Glühwein. Tickets must be bought by Dec 7.",
+        "church_id": "immaculate-heart-windsor",
+        "church_name": "Immaculate Heart / St. Michael's",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2025-12-21",
+        "start_time": "1330",
+        "end_time": null,
+        "location": "St. Michael's Hall",
+        "tags": [
+            "social",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20251130.pdf?t=1764347640000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:10.826105"
+    },
+    {
+        "id": "6x9gq1wc",
+        "title": "Knights 4501 \"Festive Knights\"",
+        "description": "Event following the 10 a.m. Mass, including a hearty breakfast, and a variety of games and activities.",
+        "church_id": "st-michaels-leamington",
+        "church_name": "St. Michael's",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2025-12-01",
+        "start_time": "1000",
+        "end_time": "1300",
+        "location": null,
+        "tags": [
+            "seasonal",
+            "social"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:11.963955"
+    },
+    {
+        "id": "lrdss8h6",
+        "title": "NORTH OF 60 Presentation by Pegg Leroux",
+        "description": "Presentation hosted by the St Vincent de Paul Society in the Church hall.",
+        "church_id": "st-john-de-brebeuf-kingsville",
+        "church_name": "St. John de Brebeuf",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2025-12-01",
+        "start_time": "1830",
+        "end_time": null,
+        "location": "Church hall",
+        "tags": [
+            "meeting",
+            "education"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:11.963955"
+    },
+    {
+        "id": "1q0bcnzf",
+        "title": "CWL Kingsville Potluck/Meeting",
+        "description": "Meeting held in the church hall. Please bring a dish to share.",
+        "church_id": "st-john-de-brebeuf-kingsville",
+        "church_name": "St. John de Brebeuf",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2025-12-03",
+        "start_time": "1200",
+        "end_time": null,
+        "location": "Church hall",
+        "tags": [
+            "social"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:11.963955"
+    },
+    {
+        "id": "izy3peap",
+        "title": "CWL Ladies Paint Night with Andrea Niven",
+        "description": "Cost is $40. Please call the Parish Office to register.",
+        "church_id": "st-michaels-leamington",
+        "church_name": "St. Michael's",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2025-12-03",
+        "start_time": "1830",
+        "end_time": "2030",
+        "location": null,
+        "tags": [
+            "social"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:11.963955"
+    },
+    {
+        "id": "ru2ggjjs",
+        "title": "GriefShare - Surviving the Holidays Session",
+        "description": "Session for those grieving the loss of a loved one during the holidays. To register contact Veronica at 519-324-6796.",
+        "church_id": "st-michaels-leamington",
+        "church_name": "St. Michael's",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2025-12-06",
+        "start_time": "0930",
+        "end_time": "1200",
+        "location": null,
+        "tags": [
+            "education",
+            "community"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:11.963955"
+    },
+    {
+        "id": "vgvidk1p",
+        "title": "Advent Mission Homily (Fr. Patrick Beneteau)",
+        "description": "Part of the Parish Mission, taking place during the 11 am Holy Mass.",
+        "church_id": "our-lady-of-the-most-blessed-sacrament-wheatley",
+        "church_name": "Our Lady of the Most Blessed Sacrament",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2025-12-07",
+        "start_time": "1100",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:11.963955"
+    },
+    {
+        "id": "h3yewr2e",
+        "title": "Advent Mission Homily [Spanish] (Fr. Patrick Beneteau)",
+        "description": "Part of the Parish Mission. Spanish Mass/Homily.",
+        "church_id": "st-michaels-leamington",
+        "church_name": "St. Michael's",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2025-12-07",
+        "start_time": "1500",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:11.963955"
+    },
+    {
+        "id": "9y3o3l57",
+        "title": "SSVP Christmas Hamper Packing",
+        "description": "Volunteers needed for setting tables/packing non-perishable items in St. Michael's Church Hall. Contact Veronica Costa to volunteer.",
+        "church_id": "st-michaels-leamington",
+        "church_name": "St. Michael's",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2025-12-08",
+        "start_time": "1600",
+        "end_time": "1800",
+        "location": "St. Michael's Church Hall",
+        "tags": [
+            "community",
+            "volunteer"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:11.963955"
+    },
+    {
+        "id": "jfvwkb8e",
+        "title": "Advent Mission Talk (Fr. Patrick Beneteau)",
+        "description": "Talk following 6:30 PM Holy Mass.",
+        "church_id": "st-john-de-brebeuf-kingsville",
+        "church_name": "St. John de Brebeuf",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2025-12-08",
+        "start_time": "1900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:11.963955"
+    },
+    {
+        "id": "2v0a7nav",
+        "title": "SSVP Christmas Hamper Distribution (Day 1)",
+        "description": "Volunteers needed for hamper distribution in St. Michael's Church Hall. Contact Veronica Costa to volunteer.",
+        "church_id": "st-michaels-leamington",
+        "church_name": "St. Michael's",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2025-12-09",
+        "start_time": "1530",
+        "end_time": "1800",
+        "location": "St. Michael's Church Hall",
+        "tags": [
+            "community",
+            "volunteer"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:11.963955"
+    },
+    {
+        "id": "cedxec6s",
+        "title": "Advent Mission Talk (Fr. Patrick Beneteau)",
+        "description": "Talk following 6:30 PM Holy Mass.",
+        "church_id": "st-michaels-leamington",
+        "church_name": "St. Michael's",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2025-12-09",
+        "start_time": "1900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:11.963955"
+    },
+    {
+        "id": "ggn66mwx",
+        "title": "All Day Confessions (Advent Penance Service)",
+        "description": "Special Advent schedule for reconciliation.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2025-12-10",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:11.964681"
+    },
+    {
+        "id": "h1g6o3j6",
+        "title": "SSVP Christmas Hamper Distribution (Day 2)",
+        "description": "Volunteers needed for hamper distribution in St. Michael's Church Hall. Contact Veronica Costa to volunteer.",
+        "church_id": "st-michaels-leamington",
+        "church_name": "St. Michael's",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2025-12-10",
+        "start_time": "1500",
+        "end_time": "1900",
+        "location": "St. Michael's Church Hall",
+        "tags": [
+            "community",
+            "volunteer"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:11.964681"
+    },
+    {
+        "id": "s38iu7db",
+        "title": "Cursillo Ultreya",
+        "description": "For all Cursillistas. Held at St. Joseph Church, 9399 N Townline Rd, River Canard.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2025-12-12",
+        "start_time": "1930",
+        "end_time": null,
+        "location": "St. Joseph Church, River Canard",
+        "tags": [
+            "social",
+            "other"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:11.964681"
+    },
+    {
+        "id": "u4gjkvts",
+        "title": "GriefShare - Surviving the Holidays Session",
+        "description": "Session for those grieving the loss of a loved one during the holidays. To register contact Veronica at 519-324-6796.",
+        "church_id": "st-john-de-brebeuf-kingsville",
+        "church_name": "St. John de Brebeuf",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2025-12-13",
+        "start_time": "0930",
+        "end_time": "1200",
+        "location": null,
+        "tags": [
+            "education",
+            "community"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:11.964681"
+    },
+    {
+        "id": "5vsgzael",
+        "title": "Christmas Eve Mass (4:00 PM)",
+        "description": "Christmas Eve Liturgy.",
+        "church_id": "st-john-de-brebeuf-kingsville",
+        "church_name": "St. John de Brebeuf",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2025-12-24",
+        "start_time": "1600",
+        "end_time": null,
+        "location": "Kingsville",
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:11.964681"
+    },
+    {
+        "id": "ectwzlps",
+        "title": "Christmas Eve Mass (4:00 PM)",
+        "description": "Christmas Eve Liturgy.",
+        "church_id": "st-michaels-leamington",
+        "church_name": "St. Michael's",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2025-12-24",
+        "start_time": "1600",
+        "end_time": null,
+        "location": "Leamington",
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:11.964681"
+    },
+    {
+        "id": "gd37sbsb",
+        "title": "Christmas Eve Mass (8:00 PM)",
+        "description": "Christmas Eve Liturgy.",
+        "church_id": "our-lady-of-the-most-blessed-sacrament-wheatley",
+        "church_name": "Our Lady of the Most Blessed Sacrament",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2025-12-24",
+        "start_time": "2000",
+        "end_time": null,
+        "location": "Wheatley",
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:11.964681"
+    },
+    {
+        "id": "fovn47o3",
+        "title": "Christmas Eve Mass (9:00 PM)",
+        "description": "Christmas Eve Liturgy.",
+        "church_id": "st-michaels-leamington",
+        "church_name": "St. Michael's",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2025-12-24",
+        "start_time": "2100",
+        "end_time": null,
+        "location": "Leamington",
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:11.964681"
+    },
+    {
+        "id": "3r8xm2c8",
+        "title": "Christmas Eve Mass (12:00 AM)",
+        "description": "Christmas Eve Liturgy (Midnight Mass).",
+        "church_id": "st-michaels-leamington",
+        "church_name": "St. Michael's",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2025-12-25",
+        "start_time": "0000",
+        "end_time": null,
+        "location": "Leamington",
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:11.964681"
+    },
+    {
+        "id": "ly8awtxm",
+        "title": "Christmas Day Mass (10:00 AM)",
+        "description": "Christmas Day Liturgy.",
+        "church_id": "st-john-de-brebeuf-kingsville",
+        "church_name": "St. John de Brebeuf",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2025-12-25",
+        "start_time": "1000",
+        "end_time": null,
+        "location": "Kingsville",
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:11.964681"
+    },
+    {
+        "id": "p32irezj",
+        "title": "Christmas Day Mass (10:00 AM)",
+        "description": "Christmas Day Liturgy.",
+        "church_id": "st-michaels-leamington",
+        "church_name": "St. Michael's",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2025-12-25",
+        "start_time": "1000",
+        "end_time": null,
+        "location": "Leamington",
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:11.964681"
+    },
+    {
+        "id": "wl9vxhck",
+        "title": "Christmas Day Mass [Español] (3:00 PM)",
+        "description": "Christmas Day Spanish Liturgy.",
+        "church_id": "st-michaels-leamington",
+        "church_name": "St. Michael's",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2025-12-25",
+        "start_time": "1500",
+        "end_time": null,
+        "location": "Leamington",
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:11.964681"
+    },
+    {
+        "id": "0pcqeoyt",
+        "title": "Pelee Island Christmas Mass",
+        "description": "Christmas Liturgy at Our Lady Star of the Sea. Time to be determined.",
+        "church_id": "our-lady-star-of-the-sea-pelee-island",
+        "church_name": "Our Lady Star of the Sea",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2025-12-26",
+        "start_time": null,
+        "end_time": null,
+        "location": "Pelee Island",
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/November 30 2025.pdf",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:11.964681"
+    },
+    {
+        "id": "091sh5a7",
+        "title": "CWL General Meeting (Elections & Craft)",
+        "description": "CWL Executive elections for 2026 to 2027 term. Membership dues collection and Christmas craft.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2025-12-01",
+        "start_time": "1300",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20251130.pdf?t=1764282845000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:13.628198"
+    },
+    {
+        "id": "mnguaz0d",
+        "title": "Monthly Healing Mass",
+        "description": "Healing Mass presided by Fr. Gilbert Simard. Prayer teams will be available afterward.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2025-12-05",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "St. Michael's Catholic Church",
+        "tags": [
+            "liturgy",
+            "other"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20251130.pdf?t=1764282845000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:13.628198"
+    },
+    {
+        "id": "lakm4yrk",
+        "title": "Faith Study Group: 'On Love for the Poor' (Session 2)",
+        "description": "Three-week discussion on Pope Leo XIV's exhortation Dilexi Te.",
+        "church_id": "corpus-christi-windsor",
+        "church_name": "Corpus Christi",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2025-12-06",
+        "start_time": "1030",
+        "end_time": null,
+        "location": "St. Gabriel's Room 1, Corpus Christi Church",
+        "tags": [
+            "education"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20251130.pdf?t=1764282845000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:13.628198"
+    },
+    {
+        "id": "9lnvzs1b",
+        "title": "Ministry of Hospitality Information & Training Meeting (Option 1)",
+        "description": "Mandatory training/reflection meeting for current volunteers and seeking new volunteers.",
+        "church_id": "corpus-christi-windsor",
+        "church_name": "Corpus Christi",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2025-12-06",
+        "start_time": "1000",
+        "end_time": null,
+        "location": "Corpus Christi Church",
+        "tags": [
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20251130.pdf?t=1764282845000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:13.628198"
+    },
+    {
+        "id": "19sjt9gw",
+        "title": "Communal Penance Service",
+        "description": "Service of Reconciliation during Advent.",
+        "church_id": "corpus-christi-windsor",
+        "church_name": "Corpus Christi",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2025-12-07",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "Corpus Christi Church",
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20251130.pdf?t=1764282845000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:13.628198"
+    },
+    {
+        "id": "3gxutbgx",
+        "title": "Parish Breakfast",
+        "description": "Breakfast held at OLMC. Tickets available at the door.",
+        "church_id": "our-lady-of-mt-carmel-windsor",
+        "church_name": "Our Lady of Mt Carmel",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2025-12-07",
+        "start_time": "0930",
+        "end_time": "1230",
+        "location": "OLMC",
+        "tags": [
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20251130.pdf?t=1764282845000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:13.628198"
+    },
+    {
+        "id": "6xwnp49o",
+        "title": "Ministry of Hospitality Information & Training Meeting (Option 2)",
+        "description": "Mandatory training/reflection meeting for current volunteers and seeking new volunteers.",
+        "church_id": "our-lady-of-mt-carmel-windsor",
+        "church_name": "Our Lady of Mt Carmel",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2025-12-07",
+        "start_time": "1300",
+        "end_time": null,
+        "location": "Our Lady of Mount Carmel Church",
+        "tags": [
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20251130.pdf?t=1764282845000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:13.628198"
+    },
+    {
+        "id": "yt8if69k",
+        "title": "Solemnity of the Immaculate Conception Mass",
+        "description": "Solemnity and Principal Patron feast day mass.",
+        "church_id": "our-lady-of-mt-carmel-windsor",
+        "church_name": "Our Lady of Mt Carmel",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2025-12-08",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "Our Lady of Mount Carmel Church",
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20251130.pdf?t=1764282845000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:13.628198"
+    },
+    {
+        "id": "ws6dqnw3",
+        "title": "Cursillo Ultreya",
+        "description": "An afternoon of Scripture and song for all Cursillistas.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2025-12-12",
+        "start_time": "1930",
+        "end_time": null,
+        "location": "St. Joseph Church",
+        "tags": [
+            "religious",
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20251130.pdf?t=1764282845000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:13.628198"
+    },
+    {
+        "id": "1szrd1fp",
+        "title": "Faith Study Group: 'On Love for the Poor' (Session 3)",
+        "description": "Three-week discussion on Pope Leo XIV's exhortation Dilexi Te. Final session.",
+        "church_id": "corpus-christi-windsor",
+        "church_name": "Corpus Christi",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2025-12-13",
+        "start_time": "1030",
+        "end_time": null,
+        "location": "St. Gabriel's Room 1, Corpus Christi Church",
+        "tags": [
+            "education"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20251130.pdf?t=1764282845000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:13.628198"
+    },
+    {
+        "id": "q1v8oy1h",
+        "title": "SSVP Giving Tree Delivery (Corpus Christi)",
+        "description": "Delivery of the Christmas Food and Gift Baskets provided by the Corpus Christi Giving Tree participants.",
+        "church_id": "corpus-christi-windsor",
+        "church_name": "Corpus Christi",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2025-12-14",
+        "start_time": "0900",
+        "end_time": "1200",
+        "location": null,
+        "tags": [
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20251130.pdf?t=1764282845000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:13.628198"
+    },
+    {
+        "id": "xcm82sj2",
+        "title": "Youth Cafe Christmas Charity Event",
+        "description": "Collecting clothing for St. Vincent de Paul and selling baked goods for Compassion for Venezuela. (Drop off location at OLMC 12-2pm).",
+        "church_id": "our-lady-of-mt-carmel-windsor",
+        "church_name": "Our Lady of Mt Carmel",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2025-12-14",
+        "start_time": "1200",
+        "end_time": "1400",
+        "location": "OLMC",
+        "tags": [
+            "social",
+            "fundraiser",
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20251130.pdf?t=1764282845000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:13.628198"
+    },
+    {
+        "id": "8kmai2jh",
+        "title": "OLMC SSVP Christmas Appeal Gift Drop-off Deadline",
+        "description": "Deadline for bringing unwrapped gifts/gift bags tagged for the OLMC St. Vincent DePaul Christmas Appeal.",
+        "church_id": "our-lady-of-mt-carmel-windsor",
+        "church_name": "Our Lady of Mt Carmel",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2025-12-14",
+        "start_time": null,
+        "end_time": null,
+        "location": "Our Lady of Mount Carmel Church",
+        "tags": [
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20251130.pdf?t=1764282845000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:13.628198"
+    },
+    {
+        "id": "jl7ofyli",
+        "title": "Nine Lessons & Carols",
+        "description": "A celebration of hope & joy, preparing for the coming of Christ.",
+        "church_id": "our-lady-of-mt-carmel-windsor",
+        "church_name": "Our Lady of Mt Carmel",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2025-12-14",
+        "start_time": "1300",
+        "end_time": null,
+        "location": "OLMC Church",
+        "tags": [
+            "seasonal",
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20251130.pdf?t=1764282845000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:13.628198"
+    },
+    {
+        "id": "5n4ytfd5",
+        "title": "Christmas Eve Mass (Corpus Christi)",
+        "description": "Special liturgy for Christmas Eve.",
+        "church_id": "corpus-christi-windsor",
+        "church_name": "Corpus Christi",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2025-12-24",
+        "start_time": "1700",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20251130.pdf?t=1764282845000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:13.628198"
+    },
+    {
+        "id": "k5w8z01h",
+        "title": "Christmas Eve Mass (Corpus Christi)",
+        "description": "Special liturgy for Christmas Eve.",
+        "church_id": "corpus-christi-windsor",
+        "church_name": "Corpus Christi",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2025-12-24",
+        "start_time": "2100",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20251130.pdf?t=1764282845000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:13.628198"
+    },
+    {
+        "id": "irgy5af4",
+        "title": "Christmas Eve Mass (Our Lady of Mt Carmel)",
+        "description": "Special liturgy for Christmas Eve.",
+        "church_id": "our-lady-of-mt-carmel-windsor",
+        "church_name": "Our Lady of Mt Carmel",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2025-12-24",
+        "start_time": "1700",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20251130.pdf?t=1764282845000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:13.628198"
+    },
+    {
+        "id": "jgii3qbc",
+        "title": "Christmas Eve Mass (Our Lady of Mt Carmel)",
+        "description": "Special liturgy for Christmas Eve.",
+        "church_id": "our-lady-of-mt-carmel-windsor",
+        "church_name": "Our Lady of Mt Carmel",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2025-12-24",
+        "start_time": "1900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20251130.pdf?t=1764282845000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:13.628198"
+    },
+    {
+        "id": "s4ljxena",
+        "title": "Christmas Day Mass (Corpus Christi)",
+        "description": "Special liturgy for Christmas Day.",
+        "church_id": "corpus-christi-windsor",
+        "church_name": "Corpus Christi",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2025-12-25",
+        "start_time": "1000",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20251130.pdf?t=1764282845000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:13.628198"
+    },
+    {
+        "id": "50dy4vcs",
+        "title": "Christmas Day Mass (Our Lady of Mt Carmel)",
+        "description": "Special liturgy for Christmas Day.",
+        "church_id": "our-lady-of-mt-carmel-windsor",
+        "church_name": "Our Lady of Mt Carmel",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2025-12-25",
+        "start_time": "1200",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20251130.pdf?t=1764282845000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:13.628198"
+    },
+    {
+        "id": "qxq4ugkc",
+        "title": "New Year's Eve Mass / Vigil (Corpus Christi)",
+        "description": "Special liturgy for the Vigil of the Solemnity of Mary, Holy Mother of God.",
+        "church_id": "corpus-christi-windsor",
+        "church_name": "Corpus Christi",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2025-12-31",
+        "start_time": "1700",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20251130.pdf?t=1764282845000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:13.628198"
+    },
+    {
+        "id": "z2ubwubt",
+        "title": "New Year's Eve Mass / Vigil (Our Lady of Mt Carmel)",
+        "description": "Special liturgy for the Vigil of the Solemnity of Mary, Holy Mother of God.",
+        "church_id": "our-lady-of-mt-carmel-windsor",
+        "church_name": "Our Lady of Mt Carmel",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2025-12-31",
+        "start_time": "1800",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20251130.pdf?t=1764282845000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:13.628198"
+    },
+    {
+        "id": "51oluerc",
+        "title": "New Year's Day Mass / Solemnity of Mary (Corpus Christi)",
+        "description": "Special Mass for the Solemnity of Mary, Holy Mother of God.",
+        "church_id": "corpus-christi-windsor",
+        "church_name": "Corpus Christi",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2026-01-01",
+        "start_time": "1000",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20251130.pdf?t=1764282845000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:13.628198"
+    },
+    {
+        "id": "rzytrrsg",
+        "title": "New Year's Day Mass / Solemnity of Mary (Our Lady of Mt Carmel)",
+        "description": "Special Mass for the Solemnity of Mary, Holy Mother of God.",
+        "church_id": "our-lady-of-mt-carmel-windsor",
+        "church_name": "Our Lady of Mt Carmel",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2026-01-01",
+        "start_time": "1200",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20251130.pdf?t=1764282845000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:13.628198"
+    },
+    {
+        "id": "t4i15mr1",
+        "title": "Nativity Pageant, Hot Chocolate & Crafts",
+        "description": "OLMC's Annual Nativity Pageant performance followed by crafts in the Parish Hall.",
+        "church_id": "our-lady-of-mt-carmel-windsor",
+        "church_name": "Our Lady of Mt Carmel",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2025-12-21",
+        "start_time": "1300",
+        "end_time": null,
+        "location": "Our Lady of Mount Carmel Parish Hall",
+        "tags": [
+            "seasonal",
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20251130.pdf?t=1764282845000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:13.628198"
+    },
+    {
+        "id": "9ixgxgjs",
+        "title": "St. Simon & St. Jude CWL General Meeting",
+        "description": "CWL General Meeting. Lunch provided.",
+        "church_id": "st-simon-st-jude-belle-river",
+        "church_name": "St. Simon & St. Jude",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-01",
+        "start_time": "1300",
+        "end_time": null,
+        "location": "Parish hall",
+        "tags": [
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "pb7gp6dh",
+        "title": "French Pastoral Committee Meeting",
+        "description": "Meeting of the French Pastoral Committee.",
+        "church_id": "st-jerome-windsor",
+        "church_name": "St. Jerome",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-02",
+        "start_time": "1900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "g8nlwxs2",
+        "title": "Advent Connect Group Meeting",
+        "description": "Weekly meeting for the Advent Connect Group.",
+        "church_id": "good-shepherd-tecumseh",
+        "church_name": "Good Shepherd",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-02",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "St. Gregory Room",
+        "tags": [
+            "education"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "n6d04p2g",
+        "title": "Ste. Anne's Christmas Eve Choir Rehearsal 1",
+        "description": "Rehearsal for the 4 p.m. Christmas Eve choir.",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-03",
+        "start_time": "1730",
+        "end_time": null,
+        "location": "Ste Anne's",
+        "tags": [
+            "seasonal",
+            "other"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "l3tjd6ui",
+        "title": "Baptism Garment Ministry Meeting",
+        "description": "Meeting to design and create baptism bibs.",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-03",
+        "start_time": "1000",
+        "end_time": null,
+        "location": "Library",
+        "tags": [
+            "meeting",
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "5ojm8rwp",
+        "title": "St. Simon & St. Jude Knights of Columbus General Meeting",
+        "description": "General meeting including consideration of donation motions.",
+        "church_id": "st-simon-st-jude-belle-river",
+        "church_name": "St. Simon & St. Jude",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-03",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "Parish Hall",
+        "tags": [
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "y311hoow",
+        "title": "Pasta Fundraiser (Ste. Anne Conference)",
+        "description": "Annual Pasta Fundraiser supporting St. Vincent de Paul. Dine-in available 4:30 p.m. to 7:00 p.m.",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-03",
+        "start_time": "1630",
+        "end_time": "1900",
+        "location": "Riverside Sportsman Club (10835 Riverside Dr.)",
+        "tags": [
+            "fundraiser",
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "rz85bnql",
+        "title": "PPC Nomination Form Submission Deadline",
+        "description": "Deadline for submitting Parish Pastoral Council nomination forms online or at the church entrance.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-05",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "meeting",
+            "other"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "rk32f08x",
+        "title": "All-Night Communion of Reparation Vigil",
+        "description": "Vigil hosted by Alliance of the Two Hearts. Mass celebrated at 9:00 p.m. (Dec 5) and 7:00 a.m. (Dec 6).",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-05",
+        "start_time": "2030",
+        "end_time": "0730",
+        "location": "Our Lady of Assumption Rosary Chapel",
+        "tags": [
+            "liturgy",
+            "religious"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "egvsfiyx",
+        "title": "St. Jerome Young Adult Sharing Night",
+        "description": "Sharing of faith for young adults ages 18 to 35.",
+        "church_id": "st-jerome-windsor",
+        "church_name": "St. Jerome",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-06",
+        "start_time": "1800",
+        "end_time": "2000",
+        "location": null,
+        "tags": [
+            "social",
+            "religious"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "gpvnuqul",
+        "title": "Second Chance Christmas Appeal Collection",
+        "description": "Annual appeal for Second Chance Ministry. Envelopes provided at Ste. Anne's.",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-06",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "community",
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "6d7dizdc",
+        "title": "Pasta Fundraiser (Ste. Anne Conference)",
+        "description": "Annual Pasta Fundraiser supporting St. Vincent de Paul. Dine-in available 4:30 p.m. to 7:00 p.m.",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-06",
+        "start_time": "1630",
+        "end_time": "1900",
+        "location": "Riverside Sportsman Club (10835 Riverside Dr.)",
+        "tags": [
+            "fundraiser",
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "yb5sqf5i",
+        "title": "Second Chance Christmas Appeal Collection",
+        "description": "Annual appeal for Second Chance Ministry. Envelopes provided at Ste. Anne's.",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-07",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "community",
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "m1fsww1a",
+        "title": "Breakfast With Santa",
+        "description": "Breakfast event with Santa, face painting, and colouring contest. Bring non-perishable goods for the food bank.",
+        "church_id": "st-simon-st-jude-belle-river",
+        "church_name": "St. Simon & St. Jude",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-07",
+        "start_time": "0930",
+        "end_time": "1230",
+        "location": "St. Simon & St. Jude hall",
+        "tags": [
+            "social",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "z08yl0oz",
+        "title": "Handel's Messiah Concert",
+        "description": "WSO event featuring Handel's Messiah, conducted by Geoffrey Larson.",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-07",
+        "start_time": "1930",
+        "end_time": null,
+        "location": "Ste. Anne's Church",
+        "tags": [
+            "seasonal",
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "meqyldb8",
+        "title": "FundScrip Order Submission Deadline",
+        "description": "Deadline to submit gift card orders through FundScrip to support the Family of Parishes.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-08",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "xeutq1w6",
+        "title": "Young Adult Ministry Advent Party",
+        "description": "Special evening of music, prayer, food, conversation, and fun for ages 18-35.",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-08",
+        "start_time": "1800",
+        "end_time": null,
+        "location": "Ste. Anne's Parish",
+        "tags": [
+            "social",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "uahpc2iw",
+        "title": "Advent Connect Group Meeting",
+        "description": "Weekly meeting for the Advent Connect Group.",
+        "church_id": "good-shepherd-tecumseh",
+        "church_name": "Good Shepherd",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-09",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "St. Gregory Room at Good Shepherd",
+        "tags": [
+            "education"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "28hvo75b",
+        "title": "Ste. Anne CWL Christmas Luncheon",
+        "description": "Christmas Luncheon for CWL members who purchased tickets.",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-09",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "social",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "475l98sk",
+        "title": "Catholic in Recovery Meeting",
+        "description": "Meeting for scripture-based discussion, recovery support, and prayer combining 12-step principles with the sacraments.",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-09",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "Ste. Anne's Catholic Church",
+        "tags": [
+            "education",
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "mn74ubdp",
+        "title": "St. Simon & St. Jude CWL Advent Tea",
+        "description": "Advent Tea with lunch provided. Registration required.",
+        "church_id": "st-simon-st-jude-belle-river",
+        "church_name": "St. Simon & St. Jude",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-09",
+        "start_time": "1130",
+        "end_time": "1430",
+        "location": "Parish hall",
+        "tags": [
+            "social",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "ewf7teg5",
+        "title": "Ste. Anne's Christmas Eve Choir Rehearsal 2",
+        "description": "Rehearsal for the 4 p.m. Christmas Eve choir.",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-10",
+        "start_time": "1730",
+        "end_time": null,
+        "location": "Ste Anne's",
+        "tags": [
+            "seasonal",
+            "other"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "afu836rw",
+        "title": "Advent Connect Group Meeting",
+        "description": "Weekly meeting for the Advent Connect Group.",
+        "church_id": "good-shepherd-tecumseh",
+        "church_name": "Good Shepherd",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-10",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "St. Gregory Room at Good Shepherd",
+        "tags": [
+            "education"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "snrclncl",
+        "title": "Belle River Kay-Celles Meeting",
+        "description": "Monthly meeting. New members welcome (must have a family member who is a Knight).",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-10",
+        "start_time": "1900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "41fy8c1m",
+        "title": "Pasta Fundraiser (Ste. Anne Conference)",
+        "description": "Annual Pasta Fundraiser supporting St. Vincent de Paul. Dine-in available 4:30 p.m. to 7:00 p.m.",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-10",
+        "start_time": "1630",
+        "end_time": "1900",
+        "location": "Riverside Sportsman Club (10835 Riverside Dr.)",
+        "tags": [
+            "fundraiser",
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "sonuuva7",
+        "title": "Cursillo Ultreya",
+        "description": "Next Cursillo Ultreya gathering. Open to all Cursillistas.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-12",
+        "start_time": "1930",
+        "end_time": null,
+        "location": "St. Joseph Church (9399 N Townline Rd, River Canard, ON)",
+        "tags": [
+            "education",
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "ios4ix52",
+        "title": "Advent Connect Group Meeting",
+        "description": "Weekly meeting for the Advent Connect Group.",
+        "church_id": "good-shepherd-tecumseh",
+        "church_name": "Good Shepherd",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-13",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "St. Gregory Room at Good Shepherd",
+        "tags": [
+            "education"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "51jeffot",
+        "title": "Good Shepherd CWL Holiday Cookie Sale",
+        "description": "Selling a variety of baked goods before and after all Masses for the CWL.",
+        "church_id": "good-shepherd-tecumseh",
+        "church_name": "Good Shepherd",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-13",
+        "start_time": null,
+        "end_time": null,
+        "location": "Good Shepherd",
+        "tags": [
+            "fundraiser",
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "5mwtu18r",
+        "title": "Advent Retreat (St. Jérôme Parish)",
+        "description": "Parochial retreat addressing all ages to nourish faith during Advent.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-13",
+        "start_time": "1800",
+        "end_time": "2000",
+        "location": null,
+        "tags": [
+            "religious",
+            "education"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "gk04j89m",
+        "title": "Pasta Fundraiser (Ste. Anne Conference)",
+        "description": "Annual Pasta Fundraiser supporting St. Vincent de Paul. Dine-in available 4:30 p.m. to 7:00 p.m.",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-13",
+        "start_time": "1630",
+        "end_time": "1900",
+        "location": "Riverside Sportsman Club (10835 Riverside Dr.)",
+        "tags": [
+            "fundraiser",
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "jfgrk8l4",
+        "title": "Good Shepherd CWL Holiday Cookie Sale (Day 2)",
+        "description": "Selling a variety of baked goods before and after all Masses for the CWL.",
+        "church_id": "good-shepherd-tecumseh",
+        "church_name": "Good Shepherd",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-14",
+        "start_time": null,
+        "end_time": null,
+        "location": "Good Shepherd",
+        "tags": [
+            "fundraiser",
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "hkzaj2zl",
+        "title": "Gingerbread Bash",
+        "description": "Christmas party featuring gingerbread nativity building, story time, songs, and games.",
+        "church_id": "good-shepherd-tecumseh",
+        "church_name": "Good Shepherd",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-14",
+        "start_time": null,
+        "end_time": null,
+        "location": "Good Shepherd Parish",
+        "tags": [
+            "social",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "5n9e2cih",
+        "title": "Visit from Père Noël and Mère Noël (St. Jérôme)",
+        "description": "Visit with Santa Claus and Mrs. Claus following the Sunday Mass.",
+        "church_id": "st-jerome-windsor",
+        "church_name": "St. Jerome",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-14",
+        "start_time": "1100",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "social",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "ja01elqt",
+        "title": "Fourth Degree Knights - Assembly 1789 Monthly Meeting",
+        "description": "Monthly general meeting for the Fourth Degree Knights Assembly.",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-16",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "Parish hall at Ste. Anne",
+        "tags": [
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "m9x8a7bb",
+        "title": "Advent Connect Group Meeting (Final)",
+        "description": "Final weekly meeting for the Advent Connect Group.",
+        "church_id": "good-shepherd-tecumseh",
+        "church_name": "Good Shepherd",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-16",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "St. Gregory Room at Good Shepherd",
+        "tags": [
+            "education"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "426laig5",
+        "title": "Pasta Fundraiser (Ste. Anne Conference)",
+        "description": "Annual Pasta Fundraiser supporting St. Vincent de Paul. Dine-in available 4:30 p.m. to 7:00 p.m.",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-17",
+        "start_time": "1630",
+        "end_time": "1900",
+        "location": "Riverside Sportsman Club (10835 Riverside Dr.)",
+        "tags": [
+            "fundraiser",
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "ojebcbez",
+        "title": "Ste. Anne's Christmas Eve Choir Rehearsal 3",
+        "description": "Rehearsal for the 4 p.m. Christmas Eve choir.",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-17",
+        "start_time": "1730",
+        "end_time": null,
+        "location": "Ste Anne's",
+        "tags": [
+            "seasonal",
+            "other"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "26i23ivt",
+        "title": "Healing Mass (Sharers' of the Word - Windsor)",
+        "description": "Healing Mass followed by individual prayer.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-17",
+        "start_time": "1930",
+        "end_time": null,
+        "location": "Academie Ste. Cecile in the Chapel (925 Cousineau Rd., Windsor). Rosary begins at 7 p.m.",
+        "tags": [
+            "liturgy",
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "n9c6o9pn",
+        "title": "Ste. Anne CWL Member Christmas Party",
+        "description": "Christmas party for CWL members following the 6:30 p.m. Mass.",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-18",
+        "start_time": "1915",
+        "end_time": null,
+        "location": "Ste. Anne's Parish",
+        "tags": [
+            "social",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "k71huzj6",
+        "title": "Pasta Fundraiser (Ste. Anne Conference)",
+        "description": "Annual Pasta Fundraiser supporting St. Vincent de Paul. Dine-in available 4:30 p.m. to 7:00 p.m.",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-24",
+        "start_time": "1630",
+        "end_time": "1900",
+        "location": "Riverside Sportsman Club (10835 Riverside Dr.)",
+        "tags": [
+            "fundraiser",
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "zwr69x4j",
+        "title": "St. Jérôme Family Mass (Christmas Eve)",
+        "description": "Family Mass on Christmas Eve.",
+        "church_id": "st-jerome-windsor",
+        "church_name": "St. Jerome",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-24",
+        "start_time": "1700",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "oic8tjfe",
+        "title": "Pasta Fundraiser (Ste. Anne Conference)",
+        "description": "Annual Pasta Fundraiser supporting St. Vincent de Paul. Dine-in available 4:30 p.m. to 7:00 p.m.",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2025-12-31",
+        "start_time": "1630",
+        "end_time": "1900",
+        "location": "Riverside Sportsman Club (10835 Riverside Dr.)",
+        "tags": [
+            "fundraiser",
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
+        "source_bulletin_date": "2025-12-01",
+        "extracted_at": "2025-12-01T21:31:17.648243"
+    }
+]

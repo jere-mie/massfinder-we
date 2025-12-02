@@ -2,6 +2,7 @@
 """
 Main entrypoint for the bulletin analysis application.
 Orchestrates scraping, PDF processing, and LLM analysis.
+Supports two modes: 'mass' (update mass times) and 'events' (extract events).
 """
 
 import logging
@@ -15,13 +16,13 @@ from urllib.parse import quote
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Import utilities
-from utils import scraping, llm
+from utils import scraping, llm, events
 from utils.logging_config import setup_logging
 
 
 def analyze_bulletin_task(website, pdf_link, pdf_path, churches_for_bulletin, model=None):
     """
-    Helper function to analyze a single bulletin.
+    Helper function to analyze a single bulletin for mass time differences.
     Returns (website, pdf_link, markdown, church_names, churches) tuple.
     """
     logger = logging.getLogger(__name__)
@@ -39,10 +40,52 @@ def analyze_bulletin_task(website, pdf_link, pdf_path, churches_for_bulletin, mo
         return (website, pdf_link, None, church_names, churches_for_bulletin)
 
 
+def extract_events_task(website, pdf_link, pdf_path, churches_for_bulletin, existing_events, model=None):
+    """
+    Helper function to extract events from a single bulletin.
+    Returns (website, pdf_link, events_list, church_names, family_of_parishes) tuple.
+    """
+    logger = logging.getLogger(__name__)
+    
+    church_names = [c.get('name', 'Unknown') for c in churches_for_bulletin]
+    family_of_parishes = events.get_family_of_parishes(churches_for_bulletin)
+    
+    # Prepare simplified church context for LLM
+    churches_context = events.prepare_churches_context(churches_for_bulletin)
+    
+    # Filter existing events to this family for deduplication context
+    family_events = events.filter_events_for_family(existing_events, family_of_parishes)
+    events_context = events.prepare_existing_events_context(family_events)
+    
+    # Extract events from bulletin
+    extracted = llm.extract_events_from_bulletin(
+        pdf_path, 
+        churches_context, 
+        events_context, 
+        model=model
+    )
+    
+    if extracted is None:
+        logger.warning(f"Failed to extract events for churches: {', '.join(church_names)}")
+        return (website, pdf_link, [], church_names, family_of_parishes)
+    
+    # Add metadata to each event
+    for event in extracted:
+        events.add_event_metadata(event, pdf_link)
+    
+    return (website, pdf_link, extracted, church_names, family_of_parishes)
+
+
 def main():
     """Main application flow"""
     parser = argparse.ArgumentParser(
         description='Analyze church bulletins and suggest data updates'
+    )
+    parser.add_argument(
+        '--mode',
+        default='mass',
+        choices=['mass', 'events'],
+        help='Scraper mode: mass (update times), events (extract events)'
     )
     parser.add_argument(
         '--log-level',
@@ -52,13 +95,18 @@ def main():
     )
     parser.add_argument(
         '--output',
-        default='bulletins_analysis.md',
-        help='Output markdown file (default: bulletins_analysis.md)'
+        default=None,
+        help='Output markdown file (default: bulletins_analysis.md for mass, events_analysis.md for events)'
     )
     parser.add_argument(
         '--churches-path',
-        default='../static/churches.json',
-        help='Path to churches.json (default: ../static/churches.json)'
+        default='../public/churches.json',
+        help='Path to churches.json (default: ../public/churches.json)'
+    )
+    parser.add_argument(
+        '--events-path',
+        default='../public/events.json',
+        help='Path to events.json (default: ../public/events.json)'
     )
     parser.add_argument(
         '--workers',
@@ -74,7 +122,7 @@ def main():
     parser.add_argument(
         '--modify-json',
         action='store_true',
-        help='Apply LLM suggestions to update churches.json'
+        help='Apply LLM suggestions to update churches.json or events.json'
     )
     
     args = parser.parse_args()
@@ -82,7 +130,7 @@ def main():
     # Setup logging
     log_level = getattr(logging, args.log_level)
     logger = setup_logging(log_level)
-    logger.info(f"Starting bulletin analysis (log level: {args.log_level})")
+    logger.info(f"Starting bulletin analysis in '{args.mode}' mode (log level: {args.log_level})")
     
     # Set model if provided
     if args.model:
@@ -91,8 +139,14 @@ def main():
     # Resolve paths
     script_dir = Path(__file__).parent
     churches_path = script_dir / args.churches_path
+    events_path = script_dir / args.events_path
     bulletins_dir = script_dir / 'bulletins'
-    output_path = script_dir / args.output
+    
+    # Set default output path based on mode
+    if args.output:
+        output_path = script_dir / args.output
+    else:
+        output_path = script_dir / ('events_analysis.md' if args.mode == 'events' else 'bulletins_analysis.md')
     
     # Verify churches.json exists
     if not churches_path.exists():
@@ -128,7 +182,15 @@ def main():
         logger.warning("No bulletins downloaded. Exiting.")
         return 0
     
-    # Step 4: Analyze each bulletin with LLM in parallel
+    # Branch based on mode
+    if args.mode == 'events':
+        return run_events_mode(args, logger, churches, downloaded, events_path, output_path)
+    else:
+        return run_mass_mode(args, logger, churches, downloaded, churches_path, output_path)
+def run_mass_mode(args, logger, churches, downloaded, churches_path, output_path):
+    """Run the mass times analysis mode (original behavior)."""
+    
+    # Analyze each bulletin with LLM in parallel
     logger.info(f"Analyzing {len(downloaded)} bulletin(s) with LLM (using {args.workers} workers)...")
     markdown_results_unordered = {}  # Temporary dict to collect results from parallel execution
     
@@ -180,7 +242,7 @@ def main():
             markdown_results.append((bulletin_website, markdown_results_unordered[bulletin_website]))
             seen_websites.add(bulletin_website)
     
-    # Step 5: Write results to markdown file
+    # Write results to markdown file
     try:
         write_analysis_report(output_path, markdown_results)
         logger.info(f"Analysis complete. Results saved to {output_path}")
@@ -188,7 +250,7 @@ def main():
         logger.error(f"Failed to write analysis report: {e}")
         return 1
     
-    # Step 6: Optionally apply modifications to churches.json
+    # Optionally apply modifications to churches.json
     if args.modify_json:
         logger.info("--modify-json flag set. Applying LLM suggestions to churches.json...")
         try:
@@ -218,6 +280,90 @@ def main():
         logger.info(f"Found {len(markdown_results)} bulletin(s) with differences")
     else:
         logger.info("No differences found across all bulletins ✓")
+    
+    return 0
+
+
+def run_events_mode(args, logger, churches, downloaded, events_path, output_path):
+    """Run the events extraction mode."""
+    
+    # Load existing events for deduplication
+    existing_events = events.load_events_json(str(events_path))
+    
+    # Extract events from each bulletin in parallel
+    logger.info(f"Extracting events from {len(downloaded)} bulletin(s) with LLM (using {args.workers} workers)...")
+    all_extracted_events = []
+    events_results = []  # For report generation
+    
+    # Prepare extraction tasks
+    tasks = []
+    for website, pdf_link, pdf_path in downloaded:
+        # Find ALL churches that use this bulletin website
+        churches_for_bulletin = [
+            c for c in churches 
+            if c.get('bulletin_website') == website
+        ]
+        
+        if not churches_for_bulletin:
+            logger.warning(f"No church found for website {website}, skipping")
+            continue
+        
+        tasks.append((website, pdf_link, pdf_path, churches_for_bulletin))
+    
+    # Execute extraction tasks in parallel
+    with ThreadPoolExecutor(max_workers=args.workers) as executor:
+        # Submit all tasks
+        futures = {
+            executor.submit(
+                extract_events_task, 
+                website, pdf_link, pdf_path, churches_for_bulletin, 
+                existing_events, model=args.model
+            ): (website, pdf_link, churches_for_bulletin)
+            for website, pdf_link, pdf_path, churches_for_bulletin in tasks
+        }
+        
+        # Process results as they complete
+        for future in as_completed(futures):
+            try:
+                website, pdf_link, extracted_events, church_names, family_of_parishes = future.result()
+                
+                if extracted_events:
+                    all_extracted_events.extend(extracted_events)
+                    events_results.append({
+                        'website': website,
+                        'pdf_link': pdf_link,
+                        'events': extracted_events,
+                        'church_names': church_names,
+                        'family_of_parishes': family_of_parishes
+                    })
+            except Exception as e:
+                logger.error(f"Events extraction task failed: {e}")
+                continue
+    
+    # Merge extracted events with existing events
+    merged_events = events.merge_events(existing_events, all_extracted_events)
+    
+    # Write events analysis report
+    try:
+        write_events_report(output_path, events_results)
+        logger.info(f"Events extraction complete. Report saved to {output_path}")
+    except Exception as e:
+        logger.error(f"Failed to write events report: {e}")
+        return 1
+    
+    # Optionally save merged events to events.json
+    if args.modify_json:
+        logger.info("--modify-json flag set. Saving events to events.json...")
+        try:
+            events.save_events_json(merged_events, str(events_path))
+            logger.info(f"✓ events.json updated successfully: {events_path}")
+        except Exception as e:
+            logger.error(f"Failed to save events.json: {e}")
+            return 1
+    
+    # Summary
+    logger.info(f"Extracted {len(all_extracted_events)} events from {len(events_results)} bulletin(s)")
+    logger.info(f"Total events after merge: {len(merged_events)}")
     
     return 0
 
@@ -254,6 +400,67 @@ def write_analysis_report(output_path, markdown_results):
                 # Write the markdown table(s) which include church names as headers
                 f.write(markdown)
                 f.write("\n\n")
+        
+        # Write footer
+        f.write("*End of report.*\n")
+
+
+def write_events_report(output_path, events_results):
+    """Write events extraction report to markdown file"""
+    logger = logging.getLogger(__name__)
+    logger.info(f"Writing events report to {output_path}")
+    
+    total_events = sum(len(r['events']) for r in events_results)
+    
+    with open(output_path, 'w', encoding='utf-8') as f:
+        # Write header
+        f.write("# Events Extraction Report\n\n")
+        f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
+        
+        # Write summary
+        f.write("## Summary\n\n")
+        if not events_results:
+            f.write("No events found in any bulletins.\n\n")
+        else:
+            f.write(f"Extracted **{total_events}** events from **{len(events_results)}** bulletin(s).\n\n")
+        
+        # Write events by bulletin
+        if events_results:
+            f.write("## Extracted Events\n\n")
+            
+            for result in events_results:
+                pdf_link = result.get('pdf_link', result.get('website', ''))
+                church_names = result.get('church_names', [])
+                family = result.get('family_of_parishes', 'Unknown')
+                events_list = result.get('events', [])
+                
+                # URL-encode the link
+                encoded_link = quote(pdf_link, safe=':/?#[]@!$&\'()*+,;=')
+                
+                # Write bulletin header
+                f.write(f"### [Bulletin]({encoded_link})\n\n")
+                f.write(f"**Churches:** {', '.join(church_names)}\n\n")
+                f.write(f"**Family of Parishes:** {family}\n\n")
+                
+                if not events_list:
+                    f.write("*No events found.*\n\n")
+                else:
+                    # Write events table
+                    f.write("| Date | Title | Time | Location | Tags |\n")
+                    f.write("|------|-------|------|----------|------|\n")
+                    
+                    for event in events_list:
+                        date = event.get('date', 'N/A')
+                        title = event.get('title', 'N/A')
+                        start = event.get('start_time', '')
+                        end = event.get('end_time', '')
+                        time_str = f"{start}-{end}" if start and end else (start or end or 'N/A')
+                        location = event.get('location', 'N/A') or 'N/A'
+                        tags = ', '.join(event.get('tags', [])) or 'N/A'
+                        
+                        f.write(f"| {date} | {title} | {time_str} | {location} | {tags} |\n")
+                    
+                    f.write("\n")
         
         # Write footer
         f.write("*End of report.*\n")

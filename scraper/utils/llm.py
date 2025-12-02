@@ -248,3 +248,179 @@ OUTPUT: Return ONLY the complete updated churches.json as valid JSON array. No m
     except Exception as e:
         logger.error(f"Error updating churches from markdown: {str(e)[:100]}")
         return churches_data
+
+
+def extract_events_from_bulletin(pdf_path, churches_data, existing_events, model=None):
+    """
+    Extract upcoming events from a bulletin PDF using LLM.
+    
+    Args:
+        pdf_path: Path to the bulletin PDF file
+        churches_data: List of church dicts that share this bulletin (simplified, with id, name, familyOfParishes)
+        existing_events: List of existing events for this family (simplified, for deduplication)
+        model: Optional model to use (overrides PREFERRED_MODEL)
+    
+    Returns:
+        List of event dicts extracted from the bulletin, or None on error.
+        Events that match existing ones will have the same 'id'.
+        New events will have 'id': None.
+    """
+    from datetime import datetime
+    
+    if not os.path.exists(pdf_path):
+        logger.error(f"PDF not found: {pdf_path}")
+        return None
+    
+    # Use provided model or fall back to preferred model
+    model_to_use = model if model else PREFERRED_MODEL
+    
+    church_names = ', '.join([c.get('name', 'Unknown') for c in churches_data])
+    family_of_parishes = None
+    for c in churches_data:
+        if c.get('familyOfParishes'):
+            family_of_parishes = c.get('familyOfParishes')
+            break
+    
+    try:
+        # Encode PDF as base64
+        with open(pdf_path, 'rb') as f:
+            pdf_base64 = base64.b64encode(f.read()).decode('utf-8')
+        
+        # Create data URL for OpenRouter
+        data_url = f"data:application/pdf;base64,{pdf_base64}"
+        
+        logger.info(f"Extracting events from {os.path.basename(pdf_path)} for: {church_names}")
+        
+        current_date = datetime.now().strftime('%Y-%m-%d')
+        
+        # Prepare the events extraction prompt
+        prompt = f"""You are extracting UPCOMING SPECIAL EVENTS from a Catholic parish bulletin.
+
+CHURCHES IN THIS BULLETIN:
+{json.dumps(churches_data, indent=2)}
+
+EXISTING EVENTS (from previous extractions - use for deduplication):
+{json.dumps(existing_events, indent=2) if existing_events else "[]"}
+
+CURRENT DATE: {current_date}
+
+TASK: Extract ONLY special one-time or limited-time events. Look for:
+- Parish social events (dinners, breakfasts, potlucks, picnics)
+- Fundraisers and sales (bake sales, bazaars, raffles)
+- Educational programs (Bible studies, RCIA sessions, workshops, retreats)
+- Community outreach (food drives, volunteer events)
+- Meetings (parish council, ministry meetings, info sessions)
+- Seasonal celebrations (Christmas concerts, Advent programs, Lenten missions)
+- Special liturgies with a SPECIFIC DATE (e.g., "Advent Penance Service on Dec 15")
+
+DO NOT INCLUDE (these are handled separately):
+- Regular weekly Mass schedules (Sunday Mass, Saturday Vigil, weekday Masses)
+- Regular weekly Confession/Reconciliation times
+- Regular weekly Adoration/Holy Hour schedules
+- Daily Mass schedules
+- Any recurring weekly activity without a specific one-time date
+- General statements like "Confession available before Mass"
+
+OUTPUT FORMAT (JSON array):
+[
+  {{
+    "id": "existing_id_if_match_or_null",
+    "title": "Event Name",
+    "description": "Brief description",
+    "church_id": "church-slug-or-null",
+    "church_name": "Church Name or null",
+    "family_of_parishes": "{family_of_parishes or 'Unknown'}",
+    "date": "YYYY-MM-DD",
+    "start_time": "HHMM or null",
+    "end_time": "HHMM or null",
+    "location": "Specific location or null",
+    "tags": ["tag1", "tag2"]
+  }}
+]
+
+RULES:
+- ONLY include events with a SPECIFIC DATE (not recurring weekly schedules)
+- Convert all dates to YYYY-MM-DD format
+- Convert times to 24-hour HHMM format (e.g., 5:30 PM -> 1730, 9:00 AM -> 0900)
+- If date year is not specified, assume current year. If the date has already passed this year, assume next year.
+- If an event is for a specific church, set church_id and church_name from the CHURCHES list above
+- If an event is for the whole family of parishes (or church not specified), set church_id and church_name to null
+- DEDUPLICATION: If an event matches one in EXISTING EVENTS (same or very similar title, same date, same church), return the SAME id from existing. For new events, set id to null.
+- Suggested tags: liturgy, social, fundraiser, education, meeting, community, seasonal, other
+- Return empty array [] if no special events found
+- Return ONLY valid JSON array, no explanations or markdown"""
+
+        # Call OpenRouter API
+        headers = {
+            'Authorization': f'Bearer {OPENROUTER_API_KEY}',
+            'Content-Type': 'application/json'
+        }
+        
+        payload = {
+            'model': model_to_use,
+            'messages': [
+                {
+                    'role': 'user',
+                    'content': [
+                        {
+                            'type': 'text',
+                            'text': prompt
+                        },
+                        {
+                            'type': 'file',
+                            'file': {
+                                'filename': 'bulletin.pdf',
+                                'file_data': data_url
+                            }
+                        }
+                    ]
+                }
+            ],
+            "reasoning": {
+                "max_tokens": 5000,
+                "exclude": True,
+                "enabled": True
+            }
+        }
+        
+        response = requests.post(OPENROUTER_API_URL, json=payload, headers=headers, timeout=120)
+        response.raise_for_status()
+        
+        result = response.json()
+        
+        # Extract response content
+        if 'choices' in result and len(result['choices']) > 0:
+            content = result['choices'][0]['message']['content'].strip()
+            
+            logger.debug(f"LLM Events Raw Response:\n{content}")
+            
+            # Try to parse JSON from response
+            import re
+            # Look for JSON array in response
+            json_match = re.search(r'\[.*\]', content, re.DOTALL)
+            
+            if json_match:
+                json_str = json_match.group(0)
+                events = json.loads(json_str)
+                logger.info(f"✓ Extracted {len(events)} events for: {church_names}")
+                return events
+            elif content.strip() == '[]':
+                logger.info(f"✓ No events found for: {church_names}")
+                return []
+            else:
+                logger.warning(f"Could not parse events JSON for: {church_names}")
+                logger.debug(f"Response content: {content[:500]}")
+                return []
+        else:
+            logger.error(f"No response from LLM for events extraction: {church_names}")
+            return None
+    
+    except requests.exceptions.RequestException as e:
+        logger.error(f"API request failed for events extraction ({church_names}): {str(e)[:100]}")
+        return None
+    except json.JSONDecodeError as e:
+        logger.error(f"Failed to parse events JSON for {church_names}: {str(e)[:100]}")
+        return []
+    except Exception as e:
+        logger.error(f"Error extracting events for {church_names}: {str(e)[:100]}")
+        return None

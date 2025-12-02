@@ -77,3 +77,23 @@ export interface TableRow {
  * Tab types
  */
 export type TabType = 'map' | 'list';
+
+/**
+ * Represents a parish event extracted from bulletins
+ */
+export interface Event {
+  id: string; // 8-char base36
+  title: string;
+  description: string;
+  church_id: string | null; // null for family-wide events
+  church_name: string | null;
+  family_of_parishes: string;
+  date: string; // YYYY-MM-DD
+  start_time: string | null; // HHMM
+  end_time: string | null; // HHMM
+  location: string | null;
+  tags: string[];
+  source_bulletin_link: string;
+  source_bulletin_date: string;
+  extracted_at: string; // ISO timestamp
+}
