@@ -1,0 +1,48 @@
+---
+import '../styles/global.css';
+import 'leaflet/dist/leaflet.css';
+import { Navbar } from '../components/Navbar';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+	title = 'Deanery of Windsor-Essex',
+	description = 'Welcome to the Deanery of Windsor-Essex, a community of Catholic parishes serving the faithful in Windsor-Essex County, Ontario.'
+} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" type="image/png" href="/wedeanery-icon.png" />
+		<meta name="generator" content={Astro.generator} />
+
+		<title>{title}</title>
+		<meta name="description" content={description}>
+
+		<!-- Open Graph / Social Media Meta Tags -->
+		<meta property="og:site_name" content="Deanery of Windsor-Essex" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+	</head>
+	<body class="bg-gray-50 min-h-screen">
+		<Navbar client:load />
+		<main>
+			<slot />
+		</main>
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+</style>

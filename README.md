@@ -14,29 +14,18 @@ Find Catholic Mass times, confession schedules, and adoration times for churches
 
 ## Tech Stack
 
-This project uses a **zero-build, vanilla ES modules** architecture:
-
-- **[Preact](https://preactjs.com/)**: Lightweight React alternative for component-based UI
-  - [Documentation](https://preactjs.com/guide/v10/getting-started)
-  - [Hooks API](https://preactjs.com/guide/v10/hooks)
-- **[HTM](https://github.com/developit/htm)**: JSX-like syntax using template literals (no build step)
-  - [Documentation](https://github.com/developit/htm#readme)
-- **[Leaflet](https://leafletjs.com/)**: Interactive maps with OpenStreetMap
-  - [Documentation](https://leafletjs.com/reference.html)
-  - [Tutorials](https://leafletjs.com/examples.html)
-- **[Bootstrap 5](https://getbootstrap.com/)**: CSS-only styling (no Bootstrap JS)
-  - [Documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
-  - [Utilities](https://getbootstrap.com/docs/5.3/utilities/api/)
-- **No bundler/transpiler**: Pure ES modules run directly in the browser
-
-All dependencies are vendored - no npm install required!
+- **[Astro](https://astro.build/)**: Static site generator with partial hydration
+- **[React](https://react.dev/)**: Component-based UI library
+- **[TypeScript](https://www.typescriptlang.org/)**: Type-safe JavaScript
+- **[Tailwind CSS](https://tailwindcss.com/)**: Utility-first CSS framework
+- **[Leaflet](https://leafletjs.com/)** + **[react-leaflet](https://react-leaflet.js.org/)**: Interactive maps
 
 ## Getting Started
 
 ### Prerequisites
 
-- Any HTTP server (Python, Node.js http-server, VS Code Live Server, etc.)
-- A modern web browser with ES module support
+- Node.js 18+ 
+- npm or pnpm
 
 ### Local Development
 
@@ -46,54 +35,70 @@ All dependencies are vendored - no npm install required!
    cd massfinder-we
    ```
 
-2. **Start a local server**
-   
-   Using Python:
+2. **Install dependencies**
    ```bash
-   python3 -m http.server 8000
-   ```
-   
-   Or using Node.js:
-   ```bash
-   npx http-server -p 8000
+   npm install
    ```
 
-3. **Open in browser**
-   ```
-   http://localhost:8000
+3. **Start the dev server**
+   ```bash
+   npm run dev
    ```
 
-4. **Make changes**
-   - Edit files in the `static/` directory
-   - Refresh browser to see changes (no build step!)
+4. **Open in browser**
+   ```
+   http://localhost:4321
+   ```
+
+### Build for Production
+
+```bash
+npm run build
+npm run preview  # Preview the build locally
+```
 
 ### Project Structure
 
 ```
 massfinder-we/
-├── index.html                      # Entry point
-├── CNAME                          # Custom domain config
-├── static/
-│   ├── churches.json              # Church data (single source of truth)
-│   ├── main.js                    # App bootstrap
-│   ├── utils.js                   # Shared utilities
-│   ├── style.css                  # Custom styles
-│   ├── standalone-preact.esm.js   # Vendored Preact + HTM
-│   ├── components/                # Preact components
-│   │   ├── App.js                 # Root component
-│   │   ├── Header.js              # Navigation tabs
-│   │   ├── MapTab.js              # Map view
-│   │   ├── ListTab.js             # Table view
-│   │   └── FiltersOffcanvas.js    # Filter sidebar
-│   ├── leaflet/                   # Vendored Leaflet library
-│   └── bootstrap/                 # Vendored Bootstrap CSS
+├── public/
+│   └── churches.json              # Church data (single source of truth)
+├── src/
+│   ├── components/
+│   │   ├── App.tsx                # Root React component
+│   │   ├── Header.tsx             # Tab navigation
+│   │   ├── ListView/              # List view components
+│   │   │   ├── ListView.tsx
+│   │   │   ├── DataTable.tsx
+│   │   │   └── FilterCard.tsx
+│   │   └── MapView/               # Map view components
+│   │       ├── MapView.tsx
+│   │       ├── ChurchPopup.tsx
+│   │       └── FilterPanel.tsx
+│   ├── hooks/
+│   │   └── useChurches.ts         # Data fetching hook
+│   ├── types/
+│   │   └── church.ts              # TypeScript interfaces
+│   ├── utils/
+│   │   ├── constants.ts           # App constants
+│   │   ├── filtering.ts           # Filter logic
+│   │   └── formatting.ts          # Display formatting
+│   ├── layouts/
+│   │   └── Layout.astro           # Base HTML layout
+│   ├── pages/
+│   │   └── index.astro            # Home page
+│   └── styles/
+│       └── global.css             # Global styles + Tailwind
+├── astro.config.mjs               # Astro configuration
+├── tailwind.config.js             # Tailwind configuration
+└── tsconfig.json                  # TypeScript configuration
 ```
 
 ## Development Guidelines
 
 ### Adding a New Church
 
-Edit `static/churches.json` with the following structure:
+Edit `public/churches.json` with the following structure:
 
 ```json
 {
@@ -123,63 +128,27 @@ Edit `static/churches.json` with the following structure:
 - Times use **24-hour `HHMM` format** (e.g., `"1830"` for 6:30 PM)
 - Coordinates: `[latitude, longitude]` order
 - Phone: Include `+1` country code
-- Get coordinates from Google Maps (right-click location)
 - Optional `note` field available for all time entries
-
-### Component Development
-
-Components use HTM (JSX-like) syntax with Preact:
-
-```javascript
-import { html } from '../standalone-preact.esm.js';
-import { useState, useEffect } from '../standalone-preact.esm.js';
-
-export function MyComponent({ prop }) {
-  const [state, setState] = useState(initialValue);
-  
-  return html`
-    <div class="${state ? 'active' : ''}">
-      <${ChildComponent} value=${prop} />
-    </div>
-  `;
-}
-```
-
-**Key patterns:**
-- Use `html` tagged template literals (not JSX)
-- Components use `.js` extension (not `.jsx`)
-- Props interpolation: `${value}` for expressions
-- Component composition: `<${ComponentName} />`
 
 ### Utility Functions
 
-Common utilities in `static/utils.js`:
+Common utilities in `src/utils/`:
 
 - `formatTime(time)` - Convert `"1830"` → `"6:30 PM"`
 - `formatPhoneNumber(phone)` - Format to `"(519) 736-5418"`
 - `formatUrl(url)` - Strip protocol and trailing slash
-- `sortMasses(masses)` - Sort by day then time
 - `DAYS_OF_WEEK` - Ordered array of day names
 - `TIME_OPTIONS` - Time select options
 
 ### Styling
 
-- Use Bootstrap utility classes when possible
-- Custom styles in `static/style.css`
-- Follow existing patterns for consistency
-- Test responsive behavior on mobile
-
-### Accessibility
-
-Maintain ARIA attributes and semantic HTML:
-- Add `aria-label` to interactive elements
-- Use `role` attributes appropriately
-- Maintain keyboard navigation
-- Test with screen readers when possible
+- Use Tailwind utility classes
+- Custom styles in `src/styles/global.css`
+- Responsive breakpoints: `sm:`, `md:`, `lg:`, `xl:`
 
 ## Data Maintenance
 
-Church information should be updated regularly to ensure accuracy:
+Church information should be updated regularly:
 
 - **Mass times**: Verify at least annually or when notified of changes
 - **Websites/phones**: Check for updates when adding new churches
@@ -198,4 +167,4 @@ See [LICENSE](LICENSE) file for details.
 
 - Church data sourced from parish websites and public listings
 - Map tiles provided by OpenStreetMap
-- Built with Preact, HTM, Leaflet, and Bootstrap
+- Built with Astro, React, Tailwind CSS, and Leaflet

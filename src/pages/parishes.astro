@@ -1,0 +1,145 @@
+---
+import Layout from '../layouts/Layout.astro';
+import type { Church } from '../types/church';
+import fs from 'node:fs';
+import path from 'node:path';
+
+// Read churches.json at build time
+const churchesPath = path.join(process.cwd(), 'public', 'churches.json');
+const churches = JSON.parse(fs.readFileSync(churchesPath, 'utf-8')) as (Church & { familyOfParishes?: string })[];
+
+// Group churches by family of parishes
+const familiesMap = new Map<string, typeof churches>();
+
+churches.forEach((church) => {
+  const family = church.familyOfParishes || 'Other';
+  if (!familiesMap.has(family)) {
+    familiesMap.set(family, []);
+  }
+  familiesMap.get(family)!.push(church);
+});
+
+// Sort families alphabetically and convert to array
+const families = Array.from(familiesMap.entries())
+  .sort((a, b) => a[0].localeCompare(b[0]))
+  .map(([name, churches]) => ({
+    name,
+    churches: churches.sort((a, b) => a.name.localeCompare(b.name))
+  }));
+---
+
+<Layout 
+  title="Families of Parishes - Deanery of Windsor-Essex"
+  description="Explore the Catholic Families of Parishes in Windsor-Essex County. Find information about each parish family and the churches within them."
+>
+  <div class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-4">
+      Families of Parishes
+    </h1>
+    <p class="text-lg text-gray-600 text-center mb-10 max-w-2xl mx-auto">
+      The Catholic parishes of Windsor-Essex are organized into families, working together to serve our faith community. 
+      Click on each family to explore the parishes within.
+    </p>
+
+    <div class="space-y-4">
+      {families.map((family, index) => (
+        <div class="border border-gray-200 rounded-lg overflow-hidden bg-white shadow-sm">
+          <button
+            class="accordion-trigger w-full px-6 py-4 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+            aria-expanded="false"
+            aria-controls={`accordion-content-${index}`}
+            data-accordion-index={index}
+          >
+            <div>
+              <h2 class="text-lg font-semibold text-gray-900">{family.name}</h2>
+              <p class="text-sm text-gray-500">{family.churches.length} {family.churches.length === 1 ? 'parish' : 'parishes'}</p>
+            </div>
+            <svg 
+              class="accordion-icon w-5 h-5 text-gray-500 transition-transform duration-200" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div 
+            id={`accordion-content-${index}`}
+            class="accordion-content hidden"
+          >
+            <div class="px-6 pb-4 pt-2 border-t border-gray-100">
+              <ul class="divide-y divide-gray-100">
+                {family.churches.map((church) => (
+                  <li class="py-4 first:pt-2 last:pb-2">
+                    <a 
+                      href={`/church/${church.id}`}
+                      class="block group"
+                    >
+                      <h3 class="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">
+                        {church.name}
+                      </h3>
+                      <p class="text-sm text-gray-500 mt-1">{church.address}</p>
+                      <div class="flex flex-wrap gap-4 mt-2 text-sm text-gray-600">
+                        {church.masses.length > 0 && (
+                          <span class="flex items-center gap-1">
+                            <svg class="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            {church.masses.length} Sunday {church.masses.length === 1 ? 'Mass' : 'Masses'}
+                          </span>
+                        )}
+                        {church.confession.length > 0 && (
+                          <span class="flex items-center gap-1">
+                            <svg class="w-4 h-4 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                            </svg>
+                            Confession
+                          </span>
+                        )}
+                        {church.adoration.length > 0 && (
+                          <span class="flex items-center gap-1">
+                            <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                            </svg>
+                            Adoration
+                          </span>
+                        )}
+                      </div>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</Layout>
+
+<script>
+  // Accordion functionality
+  document.addEventListener('DOMContentLoaded', () => {
+    const triggers = document.querySelectorAll('.accordion-trigger');
+    
+    triggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const index = trigger.getAttribute('data-accordion-index');
+        const content = document.getElementById(`accordion-content-${index}`);
+        const icon = trigger.querySelector('.accordion-icon');
+        const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+        
+        // Toggle current accordion
+        trigger.setAttribute('aria-expanded', String(!isExpanded));
+        content?.classList.toggle('hidden');
+        icon?.classList.toggle('rotate-180');
+      });
+    });
+  });
+</script>
+
+<style>
+  .accordion-icon {
+    transition: transform 0.2s ease-in-out;
+  }
+</style>
