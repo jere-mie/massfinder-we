@@ -239,11 +239,6 @@
         ],
         "confession": [
             {
-                "day": "Saturday",
-                "start": "1545",
-                "end": "1615"
-            },
-            {
                 "day": "Wednesday",
                 "start": "0900",
                 "end": "0930"
