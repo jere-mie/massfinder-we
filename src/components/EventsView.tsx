@@ -191,6 +191,8 @@ export function EventsView() {
   const [selectedFamily, setSelectedFamily] = useState('all');
   const [selectedTag, setSelectedTag] = useState('all');
   const [showPastEvents, setShowPastEvents] = useState(false);
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
 
   const families = useMemo(() => getUniqueValues(events, 'family_of_parishes'), [events]);
   const tags = useMemo(() => getUniqueValues(events, 'tags'), [events]);
@@ -209,9 +211,17 @@ export function EventsView() {
       if (!showPastEvents && isDatePast(event.date)) {
         return false;
       }
+      // Filter by start date
+      if (startDate && event.date < startDate) {
+        return false;
+      }
+      // Filter by end date
+      if (endDate && event.date > endDate) {
+        return false;
+      }
       return true;
     });
-  }, [events, selectedFamily, selectedTag, showPastEvents]);
+  }, [events, selectedFamily, selectedTag, showPastEvents, startDate, endDate]);
 
   if (loading) {
     return (
@@ -314,6 +324,53 @@ export function EventsView() {
               <span className="ml-3 text-sm font-medium text-gray-700">Show past events</span>
             </label>
           </div>
+        </div>
+
+        {/* Date Range Filters */}
+        <div className="flex flex-wrap gap-6 items-end mt-4 pt-4 border-t border-gray-100">
+          <div className="flex-1 min-w-[150px]">
+            <label
+              htmlFor="start-date"
+              className="block text-sm font-semibold text-gray-700 mb-2"
+            >
+              From Date
+            </label>
+            <input
+              type="date"
+              id="start-date"
+              value={startDate}
+              onChange={(e) => setStartDate(e.target.value)}
+              className="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors cursor-pointer hover:bg-gray-100"
+            />
+          </div>
+
+          <div className="flex-1 min-w-[150px]">
+            <label
+              htmlFor="end-date"
+              className="block text-sm font-semibold text-gray-700 mb-2"
+            >
+              To Date
+            </label>
+            <input
+              type="date"
+              id="end-date"
+              value={endDate}
+              onChange={(e) => setEndDate(e.target.value)}
+              className="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors cursor-pointer hover:bg-gray-100"
+            />
+          </div>
+
+          {(startDate || endDate) && (
+            <button
+              onClick={() => {
+                setStartDate('');
+                setEndDate('');
+              }}
+              className="px-4 py-2.5 text-sm font-medium text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition-colors"
+            >
+              Clear dates
+            </button>
+          )}
         </div>
       </div>
 
