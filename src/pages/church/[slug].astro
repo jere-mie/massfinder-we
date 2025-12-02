@@ -37,20 +37,21 @@ const description = `${scheduleText} Located at ${church.address}.`;
 ---
 
 <Layout 
-  title={`${church.name} - WE Catholic Mass List`}
+  title={`${church.name} - Deanery of Windsor-Essex`}
   description={description}
 >
   <div class="mx-auto px-4 py-8 md:max-w-4xl">
     <!-- Back Link -->
-    <a 
-      href="/" 
-      class="inline-flex items-center text-blue-600 hover:text-blue-800 hover:underline mb-6"
+    <button 
+      id="back-button"
+      type="button"
+      class="inline-flex items-center text-blue-600 hover:text-blue-800 hover:underline mb-6 cursor-pointer"
     >
       <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
       </svg>
-      Back to all churches
-    </a>
+      Back
+    </button>
 
     <!-- Church Header -->
     <header class="mb-8">
@@ -211,3 +212,19 @@ const description = `${scheduleText} Located at ${church.address}.`;
     </div>
   </div>
 </Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const backButton = document.getElementById('back-button');
+    
+    backButton?.addEventListener('click', () => {
+      // Check if there's history to go back to
+      if (window.history.length > 1) {
+        window.history.back();
+      } else {
+        // Fallback to parishes page if no history
+        window.location.href = '/parishes';
+      }
+    });
+  });
+</script>

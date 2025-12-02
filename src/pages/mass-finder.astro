@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { App } from '../components/App';
+---
+
+<Layout 
+	title="Mass, Confession, & Adoration Times - Deanery of Windsor-Essex"
+	description="Find Catholic Mass times, confession, and adoration schedules for churches in Windsor-Essex County, Ontario. Interactive map and searchable listings."
+>
+	<App client:only="react" />
+</Layout>

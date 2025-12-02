@@ -1,8 +1,98 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { App } from '../components/App';
 ---
 
-<Layout>
-	<App client:only="react" />
+<Layout 
+	title="Deanery of Windsor-Essex"
+	description="Welcome to the Deanery of Windsor-Essex, a community of Catholic parishes serving the faithful in Windsor-Essex County, Ontario."
+>
+	<!-- Hero/Jumbotron Section -->
+	<section class="bg-linear-to-br from-blue-600 to-blue-800 text-white">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
+			<div class="text-center">
+				<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+					Deanery of Windsor-Essex
+				</h1>
+				<p class="text-xl sm:text-2xl text-blue-100 max-w-3xl mx-auto mb-8">
+					A community of Catholic parishes serving the faithful in Windsor-Essex County, Ontario
+				</p>
+				<a
+					href="/mass-finder"
+					class="inline-flex items-center px-6 py-3 text-lg font-semibold rounded-lg bg-white text-blue-700 hover:bg-blue-50 transition-colors shadow-lg hover:shadow-xl"
+				>
+					Find Mass, Confession, & Adoration Times
+					<svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+					</svg>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- About Section -->
+	<section class="py-16 sm:py-20 bg-white">
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-8">
+				About the Deanery
+			</h2>
+			<div class="prose prose-lg max-w-none text-gray-600 space-y-6">
+				<p>
+					The Deanery of Windsor-Essex is a vibrant collection of Catholic parishes united in faith and service 
+					within the Diocese of London. Our deanery encompasses the beautiful Windsor-Essex County region, 
+					serving thousands of faithful Catholics through our many parishes and worship communities.
+				</p>
+				<p>
+					Each parish in our deanery offers a unique spiritual home while sharing in the universal mission 
+					of the Catholic Church: to proclaim the Gospel, celebrate the sacraments, and serve those in need. 
+					From the urban parishes of Windsor to the rural communities throughout Essex County, we are united 
+					in our commitment to worship, fellowship, and Christian service.
+				</p>
+				<p>
+					Whether you're a lifelong parishioner, new to the area, or simply visiting, we warmly welcome you 
+					to explore our parishes and join us in celebrating the Holy Mass. Use our schedule finder to 
+					discover Mass, confession, and adoration times at churches near you.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Quick Links Section -->
+	<section class="py-16 sm:py-20 bg-gray-50">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<h2 class="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-12">
+				Explore Our Resources
+			</h2>
+			<div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+				<a 
+					href="/mass-finder" 
+					class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6 group"
+				>
+					<div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors">
+						<svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+						</svg>
+					</div>
+					<h3 class="text-xl font-semibold text-gray-900 mb-2">Mass, Confession, & Adoration Times</h3>
+					<p class="text-gray-600">
+						Find schedules for Mass, confession, and adoration at parishes throughout Windsor-Essex.
+					</p>
+				</a>
+				<a 
+					href="/parishes" 
+					class="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow p-6 group"
+				>
+					<div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors">
+						<svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+						</svg>
+					</div>
+					<h3 class="text-xl font-semibold text-gray-900 mb-2">Our Parishes</h3>
+					<p class="text-gray-600">
+						Explore our Families of Parishes and discover the churches that make up our deanery.
+					</p>
+				</a>
+			</div>
+		</div>
+	</section>
 </Layout>

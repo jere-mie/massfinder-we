@@ -12,7 +12,7 @@ export function Header({ activeTab, onTabChange }: HeaderProps) {
   return (
     <div className="container mx-auto px-4 text-center my-6">
       <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-        Windsor-Essex County Catholic Mass List
+        Mass, Confession, & Adoration Times
       </h1>
       <nav className="flex justify-center" role="tablist" aria-label="Main navigation">
         <div className="inline-flex border-b border-gray-200">

@@ -23,6 +23,7 @@ export interface TimeRange {
 export interface Church {
   id: string; // Unique identifier (e.g., "st-john-the-baptist-amherstburg")
   name: string;
+  familyOfParishes?: string; // The family of parishes this church belongs to
   address: string;
   coordinates: [number, number]; // [latitude, longitude]
   map: string; // Google Maps link
