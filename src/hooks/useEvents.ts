@@ -69,7 +69,7 @@ function compareEvents(a: Event, b: Event): number {
  * Determine tier based on time fields.
  *
  * Tier 1: start=null & end=null  
- * Tier 2: start=null & end!=null  
+ * Tier 2: start=null & end!=null
  * Tier 3: start!=null (merged tier 3 & 4)
  */
 function getEventTier(e: Event): number {
