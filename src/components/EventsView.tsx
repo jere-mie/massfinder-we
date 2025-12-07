@@ -47,7 +47,7 @@ function getUniqueValues(events: Event[], key: 'family_of_parishes' | 'tags'): s
 /**
  * Check if a date is in the past
  */
-function isDatePast(dateStr: string): boolean {
+export function isDatePast(dateStr: string): boolean {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   const eventDate = new Date(dateStr + 'T00:00:00');
@@ -76,7 +76,7 @@ interface EventCardProps {
   event: Event;
 }
 
-function EventCard({ event }: EventCardProps) {
+export function EventCard({ event }: EventCardProps) {
   const isPast = isDatePast(event.date);
   const timeDisplay = formatEventTime(event);
 
