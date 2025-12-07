@@ -58,6 +58,13 @@ const description = `${scheduleText} Located at ${church.address}.`;
       <h1 class="text-3xl font-bold text-gray-900 mb-4">{church.name}</h1>
       
       <div class="space-y-2 text-gray-600">
+        {church.familyOfParishes &&
+          <p class="flex items-start">
+            <span class="mr-2">⛪</span>
+              Member of the {church.familyOfParishes}
+            </a>
+          </p>
+        }
         <p class="flex items-start">
           <span class="mr-2">📍</span>
           <a 
