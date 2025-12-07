@@ -2,7 +2,7 @@
 
 Find Catholic Mass times, confession schedules, and adoration times for churches in Windsor-Essex County, Ontario.
 
-🌐 **Live Site**: [mass.bornais.ca](https://mass.bornais.ca)
+🌐 **Live Site**: [www.wedeanery.ca](https://www.wedeanery.ca)
 
 ## Features
 
