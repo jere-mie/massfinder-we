@@ -1,26 +1,37 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { formatTime, formatTimeRange, formatPhoneNumber, formatUrl } from '../../utils/formatting';
-import type { Church } from '../../types/church';
+import type { Church, Event } from '../../types/church';
+import EventToggle from "../../components/EventToggle";
 import fs from 'node:fs';
 import path from 'node:path';
 
 export function getStaticPaths() {
   // Read churches.json from public folder at build time
   const churchesPath = path.join(process.cwd(), 'public', 'churches.json');
+  const eventsPath = path.join(process.cwd(), 'public', 'events.json');
   const churchesData = JSON.parse(fs.readFileSync(churchesPath, 'utf-8')) as Church[];
+  const eventsData = JSON.parse(fs.readFileSync(eventsPath, 'utf-8')) as Event[];
   
-  return churchesData.map((church) => ({
-    params: { slug: church.id },
-    props: { church },
-  }));
+  return churchesData.map((church) => {
+
+    const churchEvents = eventsData.filter(
+      (event) => event.family_of_parishes === church.familyOfParishes!
+    );
+
+    return {
+      params: { slug: church.id },
+      props: { church, events: churchEvents },
+    }
+  });
 }
 
 interface Props {
   church: Church;
+  events: Event[];
 }
 
-const { church } = Astro.props;
+const { church, events } = Astro.props;
 
 // Build dynamic description based on church schedules
 const scheduleItems: string[] = [];
@@ -97,6 +108,22 @@ const description = `${scheduleText} Located at ${church.address}.`;
           </a>
         </p>
       </div>
+
+    <!-- Map Link -->
+    <div class="mt-8 text-center">
+      <a 
+        href={church.map}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+      >
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+        </svg>
+        View on Google Maps
+      </a>
+    </div>
     </header>
 
     <!-- Schedule Sections -->
@@ -202,20 +229,17 @@ const description = `${scheduleText} Located at ${church.address}.`;
       )}
     </div>
 
-    <!-- Map Link -->
-    <div class="mt-8 text-center">
-      <a 
-        href={church.map}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-      >
-        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-        </svg>
-        View on Google Maps
-      </a>
+    <!-- Adoration -->
+    {events.length > 0 && (
+      <section class="bg-white rounded-lg border border-gray-200 shadow-sm p-6 mt-8">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+          <span class="mr-2">🏤</span>
+          Upcoming Events
+        </h2>
+        <p>These are all the events in the {church.familyOfParishes || "church"}.</p>
+        <EventToggle client:load events={events} />
+      </section>
+    )}
     </div>
   </div>
 </Layout>
