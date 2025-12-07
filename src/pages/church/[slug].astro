@@ -16,7 +16,7 @@ export function getStaticPaths() {
   return churchesData.map((church) => {
 
     const churchEvents = eventsData.filter(
-      (event) => event.church_id === church.id
+      (event) => event.family_of_parishes === church.familyOfParishes!
     );
 
     return {
@@ -229,6 +229,7 @@ const description = `${scheduleText} Located at ${church.address}.`;
           <span class="mr-2">🏤</span>
           Upcoming Events
         </h2>
+        <p>These are all the events in the {church.familyOfParishes || "church"}.</p>
         <EventToggle client:load events={events} />
       </section>
     )}
