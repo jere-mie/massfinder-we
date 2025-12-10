@@ -76,7 +76,7 @@ export interface TableRow {
 /**
  * Tab types
  */
-export type TabType = 'map' | 'list';
+export type TabType = 'map' | 'list' | 'calendar';
 
 /**
  * Represents a parish event extracted from bulletins
