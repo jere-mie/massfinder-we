@@ -57,71 +57,12 @@ npm run build
 npm run preview  # Preview the build locally
 ```
 
-### Project Structure
-
-```
-massfinder-we/
-├── public/
-│   └── churches.json              # Church data (single source of truth)
-├── src/
-│   ├── components/
-│   │   ├── App.tsx                # Root React component
-│   │   ├── Header.tsx             # Tab navigation
-│   │   ├── ListView/              # List view components
-│   │   │   ├── ListView.tsx
-│   │   │   ├── DataTable.tsx
-│   │   │   └── FilterCard.tsx
-│   │   └── MapView/               # Map view components
-│   │       ├── MapView.tsx
-│   │       ├── ChurchPopup.tsx
-│   │       └── FilterPanel.tsx
-│   ├── hooks/
-│   │   └── useChurches.ts         # Data fetching hook
-│   ├── types/
-│   │   └── church.ts              # TypeScript interfaces
-│   ├── utils/
-│   │   ├── constants.ts           # App constants
-│   │   ├── filtering.ts           # Filter logic
-│   │   └── formatting.ts          # Display formatting
-│   ├── layouts/
-│   │   └── Layout.astro           # Base HTML layout
-│   ├── pages/
-│   │   └── index.astro            # Home page
-│   └── styles/
-│       └── global.css             # Global styles + Tailwind
-├── astro.config.mjs               # Astro configuration
-├── tailwind.config.js             # Tailwind configuration
-└── tsconfig.json                  # TypeScript configuration
-```
 
 ## Development Guidelines
 
 ### Adding a New Church
 
-Edit `public/churches.json` with the following structure:
-
-```json
-{
-  "name": "Church Name",
-  "address": "123 Main St, City, ON N0R 1K0",
-  "coordinates": [42.1234, -83.5678],
-  "map": "https://maps.app.goo.gl/...",
-  "website": "https://example.com",
-  "phone": "+15197365418",
-  "masses": [
-    {"day": "Sunday", "time": "0900"}
-  ],
-  "daily_masses": [
-    {"day": "Wednesday", "time": "1700"}
-  ],
-  "confession": [
-    {"day": "Saturday", "start": "1600", "end": "1645", "note": "Optional note"}
-  ],
-  "adoration": [
-    {"day": "Friday", "start": "0900", "end": "1700"}
-  ]
-}
-```
+Edit `public/churches.json` and ensure the correct structure is followed.
 
 **Important conventions:**
 - All arrays are **required** (use empty `[]` if none)
