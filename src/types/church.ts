@@ -76,7 +76,7 @@ export interface TableRow {
 /**
  * Tab types
  */
-export type TabType = 'map' | 'list';
+export type TabType = 'map' | 'list' | 'calendar';
 
 /**
  * Valid tag categories for parish events
