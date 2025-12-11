@@ -12,81 +12,108 @@ import type { Church, Mass, TimeRange } from "../../types/church"; // adjust pat
 const WEEKS_TO_GENERATE = 8;
 const localizer = momentLocalizer(moment);
 
-/** Convert "HHMM" (e.g., "1830") to a Date based on a given weekday name */
-function parseTime(dayName: string, HHMM: string): Date {
-  const [hour, minute] = [HHMM.slice(0, 2), HHMM.slice(2)];
-  const now = moment();
-
-  // Sunday = 0 ... Saturday = 6.
-  const weekdayIndex = moment().day(dayName).day();
-
-  const date = now.clone().day(weekdayIndex).hour(+hour).minute(+minute).second(0);
-
-  // If the chosen day is already in the past of this week, move to next week.
-  if (date.isBefore(moment())) {
-    date.add(7, "days");
-  }
-
-  return date.toDate();
-}
-
 interface CalendarEvent extends RBCEvent {
   type: "mass" | "daily_mass" | "confession" | "adoration";
   churchName: string;
 }
 
+/** Convert "HHMM" (e.g., "1830") to a Date based on a given weekday name */
+function parseTime(dayName: string, HHMM: string): Date[] {
+  const [hour, minute] = [HHMM.slice(0, 2), HHMM.slice(2)];
+  const now = moment();
+
+  if (dayName.toLowerCase() === "every day") {
+    const dates: Date[] = [];
+    for (let weekday = 0; weekday < 7; weekday++) {
+      const m = now.clone().day(weekday).hour(+hour).minute(+minute).second(0);
+      
+      // If the chosen day is already in the past of this week, move to next week.
+      if (m.isBefore(now))
+        m.add(7, "days");
+      dates.push(m.toDate());
+    }
+
+    return dates;
+  }
+
+  // Sunday = 0 ... Saturday = 6.
+  const weekdayIndex = moment().day(dayName).day();
+  const date = now.clone().day(weekdayIndex).hour(+hour).minute(+minute).second(0);
+
+  // If the chosen day is already in the past of this week, move to next week.
+  if (date.isBefore(moment()))
+    date.add(7, "days");
+
+  return [date.toDate()];
+}
+
+function parseTimeRange(t: TimeRange): { start: Date; end: Date }[] {
+  const startDates = parseTime(t.day, t.start);
+  const endDates = parseTime(t.day, t.end);
+
+  // Safety check — these should always match in length.
+  if (startDates.length !== endDates.length) {
+    console.warn(`Mismatched start/end lengths for "${t.day}" time range.`);
+  }
+
+  const count = Math.min(startDates.length, endDates.length);
+  const ranges: { start: Date; end: Date }[] = [];
+
+  for (let i = 0; i < count; i++) {
+    ranges.push({
+      start: startDates[i],
+      end: endDates[i]
+    });
+  }
+
+  return ranges;
+}
+
 // Weekly recurrence generator.
-function generateWeeklyEvents<T extends CalendarEvent>(event: T, weeks: number): T[] {
+function generateWeeklyEvents<T extends CalendarEvent>(events: T[], weeks: number): T[] {
   const copies: T[] = [];
 
-  for (let i = 0; i < weeks; i++) {
-    copies.push({
-      ...event,
-      start: moment(event.start).add(7 * i, "days").toDate(),
-      end: moment(event.end).add(7 * i, "days").toDate(),
-    });
+  for (const event of events) {
+    for (let i = 0; i < weeks; i++) {
+      copies.push({
+        ...event,
+        start: moment(event.start).add(7 * i, "days").toDate(),
+        end: moment(event.end).add(7 * i, "days").toDate(),
+      });
+    }
   }
 
   return copies;
 }
 
-function massToEvent(m: Mass, church: Church): CalendarEvent {
-  const start = parseTime(m.day, m.time);
-  const end = moment(start).add(1, "hour").toDate();
+function massToEvent(m: Mass, church: Church, daily: boolean): CalendarEvent[] {
+  const starts = parseTime(m.day, m.time);
+  const events: CalendarEvent[] = [];
+  starts.forEach(start => {
+    const end = moment(start).add(daily ? 30 : 60, "minutes").toDate();
+    events.push({
+      start: start,
+      end: moment(start).add(daily ? 30 : 60, "minutes").toDate(),
+      title: `${church.name} - ${daily ? 'Daily ' : ''}Mass`,
+      type: daily ? "daily_mass" : "mass",
+      churchName: church.name
+    });
+  });
 
-  return {
-    start,
-    end,
-    title: `${church.name} – Mass`,
-    type: "mass",
-    churchName: church.name,
-  };
+  return events;
 }
 
-function dailyMassToEvent(m: Mass, church: Church): CalendarEvent {
-  const start = parseTime(m.day, m.time);
-  const end = moment(start).add(30, "minutes").toDate();
+function timeRangeToEvent(t: TimeRange, church: Church, eventType: "confession" | "adoration"): CalendarEvent[] {
+  const ranges = parseTimeRange(t);
 
-  return {
-    start,
-    end,
-    title: `${church.name} – Daily Mass`,
-    type: "daily_mass",
+  return ranges.map(r => ({
+    start: r.start,
+    end: r.end,
+    title: `${church.name} – ${eventType === "confession" ? "Confession" : "Adoration"}`,
+    type: eventType,
     churchName: church.name,
-  };
-}
-
-function timeRangeToEvent(t: TimeRange, church: Church, type: "confession" | "adoration"): CalendarEvent {
-  const start = parseTime(t.day, t.start);
-  const end = parseTime(t.day, t.end);
-
-  return {
-    start,
-    end,
-    title: `${church.name} – ${type === "confession" ? "Confession" : "Adoration"}`,
-    type,
-    churchName: church.name,
-  };
+    allDay: t.start === "0000" && t.end === "2359"
+  }));;
 }
 
 interface Props {
@@ -101,23 +128,23 @@ export function CalendarView({ churches }: Props) {
 
     for (const church of churches) {
       for (const m of church.masses) {
-        const e = massToEvent(m, church);
-        all.push(...generateWeeklyEvents(e, WEEKS_TO_GENERATE));
+        const events = massToEvent(m, church, false);
+        all.push(...generateWeeklyEvents(events, WEEKS_TO_GENERATE));
       }
 
       for (const m of church.daily_masses) {
-        const e = dailyMassToEvent(m, church);
-        all.push(...generateWeeklyEvents(e, WEEKS_TO_GENERATE));
+        const events = massToEvent(m, church, true);
+        all.push(...generateWeeklyEvents(events, WEEKS_TO_GENERATE));
       }
 
       for (const c of church.confession) {
-        const e = timeRangeToEvent(c, church, "confession");
-        all.push(...generateWeeklyEvents(e, WEEKS_TO_GENERATE));
+        const events = timeRangeToEvent(c, church, "confession");
+        all.push(...generateWeeklyEvents(events, WEEKS_TO_GENERATE));
       }
 
       for (const a of church.adoration) {
-        const e = timeRangeToEvent(a, church, "adoration");
-        all.push(...generateWeeklyEvents(e, WEEKS_TO_GENERATE));
+        const events = timeRangeToEvent(a, church, "adoration");
+        all.push(...generateWeeklyEvents(events, WEEKS_TO_GENERATE));
       }
     }
 
