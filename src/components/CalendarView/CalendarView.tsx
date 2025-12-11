@@ -9,6 +9,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 
 import type { Church, Mass, TimeRange } from "../../types/church"; // adjust path
 import { FilterBar } from "./FilterBar";
+import { EventDetailsModal } from "./EventDetailsModal";
 
 const WEEKS_TO_GENERATE = 8;
 const localizer = momentLocalizer(moment);
@@ -22,7 +23,7 @@ export const EVENT_COLORS: Record<EventType, string> = {
   adoration: "#d4af37",
 };
 
-interface CalendarEvent extends RBCEvent {
+export interface CalendarEvent extends RBCEvent {
   type: EventType;
   churchName: string;
 }
@@ -167,6 +168,7 @@ export function CalendarView({ churches }: Props) {
     confession: false,
     adoration: false
   });
+  const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | null>(null);
 
   const visibleEvents = events.filter(event => filters[event.type]);
 
@@ -215,6 +217,11 @@ export function CalendarView({ churches }: Props) {
           eventPropGetter={eventStyleGetter}
           views={["month", "day", "agenda"]}
           dayLayoutAlgorithm={"no-overlap"}
+          onSelectEvent={(event) => setSelectedEvent(event)}
+        />
+        <EventDetailsModal
+          event={selectedEvent}
+          onClose={() => setSelectedEvent(null)}
         />
       </div>
     </div>
