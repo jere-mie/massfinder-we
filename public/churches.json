@@ -1224,7 +1224,8 @@
             {
                 "day": "Sunday",
                 "time": "1130",
-                "note": "Every 3rd Sunday of the month. Part of St. Anthony of Padua Hungarian Community"
+                "note": "Every 3rd Sunday of the month. Part of St. Anthony of Padua Hungarian Community",
+                "dayOfMonth": 3
             }
         ],
         "daily_masses": [
@@ -1743,7 +1744,8 @@
             {
                 "day": "Thursday",
                 "time": "1830",
-                "note": "Every 2nd Thursday (seasonal)."
+                "note": "Every 2nd Thursday (seasonal).",
+                "dayOfMonth": 2
             }
         ],
         "confession": [
@@ -1751,7 +1753,8 @@
                 "day": "Thursday",
                 "start": "1800",
                 "end": "1830",
-                "note": "Every 2nd Thursday (seasonal)."
+                "note": "Every 2nd Thursday (seasonal).",
+                "dayOfMonth": 2
             }
         ],
         "adoration": []

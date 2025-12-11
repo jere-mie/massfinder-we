@@ -11,7 +11,7 @@ import type { Church, Mass, TimeRange } from "../../types/church"; // adjust pat
 import { FilterBar } from "./FilterBar";
 import { EventDetailsModal } from "./EventDetailsModal";
 
-const WEEKS_TO_GENERATE = 8;
+const WEEKS_TO_GENERATE = 20;
 const localizer = momentLocalizer(moment);
 
 export type EventType = "mass" | "daily_mass" | "confession" | "adoration";
@@ -28,6 +28,7 @@ export interface CalendarEvent extends RBCEvent {
   churchName: string;
   churchId: string;
   note?: string;
+  dayOfMonth?: number;
 }
 
 /** Convert "HHMM" (e.g., "1830") to a Date based on a given weekday name */
@@ -88,10 +89,18 @@ function generateWeeklyEvents<T extends CalendarEvent>(events: T[], weeks: numbe
 
   for (const event of events) {
     for (let i = 0; i < weeks; i++) {
+      let start = moment(event.start).add(7 * i, "days");
+      let end = moment(event.end).add(7 * i, "days");
+
+      if (event.dayOfMonth != null) {
+        let nth = Math.ceil(start.date() / 7);
+        if (event.dayOfMonth !== nth) continue;
+      }
+
       copies.push({
         ...event,
-        start: moment(event.start).add(7 * i, "days").toDate(),
-        end: moment(event.end).add(7 * i, "days").toDate(),
+        start: start.toDate(),
+        end: end.toDate(),
       });
     }
   }
@@ -111,7 +120,8 @@ function massToEvent(m: Mass, church: Church, daily: boolean): CalendarEvent[] {
       type: daily ? "daily_mass" : "mass",
       churchName: church.name,
       churchId: church.id,
-      note: m.note
+      note: m.note,
+      dayOfMonth: m.dayOfMonth
     });
   });
 
@@ -129,7 +139,8 @@ function timeRangeToEvent(t: TimeRange, church: Church, eventType: "confession" 
     churchName: church.name,
     churchId: church.id,
     allDay: t.start === "0000" && t.end === "2359",
-    note: t.note
+    note: t.note,
+    dayOfMonth: t.dayOfMonth
   }));;
 }
 
