@@ -26,6 +26,7 @@ export const EVENT_COLORS: Record<EventType, string> = {
 export interface CalendarEvent extends RBCEvent {
   type: EventType;
   churchName: string;
+  churchId: string;
 }
 
 /** Convert "HHMM" (e.g., "1830") to a Date based on a given weekday name */
@@ -107,7 +108,8 @@ function massToEvent(m: Mass, church: Church, daily: boolean): CalendarEvent[] {
       end: moment(start).add(daily ? 30 : 60, "minutes").toDate(),
       title: `${church.name} - ${daily ? 'Daily ' : ''}Mass`,
       type: daily ? "daily_mass" : "mass",
-      churchName: church.name
+      churchName: church.name,
+      churchId: church.id
     });
   });
 
@@ -123,6 +125,7 @@ function timeRangeToEvent(t: TimeRange, church: Church, eventType: "confession" 
     title: `${church.name} – ${eventType === "confession" ? "Confession" : "Adoration"}`,
     type: eventType,
     churchName: church.name,
+    churchId: church.id,
     allDay: t.start === "0000" && t.end === "2359"
   }));;
 }
