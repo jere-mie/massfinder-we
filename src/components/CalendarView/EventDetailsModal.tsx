@@ -18,14 +18,20 @@ export function EventDetailsModal({ event, onClose }: Props) {
         {!event.allDay && (
           <p>
             <strong>Time:</strong>{" "}
-            {moment(event.start).format("dddd H:mm A")} –{" "}
-            {moment(event.end).format("H:mm A")}
+            {moment(event.start).format("dddd h:mm A")} –{" "}
+            {moment(event.end).format("h:mm A")}
           </p>
         )}
 
         {event.allDay && <p><strong>All Day Event</strong></p>}
 
         <p><strong>Type:</strong> {formatType(event.type)}</p>
+        {event.note && (
+          <p>
+            <strong>Notes:</strong>{" "}
+            {event.note}
+          </p>
+        )}
 
         <button style={buttonStyle} onClick={onClose}>
           Close
