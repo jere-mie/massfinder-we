@@ -5,6 +5,7 @@ export interface Mass {
   day: string;
   time: string; // 24-hour format: "HHMM" (e.g., "1830" for 6:30 PM)
   note?: string;
+  dayOfMonth?: number;
 }
 
 /**
@@ -15,6 +16,7 @@ export interface TimeRange {
   start: string; // 24-hour format: "HHMM"
   end: string; // 24-hour format: "HHMM"
   note?: string;
+  dayOfMonth?: number;
 }
 
 /**
@@ -76,7 +78,7 @@ export interface TableRow {
 /**
  * Tab types
  */
-export type TabType = 'map' | 'list';
+export type TabType = 'map' | 'list' | 'calendar';
 
 /**
  * Represents a parish event extracted from bulletins
