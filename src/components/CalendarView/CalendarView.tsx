@@ -183,14 +183,17 @@ export function CalendarView({ churches }: Props) {
   };
 
   return (
-    <div style={{ height: "80vh", width: "100%" }}>
+    <div style={{ height: "80vh", width: "100%", overflowX: "auto" }}>
       <Calendar
         localizer={localizer}
         events={events}
         startAccessor="start"
         endAccessor="end"
+        step={15}
+        timeslots={4}
         eventPropGetter={eventStyleGetter}
         views={["month", "week", "day", "agenda"]}
+        dayLayoutAlgorithm={"no-overlap"}
       />
     </div>
   );

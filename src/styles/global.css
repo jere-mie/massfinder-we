@@ -42,3 +42,12 @@
   white-space: nowrap;
   border-width: 0;
 }
+
+/* Calendar classes. */
+.rbc-event-label {
+  display: none !important;
+}
+
+.rbc-timeslot-group {
+  min-height: 3rem !important;
+}
