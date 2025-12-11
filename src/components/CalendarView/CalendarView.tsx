@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import {
   Calendar,
   momentLocalizer,
@@ -8,12 +8,22 @@ import moment from "moment";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
 import type { Church, Mass, TimeRange } from "../../types/church"; // adjust path
+import { FilterBar } from "./FilterBar";
 
 const WEEKS_TO_GENERATE = 8;
 const localizer = momentLocalizer(moment);
 
+export type EventType = "mass" | "daily_mass" | "confession" | "adoration";
+export type EventFilterState = Record<EventType, boolean>;
+export const EVENT_COLORS: Record<EventType, string> = {
+  mass: "#2a71d0",
+  daily_mass: "#6fa8dc",
+  confession: "#e06666",
+  adoration: "#d4af37",
+};
+
 interface CalendarEvent extends RBCEvent {
-  type: "mass" | "daily_mass" | "confession" | "adoration";
+  type: EventType;
   churchName: string;
 }
 
@@ -151,6 +161,15 @@ export function CalendarView({ churches }: Props) {
     return all;
   }, [churches]);
 
+  const [filters, setFilters] = useState<EventFilterState>({
+    mass: true,
+    daily_mass: false,
+    confession: false,
+    adoration: false
+  });
+
+  const visibleEvents = events.filter(event => filters[event.type]);
+
   // Color styles.
   const eventStyleGetter = (event: CalendarEvent) => {
     let backgroundColor = "#3174ad";
@@ -183,18 +202,21 @@ export function CalendarView({ churches }: Props) {
   };
 
   return (
-    <div style={{ height: "80vh", width: "100%", overflowX: "auto" }}>
-      <Calendar
-        localizer={localizer}
-        events={events}
-        startAccessor="start"
-        endAccessor="end"
-        step={15}
-        timeslots={4}
-        eventPropGetter={eventStyleGetter}
-        views={["month", "week", "day", "agenda"]}
-        dayLayoutAlgorithm={"no-overlap"}
-      />
+    <div>
+      <FilterBar filters={filters} setFilters={setFilters} />
+      <div style={{ height: "80vh", width: "100%", overflowX: "auto" }}>
+        <Calendar
+          localizer={localizer}
+          events={visibleEvents}
+          startAccessor="start"
+          endAccessor="end"
+          step={15}
+          timeslots={4}
+          eventPropGetter={eventStyleGetter}
+          views={["month", "day", "agenda"]}
+          dayLayoutAlgorithm={"no-overlap"}
+        />
+      </div>
     </div>
   );
 }
