@@ -13,15 +13,13 @@ export function EventDetailsModal({ event, onClose }: Props) {
   return (
     <div style={overlayStyle} onClick={onClose}>
       <div style={modalStyle} onClick={(e) => e.stopPropagation()}>
-        <h2 style={{ marginTop: 0 }}>{event.title}</h2>
-
-        <p><strong>Church:</strong> {event.churchName}</p>
+        <p><strong>Church:</strong> <a className="text-blue-600" href={`/church/${event.churchId}`}>{event.churchName}</a></p>
 
         {!event.allDay && (
           <p>
             <strong>Time:</strong>{" "}
-            {moment(event.start).format("ddd HH:mm")} –{" "}
-            {moment(event.end).format("HH:mm")}
+            {moment(event.start).format("dddd H:mm A")} –{" "}
+            {moment(event.end).format("H:mm A")}
           </p>
         )}
 
