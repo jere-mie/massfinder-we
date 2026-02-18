@@ -460,7 +460,7 @@
         "confession": [
             {
                 "day": "Friday",
-                "start": "0900",
+                "start": "0830",
                 "end": "1000",
                 "note": "This is also a Holy Hour, starts after weekday Mass"
             }
@@ -582,15 +582,16 @@
         "confession": [
             {
                 "day": "Tuesday",
-                "start": "1700",
-                "end": "1745"
+                "start": "1600",
+                "end": "1645"
             }
         ],
         "adoration": [
             {
                 "day": "Tuesday",
                 "start": "1700",
-                "end": "1750"
+                "end": "1750",
+                "note": "Second Tuesday of every month"
             }
         ]
     },
@@ -975,7 +976,7 @@
             {
                 "day": "Tuesday",
                 "start": "0830",
-                "end": "1530",
+                "end": "1600",
                 "note": "Rosary Chapel is open until 4:00 PM for prayers"
             },
             {
@@ -986,7 +987,7 @@
             {
                 "day": "Thursday",
                 "start": "0830",
-                "end": "1530",
+                "end": "1600",
                 "note": "Rosary Chapel is open until 4:00 PM for prayers"
             },
             {
@@ -1193,7 +1194,7 @@
             {
                 "day": "Saturday",
                 "start": "1100",
-                "end": "1200",
+                "end": "1100",
                 "note": "Third Saturday of every month"
             }
         ],
@@ -1241,7 +1242,7 @@
             {
                 "day": "Saturday",
                 "start": "1100",
-                "end": "1200",
+                "end": "1100",
                 "note": "First Saturday of every month"
             }
         ],
@@ -1315,7 +1316,7 @@
             {
                 "day": "Saturday",
                 "start": "0900",
-                "end": "1030"
+                "end": "1145"
             }
         ],
         "adoration": [
