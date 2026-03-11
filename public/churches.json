@@ -755,8 +755,7 @@
             },
             {
                 "day": "Saturday",
-                "time": "0800",
-                "note": "English"
+                "time": "0800"
             }
         ],
         "confession": [],
@@ -952,19 +951,9 @@
             {
                 "day": "Thursday",
                 "time": "0800"
-            },
-            {
-                "day": "Friday",
-                "time": "0800"
             }
         ],
         "confession": [
-            {
-                "day": "Friday",
-                "start": "1800",
-                "end": "1900",
-                "note": "In rosary chapel."
-            },
             {
                 "day": "Saturday",
                 "start": "1100",
@@ -1151,13 +1140,7 @@
                 "end": "1615"
             }
         ],
-        "adoration": [
-            {
-                "day": "Wednesday",
-                "start": "1800",
-                "end": "1900"
-            }
-        ]
+        "adoration": []
     },
     {
         "id": "our-lady-of-the-atonement-windsor",
@@ -1452,11 +1435,6 @@
                 "day": "Saturday",
                 "start": "1100",
                 "end": "1200"
-            },
-            {
-                "day": "Sunday",
-                "start": "0900",
-                "end": "0945"
             }
         ]
     },

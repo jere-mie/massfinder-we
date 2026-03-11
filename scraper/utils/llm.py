@@ -21,8 +21,12 @@ load_dotenv()
 OPENROUTER_API_KEY = os.getenv('OPENROUTER_API_KEY')
 OPENROUTER_API_URL = 'https://openrouter.ai/api/v1/chat/completions'
 
+# Validate API key early so the user gets a clear error when it's missing
+if not OPENROUTER_API_KEY:
+    logger.error("OPENROUTER_API_KEY is not set. Set it in .env or the environment.")
+
 # Model options: prefer faster models for bulk processing
-PREFERRED_MODEL = 'google/gemini-2.5-flash-lite-preview-09-2025'
+PREFERRED_MODEL = 'google/gemini-3.1-flash-lite-preview'
 FALLBACK_MODEL = 'google/gemini-2.5-flash-lite'
 
 # Retry configuration
@@ -263,6 +267,31 @@ def _analyze_bulletin_pdf(pdf_path, churches_list, prompt, model_to_use, church_
             'Content-Type': 'application/json'
         }
         
+        # Build payload for PDF upload fallback
+        payload = {
+            'model': model_to_use,
+            'messages': [
+                {
+                    'role': 'user',
+                    'content': [
+                        {'type': 'text', 'text': prompt},
+                        {
+                            'type': 'file',
+                            'file': {
+                                'filename': 'bulletin.pdf',
+                                'file_data': data_url
+                            }
+                        }
+                    ]
+                }
+            ],
+            'reasoning': {
+                'max_tokens': 3000,
+                'exclude': True,
+                'enabled': True
+            }
+        }
+
         result = _make_api_request(OPENROUTER_API_URL, headers, payload, 120, church_names)
         
         if result is None:
@@ -457,9 +486,22 @@ OUTPUT FORMAT (JSON array):
     "start_time": "HHMM or null",
     "end_time": "HHMM or null",
     "location": "Specific location or null",
-    "tags": ["tag1", "tag2"]
+    "tags": ["category1", "category2"]
   }}
 ]
+
+PREDEFINED CATEGORIES (select one or more per event):
+1. community - Community outreach, food drives, volunteer events
+2. education - Bible studies, RCIA sessions, workshops, seminars
+3. fundraiser - Bake sales, bazaars, raffles, fundraising events
+4. liturgy - Special liturgies with a specific date (Advent service, Lenten mission, Stations of the Cross, etc.)
+5. meeting - Parish council, ministry meetings, info sessions
+6. retreat - Parish retreats, spiritual retreats, day of recollection
+7. sacramental - Baptism preparation, marriage preparation, confirmation prep
+8. seasonal - Christmas concerts, Easter programs, holiday celebrations
+9. social - Dinners, breakfasts, potlucks, picnics, social gatherings
+10. volunteer - Volunteer opportunities, volunteer recruitment events
+11. other - Events that don't fit other categories
 
 RULES:
 - ONLY include events with a SPECIFIC DATE (not recurring weekly schedules)
@@ -469,7 +511,7 @@ RULES:
 - If an event is for a specific church, set church_id and church_name from the CHURCHES list above
 - If an event is for the whole family of parishes (or church not specified), set church_id and church_name to null
 - DEDUPLICATION: If an event matches one in EXISTING EVENTS (same or very similar title, same date, same church), return the SAME id from existing. For new events, set id to null.
-- Suggested tags: liturgy, social, fundraiser, education, meeting, community, seasonal, other
+- TAGS: Select one or more categories from the list above. Use lowercase category names (e.g., "community", "social"). An event can have multiple applicable tags (e.g., a fundraising dinner could be ["fundraiser", "social"]).
 - Return empty array [] if no special events found
 - Return ONLY valid JSON array, no explanations or markdown"""
 

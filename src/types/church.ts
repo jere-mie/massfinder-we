@@ -92,7 +92,7 @@ export interface Event {
   start_time: string | null; // HHMM
   end_time: string | null; // HHMM
   location: string | null;
-  tags: string[];
+  tags: ('community' | 'education' | 'fundraiser' | 'liturgy' | 'meeting' | 'retreat' | 'sacramental' | 'seasonal' | 'social' | 'volunteer' | 'other')[];
   source_bulletin_link: string;
   source_bulletin_date: string;
   extracted_at: string; // ISO timestamp

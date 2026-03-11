@@ -3,6 +3,8 @@ import { useEvents } from '../hooks/useEvents';
 import { formatTime } from '../utils/formatting';
 import type { Event } from '../types/church';
 
+type EventTag = 'community' | 'education' | 'fundraiser' | 'liturgy' | 'meeting' | 'retreat' | 'sacramental' | 'seasonal' | 'social' | 'volunteer' | 'other';
+
 /**
  * Format a date string to a readable format
  */
@@ -58,13 +60,16 @@ export function isDatePast(dateStr: string): boolean {
  * Tag colors for visual distinction
  */
 const TAG_COLORS: Record<string, string> = {
-  liturgy: 'bg-purple-100 text-purple-800',
-  social: 'bg-blue-100 text-blue-800',
-  fundraiser: 'bg-green-100 text-green-800',
-  education: 'bg-yellow-100 text-yellow-800',
-  meeting: 'bg-gray-100 text-gray-800',
   community: 'bg-orange-100 text-orange-800',
+  education: 'bg-yellow-100 text-yellow-800',
+  fundraiser: 'bg-green-100 text-green-800',
+  liturgy: 'bg-purple-100 text-purple-800',
+  meeting: 'bg-gray-100 text-gray-800',
+  retreat: 'bg-indigo-100 text-indigo-800',
+  sacramental: 'bg-pink-100 text-pink-800',
   seasonal: 'bg-red-100 text-red-800',
+  social: 'bg-blue-100 text-blue-800',
+  volunteer: 'bg-teal-100 text-teal-800',
   other: 'bg-slate-100 text-slate-800',
 };
 
@@ -101,7 +106,7 @@ export function EventCard({ event }: EventCardProps) {
             key={tag}
             className={`text-xs px-2 py-0.5 rounded-full ${getTagColor(tag)}`}
           >
-            {tag}
+            {tag.charAt(0).toUpperCase() + tag.slice(1)}
           </span>
         ))}
       </div>
@@ -189,7 +194,7 @@ export function EventCard({ event }: EventCardProps) {
 export function EventsView() {
   const { events, loading, error } = useEvents();
   const [selectedFamily, setSelectedFamily] = useState('all');
-  const [selectedTag, setSelectedTag] = useState('all');
+  const [selectedTag, setSelectedTag] = useState<'all' | EventTag>('all');
   const [showPastEvents, setShowPastEvents] = useState(false);
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
@@ -204,7 +209,7 @@ export function EventsView() {
         return false;
       }
       // Filter by tag
-      if (selectedTag !== 'all' && !event.tags.includes(selectedTag)) {
+      if (selectedTag !== 'all' && !event.tags.includes(selectedTag as EventTag)) {
         return false;
       }
       // Filter past events
@@ -293,7 +298,7 @@ export function EventsView() {
               <select
                 id="tag-filter"
                 value={selectedTag}
-                onChange={(e) => setSelectedTag(e.target.value)}
+                onChange={(e) => setSelectedTag(e.target.value as 'all' | EventTag)}
                 className="w-full appearance-none bg-gray-50 border border-gray-300 text-gray-900 rounded-lg px-4 py-2.5 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors cursor-pointer hover:bg-gray-100"
               >
                 <option value="all">All Types</option>

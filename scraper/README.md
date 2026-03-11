@@ -259,7 +259,7 @@ OPENROUTER_API_KEY=your_api_key_here
 
 **LLM Models** (in `utils/llm.py`):
 ```python
-PREFERRED_MODEL = 'google/gemini-2.5-flash-lite-preview-09-2025'
+PREFERRED_MODEL = 'google/gemini-3.1-flash-lite-preview'
 FALLBACK_MODEL = 'google/gemini-2.5-flash-lite'
 ```
 
