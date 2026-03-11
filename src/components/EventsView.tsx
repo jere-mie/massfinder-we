@@ -1,9 +1,7 @@
 import { useState, useMemo } from 'react';
 import { useEvents } from '../hooks/useEvents';
 import { formatTime } from '../utils/formatting';
-import type { Event } from '../types/church';
-
-type EventTag = 'community' | 'education' | 'fundraiser' | 'liturgy' | 'meeting' | 'retreat' | 'sacramental' | 'seasonal' | 'social' | 'volunteer' | 'other';
+import type { Event, EventTag } from '../types/church';
 
 /**
  * Format a date string to a readable format
@@ -59,7 +57,7 @@ export function isDatePast(dateStr: string): boolean {
 /**
  * Tag colors for visual distinction
  */
-const TAG_COLORS: Record<string, string> = {
+const TAG_COLORS: Record<EventTag, string> = {
   community: 'bg-orange-100 text-orange-800',
   education: 'bg-yellow-100 text-yellow-800',
   fundraiser: 'bg-green-100 text-green-800',
@@ -74,7 +72,7 @@ const TAG_COLORS: Record<string, string> = {
 };
 
 function getTagColor(tag: string): string {
-  return TAG_COLORS[tag.toLowerCase()] || TAG_COLORS.other;
+  return TAG_COLORS[tag.toLowerCase() as EventTag] || TAG_COLORS.other;
 }
 
 interface EventCardProps {
