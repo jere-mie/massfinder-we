@@ -1,11 +1,14 @@
 """
 LLM interaction utilities for analyzing church bulletins.
 Compares bulletin PDFs to existing church JSON data and returns markdown.
+Now supports image-based analysis for better accuracy.
 """
 
 import base64
 import json
 import os
+import io
+import time
 import logging
 import requests
 from dotenv import load_dotenv
@@ -22,8 +25,107 @@ OPENROUTER_API_URL = 'https://openrouter.ai/api/v1/chat/completions'
 PREFERRED_MODEL = 'google/gemini-2.5-flash-lite-preview-09-2025'
 FALLBACK_MODEL = 'google/gemini-2.5-flash-lite'
 
+# Retry configuration
+MAX_RETRIES = 3
+RETRY_DELAY = [2, 5, 10]  # Seconds to wait between retries
 
-def analyze_bulletin(pdf_path, churches_data, model=None):
+# Import PDF to images conversion
+from .pdf_to_images import convert_pdf_to_images
+
+
+def _make_api_request(url, headers, payload, timeout, context=""):
+    """
+    Make API request with retry logic for 502/503 errors.
+    
+    Args:
+        url: API endpoint URL
+        headers: Request headers
+        payload: Request payload
+        timeout: Request timeout in seconds
+        context: Context string for logging (e.g., church names)
+    
+    Returns:
+        Response JSON dict or None on failure
+    """
+    for attempt in range(MAX_RETRIES):
+        try:
+            response = requests.post(url, json=payload, headers=headers, timeout=timeout)
+            response.raise_for_status()
+            return response.json()
+            
+        except requests.exceptions.HTTPError as e:
+            # Retry on 502/503 errors (server issues)
+            if response.status_code in [502, 503]:
+                if attempt < MAX_RETRIES - 1:
+                    delay = RETRY_DELAY[attempt]
+                    logger.warning(f"⚠ {response.status_code} error for {context}, retrying in {delay}s (attempt {attempt + 1}/{MAX_RETRIES})")
+                    time.sleep(delay)
+                    continue
+                else:
+                    logger.error(f"API request failed after {MAX_RETRIES} retries for {context}: {response.status_code} {e}")
+                    return None
+            else:
+                # Don't retry other HTTP errors (401, 429, etc.)
+                logger.error(f"API request failed for {context}: {response.status_code} {e}")
+                return None
+                
+        except requests.exceptions.Timeout:
+            if attempt < MAX_RETRIES - 1:
+                delay = RETRY_DELAY[attempt]
+                logger.warning(f"⚠ Timeout for {context}, retrying in {delay}s (attempt {attempt + 1}/{MAX_RETRIES})")
+                time.sleep(delay)
+                continue
+            else:
+                logger.error(f"API request timed out after {MAX_RETRIES} retries for {context}")
+                return None
+                
+        except requests.exceptions.RequestException as e:
+            logger.error(f"API request failed for {context}: {str(e)[:100]}")
+            return None
+    
+    return None
+
+
+def _encode_image_to_base64(image):
+    """
+    Encode an image (PIL Image or file path) to base64 data URL.
+    """
+    from PIL import Image
+    
+    if isinstance(image, str):
+        # It's a file path
+        with open(image, 'rb') as f:
+            img_bytes = f.read()
+    else:
+        # It's a PIL Image
+        buffer = io.BytesIO()
+        image.save(buffer, format='PNG')
+        img_bytes = buffer.getvalue()
+    
+    img_base64 = base64.b64encode(img_bytes).decode('utf-8')
+    return f"data:image/png;base64,{img_base64}"
+
+
+def _build_image_content(images, prompt_text):
+    """
+    Build the content array for multi-image LLM request.
+    """
+    content = [{'type': 'text', 'text': prompt_text}]
+    
+    for i, img in enumerate(images):
+        data_url = _encode_image_to_base64(img)
+        content.append({
+            'type': 'image_url',
+            'image_url': {
+                'url': data_url,
+                'detail': 'high'
+            }
+        })
+    
+    return content
+
+
+def analyze_bulletin(pdf_path, churches_data, model=None, use_images=True):
     """
     Send a bulletin PDF to the LLM and ask it to compare against existing church data.
     Returns markdown with any differences found, or empty string if no differences.
@@ -32,6 +134,7 @@ def analyze_bulletin(pdf_path, churches_data, model=None):
         pdf_path: Path to the bulletin PDF file
         churches_data: Either a single church dict or a list of church dicts that share this bulletin
         model: Optional model to use (overrides PREFERRED_MODEL)
+        use_images: If True, convert PDF to images for analysis (recommended for accuracy)
     
     Returns:
         Markdown string with differences (empty if no differences), or None on error
@@ -52,22 +155,13 @@ def analyze_bulletin(pdf_path, churches_data, model=None):
     church_names = ', '.join([c.get('name', 'Unknown') for c in churches_list])
     
     try:
-        # Encode PDF as base64
-        with open(pdf_path, 'rb') as f:
-            pdf_base64 = base64.b64encode(f.read()).decode('utf-8')
-        
-        # Create data URL for OpenRouter
-        data_url = f"data:application/pdf;base64,{pdf_base64}"
-        
-        logger.info(f"Analyzing {os.path.basename(pdf_path)} for: {church_names}")
-        
         # Prepare the comparison prompt
         prompt = f"""ONLY OUTPUT FINAL TABLES. NO EXPLANATIONS. NO PREAMBLE.
 
 Database:
 {json.dumps(churches_list, indent=2)}
 
-Compare PDF to database. Output ONLY:
+Compare the bulletin images to database. Output ONLY:
 
 "NO DIFFERENCES" if all times match exactly.
 
@@ -85,49 +179,48 @@ RULES:
 - Do NOT include rows where both match
 - ALWAYS convert all times to 4-digit 24-hour format (e.g., 5:30 PM -> 1730, 9:45 AM -> 0945)
 - Be concise in Note field
-- Page number required
+- Page number required (based on image order, starting from 1)
 - Ignore any non-mass/adoration/confession events
 - Ignore any special events/holidays
 - Ignore 'memorial masses' as they are not regular schedule
 - No text before or after tables"""
 
+        if use_images:
+            # Convert PDF to images
+            images = convert_pdf_to_images(pdf_path, max_pages=6)  # Limit to first 6 pages
+            
+            if not images:
+                logger.warning(f"Failed to convert PDF to images, falling back to PDF mode: {pdf_path}")
+                return _analyze_bulletin_pdf(pdf_path, churches_list, prompt, model_to_use, church_names)
+            
+            logger.info(f"Analyzing {len(images)} page images for: {church_names}")
+            
+            # Build multi-image content
+            content = _build_image_content(images, prompt)
+            
+            payload = {
+                'model': model_to_use,
+                'messages': [{'role': 'user', 'content': content}],
+                'reasoning': {
+                    'max_tokens': 3000,
+                    'exclude': True,
+                    'enabled': True
+                }
+            }
+        else:
+            # Fall back to PDF mode
+            return _analyze_bulletin_pdf(pdf_path, churches_list, prompt, model_to_use, church_names)
+        
         # Call OpenRouter API
         headers = {
             'Authorization': f'Bearer {OPENROUTER_API_KEY}',
             'Content-Type': 'application/json'
         }
         
-        payload = {
-            'model': model_to_use,
-            'messages': [
-                {
-                    'role': 'user',
-                    'content': [
-                        {
-                            'type': 'text',
-                            'text': prompt
-                        },
-                        {
-                            'type': 'file',
-                            'file': {
-                                'filename': 'bulletin.pdf',
-                                'file_data': data_url
-                            }
-                        }
-                    ]
-                }
-            ],
-              "reasoning": {
-                "max_tokens": 3000,
-                "exclude": True,
-                "enabled": True
-            }
-        }
+        result = _make_api_request(OPENROUTER_API_URL, headers, payload, 180, church_names)
         
-        response = requests.post(OPENROUTER_API_URL, json=payload, headers=headers, timeout=120)
-        response.raise_for_status()
-        
-        result = response.json()
+        if result is None:
+            return None
         
         # Extract response content
         if 'choices' in result and len(result['choices']) > 0:
@@ -147,11 +240,49 @@ RULES:
             logger.error(f"No response from LLM for: {church_names}")
             return None
     
-    except requests.exceptions.RequestException as e:
-        logger.error(f"API request failed for {church_names}: {str(e)[:100]}")
-        return None
     except Exception as e:
         logger.error(f"Error analyzing bulletin for {church_names}: {str(e)[:100]}")
+        return None
+
+
+def _analyze_bulletin_pdf(pdf_path, churches_list, prompt, model_to_use, church_names):
+    """
+    Legacy PDF-based analysis (fallback when image conversion fails).
+    """
+    try:
+        # Encode PDF as base64
+        with open(pdf_path, 'rb') as f:
+            pdf_base64 = base64.b64encode(f.read()).decode('utf-8')
+        
+        data_url = f"data:application/pdf;base64,{pdf_base64}"
+        
+        logger.info(f"Analyzing PDF (fallback mode) for: {church_names}")
+        
+        headers = {
+            'Authorization': f'Bearer {OPENROUTER_API_KEY}',
+            'Content-Type': 'application/json'
+        }
+        
+        result = _make_api_request(OPENROUTER_API_URL, headers, payload, 120, church_names)
+        
+        if result is None:
+            return None
+        
+        if 'choices' in result and len(result['choices']) > 0:
+            content = result['choices'][0]['message']['content'].strip()
+            
+            if content == "NO DIFFERENCES":
+                logger.info(f"✓ No differences found for: {church_names}")
+                return ""
+            
+            logger.info(f"✓ Found differences for: {church_names}")
+            return content
+        else:
+            logger.error(f"No response from LLM for: {church_names}")
+            return None
+            
+    except Exception as e:
+        logger.error(f"PDF analysis failed for {church_names}: {str(e)[:100]}")
         return None
 
 
@@ -215,10 +346,10 @@ OUTPUT: Return ONLY the complete updated churches.json as valid JSON array. No m
             'timeout': 120
         }
         
-        response = requests.post(OPENROUTER_API_URL, json=payload, headers=headers, timeout=120)
-        response.raise_for_status()
+        result = _make_api_request(OPENROUTER_API_URL, headers, payload, 120, "JSON update")
         
-        result = response.json()
+        if result is None:
+            return churches_data
         
         if 'choices' in result and len(result['choices']) > 0:
             content = result['choices'][0]['message']['content'].strip()
@@ -250,7 +381,7 @@ OUTPUT: Return ONLY the complete updated churches.json as valid JSON array. No m
         return churches_data
 
 
-def extract_events_from_bulletin(pdf_path, churches_data, existing_events, model=None):
+def extract_events_from_bulletin(pdf_path, churches_data, existing_events, model=None, use_images=True):
     """
     Extract upcoming events from a bulletin PDF using LLM.
     
@@ -259,6 +390,7 @@ def extract_events_from_bulletin(pdf_path, churches_data, existing_events, model
         churches_data: List of church dicts that share this bulletin (simplified, with id, name, familyOfParishes)
         existing_events: List of existing events for this family (simplified, for deduplication)
         model: Optional model to use (overrides PREFERRED_MODEL)
+        use_images: If True, convert PDF to images for analysis (recommended for accuracy)
     
     Returns:
         List of event dicts extracted from the bulletin, or None on error.
@@ -282,15 +414,6 @@ def extract_events_from_bulletin(pdf_path, churches_data, existing_events, model
             break
     
     try:
-        # Encode PDF as base64
-        with open(pdf_path, 'rb') as f:
-            pdf_base64 = base64.b64encode(f.read()).decode('utf-8')
-        
-        # Create data URL for OpenRouter
-        data_url = f"data:application/pdf;base64,{pdf_base64}"
-        
-        logger.info(f"Extracting events from {os.path.basename(pdf_path)} for: {church_names}")
-        
         current_date = datetime.now().strftime('%Y-%m-%d')
         
         # Prepare the events extraction prompt
@@ -350,43 +473,41 @@ RULES:
 - Return empty array [] if no special events found
 - Return ONLY valid JSON array, no explanations or markdown"""
 
+        if use_images:
+            # Convert PDF to images
+            images = convert_pdf_to_images(pdf_path, max_pages=8)  # More pages for events
+            
+            if not images:
+                logger.warning(f"Failed to convert PDF to images, falling back to PDF mode: {pdf_path}")
+                return _extract_events_pdf(pdf_path, prompt, model_to_use, church_names)
+            
+            logger.info(f"Extracting events from {len(images)} page images for: {church_names}")
+            
+            # Build multi-image content
+            content = _build_image_content(images, prompt)
+            
+            payload = {
+                'model': model_to_use,
+                'messages': [{'role': 'user', 'content': content}],
+                'reasoning': {
+                    'max_tokens': 5000,
+                    'exclude': True,
+                    'enabled': True
+                }
+            }
+        else:
+            return _extract_events_pdf(pdf_path, prompt, model_to_use, church_names)
+        
         # Call OpenRouter API
         headers = {
             'Authorization': f'Bearer {OPENROUTER_API_KEY}',
             'Content-Type': 'application/json'
         }
         
-        payload = {
-            'model': model_to_use,
-            'messages': [
-                {
-                    'role': 'user',
-                    'content': [
-                        {
-                            'type': 'text',
-                            'text': prompt
-                        },
-                        {
-                            'type': 'file',
-                            'file': {
-                                'filename': 'bulletin.pdf',
-                                'file_data': data_url
-                            }
-                        }
-                    ]
-                }
-            ],
-            "reasoning": {
-                "max_tokens": 5000,
-                "exclude": True,
-                "enabled": True
-            }
-        }
+        result = _make_api_request(OPENROUTER_API_URL, headers, payload, 180, church_names)
         
-        response = requests.post(OPENROUTER_API_URL, json=payload, headers=headers, timeout=120)
-        response.raise_for_status()
-        
-        result = response.json()
+        if result is None:
+            return None
         
         # Extract response content
         if 'choices' in result and len(result['choices']) > 0:
@@ -396,7 +517,6 @@ RULES:
             
             # Try to parse JSON from response
             import re
-            # Look for JSON array in response
             json_match = re.search(r'\[.*\]', content, re.DOTALL)
             
             if json_match:
@@ -415,12 +535,81 @@ RULES:
             logger.error(f"No response from LLM for events extraction: {church_names}")
             return None
     
-    except requests.exceptions.RequestException as e:
-        logger.error(f"API request failed for events extraction ({church_names}): {str(e)[:100]}")
-        return None
     except json.JSONDecodeError as e:
         logger.error(f"Failed to parse events JSON for {church_names}: {str(e)[:100]}")
         return []
     except Exception as e:
         logger.error(f"Error extracting events for {church_names}: {str(e)[:100]}")
+        return None
+
+
+def _extract_events_pdf(pdf_path, prompt, model_to_use, church_names):
+    """
+    Legacy PDF-based events extraction (fallback when image conversion fails).
+    """
+    try:
+        with open(pdf_path, 'rb') as f:
+            pdf_base64 = base64.b64encode(f.read()).decode('utf-8')
+        
+        data_url = f"data:application/pdf;base64,{pdf_base64}"
+        
+        logger.info(f"Extracting events from PDF (fallback mode) for: {church_names}")
+        
+        headers = {
+            'Authorization': f'Bearer {OPENROUTER_API_KEY}',
+            'Content-Type': 'application/json'
+        }
+        
+        payload = {
+            'model': model_to_use,
+            'messages': [
+                {
+                    'role': 'user',
+                    'content': [
+                        {'type': 'text', 'text': prompt},
+                        {
+                            'type': 'file',
+                            'file': {
+                                'filename': 'bulletin.pdf',
+                                'file_data': data_url
+                            }
+                        }
+                    ]
+                }
+            ],
+            'reasoning': {
+                'max_tokens': 5000,
+                'exclude': True,
+                'enabled': True
+            }
+        }
+        
+        result = _make_api_request(OPENROUTER_API_URL, headers, payload, 120, church_names)
+        
+        if result is None:
+            return None
+        
+        if 'choices' in result and len(result['choices']) > 0:
+            content = result['choices'][0]['message']['content'].strip()
+            
+            import re
+            json_match = re.search(r'\[.*\]', content, re.DOTALL)
+            
+            if json_match:
+                json_str = json_match.group(0)
+                events = json.loads(json_str)
+                logger.info(f"✓ Extracted {len(events)} events for: {church_names}")
+                return events
+            elif content.strip() == '[]':
+                logger.info(f"✓ No events found for: {church_names}")
+                return []
+            else:
+                logger.warning(f"Could not parse events JSON for: {church_names}")
+                return []
+        else:
+            logger.error(f"No response from LLM for events extraction: {church_names}")
+            return None
+            
+    except Exception as e:
+        logger.error(f"PDF events extraction failed for {church_names}: {str(e)[:100]}")
         return None

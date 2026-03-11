@@ -465,7 +465,14 @@
                 "note": "This is also a Holy Hour, starts after weekday Mass"
             }
         ],
-        "adoration": []
+        "adoration": [
+            {
+                "day": "Friday",
+                "start": "0900",
+                "end": "1000",
+                "note": "This is also confession, starts after weekday Mass"
+            }
+        ]
     },
     {
         "id": "vietnamese-parish-windsor",
@@ -986,7 +993,7 @@
             {
                 "day": "Thursday",
                 "start": "0830",
-                "end": "1530",
+                "end": "1600",
                 "note": "Rosary Chapel is open until 4:00 PM for prayers"
             },
             {
@@ -1315,7 +1322,7 @@
             {
                 "day": "Saturday",
                 "start": "0900",
-                "end": "1030"
+                "end": "1000"
             }
         ],
         "adoration": [

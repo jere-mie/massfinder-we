@@ -20,7 +20,7 @@ from utils import scraping, llm, events
 from utils.logging_config import setup_logging
 
 
-def analyze_bulletin_task(website, pdf_link, pdf_path, churches_for_bulletin, model=None):
+def analyze_bulletin_task(website, pdf_link, pdf_path, churches_for_bulletin, model=None, use_images=True):
     """
     Helper function to analyze a single bulletin for mass time differences.
     Returns (website, pdf_link, markdown, church_names, churches) tuple.
@@ -28,7 +28,7 @@ def analyze_bulletin_task(website, pdf_link, pdf_path, churches_for_bulletin, mo
     logger = logging.getLogger(__name__)
     
     # Pass all churches that share this bulletin to the LLM at once
-    markdown = llm.analyze_bulletin(pdf_path, churches_for_bulletin, model=model)
+    markdown = llm.analyze_bulletin(pdf_path, churches_for_bulletin, model=model, use_images=use_images)
     church_names = [c.get('name', 'Unknown') for c in churches_for_bulletin]
     
     if markdown is None:
@@ -40,7 +40,7 @@ def analyze_bulletin_task(website, pdf_link, pdf_path, churches_for_bulletin, mo
         return (website, pdf_link, None, church_names, churches_for_bulletin)
 
 
-def extract_events_task(website, pdf_link, pdf_path, churches_for_bulletin, existing_events, model=None):
+def extract_events_task(website, pdf_link, pdf_path, churches_for_bulletin, existing_events, model=None, use_images=True):
     """
     Helper function to extract events from a single bulletin.
     Returns (website, pdf_link, events_list, church_names, family_of_parishes) tuple.
@@ -62,7 +62,8 @@ def extract_events_task(website, pdf_link, pdf_path, churches_for_bulletin, exis
         pdf_path, 
         churches_context, 
         events_context, 
-        model=model
+        model=model,
+        use_images=use_images
     )
     
     if extracted is None:
@@ -124,13 +125,21 @@ def main():
         action='store_true',
         help='Apply LLM suggestions to update churches.json or events.json'
     )
+    parser.add_argument(
+        '--no-images',
+        action='store_true',
+        help='Disable image-based analysis and use PDF mode instead (less accurate but faster)'
+    )
     
     args = parser.parse_args()
     
     # Setup logging
     log_level = getattr(logging, args.log_level)
     logger = setup_logging(log_level)
-    logger.info(f"Starting bulletin analysis in '{args.mode}' mode (log level: {args.log_level})")
+    
+    use_images = not args.no_images
+    mode_str = "image" if use_images else "PDF"
+    logger.info(f"Starting bulletin analysis in '{args.mode}' mode using {mode_str} analysis (log level: {args.log_level})")
     
     # Set model if provided
     if args.model:
@@ -184,10 +193,12 @@ def main():
     
     # Branch based on mode
     if args.mode == 'events':
-        return run_events_mode(args, logger, churches, downloaded, events_path, output_path)
+        return run_events_mode(args, logger, churches, downloaded, events_path, output_path, use_images)
     else:
-        return run_mass_mode(args, logger, churches, downloaded, churches_path, output_path)
-def run_mass_mode(args, logger, churches, downloaded, churches_path, output_path):
+        return run_mass_mode(args, logger, churches, downloaded, churches_path, output_path, use_images)
+
+
+def run_mass_mode(args, logger, churches, downloaded, churches_path, output_path, use_images=True):
     """Run the mass times analysis mode (original behavior)."""
     
     # Analyze each bulletin with LLM in parallel
@@ -213,7 +224,11 @@ def run_mass_mode(args, logger, churches, downloaded, churches_path, output_path
     with ThreadPoolExecutor(max_workers=args.workers) as executor:
         # Submit all tasks
         futures = {
-            executor.submit(analyze_bulletin_task, website, pdf_link, pdf_path, churches_for_bulletin, model=args.model): (website, pdf_link, churches_for_bulletin)
+            executor.submit(
+                analyze_bulletin_task, 
+                website, pdf_link, pdf_path, churches_for_bulletin, 
+                model=args.model, use_images=use_images
+            ): (website, pdf_link, churches_for_bulletin)
             for website, pdf_link, pdf_path, churches_for_bulletin in tasks
         }
         
@@ -284,7 +299,7 @@ def run_mass_mode(args, logger, churches, downloaded, churches_path, output_path
     return 0
 
 
-def run_events_mode(args, logger, churches, downloaded, events_path, output_path):
+def run_events_mode(args, logger, churches, downloaded, events_path, output_path, use_images=True):
     """Run the events extraction mode."""
     
     # Load existing events for deduplication
@@ -317,7 +332,7 @@ def run_events_mode(args, logger, churches, downloaded, events_path, output_path
             executor.submit(
                 extract_events_task, 
                 website, pdf_link, pdf_path, churches_for_bulletin, 
-                existing_events, model=args.model
+                existing_events, model=args.model, use_images=use_images
             ): (website, pdf_link, churches_for_bulletin)
             for website, pdf_link, pdf_path, churches_for_bulletin in tasks
         }

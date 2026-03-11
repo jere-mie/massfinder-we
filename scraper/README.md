@@ -50,23 +50,75 @@ python app.py
 
 ## Usage
 
+The scraper supports two modes: **mass** (default) for analyzing Mass times, and **events** for extracting parish events.
+
+### Mass Analysis Mode
+
 ```bash
-# Basic analysis (generates report only)
+# Basic analysis (generates report only, uses image mode)
 python app.py
 
 # Analysis with automatic JSON updates
 python app.py --modify-json
 
+# Use PDF mode instead of images (faster but less accurate)
+python app.py --no-images
+
 # With options
 python app.py --log-level DEBUG --workers 8 --output results.md --modify-json
 ```
 
+### Events Extraction Mode
+
+```bash
+# Extract events from bulletins
+python app.py --mode events
+
+# Extract events and save to events.json
+python app.py --mode events --modify-json
+
+# Specify custom events.json path
+python app.py --mode events --events-path ../public/events.json --modify-json
+```
+
 **Options:**
+- `--mode` - `mass` (default) or `events`
 - `--log-level` - DEBUG, INFO (default), WARNING, ERROR
 - `--workers` - Parallel workers (default: 10)
-- `--output` - Output file (default: bulletins_analysis.md)
-- `--churches-path` - Path to churches.json (default: ../static/churches.json)
-- `--modify-json` - Apply LLM suggestions to automatically update churches.json
+- `--output` - Output file (default: bulletins_analysis.md for mass, events_analysis.md for events)
+- `--churches-path` - Path to churches.json (default: ../public/churches.json)
+- `--events-path` - Path to events.json (default: ../public/events.json)
+- `--modify-json` - Apply LLM suggestions to automatically update churches.json or events.json
+- `--no-images` - Disable image-based analysis and use PDF mode instead (less accurate but faster)
+- `--model` - Override default LLM model
+
+## Image-Based Analysis (Recommended)
+
+By default, the scraper uses **image-based analysis** for better accuracy:
+
+### Why Images Are Better
+
+- **More accurate** - Vision models excel at reading tables and formatted schedules
+- **Handles complex layouts** - Preserves visual context (bold text, columns, boxes)
+- **Works with scanned PDFs** - Many bulletins are image-only PDFs where text extraction fails
+- **Better format detection** - Understands visual cues that help identify Mass times vs. other content
+
+### How It Works
+
+1. Each PDF is converted to PNG images (one per page) using **PyMuPDF**
+2. Images are sent to the LLM with `detail: high` for best quality
+3. Falls back to PDF mode if image conversion fails
+4. Limited to first 6 pages for Mass analysis, 8 pages for events
+
+### Disabling Image Mode
+
+If you need faster processing and are willing to sacrifice some accuracy:
+
+```bash
+python app.py --no-images
+```
+
+This uses the legacy PDF-based analysis which is faster but less reliable.
 
 ## GitHub Action Workflows
 
@@ -161,8 +213,9 @@ The LLM is given specific rules:
 1. **Load churches.json** - Master database with `bulletin_website` field
 2. **Scrape bulletin links** - Extracts PDFs from websites (cached, Cloudflare-safe)
 3. **Download PDFs** - Saves to `bulletins/` directory
-4. **Analyze with LLM** - Google Gemini 2.5 Flash Lite compares PDF vs. database (parallel)
-5. **Generate report** - Markdown output with differences grouped by bulletin
+4. **Convert to Images** - Transforms PDF pages to high-quality PNG images (PyMuPDF)
+5. **Analyze with LLM** - Google Gemini 2.5 Flash Lite analyzes images vs. database (parallel)
+6. **Generate report** - Markdown output with differences grouped by bulletin
 
 ## Output
 
@@ -212,22 +265,30 @@ FALLBACK_MODEL = 'google/gemini-2.5-flash-lite'
 
 ## Features
 
+- **Image-Based Analysis** - Converts PDFs to images for superior accuracy with vision models
 - **Parallel LLM Analysis** - ThreadPoolExecutor with configurable workers
 - **Intelligent Caching** - Avoids re-scraping bulletin websites
 - **Cloudflare Bypass** - Automatic bot detection handling
-- **Retry Logic** - Exponential backoff (1, 2, 4, 8, 16 sec, max 5 attempts)
+- **Retry Logic** - Exponential backoff (1, 2, 4, 8, 16 sec, max 10 attempts)
 - **Colored Logging** - Emoji indicators (🔍 DEBUG, ✓ INFO, ⚠ WARNING, ✗ ERROR)
+- **Dual Modes** - Mass time analysis and event extraction
+- **Auto-Update** - LLM-powered automatic JSON updates with `--modify-json`
 
 ## Performance
 
-Typical runtime for 34+ churches:
+Typical runtime for 34+ churches (with image mode):
 - Scraping: ~14 seconds (heavy caching)
 - Downloading: ~10 seconds
-- LLM Analysis: ~38 seconds (10 workers)
+- PDF to Images: ~8 seconds (parallel conversion)
+- LLM Analysis: ~45 seconds (10 workers, image mode)
 - Report Generation: <1 second
+- **Total: ~1.5 minutes**
+
+With `--no-images` (PDF mode):
+- LLM Analysis: ~38 seconds (10 workers)
 - **Total: ~1 minute**
 
-Analysis is highly parallelizable - more workers significantly reduce LLM analysis time.
+Analysis is highly parallelizable - more workers significantly reduce LLM analysis time. Image mode takes slightly longer but provides significantly better accuracy.
 
 ## Troubleshooting
 
@@ -236,16 +297,20 @@ Analysis is highly parallelizable - more workers significantly reduce LLM analys
 | 403 Forbidden | Automatic with cloudscraper, check internet |
 | PDF link not found | Verify `bulletin_website` URL manually |
 | LLM errors | Check API key in `.env` and quota at openrouter.ai |
-| Slow | Increase `--workers` value |
+| Image conversion fails | Install PyMuPDF: `pip install PyMuPDF`, or use `--no-images` |
+| Poor accuracy | Use default image mode (remove `--no-images` flag) |
+| Slow | Increase `--workers` value or use `--no-images` for faster (but less accurate) processing |
 | Debug | Use `--log-level DEBUG` |
 
 ## Architecture
 
 ```
-app.py              - Main orchestrator
-├── utils/scraping.py    - Scraping, downloading, caching
-├── utils/llm.py         - LLM API interaction
-└── utils/logging_config.py - Colored logging
+app.py                    - Main orchestrator
+├── utils/scraping.py         - Scraping, downloading, caching
+├── utils/llm.py              - LLM API interaction (image + PDF modes)
+├── utils/pdf_to_images.py    - PDF to image conversion (PyMuPDF)
+├── utils/events.py           - Event extraction and management
+└── utils/logging_config.py   - Colored logging
 ```
 
 ## Dependencies
@@ -254,6 +319,8 @@ app.py              - Main orchestrator
 - `beautifulsoup4` - HTML parsing
 - `cloudscraper` - Cloudflare bypass
 - `python-dotenv` - Environment variables
+- `PyMuPDF` - PDF to image conversion (fast, no external deps)
+- `Pillow` - Image processing
 
 See `requirements.txt` for versions.
 

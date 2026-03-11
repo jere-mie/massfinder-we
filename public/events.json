@@ -3844,5 +3844,1751 @@
         "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2025/11/WLSC%20Weekly%20Bulletin%20November%2030%202025%20-%20Bulletin.pdf?t=1764269230000",
         "source_bulletin_date": "2025-12-01",
         "extracted_at": "2025-12-01T21:31:17.648243"
+    },
+    {
+        "id": "2fht10ao",
+        "title": "Ash Wednesday Mass",
+        "description": "Mass to mark the beginning of Lent. Communion will NOT be distributed at this service.",
+        "church_id": "st-joseph-river-canard",
+        "church_name": "St. Joseph",
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "date": "2026-02-18",
+        "start_time": "1830",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2026/2/February 15  2026 1.pdf?t=1771352098000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:31:52.353106"
+    },
+    {
+        "id": "qyrcw0kd",
+        "title": "Ash Wednesday Ash Service (No Communion)",
+        "description": "Ash Service held at St. Paul. Communion will not be distributed.",
+        "church_id": "st-pauls-windsor",
+        "church_name": "St. Paul's",
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "date": "2026-02-18",
+        "start_time": "1100",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2026/2/February 15  2026 1.pdf?t=1771352098000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:31:52.353146"
+    },
+    {
+        "id": "to562t2d",
+        "title": "Catholic in Recovery Meeting",
+        "description": "Meeting scheduled for Ash Wednesday. Meetings will resume as scheduled on February 25th.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "date": "2026-02-18",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2026/2/February 15  2026 1.pdf?t=1771352098000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:31:52.353157"
+    },
+    {
+        "id": "e2fy0rrj",
+        "title": "Stations of the Cross (First of Lent Series)",
+        "description": "Family of Parishes invited to pray the Stations of the Cross. This is the first Friday of Lent.",
+        "church_id": "st-pauls-windsor",
+        "church_name": "St. Paul's",
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "date": "2026-02-20",
+        "start_time": "1830",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2026/2/February 15  2026 1.pdf?t=1771352098000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:31:52.353166"
+    },
+    {
+        "id": "8n8o0ikp",
+        "title": "RCIA Day of Reflection",
+        "description": "Participants in RCIA will spend the day with St. Paul. They continue at the Cathedral in London for the Rite of Election.",
+        "church_id": "st-pauls-windsor",
+        "church_name": "St. Paul's",
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "date": "2026-02-21",
+        "start_time": null,
+        "end_time": null,
+        "location": "St. Paul",
+        "tags": [
+            "education"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2026/2/February 15  2026 1.pdf?t=1771352098000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:31:52.353175"
+    },
+    {
+        "id": "8nvb0m80",
+        "title": "Teen Lenten Retreat",
+        "description": "Retreat for Young People in High School held at Holy Family Retreat House, Oxley, ON. Registration opened January 1st.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "date": "2026-03-07",
+        "start_time": null,
+        "end_time": null,
+        "location": "Holy Family Retreat House, Oxley",
+        "tags": [
+            "education",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2026/2/February 15  2026 1.pdf?t=1771352098000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:31:52.353184"
+    },
+    {
+        "id": "je5a8gny",
+        "title": "Shrove Tuesday Pancake Dinner",
+        "description": "Knights of Columbus Pancake Dinner. Admission is free, however, donations will support our Seminarians.",
+        "church_id": "our-lady-of-mt-carmel-windsor",
+        "church_name": "Our Lady of Mt Carmel",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2026-02-26",
+        "start_time": "1630",
+        "end_time": "1830",
+        "location": null,
+        "tags": [
+            "social",
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20260215.pdf?t=1771345093000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:31:53.534160"
+    },
+    {
+        "id": "xtxf5xn2",
+        "title": "Civil Annual Dinner",
+        "description": "Social event. Tickets are $30.00 for adults and $5.00 for children ages 6 to 12.",
+        "church_id": "corpus-christi-windsor",
+        "church_name": "Corpus Christi",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2026-02-28",
+        "start_time": "1730",
+        "end_time": "1900",
+        "location": null,
+        "tags": [
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20260215.pdf?t=1771345093000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:31:53.534202"
+    },
+    {
+        "id": "kaom2gaj",
+        "title": "World Day of Prayer 2026",
+        "description": "Theme: \"I'll give you rest: Come\" Matthew 11:28-30. Registration required.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2026-03-06",
+        "start_time": "1330",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "education",
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20260215.pdf?t=1771345093000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:31:53.534217"
+    },
+    {
+        "id": "unx50p14",
+        "title": "Annual Women's Conference",
+        "description": "Event held in-person with a live-streamed presentation from London with speaker Sue Font. Includes a gift bag & lunch.",
+        "church_id": "our-lady-of-mt-carmel-windsor",
+        "church_name": "Our Lady of Mt Carmel",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2026-03-07",
+        "start_time": "0900",
+        "end_time": "1530",
+        "location": null,
+        "tags": [
+            "education",
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20260215.pdf?t=1771345093000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:31:53.534230"
+    },
+    {
+        "id": "9exlc33y",
+        "title": "Youth Cafe: Faithful Friendships!",
+        "description": "For grades 8-12 Welcome! Concessions available - Free pizza and hot chocolate! Bring battle ship to start!",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2026-03-08",
+        "start_time": "1200",
+        "end_time": "1400",
+        "location": null,
+        "tags": [
+            "social",
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20260215.pdf?t=1771345093000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:31:53.534243"
+    },
+    {
+        "id": "ti6p1jlt",
+        "title": "Men's Silent Retreat Encounter Jesus",
+        "description": "Men are invited to take part in a silent retreat at the John Paul II Family Centre Port Burwell. Set within the quiet beauty of nature. Provides opportunity for prayer, reflection, and attentive listening during this sacred season.",
+        "church_id": "corpus-christi-windsor",
+        "church_name": "Corpus Christi",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2026-03-28",
+        "start_time": "0900",
+        "end_time": "1300",
+        "location": "John Paul II Family Centre Port Burwell",
+        "tags": [
+            "liturgy",
+            "education",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20260215.pdf?t=1771345093000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:31:53.534255"
+    },
+    {
+        "id": "m4qt8sax",
+        "title": "Catholic Women's League General Meeting",
+        "description": "General meeting held at the Parish Center.",
+        "church_id": "st-john-the-baptist-amherstburg",
+        "church_name": "St. John the Baptist",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2026-02-17",
+        "start_time": "1845",
+        "end_time": null,
+        "location": "Parish Center",
+        "tags": [
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20260215.pdf?t=1771005105000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:31:57.443828"
+    },
+    {
+        "id": "sxsaxir6",
+        "title": "Ash Wednesday Mass (Morning)",
+        "description": "Ash Wednesday Liturgy.",
+        "church_id": "st-john-the-baptist-amherstburg",
+        "church_name": "St. John the Baptist",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2026-02-18",
+        "start_time": "0900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "seasonal",
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20260215.pdf?t=1771005105000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:31:57.443859"
+    },
+    {
+        "id": "blqb8teg",
+        "title": "Ash Wednesday Mass (Evening)",
+        "description": "Ash Wednesday Liturgy.",
+        "church_id": "st-anthony-of-padua-harrow",
+        "church_name": "St. Anthony of Padua",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2026-02-18",
+        "start_time": "1900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "seasonal",
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20260215.pdf?t=1771005105000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:31:57.443872"
+    },
+    {
+        "id": "q7jnvvaw",
+        "title": "Grade 7 & 8 Youth Group Meeting",
+        "description": "Youth group meeting for Grades 7 & 8.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2026-02-18",
+        "start_time": "1900",
+        "end_time": "2030",
+        "location": "Stella Maris Catholic School",
+        "tags": [
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20260215.pdf?t=1771005105000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:31:57.443883"
+    },
+    {
+        "id": "95gcvlmv",
+        "title": "40 Days for Life Campaign Start",
+        "description": "Daily observance begins in front of St. Anthony of Padua Church, running until March 29th.",
+        "church_id": "st-anthony-of-padua-harrow",
+        "church_name": "St. Anthony of Padua",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2026-02-18",
+        "start_time": "0700",
+        "end_time": "1200",
+        "location": "In front of St. Anthony of Padua Church",
+        "tags": [
+            "community",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20260215.pdf?t=1771005105000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:31:57.443895"
+    },
+    {
+        "id": "lvfpwru3",
+        "title": "Bible and the Virgin Mary Study (Session 1)",
+        "description": "Start of the 6-Part Bible Study.",
+        "church_id": "st-john-the-baptist-amherstburg",
+        "church_name": "St. John the Baptist",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2026-02-19",
+        "start_time": "1900",
+        "end_time": "2100",
+        "location": "St. John the Baptist Church in the proper",
+        "tags": [
+            "education"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20260215.pdf?t=1771005105000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:31:57.443906"
+    },
+    {
+        "id": "300q2qdl",
+        "title": "Development & Peace Webinar: On Track for Justice launch",
+        "description": "Webinar to learn about the Development and Peace – Share Lent campaign.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2026-02-21",
+        "start_time": "1330",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "community",
+            "education"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20260215.pdf?t=1771005105000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:31:57.443918"
+    },
+    {
+        "id": "zf69f7a0",
+        "title": "Stations of the Cross (First Lenten Service)",
+        "description": "First Lenten Stations of the Cross service. Locations alternate weekly.",
+        "church_id": "st-john-the-baptist-amherstburg",
+        "church_name": "St. John the Baptist",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2026-02-20",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "St. John the Baptist Church",
+        "tags": [
+            "seasonal",
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20260215.pdf?t=1771005105000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:31:57.443929"
+    },
+    {
+        "id": "g2l5mko2",
+        "title": "Holy Hour for Jesus",
+        "description": "An opportunity to spend an hour with Jesus; featuring scripture reflection and music.",
+        "church_id": "st-anthony-of-padua-harrow",
+        "church_name": "St. Anthony of Padua",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2026-02-22",
+        "start_time": "1900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20260215.pdf?t=1771005105000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:31:57.443940"
+    },
+    {
+        "id": "e4uqrkd7",
+        "title": "First Communion Parent/Child Meeting",
+        "description": "Meeting regarding First Communion preparation.",
+        "church_id": "st-john-the-baptist-amherstburg",
+        "church_name": "St. John the Baptist",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2026-02-25",
+        "start_time": "1830",
+        "end_time": "1930",
+        "location": "St. John the Baptist Church",
+        "tags": [
+            "meeting",
+            "education"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20260215.pdf?t=1771005105000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:31:57.443951"
+    },
+    {
+        "id": "lvkfue9x",
+        "title": "Shrove Tuesday Pancake Supper",
+        "description": "Hosted by the St. John's Squires. Free will offering greatly appreciated.",
+        "church_id": "st-john-the-evangelist-woodslee",
+        "church_name": "St. John the Evangelist",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2026-02-17",
+        "start_time": "1700",
+        "end_time": "1900",
+        "location": null,
+        "tags": [
+            "social",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20260215.pdf?t=1770991251000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:06.958711"
+    },
+    {
+        "id": "8b2rtewo",
+        "title": "Shrove Tuesday Pancake Supper",
+        "description": "Hosted by the St. Mary's Altar Society for Development & Peace.",
+        "church_id": "st-marys-maidstone",
+        "church_name": "St. Mary's",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2026-02-17",
+        "start_time": "1700",
+        "end_time": "1900",
+        "location": null,
+        "tags": [
+            "social",
+            "seasonal",
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20260215.pdf?t=1770991251000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:06.958737"
+    },
+    {
+        "id": "h018064m",
+        "title": "Ash Wednesday Mass",
+        "description": "Service time (9:30 AM) shared with St. Mary's.",
+        "church_id": "st-john-the-evangelist-woodslee",
+        "church_name": "St. John the Evangelist",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2026-02-18",
+        "start_time": "0930",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20260215.pdf?t=1770991251000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:06.958747"
+    },
+    {
+        "id": "ham7mv5b",
+        "title": "Ash Wednesday Mass",
+        "description": "Service time (9:30 AM) shared with St. John's.",
+        "church_id": "st-marys-maidstone",
+        "church_name": "St. Mary's",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2026-02-18",
+        "start_time": "0930",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20260215.pdf?t=1770991251000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:06.958757"
+    },
+    {
+        "id": "e4ibvxlr",
+        "title": "Ash Wednesday Mass",
+        "description": "Noon Service.",
+        "church_id": "holy-name-of-jesus-essex",
+        "church_name": "Holy Name of Jesus",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2026-02-18",
+        "start_time": "1200",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20260215.pdf?t=1770991251000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:06.958767"
+    },
+    {
+        "id": "5lll2t96",
+        "title": "Ash Wednesday Mass",
+        "description": "7:00 PM Service shared with Holy Name of Jesus.",
+        "church_id": "st-clement-mcgregor",
+        "church_name": "St. Clement",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2026-02-18",
+        "start_time": "1900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20260215.pdf?t=1770991251000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:06.958775"
+    },
+    {
+        "id": "1gr4r6hi",
+        "title": "Ash Wednesday Mass",
+        "description": "7:00 PM Service shared with St. Clement.",
+        "church_id": "holy-name-of-jesus-essex",
+        "church_name": "Holy Name of Jesus",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2026-02-18",
+        "start_time": "1900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20260215.pdf?t=1770991251000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:06.958783"
+    },
+    {
+        "id": "0birngde",
+        "title": "\"TOTUS TUUS\" Young Adult Men Meeting",
+        "description": "For 19-35 years old. All groups meet at Holy Name of Jesus Church.",
+        "church_id": "holy-name-of-jesus-essex",
+        "church_name": "Holy Name of Jesus",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2026-02-18",
+        "start_time": "1830",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "education",
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20260215.pdf?t=1770991251000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:06.958791"
+    },
+    {
+        "id": "ffzbgnqb",
+        "title": "History of St. Mary's Church Presentation",
+        "description": "Following 9:30 AM Mass, presented by Rosemary Halford.",
+        "church_id": "st-marys-maidstone",
+        "church_name": "St. Mary's",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2026-02-19",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "education"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20260215.pdf?t=1770991251000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:06.958800"
+    },
+    {
+        "id": "018xvqtd",
+        "title": "THRIVE (Grades 9-12) Youth Group (\"Unrelenting Lent\")",
+        "description": "Youth Ministry Event.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2026-02-22",
+        "start_time": "1900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "education",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20260215.pdf?t=1770991251000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:06.958807"
+    },
+    {
+        "id": "wn9qizqd",
+        "title": "St. Mary's Lenten Card Party (First Session)",
+        "description": "Starts Sunday during Lent at 7 pm at St. Mary's Hall. $7/person. This is the first session.",
+        "church_id": "st-marys-maidstone",
+        "church_name": "St. Mary's",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2026-02-22",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "St. Mary's Hall",
+        "tags": [
+            "social",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20260215.pdf?t=1770991251000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:06.958816"
+    },
+    {
+        "id": "0pk8zhoj",
+        "title": "ROOTED (Grades 6-8) Youth Group",
+        "description": "Youth Ministry Event.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2026-02-25",
+        "start_time": "1900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "education"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20260215.pdf?t=1770991251000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:06.958825"
+    },
+    {
+        "id": "nb2h58oy",
+        "title": "\"SET APART\" Young Adult Women Meeting",
+        "description": "For 18-40 years old. All groups meet at Holy Name of Jesus Church.",
+        "church_id": "holy-name-of-jesus-essex",
+        "church_name": "Holy Name of Jesus",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2026-02-25",
+        "start_time": "1830",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "education",
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20260215.pdf?t=1770991251000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:06.958833"
+    },
+    {
+        "id": "rlw2530x",
+        "title": "Essex K of C Fish Fry",
+        "description": "Take out available. Cash or Debit.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2026-02-27",
+        "start_time": "1630",
+        "end_time": "1900",
+        "location": null,
+        "tags": [
+            "social",
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20260215.pdf?t=1770991251000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:06.958840"
+    },
+    {
+        "id": "2ff8fcv7",
+        "title": "St. Clement CWL Lenten Workshop",
+        "description": "Workshop on Prayer. Free hot lunch. Must register by Feb. 25th.",
+        "church_id": "st-clement-mcgregor",
+        "church_name": "St. Clement",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2026-02-28",
+        "start_time": "0930",
+        "end_time": "1500",
+        "location": "McGregor Community Centre",
+        "tags": [
+            "education",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20260215.pdf?t=1770991251000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:06.958848"
+    },
+    {
+        "id": "ks1d1086",
+        "title": "Ministry Fair",
+        "description": "Ministry contact Jessica available.",
+        "church_id": "holy-name-of-jesus-essex",
+        "church_name": "Holy Name of Jesus",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2026-03-01",
+        "start_time": "1200",
+        "end_time": null,
+        "location": "Holy Name of Jesus parish hall",
+        "tags": [
+            "meeting",
+            "other"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20260215.pdf?t=1770991251000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:06.958856"
+    },
+    {
+        "id": "3wlmatpr",
+        "title": "Adoration",
+        "description": "Continuous Adoration time (11 am to 8 pm).",
+        "church_id": "holy-name-of-jesus-essex",
+        "church_name": "Holy Name of Jesus",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2026-03-06",
+        "start_time": "1100",
+        "end_time": "2000",
+        "location": null,
+        "tags": [
+            "liturgy",
+            "devotion"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20260215.pdf?t=1770991251000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:06.958864"
+    },
+    {
+        "id": "xumkf258",
+        "title": "QUEST (Grades 3-5) Youth Group",
+        "description": "Youth Ministry Event.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2026-03-11",
+        "start_time": "1900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "education"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20260215.pdf?t=1770991251000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:06.958871"
+    },
+    {
+        "id": "kngudpmd",
+        "title": "Ash Wednesday Services",
+        "description": "Ash Wednesday Masses and services held throughout the Family of Parishes.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "date": "2026-02-18",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/February 15 2026.pdf",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:10.272977"
+    },
+    {
+        "id": "58og3dlf",
+        "title": "Volunteer Call: Soup Makers needed for Assumption Suppers",
+        "description": "Call for volunteers to help make soup for suppers scheduled for specific Friday dates in February and March.",
+        "church_id": "our-lady-of-the-assumption-windsor",
+        "church_name": "Our Lady of the Assumption",
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "date": "2026-02-20",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "community"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/February 15 2026.pdf",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:10.273000"
+    },
+    {
+        "id": "trwmy1bk",
+        "title": "Day of Reflection: EUCHARIST: FOOD FOR LIFE AS A DISCIPLE",
+        "description": "A day dedicated to reflection on the Eucharist, sharing a meal together and contemplating living out faith daily. Includes time for prayer, teaching, and small group sharing.",
+        "church_id": "st-alphonsus-windsor",
+        "church_name": "St. Alphonsus",
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "date": "2026-03-07",
+        "start_time": "1000",
+        "end_time": "1600",
+        "location": "St. Alphonsus Parish",
+        "tags": [
+            "education",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/February 15 2026.pdf",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:10.273009"
+    },
+    {
+        "id": "mrwf99mm",
+        "title": "Lenten Retreat",
+        "description": "A two-day Lenten Retreat program focusing on Lent and Lenten practices. Further information forthcoming.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "date": "2026-03-09",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "education",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/February 15 2026.pdf",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:10.273017"
+    },
+    {
+        "id": "nkrlkx71",
+        "title": "49th Anniversary Banquet and Dance (Congregazione San Giuseppe)",
+        "description": "Anniversary banquet and dance. Doors open at 5:30 PM. Tickets required.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "date": "2026-03-14",
+        "start_time": "1730",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "social",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/February 15 2026.pdf",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:10.273027"
+    },
+    {
+        "id": "yhzkkfgo",
+        "title": "Volunteer Call: Soup Makers needed for Assumption Suppers",
+        "description": "Call for volunteers to help make soup for suppers scheduled for specific Friday dates in February and March.",
+        "church_id": "our-lady-of-the-assumption-windsor",
+        "church_name": "Our Lady of the Assumption",
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "date": "2026-02-27",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "community"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/February 15 2026.pdf",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:10.273036"
+    },
+    {
+        "id": "3kwuphxf",
+        "title": "Volunteer Call: Soup Makers needed for Assumption Suppers",
+        "description": "Call for volunteers to help make soup for suppers scheduled for specific Friday dates in February and March.",
+        "church_id": "our-lady-of-the-assumption-windsor",
+        "church_name": "Our Lady of the Assumption",
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "date": "2026-03-20",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "community"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/February 15 2026.pdf",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:10.273046"
+    },
+    {
+        "id": "d929g38s",
+        "title": "Jubilee Celebration Mass (St. Patrick School & Community)",
+        "description": "Roman Catholic Mass held at the former St. Patrick Church site, followed by fellowship and fun.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "date": "2026-04-18",
+        "start_time": "1430",
+        "end_time": null,
+        "location": "Former St. Patrick Church",
+        "tags": [
+            "liturgy",
+            "social",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/February 15 2026.pdf",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:10.273056"
+    },
+    {
+        "id": "t2pz6z5o",
+        "title": "Installation of Extraordinary Eucharistic Ministers",
+        "description": "Extraordinary Eucharistic Ministers (EMs) will be installed at all Mass services this weekend (Feb 21 & 22) at St. Michael's or OLPH parishes.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2026-02-21",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20260215.pdf?t=1771019733000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:14.281727"
+    },
+    {
+        "id": "6xj8pigu",
+        "title": "Installation of Extraordinary Eucharistic Ministers",
+        "description": "Extraordinary Eucharistic Ministers (EMs) will be installed at all Mass services this weekend (Feb 21 & 22) at St. Michael's or OLPH parishes.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2026-02-22",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20260215.pdf?t=1771019733000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:14.281771"
+    },
+    {
+        "id": "cqocjtn9",
+        "title": "K of C Sunday Breakfast",
+        "description": "Knights of Columbus Sunday Morning Breakfast.",
+        "church_id": "immaculate-heart-windsor",
+        "church_name": "Immaculate Heart / St. Michael's",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2026-02-22",
+        "start_time": "0830",
+        "end_time": "1130",
+        "location": "St. Michael's Church Hall",
+        "tags": [
+            "social",
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20260215.pdf?t=1771019733000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:14.281785"
+    },
+    {
+        "id": "9tyvapxu",
+        "title": "Advent Penance Service",
+        "description": "Special Penance Service.",
+        "church_id": "our-lady-of-perpetual-help-windsor",
+        "church_name": "Our Lady of Perpetual Help",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2026-02-22",
+        "start_time": "1400",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20260215.pdf?t=1771019733000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:14.281799"
+    },
+    {
+        "id": "946hg7ky",
+        "title": "Lenten Penance Service",
+        "description": "Special Lenten Penance Service.",
+        "church_id": "immaculate-heart-windsor",
+        "church_name": "Immaculate Heart / St. Michael's",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2026-02-23",
+        "start_time": "1900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20260215.pdf?t=1771019733000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:14.281812"
+    },
+    {
+        "id": "836038s6",
+        "title": "Penance Service",
+        "description": "Special Penance Service.",
+        "church_id": "holy-trinity-windsor",
+        "church_name": "Holy Trinity",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2026-02-24",
+        "start_time": "1900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20260215.pdf?t=1771019733000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:14.281826"
+    },
+    {
+        "id": "oqfylu2w",
+        "title": "Heart of Jesus / SSVP Luncheon",
+        "description": "Luncheon meeting.",
+        "church_id": "immaculate-heart-windsor",
+        "church_name": "Immaculate Heart / St. Michael's",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2026-02-27",
+        "start_time": "1200",
+        "end_time": null,
+        "location": "Immaculate Heart Conference Room",
+        "tags": [
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20260215.pdf?t=1771019733000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:14.281838"
+    },
+    {
+        "id": "4g7eauy5",
+        "title": "Lenten Retreat 2026 (Youth, Young Adult & Family Ministry)",
+        "description": "Multi-day retreat occurring March 4th & 5th. Online registration is open.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2026-03-04",
+        "start_time": null,
+        "end_time": null,
+        "location": "Cana Catholic Centre (Implied)",
+        "tags": [
+            "education",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20260215.pdf?t=1771019733000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:14.281851"
+    },
+    {
+        "id": "p98mjd71",
+        "title": "Ash Wednesday Mass (English)",
+        "description": "Mass with the distribution of Blessed Ashes.",
+        "church_id": "most-precious-blood-windsor",
+        "church_name": "Most Precious Blood",
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2026-02-18",
+        "start_time": "0830",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20260215.pdf?t=1771094158000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:30.016099"
+    },
+    {
+        "id": "h4tr5sxw",
+        "title": "Ash Wednesday Mass (Bilingual)",
+        "description": "Mass with the distribution of Blessed Ashes.",
+        "church_id": "our-lady-of-guadalupe-windsor",
+        "church_name": "Our Lady of Guadalupe / San Juan Diego",
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2026-02-18",
+        "start_time": "1900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20260215.pdf?t=1771094158000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:30.016139"
+    },
+    {
+        "id": "6zyoarri",
+        "title": "Ash Wednesday Mass (English)",
+        "description": "Mass with the distribution of Blessed Ashes.",
+        "church_id": "st-theresas-windsor",
+        "church_name": "St. Theresa's",
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2026-02-18",
+        "start_time": "1900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20260215.pdf?t=1771094158000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:30.016151"
+    },
+    {
+        "id": "uvxycp0o",
+        "title": "Stations of the Cross (SCM)",
+        "description": "First Stations of the Cross service (Bilingual English/Slovak).",
+        "church_id": "sts-cyril-and-methodius-windsor",
+        "church_name": "Sts. Cyril And Methodius",
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2026-02-19",
+        "start_time": "1830",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20260215.pdf?t=1771094158000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:30.016160"
+    },
+    {
+        "id": "f687wxk1",
+        "title": "Stations of the Cross (MPB)",
+        "description": "Beginning of Stations of the Cross; soup served beforehand at 5:30 PM.",
+        "church_id": "most-precious-blood-windsor",
+        "church_name": "Most Precious Blood",
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2026-02-20",
+        "start_time": "1830",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20260215.pdf?t=1771094158000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:30.016169"
+    },
+    {
+        "id": "7a9kh5jo",
+        "title": "Stations of the Cross (OLOG)",
+        "description": "Beginning of Stations of the Cross (Bilingual English/Spanish); soup served beforehand at 5:30 PM.",
+        "church_id": "our-lady-of-guadalupe-windsor",
+        "church_name": "Our Lady of Guadalupe / San Juan Diego",
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2026-02-20",
+        "start_time": "1830",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20260215.pdf?t=1771094158000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:30.016179"
+    },
+    {
+        "id": "tnbde3vk",
+        "title": "Youth Choir First Rehearsal",
+        "description": "First rehearsal for new members joining the Youth Choir (rehearsals are Sundays 3:00-4:00 PM).",
+        "church_id": "most-precious-blood-windsor",
+        "church_name": "Most Precious Blood",
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2026-02-22",
+        "start_time": "1500",
+        "end_time": "1600",
+        "location": null,
+        "tags": [
+            "social",
+            "education"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20260215.pdf?t=1771094158000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:30.016188"
+    },
+    {
+        "id": "hiqvmr1k",
+        "title": "Ashes Distribution at SCM",
+        "description": "Distribution of Blessed Ashes (mentioned as taking place on Feb 22nd for this parish).",
+        "church_id": "sts-cyril-and-methodius-windsor",
+        "church_name": "Sts. Cyril And Methodius",
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2026-02-22",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20260215.pdf?t=1771094158000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:30.016195"
+    },
+    {
+        "id": "zxhrep84",
+        "title": "NET Canada Mission Discernment Night",
+        "description": "Information night for grades 10-12 and 18-30 interested in NET Canada mission opportunities.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2026-02-26",
+        "start_time": "1900",
+        "end_time": "2100",
+        "location": "Ste. Anne Parish (12233 Tecumseh Rd E)",
+        "tags": [
+            "education",
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20260215.pdf?t=1771094158000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:30.016204"
+    },
+    {
+        "id": "y7gz5scb",
+        "title": "World Day of Prayer Service",
+        "description": "Service hosted by the Nigerian World Day of Prayer Committee.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2026-03-06",
+        "start_time": "1400",
+        "end_time": null,
+        "location": "St. John Vianney Church (385 Dieppe St. in Windsor)",
+        "tags": [
+            "liturgy",
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20260215.pdf?t=1771094158000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:30.016212"
+    },
+    {
+        "id": "vaf3hewm",
+        "title": "MPB CWL Women's Lenten Retreat",
+        "description": "Lenten Retreat for Women, including cost ($20.00).",
+        "church_id": "most-precious-blood-windsor",
+        "church_name": "Most Precious Blood",
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2026-03-14",
+        "start_time": "0930",
+        "end_time": "1430",
+        "location": "Most Precious Blood Church",
+        "tags": [
+            "education",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20260215.pdf?t=1771094158000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:30.016220"
+    },
+    {
+        "id": "iyym0os8",
+        "title": "All Day Confession",
+        "description": "Special Lenten day dedicated to confessions.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2026-03-24",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20260215.pdf?t=1771094158000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:30.016228"
+    },
+    {
+        "id": "tuhtvzl6",
+        "title": "Palm Sunday",
+        "description": "Observance of Palm Sunday.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2026-03-29",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "liturgy",
+            "seasonal"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20260215.pdf?t=1771094158000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:30.016236"
+    },
+    {
+        "id": "0r4fodsg",
+        "title": "Soirée de Foi pour Adultes",
+        "description": "Adult Faith Night session requiring no registration.",
+        "church_id": "st-jerome-windsor",
+        "church_name": "St. Jerome",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2026-02-21",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "education"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/2/WLSC%20Weekly%20Bulletin%20February%2015%202026.pdf?t=1770922767000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:50.090931"
+    },
+    {
+        "id": "r8l24dtz",
+        "title": "Knights of Columbus General Meeting",
+        "description": "Good Shepherd Council #9671 General Meeting.",
+        "church_id": "good-shepherd-tecumseh",
+        "church_name": "Good Shepherd",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2026-02-24",
+        "start_time": "1900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/2/WLSC%20Weekly%20Bulletin%20February%2015%202026.pdf?t=1770922767000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:50.090990"
+    },
+    {
+        "id": "t6sdqzau",
+        "title": "Soup and Stations Kickoff",
+        "description": "Kickoff event for the Lenten Soup and Stations series held every Wednesday through March 25th, following Stations of the Cross.",
+        "church_id": "good-shepherd-tecumseh",
+        "church_name": "Good Shepherd",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2026-02-25",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "seasonal",
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/2/WLSC%20Weekly%20Bulletin%20February%2015%202026.pdf?t=1770922767000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:50.091000"
+    },
+    {
+        "id": "ul6u4vel",
+        "title": "Women at the Well - Gather & Grow",
+        "description": "Next session of the Gather & Grow session at Good Shepherd.",
+        "church_id": "good-shepherd-tecumseh",
+        "church_name": "Good Shepherd",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2026-02-23",
+        "start_time": "1900",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "education"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/2/WLSC%20Weekly%20Bulletin%20February%2015%202026.pdf?t=1770922767000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:50.091041"
+    },
+    {
+        "id": "fbw3kf5f",
+        "title": "Soirée de jeu et de prière - Arches (Ages 8-12)",
+        "description": "Game and prayer night for children aged 8-12.",
+        "church_id": "st-jerome-windsor",
+        "church_name": "St. Jerome",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2026-02-27",
+        "start_time": "1830",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "education",
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/2/WLSC%20Weekly%20Bulletin%20February%2015%202026.pdf?t=1770922767000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:50.091051"
+    },
+    {
+        "id": "xnr26s24",
+        "title": "Theology on Tap",
+        "description": "Catholic young adults gathering for teaching and discussion. Guest speaker discusses 'The Virtue of Humility'.",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2026-02-27",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "St. Anne's Catholic Church",
+        "tags": [
+            "education"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/2/WLSC%20Weekly%20Bulletin%20February%2015%202026.pdf?t=1770922767000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:50.091062"
+    },
+    {
+        "id": "0xlsnqy3",
+        "title": "Young Adult Outreach Meal Packing",
+        "description": "Volunteering opportunity to pack food and hygiene products for the homeless brothers and sisters.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2026-02-28",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/2/WLSC%20Weekly%20Bulletin%20February%2015%202026.pdf?t=1770922767000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:50.091072"
+    },
+    {
+        "id": "yo6hsx0x",
+        "title": "Exodus: Teen Theology Talks (Bowling/Talk)",
+        "description": "Night of bowling and a theology talk for teens.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2026-02-28",
+        "start_time": "1900",
+        "end_time": "2100",
+        "location": "Rose Bowl in Windsor",
+        "tags": [
+            "education",
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/2/WLSC%20Weekly%20Bulletin%20February%2015%202026.pdf?t=1770922767000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:50.091112"
+    },
+    {
+        "id": "i195fmy9",
+        "title": "CWL Heart To Hands Sale (Day 1)",
+        "description": "Sale of knitted or crocheted crafts/goods to support the CWL.",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2026-02-28",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/2/WLSC%20Weekly%20Bulletin%20February%2015%202026.pdf?t=1770922767000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:50.091260"
+    },
+    {
+        "id": "bp0n4ufs",
+        "title": "CWL Heart To Hands Sale (Day 2)",
+        "description": "Sale of knitted or crocheted crafts/goods to support the CWL.",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2026-03-01",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/2/WLSC%20Weekly%20Bulletin%20February%2015%202026.pdf?t=1770922767000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:50.091295"
+    },
+    {
+        "id": "vwqwtnsu",
+        "title": "Knights of Columbus General Meeting",
+        "description": "Ste. Anne Council #4375 General Meeting, includes discussion of a Motion for the Community Living Walk/Run.",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2026-03-04",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "parish hall",
+        "tags": [
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/2/WLSC%20Weekly%20Bulletin%20February%2015%202026.pdf?t=1770922767000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:50.091325"
+    },
+    {
+        "id": "yhvfakga",
+        "title": "Knights of Columbus General Meeting",
+        "description": "St. Simon & St. Jude Council #2775 General Meeting.",
+        "church_id": "st-simon-st-jude-belle-river",
+        "church_name": "St. Simon & St. Jude",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2026-03-04",
+        "start_time": "1930",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/2/WLSC%20Weekly%20Bulletin%20February%2015%202026.pdf?t=1770922767000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:50.091350"
+    },
+    {
+        "id": "phduz881",
+        "title": "Belle River Kay-Celles Meeting",
+        "description": "Monthly meeting for the Belle River Kay-Celles group.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2026-03-11",
+        "start_time": "2000",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/2/WLSC%20Weekly%20Bulletin%20February%2015%202026.pdf?t=1770922767000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:50.091379"
+    },
+    {
+        "id": "iw6suq2m",
+        "title": "St. Simon & St. Jude CWL Monthly Meeting",
+        "description": "CWL Monthly meeting, previously postponed.",
+        "church_id": "st-simon-st-jude-belle-river",
+        "church_name": "St. Simon & St. Jude",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2026-03-17",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/2/WLSC%20Weekly%20Bulletin%20February%2015%202026.pdf?t=1770922767000",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:50.091413"
+    },
+    {
+        "id": "wezzgk5l",
+        "title": "CWL Shrove Tuesday Pancake dinner",
+        "description": "Pancake dinner hosted at St. Michael's Parish Hall, running from 4:30 PM until 6:00 PM before the 6:30 PM Mass.",
+        "church_id": "st-michaels-leamington",
+        "church_name": "St. Michael's",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2026-02-17",
+        "start_time": "1630",
+        "end_time": "1800",
+        "location": "St. Michael's Parish Hall",
+        "tags": [
+            "social",
+            "seasonal",
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/February 15 2026.pdf",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:51.928098"
+    },
+    {
+        "id": "bi8rompo",
+        "title": "CWL - St. John de Brebeuf - Quiche Brunch",
+        "description": "Quiche Brunch held after the 8:30 AM Mass. Volunteers needed.",
+        "church_id": "st-john-de-brebeuf-kingsville",
+        "church_name": "St. John de Brebeuf",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2026-02-17",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "social",
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/February 15 2026.pdf",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:51.928179"
+    },
+    {
+        "id": "5s6fj5xh",
+        "title": "Young Adults How to live Lent Authentically gathering",
+        "description": "Informal gathering at the Portuguese Restaurant following the 6:30 PM Mass.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2026-02-17",
+        "start_time": null,
+        "end_time": null,
+        "location": "Portuguese Restaurant",
+        "tags": [
+            "social",
+            "seasonal",
+            "education"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/February 15 2026.pdf",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:51.928190"
+    },
+    {
+        "id": "xg88yepu",
+        "title": "CLOSER Workshop Series: Building a Relationship with God (Session 1 of 4)",
+        "description": "Youth workshop exploring building a relationship with God. Runs 6:00 PM - 8:00 PM. Snacks included.",
+        "church_id": "st-michaels-leamington",
+        "church_name": "St. Michael's",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2026-02-17",
+        "start_time": "1800",
+        "end_time": "2000",
+        "location": "St Michael's Parish Hall",
+        "tags": [
+            "education",
+            "meeting"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/February 15 2026.pdf",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:51.928203"
+    },
+    {
+        "id": "gfavedis",
+        "title": "CLOSER Workshop Series: Building a Relationship with God (Session 2 of 4)",
+        "description": "Youth workshop exploring building a relationship with God. Runs 6:00 PM - 8:00 PM. Snacks included.",
+        "church_id": "st-michaels-leamington",
+        "church_name": "St. Michael's",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2026-02-23",
+        "start_time": "1800",
+        "end_time": "2000",
+        "location": "St Michael's Parish Hall",
+        "tags": [
+            "education",
+            "meeting"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/February 15 2026.pdf",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:51.928211"
+    },
+    {
+        "id": "43vod1tf",
+        "title": "CLOSER Workshop Series: Building a Relationship with God (Session 3 of 4)",
+        "description": "Youth workshop exploring building a relationship with God. Runs 6:00 PM - 8:00 PM. Snacks included.",
+        "church_id": "st-michaels-leamington",
+        "church_name": "St. Michael's",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2026-03-02",
+        "start_time": "1800",
+        "end_time": "2000",
+        "location": "St Michael's Parish Hall",
+        "tags": [
+            "education",
+            "meeting"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/February 15 2026.pdf",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:51.928221"
+    },
+    {
+        "id": "54w0kbz1",
+        "title": "CLOSER Workshop Series: Building a Relationship with God (Session 4 of 4)",
+        "description": "Youth workshop exploring building a relationship with God. Runs 6:00 PM - 8:00 PM. Snacks included.",
+        "church_id": "st-michaels-leamington",
+        "church_name": "St. Michael's",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2026-03-09",
+        "start_time": "1800",
+        "end_time": "2000",
+        "location": "St Michael's Parish Hall",
+        "tags": [
+            "education",
+            "meeting"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/February 15 2026.pdf",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:51.928231"
+    },
+    {
+        "id": "lvsbp8jw",
+        "title": "Squires Pasta Night Fundraiser (SJB)",
+        "description": "Fundraiser dinner held after the 6:00 PM Mass.",
+        "church_id": "st-john-de-brebeuf-kingsville",
+        "church_name": "St. John de Brebeuf",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2026-02-21",
+        "start_time": "1800",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "fundraiser",
+            "social"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/February 15 2026.pdf",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:51.928239"
+    },
+    {
+        "id": "xnstjmic",
+        "title": "Squires Pasta Night Fundraiser (SJB)",
+        "description": "Fundraiser dinner held after the 6:00 PM Mass.",
+        "church_id": "st-john-de-brebeuf-kingsville",
+        "church_name": "St. John de Brebeuf",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2026-02-28",
+        "start_time": "1800",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "fundraiser",
+            "social"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/February 15 2026.pdf",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:51.928248"
+    },
+    {
+        "id": "v679zkd1",
+        "title": "Knights of Columbus 37th Annual Wild Game Dinner",
+        "description": "KOC Fundraiser Dinner held at Colasanti's Tropical Gardens. Tickets required.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2026-03-21",
+        "start_time": "1800",
+        "end_time": null,
+        "location": "Colasanti's Tropical Gardens",
+        "tags": [
+            "fundraiser",
+            "social"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/February 15 2026.pdf",
+        "source_bulletin_date": "2026-02-17",
+        "extracted_at": "2026-02-17T21:32:51.928258"
     }
 ]
