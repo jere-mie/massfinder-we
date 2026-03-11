@@ -12,15 +12,18 @@ import { formatTime } from "../utils/formatting";
 
 const localizer = momentLocalizer(moment);
 
-// Hex colors matching the TAG_COLORS in EventsView (bg-*-800 tones for readability on white text)
+// Hex equivalents of the bg-*-600 Tailwind shades (middle ground between light and dark).
 export const EVENTS_TAG_COLORS: Record<string, string> = {
-  liturgy:    "#6d28d9", // purple-700
-  social:     "#1d4ed8", // blue-700
-  fundraiser: "#15803d", // green-700
-  education:  "#b45309", // amber-700
-  meeting:    "#374151", // gray-700
-  community:  "#c2410c", // orange-700
-  seasonal:   "#b91c1c", // red-700
+  community:  "#ea580c", // orange-600
+  education:  "#ca8a04", // yellow-600
+  fundraiser: "#16a34a", // green-600
+  liturgy:    "#9333ea", // purple-600
+  meeting:    "#4b5563", // gray-600
+  retreat:    "#4f46e5", // indigo-600
+  sacramental:"#db2777", // pink-600
+  seasonal:   "#dc2626", // red-600
+  social:     "#2563eb", // blue-600
+  volunteer:  "#0d9488", // teal-600
   other:      "#475569", // slate-600
 };
 
@@ -343,7 +346,7 @@ export function EventsCalendarView({ events }: Props) {
           startAccessor="start"
           endAccessor="end"
           eventPropGetter={eventStyleGetter}
-          views={["month", "week", "agenda"]}
+          views={["month", "day", "agenda"]}
           defaultView="month"
           onSelectEvent={(event) => setSelectedItem(event as EventCalendarItem)}
         />
