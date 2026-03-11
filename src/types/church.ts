@@ -79,6 +79,22 @@ export interface TableRow {
 export type TabType = 'map' | 'list';
 
 /**
+ * Valid tag categories for parish events
+ */
+export type EventTag =
+  | 'community'
+  | 'education'
+  | 'fundraiser'
+  | 'liturgy'
+  | 'meeting'
+  | 'retreat'
+  | 'sacramental'
+  | 'seasonal'
+  | 'social'
+  | 'volunteer'
+  | 'other';
+
+/**
  * Represents a parish event extracted from bulletins
  */
 export interface Event {
@@ -92,7 +108,7 @@ export interface Event {
   start_time: string | null; // HHMM
   end_time: string | null; // HHMM
   location: string | null;
-  tags: string[];
+  tags: EventTag[];
   source_bulletin_link: string;
   source_bulletin_date: string;
   extracted_at: string; // ISO timestamp
