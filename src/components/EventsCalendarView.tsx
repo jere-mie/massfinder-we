@@ -345,8 +345,11 @@ export function EventsCalendarView({ events }: Props) {
           events={calendarEvents}
           startAccessor="start"
           endAccessor="end"
+          step={15}
+          timeslots={4}
           eventPropGetter={eventStyleGetter}
           views={["month", "day", "agenda"]}
+          dayLayoutAlgorithm="no-overlap"
           defaultView="month"
           onSelectEvent={(event) => setSelectedItem(event as EventCalendarItem)}
         />
