@@ -94,6 +94,21 @@ export type EventTag =
   | 'volunteer'
   | 'other';
 
+/** All valid event tags as a runtime constant, ordered alphabetically. */
+export const ALL_EVENT_TAGS: EventTag[] = [
+  'community',
+  'education',
+  'fundraiser',
+  'liturgy',
+  'meeting',
+  'retreat',
+  'sacramental',
+  'seasonal',
+  'social',
+  'volunteer',
+  'other',
+];
+
 /**
  * Represents a parish event extracted from bulletins
  */

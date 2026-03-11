@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react';
 import { useEvents } from '../hooks/useEvents';
 import { formatTime } from '../utils/formatting';
 import type { Event, EventTag } from '../types/church';
+import { ALL_EVENT_TAGS } from '../types/church';
 
 /**
  * Format a date string to a readable format
@@ -198,7 +199,6 @@ export function EventsView() {
   const [endDate, setEndDate] = useState('');
 
   const families = useMemo(() => getUniqueValues(events, 'family_of_parishes'), [events]);
-  const tags = useMemo(() => getUniqueValues(events, 'tags'), [events]);
 
   const filteredEvents = useMemo(() => {
     return events.filter((event) => {
@@ -300,7 +300,7 @@ export function EventsView() {
                 className="w-full appearance-none bg-gray-50 border border-gray-300 text-gray-900 rounded-lg px-4 py-2.5 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors cursor-pointer hover:bg-gray-100"
               >
                 <option value="all">All Types</option>
-                {tags.map((tag) => (
+                {ALL_EVENT_TAGS.map((tag) => (
                   <option key={tag} value={tag}>
                     {tag.charAt(0).toUpperCase() + tag.slice(1)}
                   </option>
