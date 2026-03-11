@@ -24,7 +24,10 @@ OPENROUTER_API_URL = 'https://openrouter.ai/api/v1/chat/completions'
 # Validate API key early so the user gets a clear error when it's missing
 if not OPENROUTER_API_KEY:
     logger.error("OPENROUTER_API_KEY is not set. Set it in .env or the environment.")
-
+    raise RuntimeError(
+        "OPENROUTER_API_KEY is not set. Please set it in your environment or .env file "
+        "before running the bulletin analyzer."
+    )
 # Model options: prefer faster models for bulk processing
 PREFERRED_MODEL = 'google/gemini-3.1-flash-lite-preview'
 FALLBACK_MODEL = 'google/gemini-2.5-flash-lite'
