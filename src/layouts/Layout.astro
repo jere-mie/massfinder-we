@@ -36,34 +36,38 @@ const {
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
+
+		<script>
+			(function () {
+				// Capture `beforeinstallprompt` as early as possible and stash it on window
+				// so the React banner can read it after hydration.
+				window.__deferredInstallPrompt = null;
+				window.addEventListener('beforeinstallprompt', function (e) {
+					e.preventDefault();
+					window.__deferredInstallPrompt = e;
+					window.dispatchEvent(new CustomEvent('pwa-install-ready'));
+				});
+
+				window.addEventListener('appinstalled', function () {
+					window.__deferredInstallPrompt = null;
+					window.dispatchEvent(new CustomEvent('pwa-installed'));
+				});
+			})();
+		</script>
 	</head>
 	<body class="bg-gray-50 min-h-screen">
-		<Navbar client:load />
 		<InstallBanner client:load />
+		<Navbar client:load />
 		<main>
 			<slot />
 		</main>
 
-		{/* Capture beforeinstallprompt as early as possible so the React component
-		    doesn't miss it due to hydration timing, then register the service worker. */}
 		<script>
 			(function () {
-				// Store the deferred prompt globally; the InstallBanner component reads it.
-				window.addEventListener('beforeinstallprompt', function (e) {
-					e.preventDefault();
-					(window as any).__deferredInstallPrompt = e;
-					window.dispatchEvent(new CustomEvent('pwa-install-ready'));
-				});
-
-				// Remove the stored prompt once the app is successfully installed.
-				window.addEventListener('appinstalled', function () {
-					(window as any).__deferredInstallPrompt = null;
-				});
-
 				// Register service worker (required for Chrome's install eligibility).
 				if ('serviceWorker' in navigator) {
 					window.addEventListener('load', function () {
-						navigator.serviceWorker.register('/sw.js');
+						navigator.serviceWorker.register('/sw.js').catch(function (e) { console.warn('SW registration failed', e); });
 					});
 				}
 			})();
