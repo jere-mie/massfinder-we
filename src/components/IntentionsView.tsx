@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useIntentions } from '../hooks/useIntentions';
 import { useChurches } from '../hooks/useChurches';
 import { formatTime } from '../utils/formatting';
@@ -68,10 +68,20 @@ function flattenIntentions(
  */
 export function IntentionsView() {
   const { intentions, loading, error } = useIntentions();
-  const { churches, loading: churchesLoading } = useChurches();
+  const { churches, loading: churchesLoading, error: churchesError } = useChurches();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedChurch, setSelectedChurch] = useState('all');
   const [hidePast, setHidePast] = useState(true);
+
+  useEffect(() => {
+    if (churchesError) {
+      // eslint-disable-next-line no-alert
+      window.alert('There was a problem loading church details. Mass intentions are shown, but church names and filters may be incomplete.');
+
+      // eslint-disable-next-line no-console
+      console.error('Failed to load churches data in IntentionsView:', churchesError);
+    }
+  }, [churchesError]);
 
   // Build church id -> name map
   const churchMap = useMemo(() => {

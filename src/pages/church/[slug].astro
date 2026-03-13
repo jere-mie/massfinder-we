@@ -245,13 +245,13 @@ function formatDateDisplay(dateStr: string) {
     {intentions && intentions.length > 0 && (
       <section class="bg-white rounded-lg border border-gray-200 shadow-sm p-6 mt-8">
         <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
-          <span class="mr-2">🕯️</span>
+          <span class="mr-2" aria-hidden="true">🕯️</span>
           Mass Intentions
         </h2>
         <p class="text-sm text-gray-600 mb-4">Intentions extracted from recent bulletins for this parish.</p>
 
         <div class="space-y-4">
-          {intentions.sort((a, b) => (a.date === b.date ? a.time.localeCompare(b.time) : a.date.localeCompare(b.date))).map((mass) => (
+          {[...intentions].sort((a, b) => (a.date === b.date ? a.time.localeCompare(b.time) : a.date.localeCompare(b.date))).map((mass) => (
             <div class="border-b border-gray-100 pb-3">
               <div class="flex justify-between items-center">
                 <div class="text-sm font-medium text-gray-800">{formatDateDisplay(mass.date)}</div>
@@ -261,7 +261,7 @@ function formatDateDisplay(dateStr: string) {
                 {mass.intentions.map((it) => (
                   <li class="text-sm text-gray-800">
                     <span class="font-semibold">{it.for}</span>
-                    {it.by ? <span class="text-gray-500"> — {it.by}</span> : <span class="text-gray-400"> — Requested by N/A</span>}
+                    {it.by ? <span class="text-gray-500"> — {it.by}</span> : null}
                   </li>
                 ))}
               </ul>
