@@ -3,6 +3,9 @@ import { useEvents } from '../hooks/useEvents';
 import { formatTime } from '../utils/formatting';
 import type { Event, EventTag } from '../types/church';
 import { ALL_EVENT_TAGS } from '../types/church';
+import { EventsCalendarView } from './EventsCalendarView';
+
+type EventsTab = 'list' | 'calendar';
 
 /**
  * Format a date string to a readable format
@@ -192,6 +195,7 @@ export function EventCard({ event }: EventCardProps) {
 
 export function EventsView() {
   const { events, loading, error } = useEvents();
+  const [activeTab, setActiveTab] = useState<EventsTab>('list');
   const [selectedFamily, setSelectedFamily] = useState('all');
   const [selectedTag, setSelectedTag] = useState<'all' | EventTag>('all');
   const [showPastEvents, setShowPastEvents] = useState(false);
@@ -244,13 +248,44 @@ export function EventsView() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
-      <div className="mb-8 text-center">
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
+      <div className="mb-6 text-center">
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
           Upcoming Events
         </h1>
-        <p className="text-gray-600">
+        <p className="text-gray-600 mb-4">
           Parish events across the Deanery of Windsor-Essex
         </p>
+        {/* Tab navigation */}
+        <nav className="flex justify-center" role="tablist" aria-label="Events view">
+          <div className="inline-flex border-b border-gray-200">
+            <button
+              className={`px-6 py-3 text-sm font-medium transition-colors duration-200 border-b-2 -mb-px ${
+                activeTab === 'list'
+                  ? 'border-blue-600 text-blue-600'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              }`}
+              onClick={() => setActiveTab('list')}
+              type="button"
+              role="tab"
+              aria-selected={activeTab === 'list'}
+            >
+              List
+            </button>
+            <button
+              className={`px-6 py-3 text-sm font-medium transition-colors duration-200 border-b-2 -mb-px ${
+                activeTab === 'calendar'
+                  ? 'border-blue-600 text-blue-600'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              }`}
+              onClick={() => setActiveTab('calendar')}
+              type="button"
+              role="tab"
+              aria-selected={activeTab === 'calendar'}
+            >
+              Calendar
+            </button>
+          </div>
+        </nav>
       </div>
 
       {/* Filters */}
@@ -377,35 +412,43 @@ export function EventsView() {
         </div>
       </div>
 
-      {/* Results count */}
-      <p className="text-sm text-gray-500 mb-4">
-        Showing {filteredEvents.length} event{filteredEvents.length !== 1 ? 's' : ''}
-      </p>
+      {activeTab === 'list' && (
+        <>
+          {/* Results count */}
+          <p className="text-sm text-gray-500 mb-4">
+            Showing {filteredEvents.length} event{filteredEvents.length !== 1 ? 's' : ''}
+          </p>
 
-      {/* Events grid */}
-      {filteredEvents.length === 0 ? (
-        <div className="text-center py-12 text-gray-500">
-          <svg
-            className="w-12 h-12 mx-auto mb-4 text-gray-300"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-            />
-          </svg>
-          <p>No events found matching your filters.</p>
-        </div>
-      ) : (
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {filteredEvents.map((event) => (
-            <EventCard key={event.id} event={event} />
-          ))}
-        </div>
+          {/* Events grid */}
+          {filteredEvents.length === 0 ? (
+            <div className="text-center py-12 text-gray-500">
+              <svg
+                className="w-12 h-12 mx-auto mb-4 text-gray-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+              <p>No events found matching your filters.</p>
+            </div>
+          ) : (
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {filteredEvents.map((event) => (
+                <EventCard key={event.id} event={event} />
+              ))}
+            </div>
+          )}
+        </>
+      )}
+
+      {activeTab === 'calendar' && (
+        <EventsCalendarView events={filteredEvents} />
       )}
 
       {/* Footer note */}

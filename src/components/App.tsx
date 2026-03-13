@@ -4,6 +4,7 @@ import { MapView, type MapViewHandle } from './MapView';
 import { ListView } from './ListView';
 import { useChurches } from '../hooks/useChurches';
 import type { TabType } from '../types/church';
+import { CalendarView } from './CalendarView';
 
 /**
  * Root application component
@@ -78,6 +79,15 @@ export function App() {
           aria-hidden={activeTab !== 'list'}
         >
           <ListView churches={churches} onChurchClick={handleChurchClick} />
+        </div>
+        <div
+          id="calendar-panel"
+          className={activeTab === 'calendar' ? '' : 'hidden'}
+          role="tabpanel"
+          aria-labelledby="calendar-tab"
+          aria-hidden={activeTab !== 'calendar'}
+        >
+          <CalendarView churches={churches} />
         </div>
       </main>
     </div>
