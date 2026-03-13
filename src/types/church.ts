@@ -128,3 +128,23 @@ export interface Event {
   source_bulletin_date: string;
   extracted_at: string; // ISO timestamp
 }
+
+/**
+ * Represents a single intention within a Mass
+ */
+export interface Intention {
+  for: string; // The person or cause the intention is for
+  by: string | null; // Who requested the intention, or null if not specified
+}
+
+/**
+ * Represents a Mass (daily or weekly) with its intentions
+ */
+export interface MassIntention {
+  church_id: string; // ID of the church (e.g., "holy-trinity-windsor")
+  date: string; // YYYY-MM-DD
+  time: string; // HHMM 24-hour format
+  intentions: Intention[];
+  source_bulletin_link: string;
+  extracted_at: string; // ISO timestamp
+}

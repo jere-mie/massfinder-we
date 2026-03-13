@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { formatTime, formatTimeRange, formatPhoneNumber, formatUrl } from '../../utils/formatting';
-import type { Church, Event } from '../../types/church';
+import type { Church, Event, MassIntention } from '../../types/church';
 import EventToggle from "../../components/EventToggle";
 import fs from 'node:fs';
 import path from 'node:path';
@@ -10,8 +10,10 @@ export function getStaticPaths() {
   // Read churches.json from public folder at build time
   const churchesPath = path.join(process.cwd(), 'public', 'churches.json');
   const eventsPath = path.join(process.cwd(), 'public', 'events.json');
+  const intentionsPath = path.join(process.cwd(), 'public', 'intentions.json');
   const churchesData = JSON.parse(fs.readFileSync(churchesPath, 'utf-8')) as Church[];
   const eventsData = JSON.parse(fs.readFileSync(eventsPath, 'utf-8')) as Event[];
+  const intentionsData = JSON.parse(fs.readFileSync(intentionsPath, 'utf-8')) as MassIntention[];
   
   return churchesData.map((church) => {
 
@@ -19,9 +21,13 @@ export function getStaticPaths() {
       (event) => event.family_of_parishes === church.familyOfParishes!
     );
 
+    const churchIntentions = intentionsData.filter(
+      (m) => m.church_id === church.id
+    );
+
     return {
       params: { slug: church.id },
-      props: { church, events: churchEvents },
+      props: { church, events: churchEvents, intentions: churchIntentions },
     }
   });
 }
@@ -29,9 +35,10 @@ export function getStaticPaths() {
 interface Props {
   church: Church;
   events: Event[];
+  intentions: MassIntention[];
 }
 
-const { church, events } = Astro.props;
+const { church, events, intentions } = Astro.props;
 
 // Build dynamic description based on church schedules
 const scheduleItems: string[] = [];
@@ -45,6 +52,11 @@ const scheduleText = scheduleItems.length > 0
   : `View schedule information for ${church.name}.`;
 
 const description = `${scheduleText} Located at ${church.address}.`;
+// Format date for display
+function formatDateDisplay(dateStr: string) {
+  const date = new Date(dateStr + 'T00:00:00');
+  return date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' });
+}
 ---
 
 <Layout 
@@ -229,7 +241,37 @@ const description = `${scheduleText} Located at ${church.address}.`;
       )}
     </div>
 
-    <!-- Adoration -->
+    <!-- Mass Intentions -->
+    {intentions && intentions.length > 0 && (
+      <section class="bg-white rounded-lg border border-gray-200 shadow-sm p-6 mt-8">
+        <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+          <span class="mr-2" aria-hidden="true">🕯️</span>
+          Mass Intentions
+        </h2>
+        <p class="text-sm text-gray-600 mb-4">Intentions extracted from recent bulletins for this parish.</p>
+
+        <div class="space-y-4">
+          {[...intentions].sort((a, b) => (a.date === b.date ? a.time.localeCompare(b.time) : a.date.localeCompare(b.date))).map((mass) => (
+            <div class="border-b border-gray-100 pb-3">
+              <div class="flex justify-between items-center">
+                <div class="text-sm font-medium text-gray-800">{formatDateDisplay(mass.date)}</div>
+                <div class="text-sm text-gray-600">{formatTime(mass.time)}</div>
+              </div>
+              <ul class="mt-2 space-y-1">
+                {mass.intentions.map((it) => (
+                  <li class="text-sm text-gray-800">
+                    <span class="font-semibold">{it.for}</span>
+                    {it.by ? <span class="text-gray-500"> — {it.by}</span> : null}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Upcoming Events -->
     {events.length > 0 && (
       <section class="bg-white rounded-lg border border-gray-200 shadow-sm p-6 mt-8">
         <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
