@@ -1,6 +1,9 @@
 import { useState, useMemo } from 'react';
 import { useEvents } from '../hooks/useEvents';
+import { useChurches } from '../hooks/useChurches';
 import { formatTime } from '../utils/formatting';
+import { createGoogleCalendarUrl } from '../utils/calendar';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import type { Event, EventTag } from '../types/church';
 import { ALL_EVENT_TAGS } from '../types/church';
 
@@ -83,6 +86,17 @@ interface EventCardProps {
 export function EventCard({ event }: EventCardProps) {
   const isPast = isDatePast(event.date);
   const timeDisplay = formatEventTime(event);
+  const { churches } = useChurches();
+
+  function resolveAddress() {
+    if (event.church_id) {
+      const match = churches.find((c) => c.id === event.church_id);
+      if (match && match.address) return match.address;
+    }
+    return null;
+  }
+
+  const resolvedAddress = resolveAddress();
 
   return (
     <div
@@ -176,7 +190,26 @@ export function EventCard({ event }: EventCardProps) {
         </div>
       </div>
 
-      <div className="mt-3 pt-3 border-t border-gray-100">
+      <div className="mt-3 pt-3 border-t border-gray-100 flex items-center justify-between gap-3">
+        <div className="flex items-center gap-3">
+          <a
+            href={createGoogleCalendarUrl({
+              title: event.title,
+              description: event.description,
+              location: resolvedAddress || event.location || undefined,
+              date: event.date,
+              start_time: event.start_time || undefined,
+              end_time: event.end_time || undefined,
+            })}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-blue-600 hover:text-blue-800 hover:underline"
+          >
+            <span>Add to Google Calendar</span>
+            <ArrowTopRightOnSquareIcon className="w-3 h-3 inline-block ml-1" aria-hidden="true" />
+          </a>
+        </div>
+
         <a
           href={event.source_bulletin_link}
           target="_blank"
