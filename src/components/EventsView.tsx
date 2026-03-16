@@ -240,13 +240,19 @@ export function EventsView() {
   const [selectedFamily, setSelectedFamily] = useState('all');
   const [selectedTag, setSelectedTag] = useState<'all' | EventTag>('all');
   const [showPastEvents, setShowPastEvents] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
 
   const families = useMemo(() => getUniqueValues(events, 'family_of_parishes'), [events]);
 
   const filteredEvents = useMemo(() => {
+    const normalizedSearchTerm = searchTerm.trim().toLowerCase();
     return events.filter((event) => {
+      // Filter by search term (title)
+      if (normalizedSearchTerm && !event.title.toLowerCase().includes(normalizedSearchTerm)) {
+        return false;
+      }
       // Filter by family
       if (selectedFamily !== 'all' && event.family_of_parishes !== selectedFamily) {
         return false;
@@ -269,7 +275,7 @@ export function EventsView() {
       }
       return true;
     });
-  }, [events, selectedFamily, selectedTag, showPastEvents, startDate, endDate]);
+  }, [events, selectedFamily, selectedTag, showPastEvents, startDate, endDate, searchTerm]);
 
   if (loading) {
     return (
@@ -301,6 +307,17 @@ export function EventsView() {
       {/* Filters */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-5 mb-6">
         <div className="flex flex-wrap gap-6 items-end">
+          <div className="flex-1 min-w-[220px]">
+            <label htmlFor="search" className="block text-sm font-semibold text-gray-700 mb-2">Search</label>
+            <input
+              id="search"
+              type="search"
+              placeholder="Search event titles"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+            />
+          </div>
           <div className="flex-1 min-w-[200px]">
             <label
               htmlFor="family-filter"
