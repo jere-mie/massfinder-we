@@ -39,8 +39,10 @@ export type CalendarEventInput = {
 
 export function getEventDateRange(event: CalendarEventInput) {
   const { date, start_time, end_time } = event;
+  const hasStart = !!start_time;
+  const hasEnd = !!end_time;
 
-  if (!start_time) {
+  if (!hasStart && !hasEnd) {
     // all-day event -> use date only, end is next day (exclusive)
     const start = new Date(date + 'T00:00:00');
     const end = new Date(start);
@@ -52,9 +54,28 @@ export function getEventDateRange(event: CalendarEventInput) {
     };
   }
 
+  if (!hasStart && hasEnd) {
+    // deadline-style event with only an end time
+    // interpret as a short timed event ending at end_time,
+    // with the same default 2-hour duration used elsewhere
+    const eh = end_time!.slice(0, 2);
+    const em = end_time!.slice(2, 4);
+    const end = new Date(`${date}T${eh}:${em}:00`);
+    const start = new Date(end);
+    start.setHours(start.getHours() - 2);
+
+    return {
+      allDay: false,
+      start: toUtcCalString(start),
+      end: toUtcCalString(end),
+      startLocal: start,
+      endLocal: end,
+    };
+  }
+
   // parse HHMM into HH:MM
-  const sh = start_time.slice(0, 2);
-  const sm = start_time.slice(2, 4);
+  const sh = start_time!.slice(0, 2);
+  const sm = start_time!.slice(2, 4);
   const start = new Date(`${date}T${sh}:${sm}:00`);
 
   let end: Date;
