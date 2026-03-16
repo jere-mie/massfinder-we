@@ -2,6 +2,8 @@ function pad(n: number) {
   return n < 10 ? `0${n}` : `${n}`;
 }
 
+const DEFAULT_EVENT_DURATION_HOURS = 2;
+
 function toUtcCalString(d: Date) {
   // YYYYMMDDTHHMMSSZ
   return (
@@ -57,12 +59,12 @@ export function getEventDateRange(event: CalendarEventInput) {
   if (!hasStart && hasEnd) {
     // deadline-style event with only an end time
     // interpret as a short timed event ending at end_time,
-    // with the same default 2-hour duration used elsewhere
+    // using the same default duration as other timed events
     const eh = end_time!.slice(0, 2);
     const em = end_time!.slice(2, 4);
     const end = new Date(`${date}T${eh}:${em}:00`);
     const start = new Date(end);
-    start.setHours(start.getHours() - 2);
+    start.setHours(start.getHours() - DEFAULT_EVENT_DURATION_HOURS);
 
     return {
       allDay: false,
@@ -86,9 +88,9 @@ export function getEventDateRange(event: CalendarEventInput) {
     // if end <= start, assume it goes to next day
     if (end <= start) end.setDate(end.getDate() + 1);
   } else {
-    // default duration 2 hours
+    // default duration for timed events when end_time is omitted
     end = new Date(start);
-    end.setHours(end.getHours() + 2);
+    end.setHours(end.getHours() + DEFAULT_EVENT_DURATION_HOURS);
   }
 
   return {
