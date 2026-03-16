@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useEvents } from '../hooks/useEvents';
 import { useChurches } from '../hooks/useChurches';
 import { formatTime } from '../utils/formatting';
@@ -243,6 +243,50 @@ export function EventsView() {
   const [searchTerm, setSearchTerm] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
+
+  // Read initial filter values from URL params on first render
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const s = params.get('search') || '';
+      const family = params.get('family') || 'all';
+      const tag = params.get('tag') || 'all';
+      const showPast = params.get('showPast');
+      const start = params.get('start') || '';
+      const end = params.get('end') || '';
+
+      setSearchTerm(s);
+      setSelectedFamily(family);
+      if (tag === 'all' || ALL_EVENT_TAGS.includes(tag as EventTag)) {
+        setSelectedTag(tag as 'all' | EventTag);
+      }
+      setShowPastEvents(showPast === '1' || showPast === 'true');
+      setStartDate(start);
+      setEndDate(end);
+    } catch (e) {
+      // ignore URL parsing errors
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Keep URL params in sync with filter state (replaceState to avoid navigation)
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams();
+      if (searchTerm) params.set('search', searchTerm);
+      if (selectedFamily && selectedFamily !== 'all') params.set('family', selectedFamily);
+      if (selectedTag && selectedTag !== 'all') params.set('tag', selectedTag);
+      if (showPastEvents) params.set('showPast', '1');
+      if (startDate) params.set('start', startDate);
+      if (endDate) params.set('end', endDate);
+
+      const qs = params.toString();
+      const newUrl = window.location.pathname + (qs ? `?${qs}` : '');
+      window.history.replaceState(null, '', newUrl);
+    } catch (e) {
+      // ignore
+    }
+  }, [searchTerm, selectedFamily, selectedTag, showPastEvents, startDate, endDate]);
 
   const families = useMemo(() => getUniqueValues(events, 'family_of_parishes'), [events]);
 

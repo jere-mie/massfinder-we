@@ -2,7 +2,9 @@ import { useState, useMemo, useEffect } from 'react';
 import { useIntentions } from '../hooks/useIntentions';
 import { useChurches } from '../hooks/useChurches';
 import { formatTime } from '../utils/formatting';
-import type { MassIntention } from '../types/church';
+import { createGoogleCalendarUrl } from '../utils/calendar';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
+import type { MassIntention, Church } from '../types/church';
 
 /**
  * Format a date string to a readable format
@@ -72,6 +74,37 @@ export function IntentionsView() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedChurch, setSelectedChurch] = useState('all');
   const [hidePast, setHidePast] = useState(true);
+
+  // Read filters from URL on mount
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const s = params.get('search') || '';
+      const church = params.get('church') || 'all';
+      const hide = params.get('hidePast');
+
+      setSearchQuery(s);
+      setSelectedChurch(church);
+      setHidePast(hide === null ? true : hide === '1' || hide === 'true');
+    } catch (e) {
+      // ignore
+    }
+  }, []);
+
+  // Keep URL params in sync
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams();
+      if (searchQuery) params.set('search', searchQuery);
+      if (selectedChurch && selectedChurch !== 'all') params.set('church', selectedChurch);
+      if (hidePast) params.set('hidePast', '1');
+      const qs = params.toString();
+      const newUrl = window.location.pathname + (qs ? `?${qs}` : '');
+      window.history.replaceState(null, '', newUrl);
+    } catch (e) {
+      // ignore
+    }
+  }, [searchQuery, selectedChurch, hidePast]);
 
   useEffect(() => {
     if (churchesError) {
@@ -330,6 +363,12 @@ export function IntentionsView() {
                   >
                     Requested By
                   </th>
+                  <th
+                    scope="col"
+                    className="px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider"
+                  >
+                    Actions
+                  </th>
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
@@ -355,6 +394,24 @@ export function IntentionsView() {
                     </td>
                     <td className="px-4 py-3 text-sm text-gray-500">
                       {item.intentionBy || '—'}
+                    </td>
+                    <td className="px-4 py-3 text-sm text-right">
+                      <a
+                        href={createGoogleCalendarUrl({
+                          title: `Mass Intention: ${item.intentionFor}`,
+                          description: `${item.intentionFor}${item.intentionBy ? ` — Requested by ${item.intentionBy}` : ''} — ${item.churchName}`,
+                          location: churches.find((c) => c.id === item.churchId)?.address || undefined,
+                          date: item.date,
+                          start_time: item.time,
+                        })}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-800 inline-flex items-center gap-1"
+                        aria-label={`Add ${item.intentionFor} to Google Calendar`}
+                      >
+                        <span className="sr-only">Add to Google Calendar</span>
+                        <ArrowTopRightOnSquareIcon className="w-4 h-4" aria-hidden="true" />
+                      </a>
                     </td>
                   </tr>
                 ))}
