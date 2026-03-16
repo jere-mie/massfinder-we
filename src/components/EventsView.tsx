@@ -1,7 +1,10 @@
 import { useState, useMemo } from 'react';
 import { useEvents } from '../hooks/useEvents';
+import { useChurches } from '../hooks/useChurches';
 import { formatTime } from '../utils/formatting';
-import type { Event, EventTag } from '../types/church';
+import { createGoogleCalendarUrl } from '../utils/calendar';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
+import type { Church, Event, EventTag } from '../types/church';
 import { ALL_EVENT_TAGS } from '../types/church';
 
 /**
@@ -76,21 +79,42 @@ function getTagColor(tag: string): string {
   return TAG_COLORS[tag.toLowerCase() as EventTag] || TAG_COLORS.other;
 }
 
+/**
+  * Props for a single event card.
+  *
+  * Note: `churches` is required so that cards never trigger their own
+  * fetches of `/churches.json`. Parents (e.g. `EventsView`) should use
+  * the shared `useChurches` hook to load data once and pass it in.
+  */
 interface EventCardProps {
   event: Event;
+  churches: Church[];
 }
 
-export function EventCard({ event }: EventCardProps) {
+export function EventCard({ event, churches }: EventCardProps) {
   const isPast = isDatePast(event.date);
   const timeDisplay = formatEventTime(event);
 
+  const effectiveChurches: Church[] = churches ?? [];
+
+  function resolveAddress() {
+    if (event.church_id && effectiveChurches.length > 0) {
+      const match = effectiveChurches.find((c) => c.id === event.church_id);
+      if (match && match.address) return match.address;
+    }
+    return null;
+  }
+
+  const resolvedAddress = resolveAddress();
+
   return (
     <div
-      className={`bg-white rounded-lg shadow-sm border border-gray-200 p-4 hover:shadow-md transition-shadow ${
+      className={`bg-white rounded-lg shadow-sm border border-gray-200 p-4 hover:shadow-md transition-shadow flex flex-col h-full ${
         isPast ? 'opacity-60' : ''
       }`}
     >
-      <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
+      <div className="flex-1">
+        <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
         <h3 className="font-semibold text-gray-900 text-lg">{event.title}</h3>
         {isPast && (
           <span className="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">
@@ -112,7 +136,7 @@ export function EventCard({ event }: EventCardProps) {
 
       <p className="text-gray-600 text-sm mb-3">{event.description}</p>
 
-      <div className="space-y-1 text-sm">
+        <div className="space-y-1 text-sm">
         <div className="flex items-center gap-2 text-gray-700">
           <svg
             className="w-4 h-4 text-gray-400"
@@ -174,9 +198,29 @@ export function EventCard({ event }: EventCardProps) {
             {event.church_name || event.family_of_parishes}
           </span>
         </div>
+        </div>
       </div>
 
-      <div className="mt-3 pt-3 border-t border-gray-100">
+      <div className="mt-3 pt-3 border-t border-gray-100 flex items-center justify-between gap-3">
+        <div className="flex items-center gap-3">
+          <a
+            href={createGoogleCalendarUrl({
+              title: event.title,
+              description: event.description,
+              location: resolvedAddress || event.location || undefined,
+              date: event.date,
+              start_time: event.start_time || undefined,
+              end_time: event.end_time || undefined,
+            })}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-blue-600 hover:text-blue-800 hover:underline"
+          >
+            <span>Add to Google Calendar</span>
+            <ArrowTopRightOnSquareIcon className="w-3 h-3 inline-block ml-1" aria-hidden="true" />
+          </a>
+        </div>
+
         <a
           href={event.source_bulletin_link}
           target="_blank"
@@ -192,6 +236,7 @@ export function EventCard({ event }: EventCardProps) {
 
 export function EventsView() {
   const { events, loading, error } = useEvents();
+  const { churches } = useChurches();
   const [selectedFamily, setSelectedFamily] = useState('all');
   const [selectedTag, setSelectedTag] = useState<'all' | EventTag>('all');
   const [showPastEvents, setShowPastEvents] = useState(false);
@@ -403,7 +448,7 @@ export function EventsView() {
       ) : (
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {filteredEvents.map((event) => (
-            <EventCard key={event.id} event={event} />
+            <EventCard key={event.id} event={event} churches={churches} />
           ))}
         </div>
       )}
