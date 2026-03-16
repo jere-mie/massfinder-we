@@ -4,7 +4,7 @@ import { useChurches } from '../hooks/useChurches';
 import { formatTime } from '../utils/formatting';
 import { createGoogleCalendarUrl } from '../utils/calendar';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
-import type { Event, EventTag } from '../types/church';
+import type { Church, Event, EventTag } from '../types/church';
 import { ALL_EVENT_TAGS } from '../types/church';
 
 /**
@@ -81,16 +81,22 @@ function getTagColor(tag: string): string {
 
 interface EventCardProps {
   event: Event;
+  /**
+   * Optional pre-fetched churches list. When provided, this will be
+   * used instead of fetching churches inside the card.
+   */
+  churches?: Church[];
 }
 
-export function EventCard({ event }: EventCardProps) {
+export function EventCard({ event, churches }: EventCardProps) {
   const isPast = isDatePast(event.date);
   const timeDisplay = formatEventTime(event);
-  const { churches } = useChurches();
+  const { churches: churchesFromHook } = useChurches();
+  const effectiveChurches = churches ?? churchesFromHook;
 
   function resolveAddress() {
-    if (event.church_id) {
-      const match = churches.find((c) => c.id === event.church_id);
+    if (event.church_id && effectiveChurches && effectiveChurches.length > 0) {
+      const match = effectiveChurches.find((c) => c.id === event.church_id);
       if (match && match.address) return match.address;
     }
     return null;
