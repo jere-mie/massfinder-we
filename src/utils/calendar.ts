@@ -21,11 +21,13 @@ function toDateOnlyString(d: Date) {
   return d.getFullYear().toString() + pad(d.getMonth() + 1) + pad(d.getDate());
 }
 
-export function getEventDateRange(event: {
+export type CalendarEventInput = {
   date: string;
   start_time?: string | null;
   end_time?: string | null;
-}) {
+};
+
+export function getEventDateRange(event: CalendarEventInput) {
   const { date, start_time, end_time } = event;
 
   if (!start_time) {
@@ -67,15 +69,14 @@ export function getEventDateRange(event: {
   };
 }
 
-export function createGoogleCalendarUrl(event: {
-  title: string;
-  description?: string | null;
-  location?: string | null;
-  date: string;
-  start_time?: string | null;
-  end_time?: string | null;
-}) {
-  const range = getEventDateRange(event as any);
+export function createGoogleCalendarUrl(
+  event: CalendarEventInput & {
+    title: string;
+    description?: string | null;
+    location?: string | null;
+  },
+) {
+  const range = getEventDateRange(event);
   let datesParam = '';
   if (range.allDay) {
     datesParam = `${range.startDate}/${range.endDate}`;
@@ -94,15 +95,14 @@ export function createGoogleCalendarUrl(event: {
   return `https://www.google.com/calendar/render?${params.toString()}`;
 }
 
-export function createIcsDataUri(event: {
-  id?: string;
-  title: string;
-  description?: string | null;
-  location?: string | null;
-  date: string;
-  start_time?: string | null;
-  end_time?: string | null;
-}) {
+export function createIcsDataUri(
+  event: CalendarEventInput & {
+    id?: string;
+    title: string;
+    description?: string | null;
+    location?: string | null;
+  },
+) {
   const range = getEventDateRange(event as any);
   const uid = event.id || `${Date.now()}@massfinder-we`;
   const now = new Date();
