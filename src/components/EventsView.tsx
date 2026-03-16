@@ -1,5 +1,6 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { useEvents } from '../hooks/useEvents';
+import { useChurches } from '../hooks/useChurches';
 import { formatTime } from '../utils/formatting';
 import { createGoogleCalendarUrl } from '../utils/calendar';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
@@ -78,78 +79,23 @@ function getTagColor(tag: string): string {
   return TAG_COLORS[tag.toLowerCase() as EventTag] || TAG_COLORS.other;
 }
 
-// Shared in-memory cache for churches to avoid N+1 fetches from each EventCard.
-let churchesCache: Church[] | null = null;
-let churchesPromise: Promise<Church[]> | null = null;
-
-async function loadChurchesOnce(): Promise<Church[]> {
-  if (churchesCache) {
-    return churchesCache;
-  }
-
-  if (!churchesPromise) {
-    churchesPromise = fetch('/churches.json')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Failed to load churches.json');
-        }
-        return response.json() as Promise<Church[]>;
-      })
-      .then((data) => {
-        churchesCache = data;
-        return data;
-      })
-      .catch((error) => {
-        // Allow a subsequent retry by clearing the promise on failure.
-        churchesPromise = null;
-        throw error;
-      });
-  }
-
-  return churchesPromise;
-}
-
+/**
+  * Props for a single event card.
+  *
+  * Note: `churches` is required so that cards never trigger their own
+  * fetches of `/churches.json`. Parents (e.g. `EventsView`) should use
+  * the shared `useChurches` hook to load data once and pass it in.
+  */
 interface EventCardProps {
   event: Event;
-  /**
-   * Optional pre-fetched churches list. When provided, this will be
-   * used instead of fetching churches inside the card.
-   */
-  churches?: Church[];
+  churches: Church[];
 }
 
 export function EventCard({ event, churches }: EventCardProps) {
   const isPast = isDatePast(event.date);
   const timeDisplay = formatEventTime(event);
-  const [localChurches, setLocalChurches] = useState<Church[] | null>(null);
 
-  useEffect(() => {
-    // If churches are already provided by a parent, do not fetch.
-    if (churches && churches.length > 0) {
-      return;
-    }
-
-    let isMounted = true;
-
-    loadChurchesOnce()
-      .then((data) => {
-        if (isMounted) {
-          setLocalChurches(data);
-        }
-      })
-      .catch(() => {
-        if (isMounted) {
-          // On error, set to empty array so downstream logic can still run safely.
-          setLocalChurches([]);
-        }
-      });
-
-    return () => {
-      isMounted = false;
-    };
-  }, [churches]);
-
-  const effectiveChurches: Church[] = churches ?? localChurches ?? [];
+  const effectiveChurches: Church[] = churches ?? [];
 
   function resolveAddress() {
     if (event.church_id && effectiveChurches.length > 0) {
@@ -163,11 +109,12 @@ export function EventCard({ event, churches }: EventCardProps) {
 
   return (
     <div
-      className={`bg-white rounded-lg shadow-sm border border-gray-200 p-4 hover:shadow-md transition-shadow ${
+      className={`bg-white rounded-lg shadow-sm border border-gray-200 p-4 hover:shadow-md transition-shadow flex flex-col h-full ${
         isPast ? 'opacity-60' : ''
       }`}
     >
-      <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
+      <div className="flex-1">
+        <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
         <h3 className="font-semibold text-gray-900 text-lg">{event.title}</h3>
         {isPast && (
           <span className="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">
@@ -189,7 +136,7 @@ export function EventCard({ event, churches }: EventCardProps) {
 
       <p className="text-gray-600 text-sm mb-3">{event.description}</p>
 
-      <div className="space-y-1 text-sm">
+        <div className="space-y-1 text-sm">
         <div className="flex items-center gap-2 text-gray-700">
           <svg
             className="w-4 h-4 text-gray-400"
@@ -251,6 +198,7 @@ export function EventCard({ event, churches }: EventCardProps) {
             {event.church_name || event.family_of_parishes}
           </span>
         </div>
+        </div>
       </div>
 
       <div className="mt-3 pt-3 border-t border-gray-100 flex items-center justify-between gap-3">
@@ -288,6 +236,7 @@ export function EventCard({ event, churches }: EventCardProps) {
 
 export function EventsView() {
   const { events, loading, error } = useEvents();
+  const { churches } = useChurches();
   const [selectedFamily, setSelectedFamily] = useState('all');
   const [selectedTag, setSelectedTag] = useState<'all' | EventTag>('all');
   const [showPastEvents, setShowPastEvents] = useState(false);
@@ -499,7 +448,7 @@ export function EventsView() {
       ) : (
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {filteredEvents.map((event) => (
-            <EventCard key={event.id} event={event} />
+            <EventCard key={event.id} event={event} churches={churches} />
           ))}
         </div>
       )}

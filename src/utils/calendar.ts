@@ -136,7 +136,7 @@ export function createIcsDataUri(
     location?: string | null;
   },
 ) {
-  const range = getEventDateRange(event as any);
+  const range = getEventDateRange(event);
   const uid = event.id || `${Date.now()}@massfinder-we`;
   const now = new Date();
   const dtstamp = toUtcCalString(now);
