@@ -146,5 +146,3 @@ export function createIcsDataUri(
   const ics = lines.join('\r\n');
   return 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
 }
-
-export default null;
