@@ -85,4 +85,14 @@ def merge_intentions(existing_intentions, new_intentions):
         existing_by_key[key] = intention
 
     logger.info(f"Merged intentions: {new_count} new, {updated_count} updated")
-    return list(existing_by_key.values())
+    # Ensure deterministic ordering to avoid noisy diffs when new_intentions
+    # come from parallel processing. Sort by date, then time, then church_id.
+    merged_intentions = list(existing_by_key.values())
+    merged_intentions.sort(
+        key=lambda intention: (
+            intention.get('date') or "",
+            intention.get('time') or "",
+            intention.get('church_id') or "",
+        )
+    )
+    return merged_intentions

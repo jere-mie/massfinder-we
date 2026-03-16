@@ -75,9 +75,6 @@ export function IntentionsView() {
 
   useEffect(() => {
     if (churchesError) {
-      // eslint-disable-next-line no-alert
-      window.alert('There was a problem loading church details. Mass intentions are shown, but church names and filters may be incomplete.');
-
       // eslint-disable-next-line no-console
       console.error('Failed to load churches data in IntentionsView:', churchesError);
     }
@@ -105,9 +102,16 @@ export function IntentionsView() {
     });
   }, [intentions, churchMap]);
 
+  // Pre-flatten intentions; depends only on base data, not UI filters
+  const allIntentions = useMemo(
+    () => flattenIntentions(intentions, churchMap),
+    [intentions, churchMap],
+  );
+
   // Flatten and filter intentions
   const filteredIntentions = useMemo(() => {
-    let flat = flattenIntentions(intentions, churchMap);
+    // Start from pre-flattened intentions; copy before in-place sorting
+    let flat = allIntentions.slice();
 
     // Filter by church
     if (selectedChurch !== 'all') {
@@ -139,7 +143,7 @@ export function IntentionsView() {
     });
 
     return flat;
-  }, [intentions, churchMap, searchQuery, selectedChurch, hidePast]);
+  }, [allIntentions, searchQuery, selectedChurch, hidePast]);
 
   if (loading || churchesLoading) {
     return (
@@ -329,9 +333,9 @@ export function IntentionsView() {
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
-                {filteredIntentions.map((item, index) => (
+                {filteredIntentions.map((item) => (
                   <tr
-                    key={`${item.churchId}-${item.date}-${item.time}-${index}`}
+                    key={`${item.churchId}-${item.date}-${item.time}`}
                     className={`hover:bg-gray-50 ${item.isPast ? 'opacity-60' : ''}`}
                   >
                     <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-900">

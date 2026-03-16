@@ -2,8 +2,14 @@
 """
 Main entrypoint for the bulletin analysis application.
 Orchestrates scraping, PDF processing, and LLM analysis.
-Supports three modes: 'mass' (update mass times), 'events' (extract events),
-and 'intentions' (extract Mass intentions).
+Supports three modes:
+ - 'mass'       : update Mass times
+ - 'events'     : extract parish events
+ - 'intentions' : extract Mass intentions
+When the --output argument is not provided, the default output filenames are:
+ - mass mode       -> bulletins_analysis.md
+ - events mode     -> events_analysis.md
+ - intentions mode -> intentions_analysis.md
 """
 
 import logging
