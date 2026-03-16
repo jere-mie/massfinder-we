@@ -1,8 +1,8 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useEvents } from '../hooks/useEvents';
-import { useChurches } from '../hooks/useChurches';
 import { formatTime } from '../utils/formatting';
 import { createGoogleCalendarUrl } from '../utils/calendar';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import type { Church, Event, EventTag } from '../types/church';
 import { ALL_EVENT_TAGS } from '../types/church';
@@ -79,6 +79,37 @@ function getTagColor(tag: string): string {
   return TAG_COLORS[tag.toLowerCase() as EventTag] || TAG_COLORS.other;
 }
 
+// Shared in-memory cache for churches to avoid N+1 fetches from each EventCard.
+let churchesCache: Church[] | null = null;
+let churchesPromise: Promise<Church[]> | null = null;
+
+async function loadChurchesOnce(): Promise<Church[]> {
+  if (churchesCache) {
+    return churchesCache;
+  }
+
+  if (!churchesPromise) {
+    churchesPromise = fetch('/churches.json')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to load churches.json');
+        }
+        return response.json() as Promise<Church[]>;
+      })
+      .then((data) => {
+        churchesCache = data;
+        return data;
+      })
+      .catch((error) => {
+        // Allow a subsequent retry by clearing the promise on failure.
+        churchesPromise = null;
+        throw error;
+      });
+  }
+
+  return churchesPromise;
+}
+
 interface EventCardProps {
   event: Event;
   /**
@@ -91,11 +122,38 @@ interface EventCardProps {
 export function EventCard({ event, churches }: EventCardProps) {
   const isPast = isDatePast(event.date);
   const timeDisplay = formatEventTime(event);
-  const { churches: churchesFromHook } = useChurches();
-  const effectiveChurches = churches ?? churchesFromHook;
+  const [localChurches, setLocalChurches] = useState<Church[] | null>(null);
+
+  useEffect(() => {
+    // If churches are already provided by a parent, do not fetch.
+    if (churches && churches.length > 0) {
+      return;
+    }
+
+    let isMounted = true;
+
+    loadChurchesOnce()
+      .then((data) => {
+        if (isMounted) {
+          setLocalChurches(data);
+        }
+      })
+      .catch(() => {
+        if (isMounted) {
+          // On error, set to empty array so downstream logic can still run safely.
+          setLocalChurches([]);
+        }
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, [churches]);
+
+  const effectiveChurches: Church[] = churches ?? localChurches ?? [];
 
   function resolveAddress() {
-    if (event.church_id && effectiveChurches && effectiveChurches.length > 0) {
+    if (event.church_id && effectiveChurches.length > 0) {
       const match = effectiveChurches.find((c) => c.id === event.church_id);
       if (match && match.address) return match.address;
     }
