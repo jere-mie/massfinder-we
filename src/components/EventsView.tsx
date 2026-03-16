@@ -81,22 +81,17 @@ function getTagColor(tag: string): string {
 
 interface EventCardProps {
   event: Event;
-  /**
-   * Optional pre-fetched churches list. When provided, this will be
-   * used instead of fetching churches inside the card.
-   */
+  /** Pre-fetched churches list used to resolve the church address. */
   churches?: Church[];
 }
 
 export function EventCard({ event, churches }: EventCardProps) {
   const isPast = isDatePast(event.date);
   const timeDisplay = formatEventTime(event);
-  const { churches: churchesFromHook } = useChurches();
-  const effectiveChurches = churches ?? churchesFromHook;
 
   function resolveAddress() {
-    if (event.church_id && effectiveChurches && effectiveChurches.length > 0) {
-      const match = effectiveChurches.find((c) => c.id === event.church_id);
+    if (event.church_id && churches && churches.length > 0) {
+      const match = churches.find((c) => c.id === event.church_id);
       if (match && match.address) return match.address;
     }
     return null;
@@ -231,6 +226,7 @@ export function EventCard({ event, churches }: EventCardProps) {
 
 export function EventsView() {
   const { events, loading, error } = useEvents();
+  const { churches } = useChurches();
   const [selectedFamily, setSelectedFamily] = useState('all');
   const [selectedTag, setSelectedTag] = useState<'all' | EventTag>('all');
   const [showPastEvents, setShowPastEvents] = useState(false);
@@ -442,7 +438,7 @@ export function EventsView() {
       ) : (
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {filteredEvents.map((event) => (
-            <EventCard key={event.id} event={event} />
+            <EventCard key={event.id} event={event} churches={churches} />
           ))}
         </div>
       )}
