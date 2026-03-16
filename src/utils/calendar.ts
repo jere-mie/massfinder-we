@@ -16,6 +16,16 @@ function toUtcCalString(d: Date) {
   );
 }
 
+function escapeIcsText(text: string): string {
+  // Normalize CRLF/CR to LF, then escape per RFC 5545: backslash, comma, semicolon, newline
+  const normalized = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+  return normalized
+    .replace(/\\/g, '\\\\')
+    .replace(/,/g, '\\,')
+    .replace(/;/g, '\\;')
+    .replace(/\n/g, '\\n');
+}
+
 function toDateOnlyString(d: Date) {
   // YYYYMMDD
   return d.getFullYear().toString() + pad(d.getMonth() + 1) + pad(d.getDate());
@@ -137,9 +147,9 @@ export function createIcsDataUri(
     lines.push(`DTEND:${dtend}`);
   }
 
-  lines.push(`SUMMARY:${(event.title || '').replace(/\n/g, '\\n')}`);
-  if (event.description) lines.push(`DESCRIPTION:${(event.description || '').replace(/\n/g, '\\n')}`);
-  if (event.location) lines.push(`LOCATION:${(event.location || '').replace(/\n/g, '\\n')}`);
+  lines.push(`SUMMARY:${escapeIcsText(event.title || '')}`);
+  if (event.description) lines.push(`DESCRIPTION:${escapeIcsText(event.description || '')}`);
+  if (event.location) lines.push(`LOCATION:${escapeIcsText(event.location || '')}`);
   lines.push('END:VEVENT');
   lines.push('END:VCALENDAR');
 
