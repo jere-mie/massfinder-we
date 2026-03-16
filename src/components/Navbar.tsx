@@ -44,6 +44,12 @@ export function Navbar() {
             >
               Local Events
             </a>
+            {/* <a
+              href="/intentions"
+              className="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors"
+            >
+              Mass Intentions
+            </a> */}
           </div>
 
           {/* Mobile menu button */}
@@ -122,6 +128,12 @@ export function Navbar() {
           >
             Local Events
           </a>
+          {/* <a
+            href="/intentions"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+          >
+            Mass Intentions
+          </a> */}
         </div>
       </div>
     </nav>
