@@ -3,7 +3,6 @@ import { useEvents } from '../hooks/useEvents';
 import { formatTime } from '../utils/formatting';
 import { createGoogleCalendarUrl } from '../utils/calendar';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
-import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import type { Church, Event, EventTag } from '../types/church';
 import { ALL_EVENT_TAGS } from '../types/church';
 
