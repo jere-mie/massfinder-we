@@ -247,9 +247,10 @@ export function EventsView() {
   const families = useMemo(() => getUniqueValues(events, 'family_of_parishes'), [events]);
 
   const filteredEvents = useMemo(() => {
+    const normalizedSearchTerm = searchTerm.trim().toLowerCase();
     return events.filter((event) => {
       // Filter by search term (title)
-      if (searchTerm && !event.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+      if (normalizedSearchTerm && !event.title.toLowerCase().includes(normalizedSearchTerm)) {
         return false;
       }
       // Filter by family
