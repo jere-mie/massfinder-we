@@ -333,47 +333,6 @@
         ]
     },
     {
-        "id": "st-pauls-windsor",
-        "name": "St. Paul's",
-        "familyOfParishes": "LaSalle River Canard Catholic Family of Parishes",
-        "address": "5885 Malden Rd, Windsor, ON N9H 1S5",
-        "map": "https://maps.app.goo.gl/RZWSqBAuLrcPV7Ab8",
-        "coordinates": [
-            42.2479688106628,
-            -83.0609787084127
-        ],
-        "website": "https://lasallerivercanardfamily.dol.ca/",
-        "bulletin_website": "https://4e1jla.sites.ecatholic.com/bulletin",
-        "phone": "+15197348044",
-        "masses": [
-            {
-                "day": "Saturday",
-                "time": "1630"
-            }
-        ],
-        "daily_masses": [
-            {
-                "day": "Tuesday",
-                "time": "1830"
-            }
-        ],
-        "confession": [
-            {
-                "day": "Tuesday",
-                "start": "1745",
-                "end": "1815"
-            }
-        ],
-        "adoration": [
-            {
-                "day": "Tuesday",
-                "start": "1300",
-                "end": "1400",
-                "note": "Second Tuesday of every month"
-            }
-        ]
-    },
-    {
         "id": "our-lady-of-mt-carmel-windsor",
         "name": "Our Lady of Mt Carmel",
         "familyOfParishes": "South Windsor Catholic Family of Parishes",
