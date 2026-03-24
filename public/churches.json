@@ -337,6 +337,7 @@
         "name": "St. Paul's",
         "familyOfParishes": "LaSalle River Canard Catholic Family of Parishes",
         "address": "5885 Malden Rd, Windsor, ON N9H 1S5",
+        "hidden": true,
         "map": "https://maps.app.goo.gl/RZWSqBAuLrcPV7Ab8",
         "coordinates": [
             42.2479688106628,

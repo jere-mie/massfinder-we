@@ -24,7 +24,9 @@ export function useChurches(): UseChurchesResult {
         return response.json();
       })
       .then((data: Church[]) => {
-        setChurches(data);
+        // Exclude churches explicitly marked as hidden
+        const visible = Array.isArray(data) ? data.filter((c) => !c.hidden) : [];
+        setChurches(visible);
         setLoading(false);
       })
       .catch((err) => {
