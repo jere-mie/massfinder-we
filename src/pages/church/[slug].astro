@@ -12,10 +12,12 @@ export function getStaticPaths() {
   const eventsPath = path.join(process.cwd(), 'public', 'events.json');
   const intentionsPath = path.join(process.cwd(), 'public', 'intentions.json');
   const churchesData = JSON.parse(fs.readFileSync(churchesPath, 'utf-8')) as Church[];
+  // Exclude hidden churches at build time
+  const visibleChurches = Array.isArray(churchesData) ? churchesData.filter((c) => !c.hidden) : [];
   const eventsData = JSON.parse(fs.readFileSync(eventsPath, 'utf-8')) as Event[];
   const intentionsData = JSON.parse(fs.readFileSync(intentionsPath, 'utf-8')) as MassIntention[];
   
-  return churchesData.map((church) => {
+  return visibleChurches.map((church) => {
 
     const churchEvents = eventsData.filter(
       (event) => event.family_of_parishes === church.familyOfParishes!

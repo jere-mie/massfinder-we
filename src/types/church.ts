@@ -28,6 +28,7 @@ export interface Church {
   coordinates: [number, number]; // [latitude, longitude]
   map: string; // Google Maps link
   website: string;
+  hidden?: boolean; // If true, exclude this church from displays
   bulletin_website?: string;
   phone: string; // Format: "+15551234567"
   masses: Mass[];
