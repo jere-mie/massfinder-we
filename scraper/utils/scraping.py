@@ -189,3 +189,122 @@ def download_all_pdfs(website_cache, output_dir):
     
     logger.info(f"Downloaded {len(downloaded)} bulletins")
     return downloaded
+
+
+def scrape_all_bulletins(bulletin_website):
+    """
+    Scrape a single bulletin website and extract ALL PDF links found on the page.
+    Uses cloudscraper to bypass Cloudflare.
+    Returns a list of all PDF URLs (preferred domains first, then others).
+    """
+    scraper = cloudscraper.create_scraper()
+
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Accept-Encoding': 'gzip, deflate',
+        'Referer': 'https://www.google.com/',
+        'DNT': '1',
+        'Connection': 'keep-alive',
+        'Upgrade-Insecure-Requests': '1'
+    }
+
+    response = scraper.get(bulletin_website, headers=headers, timeout=15)
+    response.raise_for_status()
+
+    soup = BeautifulSoup(response.text, 'html.parser')
+
+    preferred_pdfs = []
+    other_pdfs = []
+
+    for link in soup.find_all('a', href=True):
+        href = link.get('href', '')
+        if '.pdf' in href.lower():
+            absolute_url = urljoin(bulletin_website, href)
+            is_preferred = any(domain in absolute_url for domain in PREFERRED_DOMAINS)
+            if is_preferred:
+                preferred_pdfs.append(absolute_url)
+            else:
+                other_pdfs.append(absolute_url)
+
+    return preferred_pdfs + other_pdfs
+
+
+def scrape_all_bulletins_with_retry(church_name, bulletin_website):
+    """
+    Scrape all bulletin PDFs from a website with retry logic.
+    Returns list of PDF links (may be empty) or empty list if all retries fail.
+    """
+    for attempt in range(MAX_RETRIES):
+        try:
+            pdf_links = scrape_all_bulletins(bulletin_website)
+            return pdf_links  # Return the list even if empty
+        except Exception as e:
+            if attempt < MAX_RETRIES - 1:
+                delay = RETRY_DELAYS[attempt]
+                logger.warning(
+                    f"{church_name} (attempt {attempt + 1}/{MAX_RETRIES}): "
+                    f"{str(e)[:50]}... Retrying in {delay}s"
+                )
+                time.sleep(delay)
+            else:
+                logger.error(f"{church_name}: Failed after {MAX_RETRIES} attempts")
+                return []
+
+    return []
+
+
+def get_all_bulletin_links(churches):
+    """
+    Scrape all bulletin websites and extract ALL available PDF links (for historic mode).
+    Returns a dict mapping bulletin_website -> [pdf_link1, pdf_link2, ...].
+    """
+    logger.info(f"Scraping all historic bulletin links for {len(churches)} churches")
+
+    website_cache = {}
+    scraped_count = 0
+    failed_count = 0
+
+    for church in churches:
+        church_name = church.get('name', 'Unknown')
+        bulletin_website = church.get('bulletin_website', '')
+
+        if not bulletin_website or bulletin_website == 'N/A':
+            logger.debug(f"Skipping {church_name}: No bulletin website")
+            continue
+
+        if bulletin_website in website_cache:
+            logger.debug(f"Using cached result for {bulletin_website}")
+            continue
+
+        pdf_links = scrape_all_bulletins_with_retry(church_name, bulletin_website)
+        website_cache[bulletin_website] = pdf_links
+
+        if pdf_links:
+            scraped_count += 1
+            logger.info(f"✓ {church_name}: Found {len(pdf_links)} bulletin(s)")
+        else:
+            failed_count += 1
+            logger.warning(f"✗ {church_name}: No PDFs found after retries")
+
+        time.sleep(1)
+
+    logger.info(f"Historic scraping complete: {scraped_count} websites with PDFs, {failed_count} with none")
+    return website_cache
+
+
+def download_pdfs_for_website(pdf_links, output_dir):
+    """
+    Download all PDFs for a single bulletin website.
+    Returns a list of (pdf_link, pdf_path) tuples for successful downloads.
+    """
+    os.makedirs(output_dir, exist_ok=True)
+    downloaded = []
+
+    for idx, pdf_link in enumerate(pdf_links, 1):
+        output_path = os.path.join(output_dir, f'bulletin_{idx}.pdf')
+        if download_pdf(pdf_link, output_path):
+            downloaded.append((pdf_link, output_path))
+
+    return downloaded

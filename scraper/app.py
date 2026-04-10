@@ -19,7 +19,7 @@ import json
 import argparse
 from pathlib import Path
 from datetime import datetime
-from urllib.parse import quote
+from urllib.parse import quote, urlparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Import utilities
@@ -115,6 +115,17 @@ def extract_intentions_task(website, pdf_link, pdf_path, churches_for_bulletin, 
     return (website, pdf_link, extracted, church_names)
 
 
+# Historic / custom command implementations live in custom_commands.py
+from custom_commands import (
+    HISTORIC_INTENTIONS_MODEL,
+    HISTORIC_VERIFY_MAX_ATTEMPTS,
+    extract_and_verify_intentions_task,
+    run_historic_intentions_mode,
+    run_historic_ahcfop_mode,
+    write_intentions_report,
+)
+
+
 def main():
     """Main application flow"""
     parser = argparse.ArgumentParser(
@@ -173,7 +184,21 @@ def main():
         action='store_true',
         help='Disable image-based analysis and use PDF mode instead (less accurate but faster)'
     )
-    
+    parser.add_argument(
+        '--historic',
+        action='store_true',
+        help='Scan ALL prior bulletins for each family of parishes (intentions mode only). '
+             f'Automatically uses the free model "{HISTORIC_INTENTIONS_MODEL}" unless --model is specified.'
+    )
+    parser.add_argument(
+        '--historic-ahcfop',
+        action='store_true',
+        dest='historic_ahcfop',
+        help='Extract intentions from pre-downloaded AHCFOP bulletins using page-batch mode '
+             '(intentions mode only). '
+             f'Automatically uses the free model "{HISTORIC_INTENTIONS_MODEL}" unless --model is specified.'
+    )
+
     args = parser.parse_args()
     
     # Setup logging
@@ -183,7 +208,15 @@ def main():
     use_images = not args.no_images
     mode_str = "image" if use_images else "PDF"
     logger.info(f"Starting bulletin analysis in '{args.mode}' mode using {mode_str} analysis (log level: {args.log_level})")
-    
+
+    # Validate historic flags are only valid with --mode intentions
+    if args.historic and args.mode != 'intentions':
+        logger.error("--historic can only be used with --mode intentions")
+        return 1
+    if args.historic_ahcfop and args.mode != 'intentions':
+        logger.error("--historic-ahcfop can only be used with --mode intentions")
+        return 1
+
     # Set model if provided
     if args.model:
         logger.info(f"Using custom model: {args.model}")
@@ -221,6 +254,22 @@ def main():
         logger.error(f"Failed to load churches: {e}")
         return 1
     
+    # Historic intentions mode: fetch ALL prior bulletins, one family at a time
+    if args.historic:
+        historic_model = args.model if args.model else HISTORIC_INTENTIONS_MODEL
+        logger.info(f"Historic mode: will process ALL prior bulletins using model '{historic_model}'")
+        return run_historic_intentions_mode(
+            args, logger, churches, intentions_path, output_path, use_images, historic_model
+        )
+
+    # Historic AHCFOP batch mode: extract from pre-downloaded bulletins using page-batch LLM calls
+    if args.historic_ahcfop:
+        ahcfop_model = args.model if args.model else HISTORIC_INTENTIONS_MODEL
+        logger.info(f"Historic AHCFOP mode: batch-extracting intentions using model '{ahcfop_model}'")
+        return run_historic_ahcfop_mode(
+            args, logger, churches, intentions_path, output_path, ahcfop_model
+        )
+
     # Step 2: Scrape bulletin links with caching
     try:
         website_cache = scraping.get_bulletin_links(churches)
@@ -515,63 +564,157 @@ def run_intentions_mode(args, logger, churches, downloaded, intentions_path, out
     total_intentions = sum(len(m.get('intentions', [])) for m in all_extracted_intentions)
     logger.info(f"Extracted {total_intentions} intentions across {total_masses} Masses from {len(intentions_results)} bulletin(s)")
     logger.info(f"Total intention entries after merge: {len(merged_intentions)}")
-    
+
     return 0
 
 
-def write_intentions_report(output_path, intentions_results):
-    """Write intentions extraction report to markdown file."""
-    logger = logging.getLogger(__name__)
-    logger.info(f"Writing intentions report to {output_path}")
-    
-    total_masses = sum(len(r['intentions']) for r in intentions_results)
-    total_intentions = sum(
-        sum(len(m.get('intentions', [])) for m in r['intentions'])
-        for r in intentions_results
+def run_historic_intentions_mode(args, logger, churches, intentions_path, output_path, use_images, model):
+    """
+    Run the historic Mass intentions extraction mode.
+
+    Fetches ALL available bulletin PDFs for each family of parishes and processes
+    them sequentially, one family at a time. By default uses the free
+    'openrouter/healer-alpha' model unless overridden with --model.
+    """
+    script_dir = Path(__file__).parent
+    historic_dir = script_dir / 'bulletins' / 'historic'
+
+    # Step 1: Fetch all bulletin links for every website
+    logger.info("Fetching all historic bulletin links for all families of parishes...")
+    try:
+        all_bulletin_links = scraping.get_all_bulletin_links(churches)
+    except Exception as e:
+        logger.error(f"Failed to scrape historic bulletin links: {e}")
+        return 1
+
+    # Build ordered mapping of bulletin_website -> churches (preserves churches.json order)
+    website_to_churches = {}
+    for church in churches:
+        website = church.get('bulletin_website', '')
+        if not website or website == 'N/A':
+            continue
+        if website not in website_to_churches:
+            website_to_churches[website] = []
+        website_to_churches[website].append(church)
+
+    total_families = len(website_to_churches)
+    if total_families == 0:
+        logger.warning("No families with bulletin websites found. Exiting.")
+        return 0
+
+    logger.info(f"Found {total_families} families of parishes to process")
+    logger.info(f"Using model: {model}")
+
+    # Load existing intentions once up front
+    existing_intentions = intentions.load_intentions_json(str(intentions_path))
+    all_extracted_intentions = []
+    all_intentions_results = []
+
+    # Process each family of parishes one at a time (sequentially)
+    for family_idx, (website, churches_for_family) in enumerate(website_to_churches.items(), 1):
+        family_name = events.get_family_of_parishes(churches_for_family) or website
+        church_names_list = [c.get('name', 'Unknown') for c in churches_for_family]
+
+        logger.info(f"\n--- [{family_idx}/{total_families}] Family: {family_name} ---")
+        logger.info(f"Churches: {', '.join(church_names_list)}")
+
+        pdf_links = all_bulletin_links.get(website, [])
+        if not pdf_links:
+            logger.warning("No bulletins found for this family, skipping")
+            continue
+
+        logger.info(f"Found {len(pdf_links)} bulletin(s) to process")
+
+        # Create a unique subdirectory for this family's downloaded PDFs
+        domain = urlparse(website).netloc.replace('.', '_').replace('-', '_')
+        family_dir = historic_dir / f"{family_idx:02d}_{domain}"
+
+        # Download all PDFs for this family
+        logger.info(f"Downloading {len(pdf_links)} bulletin(s) to {family_dir}...")
+        try:
+            downloaded = scraping.download_pdfs_for_website(pdf_links, str(family_dir))
+        except Exception as e:
+            logger.error(f"Failed to download bulletins for {family_name}: {e}")
+            continue
+
+        if not downloaded:
+            logger.warning("No bulletins downloaded for this family, skipping")
+            continue
+
+        logger.info(f"Successfully downloaded {len(downloaded)} of {len(pdf_links)} bulletin(s)")
+
+        # Extract + verify intentions from all bulletins for this family (parallel within family)
+        logger.info(
+            f"Extracting & verifying intentions "
+            f"(up to {HISTORIC_VERIFY_MAX_ATTEMPTS} LLM passes per bulletin, "
+            f"{args.workers} workers)..."
+        )
+        family_extracted = []
+        family_results = []
+
+        with ThreadPoolExecutor(max_workers=args.workers) as executor:
+            futures = {
+                executor.submit(
+                    extract_and_verify_intentions_task,
+                    website, pdf_link, pdf_path, churches_for_family,
+                    model=model, use_images=use_images
+                ): (pdf_link, pdf_path)
+                for pdf_link, pdf_path in downloaded
+            }
+
+            for future in as_completed(futures):
+                try:
+                    _, bulletin_pdf_link, extracted_list, bulletin_church_names = future.result()
+                    if extracted_list:
+                        family_extracted.extend(extracted_list)
+                        family_results.append({
+                            'website': website,
+                            'pdf_link': bulletin_pdf_link,
+                            'intentions': extracted_list,
+                            'church_names': bulletin_church_names,
+                        })
+                except Exception as e:
+                    logger.error(f"Extraction task failed: {e}")
+                    continue
+
+        masses_count = len(family_extracted)
+        intentions_count = sum(len(m.get('intentions', [])) for m in family_extracted)
+        logger.info(f"Extracted {intentions_count} intentions across {masses_count} Masses for this family")
+
+        all_extracted_intentions.extend(family_extracted)
+        all_intentions_results.extend(family_results)
+
+    # Merge all extracted intentions with the existing data
+    merged_intentions = intentions.merge_intentions(existing_intentions, all_extracted_intentions)
+
+    # Write consolidated intentions report
+    try:
+        write_intentions_report(output_path, all_intentions_results)
+        logger.info(f"Historic intentions extraction complete. Report saved to {output_path}")
+    except Exception as e:
+        logger.error(f"Failed to write intentions report: {e}")
+        return 1
+
+    # Optionally persist merged intentions to intentions.json
+    if args.modify_json:
+        logger.info("--modify-json flag set. Saving intentions to intentions.json...")
+        try:
+            intentions.save_intentions_json(merged_intentions, str(intentions_path))
+            logger.info(f"✓ intentions.json updated successfully: {intentions_path}")
+        except Exception as e:
+            logger.error(f"Failed to save intentions.json: {e}")
+            return 1
+
+    # Final summary
+    total_masses = len(all_extracted_intentions)
+    total_count = sum(len(m.get('intentions', [])) for m in all_extracted_intentions)
+    logger.info(
+        f"\nHistoric extraction complete: {total_count} intentions across {total_masses} Masses "
+        f"from {len(all_intentions_results)} bulletin(s) across {total_families} families"
     )
-    
-    with open(output_path, 'w', encoding='utf-8') as f:
-        f.write("# Mass Intentions Extraction Report\n\n")
-        f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
-        
-        f.write("## Summary\n\n")
-        if not intentions_results:
-            f.write("No Mass intentions found in any bulletins.\n\n")
-        else:
-            f.write(f"Extracted **{total_intentions}** intentions across **{total_masses}** Masses from **{len(intentions_results)}** bulletin(s).\n\n")
-        
-        if intentions_results:
-            f.write("## Extracted Intentions\n\n")
-            
-            for result in intentions_results:
-                pdf_link = result.get('pdf_link', result.get('website', ''))
-                church_names = result.get('church_names', [])
-                intentions_list = result.get('intentions', [])
-                
-                encoded_link = quote(pdf_link, safe=':/?#[]@!\'()*+,;=')
-                
-                f.write(f"### [Bulletin]({encoded_link})\n\n")
-                f.write(f"**Churches:** {', '.join(church_names)}\n\n")
-                
-                if not intentions_list:
-                    f.write("*No intentions found.*\n\n")
-                else:
-                    f.write("| Date | Time | Church | Intention For | Requested By |\n")
-                    f.write("|------|------|--------|---------------|-------------|\n")
-                    
-                    for mass in intentions_list:
-                        date = mass.get('date', 'N/A')
-                        time_val = mass.get('time', 'N/A')
-                        church_id = mass.get('church_id', 'N/A')
-                        
-                        for intention in mass.get('intentions', []):
-                            for_val = intention.get('for', 'N/A')
-                            by_val = intention.get('by') or 'N/A'
-                            f.write(f"| {date} | {time_val} | {church_id} | {for_val} | {by_val} |\n")
-                    
-                    f.write("\n")
-        
-        f.write("*End of report.*\n")
+    logger.info(f"Total intention entries after merge: {len(merged_intentions)}")
+
+    return 0
 
 
 def write_analysis_report(output_path, markdown_results):

@@ -18,8 +18,10 @@ logger = logging.getLogger(__name__)
 # Load environment variables from .env
 load_dotenv()
 
+# Read OpenRouter configuration from environment to allow overrides
 OPENROUTER_API_KEY = os.getenv('OPENROUTER_API_KEY')
-OPENROUTER_API_URL = 'https://openrouter.ai/api/v1/chat/completions'
+# Allow the API URL to be overridden via env (fixes 404 when provider URL differs)
+OPENROUTER_API_URL = os.getenv('OPENROUTER_API_URL', 'https://openrouter.ai/api/v1/chat/completions')
 
 # Validate API key early so the user gets a clear error when it's missing
 if not OPENROUTER_API_KEY:
@@ -73,7 +75,13 @@ def _make_api_request(url, headers, payload, timeout, context=""):
                     return None
             else:
                 # Don't retry other HTTP errors (401, 429, etc.)
-                logger.error(f"API request failed for {context}: {response.status_code} {e}")
+                # Log response body for debugging (helps diagnose 404 endpoint mismatches)
+                body = None
+                try:
+                    body = response.text
+                except Exception:
+                    body = '<unavailable>'
+                logger.error(f"API request failed for {context}: {response.status_code} {e} - response body: {body[:500]}")
                 return None
                 
         except requests.exceptions.Timeout:
@@ -877,3 +885,450 @@ def _extract_intentions_pdf(pdf_path, prompt, model_to_use, church_names):
     except Exception as e:
         logger.error(f"PDF intentions extraction failed for {church_names}: {str(e)[:100]}")
         return None
+
+
+def verify_intentions_from_bulletin(pdf_path, churches_data, extracted_intentions, model=None, use_images=True):
+    """
+    Verify previously extracted Mass intentions against the original bulletin.
+
+    Sends the extracted intentions back to the LLM along with the bulletin and
+    asks it to check for missing, wrong, or hallucinated entries.
+
+    Args:
+        pdf_path: Path to the bulletin PDF file
+        churches_data: Simplified list of church dicts (id, name, masses, daily_masses)
+        extracted_intentions: The previously extracted intentions list (no metadata fields)
+        model: Optional model to use (overrides PREFERRED_MODEL)
+        use_images: If True, convert PDF to images for analysis
+
+    Returns:
+        Tuple (is_verified: bool, corrected_intentions: list)
+        - (True,  extracted_intentions)  if the model confirms everything is correct
+        - (False, corrected_list)         if errors were found and a corrected list returned
+        - (False, extracted_intentions)  if the LLM call itself failed
+    """
+    from datetime import datetime
+    import re
+
+    if not os.path.exists(pdf_path):
+        logger.error(f"PDF not found: {pdf_path}")
+        return False, extracted_intentions
+
+    model_to_use = model if model else PREFERRED_MODEL
+    church_names = ', '.join([c.get('name', 'Unknown') for c in churches_data])
+
+    try:
+        current_date = datetime.now().strftime('%Y-%m-%d')
+
+        prompt = f"""You are verifying extracted Mass intentions against the original parish bulletin.
+
+CHURCHES IN THIS BULLETIN:
+{json.dumps(churches_data, indent=2)}
+
+PREVIOUSLY EXTRACTED INTENTIONS:
+{json.dumps(extracted_intentions, indent=2)}
+
+CURRENT DATE: {current_date}
+
+TASK: Carefully review the bulletin and verify the extracted intentions above are complete and accurate.
+
+Check for ALL of the following:
+1. MISSING entries – Mass intentions in the bulletin that were not extracted
+2. WRONG dates – extracted date does not match what the bulletin says
+3. WRONG times – extracted time does not match the bulletin (use 24-hour HHMM format)
+4. WRONG church_id – intention assigned to the wrong church
+5. INCORRECT "for" text – the person/cause is wrong or garbled
+6. INCORRECT "by" text – the requester is wrong or should be null
+7. HALLUCINATED entries – entries that do not appear in the bulletin at all
+
+OUTPUT RULES:
+- If everything is correct and complete: output the single word VERIFIED (no other text)
+- If ANY errors exist: output the fully corrected JSON array in the same format as PREVIOUSLY EXTRACTED INTENTIONS, containing ALL entries (not just the changed ones)
+- Do NOT output partial corrections – always return the complete corrected list
+- Return ONLY valid JSON array or the word VERIFIED – no explanations, no markdown"""
+
+        if use_images:
+            images = convert_pdf_to_images(pdf_path, max_pages=8)
+
+            if not images:
+                logger.warning(f"Failed to convert PDF to images for verification, falling back to PDF mode: {pdf_path}")
+                return _verify_intentions_pdf(pdf_path, prompt, model_to_use, church_names, extracted_intentions)
+
+            logger.info(f"Verifying intentions from {len(images)} page images for: {church_names}")
+
+            content = _build_image_content(images, prompt)
+
+            payload = {
+                'model': model_to_use,
+                'messages': [{'role': 'user', 'content': content}],
+            }
+        else:
+            return _verify_intentions_pdf(pdf_path, prompt, model_to_use, church_names, extracted_intentions)
+
+        headers = {
+            'Authorization': f'Bearer {OPENROUTER_API_KEY}',
+            'Content-Type': 'application/json'
+        }
+
+        result = _make_api_request(OPENROUTER_API_URL, headers, payload, 180, church_names)
+
+        if result is None:
+            logger.error(f"Verification API call failed for: {church_names}")
+            return False, extracted_intentions
+
+        if 'choices' in result and len(result['choices']) > 0:
+            response_text = result['choices'][0]['message']['content'].strip()
+
+            logger.debug(f"LLM Verification Raw Response:\n{response_text}")
+
+            if response_text == 'VERIFIED':
+                logger.info(f"✓ Intentions verified correct (no changes needed) for: {church_names}")
+                return True, extracted_intentions
+
+            json_match = re.search(r'\[.*\]', response_text, re.DOTALL)
+            if json_match:
+                corrected = json.loads(json_match.group(0))
+                total_corrected = sum(len(m.get('intentions', [])) for m in corrected)
+                logger.info(f"Corrections applied: {len(corrected)} Masses / {total_corrected} intentions for: {church_names}")
+                return False, corrected
+            elif response_text.strip() == '[]':
+                logger.info(f"Corrections applied: 0 entries for: {church_names}")
+                return False, []
+            else:
+                logger.warning(f"Could not parse verification response for: {church_names}")
+                logger.debug(f"Response: {response_text[:500]}")
+                return False, extracted_intentions
+        else:
+            logger.error(f"No response from LLM for verification: {church_names}")
+            return False, extracted_intentions
+
+    except json.JSONDecodeError as e:
+        logger.error(f"Failed to parse verification JSON for {church_names}: {str(e)[:100]}")
+        return False, extracted_intentions
+    except Exception as e:
+        logger.error(f"Error verifying intentions for {church_names}: {str(e)[:100]}")
+        return False, extracted_intentions
+
+
+def _verify_intentions_pdf(pdf_path, prompt, model_to_use, church_names, extracted_intentions):
+    """
+    Legacy PDF-based intentions verification (fallback when image conversion fails).
+    Returns (is_verified: bool, corrected_intentions: list).
+    """
+    import re
+
+    try:
+        with open(pdf_path, 'rb') as f:
+            pdf_base64 = base64.b64encode(f.read()).decode('utf-8')
+
+        data_url = f"data:application/pdf;base64,{pdf_base64}"
+
+        logger.info(f"Verifying intentions from PDF (fallback mode) for: {church_names}")
+
+        headers = {
+            'Authorization': f'Bearer {OPENROUTER_API_KEY}',
+            'Content-Type': 'application/json'
+        }
+
+        payload = {
+            'model': model_to_use,
+            'messages': [
+                {
+                    'role': 'user',
+                    'content': [
+                        {'type': 'text', 'text': prompt},
+                        {
+                            'type': 'file',
+                            'file': {
+                                'filename': 'bulletin.pdf',
+                                'file_data': data_url
+                            }
+                        }
+                    ]
+                }
+            ],
+        }
+
+        result = _make_api_request(OPENROUTER_API_URL, headers, payload, 120, church_names)
+
+        if result is None:
+            return False, extracted_intentions
+
+        if 'choices' in result and len(result['choices']) > 0:
+            response_text = result['choices'][0]['message']['content'].strip()
+
+            if response_text == 'VERIFIED':
+                logger.info(f"✓ Intentions verified correct (no changes needed) for: {church_names}")
+                return True, extracted_intentions
+
+            json_match = re.search(r'\[.*\]', response_text, re.DOTALL)
+            if json_match:
+                corrected = json.loads(json_match.group(0))
+                total_corrected = sum(len(m.get('intentions', [])) for m in corrected)
+                logger.info(f"Corrections applied: {len(corrected)} Masses / {total_corrected} intentions for: {church_names}")
+                return False, corrected
+            elif response_text.strip() == '[]':
+                return False, []
+            else:
+                logger.warning(f"Could not parse verification response for: {church_names}")
+                return False, extracted_intentions
+        else:
+            logger.error(f"No response from LLM for verification: {church_names}")
+            return False, extracted_intentions
+
+    except Exception as e:
+        logger.error(f"PDF verification failed for {church_names}: {str(e)[:100]}")
+        return False, extracted_intentions
+
+
+def extract_intentions_from_page_batch(labeled_pages, churches_data, model=None):
+    """
+    Extract Mass intentions from a batch of labeled page images in a single LLM call.
+
+    Designed for cases where all bulletins have intentions on the same page (e.g. page 2).
+    Sends all images together so the model can process them in one request.
+
+    Args:
+        labeled_pages: list of (filename, PIL_Image) tuples,
+                       e.g. [("bulletin_1.pdf", img), ("bulletin_2.pdf", img), ...]
+        churches_data: simplified church context (list of dicts with id, name, masses,
+                       daily_masses) — already prepared by intentions.prepare_churches_context
+        model: optional model override (uses PREFERRED_MODEL if None)
+
+    Returns:
+        List of intention dicts in standard format, each with an extra
+        "source_bulletin" field identifying the originating bulletin filename.
+        Returns None on a total API failure; returns [] if no intentions found.
+    """
+    from datetime import datetime
+    import re
+
+    if not labeled_pages:
+        logger.warning("extract_intentions_from_page_batch called with empty labeled_pages")
+        return []
+
+    model_to_use = model if model else PREFERRED_MODEL
+    church_names = ', '.join([c.get('name', 'Unknown') for c in churches_data])
+    current_date = datetime.now().strftime('%Y-%m-%d')
+    bulletin_labels = ', '.join([f'"{fn}"' for fn, _ in labeled_pages])
+
+    prompt = f"""You are extracting MASS INTENTIONS from a batch of {len(labeled_pages)} parish bulletin pages.
+
+Each image below is labeled with its source bulletin filename in square brackets (e.g. [bulletin_1.pdf]).
+All pages are from the same family of parishes.
+
+CHURCHES IN THIS FAMILY:
+{json.dumps(churches_data, indent=2)}
+
+CURRENT DATE: {current_date}
+
+TASK: For EACH labeled image, extract ALL Mass intentions listed on that page.
+
+OUTPUT FORMAT (JSON array — one entry per Mass that has intentions listed):
+[
+  {{
+    "source_bulletin": "bulletin_N.pdf",
+    "church_id": "church-slug-id",
+    "date": "YYYY-MM-DD",
+    "time": "HHMM",
+    "intentions": [
+      {{
+        "for": "The person or cause the Mass is offered for",
+        "by": "The requester, or null if not specified"
+      }}
+    ]
+  }}
+]
+
+RULES:
+- "source_bulletin" MUST exactly match one of: {bulletin_labels}
+- Extract EVERY Mass intention visible in each image — do not skip any
+- Convert all dates to YYYY-MM-DD. Assume year {datetime.now().year} when not specified.
+  If the date appears to have already passed this year, assume next year.
+- Convert all times to 24-hour HHMM format (e.g. 5:00 PM → 1700, 9:00 AM → 0900)
+- Use church_id from the CHURCHES list above. If multiple churches share this bulletin,
+  match each Mass to the correct church based on schedule. If uncertain, use the first church's id.
+- The "†" symbol before a name means deceased — include it in the "for" field.
+- If a page has no intentions listed, do not emit any entries for that source_bulletin.
+- Return empty array [] if no intentions are found in ANY image.
+- Return ONLY valid JSON array, no explanations or markdown."""
+
+    # Build content: prompt + interleaved label + image pairs
+    content = [{'type': 'text', 'text': prompt}]
+    for filename, img in labeled_pages:
+        content.append({'type': 'text', 'text': f'[{filename}]'})
+        data_url = _encode_image_to_base64(img)
+        content.append({
+            'type': 'image_url',
+            'image_url': {'url': data_url, 'detail': 'high'},
+        })
+
+    payload = {
+        'model': model_to_use,
+        'messages': [{'role': 'user', 'content': content}],
+    }
+
+    headers = {
+        'Authorization': f'Bearer {OPENROUTER_API_KEY}',
+        'Content-Type': 'application/json',
+    }
+
+    context = f"batch of {len(labeled_pages)} bulletins ({church_names})"
+    result = _make_api_request(OPENROUTER_API_URL, headers, payload, 240, context)
+
+    if result is None:
+        logger.error(f"Batch extraction API call failed for: {context}")
+        return None
+
+    if 'choices' in result and len(result['choices']) > 0:
+        choice = result['choices'][0]
+        message = choice.get('message') or {}
+        content_field = message.get('content')
+        if content_field is None:
+            logger.error(f"Batch extraction response missing 'content' field for: {context}. Full response: {json.dumps(result)[:1000]}")
+            return None
+        response_text = content_field.strip()
+
+        logger.debug(f"Batch extraction raw response:\n{response_text}")
+
+        json_match = re.search(r'\[.*\]', response_text, re.DOTALL)
+        if json_match:
+            extracted = json.loads(json_match.group(0))
+            total_intentions = sum(len(m.get('intentions', [])) for m in extracted)
+            logger.info(
+                f"✓ Batch extracted {len(extracted)} Masses / {total_intentions} intentions "
+                f"from {len(labeled_pages)} bulletin page(s)"
+            )
+            return extracted
+        elif response_text.strip() == '[]':
+            logger.info(f"✓ No intentions found in batch of {len(labeled_pages)} bulletins")
+            return []
+        else:
+            logger.warning("Could not parse batch extraction JSON response")
+            logger.debug(f"Response: {response_text[:500]}")
+            return []
+    else:
+        logger.error(f"No response from LLM for batch extraction: {context}")
+        return None
+
+
+def verify_intentions_from_page_batch(labeled_pages, churches_data, extracted_batch, model=None):
+    """
+    Verify batch-extracted intentions against the original labeled page images.
+
+    Sends the same labeled images along with the previously extracted data and asks
+    the model to confirm correctness or return a fully corrected replacement list.
+
+    Args:
+        labeled_pages: list of (filename, PIL_Image) tuples (same as extraction call)
+        churches_data: simplified church context
+        extracted_batch: the previously extracted list (with "source_bulletin" fields)
+        model: optional model override
+
+    Returns:
+        Tuple (is_verified: bool, result_list: list)
+        - (True,  extracted_batch)    if the model confirms everything is correct
+        - (False, corrected_list)     if errors were found and a corrected list was returned
+        - (False, extracted_batch)    if the API call itself failed
+    """
+    import re
+
+    if not labeled_pages:
+        return True, extracted_batch
+
+    model_to_use = model if model else PREFERRED_MODEL
+    church_names = ', '.join([c.get('name', 'Unknown') for c in churches_data])
+    bulletin_labels = ', '.join([f'"{fn}"' for fn, _ in labeled_pages])
+
+    prompt = f"""You are verifying extracted Mass intentions against the original parish bulletin pages.
+
+CHURCHES:
+{json.dumps(churches_data, indent=2)}
+
+PREVIOUSLY EXTRACTED INTENTIONS:
+{json.dumps(extracted_batch, indent=2)}
+
+TASK: For each labeled image below, verify that the extracted entries whose
+"source_bulletin" matches that image are complete and accurate.
+
+Check for ALL of the following:
+1. MISSING entries — intentions visible in the image that were not extracted
+2. WRONG dates — extracted date does not match the bulletin
+3. WRONG times — extracted time is incorrect (use 24-hour HHMM format)
+4. WRONG church_id — intention assigned to the wrong church
+5. INCORRECT "for" text — person or cause is wrong or garbled
+6. INCORRECT "by" text — requester is wrong, or should be null
+7. HALLUCINATED entries — entries that do not appear in any image
+8. WRONG source_bulletin — entry attributed to the wrong bulletin file
+
+OUTPUT RULES:
+- If everything is correct and complete across ALL images: output the single word VERIFIED
+- If ANY errors exist: output the COMPLETE corrected JSON array in the same format as
+  PREVIOUSLY EXTRACTED INTENTIONS, containing ALL entries (not just changed ones).
+  The "source_bulletin" field MUST be preserved and must be one of: {bulletin_labels}
+- Return ONLY the word VERIFIED or a valid JSON array — no explanations, no markdown."""
+
+    # Build content: prompt + interleaved label + image pairs (same order as extraction)
+    content = [{'type': 'text', 'text': prompt}]
+    for filename, img in labeled_pages:
+        content.append({'type': 'text', 'text': f'[{filename}]'})
+        data_url = _encode_image_to_base64(img)
+        content.append({
+            'type': 'image_url',
+            'image_url': {'url': data_url, 'detail': 'high'},
+        })
+
+    payload = {
+        'model': model_to_use,
+        'messages': [{'role': 'user', 'content': content}],
+    }
+
+    headers = {
+        'Authorization': f'Bearer {OPENROUTER_API_KEY}',
+        'Content-Type': 'application/json',
+    }
+
+    context = f"batch verification of {len(labeled_pages)} bulletins ({church_names})"
+    result = _make_api_request(OPENROUTER_API_URL, headers, payload, 240, context)
+
+    if result is None:
+        logger.error(f"Batch verification API call failed for: {context}")
+        return False, extracted_batch
+
+    if 'choices' in result and len(result['choices']) > 0:
+        choice = result['choices'][0]
+        message = choice.get('message') or {}
+        content_field = message.get('content')
+        if content_field is None:
+            logger.error(f"Batch verification response missing 'content' field for: {context}. Full response: {json.dumps(result)[:1000]}")
+            return False, extracted_batch
+
+        response_text = content_field.strip()
+
+        logger.debug(f"Batch verification raw response:\n{response_text}")
+
+        if response_text == 'VERIFIED':
+            logger.info(
+                f"✓ Batch of {len(labeled_pages)} bulletins verified correct (no changes needed)"
+            )
+            return True, extracted_batch
+
+        json_match = re.search(r'\[.*\]', response_text, re.DOTALL)
+        if json_match:
+            corrected = json.loads(json_match.group(0))
+            total_corrected = sum(len(m.get('intentions', [])) for m in corrected)
+            logger.info(
+                f"Batch corrections applied: {len(corrected)} Masses / "
+                f"{total_corrected} intentions"
+            )
+            return False, corrected
+        elif response_text.strip() == '[]':
+            logger.info("Batch corrections applied: 0 entries")
+            return False, []
+        else:
+            logger.warning("Could not parse batch verification response")
+            logger.debug(f"Response: {response_text[:500]}")
+            return False, extracted_batch
+    else:
+        logger.error(f"No response from LLM for batch verification: {context}")
+        return False, extracted_batch
