@@ -646,6 +646,11 @@
             },
             {
                 "day": "Sunday",
+                "time": "0900",
+                "note": "English"
+            },
+            {
+                "day": "Sunday",
                 "time": "1100",
                 "note": "Croatian"
             }
