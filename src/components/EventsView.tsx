@@ -62,11 +62,13 @@ export function isDatePast(dateStr: string): boolean {
  * Tag colors for visual distinction
  */
 const TAG_COLORS: Record<EventTag, string> = {
-  community: 'bg-orange-100 text-orange-800',
-  education: 'bg-yellow-100 text-yellow-800',
+  devotion: 'bg-violet-100 text-violet-800',
+  faith_formation: 'bg-yellow-100 text-yellow-800',
   fundraiser: 'bg-green-100 text-green-800',
   liturgy: 'bg-purple-100 text-purple-800',
   meeting: 'bg-gray-100 text-gray-800',
+  music_arts: 'bg-fuchsia-100 text-fuchsia-800',
+  outreach: 'bg-orange-100 text-orange-800',
   retreat: 'bg-indigo-100 text-indigo-800',
   sacramental: 'bg-pink-100 text-pink-800',
   seasonal: 'bg-red-100 text-red-800',
@@ -77,6 +79,26 @@ const TAG_COLORS: Record<EventTag, string> = {
 
 function getTagColor(tag: string): string {
   return TAG_COLORS[tag.toLowerCase() as EventTag] || TAG_COLORS.other;
+}
+
+const TAG_LABELS: Record<EventTag, string> = {
+  devotion: 'Devotion',
+  faith_formation: 'Faith Formation',
+  fundraiser: 'Fundraiser',
+  liturgy: 'Liturgy',
+  meeting: 'Meeting',
+  music_arts: 'Music & Arts',
+  outreach: 'Outreach',
+  retreat: 'Retreat',
+  sacramental: 'Sacramental',
+  seasonal: 'Seasonal',
+  social: 'Social',
+  volunteer: 'Volunteer',
+  other: 'Other',
+};
+
+function getTagLabel(tag: string): string {
+  return TAG_LABELS[tag.toLowerCase() as EventTag] || tag;
 }
 
 /**
@@ -129,7 +151,7 @@ export function EventCard({ event, churches }: EventCardProps) {
             key={tag}
             className={`text-xs px-2 py-0.5 rounded-full ${getTagColor(tag)}`}
           >
-            {tag.charAt(0).toUpperCase() + tag.slice(1)}
+            {getTagLabel(tag)}
           </span>
         ))}
       </div>
@@ -408,7 +430,7 @@ export function EventsView() {
                 <option value="all">All Types</option>
                 {ALL_EVENT_TAGS.map((tag) => (
                   <option key={tag} value={tag}>
-                    {tag.charAt(0).toUpperCase() + tag.slice(1)}
+                    {getTagLabel(tag)}
                   </option>
                 ))}
               </select>
