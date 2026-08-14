@@ -1,8 +1,11 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
+import { useChurches } from '../hooks/useChurches';
 import { useEvents } from '../hooks/useEvents';
-import { formatTime } from '../utils/formatting';
-import type { Event, EventTag } from '../types/church';
+import type { Church, Event, EventTag } from '../types/church';
 import { ALL_EVENT_TAGS } from '../types/church';
+import { createGoogleCalendarUrl } from '../utils/calendar';
+import { formatTime } from '../utils/formatting';
 import { EventsCalendarView } from './EventsCalendarView';
 
 type EventsTab = 'list' | 'calendar';
@@ -62,11 +65,13 @@ export function isDatePast(dateStr: string): boolean {
  * Tag colors for visual distinction
  */
 const TAG_COLORS: Record<EventTag, string> = {
-  community: 'bg-orange-100 text-orange-800',
-  education: 'bg-yellow-100 text-yellow-800',
+  devotion: 'bg-violet-100 text-violet-800',
+  faith_formation: 'bg-yellow-100 text-yellow-800',
   fundraiser: 'bg-green-100 text-green-800',
   liturgy: 'bg-purple-100 text-purple-800',
   meeting: 'bg-gray-100 text-gray-800',
+  music_arts: 'bg-fuchsia-100 text-fuchsia-800',
+  outreach: 'bg-orange-100 text-orange-800',
   retreat: 'bg-indigo-100 text-indigo-800',
   sacramental: 'bg-pink-100 text-pink-800',
   seasonal: 'bg-red-100 text-red-800',
@@ -79,62 +84,84 @@ function getTagColor(tag: string): string {
   return TAG_COLORS[tag.toLowerCase() as EventTag] || TAG_COLORS.other;
 }
 
-interface EventCardProps {
-  event: Event;
+const TAG_LABELS: Record<EventTag, string> = {
+  devotion: 'Devotion',
+  faith_formation: 'Faith Formation',
+  fundraiser: 'Fundraiser',
+  liturgy: 'Liturgy',
+  meeting: 'Meeting',
+  music_arts: 'Music & Arts',
+  outreach: 'Outreach',
+  retreat: 'Retreat',
+  sacramental: 'Sacramental',
+  seasonal: 'Seasonal',
+  social: 'Social',
+  volunteer: 'Volunteer',
+  other: 'Other',
+};
+
+function getTagLabel(tag: string): string {
+  return TAG_LABELS[tag.toLowerCase() as EventTag] || tag;
 }
 
-export function EventCard({ event }: EventCardProps) {
+/**
+ * Props for a single event card.
+ *
+ * Note: `churches` is required so that cards never trigger their own
+ * fetches of `/churches.json`. Parents (e.g. `EventsView`) should use
+ * the shared `useChurches` hook to load data once and pass it in.
+ */
+interface EventCardProps {
+  event: Event;
+  churches: Church[];
+}
+
+export function EventCard({ event, churches }: EventCardProps) {
   const isPast = isDatePast(event.date);
   const timeDisplay = formatEventTime(event);
 
+  const effectiveChurches: Church[] = churches ?? [];
+
+  function resolveAddress() {
+    if (event.church_id && effectiveChurches.length > 0) {
+      const match = effectiveChurches.find((church) => church.id === event.church_id);
+      if (match?.address) return match.address;
+    }
+    return null;
+  }
+
+  const resolvedAddress = resolveAddress();
+
   return (
     <div
-      className={`bg-white rounded-lg shadow-sm border border-gray-200 p-4 hover:shadow-md transition-shadow ${
+      className={`bg-white rounded-lg shadow-sm border border-gray-200 p-4 hover:shadow-md transition-shadow flex flex-col h-full ${
         isPast ? 'opacity-60' : ''
       }`}
     >
-      <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
-        <h3 className="font-semibold text-gray-900 text-lg">{event.title}</h3>
-        {isPast && (
-          <span className="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">
-            Past
-          </span>
-        )}
-      </div>
-
-      <div className="flex flex-wrap gap-1 mb-3">
-        {event.tags.map((tag) => (
-          <span
-            key={tag}
-            className={`text-xs px-2 py-0.5 rounded-full ${getTagColor(tag)}`}
-          >
-            {tag.charAt(0).toUpperCase() + tag.slice(1)}
-          </span>
-        ))}
-      </div>
-
-      <p className="text-gray-600 text-sm mb-3">{event.description}</p>
-
-      <div className="space-y-1 text-sm">
-        <div className="flex items-center gap-2 text-gray-700">
-          <svg
-            className="w-4 h-4 text-gray-400"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-            />
-          </svg>
-          <span>{formatDate(event.date)}</span>
-          {timeDisplay && <span className="text-gray-500">• {timeDisplay}</span>}
+      <div className="flex-1">
+        <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
+          <h3 className="font-semibold text-gray-900 text-lg">{event.title}</h3>
+          {isPast && (
+            <span className="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">
+              Past
+            </span>
+          )}
         </div>
 
-        {event.location && (
+        <div className="flex flex-wrap gap-1 mb-3">
+          {event.tags.map((tag) => (
+            <span
+              key={tag}
+              className={`text-xs px-2 py-0.5 rounded-full ${getTagColor(tag)}`}
+            >
+              {getTagLabel(tag)}
+            </span>
+          ))}
+        </div>
+
+        <p className="text-gray-600 text-sm mb-3">{event.description}</p>
+
+        <div className="space-y-1 text-sm">
           <div className="flex items-center gap-2 text-gray-700">
             <svg
               className="w-4 h-4 text-gray-400"
@@ -146,40 +173,77 @@ export function EventCard({ event }: EventCardProps) {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
               />
+            </svg>
+            <span>{formatDate(event.date)}</span>
+            {timeDisplay && <span className="text-gray-500">• {timeDisplay}</span>}
+          </div>
+
+          {event.location && (
+            <div className="flex items-center gap-2 text-gray-700">
+              <svg
+                className="w-4 h-4 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+              </svg>
+              <span>{event.location}</span>
+            </div>
+          )}
+
+          <div className="flex items-center gap-2 text-gray-500">
+            <svg
+              className="w-4 h-4 text-gray-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
               />
             </svg>
-            <span>{event.location}</span>
+            <span>{event.church_name || event.family_of_parishes}</span>
           </div>
-        )}
-
-        <div className="flex items-center gap-2 text-gray-500">
-          <svg
-            className="w-4 h-4 text-gray-400"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-            />
-          </svg>
-          <span>
-            {event.church_name || event.family_of_parishes}
-          </span>
         </div>
       </div>
 
-      <div className="mt-3 pt-3 border-t border-gray-100">
+      <div className="mt-3 pt-3 border-t border-gray-100 flex items-center justify-between gap-3">
+        <div className="flex items-center gap-3">
+          <a
+            href={createGoogleCalendarUrl({
+              title: event.title,
+              description: event.description,
+              location: resolvedAddress || event.location || undefined,
+              date: event.date,
+              start_time: event.start_time || undefined,
+              end_time: event.end_time || undefined,
+            })}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-blue-600 hover:text-blue-800 hover:underline"
+          >
+            <span>Add to Google Calendar</span>
+            <ArrowTopRightOnSquareIcon className="w-3 h-3 inline-block ml-1" aria-hidden="true" />
+          </a>
+        </div>
+
         <a
           href={event.source_bulletin_link}
           target="_blank"
@@ -195,40 +259,83 @@ export function EventCard({ event }: EventCardProps) {
 
 export function EventsView() {
   const { events, loading, error } = useEvents();
+  const { churches } = useChurches();
   const [activeTab, setActiveTab] = useState<EventsTab>('list');
   const [selectedFamily, setSelectedFamily] = useState('all');
   const [selectedTag, setSelectedTag] = useState<'all' | EventTag>('all');
   const [showPastEvents, setShowPastEvents] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
+
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const search = params.get('search') || '';
+      const family = params.get('family') || 'all';
+      const tag = params.get('tag') || 'all';
+      const showPast = params.get('showPast');
+      const start = params.get('start') || '';
+      const end = params.get('end') || '';
+
+      setSearchTerm(search);
+      setSelectedFamily(family);
+      if (tag === 'all' || ALL_EVENT_TAGS.includes(tag as EventTag)) {
+        setSelectedTag(tag as 'all' | EventTag);
+      }
+      setShowPastEvents(showPast === '1' || showPast === 'true');
+      setStartDate(start);
+      setEndDate(end);
+    } catch {
+      // Ignore URL parsing errors.
+    }
+  }, []);
+
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams();
+      if (searchTerm) params.set('search', searchTerm);
+      if (selectedFamily !== 'all') params.set('family', selectedFamily);
+      if (selectedTag !== 'all') params.set('tag', selectedTag);
+      if (showPastEvents) params.set('showPast', '1');
+      if (startDate) params.set('start', startDate);
+      if (endDate) params.set('end', endDate);
+
+      const search = params.toString();
+      const nextUrl = window.location.pathname + (search ? `?${search}` : '');
+      window.history.replaceState(null, '', nextUrl);
+    } catch {
+      // Ignore history update errors.
+    }
+  }, [searchTerm, selectedFamily, selectedTag, showPastEvents, startDate, endDate]);
 
   const families = useMemo(() => getUniqueValues(events, 'family_of_parishes'), [events]);
 
   const filteredEvents = useMemo(() => {
+    const normalizedSearchTerm = searchTerm.trim().toLowerCase();
+
     return events.filter((event) => {
-      // Filter by family
+      if (normalizedSearchTerm && !event.title.toLowerCase().includes(normalizedSearchTerm)) {
+        return false;
+      }
       if (selectedFamily !== 'all' && event.family_of_parishes !== selectedFamily) {
         return false;
       }
-      // Filter by tag
       if (selectedTag !== 'all' && !event.tags.includes(selectedTag as EventTag)) {
         return false;
       }
-      // Filter past events
       if (!showPastEvents && isDatePast(event.date)) {
         return false;
       }
-      // Filter by start date
       if (startDate && event.date < startDate) {
         return false;
       }
-      // Filter by end date
       if (endDate && event.date > endDate) {
         return false;
       }
       return true;
     });
-  }, [events, selectedFamily, selectedTag, showPastEvents, startDate, endDate]);
+  }, [events, selectedFamily, selectedTag, showPastEvents, startDate, endDate, searchTerm]);
 
   if (loading) {
     return (
@@ -248,14 +355,13 @@ export function EventsView() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
-      <div className="mb-6 text-center">
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+      <div className="mb-8 text-center">
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
           Upcoming Events
         </h1>
         <p className="text-gray-600 mb-4">
           Parish events across the Deanery of Windsor-Essex
         </p>
-        {/* Tab navigation */}
         <nav className="flex justify-center" role="tablist" aria-label="Events view">
           <div className="inline-flex border-b border-gray-200">
             <button
@@ -288,9 +394,22 @@ export function EventsView() {
         </nav>
       </div>
 
-      {/* Filters */}
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-5 mb-6">
         <div className="flex flex-wrap gap-6 items-end">
+          <div className="flex-1 min-w-[220px]">
+            <label htmlFor="search" className="block text-sm font-semibold text-gray-700 mb-2">
+              Search
+            </label>
+            <input
+              id="search"
+              type="search"
+              placeholder="Search event titles"
+              value={searchTerm}
+              onChange={(event) => setSearchTerm(event.target.value)}
+              className="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+            />
+          </div>
+
           <div className="flex-1 min-w-[200px]">
             <label
               htmlFor="family-filter"
@@ -302,7 +421,7 @@ export function EventsView() {
               <select
                 id="family-filter"
                 value={selectedFamily}
-                onChange={(e) => setSelectedFamily(e.target.value)}
+                onChange={(event) => setSelectedFamily(event.target.value)}
                 className="w-full appearance-none bg-gray-50 border border-gray-300 text-gray-900 rounded-lg px-4 py-2.5 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors cursor-pointer hover:bg-gray-100"
               >
                 <option value="all">All Families</option>
@@ -321,23 +440,20 @@ export function EventsView() {
           </div>
 
           <div className="flex-1 min-w-[150px]">
-            <label
-              htmlFor="tag-filter"
-              className="block text-sm font-semibold text-gray-700 mb-2"
-            >
+            <label htmlFor="tag-filter" className="block text-sm font-semibold text-gray-700 mb-2">
               Event Type
             </label>
             <div className="relative">
               <select
                 id="tag-filter"
                 value={selectedTag}
-                onChange={(e) => setSelectedTag(e.target.value as 'all' | EventTag)}
+                onChange={(event) => setSelectedTag(event.target.value as 'all' | EventTag)}
                 className="w-full appearance-none bg-gray-50 border border-gray-300 text-gray-900 rounded-lg px-4 py-2.5 pr-10 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors cursor-pointer hover:bg-gray-100"
               >
                 <option value="all">All Types</option>
                 {ALL_EVENT_TAGS.map((tag) => (
                   <option key={tag} value={tag}>
-                    {tag.charAt(0).toUpperCase() + tag.slice(1)}
+                    {getTagLabel(tag)}
                   </option>
                 ))}
               </select>
@@ -355,45 +471,38 @@ export function EventsView() {
                 type="checkbox"
                 id="show-past"
                 checked={showPastEvents}
-                onChange={(e) => setShowPastEvents(e.target.checked)}
+                onChange={(event) => setShowPastEvents(event.target.checked)}
                 className="sr-only peer"
               />
-              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600" />
               <span className="ml-3 text-sm font-medium text-gray-700">Show past events</span>
             </label>
           </div>
         </div>
 
-        {/* Date Range Filters */}
         <div className="flex flex-wrap gap-6 items-end mt-4 pt-4 border-t border-gray-100">
           <div className="flex-1 min-w-[150px]">
-            <label
-              htmlFor="start-date"
-              className="block text-sm font-semibold text-gray-700 mb-2"
-            >
+            <label htmlFor="start-date" className="block text-sm font-semibold text-gray-700 mb-2">
               From Date
             </label>
             <input
               type="date"
               id="start-date"
               value={startDate}
-              onChange={(e) => setStartDate(e.target.value)}
+              onChange={(event) => setStartDate(event.target.value)}
               className="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors cursor-pointer hover:bg-gray-100"
             />
           </div>
 
           <div className="flex-1 min-w-[150px]">
-            <label
-              htmlFor="end-date"
-              className="block text-sm font-semibold text-gray-700 mb-2"
-            >
+            <label htmlFor="end-date" className="block text-sm font-semibold text-gray-700 mb-2">
               To Date
             </label>
             <input
               type="date"
               id="end-date"
               value={endDate}
-              onChange={(e) => setEndDate(e.target.value)}
+              onChange={(event) => setEndDate(event.target.value)}
               className="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors cursor-pointer hover:bg-gray-100"
             />
           </div>
@@ -414,12 +523,10 @@ export function EventsView() {
 
       {activeTab === 'list' && (
         <>
-          {/* Results count */}
           <p className="text-sm text-gray-500 mb-4">
             Showing {filteredEvents.length} event{filteredEvents.length !== 1 ? 's' : ''}
           </p>
 
-          {/* Events grid */}
           {filteredEvents.length === 0 ? (
             <div className="text-center py-12 text-gray-500">
               <svg
@@ -440,18 +547,15 @@ export function EventsView() {
           ) : (
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {filteredEvents.map((event) => (
-                <EventCard key={event.id} event={event} />
+                <EventCard key={event.id} event={event} churches={churches} />
               ))}
             </div>
           )}
         </>
       )}
 
-      {activeTab === 'calendar' && (
-        <EventsCalendarView events={filteredEvents} />
-      )}
+      {activeTab === 'calendar' && <EventsCalendarView events={filteredEvents} />}
 
-      {/* Footer note */}
       <p className="text-xs text-gray-400 text-center mt-8">
         Events are automatically extracted from parish bulletins. Some information may be incomplete.
       </p>

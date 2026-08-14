@@ -307,6 +307,10 @@
         "phone": "+15197348044",
         "masses": [
             {
+                "day": "Saturday",
+                "time": "1630"
+            },
+            {
                 "day": "Sunday",
                 "time": "0830"
             }
@@ -339,6 +343,7 @@
         "name": "St. Paul's",
         "familyOfParishes": "LaSalle River Canard Catholic Family of Parishes",
         "address": "5885 Malden Rd, Windsor, ON N9H 1S5",
+        "hidden": true,
         "map": "https://maps.app.goo.gl/RZWSqBAuLrcPV7Ab8",
         "coordinates": [
             42.2479688106628,
@@ -347,34 +352,10 @@
         "website": "https://lasallerivercanardfamily.dol.ca/",
         "bulletin_website": "https://4e1jla.sites.ecatholic.com/bulletin",
         "phone": "+15197348044",
-        "masses": [
-            {
-                "day": "Saturday",
-                "time": "1630"
-            }
-        ],
-        "daily_masses": [
-            {
-                "day": "Tuesday",
-                "time": "1830"
-            }
-        ],
-        "confession": [
-            {
-                "day": "Tuesday",
-                "start": "1745",
-                "end": "1815"
-            }
-        ],
-        "adoration": [
-            {
-                "day": "Tuesday",
-                "start": "1300",
-                "end": "1400",
-                "note": "Second Tuesday of every month",
-                "dayOfMonth": 2
-            }
-        ]
+        "masses": [],
+        "daily_masses": [],
+        "confession": [],
+        "adoration": []
     },
     {
         "id": "our-lady-of-mt-carmel-windsor",
@@ -957,6 +938,10 @@
             {
                 "day": "Thursday",
                 "time": "0800"
+            },
+            {
+                "day": "Friday",
+                "time": "0800"
             }
         ],
         "confession": [
@@ -1063,6 +1048,10 @@
         ],
         "daily_masses": [
             {
+                "day": "Tuesday",
+                "time": "1200"
+            },
+            {
                 "day": "Wednesday",
                 "time": "1200"
             },
@@ -1132,6 +1121,10 @@
             },
             {
                 "day": "Tuesday",
+                "time": "1900"
+            },
+            {
+                "day": "Wednesday",
                 "time": "1900"
             }
         ],

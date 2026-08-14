@@ -1,0 +1,24 @@
+{
+  "name": "Deanery of Windsor-Essex",
+  "short_name": "WE Deanery",
+  "description": "Find Mass, Confession & Adoration times in Windsor-Essex County, Ontario.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f9fafb",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/wedeanery-icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/wedeanery-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

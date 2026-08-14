@@ -1,0 +1,11 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { IntentionsView } from '../components/IntentionsView';
+---
+
+<Layout 
+	title="Mass Intentions - Deanery of Windsor-Essex"
+	description="Search Mass intentions from Catholic parishes in Windsor-Essex County, Ontario. Find prayer intentions by name or parish."
+>
+	<IntentionsView client:only="react" />
+</Layout>

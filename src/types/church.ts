@@ -30,6 +30,7 @@ export interface Church {
   coordinates: [number, number]; // [latitude, longitude]
   map: string; // Google Maps link
   website: string;
+  hidden?: boolean; // If true, exclude this church from displays
   bulletin_website?: string;
   phone: string; // Format: "+15551234567"
   masses: Mass[];
@@ -84,11 +85,13 @@ export type TabType = 'map' | 'list' | 'calendar';
  * Valid tag categories for parish events
  */
 export type EventTag =
-  | 'community'
-  | 'education'
+  | 'devotion'
+  | 'faith_formation'
   | 'fundraiser'
   | 'liturgy'
   | 'meeting'
+  | 'music_arts'
+  | 'outreach'
   | 'retreat'
   | 'sacramental'
   | 'seasonal'
@@ -98,11 +101,13 @@ export type EventTag =
 
 /** All valid event tags as a runtime constant, ordered alphabetically. */
 export const ALL_EVENT_TAGS: EventTag[] = [
-  'community',
-  'education',
+  'devotion',
+  'faith_formation',
   'fundraiser',
   'liturgy',
   'meeting',
+  'music_arts',
+  'outreach',
   'retreat',
   'sacramental',
   'seasonal',
@@ -128,5 +133,25 @@ export interface Event {
   tags: EventTag[];
   source_bulletin_link: string;
   source_bulletin_date: string;
+  extracted_at: string; // ISO timestamp
+}
+
+/**
+ * Represents a single intention within a Mass
+ */
+export interface Intention {
+  for: string; // The person or cause the intention is for
+  by: string | null; // Who requested the intention, or null if not specified
+}
+
+/**
+ * Represents a Mass (daily or weekly) with its intentions
+ */
+export interface MassIntention {
+  church_id: string; // ID of the church (e.g., "holy-trinity-windsor")
+  date: string; // YYYY-MM-DD
+  time: string; // HHMM 24-hour format
+  intentions: Intention[];
+  source_bulletin_link: string;
   extracted_at: string; // ISO timestamp
 }

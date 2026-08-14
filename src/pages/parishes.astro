@@ -7,11 +7,13 @@ import path from 'node:path';
 // Read churches.json at build time
 const churchesPath = path.join(process.cwd(), 'public', 'churches.json');
 const churches = JSON.parse(fs.readFileSync(churchesPath, 'utf-8')) as (Church & { familyOfParishes?: string })[];
+// Exclude hidden churches from the families list
+const visibleChurches = Array.isArray(churches) ? churches.filter((c) => !c.hidden) : [];
 
 // Group churches by family of parishes
 const familiesMap = new Map<string, typeof churches>();
 
-churches.forEach((church) => {
+visibleChurches.forEach((church) => {
   const family = church.familyOfParishes || 'Other';
   if (!familiesMap.has(family)) {
     familiesMap.set(family, []);

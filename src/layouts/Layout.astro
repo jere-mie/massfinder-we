@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import 'leaflet/dist/leaflet.css';
 import { Navbar } from '../components/Navbar';
+import { InstallBanner } from '../components/InstallBanner';
 
 interface Props {
 	title?: string;
@@ -19,6 +20,12 @@ const {
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" type="image/png" href="/wedeanery-icon.png" />
+		<link rel="manifest" href="/manifest.json" />
+		<link rel="apple-touch-icon" href="/wedeanery-icon.png" />
+		<meta name="theme-color" content="#2563eb" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+		<meta name="apple-mobile-web-app-title" content="WE Deanery" />
 		<meta name="generator" content={Astro.generator} />
 
 		<title>{title}</title>
@@ -29,12 +36,42 @@ const {
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
+
+		<script>
+			(function () {
+				// Capture `beforeinstallprompt` as early as possible and stash it on window
+				// so the React banner can read it after hydration.
+				window.__deferredInstallPrompt = null;
+				window.addEventListener('beforeinstallprompt', function (e) {
+					e.preventDefault();
+					window.__deferredInstallPrompt = e;
+					window.dispatchEvent(new CustomEvent('pwa-install-ready'));
+				});
+
+				window.addEventListener('appinstalled', function () {
+					window.__deferredInstallPrompt = null;
+					window.dispatchEvent(new CustomEvent('pwa-installed'));
+				});
+			})();
+		</script>
 	</head>
 	<body class="bg-gray-50 min-h-screen">
+		<InstallBanner client:load />
 		<Navbar client:load />
 		<main>
 			<slot />
 		</main>
+
+		<script>
+			(function () {
+				// Register service worker (required for Chrome's install eligibility).
+				if ('serviceWorker' in navigator) {
+					window.addEventListener('load', function () {
+						navigator.serviceWorker.register('/sw.js').catch(function (e) { console.warn('SW registration failed', e); });
+					});
+				}
+			})();
+		</script>
 	</body>
 </html>
 
