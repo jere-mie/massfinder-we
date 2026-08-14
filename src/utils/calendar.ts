@@ -39,7 +39,21 @@ export type CalendarEventInput = {
   end_time?: string | null;
 };
 
-export function getEventDateRange(event: CalendarEventInput) {
+export type EventDateRange =
+  | {
+      allDay: true;
+      startDate: string;
+      endDate: string;
+    }
+  | {
+      allDay: false;
+      start: string;
+      end: string;
+      startLocal: Date;
+      endLocal: Date;
+    };
+
+export function getEventDateRange(event: CalendarEventInput): EventDateRange {
   const { date, start_time, end_time } = event;
   const hasStart = !!start_time;
   const hasEnd = !!end_time;

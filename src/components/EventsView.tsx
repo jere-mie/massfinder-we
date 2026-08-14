@@ -6,6 +6,7 @@ import type { Church, Event, EventTag } from '../types/church';
 import { ALL_EVENT_TAGS } from '../types/church';
 import { createGoogleCalendarUrl } from '../utils/calendar';
 import { formatTime } from '../utils/formatting';
+import { getEventTagMeta } from '../utils/eventTags';
 import { EventsCalendarView } from './EventsCalendarView';
 
 type EventsTab = 'list' | 'calendar';
@@ -61,47 +62,8 @@ export function isDatePast(dateStr: string): boolean {
   return eventDate < today;
 }
 
-/**
- * Tag colors for visual distinction
- */
-const TAG_COLORS: Record<EventTag, string> = {
-  devotion: 'bg-violet-100 text-violet-800',
-  faith_formation: 'bg-yellow-100 text-yellow-800',
-  fundraiser: 'bg-green-100 text-green-800',
-  liturgy: 'bg-purple-100 text-purple-800',
-  meeting: 'bg-gray-100 text-gray-800',
-  music_arts: 'bg-fuchsia-100 text-fuchsia-800',
-  outreach: 'bg-orange-100 text-orange-800',
-  retreat: 'bg-indigo-100 text-indigo-800',
-  sacramental: 'bg-pink-100 text-pink-800',
-  seasonal: 'bg-red-100 text-red-800',
-  social: 'bg-blue-100 text-blue-800',
-  volunteer: 'bg-teal-100 text-teal-800',
-  other: 'bg-slate-100 text-slate-800',
-};
-
 function getTagColor(tag: string): string {
-  return TAG_COLORS[tag.toLowerCase() as EventTag] || TAG_COLORS.other;
-}
-
-const TAG_LABELS: Record<EventTag, string> = {
-  devotion: 'Devotion',
-  faith_formation: 'Faith Formation',
-  fundraiser: 'Fundraiser',
-  liturgy: 'Liturgy',
-  meeting: 'Meeting',
-  music_arts: 'Music & Arts',
-  outreach: 'Outreach',
-  retreat: 'Retreat',
-  sacramental: 'Sacramental',
-  seasonal: 'Seasonal',
-  social: 'Social',
-  volunteer: 'Volunteer',
-  other: 'Other',
-};
-
-function getTagLabel(tag: string): string {
-  return TAG_LABELS[tag.toLowerCase() as EventTag] || tag;
+  return getEventTagMeta(tag).chipClassName;
 }
 
 /**
@@ -153,7 +115,7 @@ export function EventCard({ event, churches }: EventCardProps) {
               key={tag}
               className={`text-xs px-2 py-0.5 rounded-full ${getTagColor(tag)}`}
             >
-              {getTagLabel(tag)}
+              {getEventTagMeta(tag).label}
             </span>
           ))}
         </div>
@@ -364,6 +326,7 @@ export function EventsView() {
         <nav className="flex justify-center" role="tablist" aria-label="Events view">
           <div className="inline-flex border-b border-gray-200">
             <button
+              id="events-list-tab"
               className={`px-6 py-3 text-sm font-medium transition-colors duration-200 border-b-2 -mb-px ${
                 activeTab === 'list'
                   ? 'border-blue-600 text-blue-600'
@@ -373,10 +336,12 @@ export function EventsView() {
               type="button"
               role="tab"
               aria-selected={activeTab === 'list'}
+              aria-controls="events-list-panel"
             >
               List
             </button>
             <button
+              id="events-calendar-tab"
               className={`px-6 py-3 text-sm font-medium transition-colors duration-200 border-b-2 -mb-px ${
                 activeTab === 'calendar'
                   ? 'border-blue-600 text-blue-600'
@@ -386,6 +351,7 @@ export function EventsView() {
               type="button"
               role="tab"
               aria-selected={activeTab === 'calendar'}
+              aria-controls="events-calendar-panel"
             >
               Calendar
             </button>
@@ -452,7 +418,7 @@ export function EventsView() {
                 <option value="all">All Types</option>
                 {ALL_EVENT_TAGS.map((tag) => (
                   <option key={tag} value={tag}>
-                    {getTagLabel(tag)}
+                    {getEventTagMeta(tag).label}
                   </option>
                 ))}
               </select>
@@ -521,7 +487,11 @@ export function EventsView() {
       </div>
 
       {activeTab === 'list' && (
-        <>
+        <div
+          id="events-list-panel"
+          role="tabpanel"
+          aria-labelledby="events-list-tab"
+        >
           <p className="text-sm text-gray-500 mb-4">
             Showing {filteredEvents.length} event{filteredEvents.length !== 1 ? 's' : ''}
           </p>
@@ -550,10 +520,27 @@ export function EventsView() {
               ))}
             </div>
           )}
-        </>
+        </div>
       )}
 
-      {activeTab === 'calendar' && <EventsCalendarView events={filteredEvents} />}
+      {activeTab === 'calendar' && (
+        <div
+          id="events-calendar-panel"
+          role="tabpanel"
+          aria-labelledby="events-calendar-tab"
+        >
+          <p className="text-sm text-gray-500 mb-4">
+            Showing {filteredEvents.length} event{filteredEvents.length !== 1 ? 's' : ''}
+          </p>
+          {filteredEvents.length === 0 ? (
+            <div className="text-center py-10 text-gray-500">
+              No events found matching your filters.
+            </div>
+          ) : (
+            <EventsCalendarView events={filteredEvents} />
+          )}
+        </div>
+      )}
 
       <p className="text-xs text-gray-400 text-center mt-8">
         Events are automatically extracted from parish bulletins. Some information may be incomplete.

@@ -17,6 +17,7 @@ export function Header({ activeTab, onTabChange }: HeaderProps) {
       <nav className="flex justify-center" role="tablist" aria-label="Main navigation">
         <div className="inline-flex border-b border-gray-200">
           <button
+            id="map-tab"
             className={`px-6 py-3 text-sm font-medium transition-colors duration-200 border-b-2 -mb-px ${
               activeTab === 'map'
                 ? 'border-blue-600 text-blue-600'
@@ -31,6 +32,7 @@ export function Header({ activeTab, onTabChange }: HeaderProps) {
             Map
           </button>
           <button
+            id="list-tab"
             className={`px-6 py-3 text-sm font-medium transition-colors duration-200 border-b-2 -mb-px ${
               activeTab === 'list'
                 ? 'border-blue-600 text-blue-600'
@@ -45,6 +47,7 @@ export function Header({ activeTab, onTabChange }: HeaderProps) {
             List
           </button>
           <button
+            id="calendar-tab"
             className={`px-6 py-3 text-sm font-medium transition-colors duration-200 border-b-2 -mb-px ${
               activeTab === 'calendar'
                 ? 'border-blue-600 text-blue-600'

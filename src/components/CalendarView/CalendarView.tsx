@@ -1,147 +1,116 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from 'react';
 import {
   Calendar,
   momentLocalizer,
-  type Event as RBCEvent,
-} from "react-big-calendar";
-import moment from "moment";
-import "react-big-calendar/lib/css/react-big-calendar.css";
+  type View,
+} from 'react-big-calendar';
+import moment, { type Moment } from 'moment';
+import 'react-big-calendar/lib/css/react-big-calendar.css';
 
-import type { Church, Mass, TimeRange } from "../../types/church"; // adjust path
-import { FilterBar } from "./FilterBar";
-import { EventDetailsModal } from "./EventDetailsModal";
+import type { Church, Mass, TimeRange } from '../../types/church';
+import {
+  EVENT_TYPE_META,
+  type CalendarEvent,
+  type EventFilterState,
+  type EventType,
+} from './calendarTypes';
+import { EventDetailsModal } from './EventDetailsModal';
+import { FilterBar } from './FilterBar';
 
-const WEEKS_TO_GENERATE = 20;
 const localizer = momentLocalizer(moment);
-
-export type EventType = "mass" | "daily_mass" | "confession" | "adoration";
-export type EventFilterState = Record<EventType, boolean>;
-export const EVENT_COLORS: Record<EventType, string> = {
-  mass: "#2a71d0",
-  daily_mass: "#6fa8dc",
-  confession: "#e06666",
-  adoration: "#d4af37",
+const DAY_INDEX: Record<string, number> = {
+  sunday: 0,
+  monday: 1,
+  tuesday: 2,
+  wednesday: 3,
+  thursday: 4,
+  friday: 5,
+  saturday: 6,
 };
 
-export interface CalendarEvent extends RBCEvent {
-  type: EventType;
-  churchName: string;
-  churchId: string;
-  note?: string;
-  dayOfMonth?: number;
+function applyTime(date: Moment, hhmm: string): Moment {
+  return date
+    .clone()
+    .hour(Number(hhmm.slice(0, 2)))
+    .minute(Number(hhmm.slice(2, 4)))
+    .second(0)
+    .millisecond(0);
 }
 
-/** Convert "HHMM" (e.g., "1830") to a Date based on a given weekday name */
-function parseTime(dayName: string, HHMM: string): Date[] {
-  const [hour, minute] = [HHMM.slice(0, 2), HHMM.slice(2)];
-  const now = moment();
-
-  if (dayName.toLowerCase() === "every day") {
-    const dates: Date[] = [];
-    for (let weekday = 0; weekday < 7; weekday++) {
-      const m = now.clone().day(weekday).hour(+hour).minute(+minute).second(0);
-      
-      // If the chosen day is already in the past of this week, move to next week.
-      if (m.isBefore(now))
-        m.add(7, "days");
-      dates.push(m.toDate());
-    }
-
-    return dates;
-  }
-
-  // Sunday = 0 ... Saturday = 6.
-  const weekdayIndex = moment().day(dayName).day();
-  const date = now.clone().day(weekdayIndex).hour(+hour).minute(+minute).second(0);
-
-  // If the chosen day is already in the past of this week, move to next week.
-  if (date.isBefore(moment()))
-    date.add(7, "days");
-
-  return [date.toDate()];
+function matchesOrdinal(date: Moment, ordinal?: number): boolean {
+  return ordinal == null || Math.ceil(date.date() / 7) === ordinal;
 }
 
-function parseTimeRange(t: TimeRange): { start: Date; end: Date }[] {
-  const startDates = parseTime(t.day, t.start);
-  const endDates = parseTime(t.day, t.end);
+/** Find schedule occurrences inside the calendar's current rendering window. */
+function datesForSchedule(dayName: string, rangeStart: Moment, rangeEnd: Moment): Moment[] {
+  const normalizedDay = dayName.trim().toLowerCase();
+  const isEveryDay = normalizedDay === 'every day';
+  const weekday = DAY_INDEX[normalizedDay];
 
-  // Safety check — these should always match in length.
-  if (startDates.length !== endDates.length) {
-    console.warn(`Mismatched start/end lengths for "${t.day}" time range.`);
+  if (!isEveryDay && weekday == null) {
+    console.warn(`Unknown schedule day: "${dayName}"`);
+    return [];
   }
 
-  const count = Math.min(startDates.length, endDates.length);
-  const ranges: { start: Date; end: Date }[] = [];
+  const dates: Moment[] = [];
+  const cursor = rangeStart.clone().startOf('day');
+  while (cursor.isSameOrBefore(rangeEnd, 'day')) {
+    if (isEveryDay || cursor.day() === weekday) dates.push(cursor.clone());
+    cursor.add(1, 'day');
+  }
+  return dates;
+}
 
-  for (let i = 0; i < count; i++) {
-    ranges.push({
-      start: startDates[i],
-      end: endDates[i]
+function massToEvents(
+  mass: Mass,
+  church: Church,
+  daily: boolean,
+  rangeStart: Moment,
+  rangeEnd: Moment,
+): CalendarEvent[] {
+  const type: EventType = daily ? 'daily_mass' : 'mass';
+  return datesForSchedule(mass.day, rangeStart, rangeEnd)
+    .filter((date) => matchesOrdinal(date, mass.dayOfMonth))
+    .map((date) => {
+      const start = applyTime(date, mass.time);
+      return {
+        start: start.toDate(),
+        end: start.clone().add(daily ? 30 : 60, 'minutes').toDate(),
+        title: `${church.name} · ${EVENT_TYPE_META[type].label}`,
+        type,
+        churchName: church.name,
+        churchId: church.id,
+        note: mass.note,
+      };
     });
-  }
-
-  return ranges;
 }
 
-// Weekly recurrence generator.
-function generateWeeklyEvents<T extends CalendarEvent>(events: T[], weeks: number): T[] {
-  const copies: T[] = [];
+function timeRangeToEvents(
+  timeRange: TimeRange,
+  church: Church,
+  type: 'confession' | 'adoration',
+  rangeStart: Moment,
+  rangeEnd: Moment,
+): CalendarEvent[] {
+  return datesForSchedule(timeRange.day, rangeStart, rangeEnd)
+    .filter((date) => matchesOrdinal(date, timeRange.dayOfMonth))
+    .map((date) => {
+      const allDay = timeRange.start === '0000' && timeRange.end === '2359';
+      const start = applyTime(date, timeRange.start);
+      let end = allDay ? date.clone().add(1, 'day').startOf('day') : applyTime(date, timeRange.end);
+      if (!allDay && end.isSameOrBefore(start)) end = end.add(1, 'day');
 
-  for (const event of events) {
-    for (let i = 0; i < weeks; i++) {
-      let start = moment(event.start).add(7 * i, "days");
-      let end = moment(event.end).add(7 * i, "days");
-
-      if (event.dayOfMonth != null) {
-        let nth = Math.ceil(start.date() / 7);
-        if (event.dayOfMonth !== nth) continue;
-      }
-
-      copies.push({
-        ...event,
+      return {
         start: start.toDate(),
         end: end.toDate(),
-      });
-    }
-  }
-
-  return copies;
-}
-
-function massToEvent(m: Mass, church: Church, daily: boolean): CalendarEvent[] {
-  const starts = parseTime(m.day, m.time);
-  const events: CalendarEvent[] = [];
-  starts.forEach(start => {
-    const end = moment(start).add(daily ? 30 : 60, "minutes").toDate();
-    events.push({
-      start: start,
-      end: moment(start).add(daily ? 30 : 60, "minutes").toDate(),
-      title: `${church.name} - ${daily ? 'Daily ' : ''}Mass`,
-      type: daily ? "daily_mass" : "mass",
-      churchName: church.name,
-      churchId: church.id,
-      note: m.note,
-      dayOfMonth: m.dayOfMonth
+        allDay,
+        title: `${church.name} · ${EVENT_TYPE_META[type].label}`,
+        type,
+        churchName: church.name,
+        churchId: church.id,
+        note: timeRange.note,
+      };
     });
-  });
-
-  return events;
-}
-
-function timeRangeToEvent(t: TimeRange, church: Church, eventType: "confession" | "adoration"): CalendarEvent[] {
-  const ranges = parseTimeRange(t);
-
-  return ranges.map(r => ({
-    start: r.start,
-    end: r.end,
-    title: `${church.name} – ${eventType === "confession" ? "Confession" : "Adoration"}`,
-    type: eventType,
-    churchName: church.name,
-    churchId: church.id,
-    allDay: t.start === "0000" && t.end === "2359",
-    note: t.note,
-    dayOfMonth: t.dayOfMonth
-  }));;
 }
 
 interface Props {
@@ -149,98 +118,91 @@ interface Props {
 }
 
 export function CalendarView({ churches }: Props) {
-  const events = useMemo(() => {
-    if (!churches) return [];
-
-    const all: CalendarEvent[] = [];
-
-    for (const church of churches) {
-      for (const m of church.masses) {
-        const events = massToEvent(m, church, false);
-        all.push(...generateWeeklyEvents(events, WEEKS_TO_GENERATE));
-      }
-
-      for (const m of church.daily_masses) {
-        const events = massToEvent(m, church, true);
-        all.push(...generateWeeklyEvents(events, WEEKS_TO_GENERATE));
-      }
-
-      for (const c of church.confession) {
-        const events = timeRangeToEvent(c, church, "confession");
-        all.push(...generateWeeklyEvents(events, WEEKS_TO_GENERATE));
-      }
-
-      for (const a of church.adoration) {
-        const events = timeRangeToEvent(a, church, "adoration");
-        all.push(...generateWeeklyEvents(events, WEEKS_TO_GENERATE));
-      }
-    }
-
-    return all;
-  }, [churches]);
-
   const [filters, setFilters] = useState<EventFilterState>({
     mass: true,
     daily_mass: false,
     confession: false,
-    adoration: false
+    adoration: false,
   });
   const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | null>(null);
+  const [date, setDate] = useState(() => new Date());
+  const [view, setView] = useState<View>(() =>
+    typeof window !== 'undefined' && window.matchMedia('(max-width: 639px)').matches
+      ? 'agenda'
+      : 'month',
+  );
 
-  const visibleEvents = events.filter(event => filters[event.type]);
+  const events = useMemo(() => {
+    // One month of padding on each side covers month, day, and 14-day agenda views.
+    const rangeStart = moment(date).startOf('month').subtract(1, 'month').startOf('week');
+    const rangeEnd = moment(date).endOf('month').add(1, 'month').endOf('week');
+    const all: CalendarEvent[] = [];
 
-  // Color styles.
-  const eventStyleGetter = (event: CalendarEvent) => {
-    let backgroundColor = "#3174ad";
-
-    switch (event.type) {
-      case "mass":
-        backgroundColor = "#2a71d0";
-        break;
-      case "daily_mass":
-        backgroundColor = "#6fa8dc";
-        break;
-      case "confession":
-        backgroundColor = "#e06666";
-        break;
-      case "adoration":
-        backgroundColor = "#d4af37";
-        break;
+    for (const church of churches) {
+      for (const mass of church.masses) {
+        all.push(...massToEvents(mass, church, false, rangeStart, rangeEnd));
+      }
+      for (const mass of church.daily_masses) {
+        all.push(...massToEvents(mass, church, true, rangeStart, rangeEnd));
+      }
+      for (const confession of church.confession) {
+        all.push(...timeRangeToEvents(confession, church, 'confession', rangeStart, rangeEnd));
+      }
+      for (const adoration of church.adoration) {
+        all.push(...timeRangeToEvents(adoration, church, 'adoration', rangeStart, rangeEnd));
+      }
     }
 
-    return {
-      style: {
-        backgroundColor,
-        color: "white",
-        borderRadius: "6px",
-        border: "none",
-        fontSize: "0.85rem",
-        padding: "2px 4px",
-      },
-    };
-  };
+    return all;
+  }, [churches, date]);
+
+  const visibleEvents = useMemo(
+    () =>
+      events
+        .filter((event) => filters[event.type])
+        .sort((a, b) => {
+          const timeDifference = Number(a.start) - Number(b.start);
+          return timeDifference || a.churchName.localeCompare(b.churchName);
+        }),
+    [events, filters],
+  );
 
   return (
-    <div>
+    <section className="calendar-section schedule-calendar-section" aria-label="Schedule calendar">
       <FilterBar filters={filters} setFilters={setFilters} />
-      <div style={{ height: "80vh", width: "100%", overflowX: "auto" }}>
-        <Calendar
+      <p className="calendar-help-text">
+        Choose one or more schedule types. Crowded dates are condensed; select “more” to open that day.
+      </p>
+      <div className="calendar-container schedule-calendar-container">
+        <Calendar<CalendarEvent>
           localizer={localizer}
           events={visibleEvents}
+          date={date}
+          view={view}
+          onNavigate={setDate}
+          onView={setView}
           startAccessor="start"
           endAccessor="end"
           step={15}
           timeslots={4}
-          eventPropGetter={eventStyleGetter}
-          views={["month", "day", "agenda"]}
-          dayLayoutAlgorithm={"no-overlap"}
-          onSelectEvent={(event) => setSelectedEvent(event)}
-        />
-        <EventDetailsModal
-          event={selectedEvent}
-          onClose={() => setSelectedEvent(null)}
+          views={['month', 'day', 'agenda']}
+          length={14}
+          dayLayoutAlgorithm="no-overlap"
+          popup={false}
+          onShowMore={(_items, selectedDate) => {
+            setDate(selectedDate);
+            setView('day');
+          }}
+          onSelectEvent={setSelectedEvent}
+          eventPropGetter={(event) => ({
+            className: 'calendar-event',
+            style: { backgroundColor: EVENT_TYPE_META[event.type].color, color: '#fff' },
+          })}
+          tooltipAccessor={(event) => `${event.churchName} — ${EVENT_TYPE_META[event.type].label}`}
+          scrollToTime={new Date(1970, 0, 1, 7)}
         />
       </div>
-    </div>
+      <EventDetailsModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />
+    </section>
   );
 }

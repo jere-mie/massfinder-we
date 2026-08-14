@@ -1,5 +1,5 @@
 import React from "react";
-import { EVENT_COLORS, type EventFilterState, type EventType } from "./CalendarView";
+import { EVENT_TYPE_META, type EventFilterState, type EventType } from './calendarTypes';
 
 interface FilterBarProps {
   filters: EventFilterState;
@@ -14,49 +14,30 @@ export function FilterBar({ filters, setFilters }: FilterBarProps) {
     }));
   }
 
-  const types: EventType[] = ["mass", "daily_mass", "confession", "adoration"];
+  const types: EventType[] = ['mass', 'daily_mass', 'confession', 'adoration'];
 
   return (
-    <div style={{
-      display: "flex",
-      gap: "10px",
-      marginBottom: "12px",
-      flexWrap: "wrap"
-    }}>
+    <div className="calendar-filter-bar" aria-label="Schedule types">
       {types.map(type => {
         const active = filters[type];
-        const baseColor = EVENT_COLORS[type];
+        const { color, label } = EVENT_TYPE_META[type];
         return (
           <button
             key={type}
+            type="button"
+            aria-pressed={active}
             onClick={() => toggle(type)}
             style={{
-              padding: "6px 14px",
-              borderRadius: "20px",
-              border: "1px solid",
-              borderColor: active ? baseColor : "#aaa",
-              backgroundColor: active ? baseColor : "white",
-              color: active ? "white" : baseColor,
-              cursor: "pointer",
-              fontSize: "14px",
-              transition: "all 0.2s ease",
+              borderColor: color,
+              backgroundColor: active ? color : 'white',
+              color: active ? 'white' : color,
             }}
           >
-            {labelFor(type)}
+            <span className="calendar-filter-swatch" style={{ backgroundColor: active ? 'white' : color }} />
+            {label}
           </button>
         );
       })}
     </div>
   );
-}
-
-/** Map type → nice label */
-function labelFor(type: EventType): string {
-  switch (type) {
-    case "mass": return "Mass";
-    case "daily_mass": return "Daily Mass";
-    case "confession": return "Confession";
-    case "adoration": return "Adoration";
-    default: return ""
-  };
 }

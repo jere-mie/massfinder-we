@@ -1,6 +1,6 @@
-import React from "react";
-import { type CalendarEvent } from "./CalendarView";
-import moment from "moment";
+import { useEffect, useRef } from 'react';
+import moment from 'moment';
+import { EVENT_TYPE_META, type CalendarEvent } from './calendarTypes';
 
 interface Props {
   event: CalendarEvent | null;
@@ -8,76 +8,70 @@ interface Props {
 }
 
 export function EventDetailsModal({ event, onClose }: Props) {
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!event) return;
+    closeButtonRef.current?.focus();
+    const handleKeyDown = (keyboardEvent: KeyboardEvent) => {
+      if (keyboardEvent.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [event, onClose]);
+
   if (!event) return null;
 
+  const start = moment(event.start);
+  const end = moment(event.end);
+  const endFormat = end.isSame(start, 'day') ? 'h:mm A' : 'ddd h:mm A';
+
   return (
-    <div style={overlayStyle} onClick={onClose}>
-      <div style={modalStyle} onClick={(e) => e.stopPropagation()}>
-        <p><strong>Church:</strong> <a className="text-blue-600" href={`/church/${event.churchId}`}>{event.churchName}</a></p>
-
-        {!event.allDay && (
-          <p>
-            <strong>Time:</strong>{" "}
-            {moment(event.start).format("dddd h:mm A")} –{" "}
-            {moment(event.end).format("h:mm A")}
-          </p>
-        )}
-
-        {event.allDay && <p><strong>All Day Event</strong></p>}
-
-        <p><strong>Type:</strong> {formatType(event.type)}</p>
-        {event.note && (
-          <p>
-            <strong>Notes:</strong>{" "}
-            {event.note}
-          </p>
-        )}
-
-        <button style={buttonStyle} onClick={onClose}>
-          Close
-        </button>
+    <div className="calendar-modal-backdrop" onMouseDown={onClose}>
+      <div
+        className="calendar-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="schedule-calendar-modal-title"
+        onMouseDown={(mouseEvent) => mouseEvent.stopPropagation()}
+      >
+        <h2 id="schedule-calendar-modal-title" className="text-lg font-bold text-gray-900 mb-4">
+          Schedule details
+        </h2>
+        <dl className="calendar-modal-details">
+          <div>
+            <dt>Church</dt>
+            <dd>
+              <a className="text-blue-700 hover:underline" href={`/church/${event.churchId}`}>
+                {event.churchName}
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt>When</dt>
+            <dd>
+              {event.allDay
+                ? `${start.format('dddd, MMMM D')} · All day`
+                : `${start.format('dddd, MMMM D · h:mm A')} – ${end.format(endFormat)}`}
+            </dd>
+          </div>
+          <div>
+            <dt>Type</dt>
+            <dd>{EVENT_TYPE_META[event.type].label}</dd>
+          </div>
+          {event.note && (
+            <div>
+              <dt>Notes</dt>
+              <dd>{event.note}</dd>
+            </div>
+          )}
+        </dl>
+        <div className="calendar-modal-actions">
+          <button ref={closeButtonRef} type="button" onClick={onClose}>
+            Close
+          </button>
+        </div>
       </div>
     </div>
   );
 }
-
-function formatType(t: string): string {
-  switch (t) {
-    case "mass": return "Mass";
-    case "daily_mass": return "Daily Mass";
-    case "confession": return "Confession";
-    case "adoration": return "Adoration";
-    default: return t;
-  }
-}
-
-const overlayStyle: React.CSSProperties = {
-  position: "fixed",
-  top: 0,
-  left: 0,
-  right: 0,
-  bottom: 0,
-  backgroundColor: "rgba(0,0,0,0.4)",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  zIndex: 10000,
-};
-
-const modalStyle: React.CSSProperties = {
-  background: "white",
-  padding: "20px",
-  borderRadius: "8px",
-  width: "320px",
-  boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
-};
-
-const buttonStyle: React.CSSProperties = {
-  marginTop: "20px",
-  padding: "8px 14px",
-  background: "#0066ff",
-  color: "white",
-  border: "none",
-  borderRadius: "5px",
-  cursor: "pointer",
-};
