@@ -537,7 +537,10 @@ export function EventsView() {
               No events found matching your filters.
             </div>
           ) : (
-            <EventsCalendarView events={filteredEvents} />
+            <EventsCalendarView
+              events={filteredEvents}
+              selectedTag={selectedTag === 'all' ? null : selectedTag}
+            />
           )}
         </div>
       )}

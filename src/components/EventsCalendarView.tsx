@@ -168,9 +168,15 @@ function ColorLegend({ tags }: { tags: EventTag[] }) {
 
 interface Props {
   events: Event[];
+  selectedTag: EventTag | null;
 }
 
-export function EventsCalendarView({ events }: Props) {
+function getCalendarTag(event: Event, selectedTag: EventTag | null): EventTag {
+  if (selectedTag && event.tags.includes(selectedTag)) return selectedTag;
+  return event.tags[0] ?? 'other';
+}
+
+export function EventsCalendarView({ events, selectedTag }: Props) {
   const [selectedItem, setSelectedItem] = useState<EventCalendarItem | null>(null);
   const [date, setDate] = useState(() => new Date());
   const [view, setView] = useState<View>(() =>
@@ -181,15 +187,9 @@ export function EventsCalendarView({ events }: Props) {
 
   const calendarEvents = useMemo<EventCalendarItem[]>(() => events.map(toCalendarItem), [events]);
 
-  // Calendar color is determined by the primary (first) event section.
-  const primaryTags = useMemo(() => {
-    const present = new Set(events.map((event) => event.tags[0]).filter(Boolean));
-    return ALL_EVENT_TAGS.filter((tag) => present.has(tag));
-  }, [events]);
-
   return (
     <section className="calendar-section" aria-label="Events calendar">
-      <ColorLegend tags={primaryTags} />
+      <ColorLegend tags={ALL_EVENT_TAGS} />
       <p className="calendar-help-text">
         Select an event for details. Crowded dates are condensed; select “more” to open that day.
       </p>
@@ -217,7 +217,9 @@ export function EventsCalendarView({ events }: Props) {
           eventPropGetter={(item) => ({
             className: 'calendar-event',
             style: {
-              backgroundColor: getEventTagMeta(item.originalEvent.tags[0]).calendarColor,
+              backgroundColor: getEventTagMeta(
+                getCalendarTag(item.originalEvent, selectedTag),
+              ).calendarColor,
               color: '#fff',
             },
           })}
