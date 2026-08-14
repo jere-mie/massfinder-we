@@ -952,6 +952,10 @@
             {
                 "day": "Thursday",
                 "time": "0800"
+            },
+            {
+                "day": "Friday",
+                "time": "0800"
             }
         ],
         "confession": [
@@ -1057,6 +1061,10 @@
         ],
         "daily_masses": [
             {
+                "day": "Tuesday",
+                "time": "1200"
+            },
+            {
                 "day": "Wednesday",
                 "time": "1200"
             },
@@ -1126,6 +1134,10 @@
             },
             {
                 "day": "Tuesday",
+                "time": "1900"
+            },
+            {
+                "day": "Wednesday",
                 "time": "1900"
             }
         ],
