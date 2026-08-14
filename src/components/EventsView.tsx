@@ -113,14 +113,13 @@ function getTagLabel(tag: string): string {
  */
 interface EventCardProps {
   event: Event;
-  churches: Church[];
+  churches?: Church[];
 }
 
 export function EventCard({ event, churches }: EventCardProps) {
   const isPast = isDatePast(event.date);
   const timeDisplay = formatEventTime(event);
-
-  const effectiveChurches: Church[] = churches ?? [];
+  const effectiveChurches = churches ?? [];
 
   function resolveAddress() {
     if (event.church_id && effectiveChurches.length > 0) {
