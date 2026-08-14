@@ -83,11 +83,13 @@ export type TabType = 'map' | 'list';
  * Valid tag categories for parish events
  */
 export type EventTag =
-  | 'community'
-  | 'education'
+  | 'devotion'
+  | 'faith_formation'
   | 'fundraiser'
   | 'liturgy'
   | 'meeting'
+  | 'music_arts'
+  | 'outreach'
   | 'retreat'
   | 'sacramental'
   | 'seasonal'
@@ -97,11 +99,13 @@ export type EventTag =
 
 /** All valid event tags as a runtime constant, ordered alphabetically. */
 export const ALL_EVENT_TAGS: EventTag[] = [
-  'community',
-  'education',
+  'devotion',
+  'faith_formation',
   'fundraiser',
   'liturgy',
   'meeting',
+  'music_arts',
+  'outreach',
   'retreat',
   'sacramental',
   'seasonal',
