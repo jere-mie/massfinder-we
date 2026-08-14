@@ -306,6 +306,10 @@
         "phone": "+15197348044",
         "masses": [
             {
+                "day": "Saturday",
+                "time": "1630"
+            },
+            {
                 "day": "Sunday",
                 "time": "0830"
             }
@@ -346,33 +350,10 @@
         "website": "https://lasallerivercanardfamily.dol.ca/",
         "bulletin_website": "https://4e1jla.sites.ecatholic.com/bulletin",
         "phone": "+15197348044",
-        "masses": [
-            {
-                "day": "Saturday",
-                "time": "1630"
-            }
-        ],
-        "daily_masses": [
-            {
-                "day": "Tuesday",
-                "time": "1830"
-            }
-        ],
-        "confession": [
-            {
-                "day": "Tuesday",
-                "start": "1745",
-                "end": "1815"
-            }
-        ],
-        "adoration": [
-            {
-                "day": "Tuesday",
-                "start": "1300",
-                "end": "1400",
-                "note": "Second Tuesday of every month"
-            }
-        ]
+        "masses": [],
+        "daily_masses": [],
+        "confession": [],
+        "adoration": []
     },
     {
         "id": "our-lady-of-mt-carmel-windsor",
