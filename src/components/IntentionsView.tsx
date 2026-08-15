@@ -33,6 +33,7 @@ function isDatePast(dateStr: string): boolean {
  * Flatten intentions for searching: produces one row per intention
  */
 interface FlatIntention {
+  rowKey: string;
   churchId: string;
   churchName: string;
   date: string;
@@ -47,11 +48,12 @@ function flattenIntentions(
   churchMap: Map<string, string>,
 ): FlatIntention[] {
   const flat: FlatIntention[] = [];
-  for (const mass of intentions) {
+  for (const [massIndex, mass] of intentions.entries()) {
     const churchName = churchMap.get(mass.church_id) || mass.church_id;
     const isPast = isDatePast(mass.date);
-    for (const intention of mass.intentions) {
+    for (const [intentionIndex, intention] of mass.intentions.entries()) {
       flat.push({
+        rowKey: `${mass.church_id}-${mass.date}-${mass.time}-${massIndex}-${intentionIndex}`,
         churchId: mass.church_id,
         churchName,
         date: mass.date,
@@ -374,7 +376,7 @@ export function IntentionsView() {
               <tbody className="bg-white divide-y divide-gray-200">
                 {filteredIntentions.map((item) => (
                   <tr
-                    key={`${item.churchId}-${item.date}-${item.time}`}
+                    key={item.rowKey}
                     className={`hover:bg-gray-50 ${item.isPast ? 'opacity-60' : ''}`}
                   >
                     <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-900">
