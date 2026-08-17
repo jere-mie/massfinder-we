@@ -33,6 +33,7 @@ export function EventDetailsModal({ event, onClose }: Props) {
     date: start.format('YYYY-MM-DD'),
     start_time: event.allDay ? undefined : start.format('HHmm'),
     end_time: event.allDay ? undefined : end.format('HHmm'),
+    recurrence: event.recurrence,
   });
 
   return (

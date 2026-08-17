@@ -121,6 +121,7 @@ export function createGoogleCalendarUrl(
     title: string;
     description?: string | null;
     location?: string | null;
+    recurrence?: string | null;
   },
 ) {
   const range = getEventDateRange(event);
@@ -138,6 +139,7 @@ export function createGoogleCalendarUrl(
     location: event.location || '',
     dates: datesParam,
   });
+  if (event.recurrence) params.set('recur', event.recurrence);
 
   return `https://www.google.com/calendar/render?${params.toString()}`;
 }

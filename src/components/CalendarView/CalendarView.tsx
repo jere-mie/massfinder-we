@@ -11,6 +11,7 @@ import type { Church, Mass, TimeRange } from '../../types/church';
 import { useIsExtraLarge, useIsMobile } from '../../hooks/useIsMobile';
 import {
   EVENT_TYPE_META,
+  scheduleToRecurrence,
   type CalendarEvent,
   type EventFilterState,
   type EventType,
@@ -39,7 +40,14 @@ function applyTime(date: Moment, hhmm: string): Moment {
 }
 
 function matchesOrdinal(date: Moment, ordinal?: number): boolean {
-  return ordinal == null || Math.ceil(date.date() / 7) === ordinal;
+  if (ordinal == null) return true;
+
+  // Count occurrences of this weekday from the first matching weekday in the
+  // month, rather than using the calendar week containing the date. For
+  // example, a first Sunday can fall on the 7th or 8th of a month.
+  const firstOfMonth = date.clone().startOf('month');
+  const firstOccurrence = 1 + ((date.day() - firstOfMonth.day() + 7) % 7);
+  return date.date() === firstOccurrence + (ordinal - 1) * 7;
 }
 
 /** Find schedule occurrences inside the calendar's current rendering window. */
@@ -82,6 +90,7 @@ function massToEvents(
         churchName: church.name,
         churchId: church.id,
         location: church.address,
+        recurrence: scheduleToRecurrence(mass.day, mass.dayOfMonth, mass.note),
         note: mass.note,
       };
     });
@@ -111,6 +120,7 @@ function timeRangeToEvents(
         churchName: church.name,
         churchId: church.id,
         location: church.address,
+        recurrence: scheduleToRecurrence(timeRange.day, timeRange.dayOfMonth, timeRange.note),
         note: timeRange.note,
       };
     });
