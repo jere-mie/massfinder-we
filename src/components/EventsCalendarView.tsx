@@ -1,20 +1,18 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import {
-  Calendar,
-  momentLocalizer,
-  type Event as RBCEvent,
-  type View,
-} from 'react-big-calendar';
-import moment from 'moment';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
+import FullCalendar from '@fullcalendar/react';
+import type { EventInput } from '@fullcalendar/core';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
+import listPlugin from '@fullcalendar/list';
+import timeGridPlugin from '@fullcalendar/timegrid';
 
 import type { Event, EventTag } from '../types/church';
+import { useIsExtraLarge, useIsMobile } from '../hooks/useIsMobile';
 import { ALL_EVENT_TAGS } from '../types/church';
 import { createGoogleCalendarUrl, getEventDateRange } from '../utils/calendar';
 import { getEventTagMeta } from '../utils/eventTags';
 import { formatTime } from '../utils/formatting';
-
-const localizer = momentLocalizer(moment);
+import { scheduleTimeGridMoreLinkLayout } from './CalendarView/timeGridLayout';
 
 function formatDate(dateStr: string): string {
   const date = new Date(`${dateStr}T00:00:00`);
@@ -36,7 +34,11 @@ function formatEventTime(event: Event): string {
   return `Until ${formatTime(event.end_time!)}`;
 }
 
-export interface EventCalendarItem extends RBCEvent {
+export interface EventCalendarItem {
+  title: string;
+  start: Date;
+  end: Date;
+  allDay?: boolean;
   originalEvent: Event;
 }
 
@@ -179,54 +181,81 @@ function getCalendarTag(event: Event, selectedTag: EventTag | null): EventTag {
 export function EventsCalendarView({ events, selectedTag }: Props) {
   const [selectedItem, setSelectedItem] = useState<EventCalendarItem | null>(null);
   const [date, setDate] = useState(() => new Date());
-  const [view, setView] = useState<View>(() =>
-    typeof window !== 'undefined' && window.matchMedia('(max-width: 639px)').matches
-      ? 'agenda'
-      : 'month',
-  );
+  const isMobile = useIsMobile();
+  const isExtraLarge = useIsExtraLarge();
+  const eventMaxStack = isMobile ? 3 : isExtraLarge ? 5 : 4;
 
   const calendarEvents = useMemo<EventCalendarItem[]>(() => events.map(toCalendarItem), [events]);
+  const fullCalendarEvents = useMemo<EventInput[]>(
+    () =>
+      calendarEvents.map((item, index) => {
+        const color = getEventTagMeta(getCalendarTag(item.originalEvent, selectedTag)).calendarColor;
+        return {
+          id: `${item.originalEvent.id ?? item.originalEvent.title}-${item.start.toISOString()}-${index}`,
+          title: item.title,
+          start: item.start,
+          end: item.end,
+          allDay: item.allDay,
+          backgroundColor: color,
+          borderColor: color,
+          textColor: '#fff',
+          extendedProps: { calendarItem: item },
+        };
+      }),
+    [calendarEvents, selectedTag],
+  );
 
   return (
     <section className="calendar-section" aria-label="Events calendar">
       <ColorLegend tags={ALL_EVENT_TAGS} />
       <p className="calendar-help-text">
-        Select an event for details. Crowded dates are condensed; select “more” to open that day.
+        Select an event for details. Use the day view for a focused schedule when dates are busy.
       </p>
       <div className="calendar-container events-calendar-container">
-        <Calendar<EventCalendarItem>
-          localizer={localizer}
-          events={calendarEvents}
-          date={date}
-          view={view}
-          onNavigate={setDate}
-          onView={setView}
-          startAccessor="start"
-          endAccessor="end"
-          step={15}
-          timeslots={4}
-          views={['month', 'day', 'agenda']}
-          length={14}
-          dayLayoutAlgorithm="no-overlap"
-          popup={false}
-          onShowMore={(_items, selectedDate) => {
-            setDate(selectedDate);
-            setView('day');
+        <FullCalendar
+          key={isMobile ? 'mobile' : 'desktop'}
+          plugins={[dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin]}
+          initialView={isMobile ? 'listDay' : 'dayGridMonth'}
+          initialDate={date}
+          events={fullCalendarEvents}
+          datesSet={(info) => setDate(info.view.currentStart)}
+          headerToolbar={{
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridDay,listDay',
           }}
-          onSelectEvent={setSelectedItem}
-          eventPropGetter={(item) => ({
-            className: 'calendar-event',
-            style: {
-              backgroundColor: getEventTagMeta(
-                getCalendarTag(item.originalEvent, selectedTag),
-              ).calendarColor,
-              color: '#fff',
-            },
-          })}
-          tooltipAccessor={(item) =>
-            `${item.originalEvent.title} — ${formatEventTime(item.originalEvent)}`
-          }
-          scrollToTime={new Date(1970, 0, 1, 7)}
+          buttonText={{ today: 'Today', month: 'Month', day: 'Day', list: 'List' }}
+          allDayText="All Day"
+          moreLinkText="More"
+          noEventsText="No Events"
+          height="100%"
+          expandRows={false}
+          slotMinTime="06:00:00"
+          slotMaxTime="23:00:00"
+          slotDuration="00:30:00"
+          slotLabelInterval="01:00:00"
+          eventMinHeight={36}
+          slotEventOverlap={false}
+          eventMaxStack={eventMaxStack}
+          dayMaxEvents={isMobile ? 2 : 3}
+          moreLinkClick="popover"
+          moreLinkDidMount={(info) => scheduleTimeGridMoreLinkLayout(info.el.parentElement)}
+          moreLinkWillUnmount={(info) => scheduleTimeGridMoreLinkLayout(info.el.parentElement)}
+          eventDidMount={(info) => scheduleTimeGridMoreLinkLayout(info.el.parentElement?.parentElement ?? null)}
+          eventWillUnmount={(info) => scheduleTimeGridMoreLinkLayout(info.el.parentElement?.parentElement ?? null)}
+          scrollTime="07:00:00"
+          eventTimeFormat={{ hour: 'numeric', minute: '2-digit', meridiem: 'short' }}
+          eventClick={(info) => {
+            info.jsEvent.preventDefault();
+            setSelectedItem(info.event.extendedProps.calendarItem as EventCalendarItem);
+          }}
+          dateClick={(info) => {
+            const target = info.jsEvent.target;
+            if (target instanceof Element && target.closest('.fc-event, .fc-more-link, .fc-daygrid-more-link')) {
+              return;
+            }
+            info.view.calendar.changeView('timeGridDay', info.date);
+          }}
         />
       </div>
       {selectedItem && <EventModal item={selectedItem} onClose={() => setSelectedItem(null)} />}

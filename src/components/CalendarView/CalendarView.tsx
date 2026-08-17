@@ -1,13 +1,14 @@
 import { useMemo, useState } from 'react';
-import {
-  Calendar,
-  momentLocalizer,
-  type View,
-} from 'react-big-calendar';
+import FullCalendar from '@fullcalendar/react';
+import type { EventInput } from '@fullcalendar/core';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
+import listPlugin from '@fullcalendar/list';
+import timeGridPlugin from '@fullcalendar/timegrid';
 import moment, { type Moment } from 'moment';
-import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 import type { Church, Mass, TimeRange } from '../../types/church';
+import { useIsExtraLarge, useIsMobile } from '../../hooks/useIsMobile';
 import {
   EVENT_TYPE_META,
   type CalendarEvent,
@@ -16,8 +17,8 @@ import {
 } from './calendarTypes';
 import { EventDetailsModal } from './EventDetailsModal';
 import { FilterBar } from './FilterBar';
+import { scheduleTimeGridMoreLinkLayout } from './timeGridLayout';
 
-const localizer = momentLocalizer(moment);
 const DAY_INDEX: Record<string, number> = {
   sunday: 0,
   monday: 1,
@@ -126,11 +127,9 @@ export function CalendarView({ churches }: Props) {
   });
   const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | null>(null);
   const [date, setDate] = useState(() => new Date());
-  const [view, setView] = useState<View>(() =>
-    typeof window !== 'undefined' && window.matchMedia('(max-width: 639px)').matches
-      ? 'agenda'
-      : 'month',
-  );
+  const isMobile = useIsMobile();
+  const isExtraLarge = useIsExtraLarge();
+  const eventMaxStack = isMobile ? 3 : isExtraLarge ? 5 : 4;
 
   const events = useMemo(() => {
     // One month of padding on each side covers month, day, and 14-day agenda views.
@@ -167,39 +166,74 @@ export function CalendarView({ churches }: Props) {
     [events, filters],
   );
 
+  const calendarEvents = useMemo<EventInput[]>(
+    () =>
+      visibleEvents.map((event, index) => ({
+        id: `${event.churchId}-${event.type}-${event.start.toISOString()}-${index}`,
+        title: event.title,
+        start: event.start,
+        end: event.end,
+        allDay: event.allDay,
+        backgroundColor: EVENT_TYPE_META[event.type].color,
+        borderColor: EVENT_TYPE_META[event.type].color,
+        textColor: '#fff',
+        extendedProps: { calendarEvent: event },
+      })),
+    [visibleEvents],
+  );
+
   return (
     <section className="calendar-section schedule-calendar-section" aria-label="Schedule calendar">
       <FilterBar filters={filters} setFilters={setFilters} />
       <p className="calendar-help-text">
-        Choose one or more schedule types. Crowded dates are condensed; select “more” to open that day.
+        Choose one or more schedule types. Select an event for details, or use the day view for a focused schedule.
       </p>
       <div className="calendar-container schedule-calendar-container">
-        <Calendar<CalendarEvent>
-          localizer={localizer}
-          events={visibleEvents}
-          date={date}
-          view={view}
-          onNavigate={setDate}
-          onView={setView}
-          startAccessor="start"
-          endAccessor="end"
-          step={15}
-          timeslots={4}
-          views={['month', 'day', 'agenda']}
-          length={14}
-          dayLayoutAlgorithm="no-overlap"
-          popup={false}
-          onShowMore={(_items, selectedDate) => {
-            setDate(selectedDate);
-            setView('day');
+        <FullCalendar
+          key={isMobile ? 'mobile' : 'desktop'}
+          plugins={[dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin]}
+          initialView={isMobile ? 'listDay' : 'dayGridMonth'}
+          initialDate={date}
+          events={calendarEvents}
+          datesSet={(info) => setDate(info.view.currentStart)}
+          headerToolbar={{
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridDay,listDay',
           }}
-          onSelectEvent={setSelectedEvent}
-          eventPropGetter={(event) => ({
-            className: 'calendar-event',
-            style: { backgroundColor: EVENT_TYPE_META[event.type].color, color: '#fff' },
-          })}
-          tooltipAccessor={(event) => `${event.churchName} — ${EVENT_TYPE_META[event.type].label}`}
-          scrollToTime={new Date(1970, 0, 1, 7)}
+          buttonText={{ today: 'Today', month: 'Month', day: 'Day', list: 'List' }}
+          allDayText="All Day"
+          moreLinkText="More"
+          noEventsText="No Events"
+          height="100%"
+          expandRows={false}
+          slotMinTime="06:00:00"
+          slotMaxTime="23:00:00"
+          slotDuration="00:30:00"
+          slotLabelInterval="01:00:00"
+          eventMinHeight={36}
+          slotEventOverlap={false}
+          eventMaxStack={eventMaxStack}
+          dayMaxEvents={isMobile ? 2 : 3}
+          moreLinkClick="popover"
+          moreLinkDidMount={(info) => scheduleTimeGridMoreLinkLayout(info.el.parentElement)}
+          moreLinkWillUnmount={(info) => scheduleTimeGridMoreLinkLayout(info.el.parentElement)}
+          eventDidMount={(info) => scheduleTimeGridMoreLinkLayout(info.el.parentElement?.parentElement ?? null)}
+          eventWillUnmount={(info) => scheduleTimeGridMoreLinkLayout(info.el.parentElement?.parentElement ?? null)}
+          scrollTime="07:00:00"
+          eventTimeFormat={{ hour: 'numeric', minute: '2-digit', meridiem: 'short' }}
+          eventClick={(info) => {
+            info.jsEvent.preventDefault();
+            setDate(info.event.start ?? date);
+            setSelectedEvent(info.event.extendedProps.calendarEvent as CalendarEvent);
+          }}
+          dateClick={(info) => {
+            const target = info.jsEvent.target;
+            if (target instanceof Element && target.closest('.fc-event, .fc-more-link, .fc-daygrid-more-link')) {
+              return;
+            }
+            info.view.calendar.changeView('timeGridDay', info.date);
+          }}
         />
       </div>
       <EventDetailsModal event={selectedEvent} onClose={() => setSelectedEvent(null)} />

@@ -1,5 +1,3 @@
-import type { Event as RBCEvent } from 'react-big-calendar';
-
 export type EventType = 'mass' | 'daily_mass' | 'confession' | 'adoration';
 export type EventFilterState = Record<EventType, boolean>;
 
@@ -10,7 +8,11 @@ export const EVENT_TYPE_META: Record<EventType, { label: string; color: string }
   adoration: { label: 'Adoration', color: '#a16207' },
 };
 
-export interface CalendarEvent extends RBCEvent {
+export interface CalendarEvent {
+  title: string;
+  start: Date;
+  end: Date;
+  allDay?: boolean;
   type: EventType;
   churchName: string;
   churchId: string;
