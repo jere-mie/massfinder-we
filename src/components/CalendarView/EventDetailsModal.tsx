@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import moment from 'moment';
+import { createGoogleCalendarUrl } from '../../utils/calendar';
 import { EVENT_TYPE_META, type CalendarEvent } from './calendarTypes';
 
 interface Props {
@@ -25,6 +26,14 @@ export function EventDetailsModal({ event, onClose }: Props) {
   const start = moment(event.start);
   const end = moment(event.end);
   const endFormat = end.isSame(start, 'day') ? 'h:mm A' : 'ddd h:mm A';
+  const googleCalendarUrl = createGoogleCalendarUrl({
+    title: event.title,
+    description: event.note,
+    location: event.location,
+    date: start.format('YYYY-MM-DD'),
+    start_time: event.allDay ? undefined : start.format('HHmm'),
+    end_time: event.allDay ? undefined : end.format('HHmm'),
+  });
 
   return (
     <div className="calendar-modal-backdrop" onMouseDown={onClose}>
@@ -67,6 +76,9 @@ export function EventDetailsModal({ event, onClose }: Props) {
           )}
         </dl>
         <div className="calendar-modal-actions">
+          <a href={googleCalendarUrl} target="_blank" rel="noopener noreferrer">
+            Add to Google Calendar
+          </a>
           <button ref={closeButtonRef} type="button" onClick={onClose}>
             Close
           </button>

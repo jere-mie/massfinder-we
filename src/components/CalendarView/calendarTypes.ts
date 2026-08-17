@@ -16,5 +16,6 @@ export interface CalendarEvent {
   type: EventType;
   churchName: string;
   churchId: string;
+  location?: string;
   note?: string;
 }

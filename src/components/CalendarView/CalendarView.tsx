@@ -81,6 +81,7 @@ function massToEvents(
         type,
         churchName: church.name,
         churchId: church.id,
+        location: church.address,
         note: mass.note,
       };
     });
@@ -109,6 +110,7 @@ function timeRangeToEvents(
         type,
         churchName: church.name,
         churchId: church.id,
+        location: church.address,
         note: timeRange.note,
       };
     });
