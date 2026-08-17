@@ -354,8 +354,9 @@ RULES:
 1. Only modify fields that have CONFIRMED differences in the analysis report
 2. Use exact times from the bulletin (in HHMM 24-hour format)
 3. Maintain all existing fields and structure
-4. Do NOT invent or assume data not in the report
-5. Return ONLY valid JSON, no explanations
+4. Preserve the `offices` array and its office/hour structure exactly unless the analysis report explicitly confirms an office change
+5. Do NOT invent or assume data not in the report
+6. Return ONLY valid JSON, no explanations
 
 EXAMPLE CHANGE:
 If report shows "Saturday Mass | 1700 | 1730 | Page 1", change the Saturday mass from 1730 to 1700 in the church's masses array.

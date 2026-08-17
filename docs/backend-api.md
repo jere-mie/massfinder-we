@@ -50,7 +50,7 @@ No ORM. Direct `database/sql` queries are explicitly preferred: they are faster,
 
 ## Database Schema
 
-The JSON arrays in `churches.json` normalize into five tables. The scraper writes to this schema directly using Python's `sqlite3` stdlib module — no new Python dependencies required.
+The JSON arrays in `churches.json` normalize into core, schedule, office, and event tables. The scraper writes to this schema directly using Python's `sqlite3` stdlib module — no new Python dependencies required.
 
 ```sql
 -- Core church identity and contact info
@@ -88,6 +88,25 @@ CREATE TABLE time_ranges (
     note       TEXT
 );
 
+-- Parish and family-of-parishes office locations
+CREATE TABLE offices (
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+    church_id  TEXT NOT NULL REFERENCES churches(id) ON DELETE CASCADE,
+    building   TEXT,
+    address    TEXT NOT NULL,
+    phone      TEXT,
+    email      TEXT
+);
+
+-- Office opening windows; split shifts are separate rows
+CREATE TABLE office_hours (
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+    office_id  INTEGER NOT NULL REFERENCES offices(id) ON DELETE CASCADE,
+    day        TEXT NOT NULL,                   -- "Monday" … "Friday"
+    start_time TEXT NOT NULL,                   -- HHMM
+    end_time   TEXT NOT NULL                    -- HHMM
+);
+
 -- Parish events extracted from bulletins
 CREATE TABLE events (
     id                   TEXT PRIMARY KEY,      -- 8-char base36 e.g. "k7m2x9p1"
@@ -116,7 +135,9 @@ CREATE TABLE event_tags (
 CREATE INDEX idx_masses_church     ON masses(church_id);
 CREATE INDEX idx_masses_day        ON masses(day);
 CREATE INDEX idx_time_ranges_church ON time_ranges(church_id);
-CREATE INDEX idx_events_date       ON events(date);
+CREATE INDEX idx_offices_church     ON offices(church_id);
+CREATE INDEX idx_office_hours_office ON office_hours(office_id);
+CREATE INDEX idx_events_date        ON events(date);
 CREATE INDEX idx_event_tags_event  ON event_tags(event_id);
 ```
 
@@ -145,7 +166,14 @@ Returns all churches with their full schedule data assembled from the normalized
     "masses": [{ "day": "Saturday", "time": "1700" }],
     "daily_masses": [{ "day": "Wednesday", "time": "0900" }],
     "confession": [{ "day": "Saturday", "start": "0945", "end": "1030" }],
-    "adoration": [{ "day": "Wednesday", "start": "0930", "end": "2130" }]
+    "adoration": [{ "day": "Wednesday", "start": "0930", "end": "2130" }],
+    "offices": [{
+      "building": "St. John the Baptist",
+      "address": "225 Brock St, Amherstburg, ON N9V 2H3",
+      "phone": "+15197365418",
+      "email": "ahcfop@dol.ca",
+      "hours": [{ "day": "Tuesday", "start": "0900", "end": "1600" }]
+    }]
   }
 ]
 ```
@@ -331,6 +359,17 @@ The scraper (`scraper/app.py`) currently writes to `public/churches.json` and `p
                for a in church.get("adoration", []):
                    db.execute("INSERT INTO time_ranges (church_id,type,day,start_time,end_time,note) VALUES (?,?,?,?,?,?)",
                               (church_id, "adoration", a["day"], a["start"], a["end"], a.get("note")))
+               db.execute("DELETE FROM offices WHERE church_id = ?", (church_id,))
+               for office in church.get("offices", []):
+                   office_id = db.execute(
+                       "INSERT INTO offices (church_id,building,address,phone,email) VALUES (?,?,?,?,?)",
+                       (church_id, office.get("building"), office["address"], office.get("phone"), office.get("email")),
+                   ).lastrowid
+                   for hours in office.get("hours", []):
+                       db.execute(
+                           "INSERT INTO office_hours (office_id,day,start_time,end_time) VALUES (?,?,?,?)",
+                           (office_id, hours["day"], hours["start"], hours["end"]),
+                       )
    ```
 
 3. For events, replace `save_events_json(...)` with:

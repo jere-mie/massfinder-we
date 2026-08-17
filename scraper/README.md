@@ -255,6 +255,13 @@ churches.json required fields:
 {
   "name": "Church Name",
   "bulletin_website": "https://...",
+  "offices": [{
+    "building": "Parish Office",
+    "address": "123 Main Street, Windsor, ON N0N 0N0",
+    "phone": "+15195551234",
+    "email": "office@example.ca",
+    "hours": [{"day": "Monday", "start": "0900", "end": "1600"}]
+  }],
   "masses": [{"day": "Sunday", "time": "0900"}],
   "confession": [{"day": "Saturday", "start": "0945", "end": "1030"}],
   "adoration": [{"day": "Wednesday", "start": "0930", "end": "2130"}]

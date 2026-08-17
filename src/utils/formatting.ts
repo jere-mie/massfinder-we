@@ -46,6 +46,28 @@ export function formatTimeRange(start: string, end: string): string {
 }
 
 /**
+ * Group office ranges by day for compact display while preserving their order.
+ */
+export function groupOfficeHours(hours: TimeRange[]): Array<{ day: string; ranges: TimeRange[] }> {
+  const grouped = new Map<string, TimeRange[]>();
+
+  for (const range of hours) {
+    const dayRanges = grouped.get(range.day) ?? [];
+    dayRanges.push(range);
+    grouped.set(range.day, dayRanges);
+  }
+
+  return Array.from(grouped, ([day, ranges]) => ({ day, ranges }));
+}
+
+/**
+ * Format all opening ranges for a day on one line.
+ */
+export function formatOfficeHours(day: string, ranges: TimeRange[]): string {
+  return `${day}: ${ranges.map((range) => formatTimeRange(range.start, range.end)).join(', ')}`;
+}
+
+/**
  * Get the current day of the week
  * @returns Full day name (e.g., "Monday", "Tuesday")
  */
@@ -61,3 +83,4 @@ export function getCurrentDay(): string {
   ];
   return daysOfWeek[new Date().getDay()];
 }
+import type { TimeRange } from '../types/church';
