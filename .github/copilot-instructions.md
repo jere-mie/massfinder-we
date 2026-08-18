@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is a **static website** for finding Catholic Mass times in Windsor-Essex County, Ontario. The app displays church locations on an interactive map and in filterable table views. It's deployed via GitHub Pages (domain: `mass.bornais.ca`).
+This is a **static website** for finding Catholic Mass times in Windsor-Essex County, Ontario. The app displays church locations on an interactive map and in filterable table views. It's deployed via GitHub Pages (domain: `www.wedeanery.ca`).
 
 ## Architecture & Tech Stack
 
@@ -122,7 +122,7 @@ The codebase follows accessibility best practices:
 
 ## Deployment
 
-Static site hosted on GitHub Pages. The `CNAME` file defines the custom domain (`mass.bornais.ca`). Push to `main` branch deploys automatically via Astro build.
+Static site hosted on GitHub Pages. The `CNAME` file defines the custom domain (`www.wedeanery.ca`). Push to `main` branch deploys automatically via Astro build.
 
 ## Common Tasks
 
