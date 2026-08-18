@@ -547,7 +547,8 @@
                 "day": "Wednesday",
                 "start": "0930",
                 "end": "1030",
-                "note": "3rd Wednesday of the month."
+                "note": "3rd Wednesday of the month.",
+                "dayOfMonth": 3
             }
         ],
         "offices": [
@@ -652,7 +653,8 @@
                 "day": "Monday",
                 "start": "1900",
                 "end": "2000",
-                "note": "First Monday of every month"
+                "note": "First Monday of every month",
+                "dayOfMonth": 1
             }
         ],
         "offices": [
@@ -1045,7 +1047,8 @@
             {
                 "day": "Saturday",
                 "time": "2130",
-                "note": "Vietnamese, first Saturday of the month"
+                "note": "Vietnamese, first Saturday of the month",
+                "dayOfMonth": 1
             }
         ],
         "confession": [
@@ -1071,7 +1074,8 @@
                 "day": "Sunday",
                 "start": "1030",
                 "end": "1100",
-                "note": "First Sunday of the month"
+                "note": "First Sunday of the month",
+                "dayOfMonth": 1
             }
         ],
         "offices": [
@@ -1339,7 +1343,8 @@
                 "day": "Friday",
                 "start": "1800",
                 "end": "1900",
-                "note": "First Friday of every month, one hour before daily Mass"
+                "note": "First Friday of every month, one hour before daily Mass",
+                "dayOfMonth": 1
             }
         ],
         "offices": []
@@ -2003,7 +2008,8 @@
             {
                 "day": "Sunday",
                 "time": "1400",
-                "note": "First Sunday of each month. Part of the St. Daniel community: https://stdaniel.ca/."
+                "note": "First Sunday of each month. Part of the St. Daniel community: https://stdaniel.ca/.",
+                "dayOfMonth": 1
             },
             {
                 "day": "Sunday",
@@ -2324,7 +2330,8 @@
                 "day": "Saturday",
                 "start": "1100",
                 "end": "1200",
-                "note": "Third Saturday of every month"
+                "note": "Third Saturday of every month",
+                "dayOfMonth": 3
             }
         ],
         "adoration": [],
@@ -2389,7 +2396,8 @@
             {
                 "day": "Sunday",
                 "time": "1130",
-                "note": "Every 3rd Sunday of the month. Part of St. Anthony of Padua Hungarian Community"
+                "note": "Every 3rd Sunday of the month. Part of St. Anthony of Padua Hungarian Community",
+                "dayOfMonth": 3
             }
         ],
         "daily_masses": [
@@ -2407,7 +2415,8 @@
                 "day": "Saturday",
                 "start": "1100",
                 "end": "1200",
-                "note": "First Saturday of every month"
+                "note": "First Saturday of every month",
+                "dayOfMonth": 1
             }
         ],
         "adoration": [],
@@ -3263,7 +3272,8 @@
             {
                 "day": "Wednesday",
                 "time": "1830",
-                "note": "First Wednesday of the month."
+                "note": "First Wednesday of the month.",
+                "dayOfMonth": 1
             }
         ],
         "confession": [
@@ -3358,7 +3368,8 @@
             {
                 "day": "Thursday",
                 "time": "1830",
-                "note": "Every 2nd Thursday (seasonal)."
+                "note": "Every 2nd Thursday (seasonal).",
+                "dayOfMonth": 2
             }
         ],
         "confession": [
@@ -3366,7 +3377,8 @@
                 "day": "Thursday",
                 "start": "1800",
                 "end": "1830",
-                "note": "Every 2nd Thursday (seasonal)."
+                "note": "Every 2nd Thursday (seasonal).",
+                "dayOfMonth": 2
             }
         ],
         "adoration": [],

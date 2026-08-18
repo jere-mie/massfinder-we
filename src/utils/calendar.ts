@@ -39,7 +39,21 @@ export type CalendarEventInput = {
   end_time?: string | null;
 };
 
-export function getEventDateRange(event: CalendarEventInput) {
+export type EventDateRange =
+  | {
+      allDay: true;
+      startDate: string;
+      endDate: string;
+    }
+  | {
+      allDay: false;
+      start: string;
+      end: string;
+      startLocal: Date;
+      endLocal: Date;
+    };
+
+export function getEventDateRange(event: CalendarEventInput): EventDateRange {
   const { date, start_time, end_time } = event;
   const hasStart = !!start_time;
   const hasEnd = !!end_time;
@@ -107,6 +121,7 @@ export function createGoogleCalendarUrl(
     title: string;
     description?: string | null;
     location?: string | null;
+    recurrence?: string | null;
   },
 ) {
   const range = getEventDateRange(event);
@@ -124,6 +139,7 @@ export function createGoogleCalendarUrl(
     location: event.location || '',
     dates: datesParam,
   });
+  if (event.recurrence) params.set('recur', event.recurrence);
 
   return `https://www.google.com/calendar/render?${params.toString()}`;
 }

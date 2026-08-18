@@ -11,6 +11,16 @@ export default defineConfig({
   integrations: [react()],
 
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    optimizeDeps: {
+      include: [
+        '@fullcalendar/core',
+        '@fullcalendar/daygrid',
+        '@fullcalendar/interaction',
+        '@fullcalendar/list',
+        '@fullcalendar/react',
+        '@fullcalendar/timegrid',
+      ],
+    },
   }
 });
