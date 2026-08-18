@@ -20,6 +20,17 @@ export interface TimeRange {
 }
 
 /**
+ * Represents one parish or family-of-parishes office.
+ */
+export interface Office {
+  building?: string;
+  address: string;
+  phone?: string; // Format: "+15551234567"
+  email?: string;
+  hours: TimeRange[];
+}
+
+/**
  * Represents a Catholic church with all its schedule information
  */
 export interface Church {
@@ -33,6 +44,7 @@ export interface Church {
   hidden?: boolean; // If true, exclude this church from displays
   bulletin_website?: string;
   phone: string; // Format: "+15551234567"
+  offices: Office[];
   masses: Mass[];
   daily_masses: Mass[];
   confession: TimeRange[];
