@@ -7,7 +7,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://mass.bornais.ca',
+  site: 'https://www.wedeanery.ca/',
   integrations: [react()],
 
   vite: {
