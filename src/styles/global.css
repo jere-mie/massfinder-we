@@ -42,3 +42,433 @@
   white-space: nowrap;
   border-width: 0;
 }
+
+/* Calendar views */
+.calendar-section {
+  margin: 1.25rem 0 2rem;
+}
+
+.calendar-container {
+  height: clamp(38rem, 76vh, 54rem);
+  width: 100%;
+  padding: 0.75rem;
+  overflow: visible;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  background: #fff;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.05);
+}
+
+.calendar-help-text {
+  margin: 0 0 0.75rem;
+  color: #6b7280;
+  font-size: 0.8rem;
+}
+
+.calendar-legend,
+.calendar-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.calendar-legend-label {
+  color: #4b5563;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.calendar-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #374151;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.calendar-legend-swatch,
+.calendar-filter-swatch {
+  display: inline-block;
+  width: 0.65rem;
+  height: 0.65rem;
+  flex: none;
+  border-radius: 9999px;
+}
+
+.calendar-filter-bar button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.25rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: box-shadow 150ms ease, transform 150ms ease, background-color 150ms ease;
+}
+
+.calendar-filter-bar button:hover {
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.18);
+}
+
+.calendar-filter-bar button:active {
+  transform: translateY(1px);
+}
+
+.calendar-filter-bar button:focus-visible,
+.calendar-modal-actions a:focus-visible,
+.calendar-modal-actions button:focus-visible {
+  outline: 3px solid rgb(59 130 246 / 0.4);
+  outline-offset: 2px;
+}
+
+/* FullCalendar presentation */
+.calendar-container .fc {
+  height: 100%;
+  min-width: 0;
+  color: #374151;
+  font-family: inherit;
+  font-size: 0.82rem;
+}
+
+.calendar-container .fc .fc-toolbar {
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.calendar-container .fc .fc-toolbar-title {
+  color: #111827;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.calendar-container .fc .fc-button {
+  min-height: 2.25rem;
+  padding: 0.35rem 0.65rem;
+  border-color: #d1d5db;
+  border-radius: 0.35rem;
+  background: #fff;
+  color: #374151;
+  box-shadow: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.calendar-container .fc .fc-button:hover,
+.calendar-container .fc .fc-button:focus-visible {
+  border-color: #93c5fd;
+  background: #eff6ff;
+  color: #1d4ed8;
+  box-shadow: none;
+}
+
+.calendar-container .fc .fc-button-primary:not(:disabled).fc-button-active,
+.calendar-container .fc .fc-button-primary:not(:disabled):active {
+  border-color: #2563eb;
+  background: #2563eb;
+  color: #fff;
+}
+
+.calendar-container .fc .fc-col-header-cell-cushion,
+.calendar-container .fc .fc-daygrid-day-number {
+  color: #4b5563;
+  font-weight: 700;
+}
+
+.calendar-container .fc .fc-col-header-cell-cushion {
+  padding: 0.45rem 0.2rem;
+  font-size: 0.75rem;
+}
+
+.calendar-container .fc .fc-daygrid-day-number {
+  padding: 0.35rem;
+  font-size: 0.78rem;
+}
+
+.calendar-container .fc .fc-day-today {
+  background: #eff6ff !important;
+}
+
+.calendar-container .fc .fc-daygrid-day.fc-day-other {
+  background: #f9fafb;
+}
+
+.calendar-container .fc .fc-event {
+  min-width: 0;
+  border-radius: 0.3rem;
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.22);
+  font-size: 0.75rem;
+  line-height: 1.25;
+}
+
+.calendar-container .fc .fc-event-main {
+  min-width: 0;
+  overflow: hidden;
+  padding: 0.2rem 0.3rem;
+}
+
+.calendar-container .fc .fc-event-title {
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  text-overflow: ellipsis;
+}
+
+.calendar-container .fc .fc-timegrid-slot {
+  height: 1.875rem;
+}
+
+/* FullCalendar renders each half-hour as a table row. Set both the row and
+   its cells so the slot height is honored by the browser's table layout. */
+.calendar-container .fc .fc-timegrid-slots tr,
+.calendar-container .fc .fc-timegrid-slots .fc-timegrid-slot,
+.calendar-container .fc .fc-timegrid-cols .fc-timegrid-slot {
+  height: 1.875rem !important;
+}
+
+.calendar-container .fc .fc-timegrid-event {
+  min-height: 2.25rem;
+}
+
+/* FullCalendar adds a 2.5% right gutter to time-grid events by default.
+   Remove that gutter so the more control reaches the content edge while the
+   calendar's own scrollbar remains outside it. */
+.calendar-container .fc .fc-timegrid-col-events {
+  margin-right: 0;
+}
+
+/* Scale every overlapping lane into the space left beside the +N control. */
+.calendar-container .fc .fc-timegrid-event-harness.fc-event-harness-before-more {
+  left: var(--fc-more-left) !important;
+  right: var(--fc-more-right) !important;
+}
+
+.calendar-container .fc .fc-timegrid-more-link {
+  display: flex;
+  width: 2.75rem;
+  min-width: 2.75rem;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid #9ca3af;
+  border-radius: 0.3rem;
+  background: #e5e7eb;
+  color: #1d4ed8;
+  font-weight: 700;
+  text-align: center;
+}
+
+.calendar-container .fc .fc-timegrid-more-link-inner {
+  padding: 0.25rem 0.2rem;
+  white-space: nowrap;
+}
+
+.calendar-container .fc .fc-timegrid-event .fc-event-main {
+  white-space: normal;
+}
+
+.calendar-container .fc .fc-more-link {
+  color: #1d4ed8;
+  font-weight: 700;
+}
+
+.calendar-container .fc .fc-list-event-title {
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.calendar-container .fc .fc-list-event-time,
+.calendar-container .fc .fc-list-day-text,
+.calendar-container .fc .fc-list-day-side-text {
+  white-space: nowrap;
+}
+
+.calendar-container .fc .fc-list-event-dot {
+  border-width: 5px;
+}
+
+/* Keep the month view's +N popover above the calendar card instead of clipping it. */
+.calendar-container .fc .fc-more-popover {
+  z-index: 10001;
+  max-width: min(24rem, calc(100vw - 2rem));
+  max-height: min(30rem, calc(100vh - 2rem));
+  overflow: auto;
+}
+
+.calendar-container .fc .fc-more-popover .fc-popover-body {
+  overflow-wrap: anywhere;
+}
+
+/* FullCalendar portals the more popover into the view harness. Keep that
+   positioning layer out of the grid's clipping context as well. */
+.calendar-container .fc .fc-view-harness {
+  overflow: visible !important;
+}
+
+.calendar-modal-backdrop {
+  position: fixed;
+  z-index: 10000;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgb(17 24 39 / 0.55);
+}
+
+.calendar-modal {
+  width: min(30rem, 100%);
+  max-height: min(42rem, calc(100vh - 2rem));
+  overflow-y: auto;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  background: #fff;
+  box-shadow: 0 20px 45px rgb(0 0 0 / 0.25);
+}
+
+.calendar-modal-details {
+  display: grid;
+  gap: 0.7rem;
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+.calendar-modal-details div {
+  display: grid;
+  grid-template-columns: minmax(4.25rem, auto) 1fr;
+  gap: 0.75rem;
+}
+
+.calendar-modal-details dt {
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.calendar-modal-details dd {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.calendar-modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.calendar-modal-actions a {
+  color: #1d4ed8;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.calendar-modal-actions a:hover {
+  text-decoration: underline;
+}
+
+.calendar-modal-actions button {
+  min-height: 2.25rem;
+  padding: 0.45rem 1rem;
+  border-radius: 0.4rem;
+  background: #1d4ed8;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+@media (max-width: 639px) {
+  .calendar-section {
+    margin-top: 1rem;
+  }
+
+  .calendar-container {
+    height: 36rem;
+    padding: 0.4rem;
+    border-radius: 0.5rem;
+  }
+
+  .calendar-container .fc .fc-toolbar {
+    align-items: stretch;
+    margin-bottom: 0.6rem;
+  }
+
+  .calendar-container .fc .fc-toolbar-title {
+    font-size: 0.95rem;
+  }
+
+  .calendar-container .fc .fc-toolbar-chunk {
+    display: flex;
+    min-width: 0;
+  }
+
+  .calendar-container .fc .fc-toolbar-chunk:first-child,
+  .calendar-container .fc .fc-toolbar-chunk:last-child {
+    flex: 1 1 auto;
+  }
+
+  .calendar-container .fc .fc-toolbar-chunk:nth-child(2) {
+    order: -1;
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
+  .calendar-container .fc .fc-button {
+    min-height: 2.2rem;
+    padding: 0.35rem 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .calendar-container .fc .fc-timegrid-slot {
+    height: 2.1875rem;
+  }
+
+  .calendar-container .fc .fc-timegrid-slots tr,
+  .calendar-container .fc .fc-timegrid-slots .fc-timegrid-slot,
+  .calendar-container .fc .fc-timegrid-cols .fc-timegrid-slot {
+    height: 2.1875rem !important;
+  }
+
+  .calendar-container .fc .fc-timegrid-event {
+    min-height: 2.5rem;
+  }
+
+  .calendar-container .fc .fc-timegrid-more-link {
+    width: 2.5rem;
+    min-width: 2.5rem;
+  }
+
+  .calendar-container .fc .fc-event-main {
+    padding: 0.25rem 0.3rem;
+  }
+
+  .calendar-container .fc .fc-event-title {
+    white-space: normal;
+  }
+
+  .calendar-container .fc .fc-list-event-time {
+    width: 24%;
+  }
+
+  .calendar-container .fc .fc-list-event-title {
+    width: 76%;
+  }
+
+  .calendar-modal-details div {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+
+  .calendar-modal-actions {
+    justify-content: flex-start;
+  }
+}
