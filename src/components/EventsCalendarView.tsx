@@ -237,7 +237,7 @@ export function EventsCalendarView({ events, selectedTag }: Props) {
           eventMinHeight={36}
           slotEventOverlap={false}
           eventMaxStack={eventMaxStack}
-          dayMaxEvents={isMobile ? 2 : 3}
+          dayMaxEvents={isMobile ? 1 : 3}
           moreLinkClick="popover"
           moreLinkDidMount={(info) => scheduleTimeGridMoreLinkLayout(info.el.parentElement)}
           moreLinkWillUnmount={(info) => scheduleTimeGridMoreLinkLayout(info.el.parentElement)}

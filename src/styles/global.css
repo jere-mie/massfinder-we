@@ -312,7 +312,8 @@
 
 .calendar-modal-backdrop {
   position: fixed;
-  z-index: 10000;
+  /* Details opened from a +X popover must sit above that popover. */
+  z-index: 10002;
   inset: 0;
   display: flex;
   align-items: center;
@@ -440,6 +441,37 @@
 
   .calendar-container .fc .fc-timegrid-event {
     min-height: 2.5rem;
+  }
+
+  /* Keep month-view weeks compact on narrow screens. FullCalendar's natural
+     day-grid layout otherwise reserves a two-line event area for every day,
+     even when only one event is allowed before +X. */
+  .calendar-container .fc .fc-daygrid-day-frame {
+    min-height: 0 !important;
+  }
+
+  .calendar-container .fc .fc-daygrid-day-events,
+  .calendar-container .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
+    min-height: 0 !important;
+    margin-top: 0;
+    margin-bottom: 0 !important;
+  }
+
+  .calendar-container .fc .fc-daygrid-event {
+    margin-top: 0;
+    font-size: 0.65rem;
+    line-height: 1.1;
+  }
+
+  .calendar-container .fc .fc-daygrid-event .fc-event-main {
+    padding: 0.08rem 0.15rem;
+    white-space: nowrap;
+  }
+
+  .calendar-container .fc .fc-daygrid-more-link {
+    margin-top: 0;
+    padding: 1px;
+    font-size: 0.65rem;
   }
 
   .calendar-container .fc .fc-timegrid-more-link {
