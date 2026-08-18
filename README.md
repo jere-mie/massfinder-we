@@ -67,6 +67,8 @@ Edit `public/churches.json` and ensure the correct structure is followed.
 **Important conventions:**
 - All arrays are **required** (use empty `[]` if none)
 - Times use **24-hour `HHMM` format** (e.g., `"1830"` for 6:30 PM)
+- Office hours use `offices[].hours[]` entries with a full weekday and `start`/`end` in **24-hour `HHMM` format**; use separate entries for split shifts
+- Office `phone` and `email` fields are optional and should only be included when published by the parish
 - Coordinates: `[latitude, longitude]` order
 - Phone: Include `+1` country code
 - Optional `note` field available for all time entries

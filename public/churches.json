@@ -45,6 +45,36 @@
                 "start": "0930",
                 "end": "2130"
             }
+        ],
+        "offices": [
+            {
+                "building": "St. John the Baptist",
+                "address": "225 Brock St, Amherstburg, ON N9V 2H3",
+                "hours": [
+                    {
+                        "day": "Tuesday",
+                        "start": "0900",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0900",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0900",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0900",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15197365418",
+                "email": "ahcfop@dol.ca"
+            }
         ]
     },
     {
@@ -77,7 +107,37 @@
             }
         ],
         "confession": [],
-        "adoration": []
+        "adoration": [],
+        "offices": [
+            {
+                "building": "St. John the Baptist",
+                "address": "225 Brock St, Amherstburg, ON N9V 2H3",
+                "hours": [
+                    {
+                        "day": "Tuesday",
+                        "start": "0900",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0900",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0900",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0900",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15197365418",
+                "email": "ahcfop@dol.ca"
+            }
+        ]
     },
     {
         "id": "st-clement-mcgregor",
@@ -127,6 +187,56 @@
                 "start": "1400",
                 "end": "1600"
             }
+        ],
+        "offices": [
+            {
+                "building": "Holy Name of Jesus Parish",
+                "address": "146 Talbot St S, Essex, ON N8M 1B4",
+                "hours": [
+                    {
+                        "day": "Tuesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1300",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15197768483",
+                "email": "centralessexcatholic@dol.ca"
+            }
         ]
     },
     {
@@ -175,6 +285,56 @@
                 "start": "0830",
                 "end": "0930"
             }
+        ],
+        "offices": [
+            {
+                "building": "Holy Name of Jesus Parish",
+                "address": "146 Talbot St S, Essex, ON N8M 1B4",
+                "hours": [
+                    {
+                        "day": "Tuesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1300",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15197768483",
+                "email": "centralessexcatholic@dol.ca"
+            }
         ]
     },
     {
@@ -209,7 +369,57 @@
                 "end": "0930"
             }
         ],
-        "adoration": []
+        "adoration": [],
+        "offices": [
+            {
+                "building": "Holy Name of Jesus Parish",
+                "address": "146 Talbot St S, Essex, ON N8M 1B4",
+                "hours": [
+                    {
+                        "day": "Tuesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1300",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15197768483",
+                "email": "centralessexcatholic@dol.ca"
+            }
+        ]
     },
     {
         "id": "st-john-the-evangelist-woodslee",
@@ -244,7 +454,57 @@
                 "end": "0930"
             }
         ],
-        "adoration": []
+        "adoration": [],
+        "offices": [
+            {
+                "building": "Holy Name of Jesus Parish",
+                "address": "146 Talbot St S, Essex, ON N8M 1B4",
+                "hours": [
+                    {
+                        "day": "Tuesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1300",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15197768483",
+                "email": "centralessexcatholic@dol.ca"
+            }
+        ]
     },
     {
         "id": "st-joseph-river-canard",
@@ -288,6 +548,66 @@
                 "start": "0930",
                 "end": "1030",
                 "note": "3rd Wednesday of the month."
+            }
+        ],
+        "offices": [
+            {
+                "building": "St. Joseph Parish",
+                "address": "9399 Townline Rd, Windsor, ON N9J 2W6",
+                "hours": [
+                    {
+                        "day": "Monday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Monday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1300",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15197348044",
+                "email": "stjosephrc@dol.ca"
             }
         ]
     },
@@ -334,6 +654,66 @@
                 "end": "2000",
                 "note": "First Monday of every month"
             }
+        ],
+        "offices": [
+            {
+                "building": "St. Joseph Parish",
+                "address": "9399 Townline Rd, Windsor, ON N9J 2W6",
+                "hours": [
+                    {
+                        "day": "Monday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Monday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1300",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15197348044",
+                "email": "stjosephrc@dol.ca"
+            }
         ]
     },
     {
@@ -353,7 +733,67 @@
         "masses": [],
         "daily_masses": [],
         "confession": [],
-        "adoration": []
+        "adoration": [],
+        "offices": [
+            {
+                "building": "St. Joseph Parish",
+                "address": "9399 Townline Rd, Windsor, ON N9J 2W6",
+                "hours": [
+                    {
+                        "day": "Monday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Monday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1300",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15197348044",
+                "email": "stjosephrc@dol.ca"
+            }
+        ]
     },
     {
         "id": "our-lady-of-mt-carmel-windsor",
@@ -400,7 +840,57 @@
                 "note": "This is also a Holy Hour, starts after weekday Mass"
             }
         ],
-        "adoration": []
+        "adoration": [],
+        "offices": [
+            {
+                "building": "Corpus Christi",
+                "address": "1400 Cabana Road W, Windsor, ON N9G 1C4",
+                "hours": [
+                    {
+                        "day": "Tuesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1300",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15199695292",
+                "email": "sw@dol.ca"
+            }
+        ]
     },
     {
         "id": "corpus-christi-windsor",
@@ -453,6 +943,56 @@
                 "start": "0900",
                 "end": "1000",
                 "note": "This is also confession, starts after weekday Mass"
+            }
+        ],
+        "offices": [
+            {
+                "building": "Corpus Christi",
+                "address": "1400 Cabana Road W, Windsor, ON N9G 1C4",
+                "hours": [
+                    {
+                        "day": "Tuesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1300",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15199695292",
+                "email": "sw@dol.ca"
             }
         ]
     },
@@ -533,6 +1073,56 @@
                 "end": "1100",
                 "note": "First Sunday of the month"
             }
+        ],
+        "offices": [
+            {
+                "building": "Corpus Christi",
+                "address": "1400 Cabana Road W, Windsor, ON N9G 1C4",
+                "hours": [
+                    {
+                        "day": "Tuesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1300",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15199695292",
+                "email": "sw@dol.ca"
+            }
         ]
     },
     {
@@ -581,7 +1171,8 @@
                 "start": "1700",
                 "end": "1750"
             }
-        ]
+        ],
+        "offices": []
     },
     {
         "id": "immaculate-heart-windsor",
@@ -623,7 +1214,8 @@
                 "end": "1500"
             }
         ],
-        "adoration": []
+        "adoration": [],
+        "offices": []
     },
     {
         "id": "st-francis-of-assisi-windsor",
@@ -678,7 +1270,8 @@
             }
         ],
         "confession": [],
-        "adoration": []
+        "adoration": [],
+        "offices": []
     },
     {
         "id": "holy-trinity-windsor",
@@ -748,7 +1341,8 @@
                 "end": "1900",
                 "note": "First Friday of every month, one hour before daily Mass"
             }
-        ]
+        ],
+        "offices": []
     },
     {
         "id": "our-lady-of-guadalupe-windsor",
@@ -786,6 +1380,56 @@
                 "day": "Wednesday",
                 "start": "1030",
                 "end": "1500"
+            }
+        ],
+        "offices": [
+            {
+                "building": "Most Precious Blood Church",
+                "address": "1947 Meldrum Rd, Windsor, ON N8W 4E3",
+                "hours": [
+                    {
+                        "day": "Tuesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1230",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1230",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1230",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1230",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15199484133",
+                "email": "nccatholic@dol.ca"
             }
         ]
     },
@@ -837,6 +1481,56 @@
                 "end": "1500",
                 "note": "Benediction starts at 3:00 after Adoration"
             }
+        ],
+        "offices": [
+            {
+                "building": "Most Precious Blood Church",
+                "address": "1947 Meldrum Rd, Windsor, ON N8W 4E3",
+                "hours": [
+                    {
+                        "day": "Tuesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1230",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1230",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1230",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1230",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15199484133",
+                "email": "nccatholic@dol.ca"
+            }
         ]
     },
     {
@@ -869,7 +1563,57 @@
             }
         ],
         "confession": [],
-        "adoration": []
+        "adoration": [],
+        "offices": [
+            {
+                "building": "Most Precious Blood Church",
+                "address": "1947 Meldrum Rd, Windsor, ON N8W 4E3",
+                "hours": [
+                    {
+                        "day": "Tuesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1230",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1230",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1230",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1230",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15199484133",
+                "email": "nccatholic@dol.ca"
+            }
+        ]
     },
     {
         "id": "sts-cyril-and-methodius-windsor",
@@ -892,7 +1636,57 @@
         ],
         "daily_masses": [],
         "confession": [],
-        "adoration": []
+        "adoration": [],
+        "offices": [
+            {
+                "building": "Most Precious Blood Church",
+                "address": "1947 Meldrum Rd, Windsor, ON N8W 4E3",
+                "hours": [
+                    {
+                        "day": "Tuesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1230",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1230",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1230",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1230",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15199484133",
+                "email": "nccatholic@dol.ca"
+            }
+        ]
     },
     {
         "id": "our-lady-of-the-assumption-windsor",
@@ -976,6 +1770,94 @@
                 "start": "0830",
                 "end": "1900"
             }
+        ],
+        "offices": [
+            {
+                "building": "Our Lady of the Assumption",
+                "address": "350 Huron Church Road, Windsor, ON N9C 2J9",
+                "hours": [
+                    {
+                        "day": "Monday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Monday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1300",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15192532493",
+                "email": "whc@dol.ca"
+            },
+            {
+                "building": "St. Angela Merici",
+                "address": "980 Louis Ave, Windsor, ON N9A 1X9",
+                "hours": [
+                    {
+                        "day": "Monday",
+                        "start": "0930",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "0930",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0930",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0930",
+                        "end": "1200"
+                    }
+                ],
+                "phone": "+15192542542",
+                "email": "stangelamerici@dol.ca"
+            }
         ]
     },
     {
@@ -1006,7 +1888,95 @@
             }
         ],
         "confession": [],
-        "adoration": []
+        "adoration": [],
+        "offices": [
+            {
+                "building": "Our Lady of the Assumption",
+                "address": "350 Huron Church Road, Windsor, ON N9C 2J9",
+                "hours": [
+                    {
+                        "day": "Monday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Monday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1300",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15192532493",
+                "email": "whc@dol.ca"
+            },
+            {
+                "building": "St. Angela Merici",
+                "address": "980 Louis Ave, Windsor, ON N9A 1X9",
+                "hours": [
+                    {
+                        "day": "Monday",
+                        "start": "0930",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "0930",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0930",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0930",
+                        "end": "1200"
+                    }
+                ],
+                "phone": "+15192542542",
+                "email": "stangelamerici@dol.ca"
+            }
+        ]
     },
     {
         "id": "st-alphonsus-windsor",
@@ -1077,6 +2047,94 @@
                 "end": "1330",
                 "note": "Follows after 12:00 PM Mass"
             }
+        ],
+        "offices": [
+            {
+                "building": "Our Lady of the Assumption",
+                "address": "350 Huron Church Road, Windsor, ON N9C 2J9",
+                "hours": [
+                    {
+                        "day": "Monday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Monday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1300",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15192532493",
+                "email": "whc@dol.ca"
+            },
+            {
+                "building": "St. Angela Merici",
+                "address": "980 Louis Ave, Windsor, ON N9A 1X9",
+                "hours": [
+                    {
+                        "day": "Monday",
+                        "start": "0930",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "0930",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0930",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0930",
+                        "end": "1200"
+                    }
+                ],
+                "phone": "+15192542542",
+                "email": "stangelamerici@dol.ca"
+            }
         ]
     },
     {
@@ -1134,7 +2192,95 @@
                 "end": "1615"
             }
         ],
-        "adoration": []
+        "adoration": [],
+        "offices": [
+            {
+                "building": "Our Lady of the Assumption",
+                "address": "350 Huron Church Road, Windsor, ON N9C 2J9",
+                "hours": [
+                    {
+                        "day": "Monday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0830",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Monday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1300",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15192532493",
+                "email": "whc@dol.ca"
+            },
+            {
+                "building": "St. Angela Merici",
+                "address": "980 Louis Ave, Windsor, ON N9A 1X9",
+                "hours": [
+                    {
+                        "day": "Monday",
+                        "start": "0930",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "0930",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0930",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0930",
+                        "end": "1200"
+                    }
+                ],
+                "phone": "+15192542542",
+                "email": "stangelamerici@dol.ca"
+            }
+        ]
     },
     {
         "id": "our-lady-of-the-atonement-windsor",
@@ -1181,7 +2327,42 @@
                 "note": "Third Saturday of every month"
             }
         ],
-        "adoration": []
+        "adoration": [],
+        "offices": [
+            {
+                "building": "Our Lady of the Atonement",
+                "address": "2940 Forest Glade Dr, Windsor, ON N8R 1L5",
+                "hours": [
+                    {
+                        "day": "Monday",
+                        "start": "0900",
+                        "end": "1500"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "0900",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0900",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0900",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0900",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15197356023",
+                "email": "atonement@dol.ca"
+            }
+        ]
     },
     {
         "id": "st-john-vianney-windsor",
@@ -1229,7 +2410,42 @@
                 "note": "First Saturday of every month"
             }
         ],
-        "adoration": []
+        "adoration": [],
+        "offices": [
+            {
+                "building": "Our Lady of the Atonement",
+                "address": "2940 Forest Glade Dr, Windsor, ON N8R 1L5",
+                "hours": [
+                    {
+                        "day": "Monday",
+                        "start": "0900",
+                        "end": "1500"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "0900",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0900",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0900",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0900",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15197356023",
+                "email": "atonement@dol.ca"
+            }
+        ]
     },
     {
         "id": "ste-anne-tecumseh",
@@ -1328,6 +2544,66 @@
                 "start": "0900",
                 "end": "2100"
             }
+        ],
+        "offices": [
+            {
+                "building": "Good Shepherd Parish",
+                "address": "462 Advance Blvd, Lakeshore, ON N8N 5G8",
+                "hours": [
+                    {
+                        "day": "Monday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Monday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1300",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15197359517",
+                "email": "wlsccatholicfamily@dol.ca"
+            }
         ]
     },
     {
@@ -1388,6 +2664,66 @@
                 "end": "2359",
                 "note": "Requires access card for use after hours"
             }
+        ],
+        "offices": [
+            {
+                "building": "Good Shepherd Parish",
+                "address": "462 Advance Blvd, Lakeshore, ON N8N 5G8",
+                "hours": [
+                    {
+                        "day": "Monday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Monday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1300",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15197359517",
+                "email": "wlsccatholicfamily@dol.ca"
+            }
         ]
     },
     {
@@ -1429,6 +2765,66 @@
                 "day": "Saturday",
                 "start": "1100",
                 "end": "1200"
+            }
+        ],
+        "offices": [
+            {
+                "building": "Good Shepherd Parish",
+                "address": "462 Advance Blvd, Lakeshore, ON N8N 5G8",
+                "hours": [
+                    {
+                        "day": "Monday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Monday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1300",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15197359517",
+                "email": "wlsccatholicfamily@dol.ca"
             }
         ]
     },
@@ -1486,6 +2882,66 @@
                 "day": "Friday",
                 "start": "0815",
                 "end": "0915"
+            }
+        ],
+        "offices": [
+            {
+                "building": "Good Shepherd Parish",
+                "address": "462 Advance Blvd, Lakeshore, ON N8N 5G8",
+                "hours": [
+                    {
+                        "day": "Monday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Monday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1300",
+                        "end": "1600"
+                    }
+                ],
+                "phone": "+15197359517",
+                "email": "wlsccatholicfamily@dol.ca"
             }
         ]
     },
@@ -1556,6 +3012,66 @@
                 "start": "1000",
                 "end": "1100",
                 "note": "This is a Holy Hour"
+            }
+        ],
+        "offices": [
+            {
+                "building": "St. Michael Parish",
+                "address": "29 Elliott St, Leamington, ON N8H 3M4",
+                "hours": [
+                    {
+                        "day": "Monday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Monday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1300",
+                        "end": "1400"
+                    }
+                ],
+                "phone": "+15193262643",
+                "email": "esscatholic@dol.ca"
             }
         ]
     },
@@ -1662,6 +3178,66 @@
                 "end": "1000",
                 "note": "This is a Holy Hour"
             }
+        ],
+        "offices": [
+            {
+                "building": "St. Michael Parish",
+                "address": "29 Elliott St, Leamington, ON N8H 3M4",
+                "hours": [
+                    {
+                        "day": "Monday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Monday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1300",
+                        "end": "1400"
+                    }
+                ],
+                "phone": "+15193262643",
+                "email": "esscatholic@dol.ca"
+            }
         ]
     },
     {
@@ -1702,7 +3278,67 @@
                 "end": "1100"
             }
         ],
-        "adoration": []
+        "adoration": [],
+        "offices": [
+            {
+                "building": "St. Michael Parish",
+                "address": "29 Elliott St, Leamington, ON N8H 3M4",
+                "hours": [
+                    {
+                        "day": "Monday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Monday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1300",
+                        "end": "1400"
+                    }
+                ],
+                "phone": "+15193262643",
+                "email": "esscatholic@dol.ca"
+            }
+        ]
     },
     {
         "id": "our-lady-star-of-the-sea-pelee-island",
@@ -1733,6 +3369,66 @@
                 "note": "Every 2nd Thursday (seasonal)."
             }
         ],
-        "adoration": []
+        "adoration": [],
+        "offices": [
+            {
+                "building": "St. Michael Parish",
+                "address": "29 Elliott St, Leamington, ON N8H 3M4",
+                "hours": [
+                    {
+                        "day": "Monday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Monday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Tuesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Wednesday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Thursday",
+                        "start": "1300",
+                        "end": "1600"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "0900",
+                        "end": "1200"
+                    },
+                    {
+                        "day": "Friday",
+                        "start": "1300",
+                        "end": "1400"
+                    }
+                ],
+                "phone": "+15193262643",
+                "email": "esscatholic@dol.ca"
+            }
+        ]
     }
 ]
