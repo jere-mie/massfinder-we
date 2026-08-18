@@ -9517,5 +9517,197 @@
     ],
     "id": "601856f7",
     "extracted_at": "2026-08-14T12:00:00-04:00"
+  },
+  {
+    "title": "RCIA Program Begins",
+    "description": "RCIA meetings for those exploring the Catholic faith begin on Sunday afternoons.",
+    "church_id": null,
+    "church_name": null,
+    "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+    "date": "2026-10-04",
+    "start_time": "1230",
+    "end_time": "1430",
+    "location": null,
+    "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20260816.pdf?t=1786720154000",
+    "source_bulletin_date": "2026-08-16",
+    "tags": [
+      "education",
+      "sacramental"
+    ],
+    "id": "w4ngbgcq",
+    "extracted_at": "2026-08-18T15:00:00-04:00"
+  },
+  {
+    "title": "RCIA Program Begins",
+    "description": "RCIA meetings begin at St. Joseph following the new Tuesday evening Mass schedule.",
+    "church_id": "st-joseph-river-canard",
+    "church_name": "St. Joseph",
+    "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+    "date": "2026-09-01",
+    "start_time": "1900",
+    "end_time": null,
+    "location": "St. Joseph Church",
+    "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2026/8/August 16  23 2026.pdf?t=1786721722000",
+    "source_bulletin_date": "2026-08-16",
+    "tags": [
+      "education",
+      "sacramental"
+    ],
+    "id": "ojk9tsbf",
+    "extracted_at": "2026-08-18T15:00:00-04:00"
+  },
+  {
+    "title": "First Reconciliation, Communion & Confirmation Registration Opens",
+    "description": "Registration for First Reconciliation/Communion and Confirmation is open September 1–30.",
+    "church_id": null,
+    "church_name": null,
+    "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+    "date": "2026-09-01",
+    "start_time": null,
+    "end_time": null,
+    "location": null,
+    "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2026/8/August 16  23 2026.pdf?t=1786721722000",
+    "source_bulletin_date": "2026-08-16",
+    "tags": [
+      "sacramental",
+      "education"
+    ],
+    "id": "kcd2h068",
+    "extracted_at": "2026-08-18T15:00:00-04:00"
+  },
+  {
+    "title": "Foodies Cooking Club",
+    "description": "Assumption Cares cooking club gathering.",
+    "church_id": "our-lady-of-the-assumption-windsor",
+    "church_name": "Our Lady of the Assumption",
+    "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+    "date": "2026-08-19",
+    "start_time": "1200",
+    "end_time": null,
+    "location": "Assumption Church",
+    "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/August 16 2026.pdf",
+    "source_bulletin_date": "2026-08-16",
+    "tags": [
+      "social",
+      "community"
+    ],
+    "id": "6vfkbt5h",
+    "extracted_at": "2026-08-18T15:00:00-04:00"
+  },
+  {
+    "title": "Fit for All with Donna Resumes",
+    "description": "Assumption Cares Fit for All program resumes after its summer break.",
+    "church_id": "our-lady-of-the-assumption-windsor",
+    "church_name": "Our Lady of the Assumption",
+    "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+    "date": "2026-08-27",
+    "start_time": null,
+    "end_time": null,
+    "location": "Assumption Church",
+    "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/August 16 2026.pdf",
+    "source_bulletin_date": "2026-08-16",
+    "tags": [
+      "community",
+      "social"
+    ],
+    "id": "yjog2342",
+    "extracted_at": "2026-08-18T15:00:00-04:00"
+  },
+  {
+    "title": "Catholic in Recovery Meeting",
+    "description": "Recovery support, Scripture-based discussion and prayer in a confidential setting.",
+    "church_id": "ste-anne-tecumseh",
+    "church_name": "Ste. Anne",
+    "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+    "date": "2026-08-18",
+    "start_time": "1900",
+    "end_time": null,
+    "location": "Ste. Anne's Catholic Church",
+    "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/8/WLSC%20Weekly%20Bulletin%20August%209%20and%2016%202026.pdf?t=1786044028000",
+    "source_bulletin_date": "2026-08-16",
+    "tags": [
+      "community",
+      "faith_formation"
+    ],
+    "id": "032cnps4",
+    "extracted_at": "2026-08-18T15:00:00-04:00"
+  },
+  {
+    "title": "St. Simon & St. Jude SSVP Monthly Meeting",
+    "description": "Monthly Society of Saint Vincent de Paul meeting.",
+    "church_id": "st-simon-st-jude-belle-river",
+    "church_name": "St. Simon & St. Jude",
+    "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+    "date": "2026-08-18",
+    "start_time": "1500",
+    "end_time": null,
+    "location": "St. Simon & St. Jude Parish Hall, blue room",
+    "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/8/WLSC%20Weekly%20Bulletin%20August%209%20and%2016%202026.pdf?t=1786044028000",
+    "source_bulletin_date": "2026-08-16",
+    "tags": [
+      "community",
+      "meeting",
+      "volunteer"
+    ],
+    "id": "pj8sj03s",
+    "extracted_at": "2026-08-18T15:00:00-04:00"
+  },
+  {
+    "title": "Altar Server Training Session",
+    "description": "Training session for young people interested in serving at the altar.",
+    "church_id": "st-jerome-windsor",
+    "church_name": "St. Jerome",
+    "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+    "date": "2026-09-13",
+    "start_time": "1100",
+    "end_time": "1200",
+    "location": "St. Jerome Parish",
+    "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/8/WLSC%20Weekly%20Bulletin%20August%209%20and%2016%202026.pdf?t=1786044028000",
+    "source_bulletin_date": "2026-08-16",
+    "tags": [
+      "education",
+      "volunteer"
+    ],
+    "id": "t0qjgtrr",
+    "extracted_at": "2026-08-18T15:00:00-04:00"
+  },
+  {
+    "title": "Prayer Shawl Ministry Meeting",
+    "description": "Prayer Shawl Ministry meeting after its summer break.",
+    "church_id": "ste-anne-tecumseh",
+    "church_name": "Ste. Anne",
+    "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+    "date": "2026-09-15",
+    "start_time": null,
+    "end_time": null,
+    "location": "Ste. Anne's Parish Hall",
+    "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/8/WLSC%20Weekly%20Bulletin%20August%209%20and%2016%202026.pdf?t=1786044028000",
+    "source_bulletin_date": "2026-08-16",
+    "tags": [
+      "community",
+      "meeting",
+      "volunteer"
+    ],
+    "id": "kuqtm2qo",
+    "extracted_at": "2026-08-18T15:00:00-04:00"
+  },
+  {
+    "title": "Summer Eats for Kids – Free Weekly Food Pick-Up",
+    "description": "Free weekly food pickup for families with children; no ID or proof of income required.",
+    "church_id": null,
+    "church_name": null,
+    "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+    "date": "2026-08-18",
+    "start_time": "1100",
+    "end_time": "1230",
+    "location": "St. Louis Catholic School",
+    "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/August 16 2026.pdf",
+    "source_bulletin_date": "2026-08-16",
+    "tags": [
+      "community",
+      "volunteer"
+    ],
+    "id": "kcd2h069",
+    "extracted_at": "2026-08-18T15:00:00-04:00"
   }
 ]
