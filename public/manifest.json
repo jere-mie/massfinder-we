@@ -2,23 +2,54 @@
   "name": "Deanery of Windsor-Essex",
   "short_name": "WE Deanery",
   "description": "Find Mass, Confession & Adoration times in Windsor-Essex County, Ontario.",
+  "id": "/",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
+  "lang": "en-CA",
+  "dir": "ltr",
   "background_color": "#f9fafb",
   "theme_color": "#2563eb",
   "orientation": "portrait-primary",
+  "categories": ["lifestyle", "religion"],
+  "prefer_related_applications": false,
   "icons": [
     {
       "src": "/wedeanery-icon.png",
-      "sizes": "192x192",
+      "sizes": "480x480",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
       "src": "/wedeanery-icon.png",
-      "sizes": "512x512",
+      "sizes": "480x480",
       "type": "image/png",
       "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Find Mass Times",
+      "short_name": "Mass Finder",
+      "description": "Find Mass, confession, and adoration times.",
+      "url": "/mass-finder",
+      "icons": [{
+        "src": "/wedeanery-icon.png",
+        "sizes": "480x480",
+        "type": "image/png"
+      }]
+    },
+    {
+      "name": "Local Events",
+      "short_name": "Events",
+      "description": "Browse upcoming Catholic parish events.",
+      "url": "/events",
+      "icons": [{
+        "src": "/wedeanery-icon.png",
+        "sizes": "480x480",
+        "type": "image/png"
+      }]
     }
   ]
 }

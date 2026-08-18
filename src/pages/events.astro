@@ -1,11 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { EventsView } from '../components/EventsView';
+import { createCollectionPageStructuredData } from '../utils/seo';
+
+const structuredData = createCollectionPageStructuredData({
+	name: 'Parish Events',
+	pathname: '/events/',
+	description: 'Find upcoming Catholic parish events in Windsor-Essex County, Ontario.',
+});
 ---
 
 <Layout 
 	title="Parish Events - Deanery of Windsor-Essex"
 	description="Find upcoming Catholic parish events in Windsor-Essex County, Ontario. Browse community gatherings, fundraisers, educational programs, and special liturgies."
+	structuredData={structuredData}
 >
 	<EventsView client:only="react" />
 </Layout>

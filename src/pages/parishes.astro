@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import type { Church } from '../types/church';
 import fs from 'node:fs';
 import path from 'node:path';
+import { createCollectionPageStructuredData } from '../utils/seo';
 
 // Read churches.json at build time
 const churchesPath = path.join(process.cwd(), 'public', 'churches.json');
@@ -28,11 +29,26 @@ const families = Array.from(familiesMap.entries())
     name,
     churches: churches.sort((a, b) => a.name.localeCompare(b.name))
   }));
+
+const structuredData = createCollectionPageStructuredData({
+  name: 'Families of Parishes',
+  pathname: '/parishes/',
+  description: 'Explore the Catholic Families of Parishes in Windsor-Essex County.',
+  mainEntity: {
+    '@type': 'ItemList',
+    itemListElement: families.map((family, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: family.name,
+    })),
+  },
+});
 ---
 
 <Layout 
   title="Families of Parishes - Deanery of Windsor-Essex"
   description="Explore the Catholic Families of Parishes in Windsor-Essex County. Find information about each parish family and the churches within them."
+  structuredData={structuredData}
 >
   <div class="max-w-4xl mx-auto px-4 py-12">
     <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-4">

@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { formatTime, formatTimeRange, formatOfficeHours, formatPhoneNumber, formatUrl, groupOfficeHours } from '../../utils/formatting';
 import type { Church, Event, MassIntention } from '../../types/church';
 import EventToggle from "../../components/EventToggle";
+import { createChurchStructuredData } from '../../utils/seo';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -55,6 +56,7 @@ const scheduleText = scheduleItems.length > 0
   : `View schedule information for ${church.name}.`;
 
 const description = `${scheduleText} Located at ${church.address}.`;
+const structuredData = createChurchStructuredData(church);
 // Format date for display
 function formatDateDisplay(dateStr: string) {
   const date = new Date(dateStr + 'T00:00:00');
@@ -65,6 +67,7 @@ function formatDateDisplay(dateStr: string) {
 <Layout 
   title={`${church.name} - Deanery of Windsor-Essex`}
   description={description}
+  structuredData={structuredData}
 >
   <div class="mx-auto px-4 py-8 md:max-w-4xl">
     <!-- Back Link -->

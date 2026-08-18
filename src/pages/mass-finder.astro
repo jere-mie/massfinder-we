@@ -1,11 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { App } from '../components/App';
+import { createCollectionPageStructuredData } from '../utils/seo';
+
+const structuredData = createCollectionPageStructuredData({
+	name: 'Mass, Confession, & Adoration Times',
+	pathname: '/mass-finder/',
+	description: 'Find Catholic Mass times, confession, and adoration schedules for churches in Windsor-Essex County, Ontario.',
+});
 ---
 
 <Layout 
 	title="Mass, Confession, & Adoration Times - Deanery of Windsor-Essex"
 	description="Find Catholic Mass times, confession, and adoration schedules for churches in Windsor-Essex County, Ontario. Interactive map and searchable listings."
+	structuredData={structuredData}
 >
 	<App client:only="react" />
 </Layout>

@@ -3,16 +3,34 @@ import '../styles/global.css';
 import 'leaflet/dist/leaflet.css';
 import { Navbar } from '../components/Navbar';
 import { InstallBanner } from '../components/InstallBanner';
+import {
+	getBaseStructuredData,
+	getCanonicalUrl,
+	getSiteUrl,
+	getSocialImageUrl,
+	type StructuredData,
+} from '../utils/seo';
 
 interface Props {
 	title?: string;
 	description?: string;
+	structuredData?: StructuredData | StructuredData[];
 }
 
 const { 
 	title = 'Deanery of Windsor-Essex',
-	description = 'Welcome to the Deanery of Windsor-Essex, a community of Catholic parishes serving the faithful in Windsor-Essex County, Ontario.'
+	description = 'Welcome to the Deanery of Windsor-Essex, a community of Catholic parishes serving the faithful in Windsor-Essex County, Ontario.',
+	structuredData = [],
 } = Astro.props;
+
+const siteUrl = getSiteUrl(Astro.site);
+const canonicalUrl = getCanonicalUrl(Astro.url.pathname, siteUrl);
+const socialImageUrl = getSocialImageUrl(siteUrl);
+const pageStructuredData = Array.isArray(structuredData) ? structuredData : [structuredData];
+const jsonLd = [
+	...getBaseStructuredData(description, siteUrl),
+	...pageStructuredData,
+];
 ---
 <!doctype html>
 <html lang="en">
@@ -22,7 +40,9 @@ const {
 		<link rel="icon" type="image/png" href="/wedeanery-icon.png" />
 		<link rel="manifest" href="/manifest.json" />
 		<link rel="apple-touch-icon" href="/wedeanery-icon.png" />
+		<link rel="canonical" href={canonicalUrl.href} />
 		<meta name="theme-color" content="#2563eb" />
+		<meta name="mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
 		<meta name="apple-mobile-web-app-title" content="WE Deanery" />
@@ -35,7 +55,21 @@ const {
 		<meta property="og:site_name" content="Deanery of Windsor-Essex" />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalUrl.href} />
+		<meta property="og:image" content={socialImageUrl.href} />
+		<meta property="og:image:alt" content="Deanery of Windsor-Essex" />
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image:width" content="2458" />
+		<meta property="og:image:height" content="761" />
+		<meta property="og:locale" content="en_CA" />
 		<meta property="og:type" content="website" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={socialImageUrl.href} />
+		<meta name="twitter:image:alt" content="Deanery of Windsor-Essex" />
+
+		<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 
 		<script>
 			(function () {
