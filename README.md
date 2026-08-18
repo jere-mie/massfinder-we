@@ -1,16 +1,18 @@
-# WE Catholic Mass List
+# Windsor-Essex Deanery
 
-Find Catholic Mass times, confession schedules, and adoration times for churches in Windsor-Essex County, Ontario.
+The official website for the Windsor-Essex Deanery, serving the Catholic parishes and communities of Windsor-Essex County, Ontario. The site brings together parish information, worship schedules, and local Catholic events in one place.
 
 🌐 **Live Site**: [www.wedeanery.ca](https://www.wedeanery.ca)
 
 ## Features
 
-- **Interactive Map**: View all churches on an interactive Leaflet map with detailed popups
-- **Filterable Tables**: Browse mass times, daily masses, confession, and adoration schedules
-- **Smart Filtering**: Filter by day, time range, and event type
-- **Responsive Design**: Works seamlessly on desktop and mobile devices
-- **Accessibility**: ARIA labels and keyboard navigation support
+- **Mass Finder**: Find Sunday and daily Mass times, confession schedules, and adoration times across the Deanery.
+- **Parish Directory**: Explore the parishes and Families of Parishes that make up the Windsor-Essex Deanery.
+- **Local Events**: Browse upcoming Catholic parish events, community gatherings, fundraisers, educational programs, and special liturgies.
+- **Interactive Map**: View churches across Windsor-Essex on an interactive Leaflet map with detailed location popups.
+- **Schedule Filters**: Filter worship schedules by day, time range, and schedule type.
+- **Parish Details**: View parish addresses, contact information, websites, office hours, and available schedules.
+- **Responsive Design**: Works seamlessly on desktop and mobile devices.
 
 ## Tech Stack
 
@@ -103,8 +105,8 @@ See [LICENSE](LICENSE) file for details.
 
 ## Questions or Issues?
 
-- Open an issue on GitHub
-- Contact: [Jeremie Bornais](https://github.com/jere-mie)
+- Open an issue on GitHub.
+- Contact: [Jeremie Bornais](https://github.com/jere-mie) or [Justin Bornais](https://github.com/justinbornais).
 
 ## Acknowledgments
 
