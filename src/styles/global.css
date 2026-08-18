@@ -469,20 +469,36 @@
 
   .calendar-container .fc .fc-daygrid-event {
     margin-top: 0;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
     font-size: 0.65rem;
     line-height: 1.1;
   }
 
   .calendar-container .fc .fc-daygrid-event .fc-event-main {
+    box-sizing: border-box;
+    max-width: 100%;
     padding: 0.08rem 0.15rem;
     min-width: 0;
+    overflow: hidden;
     white-space: normal;
   }
 
+  .calendar-container .fc .fc-daygrid-event .fc-event-main-frame,
+  .calendar-container .fc .fc-daygrid-event .fc-event-title-container {
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+  }
+
   .calendar-container .fc .fc-daygrid-event .fc-event-title {
+    box-sizing: border-box;
     display: -webkit-box;
     overflow: hidden;
     overflow-wrap: anywhere;
+    max-width: 100%;
+    width: 100%;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     white-space: normal;
