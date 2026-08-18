@@ -218,7 +218,7 @@ export function CalendarView({ churches }: Props) {
           moreLinkText="More"
           noEventsText="No Events"
           height="100%"
-          expandRows={false}
+          expandRows={isMobile}
           slotMinTime="06:00:00"
           slotMaxTime="23:00:00"
           slotDuration="00:30:00"
