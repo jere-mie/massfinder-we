@@ -1,5 +1,24 @@
 [
   {
+    "title": "Blessed Michael McGivney Feast Day Prayer Service",
+    "description": "Feast day prayer service with Knights honour guard and procession.",
+    "church_id": null,
+    "church_name": null,
+    "family_of_parishes": "South Windsor Catholic Family of Parishes",
+    "date": "2026-08-13",
+    "start_time": "1900",
+    "end_time": null,
+    "location": "McGivney Statue Site, Heavenly Rest Cemetery",
+    "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/8/WLSC%20Weekly%20Bulletin%20August%209%20and%2016%202026.pdf?t=1786044028000",
+    "source_bulletin_date": "2026-08-09",
+    "tags": [
+      "devotion",
+      "liturgy"
+    ],
+    "id": "m6g2026a",
+    "extracted_at": "2026-08-19T00:00:00+00:00"
+  },
+  {
     "title": "Mission to Ghana Benefit Fish Fry",
     "description": "Perch and pickerel dinner fundraiser supporting water wells, mosquito nets and school renovations.",
     "church_id": null,
