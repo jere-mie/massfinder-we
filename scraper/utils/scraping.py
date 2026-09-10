@@ -25,10 +25,11 @@ def load_churches_json(churches_path):
         return json.load(f)
 
 
-def get_bulletin_links(churches):
+def get_bulletin_links(churches, limit=1):
     """
     Scrape all bulletin websites and extract PDF links.
-    Returns a dict mapping bulletin_website -> pdf_link
+    Returns a dict mapping bulletin_website -> PDF link or list of PDF links.
+    A limit greater than one returns the newest links in page order.
     """
     logger.info(f"Scraping bulletin links for {len(churches)} churches")
     
@@ -51,7 +52,7 @@ def get_bulletin_links(churches):
             continue
         
         # Try to scrape with retries
-        pdf_link = scrape_bulletin_with_retry(church_name, bulletin_website)
+        pdf_link = scrape_bulletin_with_retry(church_name, bulletin_website, limit=limit)
         
         if pdf_link:
             website_cache[bulletin_website] = pdf_link
@@ -69,14 +70,14 @@ def get_bulletin_links(churches):
     return website_cache
 
 
-def scrape_bulletin_with_retry(church_name, bulletin_website):
+def scrape_bulletin_with_retry(church_name, bulletin_website, limit=1):
     """
     Scrape a bulletin website with retry logic.
-    Returns PDF link or None if all retries fail.
+    Returns PDF link(s) or None if all retries fail.
     """
     for attempt in range(MAX_RETRIES):
         try:
-            pdf_link = scrape_bulletin(bulletin_website)
+            pdf_link = scrape_bulletin(bulletin_website, limit=limit)
             if pdf_link:
                 return pdf_link
             
@@ -99,11 +100,11 @@ def scrape_bulletin_with_retry(church_name, bulletin_website):
     return None
 
 
-def scrape_bulletin(bulletin_website):
+def scrape_bulletin(bulletin_website, limit=1):
     """
     Scrape a single bulletin website and extract PDF link.
     Uses cloudscraper to bypass Cloudflare.
-    Returns the preferred PDF link or None.
+    Returns the preferred PDF link, or up to ``limit`` links when requested.
     """
     # Create scraper with explicit browser headers to mimic legitimate traffic
     scraper = cloudscraper.create_scraper()
@@ -142,9 +143,16 @@ def scrape_bulletin(bulletin_website):
             else:
                 other_pdfs.append(absolute_url)
     
-    # Prioritize preferred domains
+    # Prioritize preferred domains while preserving the page's newest-first order.
     all_pdfs = preferred_pdfs + other_pdfs
-    return all_pdfs[0] if all_pdfs else None
+    if not all_pdfs:
+        return None
+
+    # Remove duplicate URLs that can occur when a bulletin is linked more than once.
+    unique_pdfs = list(dict.fromkeys(all_pdfs))
+    if limit <= 1:
+        return unique_pdfs[0]
+    return unique_pdfs[:limit]
 
 
 def download_pdf(pdf_url, output_path):
@@ -178,14 +186,21 @@ def download_all_pdfs(website_cache, output_dir):
     os.makedirs(output_dir, exist_ok=True)
     downloaded = []
     
-    for idx, (website, pdf_link) in enumerate(website_cache.items(), 1):
-        if not pdf_link:
+    file_idx = 1
+    for website, pdf_links in website_cache.items():
+        if not pdf_links:
             logger.debug(f"Skipping {website}: No PDF link")
             continue
-        
-        output_path = os.path.join(output_dir, f'bulletin_{idx}.pdf')
-        if download_pdf(pdf_link, output_path):
-            downloaded.append((website, pdf_link, output_path))
+
+        # Preserve compatibility with the original single-link cache format.
+        if isinstance(pdf_links, str):
+            pdf_links = [pdf_links]
+
+        for bulletin_idx, pdf_link in enumerate(pdf_links, 1):
+            output_path = os.path.join(output_dir, f'bulletin_{file_idx:03d}_{bulletin_idx}.pdf')
+            if download_pdf(pdf_link, output_path):
+                downloaded.append((website, pdf_link, output_path))
+                file_idx += 1
     
     logger.info(f"Downloaded {len(downloaded)} bulletins")
     return downloaded
