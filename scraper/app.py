@@ -159,6 +159,17 @@ def main():
         help='Number of parallel workers for LLM analysis (default: 10)'
     )
     parser.add_argument(
+        '--bulletins-per-site',
+        type=int,
+        default=1,
+        help='Number of newest bulletin PDFs to download per bulletin site (default: 1)'
+    )
+    parser.add_argument(
+        '--download-only',
+        action='store_true',
+        help='Scrape and download bulletin PDFs, then exit without LLM analysis or JSON changes'
+    )
+    parser.add_argument(
         '--model',
         default=None,
         help='LLM model to use (overrides default in llm.py)'
@@ -223,7 +234,7 @@ def main():
     
     # Step 2: Scrape bulletin links with caching
     try:
-        website_cache = scraping.get_bulletin_links(churches)
+        website_cache = scraping.get_bulletin_links(churches, limit=args.bulletins_per_site)
     except Exception as e:
         logger.error(f"Failed to scrape bulletin links: {e}")
         return 1
@@ -238,6 +249,10 @@ def main():
     
     if not downloaded:
         logger.warning("No bulletins downloaded. Exiting.")
+        return 0
+
+    if args.download_only:
+        logger.info("Download-only mode complete; no PDF extraction or JSON updates were run.")
         return 0
     
     # Branch based on mode
