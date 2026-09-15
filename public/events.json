@@ -11820,5 +11820,99 @@
     ],
     "extracted_at": "2026-09-14T00:00:00-04:00",
     "id": "02grief9"
+  },
+  {
+    "title": "Into the Breach",
+    "description": "Catholic video series for men exploring the faith and the crisis facing the Church; begins with Mass at 6:00 PM.",
+    "church_id": "st-anthony-of-padua-harrow",
+    "church_name": "St. Anthony of Padua",
+    "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+    "date": "2026-09-22",
+    "start_time": "1800",
+    "end_time": null,
+    "location": "St. Anthony of Padua Church, Harrow",
+    "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20260913.pdf",
+    "source_bulletin_date": "2026-09-13",
+    "tags": [
+      "faith_formation",
+      "meeting"
+    ],
+    "id": "02breach9",
+    "extracted_at": "2026-09-14T00:00:00-04:00"
+  },
+  {
+    "title": "Immaculate Heart CWL Indoor Yard Sale",
+    "description": "Indoor yard sale hosted by the Immaculate Heart CWL.",
+    "church_id": "immaculate-heart-windsor",
+    "church_name": "St. Michael",
+    "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+    "date": "2026-09-26",
+    "start_time": "0900",
+    "end_time": "1200",
+    "location": "St. Michael's Church, 2153 Parkwood Ave.",
+    "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20260913.pdf",
+    "source_bulletin_date": "2026-09-13",
+    "tags": [
+      "fundraiser",
+      "social"
+    ],
+    "id": "02yardsale",
+    "extracted_at": "2026-09-14T00:00:00-04:00"
+  },
+  {
+    "title": "Mother Teresa K of C Bottle Drive",
+    "description": "Bottle drive fundraiser hosted by the Mother Teresa Knights of Columbus Council.",
+    "church_id": "our-lady-of-perpetual-help-windsor",
+    "church_name": "Our Lady of Perpetual Help",
+    "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+    "date": "2026-09-27",
+    "start_time": "1000",
+    "end_time": "1600",
+    "location": "OLPH Church parking lot, 804 Grand Marais Rd. E.",
+    "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20260913.pdf",
+    "source_bulletin_date": "2026-09-13",
+    "tags": [
+      "fundraiser",
+      "outreach"
+    ],
+    "id": "02bottle9",
+    "extracted_at": "2026-09-14T00:00:00-04:00"
+  },
+  {
+    "title": "OLPH Bingo",
+    "description": "Assigned parish bingo session supporting Our Lady of Perpetual Help.",
+    "church_id": "our-lady-of-perpetual-help-windsor",
+    "church_name": "Our Lady of Perpetual Help",
+    "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+    "date": "2026-10-03",
+    "start_time": "1600",
+    "end_time": "1800",
+    "location": "All Star Gaming Centre",
+    "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20260913.pdf",
+    "source_bulletin_date": "2026-09-13",
+    "tags": [
+      "fundraiser"
+    ],
+    "id": "02olphbin",
+    "extracted_at": "2026-09-14T00:00:00-04:00"
+  },
+  {
+    "title": "OLA Tea & Bingo Social",
+    "description": "Tea and bingo social with a free-will offering.",
+    "church_id": "our-lady-of-the-atonement-windsor",
+    "church_name": "Our Lady of the Atonement",
+    "family_of_parishes": "East Windsor Catholic Family of Parishes",
+    "date": "2026-09-26",
+    "start_time": "1300",
+    "end_time": "1600",
+    "location": "Atonement Family Centre",
+    "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/September 13 2026.pdf",
+    "source_bulletin_date": "2026-09-13",
+    "tags": [
+      "social",
+      "fundraiser"
+    ],
+    "id": "02olateab",
+    "extracted_at": "2026-09-14T00:00:00-04:00"
   }
 ]
