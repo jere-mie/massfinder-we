@@ -8911,40 +8911,40 @@
   },
   {
     "title": "Journey Through the Catechism Begins",
-    "description": "First Monday of a six-week catechism series led by Seminarian Adam Rivard.",
-    "church_id": null,
-    "church_name": null,
+    "description": "First Monday of a six-week catechism series; registration is required.",
+    "church_id": "st-michaels-leamington",
+    "church_name": "St. Michael's",
     "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
     "date": "2026-09-14",
-    "start_time": null,
-    "end_time": null,
-    "location": null,
-    "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/August 16 2026.pdf",
-    "source_bulletin_date": "2026-08-16",
+    "start_time": "1800",
+    "end_time": "2000",
+    "location": "St. Michael's Parish Hall",
+    "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/September 13 2026.pdf",
+    "source_bulletin_date": "2026-09-13",
     "tags": [
       "faith_formation"
     ],
     "id": "58984205",
-    "extracted_at": "2026-08-14T12:00:00-04:00"
+    "extracted_at": "2026-09-14T00:00:00-04:00"
   },
   {
     "title": "GriefShare Fall Program Begins",
-    "description": "GriefShare begins during the week of September 23-24.",
-    "church_id": null,
-    "church_name": null,
+    "description": "GriefShare’s 13-week program begins Wednesday, September 23; participants may attend either the Wednesday or Thursday session.",
+    "church_id": "st-john-de-brebeuf-kingsville",
+    "church_name": "St. John de Brébeuf",
     "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
     "date": "2026-09-23",
-    "start_time": null,
-    "end_time": null,
-    "location": null,
-    "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/August 16 2026.pdf",
-    "source_bulletin_date": "2026-08-16",
+    "start_time": "1000",
+    "end_time": "1200",
+    "location": "St. John de Brébeuf Church",
+    "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/September 13 2026.pdf",
+    "source_bulletin_date": "2026-09-13",
     "tags": [
       "outreach",
       "faith_formation"
     ],
     "id": "0be75037",
-    "extracted_at": "2026-08-14T12:00:00-04:00"
+    "extracted_at": "2026-09-14T00:00:00-04:00"
   },
   {
     "title": "St. Michael's Festival: Pasta Dinner",
@@ -8956,13 +8956,13 @@
     "start_time": null,
     "end_time": null,
     "location": "St. Michael Parish / Roma Club",
-    "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/August 16 2026.pdf",
-    "source_bulletin_date": "2026-08-16",
+    "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/September 13 2026.pdf",
+    "source_bulletin_date": "2026-09-13",
     "tags": [
       "social"
     ],
     "id": "3ad36b7e",
-    "extracted_at": "2026-08-14T12:00:00-04:00"
+    "extracted_at": "2026-09-14T00:00:00-04:00"
   },
   {
     "title": "St. Michael's Festival: Banquet & Live Music",
@@ -8974,14 +8974,14 @@
     "start_time": null,
     "end_time": null,
     "location": "St. Michael Parish / Roma Club",
-    "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/August 16 2026.pdf",
-    "source_bulletin_date": "2026-08-16",
+    "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/September 13 2026.pdf",
+    "source_bulletin_date": "2026-09-13",
     "tags": [
       "social",
       "music_arts"
     ],
     "id": "824a8492",
-    "extracted_at": "2026-08-14T12:00:00-04:00"
+    "extracted_at": "2026-09-14T00:00:00-04:00"
   },
   {
     "title": "10th Annual Catholic Women's Conference",
@@ -9011,14 +9011,14 @@
     "start_time": null,
     "end_time": null,
     "location": "St. Michael Parish",
-    "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/August 16 2026.pdf",
-    "source_bulletin_date": "2026-08-16",
+    "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/September 13 2026.pdf",
+    "source_bulletin_date": "2026-09-13",
     "tags": [
       "social",
       "liturgy"
     ],
     "id": "598b1ba9",
-    "extracted_at": "2026-08-14T12:00:00-04:00"
+    "extracted_at": "2026-09-14T00:00:00-04:00"
   },
   {
     "title": "Eucharistic Adoration at St. Joseph",
@@ -9308,16 +9308,16 @@
     "church_name": "All three Windsor Heritage parish sites",
     "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
     "date": "2026-10-03",
-    "start_time": null,
+    "start_time": "1100",
     "end_time": null,
     "location": "All three Windsor Heritage parish sites",
-    "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/August 30 2026.pdf",
-    "source_bulletin_date": "2026-08-30",
+    "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/September 13 2026.pdf",
+    "source_bulletin_date": "2026-09-13",
     "tags": [
       "devotion"
     ],
     "id": "7e5695cd",
-    "extracted_at": "2026-09-09T00:00:00-04:00"
+    "extracted_at": "2026-09-14T00:00:00-04:00"
   },
   {
     "title": "Trunk or Treat",
@@ -10131,7 +10131,7 @@
   },
   {
     "title": "Rose City Central Family Picnic",
-    "description": "Family picnic and parish activities.",
+    "description": "Parish picnic sponsored by the Mother Teresa Knights of Columbus council and the OLPH CWL council.",
     "church_id": "our-lady-of-perpetual-help-windsor",
     "church_name": "Our Lady of Perpetual Help",
     "family_of_parishes": "Rose City Central Catholic Family of Parishes",
@@ -10142,9 +10142,9 @@
     "tags": [
       "social"
     ],
-    "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20260830.pdf?t=1787936884000",
-    "source_bulletin_date": "2026-08-30",
-    "extracted_at": "2026-09-09T00:00:00-04:00",
+    "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20260913.pdf",
+    "source_bulletin_date": "2026-09-13",
+    "extracted_at": "2026-09-14T00:00:00-04:00",
     "id": "00qm2g4u"
   },
   {
@@ -10930,10 +10930,10 @@
   },
   {
     "title": "Christian Trivia Night",
-    "description": "Christian trivia night hosted by the Knights of Columbus.",
-    "church_id": null,
-    "church_name": "Most Precious Blood Church Hall",
-    "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+    "description": "Christian trivia night hosted by the Most Precious Blood Knights of Columbus; teams of up to 8, $10 per person.",
+    "church_id": "most-precious-blood-windsor",
+    "church_name": "Most Precious Blood",
+    "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
     "date": "2026-10-03",
     "start_time": "1900",
     "end_time": null,
@@ -10942,9 +10942,9 @@
       "social",
       "fundraiser"
     ],
-    "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/9/WLSC%20Weekly%20Bulletin%20September%206%202026.pdf?t=1788536836000",
-    "source_bulletin_date": "2026-09-06",
-    "extracted_at": "2026-09-09T00:00:00-04:00",
+    "source_bulletin_link": "https://files.ecatholic.com/21202/bulletins/20260913.pdf",
+    "source_bulletin_date": "2026-09-13",
+    "extracted_at": "2026-09-14T00:00:00-04:00",
     "id": "00ch7rt0"
   },
   {
@@ -11801,5 +11801,24 @@
     ],
     "extracted_at": "2026-09-14T00:00:00-04:00",
     "id": "00w7hz0j"
+  },
+  {
+    "title": "GriefShare Fall Program Begins",
+    "description": "GriefShare’s 13-week program begins Thursday, September 24; participants may attend either the Wednesday or Thursday session.",
+    "church_id": "st-michaels-leamington",
+    "church_name": "St. Michael's",
+    "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+    "date": "2026-09-24",
+    "start_time": "1830",
+    "end_time": "2030",
+    "location": "St. Michael's Church",
+    "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/September 13 2026.pdf",
+    "source_bulletin_date": "2026-09-13",
+    "tags": [
+      "outreach",
+      "faith_formation"
+    ],
+    "extracted_at": "2026-09-14T00:00:00-04:00",
+    "id": "02grief9"
   }
 ]
