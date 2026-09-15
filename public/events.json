@@ -10664,9 +10664,9 @@
       "liturgy",
       "outreach"
     ],
-    "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/September 6 2026.pdf",
-    "source_bulletin_date": "2026-09-06",
-    "extracted_at": "2026-09-09T00:00:00-04:00",
+    "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/September 13 2026.pdf",
+    "source_bulletin_date": "2026-09-13",
+    "extracted_at": "2026-09-14T00:00:00-04:00",
     "id": "01hg1wc7"
   },
   {
@@ -11913,6 +11913,100 @@
       "fundraiser"
     ],
     "id": "02olateab",
+    "extracted_at": "2026-09-14T00:00:00-04:00"
+  },
+  {
+    "title": "Exaltation of the Holy Cross Mass",
+    "description": "Special Mass for the Feast of the Exaltation of the Holy Cross.",
+    "church_id": "st-john-vianney-windsor",
+    "church_name": "St. John Vianney",
+    "family_of_parishes": "East Windsor Catholic Family of Parishes",
+    "date": "2026-09-14",
+    "start_time": "1830",
+    "end_time": null,
+    "location": "St. John Vianney Church",
+    "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/September 13 2026.pdf",
+    "source_bulletin_date": "2026-09-13",
+    "tags": [
+      "liturgy"
+    ],
+    "id": "02exalt8",
+    "extracted_at": "2026-09-14T00:00:00-04:00"
+  },
+  {
+    "title": "Our Lady of Sorrows Mass",
+    "description": "Annual Mass for victims and survivors of clergy sexual abuse and for healing of parish communities.",
+    "church_id": "st-john-vianney-windsor",
+    "church_name": "St. John Vianney",
+    "family_of_parishes": "East Windsor Catholic Family of Parishes",
+    "date": "2026-09-15",
+    "start_time": "1830",
+    "end_time": null,
+    "location": "St. John Vianney Church",
+    "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/September 13 2026.pdf",
+    "source_bulletin_date": "2026-09-13",
+    "tags": [
+      "liturgy",
+      "outreach"
+    ],
+    "id": "02sorrow8",
+    "extracted_at": "2026-09-14T00:00:00-04:00"
+  },
+  {
+    "title": "Nursing Home Mass (Riverside Place)",
+    "description": "Community outreach Mass at Riverside Place.",
+    "church_id": null,
+    "church_name": null,
+    "family_of_parishes": "East Windsor Catholic Family of Parishes",
+    "date": "2026-10-06",
+    "start_time": "1400",
+    "end_time": null,
+    "location": "Riverside Place",
+    "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/September 13 2026.pdf",
+    "source_bulletin_date": "2026-09-13",
+    "tags": [
+      "liturgy",
+      "outreach"
+    ],
+    "id": "02nurse6r",
+    "extracted_at": "2026-09-14T00:00:00-04:00"
+  },
+  {
+    "title": "Nursing Home Mass (Heron Terrace)",
+    "description": "Community outreach Mass at Heron Terrace.",
+    "church_id": null,
+    "church_name": null,
+    "family_of_parishes": "East Windsor Catholic Family of Parishes",
+    "date": "2026-10-13",
+    "start_time": "1400",
+    "end_time": null,
+    "location": "Heron Terrace",
+    "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/September 13 2026.pdf",
+    "source_bulletin_date": "2026-09-13",
+    "tags": [
+      "liturgy",
+      "outreach"
+    ],
+    "id": "02nurse1h",
+    "extracted_at": "2026-09-14T00:00:00-04:00"
+  },
+  {
+    "title": "South Windsor Youth Group Begins",
+    "description": "Youth group for Grades 2–8 begins with meetings every other Thursday.",
+    "church_id": "our-lady-of-mt-carmel-windsor",
+    "church_name": "Our Lady of Mount Carmel",
+    "family_of_parishes": "South Windsor Catholic Family of Parishes",
+    "date": "2026-10-08",
+    "start_time": "1830",
+    "end_time": "2000",
+    "location": "Our Lady of Mount Carmel Parish Hall",
+    "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20260913.pdf",
+    "source_bulletin_date": "2026-09-13",
+    "tags": [
+      "faith_formation",
+      "social"
+    ],
+    "id": "02swyouth",
     "extracted_at": "2026-09-14T00:00:00-04:00"
   }
 ]
