@@ -2,36 +2,10 @@
 Intentions utilities for extracting and managing Mass intentions from bulletins.
 """
 
-import json
 import logging
 from datetime import datetime
 
 logger = logging.getLogger(__name__)
-
-
-def load_intentions_json(intentions_path):
-    """
-    Load existing intentions from JSON file.
-    Returns empty list if file doesn't exist.
-    """
-    try:
-        with open(intentions_path, 'r', encoding='utf-8') as f:
-            intentions = json.load(f)
-            logger.info(f"Loaded {len(intentions)} existing intentions from {intentions_path}")
-            return intentions
-    except FileNotFoundError:
-        logger.info(f"No existing intentions file at {intentions_path}, starting fresh")
-        return []
-    except json.JSONDecodeError as e:
-        logger.error(f"Failed to parse intentions JSON: {e}")
-        return []
-
-
-def save_intentions_json(intentions, intentions_path):
-    """Save intentions to JSON file."""
-    with open(intentions_path, 'w', encoding='utf-8') as f:
-        json.dump(intentions, f, indent=4, ensure_ascii=False)
-    logger.info(f"Saved {len(intentions)} Mass intentions to {intentions_path}")
 
 
 def prepare_churches_context(churches_for_bulletin):

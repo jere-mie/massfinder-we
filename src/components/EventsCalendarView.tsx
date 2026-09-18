@@ -7,6 +7,7 @@ import listPlugin from '@fullcalendar/list';
 import timeGridPlugin from '@fullcalendar/timegrid';
 
 import type { Event, EventTag } from '../types/church';
+import { useEventsForMonth } from '../hooks/useEvents';
 import { useIsExtraLarge, useIsMobile } from '../hooks/useIsMobile';
 import { ALL_EVENT_TAGS } from '../types/church';
 import { createGoogleCalendarUrl, getEventDateRange } from '../utils/calendar';
@@ -169,8 +170,11 @@ function ColorLegend({ tags }: { tags: EventTag[] }) {
 }
 
 interface Props {
-  events: Event[];
   selectedTag: EventTag | null;
+  family?: string;
+  search?: string;
+  startDate?: string;
+  endDate?: string;
 }
 
 function getCalendarTag(event: Event, selectedTag: EventTag | null): EventTag {
@@ -178,9 +182,17 @@ function getCalendarTag(event: Event, selectedTag: EventTag | null): EventTag {
   return event.tags[0] ?? 'other';
 }
 
-export function EventsCalendarView({ events, selectedTag }: Props) {
+export function EventsCalendarView({ selectedTag, family, search, startDate, endDate }: Props) {
   const [selectedItem, setSelectedItem] = useState<EventCalendarItem | null>(null);
   const [date, setDate] = useState(() => new Date());
+  const month = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+  const { events, loading, error } = useEventsForMonth(month, {
+    family,
+    search,
+    tag: selectedTag ?? undefined,
+    startDate,
+    endDate,
+  });
   const isMobile = useIsMobile();
   const isExtraLarge = useIsExtraLarge();
   const eventMaxStack = isMobile ? 3 : isExtraLarge ? 5 : 4;
@@ -211,6 +223,8 @@ export function EventsCalendarView({ events, selectedTag }: Props) {
       <p className="calendar-help-text">
         Select an event for details. Use the day view for a focused schedule when dates are busy.
       </p>
+      {loading && <p className="text-sm text-gray-500 mb-3" aria-live="polite">Loading this month’s events…</p>}
+      {error && <p className="text-sm text-red-600 mb-3" role="alert">Error loading calendar events: {error}</p>}
       <div className="calendar-container events-calendar-container">
         <FullCalendar
           key={isMobile ? 'mobile' : 'desktop'}

@@ -1,16 +1,13 @@
-import fs from 'node:fs';
-import path from 'node:path';
 import type { APIRoute } from 'astro';
-import type { Church } from '../types/church';
+import { loadAllDataForBuild } from '../lib/databaseServer';
 import { getSiteUrl } from '../utils/seo';
 
 const escapeXml = (value: string) =>
   value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
 
-export const GET: APIRoute = ({ site }) => {
+export const GET: APIRoute = async ({ site }) => {
   const siteUrl = getSiteUrl(site);
-  const churchesPath = path.join(process.cwd(), 'public', 'churches.json');
-  const churches = JSON.parse(fs.readFileSync(churchesPath, 'utf-8')) as Church[];
+  const { churches } = await loadAllDataForBuild();
   const routes = [
     '/',
     '/parishes/',

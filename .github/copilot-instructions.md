@@ -26,7 +26,7 @@ App (src/components/App.tsx)
 
 ## Key Data Structures
 
-**Church object** (`public/churches.json`):
+**Church object** (assembled from `public/massfinder.db`):
 ```json
 {
   "name": "St. John the Baptist",
@@ -89,15 +89,15 @@ Leaflet requires browser APIs, so the App component must use `client:only="react
 - `src/components/Header.tsx` - Tab navigation
 - `src/components/MapView/` - Map components (MapView, FilterPanel, ChurchPopup)
 - `src/components/ListView/` - List components (ListView, DataTable, FilterCard)
-- `src/hooks/useChurches.ts` - Data fetching hook
+- `src/hooks/useChurches.ts` - SQLite data loading hook
 - `src/types/church.ts` - TypeScript interfaces
 - `src/utils/` - Utilities (formatting, filtering, constants)
 - `src/styles/global.css` - Tailwind imports + custom Leaflet popup styles
-- `public/churches.json` - **Single source of truth** for all church data
+- `public/massfinder.db` - **Single source of truth** for all church, event, and intention data
 
 ## Modifying Church Data
 
-When editing `public/churches.json`:
+When updating church data:
 - Maintain all required fields (arrays can be empty `[]` but must exist)
 - Coordinates: `[latitude, longitude]` format
 - Times: Always use `HHMM` 24-hour format strings
@@ -126,7 +126,7 @@ Static site hosted on GitHub Pages. The `CNAME` file defines the custom domain (
 
 ## Common Tasks
 
-**Add a new church**: Edit `public/churches.json`, add object with all required fields
+**Add a new church**: Update the SQLite database through the scraper/database utilities, preserving text UIDs
 **Change map center**: Edit `MAP_CENTER` in `src/utils/constants.ts`
 **Modify filter options**: Update `TIME_OPTIONS` or `DAYS_OF_WEEK` in `src/utils/constants.ts`
 **Style changes**: Use Tailwind classes or edit `src/styles/global.css`

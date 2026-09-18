@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { Church } from '../types/church';
+import { loadChurches } from '../lib/databaseClient';
 
 interface UseChurchesResult {
   churches: Church[];
@@ -16,24 +17,25 @@ export function useChurches(): UseChurchesResult {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('/churches.json')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-      })
+    let cancelled = false;
+    loadChurches()
       .then((data: Church[]) => {
+        if (cancelled) return;
         // Exclude churches explicitly marked as hidden
         const visible = Array.isArray(data) ? data.filter((c) => !c.hidden) : [];
         setChurches(visible);
         setLoading(false);
       })
       .catch((err) => {
-        console.error('Error fetching Church data:', err);
-        setError(err.message);
+        if (cancelled) return;
+        console.error('Error loading Church data from SQLite:', err);
+        setError(err instanceof Error ? err.message : String(err));
         setLoading(false);
       });
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   return { churches, loading, error };

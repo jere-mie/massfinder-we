@@ -64,7 +64,9 @@ npm run preview  # Preview the build locally
 
 ### Adding a New Church
 
-Edit `public/churches.json` and ensure the correct structure is followed.
+Church data is stored in the normalized SQLite database at `public/massfinder.db`.
+The frontend queries that database directly in the browser through SQLite WASM.
+Use the scraper or the migration tooling to update data rather than editing the binary database by hand.
 
 **Important conventions:**
 - All arrays are **required** (use empty `[]` if none)

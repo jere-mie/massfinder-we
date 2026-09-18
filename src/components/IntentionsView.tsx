@@ -1,10 +1,12 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import { useIntentions } from '../hooks/useIntentions';
+import { useDebouncedValue } from '../hooks/useDebouncedValue';
 import { useChurches } from '../hooks/useChurches';
+import { loadIntentionChurchIds } from '../lib/databaseClient';
 import { formatTime } from '../utils/formatting';
 import { createGoogleCalendarUrl } from '../utils/calendar';
-import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
-import type { MassIntention, Church } from '../types/church';
+import { ArrowTopRightOnSquareIcon, ArrowUpIcon } from '@heroicons/react/24/outline';
+import type { MassIntention } from '../types/church';
 
 /**
  * Format a date string to a readable format
@@ -48,12 +50,12 @@ function flattenIntentions(
   churchMap: Map<string, string>,
 ): FlatIntention[] {
   const flat: FlatIntention[] = [];
-  for (const [massIndex, mass] of intentions.entries()) {
+  for (const mass of intentions) {
     const churchName = churchMap.get(mass.church_id) || mass.church_id;
     const isPast = isDatePast(mass.date);
     for (const [intentionIndex, intention] of mass.intentions.entries()) {
       flat.push({
-        rowKey: `${mass.church_id}-${mass.date}-${mass.time}-${massIndex}-${intentionIndex}`,
+        rowKey: `${mass.uid}-${intentionIndex}`,
         churchId: mass.church_id,
         churchName,
         date: mass.date,
@@ -71,11 +73,27 @@ function flattenIntentions(
  * IntentionsView - searchable view of Mass intentions
  */
 export function IntentionsView() {
-  const { intentions, loading, error } = useIntentions();
-  const { churches, loading: churchesLoading, error: churchesError } = useChurches();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedChurch, setSelectedChurch] = useState('all');
-  const [hidePast, setHidePast] = useState(true);
+  const [intentionChurchIds, setIntentionChurchIds] = useState<string[]>([]);
+  const futureSentinelRef = useRef<HTMLDivElement>(null);
+  const debouncedSearchQuery = useDebouncedValue(searchQuery);
+  const {
+    intentions,
+    loading,
+    loadingMore,
+    error,
+    loadMoreError,
+    loadMoreFuture,
+    loadMorePast,
+    hasMoreFuture,
+    hasMorePast,
+    searchTooShort,
+  } = useIntentions({
+    churchId: selectedChurch === 'all' ? undefined : selectedChurch,
+    search: debouncedSearchQuery,
+  });
+  const { churches, loading: churchesLoading, error: churchesError } = useChurches();
 
   // Read filters from URL on mount
   useEffect(() => {
@@ -83,11 +101,9 @@ export function IntentionsView() {
       const params = new URLSearchParams(window.location.search);
       const s = params.get('search') || '';
       const church = params.get('church') || 'all';
-      const hide = params.get('hidePast');
 
       setSearchQuery(s);
       setSelectedChurch(church);
-      setHidePast(hide === null ? true : hide === '1' || hide === 'true');
     } catch (e) {
       // ignore
     }
@@ -99,14 +115,26 @@ export function IntentionsView() {
       const params = new URLSearchParams();
       if (searchQuery) params.set('search', searchQuery);
       if (selectedChurch && selectedChurch !== 'all') params.set('church', selectedChurch);
-      if (hidePast) params.set('hidePast', '1');
-      const qs = params.toString();
+       const qs = params.toString();
       const newUrl = window.location.pathname + (qs ? `?${qs}` : '');
       window.history.replaceState(null, '', newUrl);
     } catch (e) {
       // ignore
     }
-  }, [searchQuery, selectedChurch, hidePast]);
+  }, [searchQuery, selectedChurch]);
+
+  useEffect(() => {
+    let cancelled = false;
+    loadIntentionChurchIds()
+      .then((churchIds) => {
+        if (!cancelled) setIntentionChurchIds(churchIds);
+      })
+      .catch((reason: unknown) => console.error('Error loading intention parishes:', reason));
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   useEffect(() => {
     if (churchesError) {
@@ -114,6 +142,21 @@ export function IntentionsView() {
       console.error('Failed to load churches data in IntentionsView:', churchesError);
     }
   }, [churchesError]);
+
+  useEffect(() => {
+    if (!hasMoreFuture || loadingMore) return;
+    const sentinel = futureSentinelRef.current;
+    if (!sentinel) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) loadMoreFuture();
+      },
+      { rootMargin: '600px 0px' },
+    );
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, [hasMoreFuture, loadMoreFuture, loadingMore]);
 
   // Build church id -> name map
   const churchMap = useMemo(() => {
@@ -126,16 +169,12 @@ export function IntentionsView() {
 
   // Get unique church IDs that have intentions
   const churchOptions = useMemo(() => {
-    const ids = new Set<string>();
-    for (const mass of intentions) {
-      ids.add(mass.church_id);
-    }
-    return Array.from(ids).sort((a, b) => {
+    return intentionChurchIds.slice().sort((a, b) => {
       const nameA = churchMap.get(a) || a;
       const nameB = churchMap.get(b) || b;
       return nameA.localeCompare(nameB);
     });
-  }, [intentions, churchMap]);
+  }, [churchMap, intentionChurchIds]);
 
   // Pre-flatten intentions; depends only on base data, not UI filters
   const allIntentions = useMemo(
@@ -144,41 +183,7 @@ export function IntentionsView() {
   );
 
   // Flatten and filter intentions
-  const filteredIntentions = useMemo(() => {
-    // Start from pre-flattened intentions; copy before in-place sorting
-    let flat = allIntentions.slice();
-
-    // Filter by church
-    if (selectedChurch !== 'all') {
-      flat = flat.filter((i) => i.churchId === selectedChurch);
-    }
-
-    // Filter past
-    if (hidePast) {
-      flat = flat.filter((i) => !i.isPast);
-    }
-
-    // Search filter
-    if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase().trim();
-      flat = flat.filter(
-        (i) =>
-          i.intentionFor.toLowerCase().includes(q) ||
-          (i.intentionBy && i.intentionBy.toLowerCase().includes(q)) ||
-          i.churchName.toLowerCase().includes(q),
-      );
-    }
-
-    // Sort: upcoming first (by date asc, then time asc)
-    flat.sort((a, b) => {
-      const dateA = new Date(a.date).getTime();
-      const dateB = new Date(b.date).getTime();
-      if (dateA !== dateB) return dateA - dateB;
-      return a.time.localeCompare(b.time);
-    });
-
-    return flat;
-  }, [allIntentions, searchQuery, selectedChurch, hidePast]);
+  const filteredIntentions = allIntentions;
 
   if (loading || churchesLoading) {
     return (
@@ -211,7 +216,7 @@ export function IntentionsView() {
     );
   }
 
-  if (intentions.length === 0) {
+  if (intentions.length === 0 && !hasMoreFuture && !hasMorePast) {
     return (
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center my-12">
@@ -285,11 +290,15 @@ export function IntentionsView() {
                 id="intention-search"
                 type="text"
                 placeholder="Search by name, intention, or parish..."
+                maxLength={100}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg text-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
+            {searchTooShort && (
+              <p className="mt-1 text-xs text-gray-500">Enter at least 2 characters to search.</p>
+            )}
           </div>
 
           {/* Church filter */}
@@ -312,18 +321,6 @@ export function IntentionsView() {
             </select>
           </div>
 
-          {/* Hide past toggle */}
-          <div className="flex items-center">
-            <label className="flex items-center gap-2 text-sm text-gray-600 cursor-pointer select-none">
-              <input
-                type="checkbox"
-                checked={hidePast}
-                onChange={(e) => setHidePast(e.target.checked)}
-                className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-              />
-              Hide past
-            </label>
-          </div>
         </div>
       </div>
 
@@ -331,8 +328,23 @@ export function IntentionsView() {
       <p className="text-sm text-gray-500 mb-4">
         {filteredIntentions.length === 0
           ? 'No intentions match your search'
-          : `Showing ${filteredIntentions.length} intention${filteredIntentions.length !== 1 ? 's' : ''}`}
+          : `Showing ${filteredIntentions.length} loaded intention${filteredIntentions.length !== 1 ? 's' : ''}`}
       </p>
+
+      {hasMorePast && (
+        <div className="flex justify-center mb-5">
+          <button
+            type="button"
+            onClick={loadMorePast}
+            disabled={loadingMore}
+            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-700 bg-blue-50 rounded-lg hover:bg-blue-100 disabled:opacity-50 disabled:cursor-wait"
+            aria-label="Load earlier Mass intentions"
+          >
+            <ArrowUpIcon className="w-4 h-4" aria-hidden="true" />
+            Load earlier intentions
+          </button>
+        </div>
+      )}
 
       {/* Results table */}
       {filteredIntentions.length > 0 && (
@@ -422,6 +434,9 @@ export function IntentionsView() {
           </div>
         </div>
       )}
+      {hasMoreFuture && <div ref={futureSentinelRef} className="h-8" aria-hidden="true" />}
+      {loadingMore && <p className="text-center text-sm text-gray-500 py-4" aria-live="polite">Loading more intentions…</p>}
+      {loadMoreError && <p className="text-center text-sm text-red-600 py-4" role="alert">{loadMoreError}</p>}
     </div>
   );
 }

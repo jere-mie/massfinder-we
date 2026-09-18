@@ -2,7 +2,6 @@
 Events utilities for extracting and managing parish events from bulletins.
 """
 
-import json
 import random
 import string
 import logging
@@ -18,31 +17,6 @@ def generate_event_id():
     """
     chars = string.digits + string.ascii_lowercase
     return ''.join(random.choice(chars) for _ in range(8))
-
-
-def load_events_json(events_path):
-    """
-    Load existing events from JSON file.
-    Returns empty list if file doesn't exist.
-    """
-    try:
-        with open(events_path, 'r', encoding='utf-8') as f:
-            events = json.load(f)
-            logger.info(f"Loaded {len(events)} existing events from {events_path}")
-            return events
-    except FileNotFoundError:
-        logger.info(f"No existing events file at {events_path}, starting fresh")
-        return []
-    except json.JSONDecodeError as e:
-        logger.error(f"Failed to parse events JSON: {e}")
-        return []
-
-
-def save_events_json(events, events_path):
-    """Save events to JSON file."""
-    with open(events_path, 'w', encoding='utf-8') as f:
-        json.dump(events, f, indent=4, ensure_ascii=False)
-    logger.info(f"Saved {len(events)} events to {events_path}")
 
 
 def filter_events_for_family(events, family_of_parishes):

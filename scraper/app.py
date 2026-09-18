@@ -15,7 +15,6 @@ When the --output argument is not provided, the default output filenames are:
 import logging
 import os
 import sys
-import json
 import argparse
 from pathlib import Path
 from datetime import datetime
@@ -24,6 +23,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Import utilities
 from utils import scraping, llm, events, intentions
+from utils.database import load_churches, load_events, load_intentions, open_database, replace_churches, replace_events, replace_intentions
 from utils.logging_config import setup_logging
 
 
@@ -138,19 +138,9 @@ def main():
         help='Output markdown file (default: bulletins_analysis.md for mass, events_analysis.md for events)'
     )
     parser.add_argument(
-        '--churches-path',
-        default='../public/churches.json',
-        help='Path to churches.json (default: ../public/churches.json)'
-    )
-    parser.add_argument(
-        '--events-path',
-        default='../public/events.json',
-        help='Path to events.json (default: ../public/events.json)'
-    )
-    parser.add_argument(
-        '--intentions-path',
-        default='../public/intentions.json',
-        help='Path to intentions.json (default: ../public/intentions.json)'
+        '--database-path',
+        default='../public/massfinder.db',
+        help='Path to the SQLite database (default: ../public/massfinder.db)'
     )
     parser.add_argument(
         '--workers',
@@ -167,7 +157,7 @@ def main():
     parser.add_argument(
         '--download-only',
         action='store_true',
-        help='Scrape and download bulletin PDFs, then exit without LLM analysis or JSON changes'
+        help='Scrape and download bulletin PDFs, then exit without LLM analysis or database changes'
     )
     parser.add_argument(
         '--model',
@@ -175,9 +165,10 @@ def main():
         help='LLM model to use (overrides default in llm.py)'
     )
     parser.add_argument(
-        '--modify-json',
+        '--modify-db', '--modify-json',
+        dest='modify_db',
         action='store_true',
-        help='Apply LLM suggestions to update churches.json or events.json'
+        help='Apply LLM suggestions to update the SQLite database (the --modify-json alias is retained for workflow compatibility)'
     )
     parser.add_argument(
         '--no-images',
@@ -201,9 +192,7 @@ def main():
     
     # Resolve paths
     script_dir = Path(__file__).parent
-    churches_path = script_dir / args.churches_path
-    events_path = script_dir / args.events_path
-    intentions_path = script_dir / args.intentions_path
+    database_path = script_dir / args.database_path
     bulletins_dir = script_dir / 'bulletins'
     
     # Set default output path based on mode
@@ -217,19 +206,13 @@ def main():
         }
         output_path = script_dir / default_outputs[args.mode]
     
-    # Verify churches.json exists
-    if not churches_path.exists():
-        logger.error(f"churches.json not found at {churches_path}")
-        return 1
-    
-    logger.info(f"Using churches.json from {churches_path}")
-    
-    # Step 1: Load churches data
+    # Step 1: Open the SQLite database and load churches data
     try:
-        churches = scraping.load_churches_json(str(churches_path))
+        database = open_database(database_path)
+        churches = load_churches(database)
         logger.info(f"Loaded {len(churches)} churches")
     except Exception as e:
-        logger.error(f"Failed to load churches: {e}")
+        logger.error(f"Failed to open/load SQLite database: {e}")
         return 1
     
     # Step 2: Scrape bulletin links with caching
@@ -237,6 +220,7 @@ def main():
         website_cache = scraping.get_bulletin_links(churches, limit=args.bulletins_per_site)
     except Exception as e:
         logger.error(f"Failed to scrape bulletin links: {e}")
+        database.close()
         return 1
     
     # Step 3: Download bulletins
@@ -245,26 +229,32 @@ def main():
         logger.info(f"Downloaded {len(downloaded)} bulletins")
     except Exception as e:
         logger.error(f"Failed to download bulletins: {e}")
+        database.close()
         return 1
     
     if not downloaded:
         logger.warning("No bulletins downloaded. Exiting.")
+        database.close()
         return 0
 
     if args.download_only:
-        logger.info("Download-only mode complete; no PDF extraction or JSON updates were run.")
+        logger.info("Download-only mode complete; no PDF extraction or database updates were run.")
+        database.close()
         return 0
     
     # Branch based on mode
     if args.mode == 'events':
-        return run_events_mode(args, logger, churches, downloaded, events_path, output_path, use_images)
+        result = run_events_mode(args, logger, database, churches, downloaded, output_path, use_images)
     elif args.mode == 'intentions':
-        return run_intentions_mode(args, logger, churches, downloaded, intentions_path, output_path, use_images)
+        result = run_intentions_mode(args, logger, database, churches, downloaded, output_path, use_images)
     else:
-        return run_mass_mode(args, logger, churches, downloaded, churches_path, output_path, use_images)
+        result = run_mass_mode(args, logger, database, churches, downloaded, output_path, use_images)
+
+    database.close()
+    return result
 
 
-def run_mass_mode(args, logger, churches, downloaded, churches_path, output_path, use_images=True):
+def run_mass_mode(args, logger, database, churches, downloaded, output_path, use_images=True):
     """Run the mass times analysis mode (original behavior)."""
     
     # Analyze each bulletin with LLM in parallel
@@ -314,7 +304,7 @@ def run_mass_mode(args, logger, churches, downloaded, churches_path, output_path
                 logger.error(f"Task failed: {e}")
                 continue
     
-    # Reorder results to match the order of churches in churches.json using a list of tuples
+    # Reorder results to match the order of churches in SQLite using a list of tuples
     markdown_results = []
     seen_websites = set()
     for church in churches:
@@ -331,9 +321,9 @@ def run_mass_mode(args, logger, churches, downloaded, churches_path, output_path
         logger.error(f"Failed to write analysis report: {e}")
         return 1
     
-    # Optionally apply modifications to churches.json
-    if args.modify_json:
-        logger.info("--modify-json flag set. Applying LLM suggestions to churches.json...")
+    # Optionally apply modifications to SQLite
+    if args.modify_db:
+        logger.info("Database modification enabled. Applying LLM suggestions to SQLite...")
         try:
             # Read the generated markdown report
             with open(output_path, 'r', encoding='utf-8') as f:
@@ -347,13 +337,11 @@ def run_mass_mode(args, logger, churches, downloaded, churches_path, output_path
                 model=args.model
             )
             
-            # Write updated churches.json
-            with open(churches_path, 'w', encoding='utf-8') as f:
-                json.dump(updated_churches, f, indent=4, ensure_ascii=False)
+            replace_churches(database, updated_churches)
             
-            logger.info(f"✓ churches.json updated successfully: {churches_path}")
+            logger.info("✓ SQLite church data updated successfully")
         except Exception as e:
-            logger.error(f"Failed to modify churches.json: {e}")
+            logger.error(f"Failed to modify SQLite church data: {e}")
             return 1
     
     # Summary
@@ -365,11 +353,11 @@ def run_mass_mode(args, logger, churches, downloaded, churches_path, output_path
     return 0
 
 
-def run_events_mode(args, logger, churches, downloaded, events_path, output_path, use_images=True):
+def run_events_mode(args, logger, database, churches, downloaded, output_path, use_images=True):
     """Run the events extraction mode."""
     
     # Load existing events for deduplication
-    existing_events = events.load_events_json(str(events_path))
+    existing_events = load_events(database)
     
     # Extract events from each bulletin in parallel
     logger.info(f"Extracting events from {len(downloaded)} bulletin(s) with LLM (using {args.workers} workers)...")
@@ -432,14 +420,14 @@ def run_events_mode(args, logger, churches, downloaded, events_path, output_path
         logger.error(f"Failed to write events report: {e}")
         return 1
     
-    # Optionally save merged events to events.json
-    if args.modify_json:
-        logger.info("--modify-json flag set. Saving events to events.json...")
+    # Optionally save merged events to SQLite
+    if args.modify_db:
+        logger.info("Database modification enabled. Saving events to SQLite...")
         try:
-            events.save_events_json(merged_events, str(events_path))
-            logger.info(f"✓ events.json updated successfully: {events_path}")
+            replace_events(database, merged_events)
+            logger.info("✓ SQLite event data updated successfully")
         except Exception as e:
-            logger.error(f"Failed to save events.json: {e}")
+            logger.error(f"Failed to save events to SQLite: {e}")
             return 1
     
     # Summary
@@ -449,11 +437,11 @@ def run_events_mode(args, logger, churches, downloaded, events_path, output_path
     return 0
 
 
-def run_intentions_mode(args, logger, churches, downloaded, intentions_path, output_path, use_images=True):
+def run_intentions_mode(args, logger, database, churches, downloaded, output_path, use_images=True):
     """Run the Mass intentions extraction mode."""
     
     # Load existing intentions for merging
-    existing_intentions = intentions.load_intentions_json(str(intentions_path))
+    existing_intentions = load_intentions(database)
     
     # Extract intentions from each bulletin in parallel
     logger.info(f"Extracting Mass intentions from {len(downloaded)} bulletin(s) with LLM (using {args.workers} workers)...")
@@ -515,14 +503,14 @@ def run_intentions_mode(args, logger, churches, downloaded, intentions_path, out
         logger.error(f"Failed to write intentions report: {e}")
         return 1
     
-    # Optionally save merged intentions to intentions.json
-    if args.modify_json:
-        logger.info("--modify-json flag set. Saving intentions to intentions.json...")
+    # Optionally save merged intentions to SQLite
+    if args.modify_db:
+        logger.info("Database modification enabled. Saving intentions to SQLite...")
         try:
-            intentions.save_intentions_json(merged_intentions, str(intentions_path))
-            logger.info(f"✓ intentions.json updated successfully: {intentions_path}")
+            replace_intentions(database, merged_intentions)
+            logger.info("✓ SQLite intention data updated successfully")
         except Exception as e:
-            logger.error(f"Failed to save intentions.json: {e}")
+            logger.error(f"Failed to save intentions to SQLite: {e}")
             return 1
     
     # Summary

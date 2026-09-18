@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "prebuild": "node tools/copy-sql-wasm.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
@@ -21,12 +22,18 @@
     "@types/leaflet": "^1.9.21",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
+    "@types/sql.js": "^1.4.9",
     "astro": "^5.16.2",
     "leaflet": "^1.9.4",
     "moment": "^2.30.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-leaflet": "^5.0.0",
+    "sql.js": "^1.13.0",
     "tailwindcss": "^4.1.17"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "typescript": "^5.9.3"
   }
 }
