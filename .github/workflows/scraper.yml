@@ -97,7 +97,7 @@ jobs:
             const timestamp = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
             const analysisContent = process.env.ANALYSIS_CONTENT;
             
-            const title = `Sync churches.json ${timestamp}`;
+            const title = `Sync SQLite data ${timestamp}`;
             
             const response = await github.rest.issues.create({
               owner: context.repo.owner,

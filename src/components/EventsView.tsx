@@ -1,7 +1,9 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import { useChurches } from '../hooks/useChurches';
 import { useEvents } from '../hooks/useEvents';
+import { useDebouncedValue } from '../hooks/useDebouncedValue';
+import { loadEventFamilies } from '../lib/databaseClient';
 import type { Church, Event, EventTag } from '../types/church';
 import { ALL_EVENT_TAGS } from '../types/church';
 import { createGoogleCalendarUrl } from '../utils/calendar';
@@ -38,21 +40,6 @@ function formatEventTime(event: Event): string {
 }
 
 /**
- * Get unique values from events for filtering
- */
-function getUniqueValues(events: Event[], key: 'family_of_parishes' | 'tags'): string[] {
-  const values = new Set<string>();
-  events.forEach((event) => {
-    if (key === 'tags') {
-      event.tags.forEach((tag) => values.add(tag));
-    } else {
-      values.add(event[key]);
-    }
-  });
-  return Array.from(values).sort();
-}
-
-/**
  * Check if a date is in the past
  */
 export function isDatePast(dateStr: string): boolean {
@@ -70,7 +57,7 @@ function getTagColor(tag: string): string {
  * Props for a single event card.
  *
  * Note: `churches` is required so that cards never trigger their own
- * fetches of `/churches.json`. Parents (e.g. `EventsView`) should use
+ * database loads. Parents (e.g. `EventsView`) should use
  * the shared `useChurches` hook to load data once and pass it in.
  */
 interface EventCardProps {
@@ -219,15 +206,34 @@ export function EventCard({ event, churches }: EventCardProps) {
 }
 
 export function EventsView() {
-  const { events, loading, error } = useEvents();
   const { churches } = useChurches();
   const [activeTab, setActiveTab] = useState<EventsTab>('list');
   const [selectedFamily, setSelectedFamily] = useState('all');
   const [selectedTag, setSelectedTag] = useState<'all' | EventTag>('all');
-  const [showPastEvents, setShowPastEvents] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
+  const [families, setFamilies] = useState<string[]>([]);
+  const futureSentinelRef = useRef<HTMLDivElement>(null);
+  const debouncedSearchTerm = useDebouncedValue(searchTerm);
+  const {
+    events,
+    loading,
+    loadingMore,
+    error,
+    loadMoreError,
+    loadMoreFuture,
+    loadMorePast,
+    hasMoreFuture,
+    hasMorePast,
+    searchTooShort,
+  } = useEvents({
+    family: selectedFamily === 'all' ? undefined : selectedFamily,
+    tag: selectedTag === 'all' ? undefined : selectedTag,
+    search: debouncedSearchTerm,
+    startDate: startDate || undefined,
+    endDate: endDate || undefined,
+  });
 
   useEffect(() => {
     try {
@@ -235,7 +241,6 @@ export function EventsView() {
       const search = params.get('search') || '';
       const family = params.get('family') || 'all';
       const tag = params.get('tag') || 'all';
-      const showPast = params.get('showPast');
       const start = params.get('start') || '';
       const end = params.get('end') || '';
 
@@ -244,7 +249,6 @@ export function EventsView() {
       if (tag === 'all' || ALL_EVENT_TAGS.includes(tag as EventTag)) {
         setSelectedTag(tag as 'all' | EventTag);
       }
-      setShowPastEvents(showPast === '1' || showPast === 'true');
       setStartDate(start);
       setEndDate(end);
     } catch {
@@ -258,7 +262,6 @@ export function EventsView() {
       if (searchTerm) params.set('search', searchTerm);
       if (selectedFamily !== 'all') params.set('family', selectedFamily);
       if (selectedTag !== 'all') params.set('tag', selectedTag);
-      if (showPastEvents) params.set('showPast', '1');
       if (startDate) params.set('start', startDate);
       if (endDate) params.set('end', endDate);
 
@@ -268,35 +271,37 @@ export function EventsView() {
     } catch {
       // Ignore history update errors.
     }
-  }, [searchTerm, selectedFamily, selectedTag, showPastEvents, startDate, endDate]);
+  }, [searchTerm, selectedFamily, selectedTag, startDate, endDate]);
 
-  const families = useMemo(() => getUniqueValues(events, 'family_of_parishes'), [events]);
+  useEffect(() => {
+    let cancelled = false;
+    loadEventFamilies()
+      .then((loadedFamilies) => {
+        if (!cancelled) setFamilies(loadedFamilies);
+      })
+      .catch((reason: unknown) => console.error('Error loading event families:', reason));
 
-  const filteredEvents = useMemo(() => {
-    const normalizedSearchTerm = searchTerm.trim().toLowerCase();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
-    return events.filter((event) => {
-      if (normalizedSearchTerm && !event.title.toLowerCase().includes(normalizedSearchTerm)) {
-        return false;
-      }
-      if (selectedFamily !== 'all' && event.family_of_parishes !== selectedFamily) {
-        return false;
-      }
-      if (selectedTag !== 'all' && !event.tags.includes(selectedTag as EventTag)) {
-        return false;
-      }
-      if (!showPastEvents && isDatePast(event.date)) {
-        return false;
-      }
-      if (startDate && event.date < startDate) {
-        return false;
-      }
-      if (endDate && event.date > endDate) {
-        return false;
-      }
-      return true;
-    });
-  }, [events, selectedFamily, selectedTag, showPastEvents, startDate, endDate, searchTerm]);
+  const filteredEvents = events;
+
+  useEffect(() => {
+    if (activeTab !== 'list' || !hasMoreFuture || loadingMore) return;
+    const sentinel = futureSentinelRef.current;
+    if (!sentinel) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) loadMoreFuture();
+      },
+      { rootMargin: '600px 0px' },
+    );
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, [activeTab, hasMoreFuture, loadMoreFuture, loadingMore]);
 
   if (loading) {
     return (
@@ -368,11 +373,15 @@ export function EventsView() {
             <input
               id="search"
               type="search"
-              placeholder="Search event titles"
+              placeholder="Search events"
+              maxLength={100}
               value={searchTerm}
               onChange={(event) => setSearchTerm(event.target.value)}
               className="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
             />
+            {searchTooShort && (
+              <p className="mt-1 text-xs text-gray-500">Enter at least 2 characters to search.</p>
+            )}
           </div>
 
           <div className="flex-1 min-w-[200px]">
@@ -430,19 +439,6 @@ export function EventsView() {
             </div>
           </div>
 
-          <div className="flex items-center gap-3 pb-1">
-            <label className="relative inline-flex items-center cursor-pointer">
-              <input
-                type="checkbox"
-                id="show-past"
-                checked={showPastEvents}
-                onChange={(event) => setShowPastEvents(event.target.checked)}
-                className="sr-only peer"
-              />
-              <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600" />
-              <span className="ml-3 text-sm font-medium text-gray-700">Show past events</span>
-            </label>
-          </div>
         </div>
 
         <div className="flex flex-wrap gap-6 items-end mt-4 pt-4 border-t border-gray-100">
@@ -493,8 +489,25 @@ export function EventsView() {
           aria-labelledby="events-list-tab"
         >
           <p className="text-sm text-gray-500 mb-4">
-            Showing {filteredEvents.length} event{filteredEvents.length !== 1 ? 's' : ''}
+            Showing {filteredEvents.length} loaded event{filteredEvents.length !== 1 ? 's' : ''}
           </p>
+
+          {hasMorePast && (
+            <div className="flex justify-center mb-5">
+              <button
+                type="button"
+                onClick={loadMorePast}
+                disabled={loadingMore}
+                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-700 bg-blue-50 rounded-lg hover:bg-blue-100 disabled:opacity-50 disabled:cursor-wait"
+                aria-label="Load earlier events"
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m5 15 7-7 7 7" />
+                </svg>
+                Load earlier events
+              </button>
+            </div>
+          )}
 
           {filteredEvents.length === 0 ? (
             <div className="text-center py-12 text-gray-500">
@@ -520,6 +533,9 @@ export function EventsView() {
               ))}
             </div>
           )}
+          {hasMoreFuture && <div ref={futureSentinelRef} className="h-8" aria-hidden="true" />}
+          {loadingMore && <p className="text-center text-sm text-gray-500 py-4" aria-live="polite">Loading more events…</p>}
+          {loadMoreError && <p className="text-center text-sm text-red-600 py-4" role="alert">{loadMoreError}</p>}
         </div>
       )}
 
@@ -530,18 +546,15 @@ export function EventsView() {
           aria-labelledby="events-calendar-tab"
         >
           <p className="text-sm text-gray-500 mb-4">
-            Showing {filteredEvents.length} event{filteredEvents.length !== 1 ? 's' : ''}
+            Events load one month at a time as you navigate the calendar.
           </p>
-          {filteredEvents.length === 0 ? (
-            <div className="text-center py-10 text-gray-500">
-              No events found matching your filters.
-            </div>
-          ) : (
-            <EventsCalendarView
-              events={filteredEvents}
-              selectedTag={selectedTag === 'all' ? null : selectedTag}
-            />
-          )}
+          <EventsCalendarView
+            selectedTag={selectedTag === 'all' ? null : selectedTag}
+            family={selectedFamily === 'all' ? undefined : selectedFamily}
+            search={debouncedSearchTerm}
+            startDate={startDate || undefined}
+            endDate={endDate || undefined}
+          />
         </div>
       )}
 

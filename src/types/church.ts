@@ -34,7 +34,7 @@ export interface Office {
  * Represents a Catholic church with all its schedule information
  */
 export interface Church {
-  id: string; // Unique identifier (e.g., "st-john-the-baptist-amherstburg")
+  id: string; // Text UID (e.g., "st-john-the-baptist-amherstburg")
   name: string;
   familyOfParishes?: string; // The family of parishes this church belongs to
   address: string;
@@ -132,7 +132,7 @@ export const ALL_EVENT_TAGS: EventTag[] = [
  * Represents a parish event extracted from bulletins
  */
 export interface Event {
-  id: string; // 8-char base36
+  id: string; // Text UID (8-char base36 for legacy event records)
   title: string;
   description: string;
   church_id: string | null; // null for family-wide events
@@ -160,10 +160,110 @@ export interface Intention {
  * Represents a Mass (daily or weekly) with its intentions
  */
 export interface MassIntention {
+  uid: string; // Text UID for the mass-intention record
   church_id: string; // ID of the church (e.g., "holy-trinity-windsor")
   date: string; // YYYY-MM-DD
   time: string; // HHMM 24-hour format
   intentions: Intention[];
   source_bulletin_link: string;
   extracted_at: string; // ISO timestamp
+}
+
+/**
+ * SQLite stores scalar values only. These row types document the normalized
+ * database representation; databaseQueries.ts assembles them into the UI
+ * shapes above after reading the database.
+ */
+export type SQLiteValue = string | number | null;
+
+export interface SQLiteChurchRow {
+  uid: string;
+  name: string;
+  family_of_parishes: string | null;
+  address: string;
+  latitude: number;
+  longitude: number;
+  map_url: string;
+  website: string;
+  hidden: 0 | 1;
+  bulletin_website: string | null;
+  phone: string;
+}
+
+export interface SQLiteScheduleRow {
+  uid: string;
+  church_uid: string;
+  schedule_type: 'regular' | 'daily';
+  day: string;
+  time: string;
+  note: string | null;
+  day_of_month: number | null;
+}
+
+export interface SQLiteTimeRangeRow {
+  uid: string;
+  church_uid: string;
+  range_type: 'confession' | 'adoration';
+  day: string;
+  start_time: string;
+  end_time: string;
+  note: string | null;
+  day_of_month: number | null;
+}
+
+export interface SQLiteOfficeRow {
+  uid: string;
+  church_uid: string;
+  building: string | null;
+  address: string;
+  phone: string | null;
+  email: string | null;
+}
+
+export interface SQLiteOfficeHourRow {
+  uid: string;
+  office_uid: string;
+  day: string;
+  start_time: string;
+  end_time: string;
+  note: string | null;
+  day_of_month: number | null;
+}
+
+export interface SQLiteEventRow {
+  uid: string;
+  title: string;
+  description: string;
+  church_uid: string | null;
+  church_name: string | null;
+  family_of_parishes: string;
+  event_date: string;
+  start_time: string | null;
+  end_time: string | null;
+  location: string | null;
+  source_bulletin_link: string;
+  source_bulletin_date: string;
+  extracted_at: string;
+}
+
+export interface SQLiteEventTagRow {
+  uid: string;
+  event_uid: string;
+  tag: string;
+}
+
+export interface SQLiteMassIntentionRow {
+  uid: string;
+  church_uid: string;
+  mass_date: string;
+  mass_time: string;
+  source_bulletin_link: string;
+  extracted_at: string;
+}
+
+export interface SQLiteIntentionEntryRow {
+  uid: string;
+  mass_intention_uid: string;
+  intention_for: string;
+  requested_by: string | null;
 }

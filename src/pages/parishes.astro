@@ -1,13 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import type { Church } from '../types/church';
-import fs from 'node:fs';
-import path from 'node:path';
+import { loadAllDataForBuild } from '../lib/databaseServer';
 import { createCollectionPageStructuredData } from '../utils/seo';
 
-// Read churches.json at build time
-const churchesPath = path.join(process.cwd(), 'public', 'churches.json');
-const churches = JSON.parse(fs.readFileSync(churchesPath, 'utf-8')) as (Church & { familyOfParishes?: string })[];
+// Read the SQLite database at build time for the static parish index.
+const { churches } = await loadAllDataForBuild();
 // Exclude hidden churches from the families list
 const visibleChurches = Array.isArray(churches) ? churches.filter((c) => !c.hidden) : [];
 

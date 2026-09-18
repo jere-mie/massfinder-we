@@ -2,7 +2,6 @@
 Scraping utilities for fetching bulletin PDF links and downloading PDFs.
 """
 
-import json
 import os
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
@@ -16,13 +15,6 @@ logger = logging.getLogger(__name__)
 PREFERRED_DOMAINS = ['parishbulletins.com', 'files.ecatholic.com']
 MAX_RETRIES = 10
 RETRY_DELAYS = [1, 2, 4, 8, 16, 16, 16, 16, 16, 16]  # Exponential backoff in seconds
-
-
-def load_churches_json(churches_path):
-    """Load churches data from JSON file"""
-    logger.info(f"Loading churches from {churches_path}")
-    with open(churches_path, 'r', encoding='utf-8') as f:
-        return json.load(f)
 
 
 def get_bulletin_links(churches, limit=1):

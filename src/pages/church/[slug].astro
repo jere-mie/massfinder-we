@@ -4,19 +4,12 @@ import { formatTime, formatTimeRange, formatOfficeHours, formatPhoneNumber, form
 import type { Church, Event, MassIntention } from '../../types/church';
 import EventToggle from "../../components/EventToggle";
 import { createChurchStructuredData } from '../../utils/seo';
-import fs from 'node:fs';
-import path from 'node:path';
+import { loadAllDataForBuild } from '../../lib/databaseServer';
 
-export function getStaticPaths() {
-  // Read churches.json from public folder at build time
-  const churchesPath = path.join(process.cwd(), 'public', 'churches.json');
-  const eventsPath = path.join(process.cwd(), 'public', 'events.json');
-  const intentionsPath = path.join(process.cwd(), 'public', 'intentions.json');
-  const churchesData = JSON.parse(fs.readFileSync(churchesPath, 'utf-8')) as Church[];
+export async function getStaticPaths() {
+  const { churches: churchesData, events: eventsData, intentions: intentionsData } = await loadAllDataForBuild();
   // Exclude hidden churches at build time
   const visibleChurches = Array.isArray(churchesData) ? churchesData.filter((c) => !c.hidden) : [];
-  const eventsData = JSON.parse(fs.readFileSync(eventsPath, 'utf-8')) as Event[];
-  const intentionsData = JSON.parse(fs.readFileSync(intentionsPath, 'utf-8')) as MassIntention[];
   
   return visibleChurches.map((church) => {
 
@@ -87,13 +80,12 @@ function formatDateDisplay(dateStr: string) {
       <h1 class="text-3xl font-bold text-gray-900 mb-4">{church.name}</h1>
       
       <div class="space-y-2 text-gray-600">
-        {church.familyOfParishes &&
+        {church.familyOfParishes && (
           <p class="flex items-start">
             <span class="mr-2">⛪</span>
               Member of the {church.familyOfParishes}
-            </a>
           </p>
-        }
+        )}
         <p class="flex items-start">
           <span class="mr-2">📍</span>
           <a 
@@ -286,7 +278,6 @@ function formatDateDisplay(dateStr: string) {
       )}
     </div>
 
-    <!-- Mass Intentions (hidden for now) -->
     {false && intentions && intentions.length > 0 && (
       <section class="bg-white rounded-lg border border-gray-200 shadow-sm p-6 mt-8">
         <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
@@ -328,7 +319,6 @@ function formatDateDisplay(dateStr: string) {
       </section>
     )}
     </div>
-  </div>
 </Layout>
 
 <script>
