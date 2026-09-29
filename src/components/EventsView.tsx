@@ -37,6 +37,22 @@ function formatEventTime(event: Event): string {
   return '';
 }
 
+const EVENT_DESCRIPTION_MAX_LENGTH = 160;
+
+function truncateEventDescription(description: string): string {
+  if (description.length <= EVENT_DESCRIPTION_MAX_LENGTH) return description;
+
+  const suffix = '...';
+  const availableLength = EVENT_DESCRIPTION_MAX_LENGTH - suffix.length;
+  const shortened = description.slice(0, availableLength).trimEnd();
+  const wordBoundary = shortened.lastIndexOf(' ');
+  const readableText = wordBoundary > availableLength * 0.6
+    ? shortened.slice(0, wordBoundary).trimEnd()
+    : shortened;
+
+  return `${readableText}${suffix}`;
+}
+
 /**
  * Get unique values from events for filtering
  */
@@ -81,6 +97,7 @@ interface EventCardProps {
 export function EventCard({ event, churches }: EventCardProps) {
   const isPast = isDatePast(event.date);
   const timeDisplay = formatEventTime(event);
+  const description = truncateEventDescription(event.description);
   const effectiveChurches = churches ?? [];
 
   function resolveAddress() {
@@ -134,7 +151,7 @@ export function EventCard({ event, churches }: EventCardProps) {
           ))}
         </div>
 
-        <p className="text-gray-600 text-sm mb-3">{event.description}</p>
+        <p className="text-gray-600 text-sm mb-3">{description}</p>
 
         <div className="space-y-1 text-sm">
           <div className="flex items-center gap-2 text-gray-700">
