@@ -123,6 +123,7 @@ function EventModal({ item, onClose }: { item: EventCalendarItem; onClose: () =>
         </dl>
 
         <div className="calendar-modal-actions">
+          <a href={`/events/${event.id}`}>View event page</a>
           <a
             href={createGoogleCalendarUrl({
               title: event.title,

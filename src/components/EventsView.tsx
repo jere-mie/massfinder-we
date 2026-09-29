@@ -100,13 +100,27 @@ export function EventCard({ event, churches }: EventCardProps) {
       }`}
     >
       <div className="flex-1">
-        <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
-          <h3 className="font-semibold text-gray-900 text-lg">{event.title}</h3>
-          {isPast && (
-            <span className="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">
-              Past
-            </span>
-          )}
+        <div className="flex items-start justify-between gap-3 mb-2">
+          <h3 className="font-semibold text-gray-900 text-lg flex-1">
+            <a href={`/events/${event.id}`} className="hover:text-blue-700 hover:underline">
+              {event.title}
+            </a>
+          </h3>
+          <div className="flex items-center gap-2 shrink-0">
+            {isPast && (
+              <span className="text-xs bg-gray-200 text-gray-600 px-2 py-1 rounded">
+                Past
+              </span>
+            )}
+            <a
+              href={`/events/${event.id}`}
+              aria-label={`Open ${event.title}`}
+              title="Open event page"
+              className="text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded p-1 transition-colors"
+            >
+              <ArrowTopRightOnSquareIcon className="w-5 h-5" aria-hidden="true" />
+            </a>
+          </div>
         </div>
 
         <div className="flex flex-wrap gap-1 mb-3">

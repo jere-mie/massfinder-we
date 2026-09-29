@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import type { APIRoute } from 'astro';
-import type { Church } from '../types/church';
+import type { Church, Event } from '../types/church';
 import { getSiteUrl } from '../utils/seo';
 
 const escapeXml = (value: string) =>
@@ -10,12 +10,15 @@ const escapeXml = (value: string) =>
 export const GET: APIRoute = ({ site }) => {
   const siteUrl = getSiteUrl(site);
   const churchesPath = path.join(process.cwd(), 'public', 'churches.json');
+  const eventsPath = path.join(process.cwd(), 'public', 'events.json');
   const churches = JSON.parse(fs.readFileSync(churchesPath, 'utf-8')) as Church[];
+  const events = JSON.parse(fs.readFileSync(eventsPath, 'utf-8')) as Event[];
   const routes = [
     '/',
     '/parishes/',
     '/mass-finder/',
     '/events/',
+    ...events.map((event) => `/events/${event.id}/`),
     ...churches.filter((church) => !church.hidden).map((church) => `/church/${church.id}/`),
   ];
 

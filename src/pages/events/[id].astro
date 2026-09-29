@@ -1,0 +1,144 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+import Layout from '../../layouts/Layout.astro';
+import type { Church, Event } from '../../types/church';
+import { createEventStructuredData } from '../../utils/seo';
+import { createGoogleCalendarUrl } from '../../utils/calendar';
+import { formatTime } from '../../utils/formatting';
+import { getEventTagMeta } from '../../utils/eventTags';
+
+const churchesPath = path.join(process.cwd(), 'public', 'churches.json');
+const churches = JSON.parse(fs.readFileSync(churchesPath, 'utf-8')) as Church[];
+
+export function getStaticPaths() {
+  const eventsPath = path.join(process.cwd(), 'public', 'events.json');
+  const events = JSON.parse(fs.readFileSync(eventsPath, 'utf-8')) as Event[];
+
+  return events.map((event) => ({
+    params: { id: event.id },
+    props: { event },
+  }));
+}
+
+interface Props {
+  event: Event;
+}
+
+const { event } = Astro.props;
+const church = event.church_id
+  ? churches.find((candidate) => candidate.id === event.church_id && !candidate.hidden)
+  : undefined;
+
+function formatDate(dateStr: string) {
+  return new Date(`${dateStr}T00:00:00`).toLocaleDateString('en-US', {
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  });
+}
+
+function formatEventTime(currentEvent: Event) {
+  if (!currentEvent.start_time && !currentEvent.end_time) return 'All day';
+  if (currentEvent.start_time && currentEvent.end_time) {
+    return `${formatTime(currentEvent.start_time)} – ${formatTime(currentEvent.end_time)}`;
+  }
+  if (currentEvent.start_time) return formatTime(currentEvent.start_time);
+  return `Until ${formatTime(currentEvent.end_time!)}`;
+}
+
+const description = event.description || `Details for ${event.title}.`;
+const structuredData = createEventStructuredData(event);
+const calendarUrl = createGoogleCalendarUrl({
+  title: event.title,
+  description: event.description,
+  location: event.location || church?.address,
+  date: event.date,
+  start_time: event.start_time,
+  end_time: event.end_time,
+});
+---
+
+<Layout
+  title={`${event.title} - Deanery of Windsor-Essex`}
+  description={description}
+  structuredData={structuredData}
+>
+  <div class="max-w-4xl mx-auto px-4 py-8 sm:py-12">
+    <a href="/events" class="inline-flex items-center text-blue-600 hover:text-blue-800 hover:underline mb-8">
+      <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+      Back to events
+    </a>
+
+    <article class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+      <div class="p-6 sm:p-10">
+        <div class="flex flex-wrap gap-2 mb-4">
+          {event.tags.map((tag) => {
+            const meta = getEventTagMeta(tag);
+            return <span class={`text-xs px-2.5 py-1 rounded-full ${meta.chipClassName}`}>{meta.label}</span>;
+          })}
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{event.title}</h1>
+        <p class="text-lg leading-8 text-gray-600">{event.description}</p>
+
+        <dl class="mt-8 divide-y divide-gray-100 border-y border-gray-100">
+          <div class="py-4 sm:flex sm:gap-6">
+            <dt class="font-semibold text-gray-900 sm:w-32">When</dt>
+            <dd class="mt-1 text-gray-600 sm:mt-0">{formatDate(event.date)} · {formatEventTime(event)}</dd>
+          </div>
+
+          {event.location && (
+            <div class="py-4 sm:flex sm:gap-6">
+              <dt class="font-semibold text-gray-900 sm:w-32">Location</dt>
+              <dd class="mt-1 text-gray-600 sm:mt-0">{event.location}</dd>
+            </div>
+          )}
+
+          <div class="py-4 sm:flex sm:gap-6">
+            <dt class="font-semibold text-gray-900 sm:w-32">Parish</dt>
+            <dd class="mt-1 text-gray-600 sm:mt-0">
+              {church ? <a href={`/church/${church.id}`} class="text-blue-700 hover:underline">{event.church_name || church.name}</a> : (event.church_name || event.family_of_parishes)}
+            </dd>
+          </div>
+
+          {church?.address && (
+            <div class="py-4 sm:flex sm:gap-6">
+              <dt class="font-semibold text-gray-900 sm:w-32">Parish address</dt>
+              <dd class="mt-1 text-gray-600 sm:mt-0">{church.address}</dd>
+            </div>
+          )}
+        </dl>
+
+        <div class="flex flex-wrap items-center gap-4 mt-8">
+          <a
+            href={calendarUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-blue-700 transition-colors"
+          >
+            Add to Google Calendar
+            <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+          <a
+            href={event.source_bulletin_link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-sm text-blue-600 hover:text-blue-800 hover:underline"
+          >
+            View source bulletin →
+          </a>
+        </div>
+      </div>
+    </article>
+
+    <p class="text-xs text-gray-400 text-center mt-6">
+      Event ID: {event.id}
+    </p>
+  </div>
+</Layout>

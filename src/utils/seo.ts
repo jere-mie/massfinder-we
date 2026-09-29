@@ -1,4 +1,4 @@
-import type { Church } from '../types/church';
+import type { Church, Event } from '../types/church';
 
 export type StructuredData = Record<string, unknown>;
 
@@ -87,6 +87,37 @@ export function createChurchStructuredData(church: Church): StructuredData {
       '@type': 'GeoCoordinates',
       latitude: church.coordinates[0],
       longitude: church.coordinates[1],
+    },
+  };
+}
+
+export function createEventStructuredData(event: Event): StructuredData {
+  const startDate = event.start_time
+    ? `${event.date}T${event.start_time.slice(0, 2)}:${event.start_time.slice(2, 4)}`
+    : event.date;
+  const endDate = event.end_time
+    ? `${event.date}T${event.end_time.slice(0, 2)}:${event.end_time.slice(2, 4)}`
+    : undefined;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Event',
+    name: event.title,
+    description: event.description,
+    url: getCanonicalUrl(`/events/${event.id}/`).href,
+    startDate,
+    ...(endDate ? { endDate } : {}),
+    ...(event.location
+      ? {
+          location: {
+            '@type': 'Place',
+            name: event.location,
+          },
+        }
+      : {}),
+    organizer: {
+      '@type': 'Organization',
+      name: event.family_of_parishes,
     },
   };
 }
