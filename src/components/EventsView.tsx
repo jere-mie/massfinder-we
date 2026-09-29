@@ -8,6 +8,7 @@ import { createGoogleCalendarUrl } from '../utils/calendar';
 import { formatTime } from '../utils/formatting';
 import { getEventTagMeta } from '../utils/eventTags';
 import { EventsCalendarView } from './EventsCalendarView';
+import { CopyLinkButton } from './CopyLinkButton';
 
 type EventsTab = 'list' | 'calendar';
 
@@ -129,6 +130,7 @@ export function EventCard({ event, churches }: EventCardProps) {
                 Past
               </span>
             )}
+            <CopyLinkButton eventId={event.id} eventTitle={event.title} />
             <a
               href={`/events/${event.id}`}
               aria-label={`Open ${event.title}`}
@@ -307,7 +309,8 @@ export function EventsView() {
     const normalizedSearchTerm = searchTerm.trim().toLowerCase();
 
     return events.filter((event) => {
-      if (normalizedSearchTerm && !event.title.toLowerCase().includes(normalizedSearchTerm)) {
+      const searchableText = `${event.title} ${event.description}`.toLowerCase();
+      if (normalizedSearchTerm && !searchableText.includes(normalizedSearchTerm)) {
         return false;
       }
       if (selectedFamily !== 'all' && event.family_of_parishes !== selectedFamily) {
@@ -399,7 +402,7 @@ export function EventsView() {
             <input
               id="search"
               type="search"
-              placeholder="Search event titles"
+              placeholder="Search event titles and descriptions"
               value={searchTerm}
               onChange={(event) => setSearchTerm(event.target.value)}
               className="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
