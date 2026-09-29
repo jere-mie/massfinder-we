@@ -141,6 +141,7 @@ export interface Event {
   date: string; // YYYY-MM-DD
   start_time: string | null; // HHMM
   end_time: string | null; // HHMM
+  all_day?: boolean; // True when the bulletin explicitly identifies the event as all-day
   location: string | null;
   tags: EventTag[];
   source_bulletin_link: string;

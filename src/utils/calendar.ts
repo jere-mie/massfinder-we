@@ -37,6 +37,7 @@ export type CalendarEventInput = {
   date: string;
   start_time?: string | null;
   end_time?: string | null;
+  all_day?: boolean;
 };
 
 export type EventDateRange =
@@ -54,12 +55,13 @@ export type EventDateRange =
     };
 
 export function getEventDateRange(event: CalendarEventInput): EventDateRange {
-  const { date, start_time, end_time } = event;
+  const { date, start_time, end_time, all_day } = event;
   const hasStart = !!start_time;
   const hasEnd = !!end_time;
 
-  if (!hasStart && !hasEnd) {
-    // all-day event -> use date only, end is next day (exclusive)
+  if (all_day || (!hasStart && !hasEnd)) {
+    // All-day and time-unspecified events use a date-only range. The latter
+    // remain visibly distinct in the UI, but still occupy the all-day row.
     const start = new Date(date + 'T00:00:00');
     const end = new Date(start);
     end.setDate(end.getDate() + 1);

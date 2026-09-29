@@ -26,7 +26,7 @@ function formatDate(dateStr: string): string {
 }
 
 function formatEventTime(event: Event): string {
-  if (!event.start_time && !event.end_time) return 'All day';
+  if (!event.start_time && !event.end_time) return event.all_day ? 'All day' : 'Time not specified';
   if (event.start_time && event.end_time) {
     const nextDay = event.end_time <= event.start_time ? ' next day' : '';
     return `${formatTime(event.start_time)} – ${formatTime(event.end_time)}${nextDay}`;
@@ -142,6 +142,7 @@ function EventModal({ item, onClose }: { item: EventCalendarItem; onClose: () =>
               date: event.date,
               start_time: event.start_time,
               end_time: event.end_time,
+              all_day: event.all_day,
             })}
             target="_blank"
             rel="noopener noreferrer"
