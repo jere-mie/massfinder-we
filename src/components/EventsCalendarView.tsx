@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import FullCalendar from '@fullcalendar/react';
 import type { EventInput } from '@fullcalendar/core';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import listPlugin from '@fullcalendar/list';
@@ -84,9 +85,19 @@ function EventModal({ item, onClose }: { item: EventCalendarItem; onClose: () =>
         aria-labelledby="event-calendar-modal-title"
         onMouseDown={(mouseEvent) => mouseEvent.stopPropagation()}
       >
-        <h2 id="event-calendar-modal-title" className="text-lg font-bold text-gray-900 mb-3">
-          {event.title}
-        </h2>
+        <div className="flex items-start justify-between gap-3 mb-3">
+          <h2 id="event-calendar-modal-title" className="text-lg font-bold text-gray-900">
+            {event.title}
+          </h2>
+          <a
+            href={`/events/${event.id}`}
+            aria-label={`Open ${event.title}`}
+            title="Open event page"
+            className="text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded p-1 transition-colors shrink-0"
+          >
+            <ArrowTopRightOnSquareIcon className="w-5 h-5" aria-hidden="true" />
+          </a>
+        </div>
 
         <div className="flex flex-wrap gap-1.5 mb-3">
           {event.tags.map((tag) => {
@@ -123,7 +134,6 @@ function EventModal({ item, onClose }: { item: EventCalendarItem; onClose: () =>
         </dl>
 
         <div className="calendar-modal-actions">
-          <a href={`/events/${event.id}`}>View event page</a>
           <a
             href={createGoogleCalendarUrl({
               title: event.title,
