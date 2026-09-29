@@ -8421,7 +8421,7 @@
     },
     {
         "title": "Bishop's Dinner 2026",
-        "description": "Annual Bishop’s Dinner supporting St. Peter’s Seminary and the formation of priests, deacons and lay ministers.",
+        "description": "The Bishop’s Dinner supports St. Peter’s Seminary and the formation of priests, deacons and lay ministers; it takes place at the Ciociaro Club in Windsor.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -8496,7 +8496,7 @@
     },
     {
         "title": "South Windsor Parish Picnic",
-        "description": "Parish picnic following Sunday Mass.",
+        "description": "The South Windsor parish picnic takes place at Corpus Christi from noon to 3:00 p.m.",
         "church_id": "corpus-christi-windsor",
         "church_name": "Corpus Christi",
         "family_of_parishes": "South Windsor Catholic Family of Parishes",
@@ -8514,7 +8514,7 @@
     },
     {
         "title": "Faithcation Retreat 2026",
-        "description": "Faithcation retreat at Holy Family Retreat House.",
+        "description": "Faithcation is a retreat at Holy Family Retreat House running from September 25–27.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -8533,7 +8533,7 @@
     },
     {
         "title": "Beloved Retreat 2026",
-        "description": "Beloved retreat at Holy Family Retreat House.",
+        "description": "Beloved is a retreat at Holy Family Retreat House running from October 16–18.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -8552,7 +8552,7 @@
     },
     {
         "title": "Jubilee Year of St. Francis Retreat",
-        "description": "Jubilee Year of St. Francis retreat at Holy Family Retreat House.",
+        "description": "The Jubilee Year of St. Francis Retreat takes place at Holy Family Retreat House from October 21–23.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -8571,7 +8571,7 @@
     },
     {
         "title": "Catholic Men's Retreat 2026",
-        "description": "Catholic Men's Retreat at Holy Family Retreat House.",
+        "description": "The Catholic Men’s Retreat takes place at Holy Family Retreat House from November 27–29.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -8609,7 +8609,7 @@
     },
     {
         "title": "First Reconciliation & First Eucharist Parent Information Session",
-        "description": "Parent-only information session for First Reconciliation and First Eucharist.",
+        "description": "This parent-only session provides information about First Reconciliation and First Eucharist preparation.",
         "church_id": "corpus-christi-windsor",
         "church_name": "Corpus Christi",
         "family_of_parishes": "South Windsor Catholic Family of Parishes",
@@ -8629,7 +8629,7 @@
     },
     {
         "title": "Confirmation Parent Information Session",
-        "description": "Parent-only information session for Confirmation.",
+        "description": "This parent-only meeting provides information about Confirmation preparation.",
         "church_id": "our-lady-of-mt-carmel-windsor",
         "church_name": "Our Lady of Mt Carmel",
         "family_of_parishes": "South Windsor Catholic Family of Parishes",
@@ -8725,7 +8725,7 @@
     },
     {
         "title": "The Search Faith-Sharing Series Begins",
-        "description": "First session of a seven-week Sunday series with a meal, video and small-group discussion.",
+        "description": "The Search is a seven-week journey of discovery, discussion and faith sharing, with a meal, video and small-group conversation each Sunday afternoon.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
@@ -8782,7 +8782,7 @@
     },
     {
         "title": "Invited: Nine-Week Faith Series Begins",
-        "description": "First Monday session exploring foundational Catholic teaching through videos and small-group discussion.",
+        "description": "Invited is a nine-week journey into foundational Catholic teaching, using short videos and small-group discussion to help participants go deeper into the Catholic faith.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -8800,7 +8800,7 @@
     },
     {
         "title": "Family of Parishes Picnic",
-        "description": "Family-wide parish picnic.",
+        "description": "The Family of Parishes picnic takes place at 1:00 p.m. at Co-An Park in McGregor.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -8911,7 +8911,7 @@
     },
     {
         "title": "Journey Through the Catechism Begins",
-        "description": "First Monday of a six-week catechism series; registration is required.",
+        "description": "Journey Through the Catechism is a six-week series on Monday evenings, and advance registration is required at esscatholic.ca/catechism.",
         "church_id": "st-michaels-leamington",
         "church_name": "St. Michael's",
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -8929,7 +8929,7 @@
     },
     {
         "title": "GriefShare Fall Program Begins",
-        "description": "GriefShare’s 13-week program begins Wednesday, September 23; participants may attend either the Wednesday or Thursday session.",
+        "description": "GriefShare is a thirteen-week program for people who have lost a loved one and want tools to help manage their grief; participants may attend either the Wednesday or Thursday session.",
         "church_id": "st-john-de-brebeuf-kingsville",
         "church_name": "St. John de Brébeuf",
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -8948,7 +8948,7 @@
     },
     {
         "title": "St. Michael's Festival: Pasta Dinner",
-        "description": "Opening pasta dinner for the St. Michael the Archangel festival weekend.",
+        "description": "The pasta dinner opens St. Michael the Archangel’s festival weekend, which continues with a banquet, live music, Holy Mass and a procession followed by activities for the whole family.",
         "church_id": "st-michaels-leamington",
         "church_name": "St. Michael's",
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -8966,7 +8966,7 @@
     },
     {
         "title": "St. Michael's Festival: Banquet & Live Music",
-        "description": "Festival banquet and live music.",
+        "description": "The St. Michael’s Festival banquet includes live music as part of a weekend of faith, food, fellowship and celebration.",
         "church_id": "st-michaels-leamington",
         "church_name": "St. Michael's",
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -8985,7 +8985,7 @@
     },
     {
         "title": "10th Annual Catholic Women's Conference",
-        "description": "Regional day of faith, prayer and renewal themed “Let Yourself Be Loved,” featuring Claire Dwyer.",
+        "description": "The tenth annual Catholic Women’s Conference, themed “Let Yourself Be Loved,” offers women a day of faith, prayer and renewal featuring keynote speaker Claire Dwyer.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -9003,7 +9003,7 @@
     },
     {
         "title": "St. Michael's Festival: Mass & Procession",
-        "description": "Holy Mass and procession followed by activities for the whole family.",
+        "description": "The St. Michael’s Festival concludes with Holy Mass and a procession, followed by activities for the whole family.",
         "church_id": "st-michaels-leamington",
         "church_name": "St. Michael's",
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -9117,7 +9117,7 @@
     },
     {
         "title": "Confirmation Preparation Begins",
-        "description": "Confirmation preparation begins Sept. 20 or 22; sessions run 6:30–8:30 PM in the Most Precious Blood Church Hall.",
+        "description": "Confirmation preparation for students entering Grade 8 begins on September 20 or 22, with sessions running from 6:30–8:30 p.m. in the Most Precious Blood Church Hall.",
         "church_id": "most-precious-blood-windsor",
         "church_name": "Most Precious Blood",
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -9172,7 +9172,7 @@
     },
     {
         "title": "St. Michael's Bingo Fundraiser",
-        "description": "Assigned parish bingo session supporting St. Michael Church.",
+        "description": "St. Michael’s assigned bingo session takes place at All Star Gaming Centre on Walker Road and supports the parish.",
         "church_id": "immaculate-heart-windsor",
         "church_name": "Immaculate Heart / St. Michael's",
         "family_of_parishes": "Rose City Central Catholic Family of Parishes",
@@ -9284,7 +9284,7 @@
     },
     {
         "title": "Mass for First Responders",
-        "description": "Special Mass honouring first responders.",
+        "description": "The annual Mass for first responders takes place at Assumption Church, followed by a reception.",
         "church_id": "our-lady-of-the-assumption-windsor",
         "church_name": "Our Lady of the Assumption",
         "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
@@ -9303,7 +9303,7 @@
     },
     {
         "title": "Blessing of Pets",
-        "description": "Pet blessings at all three Windsor Heritage parish sites.",
+        "description": "The annual Pet Blessing welcomes furry and feathered friends at all three churches; pets should be secured on leashes or in crates.",
         "church_id": null,
         "church_name": "All three Windsor Heritage parish sites",
         "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
@@ -9321,7 +9321,7 @@
     },
     {
         "title": "Trunk or Treat",
-        "description": "Family Trunk or Treat celebration.",
+        "description": "The Family Trunk or Treat celebration brings decorated vehicles, candy and Halloween fun to the Assumption parking lot.",
         "church_id": "our-lady-of-the-assumption-windsor",
         "church_name": "Our Lady of the Assumption",
         "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
@@ -9492,7 +9492,7 @@
     },
     {
         "title": "CWL Potluck Dinner & Meeting",
-        "description": "Doors at 5:30 p.m.; potluck at 6:00 p.m., guest presentation and general meeting.",
+        "description": "Doors open at 5:30 p.m. for the CWL potluck dinner at 6:00 p.m., followed by a guest presentation and general meeting.",
         "church_id": "st-simon-st-jude-belle-river",
         "church_name": "St. Simon & St. Jude",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -9511,7 +9511,7 @@
     },
     {
         "title": "Becoming Catholic Orientation Night",
-        "description": "Drop-in RCIA orientation for adults exploring the Catholic faith or completing initiation.",
+        "description": "Becoming Catholic Orientation is a drop-in evening for adults exploring the Catholic faith or completing Christian initiation, and no registration is required.",
         "church_id": "good-shepherd-tecumseh",
         "church_name": "Good Shepherd",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -9550,7 +9550,7 @@
     },
     {
         "title": "RCIA Program Begins",
-        "description": "RCIA meetings for those exploring the Catholic faith begin on Sunday afternoons.",
+        "description": "RCIA meetings for people exploring the Catholic faith begin on Sunday afternoons.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
@@ -9703,7 +9703,7 @@
     },
     {
         "title": "Prayer Shawl Ministry Meeting",
-        "description": "Prayer Shawl Ministry meeting after its summer break.",
+        "description": "The Prayer Shawl Ministry knits and crochets shawls for people who are sick, grieving or in need, and welcomes donations of full skeins of yarn.",
         "church_id": "ste-anne-tecumseh",
         "church_name": "Ste. Anne",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -9796,7 +9796,7 @@
     },
     {
         "title": "Healthy & Holy",
-        "description": "Parish wellness and faith session.",
+        "description": "Healthy & Holy combines a lecture on women’s health with refreshments, prayer and fitness, and childcare is available; the session is free and open to all ages.",
         "church_id": "holy-name-of-jesus-essex",
         "church_name": "Holy Name of Jesus",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -9815,7 +9815,7 @@
     },
     {
         "title": "SoulCore Rosary Prayer & Fitness",
-        "description": "Rosary prayer and gentle fitness session.",
+        "description": "SoulCore combines praying the Rosary with accessible fitness exercises in a gentle session.",
         "church_id": "holy-name-of-jesus-essex",
         "church_name": "Holy Name of Jesus",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -9834,7 +9834,7 @@
     },
     {
         "title": "Assumption Athletes",
-        "description": "Outdoor parish fitness session.",
+        "description": "Assumption Athletes combines the Rosary with strength and resistance exercises in an outdoor session, and everyone is welcome.",
         "church_id": "holy-name-of-jesus-essex",
         "church_name": "Holy Name of Jesus",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -9852,7 +9852,7 @@
     },
     {
         "title": "Essex Knights of Columbus Fish Fry",
-        "description": "Fish fry fundraiser.",
+        "description": "The Essex Knights of Columbus hosts a fish fry fundraiser at Holy Name parish hall, with takeout and a cash bar available.",
         "church_id": "holy-name-of-jesus-essex",
         "church_name": "Holy Name of Jesus",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -9871,7 +9871,7 @@
     },
     {
         "title": "Matthew House Collection Deadline",
-        "description": "Collection for Matthew House continues through this date.",
+        "description": "The Matthew House collection continues through this date, with hygiene items, towels, kitchen supplies, cleaning supplies, linens and financial gifts welcomed.",
         "church_id": "st-john-the-evangelist-woodslee",
         "church_name": "St. John the Evangelist",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -9946,7 +9946,7 @@
     },
     {
         "title": "Exaltation of the Holy Cross Mass",
-        "description": "Special Mass for the Exaltation of the Holy Cross.",
+        "description": "The parish marks the Feast of the Exaltation of the Holy Cross with a special Mass.",
         "church_id": "holy-name-of-jesus-essex",
         "church_name": "Holy Name of Jesus",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -9965,7 +9965,7 @@
     },
     {
         "title": "First Reconciliation and First Communion Parent Meeting",
-        "description": "Parent meeting for sacramental preparation.",
+        "description": "Parents gather for information about First Reconciliation and First Communion sacramental preparation.",
         "church_id": "holy-name-of-jesus-essex",
         "church_name": "Holy Name of Jesus",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -10020,7 +10020,7 @@
     },
     {
         "title": "OLMC Mission Pie Assembly",
-        "description": "Mission pie assembly.",
+        "description": "Volunteers gather to assemble Our Lady of Mount Carmel Mission pies in the parish hall; pies may be ordered for $6 each.",
         "church_id": "our-lady-of-mt-carmel-windsor",
         "church_name": "Our Lady of Mount Carmel",
         "family_of_parishes": "South Windsor Catholic Family of Parishes",
@@ -10039,7 +10039,7 @@
     },
     {
         "title": "Corpus Christi CWL General Meeting",
-        "description": "General meeting of the Corpus Christi CWL.",
+        "description": "The Corpus Christi Catholic Women's League holds its general meeting at 7:00 p.m.",
         "church_id": "corpus-christi-windsor",
         "church_name": "Corpus Christi",
         "family_of_parishes": "South Windsor Catholic Family of Parishes",
@@ -10076,7 +10076,7 @@
     },
     {
         "title": "South Windsor Bible Study Begins",
-        "description": "First meeting of the Bible study.",
+        "description": "South Windsor Bible Study continues through the Gospel of Matthew, welcoming participants who want to deepen their knowledge of Scripture and faith.",
         "church_id": "our-lady-of-mt-carmel-windsor",
         "church_name": "Our Lady of Mount Carmel",
         "family_of_parishes": "South Windsor Catholic Family of Parishes",
@@ -10112,7 +10112,7 @@
     },
     {
         "title": "OLPH Bingo",
-        "description": "Bingo at All Star Gaming Centre.",
+        "description": "OLPH Bingo takes place at All Star Gaming Centre on Walker Road.",
         "church_id": "our-lady-of-perpetual-help-windsor",
         "church_name": "Our Lady of Perpetual Help",
         "family_of_parishes": "Rose City Central Catholic Family of Parishes",
@@ -10149,7 +10149,7 @@
     },
     {
         "title": "40 Days for Life Kickoff Rally",
-        "description": "Kickoff rally for the fall 40 Days for Life campaign.",
+        "description": "The 40 Days for Life fall campaign begins with a kickoff rally at 7:00 p.m.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Rose City Central Catholic Family of Parishes",
@@ -10206,7 +10206,7 @@
     },
     {
         "title": "Youth Ministry Monday Fun Night",
-        "description": "Youth ministry evening.",
+        "description": "Youth Ministry Monday Fun Night offers Grades 2–7 games, activities, prayer and faith discussions, while youth in Grade 8 and older may serve as team leaders and mentors.",
         "church_id": "most-precious-blood-windsor",
         "church_name": "Most Precious Blood",
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -10225,7 +10225,7 @@
     },
     {
         "title": "Our Lady of La Salette Feast",
-        "description": "Prayers and devotions followed by Mass at 5:00 PM.",
+        "description": "The Feast of Our Lady of La Salette includes prayers and devotions followed by Mass at 5:00 p.m.",
         "church_id": "our-lady-of-guadalupe-windsor",
         "church_name": "Our Lady of Guadalupe",
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -10244,7 +10244,7 @@
     },
     {
         "title": "OLOG Turkey Dinner",
-        "description": "Turkey dinner at 6:30 PM following the 5:00 PM Mass.",
+        "description": "The Our Lady of Guadalupe turkey dinner begins at 6:30 p.m. after the 5:00 p.m. Mass.",
         "church_id": "our-lady-of-guadalupe-windsor",
         "church_name": "Our Lady of Guadalupe",
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -10263,7 +10263,7 @@
     },
     {
         "title": "GriefShare Begins",
-        "description": "Thirteen-week GriefShare program begins.",
+        "description": "GriefShare is a thirteen-week support and educational program for people grieving the loss of a loved one.",
         "church_id": "most-precious-blood-windsor",
         "church_name": "Most Precious Blood",
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -10391,7 +10391,7 @@
     },
     {
         "title": "Transitus Service",
-        "description": "Memorial service at Rosary Chapel.",
+        "description": "The Transitus service commemorates the passing of St. Francis at Rosary Chapel.",
         "church_id": null,
         "church_name": "Rosary Chapel",
         "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
@@ -10428,7 +10428,7 @@
     },
     {
         "title": "Assumption Historic Tours",
-        "description": "Historic church tour.",
+        "description": "Assumption Historic Tours offer a guided look at the church’s rich cultural heritage; visitors should bring their own chairs.",
         "church_id": "our-lady-of-the-assumption-windsor",
         "church_name": "Our Lady of the Assumption",
         "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
@@ -10446,7 +10446,7 @@
     },
     {
         "title": "Assumption Historic Tours",
-        "description": "Historic church tour.",
+        "description": "Assumption Historic Tours offer a guided look at the church’s rich cultural heritage; visitors should bring their own chairs.",
         "church_id": "our-lady-of-the-assumption-windsor",
         "church_name": "Our Lady of the Assumption",
         "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
@@ -10464,7 +10464,7 @@
     },
     {
         "title": "Confirmation Preparation Begins",
-        "description": "Confirmation preparation program begins; Saturdays 10:00–11:00 AM.",
+        "description": "Confirmation preparation begins October 17 and meets on Saturdays from 10:00–11:00 a.m. at St. Angela.",
         "church_id": "st-angela-merici-windsor",
         "church_name": "St. Angela Merici",
         "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
@@ -10539,7 +10539,7 @@
     },
     {
         "title": "Confirmation Parent and Youth Meeting",
-        "description": "Confirmation meeting.",
+        "description": "Parents and youth preparing for Confirmation may attend one of two meetings: September 16 at Our Lady of Atonement or September 20 at St. John Vianney.",
         "church_id": "our-lady-of-the-atonement-windsor",
         "church_name": "Our Lady of the Atonement",
         "family_of_parishes": "East Windsor Catholic Family of Parishes",
@@ -10596,7 +10596,7 @@
     },
     {
         "title": "Parish Family Youth Group Begins",
-        "description": "Youth group for Grades 3–8, 6:30–8:00 p.m.",
+        "description": "The Parish Family Youth Group begins for students in Grades 3–8 at the Atonement Family Centre.",
         "church_id": null,
         "church_name": "Atonement Family Centre",
         "family_of_parishes": "East Windsor Catholic Family of Parishes",
@@ -10614,7 +10614,7 @@
     },
     {
         "title": "Healing Mass",
-        "description": "Rosary at 7:00 PM followed by Healing Mass at 7:30 PM.",
+        "description": "The evening begins with the Rosary at 7:00 p.m., followed by a Healing Mass at 7:30 p.m.",
         "church_id": null,
         "church_name": "Académie Ste. Cecile Chapel",
         "family_of_parishes": "East Windsor Catholic Family of Parishes",
@@ -10727,7 +10727,7 @@
     },
     {
         "title": "Final Mass and Closing Celebration of St. Anthony of Padua Hungarian Parish",
-        "description": "Final Mass with Bishop Daniel Miehm, followed by a light reception in the St. John Vianney Parish Hall.",
+        "description": "The final Mass for St. Anthony of Padua Hungarian Parish is followed by a light reception in the St. John Vianney Parish Hall.",
         "church_id": "st-john-vianney-windsor",
         "church_name": "St. John Vianney",
         "family_of_parishes": "East Windsor Catholic Family of Parishes",
@@ -10782,7 +10782,7 @@
     },
     {
         "title": "Bereavement Support Group",
-        "description": "Bereavement support group.",
+        "description": "The Bereavement Support Group meets at Good Shepherd, with immediate support information available through CatholicFamily.ca/grief.",
         "church_id": "good-shepherd-tecumseh",
         "church_name": "Good Shepherd",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -10801,7 +10801,7 @@
     },
     {
         "title": "Feast of Our Lady of La Salette",
-        "description": "Prayers, devotions and Mass.",
+        "description": "The Feast of Our Lady of La Salette includes prayers and devotions from 2:00–4:40 p.m., followed by Mass at 5:00 p.m.",
         "church_id": null,
         "church_name": "Our Lady of Guadalupe Church",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -10820,7 +10820,7 @@
     },
     {
         "title": "Catholic in Recovery",
-        "description": "First Catholic in Recovery gathering.",
+        "description": "Catholic in Recovery offers Scripture-based discussion, recovery support and prayer in a confidential and welcoming setting, integrating Catholic faith and twelve-step principles.",
         "church_id": "ste-anne-tecumseh",
         "church_name": "Ste. Anne",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -10839,7 +10839,7 @@
     },
     {
         "title": "Soup and Social",
-        "description": "Soup and social after the 12:15 PM Mass.",
+        "description": "Soup and Social offers an opportunity to share a meal, connect with others and build community after the 12:15 p.m. Mass; everyone is welcome.",
         "church_id": "good-shepherd-tecumseh",
         "church_name": "Good Shepherd",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -10857,7 +10857,7 @@
     },
     {
         "title": "Women at the Well Begins",
-        "description": "First Women at the Well gathering.",
+        "description": "Women at the Well is a welcoming faith-sharing gathering for women, with stand-alone topics and opportunities to grow in love of Christ.",
         "church_id": "good-shepherd-tecumseh",
         "church_name": "Good Shepherd",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -10876,7 +10876,7 @@
     },
     {
         "title": "Good Shepherd CWL Meeting",
-        "description": "CWL meeting after the 6:30 PM Mass.",
+        "description": "The Good Shepherd Catholic Women’s League meets after the 6:30 p.m. Mass, and new members are welcome.",
         "church_id": "good-shepherd-tecumseh",
         "church_name": "Good Shepherd",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -10894,7 +10894,7 @@
     },
     {
         "title": "Right to Life Educational Awareness Week",
-        "description": "Educational awareness sessions, Sept. 15–18, from noon to 1:00 PM.",
+        "description": "Right to Life Educational Awareness Week presents sessions on euthanasia from September 15–18, each day from noon to 1:00 p.m.",
         "church_id": null,
         "church_name": "Metropolitan Hospital",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -10931,7 +10931,7 @@
     },
     {
         "title": "Christian Trivia Night",
-        "description": "Christian trivia night hosted by the Most Precious Blood Knights of Columbus; teams of up to 8, $10 per person.",
+        "description": "Christian Trivia Night is hosted by the Most Precious Blood Knights of Columbus; teams may have up to eight people, and the cost is $10 per person.",
         "church_id": "most-precious-blood-windsor",
         "church_name": "Most Precious Blood",
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -10950,7 +10950,7 @@
     },
     {
         "title": "Fourth Degree Assembly Dinner and Meeting",
-        "description": "Dinner at 6:00 PM followed by meeting at 7:00 PM.",
+        "description": "The Fourth Degree Assembly 1789 gathers for dinner at 6:00 p.m., followed by its meeting at 7:00 p.m.",
         "church_id": "ste-anne-tecumseh",
         "church_name": "Ste. Anne",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -11005,7 +11005,7 @@
     },
     {
         "title": "St. Simon and St. Jude SSVP Meeting",
-        "description": "Monthly SSVP meeting.",
+        "description": "The St. Simon and St. Jude SSVP meets monthly in the main room of the parish hall.",
         "church_id": "st-simon-st-jude-belle-river",
         "church_name": "St. Simon & St. Jude",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -11061,7 +11061,7 @@
     },
     {
         "title": "CLOW Returns",
-        "description": "Children’s Liturgy of the Word returns at the 10:00 AM Sunday Mass.",
+        "description": "Children’s Liturgy of the Word returns at the 10:00 a.m. Sunday Mass.",
         "church_id": "st-michaels-leamington",
         "church_name": "St. Michael",
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -11097,7 +11097,7 @@
     },
     {
         "title": "40 Days for Life Challenge Begins",
-        "description": "Two-hour Tuesday morning prayer and witness begins; meet at St. Michael’s around 9:00 AM.",
+        "description": "The St. Michael parish group begins its two-hour Tuesday morning prayer and witness for the 40 Days for Life campaign; participants meet around 9:00 a.m. and carpool to Windsor.",
         "church_id": "st-michaels-leamington",
         "church_name": "St. Michael",
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -11116,7 +11116,7 @@
     },
     {
         "title": "Life Chain",
-        "description": "One-hour peaceful public witness at local sites from 2:00–3:00 p.m.",
+        "description": "Life Chain is a one-hour peaceful, prayerful public witness for the sanctity of human life, held at local sites from 2:00–3:00 p.m.",
         "church_id": null,
         "church_name": "Multiple Windsor-Essex locations",
         "family_of_parishes": null,
@@ -11245,7 +11245,7 @@
     },
     {
         "title": "AHCFOP High School Youth Group Begins",
-        "description": "High school youth group begins; the bulletin announcement lists 7:00–8:30 PM.",
+        "description": "The AHCFOP High School Youth Group begins its regular gatherings, with the bulletin listing a 7:00–8:30 p.m. meeting time.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
@@ -11264,7 +11264,7 @@
     },
     {
         "title": "St. Gianna Moms Group Begins",
-        "description": "Faith, fellowship, and support for mothers.",
+        "description": "The St. Gianna Moms Group welcomes women and mothers to connect, share and support one another in their vocations as wives and mothers.",
         "church_id": "holy-name-of-jesus-essex",
         "church_name": "Holy Name of Jesus",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -11283,7 +11283,7 @@
     },
     {
         "title": "Seniors Dinner and Dance",
-        "description": "Spaghetti and meatballs dinner with coffee, tea, and dessert; tickets at the door.",
+        "description": "The Seniors Dinner features spaghetti and meatballs, salad, rolls, coffee, tea and dessert, with tickets available at the door.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -11301,7 +11301,7 @@
     },
     {
         "title": "South Windsor Becoming Catholic Sessions Begin",
-        "description": "Sessions for those exploring the Catholic faith begin.",
+        "description": "South Windsor’s Becoming Catholic sessions welcome adults who want to learn more about the Catholic faith and the teachings of the Church.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "South Windsor Catholic Family of Parishes",
@@ -11357,7 +11357,7 @@
     },
     {
         "title": "St. Francis Transitus Day of Recollection",
-        "description": "Adoration at 10:00 AM, Mass at 11:00 AM, and Transitus ceremony at 3:00 PM.",
+        "description": "The St. Francis Transitus Day of Recollection includes Adoration at 10:00 a.m., Mass at 11:00 a.m. and the Transitus ceremony at 3:00 p.m.",
         "church_id": "immaculate-heart-windsor",
         "church_name": "St. Michael",
         "family_of_parishes": "Rose City Central Catholic Family of Parishes",
@@ -11376,7 +11376,7 @@
     },
     {
         "title": "St. Francis of Assisi Feast Day Mass",
-        "description": "Feast day Mass followed by refreshments.",
+        "description": "The Feast of St. Francis of Assisi is marked with Mass followed by refreshments.",
         "church_id": "st-francis-of-assisi-windsor",
         "church_name": "St. Francis of Assisi",
         "family_of_parishes": "Rose City Central Catholic Family of Parishes",
@@ -11413,7 +11413,7 @@
     },
     {
         "title": "Windsor-Essex Right to Life Walk for Life",
-        "description": "Annual 3 km walk; registration 10:00–11:00 AM, with lunch after the walk.",
+        "description": "The Windsor-Essex Right to Life Walk for Life is an annual three-kilometre walk with registration from 10:00–11:00 a.m. and lunch afterward.",
         "church_id": null,
         "church_name": "Riverside Sportsmen Club",
         "family_of_parishes": null,
@@ -11432,7 +11432,7 @@
     },
     {
         "title": "Thanksgiving Food Drive",
-        "description": "Thanksgiving food drive at both Rose City Central parishes.",
+        "description": "The Thanksgiving Food Drive collects donations at both Rose City Central parishes.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Rose City Central Catholic Family of Parishes",
@@ -11468,7 +11468,7 @@
     },
     {
         "title": "Open Streets Windsor",
-        "description": "Wyandotte Street East is closed to motor traffic; attendees should use the route information in the bulletin.",
+        "description": "Open Streets Windsor closes Wyandotte Street East to motor traffic from 9:00 a.m.–3:00 p.m.; attendees can follow the route information in the bulletin.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -11487,7 +11487,7 @@
     },
     {
         "title": "Sparks Girl Guide Cookie Sale",
-        "description": "Sparks Girl Guides sell cookies after Mass.",
+        "description": "Sparks Girl Guides offer their cookies for sale after Mass.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -11506,7 +11506,7 @@
     },
     {
         "title": "Sparks Girl Guide Cookie Sale",
-        "description": "Sparks Girl Guides sell cookies after Mass.",
+        "description": "Sparks Girl Guides sell cookies after Mass to support their program.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -11563,7 +11563,7 @@
     },
     {
         "title": "Beloved Retreat Experience",
-        "description": "Retreat experience held October 16–18.",
+        "description": "The Beloved retreat offers a personal transformation experience and a deeper reflection on God’s love from October 16–18.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -11582,7 +11582,7 @@
     },
     {
         "title": "St. Alphonsus Just for Fun Bingo",
-        "description": "Just for Fun Bingo at St. Alphonsus Cares.",
+        "description": "St. Alphonsus Cares hosts a Just for Fun Bingo session.",
         "church_id": "st-alphonsus-windsor",
         "church_name": "St. Alphonsus",
         "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
@@ -11618,7 +11618,7 @@
     },
     {
         "title": "Exercise with Darrin",
-        "description": "Exercise and stretching session returns.",
+        "description": "Exercise with Darrin returns with stretching and movement designed to help participants ease back into activity.",
         "church_id": "st-alphonsus-windsor",
         "church_name": "St. Alphonsus",
         "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
@@ -11636,7 +11636,7 @@
     },
     {
         "title": "Chicken Pot Pie Sales Begin",
-        "description": "CWL chicken pot pies sold Mondays from 1:00–3:00 PM.",
+        "description": "The Catholic Women’s League sells chicken pot pies on Mondays from 1:00–3:00 p.m. at the Atonement Family Centre.",
         "church_id": "our-lady-of-the-atonement-windsor",
         "church_name": "Our Lady of the Atonement",
         "family_of_parishes": "East Windsor Catholic Family of Parishes",
@@ -11729,7 +11729,7 @@
     },
     {
         "title": "Life Worth Living Film",
-        "description": "Film screening followed by a Q&A with Alex Schadenberg.",
+        "description": "The Life Worth Living film screening is followed by a Q&A with Alex Schadenberg of the Euthanasia Prevention Coalition.",
         "church_id": "st-michaels-leamington",
         "church_name": "St. Michael",
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -11748,7 +11748,7 @@
     },
     {
         "title": "Little Flowers Girls’ Club Begins",
-        "description": "Girls in Grades K–6; first Saturdays from October 3, 2026 through June 5, 2027.",
+        "description": "The Little Flowers Girls’ Club welcomes girls in Grades K–6 on the first Saturday of each month from October 3, 2026 through June 5, 2027, with crafts, games, activities, faith and fellowship.",
         "church_id": "st-john-de-brebeuf-kingsville",
         "church_name": "St. John de Brébeuf",
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -11786,7 +11786,7 @@
     },
     {
         "title": "GriefShare Fall Program Begins",
-        "description": "GriefShare’s 13-week program begins Thursday, September 24; participants may attend either the Wednesday or Thursday session.",
+        "description": "GriefShare is a thirteen-week program for people who have lost a loved one and want tools to help manage their grief; participants may attend either the Wednesday or Thursday session.",
         "church_id": "st-michaels-leamington",
         "church_name": "St. Michael's",
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -11805,7 +11805,7 @@
     },
     {
         "title": "Into the Breach",
-        "description": "Catholic video series for men exploring the faith and the crisis facing the Church; begins with Mass at 6:00 PM.",
+        "description": "Into the Breach is a twelve-episode video series for men that explores the Catholic faith, authentic Catholic masculinity and the crisis facing the Church.",
         "church_id": "st-anthony-of-padua-harrow",
         "church_name": "St. Anthony of Padua",
         "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
@@ -11899,7 +11899,7 @@
     },
     {
         "title": "Exaltation of the Holy Cross Mass",
-        "description": "Special Mass for the Feast of the Exaltation of the Holy Cross.",
+        "description": "The parish marks the Feast of the Exaltation of the Holy Cross with a special Mass.",
         "church_id": "st-john-vianney-windsor",
         "church_name": "St. John Vianney",
         "family_of_parishes": "East Windsor Catholic Family of Parishes",
@@ -11917,7 +11917,7 @@
     },
     {
         "title": "Our Lady of Sorrows Mass",
-        "description": "Annual Mass for victims and survivors of clergy sexual abuse and for healing of parish communities.",
+        "description": "This annual Mass remembers victims and survivors of clergy sexual abuse and prays for healing in parish communities.",
         "church_id": "st-john-vianney-windsor",
         "church_name": "St. John Vianney",
         "family_of_parishes": "East Windsor Catholic Family of Parishes",
@@ -11993,7 +11993,7 @@
     },
     {
         "title": "First Saturday Mass",
-        "description": "Mass at 9 a.m.; Adoration follows, with Benediction at 11 a.m.",
+        "description": "First Saturday Mass begins at 9:00 a.m., followed by Adoration and Benediction at 11:00 a.m.",
         "church_id": "st-john-the-baptist-amherstburg",
         "church_name": "St. John the Baptist",
         "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
@@ -12031,7 +12031,7 @@
     },
     {
         "title": "Coffee Friday",
-        "description": "Coffee, tea, juice, water and baked goods after morning Mass.",
+        "description": "Coffee Friday offers coffee, tea, juice, water and baked goods after morning Mass.",
         "church_id": "st-john-the-baptist-amherstburg",
         "church_name": "St. John the Baptist",
         "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
@@ -12049,7 +12049,7 @@
     },
     {
         "title": "St. John’s Take-Out Chili Dinner",
-        "description": "Homemade chili dinner with salad, rolls and dessert; take-out only.",
+        "description": "St. John’s take-out chili dinner includes homemade chili, salad, rolls and dessert.",
         "church_id": "st-john-the-evangelist-woodslee",
         "church_name": "St. John the Evangelist",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -12068,7 +12068,7 @@
     },
     {
         "title": "St. Mary’s All-You-Can-Eat Pasta Dinner",
-        "description": "Pasta dinner hosted by St. Mary Altar Society; take-out available.",
+        "description": "St. Mary’s Altar Society hosts an all-you-can-eat pasta dinner, with takeout available.",
         "church_id": "st-marys-maidstone",
         "church_name": "St. Mary's",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -12087,7 +12087,7 @@
     },
     {
         "title": "St. Joseph Cemetery Sunday",
-        "description": "Prayer service at St. Joseph Church, followed by a visit to the cemetery.",
+        "description": "St. Joseph Cemetery Sunday begins with a prayer service at St. Joseph Church, followed by a visit to the cemetery.",
         "church_id": "st-joseph-river-canard",
         "church_name": "St. Joseph",
         "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
@@ -12106,7 +12106,7 @@
     },
     {
         "title": "Anointing Mass at St. Joseph",
-        "description": "Mass with the Rite of Anointing, followed by lunch in the parish hall.",
+        "description": "The Anointing Mass at St. Joseph includes the Rite of Anointing followed by lunch in the parish hall.",
         "church_id": "st-joseph-river-canard",
         "church_name": "St. Joseph",
         "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
@@ -12125,7 +12125,7 @@
     },
     {
         "title": "Anointing Mass at Sacred Heart",
-        "description": "Mass with the Rite of Anointing, followed by lunch in the Community Center.",
+        "description": "The Anointing Mass at Sacred Heart includes the Rite of Anointing followed by lunch in the Community Center.",
         "church_id": "sacred-heart-lasalle",
         "church_name": "Sacred Heart",
         "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
@@ -12144,7 +12144,7 @@
     },
     {
         "title": "South Windsor CWL General Meeting",
-        "description": "Last lottery draw and a presentation by Russell Nahdee; all ladies welcome.",
+        "description": "The South Windsor CWL general meeting includes the final lottery draw and a presentation by Russell Nahdee, with all ladies welcome.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "South Windsor Catholic Family of Parishes",
@@ -12182,7 +12182,7 @@
     },
     {
         "title": "Anointing Mass and Luncheon",
-        "description": "Anointing Mass followed by a CWL-sponsored luncheon; register by October 20.",
+        "description": "The Anointing Mass is followed by a Catholic Women’s League-sponsored luncheon; luncheon registration is required by October 20.",
         "church_id": "our-lady-of-guadalupe-windsor",
         "church_name": "Our Lady of Guadalupe / San Juan Diego",
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -12219,7 +12219,7 @@
     },
     {
         "title": "First Saturday Devotion",
-        "description": "Confessions at 4 p.m., followed by Mass, Rosary and meditation.",
+        "description": "First Saturday Devotion includes Confession at 4:00 p.m., followed by Mass, the Rosary and meditation.",
         "church_id": null,
         "church_name": "Our Lady of Lebanon Shrine",
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -12258,7 +12258,7 @@
     },
     {
         "title": "School Rosary: École St. Michael",
-        "description": "Rosary for students, teachers and staff.",
+        "description": "The school Rosary gathers students, teachers and staff in prayer.",
         "church_id": "st-michaels-leamington",
         "church_name": "St. Michael's",
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -12276,7 +12276,7 @@
     },
     {
         "title": "Portuguese Malasadas Fundraiser Pickup",
-        "description": "Pre-ordered malasadas available for pickup after 11 a.m.",
+        "description": "Pre-ordered Portuguese malasadas are available for pickup after 11:00 a.m., with proceeds supporting church decorations and flowers.",
         "church_id": "our-lady-of-the-most-blessed-sacrament-wheatley",
         "church_name": "Our Lady of the Most Blessed Sacrament",
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -12313,7 +12313,7 @@
     },
     {
         "title": "Central Essex Rosary Rally",
-        "description": "Bring a rosary and lawn chair; gathering moves inside in inclement weather.",
+        "description": "The Central Essex Rosary Rally invites participants to bring a rosary and lawn chair; the gathering moves indoors if the weather is poor.",
         "church_id": "st-john-the-evangelist-woodslee",
         "church_name": "St. John the Evangelist",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -12349,7 +12349,7 @@
     },
     {
         "title": "Grieving with Great Hope Retreat",
-        "description": "Friday evening session of the two-day bereavement retreat.",
+        "description": "Grieving with Great Hope is a two-day bereavement retreat, beginning Friday at St. Mary’s and continuing Saturday from 9:30 a.m. to 3:30 p.m. at Holy Name of Jesus Parish Hall.",
         "church_id": "st-marys-maidstone",
         "church_name": "St. Mary",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -12368,7 +12368,7 @@
     },
     {
         "title": "St. Mary’s Mission Group Coffee and Apple Crisp",
-        "description": "Coffee and apple crisp for a free-will offering after Mass.",
+        "description": "St. Mary’s Mission Group serves coffee and apple crisp after Mass for a free-will offering that supports its mission work.",
         "church_id": "st-marys-maidstone",
         "church_name": "St. Mary's",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -12387,7 +12387,7 @@
     },
     {
         "title": "Alpha Begins",
-        "description": "First of 11 sessions exploring the foundations of Christian faith; dinner included.",
+        "description": "Alpha begins an eleven-session exploration of the foundations of Christian faith, with dinner included.",
         "church_id": "our-lady-of-mt-carmel-windsor",
         "church_name": "Our Lady of Mt Carmel",
         "family_of_parishes": "South Windsor Catholic Family of Parishes",
@@ -12405,7 +12405,7 @@
     },
     {
         "title": "Thanksgiving Food Drive",
-        "description": "Bring non-perishable food items to weekend Masses for the annual drive.",
+        "description": "The annual Thanksgiving Food Drive collects non-perishable food items at weekend Masses.",
         "church_id": "our-lady-of-mt-carmel-windsor",
         "church_name": "Our Lady of Mt Carmel",
         "family_of_parishes": "South Windsor Catholic Family of Parishes",
@@ -12423,7 +12423,7 @@
     },
     {
         "title": "Thanksgiving Food Drive",
-        "description": "Bring non-perishable food items to weekend Masses for the annual drive.",
+        "description": "The annual Thanksgiving Food Drive collects non-perishable food items at weekend Masses.",
         "church_id": "our-lady-of-mt-carmel-windsor",
         "church_name": "Our Lady of Mt Carmel",
         "family_of_parishes": "South Windsor Catholic Family of Parishes",
@@ -12441,7 +12441,7 @@
     },
     {
         "title": "In Thanksgiving: Mass and Soup",
-        "description": "Fellowship and homemade soup following the 10 a.m. Thanksgiving Mass.",
+        "description": "The 10:00 a.m. Thanksgiving Mass is followed by fellowship and homemade soup.",
         "church_id": "most-precious-blood-windsor",
         "church_name": "Most Precious Blood",
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -12479,7 +12479,7 @@
     },
     {
         "title": "Monthly Prayer Meeting",
-        "description": "Praise and prayer gathering.",
+        "description": "The monthly prayer meeting is an opportunity to gather for praise and prayer.",
         "church_id": "st-john-vianney-windsor",
         "church_name": "St. John Vianney",
         "family_of_parishes": "East Windsor Catholic Family of Parishes",
@@ -12497,7 +12497,7 @@
     },
     {
         "title": "St. Jerome Blessing of Animals",
-        "description": "Pet blessing in the church parking lot for the feast of St. Francis.",
+        "description": "St. Jerome’s blessing of animals honours the Feast of St. Francis and welcomes pets in the church parking lot.",
         "church_id": "st-jerome-windsor",
         "church_name": "St. Jerome",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -12515,7 +12515,7 @@
     },
     {
         "title": "St. Jerome Outdoor Mass",
-        "description": "Outdoor Mass for the anniversary of St. Francis of Assisi; bring a lawn chair. Pets may also receive a blessing.",
+        "description": "St. Jerome’s outdoor Mass celebrates the anniversary of St. Francis of Assisi; bring a lawn chair, and pets may also receive a blessing.",
         "church_id": "st-jerome-windsor",
         "church_name": "St. Jerome",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -12534,7 +12534,7 @@
     },
     {
         "title": "Cursillo Ultreya",
-        "description": "All Cursillistas are welcome.",
+        "description": "The Cursillo Ultreya welcomes all Cursillistas.",
         "church_id": "holy-name-of-jesus-essex",
         "church_name": "Holy Name of Jesus",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -12553,7 +12553,7 @@
     },
     {
         "title": "School Rosary: St. John de Brébeuf",
-        "description": "Rosary for students, teachers and staff.",
+        "description": "The school Rosary gathers students, teachers and staff in prayer.",
         "church_id": "st-john-de-brebeuf-kingsville",
         "church_name": "St. John de Brebeuf",
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -12571,7 +12571,7 @@
     },
     {
         "title": "School Rosary: St. Louis",
-        "description": "Rosary for students, teachers and staff.",
+        "description": "The school Rosary gathers students, teachers and staff at St. Louis School; bring a rosary and meet at the front doors, or pray inside if the weather is poor.",
         "church_id": "st-michaels-leamington",
         "church_name": "St. Michael's",
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -12589,7 +12589,7 @@
     },
     {
         "title": "School Rosary: Cardinal Carter",
-        "description": "Rosary for students, teachers and staff; gather in the school chapel.",
+        "description": "The school Rosary gathers students, teachers and staff at Cardinal Carter in the school chapel; bring a rosary, and pray inside if the weather is poor.",
         "church_id": "st-michaels-leamington",
         "church_name": "St. Michael's",
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -12607,7 +12607,7 @@
     },
     {
         "title": "GriefShare Begins at St. John de Brébeuf",
-        "description": "First session of a 13-week grief support program.",
+        "description": "GriefShare begins a thirteen-week grief support program at St. John de Brébeuf for people mourning the loss of a loved one.",
         "church_id": "st-john-de-brebeuf-kingsville",
         "church_name": "St. John de Brebeuf",
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -12626,7 +12626,7 @@
     },
     {
         "title": "Jeremiah Day",
-        "description": "Day for young men in grades 8–12 to visit St. Peter’s Seminary; tour, Mass, lunch, prayer and indoor sports.",
+        "description": "Jeremiah Day invites young men in Grades 8–12 to visit St. Peter’s Seminary for a tour, Mass, lunch, prayer and indoor sports.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
@@ -12644,7 +12644,7 @@
     },
     {
         "title": "Knights of Columbus Council 9500 Fish Fry",
-        "description": "Fish fry hosted by Knights of Columbus Council 9500.",
+        "description": "Knights of Columbus Council 9500 hosts a fish fry from 4:00–6:00 p.m., with each meal priced at $15.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
@@ -12663,7 +12663,7 @@
     },
     {
         "title": "High School Youth Group",
-        "description": "Meets every other Sunday evening.",
+        "description": "The High School Youth Group meets every other Sunday evening for its regular gatherings.",
         "church_id": "st-john-the-baptist-amherstburg",
         "church_name": "St. John the Baptist",
         "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
@@ -12682,7 +12682,7 @@
     },
     {
         "title": "Grade 5/6 Youth Group Begins",
-        "description": "Eight-week youth group.",
+        "description": "The Grade 5/6 Youth Group begins an eight-week series of youth gatherings.",
         "church_id": "st-john-the-baptist-amherstburg",
         "church_name": "St. John the Baptist",
         "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
@@ -12701,7 +12701,7 @@
     },
     {
         "title": "Corpus Christi Wednesday Coffee Social",
-        "description": "Coffee social after the 8:30 a.m. Mass.",
+        "description": "The Corpus Christi Wednesday Coffee Social follows the 8:30 a.m. Mass.",
         "church_id": "corpus-christi-windsor",
         "church_name": "Corpus Christi",
         "family_of_parishes": "South Windsor Catholic Family of Parishes",
@@ -12719,7 +12719,7 @@
     },
     {
         "title": "Monthly Healing Mass",
-        "description": "Confessions 6:00–6:45 p.m.; prayer teams available after Mass.",
+        "description": "The Monthly Healing Mass offers Confession from 6:00–6:45 p.m. and prayer teams after Mass.",
         "church_id": "immaculate-heart-windsor",
         "church_name": "Immaculate Heart / St. Michael's",
         "family_of_parishes": "Rose City Central Catholic Family of Parishes",
@@ -12738,7 +12738,7 @@
     },
     {
         "title": "Erie Shores South CWL Rosary Rallies",
-        "description": "CWL rosary rallies at four Erie Shores South parish locations; the Our Lady of Lebanon Shrine rally includes guest speaker Fr. Charbel Bousamra.",
+        "description": "The Catholic Women’s League hosts Rosary rallies at four Erie Shores South parish locations; the Our Lady of Lebanon Shrine rally includes guest speaker Fr. Charbel Bousamra.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -12756,7 +12756,7 @@
     },
     {
         "title": "Our Lady of the Atonement Pet Blessing",
-        "description": "Blessing of pets on the Feast of St. Francis of Assisi.",
+        "description": "The Our Lady of the Atonement pet blessing celebrates the Feast of St. Francis of Assisi.",
         "church_id": "our-lady-of-the-atonement-windsor",
         "church_name": "Our Lady of the Atonement",
         "family_of_parishes": "East Windsor Catholic Family of Parishes",
@@ -12812,7 +12812,7 @@
     },
     {
         "title": "Ste. Anne Knights of Columbus Meeting",
-        "description": "Monthly general meeting.",
+        "description": "The Ste. Anne Knights of Columbus holds its monthly general meeting in the parish hall.",
         "church_id": "ste-anne-tecumseh",
         "church_name": "Ste. Anne",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -12866,7 +12866,7 @@
     },
     {
         "title": "Ste. Anne CWL General Meeting",
-        "description": "General meeting; bring oral hygiene products for Second Chance Ministry.",
+        "description": "The Ste. Anne CWL general meeting invites members to bring oral hygiene products for the Second Chance Ministry.",
         "church_id": "ste-anne-tecumseh",
         "church_name": "Ste. Anne",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -12885,7 +12885,7 @@
     },
     {
         "title": "Good Shepherd CWL General Meeting",
-        "description": "General meeting following the 6:30 p.m. Mass.",
+        "description": "The Good Shepherd CWL general meeting follows the 6:30 p.m. Mass.",
         "church_id": "good-shepherd-tecumseh",
         "church_name": "Good Shepherd",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -12903,7 +12903,7 @@
     },
     {
         "title": "St. Simon & St. Jude CWL Bazaar",
-        "description": "CWL bazaar.",
+        "description": "The St. Simon and St. Jude Catholic Women’s League hosts a bazaar in the parish hall.",
         "church_id": "st-simon-st-jude-belle-river",
         "church_name": "St. Simon & St. Jude",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -12922,7 +12922,7 @@
     },
     {
         "title": "St. Simon & St. Jude SSVP Meeting",
-        "description": "Monthly meeting.",
+        "description": "The St. Simon and St. Jude SSVP meets monthly in the main room of the parish hall.",
         "church_id": "st-simon-st-jude-belle-river",
         "church_name": "St. Simon & St. Jude",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -12941,7 +12941,7 @@
     },
     {
         "title": "St. Simon & St. Jude Meat Pie Preparation",
-        "description": "Volunteers are needed to help make meat pies.",
+        "description": "Volunteers are needed to help prepare meat pies for the St. Simon and St. Jude Catholic Women’s League.",
         "church_id": "st-simon-st-jude-belle-river",
         "church_name": "St. Simon & St. Jude",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -12960,7 +12960,7 @@
     },
     {
         "title": "Life Chain at Corpus Christi",
-        "description": "Peaceful, prayerful public witness for the sanctity of human life.",
+        "description": "Life Chain at Corpus Christi is a peaceful, prayerful public witness for the sanctity of human life.",
         "church_id": "corpus-christi-windsor",
         "church_name": "Corpus Christi",
         "family_of_parishes": "South Windsor Catholic Family of Parishes",
@@ -12979,7 +12979,7 @@
     },
     {
         "title": "Feast of St. Vincent de Paul Mass",
-        "description": "Mass for the Feast of St. Vincent de Paul.",
+        "description": "The parish celebrates the Feast of St. Vincent de Paul with Mass at St. John’s.",
         "church_id": "st-john-the-evangelist-woodslee",
         "church_name": "St. John the Evangelist",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -12997,7 +12997,7 @@
     },
     {
         "title": "Women at the Well",
-        "description": "Faith sharing and fellowship for women; this session explores Numbers in the Bible.",
+        "description": "Women at the Well offers women a warm space for faith sharing and fellowship, with this session exploring the Book of Numbers.",
         "church_id": "good-shepherd-tecumseh",
         "church_name": "Good Shepherd",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -13016,7 +13016,7 @@
     },
     {
         "title": "Bereavement Support Group",
-        "description": "Bereavement support group meeting.",
+        "description": "The Bereavement Support Group meets at Good Shepherd for people who are grieving the loss of a loved one.",
         "church_id": "good-shepherd-tecumseh",
         "church_name": "Good Shepherd",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -13035,7 +13035,7 @@
     },
     {
         "title": "Children’s Church Begins",
-        "description": "Children’s liturgy resumes for ages 4–7; children return to their families at the Offertory.",
+        "description": "Children’s Church welcomes ages 4–7; children are called up at the beginning of Mass and return to their families at the Offertory.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -13054,7 +13054,7 @@
     },
     {
         "title": "Young Adult Charity Baby Shower",
-        "description": "Afternoon of games and fellowship supporting Windsor-Essex Right to Life, Our Lady of Guadalupe Home, and Hiatus House; ages 18–35.",
+        "description": "The Young Adult Charity Baby Shower offers games, fellowship and fun while supporting Windsor-Essex Right to Life, Our Lady of Guadalupe Home and Hiatus House; it is for ages 18–35.",
         "church_id": "ste-anne-tecumseh",
         "church_name": "Ste. Anne",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -13074,7 +13074,7 @@
     },
     {
         "title": "Elementary Youth Ministry Volunteer Meet & Greet",
-        "description": "Information and meet-and-greet for volunteers interested in the new Elementary Youth Ministry program.",
+        "description": "The Elementary Youth Ministry volunteer meet-and-greet is a chance to learn more, meet others and explore ways to help; there is no commitment required.",
         "church_id": "ste-anne-tecumseh",
         "church_name": "Ste. Anne",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -13094,7 +13094,7 @@
     },
     {
         "title": "Catholic in Recovery Gathering",
-        "description": "Recovery support, Scripture discussion, and prayer; next biweekly gathering.",
+        "description": "Catholic in Recovery offers Scripture discussion, recovery support and prayer in a confidential and welcoming setting, meeting every other Tuesday at Ste. Anne’s Catholic Church.",
         "church_id": "ste-anne-tecumseh",
         "church_name": "Ste. Anne",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -13113,7 +13113,7 @@
     },
     {
         "title": "AHCFOP Coffee Social",
-        "description": "Coffee social in the Fr. Ware Room.",
+        "description": "The AHCFOP Coffee Social takes place at 9:30 a.m. in the Fr. Ware Room.",
         "church_id": "st-john-the-baptist-amherstburg",
         "church_name": "St. John the Baptist",
         "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
@@ -13151,7 +13151,7 @@
     },
     {
         "title": "Holy Hour",
-        "description": "One hour of Scripture reflection, music, and quiet prayer before the Lord.",
+        "description": "This Holy Hour offers an hour with Jesus through Scripture reflection, music and quiet prayer before the Lord.",
         "church_id": "st-john-the-baptist-amherstburg",
         "church_name": "St. John the Baptist",
         "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
@@ -13169,7 +13169,7 @@
     },
     {
         "title": "Our Lady of Mount Carmel Knights of Columbus Parish Breakfast",
-        "description": "Parish breakfast fundraiser supporting charities supported by the Our Lady of Mount Carmel Knights of Columbus.",
+        "description": "The Our Lady of Mount Carmel Knights of Columbus hosts a parish breakfast fundraiser supporting the charities they serve.",
         "church_id": "our-lady-of-mt-carmel-windsor",
         "church_name": "Our Lady of Mount Carmel",
         "family_of_parishes": "South Windsor Catholic Family of Parishes",
@@ -13188,7 +13188,7 @@
     },
     {
         "title": "St. Clement CWL Breakfast",
-        "description": "CWL breakfast after Mass; tickets are required.",
+        "description": "The St. Clement CWL breakfast follows Mass at the Columbian Club in McGregor; tickets are required.",
         "church_id": "st-clement-mcgregor",
         "church_name": "St. Clement",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -13207,7 +13207,7 @@
     },
     {
         "title": "St. Michael Bingo",
-        "description": "Assigned parish bingo.",
+        "description": "St. Michael’s assigned parish bingo session supports the parish through bingo proceeds.",
         "church_id": "immaculate-heart-windsor",
         "church_name": "St. Michael's",
         "family_of_parishes": "Rose City Central Catholic Family of Parishes",
@@ -13225,7 +13225,7 @@
     },
     {
         "title": "St. Michael Bingo",
-        "description": "Assigned parish bingo.",
+        "description": "St. Michael’s assigned parish bingo session supports the parish through bingo proceeds.",
         "church_id": "immaculate-heart-windsor",
         "church_name": "St. Michael's",
         "family_of_parishes": "Rose City Central Catholic Family of Parishes",
@@ -13243,7 +13243,7 @@
     },
     {
         "title": "Blessing of Pets at Our Lady of Guadalupe",
-        "description": "Drive-through pet blessing following the 10 a.m. Mass.",
+        "description": "Following the 10:00 a.m. Mass, the priest blesses pets with Holy Water in the parking lot at Our Lady of Guadalupe.",
         "church_id": "our-lady-of-guadalupe-windsor",
         "church_name": "Our Lady of Guadalupe",
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -13262,7 +13262,7 @@
     },
     {
         "title": "Blessing of Pets at Most Precious Blood",
-        "description": "Drive-through pet blessing following the 11 a.m. Mass.",
+        "description": "Following the 11:00 a.m. Mass, the priest blesses pets with Holy Water in the parking lot at Most Precious Blood.",
         "church_id": "most-precious-blood-windsor",
         "church_name": "Most Precious Blood",
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -13281,7 +13281,7 @@
     },
     {
         "title": "Our Lady of Fatima Festival: Sunday Mass and Procession",
-        "description": "Mass at noon followed by a procession and luncheon at the Portuguese Club.",
+        "description": "The Our Lady of Fatima Festival includes noon Mass followed by a procession and luncheon at the Portuguese Club.",
         "church_id": "st-michaels-leamington",
         "church_name": "St. Michael's",
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -13300,7 +13300,7 @@
     },
     {
         "title": "Grieving with Great Hope Retreat: Saturday Session",
-        "description": "Saturday session of the two-day bereavement retreat.",
+        "description": "The Saturday session of the two-day Grieving with Great Hope retreat runs from 9:30 a.m. to 3:30 p.m. at Holy Name of Jesus Parish Hall.",
         "church_id": "holy-name-of-jesus-essex",
         "church_name": "Holy Name of Jesus",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -13319,7 +13319,7 @@
     },
     {
         "title": "Holy Name of Jesus Mission Group Meeting",
-        "description": "Mission group meeting; new members are welcome.",
+        "description": "The Holy Name of Jesus Mission Group meets at 6:15 p.m. in Meeting Room A, and new members are welcome.",
         "church_id": "holy-name-of-jesus-essex",
         "church_name": "Holy Name of Jesus",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -13337,7 +13337,7 @@
     },
     {
         "title": "OLPH Bingo",
-        "description": "Bingo and gaming fundraiser.",
+        "description": "OLPH Bingo is an assigned bingo and gaming fundraiser at All Star Gaming Centre on Walker Road.",
         "church_id": "our-lady-of-perpetual-help-windsor",
         "church_name": "Our Lady of Perpetual Help",
         "family_of_parishes": "Rose City Central Catholic Family of Parishes",
@@ -13374,7 +13374,7 @@
     },
     {
         "title": "East Windsor Confirmation Class",
-        "description": "Confirmation preparation class for parish candidates.",
+        "description": "East Windsor Confirmation candidates gather for a preparation class.",
         "church_id": "our-lady-of-the-atonement-windsor",
         "church_name": "Our Lady of the Atonement",
         "family_of_parishes": "East Windsor Catholic Family of Parishes",
