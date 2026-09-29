@@ -9569,7 +9569,7 @@
     },
     {
         "title": "RCIA Program Begins",
-        "description": "The RCIA journey welcomes people who are interested in becoming Catholic or completing their sacraments of initiation, with small-group learning about the faith and the Church’s teachings.",
+        "description": "The RCIA journey begins for anyone interested in becoming Catholic or completing their sacraments of initiation.",
         "church_id": "st-joseph-river-canard",
         "church_name": "St. Joseph",
         "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
@@ -10596,7 +10596,7 @@
     },
     {
         "title": "Parish Family Youth Group Begins",
-        "description": "The Parish Family Youth Group welcomes students in Grades 3–8 for an evening of youth activities and faith formation.",
+        "description": "The Parish Family Youth Group begins for students in Grades 3–8 at the Atonement Family Centre.",
         "church_id": null,
         "church_name": "Atonement Family Centre",
         "family_of_parishes": "East Windsor Catholic Family of Parishes",
@@ -11432,7 +11432,7 @@
     },
     {
         "title": "Thanksgiving Food Drive",
-        "description": "The Thanksgiving Food Drive collects donations at both Rose City Central parishes to help people in need.",
+        "description": "The Thanksgiving Food Drive collects donations at both Rose City Central parishes.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Rose City Central Catholic Family of Parishes",
@@ -11487,7 +11487,7 @@
     },
     {
         "title": "Sparks Girl Guide Cookie Sale",
-        "description": "Sparks Girl Guides sell cookies after Mass to support their program.",
+        "description": "Sparks Girl Guides offer their cookies for sale after Mass.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -11654,7 +11654,7 @@
     },
     {
         "title": "St. Padre Pio Feast Day Celebration",
-        "description": "The St. Padre Pio Feast Day celebration includes a program at 5:30 p.m., followed by Mass, reflections and refreshments at 6:30 p.m.",
+        "description": "Program at 5:30 PM followed by Mass, reflections, and refreshments at 6:30 PM.",
         "church_id": "good-shepherd-tecumseh",
         "church_name": "Good Shepherd",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -11674,7 +11674,7 @@
     },
     {
         "title": "Trunk or Treat",
-        "description": "Trunk or Treat invites children to dress up for an evening of candy, while volunteers are needed to decorate cars and hand out treats.",
+        "description": "Safe Halloween event with decorated cars and candy.",
         "church_id": "st-simon-st-jude-belle-river",
         "church_name": "St. Simon & St. Jude",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -12349,7 +12349,7 @@
     },
     {
         "title": "Grieving with Great Hope Retreat",
-        "description": "Grieving with Great Hope is a two-day bereavement retreat, beginning with a Friday evening session at St. Mary’s and continuing Saturday at Holy Name of Jesus Parish Hall.",
+        "description": "Grieving with Great Hope is a two-day bereavement retreat, beginning Friday at St. Mary’s and continuing Saturday from 9:30 a.m. to 3:30 p.m. at Holy Name of Jesus Parish Hall.",
         "church_id": "st-marys-maidstone",
         "church_name": "St. Mary",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -12441,7 +12441,7 @@
     },
     {
         "title": "In Thanksgiving: Mass and Soup",
-        "description": "Following the 10:00 a.m. Thanksgiving Mass, parishioners are invited to fellowship over homemade soup.",
+        "description": "The 10:00 a.m. Thanksgiving Mass is followed by fellowship and homemade soup.",
         "church_id": "most-precious-blood-windsor",
         "church_name": "Most Precious Blood",
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -12571,7 +12571,7 @@
     },
     {
         "title": "School Rosary: St. Louis",
-        "description": "The school Rosary gathers students, teachers and staff at St. Louis School; bring a rosary and meet at the front doors, or pray in the chapel at Cardinal Carter.",
+        "description": "The school Rosary gathers students, teachers and staff at St. Louis School; bring a rosary and meet at the front doors, or pray inside if the weather is poor.",
         "church_id": "st-michaels-leamington",
         "church_name": "St. Michael's",
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -12663,7 +12663,7 @@
     },
     {
         "title": "High School Youth Group",
-        "description": "The High School Youth Group meets every other Sunday evening for fellowship and youth ministry.",
+        "description": "The High School Youth Group meets every other Sunday evening for its regular gatherings.",
         "church_id": "st-john-the-baptist-amherstburg",
         "church_name": "St. John the Baptist",
         "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
@@ -12903,7 +12903,7 @@
     },
     {
         "title": "St. Simon & St. Jude CWL Bazaar",
-        "description": "The St. Simon and St. Jude CWL bazaar raises funds through a parish hall sale.",
+        "description": "The St. Simon and St. Jude Catholic Women’s League hosts a bazaar in the parish hall.",
         "church_id": "st-simon-st-jude-belle-river",
         "church_name": "St. Simon & St. Jude",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -13113,7 +13113,7 @@
     },
     {
         "title": "AHCFOP Coffee Social",
-        "description": "The AHCFOP Coffee Social offers coffee and conversation in the Fr. Ware Room after morning activities.",
+        "description": "The AHCFOP Coffee Social takes place at 9:30 a.m. in the Fr. Ware Room.",
         "church_id": "st-john-the-baptist-amherstburg",
         "church_name": "St. John the Baptist",
         "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
@@ -13300,7 +13300,7 @@
     },
     {
         "title": "Grieving with Great Hope Retreat: Saturday Session",
-        "description": "The Saturday session continues the two-day Grieving with Great Hope retreat with teaching, prayer and support for people who are grieving.",
+        "description": "The Saturday session of the two-day Grieving with Great Hope retreat runs from 9:30 a.m. to 3:30 p.m. at Holy Name of Jesus Parish Hall.",
         "church_id": "holy-name-of-jesus-essex",
         "church_name": "Holy Name of Jesus",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
