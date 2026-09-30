@@ -29,7 +29,7 @@ function formatDate(dateStr: string): string {
  * Format event time display
  */
 function formatEventTime(event: Event): string {
-  if (!event.start_time && !event.end_time) return '';
+  if (!event.start_time && !event.end_time) return event.all_day ? 'All day' : 'Time not specified';
   if (event.start_time && event.end_time) {
     return `${formatTime(event.start_time)} - ${formatTime(event.end_time)}`;
   }
@@ -228,6 +228,7 @@ export function EventCard({ event, churches }: EventCardProps) {
               date: event.date,
               start_time: event.start_time || undefined,
               end_time: event.end_time || undefined,
+              all_day: event.all_day,
             })}
             target="_blank"
             rel="noopener noreferrer"
