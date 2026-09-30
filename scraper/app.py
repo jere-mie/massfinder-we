@@ -22,8 +22,8 @@ from datetime import datetime
 from urllib.parse import quote
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-# Import utilities
-from utils import scraping, llm, events, intentions
+# Import utilities that do not require LLM configuration.
+from utils import scraping, events, intentions
 from utils.logging_config import setup_logging
 
 
@@ -254,7 +254,12 @@ def main():
     if args.download_only:
         logger.info("Download-only mode complete; no PDF extraction or JSON updates were run.")
         return 0
-    
+
+    # Import the LLM client only when analysis is requested. Its module checks
+    # for OPENROUTER_API_KEY during import, which is unnecessary for downloads.
+    global llm
+    from utils import llm
+
     # Branch based on mode
     if args.mode == 'events':
         return run_events_mode(args, logger, churches, downloaded, events_path, output_path, use_images)
