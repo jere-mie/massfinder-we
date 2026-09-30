@@ -77,7 +77,7 @@
     },
     {
         "title": "Summer of Hope Family Rally Night",
-        "description": "Family night of clean comedy, uplifting worship and prayer featuring Chris Padgett; bring a canned good and free-will offering.",
+        "description": "Family night of clean comedy, uplifting worship and prayer featuring Chris Padgett. Bring a canned good and free-will offering.",
         "church_id": "st-michaels-leamington",
         "church_name": "St. Michael's",
         "date": "2025-08-15",
@@ -134,7 +134,7 @@
     },
     {
         "title": "Public Rosary Rally",
-        "description": "Public rosary at Our Lady of Fatima statue; bring rosary/chair.",
+        "description": "Public rosary at Our Lady of Fatima statue. Bring rosary/chair.",
         "church_id": "st-john-the-evangelist-woodslee",
         "church_name": "St. John the Evangelist",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -152,7 +152,7 @@
     },
     {
         "title": "Nursing Home Ministry Gathering",
-        "description": "Coffee gathering and update session for Nursing Home Ministry; new volunteers welcome.",
+        "description": "Coffee gathering and update session for Nursing Home Ministry. New volunteers welcome.",
         "church_id": "st-john-vianney-windsor",
         "church_name": "St. John Vianney",
         "date": "2025-08-25",
@@ -228,7 +228,7 @@
     },
     {
         "title": "Carlo Acutis Day",
-        "description": "Families celebrate the canonization of Carlo Acutis; registration requested.",
+        "description": "Families celebrate the canonization of Carlo Acutis. Registration requested.",
         "church_id": "our-lady-of-mt-carmel-windsor",
         "church_name": "Our Lady of Mt Carmel",
         "family_of_parishes": "South Windsor Catholic Family of Parishes",
@@ -247,7 +247,7 @@
     },
     {
         "title": "Seniors Dance and Dinner",
-        "description": "Dance 3–5 p.m. followed by dinner 5–6 p.m.; music and advance tickets.",
+        "description": "Dance 3–5 PM followed by dinner 5–6 PM. Music and advance tickets.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
@@ -301,7 +301,7 @@
     },
     {
         "title": "Windsor-Essex Right to Life Walk for Life",
-        "description": "Walk for Life fundraiser supporting the pro-life cause; registration at Riverside Sportsmen Club.",
+        "description": "Walk for Life fundraiser supporting the pro-life cause. Registration at Riverside Sportsmen Club.",
         "church_id": null,
         "church_name": null,
         "date": "2025-09-20",
@@ -320,7 +320,7 @@
     },
     {
         "title": "New Coats for Kids Pasta Dinner",
-        "description": "Pasta dinner, takeout available, raffles; hosted by Essex Knights of Columbus Council #3305.",
+        "description": "Pasta dinner, takeout available, raffles. Hosted by Essex Knights of Columbus Council #3305.",
         "church_id": "st-marys-maidstone",
         "church_name": "St. Mary's",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -396,7 +396,7 @@
     },
     {
         "title": "St. Vincent de Paul Feast Day Pantry Collection",
-        "description": "Pantry item collection supporting those in need; drop-off at St. John de Brebeuf.",
+        "description": "Pantry item collection supporting those in need. Drop-off at St. John de Brebeuf.",
         "church_id": "st-john-de-brebeuf-kingsville",
         "church_name": "St. John de Brebeuf",
         "date": "2025-09-27",
@@ -414,7 +414,7 @@
     },
     {
         "title": "St. Vincent de Paul Feast Day Pantry Collection",
-        "description": "Pantry item collection supporting those in need; drop-off at St. John de Brebeuf.",
+        "description": "Pantry item collection supporting those in need. Drop-off at St. John de Brebeuf.",
         "church_id": "st-john-de-brebeuf-kingsville",
         "church_name": "St. John de Brebeuf",
         "date": "2025-09-28",
@@ -432,7 +432,7 @@
     },
     {
         "title": "CPR/AED Training Session",
-        "description": "CPR/AED training for parishioners and volunteers; registration required.",
+        "description": "CPR/AED training for parishioners and volunteers. Registration required.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -451,7 +451,7 @@
     },
     {
         "title": "CPR/AED Training Session",
-        "description": "CPR/AED training for parishioners and volunteers; registration required.",
+        "description": "CPR/AED training for parishioners and volunteers. Registration required.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -470,7 +470,7 @@
     },
     {
         "title": "CPR/AED Training Session",
-        "description": "CPR/AED training for parishioners and volunteers; registration required.",
+        "description": "CPR/AED training for parishioners and volunteers. Registration required.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -601,7 +601,7 @@
     },
     {
         "title": "MPB Knights of Columbus Pasta Dinner",
-        "description": "Pasta dinner; tickets $10 per person.",
+        "description": "Pasta dinner. Tickets $10 per person.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -620,7 +620,7 @@
     },
     {
         "title": "Fall Campaign Workshop",
-        "description": "Workshop for volunteers; attendance at one workshop required.",
+        "description": "Workshop for volunteers. Attendance at one workshop required.",
         "church_id": "st-marys-maidstone",
         "church_name": "St. Mary's",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -639,7 +639,7 @@
     },
     {
         "title": "Family of Parishes Breakfast",
-        "description": "Free-will offering breakfast; everyone welcome.",
+        "description": "Free-will offering breakfast. Everyone welcome.",
         "church_id": "holy-name-of-jesus-essex",
         "church_name": "Holy Name of Jesus",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -657,7 +657,7 @@
     },
     {
         "title": "All-You-Can-Eat Pasta Dinner",
-        "description": "Tickets at door; takeout available; hosted by St. Mary's Altar Society.",
+        "description": "Tickets at door. Takeout available. Hosted by St. Mary's Altar Society.",
         "church_id": "st-marys-maidstone",
         "church_name": "St. Mary's",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -676,7 +676,7 @@
     },
     {
         "title": "St. Clement's CWL Meeting",
-        "description": "CWL meeting; everyone welcome.",
+        "description": "CWL meeting. Everyone welcome.",
         "church_id": "st-clement-mcgregor",
         "church_name": "St. Clement",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -750,7 +750,7 @@
     },
     {
         "title": "Alpha Series",
-        "description": "Alpha faith-formation series begins; weekly Wednesdays.",
+        "description": "Alpha faith-formation series begins. Weekly Wednesdays.",
         "church_id": "our-lady-of-mt-carmel-windsor",
         "church_name": "Our Lady of Mt Carmel",
         "family_of_parishes": "South Windsor Catholic Family of Parishes",
@@ -769,7 +769,7 @@
     },
     {
         "title": "Ultreya Meeting",
-        "description": "Cursillistas gathering; all welcome.",
+        "description": "Cursillistas gathering. All welcome.",
         "church_id": "holy-name-of-jesus-essex",
         "church_name": "Holy Name of Jesus",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -807,7 +807,7 @@
     },
     {
         "title": "Rosary Crusade",
-        "description": "Public rosary; everyone welcome.",
+        "description": "Public rosary. Everyone welcome.",
         "church_id": "st-clement-mcgregor",
         "church_name": "St. Clement",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -843,7 +843,7 @@
     },
     {
         "title": "Canada-Wide Rosary Rally",
-        "description": "Public rosary rally; rain or shine.",
+        "description": "Public rosary rally. Rain or shine.",
         "church_id": "st-john-the-evangelist-woodslee",
         "church_name": "St. John the Evangelist",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -955,7 +955,7 @@
     },
     {
         "title": "Family of Parishes Missions Projects Pasta Fundraiser",
-        "description": "Pasta fundraiser dinner supporting mission partners in Northern Canada, Haiti, Africa and India; raffles and community dinner.",
+        "description": "Pasta fundraiser dinner supporting mission partners in Northern Canada, Haiti, Africa and India. Raffles and community dinner.",
         "church_id": null,
         "church_name": null,
         "date": "2025-10-26",
@@ -993,7 +993,7 @@
     },
     {
         "title": "Bishop Fabbro 75th Birthday Celebration",
-        "description": "Special evening supporting ministries close to Bishop Fabbro’s heart; tickets and sponsorships available.",
+        "description": "Special evening supporting ministries close to Bishop Fabbro’s heart. Tickets and sponsorships available.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "South Windsor Catholic Family of Parishes",
@@ -1012,7 +1012,7 @@
     },
     {
         "title": "Bishop Fabbro's 75th Birthday Celebration",
-        "description": "Dinner celebrating Bishop Ronald Fabbro; proceeds benefit diocesan ministries.",
+        "description": "Dinner celebrating Bishop Ronald Fabbro. Proceeds benefit diocesan ministries.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -1050,7 +1050,7 @@
     },
     {
         "title": "Christmas Play Rehearsal",
-        "description": "Rehearsal for Youth Ministry Christmas play; children participants.",
+        "description": "Rehearsal for Youth Ministry Christmas play. Children participants.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -1088,7 +1088,7 @@
     },
     {
         "title": "Christmas Play Rehearsal",
-        "description": "Rehearsal for Youth Ministry Christmas play; children participants.",
+        "description": "Rehearsal for Youth Ministry Christmas play. Children participants.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -1126,7 +1126,7 @@
     },
     {
         "title": "Christmas Play Rehearsal",
-        "description": "Rehearsal for Youth Ministry Christmas play; children participants.",
+        "description": "Rehearsal for Youth Ministry Christmas play. Children participants.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -1218,7 +1218,7 @@
     },
     {
         "title": "Christmas Play Rehearsal",
-        "description": "Rehearsal for Youth Ministry Christmas play; children participants.",
+        "description": "Rehearsal for Youth Ministry Christmas play. Children participants.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -1762,7 +1762,7 @@
     },
     {
         "title": "Dilexi Te Discussion Group",
-        "description": "Discussion of Pope Leo XIV apostolic exhortation Dilexi Te; three Saturday sessions.",
+        "description": "Discussion of Pope Leo XIV apostolic exhortation Dilexi Te. Three Saturday sessions.",
         "church_id": "corpus-christi-windsor",
         "church_name": "Corpus Christi",
         "family_of_parishes": "South Windsor Catholic Family of Parishes",
@@ -1914,7 +1914,7 @@
     },
     {
         "title": "Christmas Play Rehearsal",
-        "description": "Rehearsal for Youth Ministry Christmas play; children participants.",
+        "description": "Rehearsal for Youth Ministry Christmas play. Children participants.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -1952,7 +1952,7 @@
     },
     {
         "title": "Parish Breakfast",
-        "description": "Parish breakfast; tickets sold at the door.",
+        "description": "Parish breakfast. Tickets sold at the door.",
         "church_id": "our-lady-of-mt-carmel-windsor",
         "church_name": "Our Lady of Mt Carmel",
         "family_of_parishes": "South Windsor Catholic Family of Parishes",
@@ -2428,7 +2428,7 @@
     },
     {
         "title": "Cursillo Ultreya",
-        "description": "Regional Cursillo Ultreya gathering; open to all Cursillistas.",
+        "description": "Regional Cursillo Ultreya gathering. Open to all Cursillistas.",
         "church_id": "st-joseph-river-canard",
         "church_name": "St. Joseph",
         "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
@@ -2639,7 +2639,7 @@
     },
     {
         "title": "St. Theresa Breakfast with Santa",
-        "description": "Breakfast with Santa; voluntary donation.",
+        "description": "Breakfast with Santa. Voluntary donation.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -3189,7 +3189,7 @@
     },
     {
         "title": "All-You-Can-Eat Pasta Dinner",
-        "description": "Takeout available; proceeds to Essex Food Bank; hosted by St. Mary's Altar Society.",
+        "description": "Takeout available. Proceeds to Essex Food Bank. Hosted by St. Mary's Altar Society.",
         "church_id": "st-marys-maidstone",
         "church_name": "St. Mary's",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -3208,7 +3208,7 @@
     },
     {
         "title": "Ultreya Meeting",
-        "description": "Cursillistas gathering; all welcome.",
+        "description": "Cursillistas gathering. All welcome.",
         "church_id": "holy-name-of-jesus-essex",
         "church_name": "Holy Name of Jesus",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -3227,7 +3227,7 @@
     },
     {
         "title": "Healing Mass",
-        "description": "Confessions 6–6:45 p.m.; prayer teams after Mass.",
+        "description": "Confessions 6–6:45 PM. Prayer teams after Mass.",
         "church_id": "immaculate-heart-windsor",
         "church_name": "Immaculate Heart / St. Michael's",
         "family_of_parishes": "Rose City Central Catholic Family of Parishes",
@@ -3245,7 +3245,7 @@
     },
     {
         "title": "OLOG CWL Soup and Sandwiches Fundraiser",
-        "description": "Soup and sandwich fundraiser after the 10am Mass; $10 per person.",
+        "description": "Soup and sandwich fundraiser after the 10am Mass. $10 Per person.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -3805,7 +3805,7 @@
     },
     {
         "title": "Pasta Take-Out Dinner",
-        "description": "Pasta, salad, bun and dessert; $15/person.",
+        "description": "Pasta, salad, bun and dessert. $15/Person.",
         "church_id": "st-john-the-evangelist-woodslee",
         "church_name": "St. John the Evangelist",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -4888,7 +4888,7 @@
     },
     {
         "title": "Essex Knights of Columbus Fish Fry",
-        "description": "Fish fry dinner fundraiser hosted by the Essex Knights of Columbus; the council advertises Friday fish fries from 5:00–7:00 pm.",
+        "description": "Fish fry dinner fundraiser hosted by the Essex Knights of Columbus. The council advertises Friday fish fries from 5:00–7:00 pm.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -5651,7 +5651,7 @@
     },
     {
         "title": "Fish Fry Fundraiser",
-        "description": "Dine-in or takeout; meals include sides.",
+        "description": "Dine-in or takeout. Meals include sides.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
@@ -5670,7 +5670,7 @@
     },
     {
         "title": "Easter Vigil",
-        "description": "The great victory of Christ is celebrated; blessing of the Easter candle and initiation of new members.",
+        "description": "The great victory of Christ is celebrated. Blessing of the Easter candle and initiation of new members.",
         "church_id": "our-lady-of-the-atonement-windsor",
         "church_name": "Our Lady of the Atonement",
         "family_of_parishes": "East Windsor Catholic Family of Parishes",
@@ -6327,7 +6327,7 @@
     },
     {
         "title": "Our Lady of Guadalupe Home Benefit Dinner",
-        "description": "Benefit dinner supporting Our Lady of Guadalupe Home; doors open at 6:00 p.m. and dinner begins at 7:00 p.m.",
+        "description": "Benefit dinner supporting Our Lady of Guadalupe Home. Doors open at 6:00 PM and dinner begins at 7:00 PM.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -6365,7 +6365,7 @@
     },
     {
         "title": "Knights of Columbus Can & Bottle Drive",
-        "description": "Fundraiser for Special Olympics. No sorting necessary; drop off at the back of the parking lot.",
+        "description": "Fundraiser for Special Olympics. No sorting necessary. Drop off at the back of the parking lot.",
         "church_id": "st-john-vianney-windsor",
         "church_name": "St. John Vianney",
         "family_of_parishes": "East Windsor Catholic Family of Parishes",
@@ -6979,7 +6979,7 @@
     },
     {
         "title": "Knights of Columbus Fish Fry",
-        "description": "Monthly Knights of Columbus fish fry fundraiser; the next fish fry is May 8.",
+        "description": "Monthly Knights of Columbus fish fry fundraiser. The next fish fry is May 8.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
@@ -7633,7 +7633,7 @@
     },
     {
         "title": "St. Paul Rummage Sale",
-        "description": "Rummage sale with all items by donation; cash and carry only.",
+        "description": "Rummage sale with all items by donation. Cash and carry only.",
         "church_id": "st-pauls-windsor",
         "church_name": "St. Paul's",
         "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
@@ -7728,7 +7728,7 @@
     },
     {
         "title": "Catholic Men's Breakfast",
-        "description": "Monthly Catholic Men's breakfast; breakfast starts at 9:00 am.",
+        "description": "Monthly Catholic Men's breakfast. Breakfast starts at 9:00 am.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -7747,7 +7747,7 @@
     },
     {
         "title": "St. Vincent de Paul Pasta Dinner & Gift Baskets Fundraiser",
-        "description": "Fundraising pasta dinner and gift baskets; free-will offering.",
+        "description": "Fundraising pasta dinner and gift baskets. Free-will offering.",
         "church_id": "holy-name-of-jesus-essex",
         "church_name": "Holy Name of Jesus",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -7860,7 +7860,7 @@
     },
     {
         "title": "Public Rosary Walk",
-        "description": "Rosary walk; all ages and pets welcome, rain or shine.",
+        "description": "Rosary walk. All ages and pets welcome, rain or shine.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -8009,7 +8009,7 @@
     },
     {
         "title": "Catholic Men's Breakfast",
-        "description": "Monthly Catholic Men's breakfast; breakfast starts at 9:00 am.",
+        "description": "Monthly Catholic Men's breakfast. Breakfast starts at 9:00 am.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -8047,7 +8047,7 @@
     },
     {
         "title": "Summer Bible Camp: Eucharistic Miracles",
-        "description": "Vacation Bible camp for ages 6–12; crafts, music and faith activities.",
+        "description": "Vacation Bible camp for ages 6–12. Crafts, music and faith activities.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -8158,7 +8158,7 @@
     },
     {
         "title": "St. Angela Merici Festival 40th Anniversary",
-        "description": "Festival celebrating the 40th anniversary; dinner and dancing Saturday evening and family festival Sunday.",
+        "description": "Festival celebrating the 40th anniversary. Dinner and dancing Saturday evening and family festival Sunday.",
         "church_id": "st-angela-merici-windsor",
         "church_name": "St. Angela Merici",
         "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
@@ -8199,7 +8199,7 @@
         "source_bulletin_date": "2025-11-02",
         "extracted_at": "2026-07-17T17:11:45.339681+00:00",
         "title": "Soup Sunday",
-        "description": "Soup Sunday fundraiser for St. Vincent de Paul; freewill offering.",
+        "description": "Soup Sunday fundraiser for St. Vincent de Paul. Freewill offering.",
         "church_id": "immaculate-heart-windsor",
         "church_name": "Immaculate Heart / St. Michael's",
         "date": "2025-11-09",
@@ -8218,7 +8218,7 @@
         "source_bulletin_date": "2025-11-02",
         "extracted_at": "2026-07-17T17:11:45.339681+00:00",
         "title": "Healing Mass",
-        "description": "Healing Mass followed by prayer service; confessions begin at 6:15 PM.",
+        "description": "Healing Mass followed by prayer service. Confessions begin at 6:15 PM.",
         "church_id": "immaculate-heart-windsor",
         "church_name": "Immaculate Heart / St. Michael's",
         "date": "2025-11-07",
@@ -8421,7 +8421,7 @@
     },
     {
         "title": "Bishop's Dinner 2026",
-        "description": "The Bishop’s Dinner supports St. Peter’s Seminary and the formation of priests, deacons and lay ministers; it takes place at the Ciociaro Club in Windsor.",
+        "description": "The Bishop’s Dinner supports St. Peter’s Seminary and the formation of priests, deacons and lay ministers. It takes place at the Ciociaro Club in Windsor.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -8649,7 +8649,7 @@
     },
     {
         "title": "Family of Parishes Shrine Day Pilgrimage",
-        "description": "Mass, Rosary procession, Exposition, Divine Mercy and fellowship; food available for purchase.",
+        "description": "Mass, Rosary procession, Exposition, Divine Mercy and fellowship. Food available for purchase.",
         "church_id": null,
         "church_name": "Our Lady of the Rosary Shrine",
         "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
@@ -8744,7 +8744,7 @@
     },
     {
         "title": "St. John's Hall Takeout Dinner",
-        "description": "Beef or lamb burger dinner with potato salad, vegetable and dessert; $20, advance order required.",
+        "description": "Beef or lamb burger dinner with potato salad, vegetable and dessert. $20, Advance order required.",
         "church_id": "st-john-the-evangelist-woodslee",
         "church_name": "St. John the Evangelist",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -8929,7 +8929,7 @@
     },
     {
         "title": "GriefShare Fall Program Begins",
-        "description": "GriefShare is a thirteen-week program for people who have lost a loved one and want tools to help manage their grief; participants may attend either the Wednesday or Thursday session.",
+        "description": "GriefShare is a thirteen-week program for people who have lost a loved one and want tools to help manage their grief. Participants may attend either the Wednesday or Thursday session.",
         "church_id": "st-john-de-brebeuf-kingsville",
         "church_name": "St. John de Brébeuf",
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -9228,7 +9228,7 @@
     },
     {
         "title": "Father Christian's 25th Anniversary Mass",
-        "description": "Anniversary Mass followed by a 1:00 p.m. reception at the Caboto Club; tickets are $50.",
+        "description": "Anniversary Mass followed by a 1:00 PM reception at the Caboto Club. Tickets are $50.",
         "church_id": "st-alphonsus-windsor",
         "church_name": "St. Alphonsus",
         "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
@@ -9265,7 +9265,7 @@
     },
     {
         "title": "Friday Night Community Meals Resume",
-        "description": "Doors open at 4:00 p.m.; dinner at 5:00 p.m.; concludes by 6:00 p.m.",
+        "description": "Doors open at 4:00 PM. Dinner at 5:00 PM. Concludes by 6:00 PM.",
         "church_id": "st-alphonsus-windsor",
         "church_name": "St. Alphonsus",
         "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
@@ -9303,7 +9303,7 @@
     },
     {
         "title": "Blessing of Pets",
-        "description": "The annual Pet Blessing welcomes furry and feathered friends at all three churches; pets should be secured on leashes or in crates.",
+        "description": "The annual Pet Blessing welcomes furry and feathered friends at all three churches. Pets should be secured on leashes or in crates.",
         "church_id": null,
         "church_name": "All three Windsor Heritage parish sites",
         "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
@@ -9723,7 +9723,7 @@
     },
     {
         "title": "Summer Eats for Kids – Free Weekly Food Pick-Up",
-        "description": "Free weekly food pickup for families with children; no ID or proof of income required.",
+        "description": "Free weekly food pickup for families with children. No ID or proof of income required.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -9796,7 +9796,7 @@
     },
     {
         "title": "Healthy & Holy",
-        "description": "Healthy & Holy combines a lecture on women’s health with refreshments, prayer and fitness, and childcare is available; the session is free and open to all ages.",
+        "description": "Healthy & Holy combines a lecture on women’s health with refreshments, prayer and fitness, and childcare is available. The session is free and open to all ages.",
         "church_id": "holy-name-of-jesus-essex",
         "church_name": "Holy Name of Jesus",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -10020,7 +10020,7 @@
     },
     {
         "title": "OLMC Mission Pie Assembly",
-        "description": "Volunteers gather to assemble Our Lady of Mount Carmel Mission pies in the parish hall; pies may be ordered for $6 each.",
+        "description": "Volunteers gather to assemble Our Lady of Mount Carmel Mission pies in the parish hall. Pies may be ordered for $6 each.",
         "church_id": "our-lady-of-mt-carmel-windsor",
         "church_name": "Our Lady of Mount Carmel",
         "family_of_parishes": "South Windsor Catholic Family of Parishes",
@@ -10428,7 +10428,7 @@
     },
     {
         "title": "Assumption Historic Tours",
-        "description": "Assumption Historic Tours offer a guided look at the church’s rich cultural heritage; visitors should bring their own chairs.",
+        "description": "Assumption Historic Tours offer a guided look at the church’s rich cultural heritage. Visitors should bring their own chairs.",
         "church_id": "our-lady-of-the-assumption-windsor",
         "church_name": "Our Lady of the Assumption",
         "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
@@ -10446,7 +10446,7 @@
     },
     {
         "title": "Assumption Historic Tours",
-        "description": "Assumption Historic Tours offer a guided look at the church’s rich cultural heritage; visitors should bring their own chairs.",
+        "description": "Assumption Historic Tours offer a guided look at the church’s rich cultural heritage. Visitors should bring their own chairs.",
         "church_id": "our-lady-of-the-assumption-windsor",
         "church_name": "Our Lady of the Assumption",
         "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
@@ -10839,7 +10839,7 @@
     },
     {
         "title": "Soup and Social",
-        "description": "Soup and Social offers an opportunity to share a meal, connect with others and build community after the 12:15 p.m. Mass; everyone is welcome.",
+        "description": "Soup and Social offers an opportunity to share a meal, connect with others and build community after the 12:15 PM Mass. Everyone is welcome.",
         "church_id": "good-shepherd-tecumseh",
         "church_name": "Good Shepherd",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -10931,7 +10931,7 @@
     },
     {
         "title": "Christian Trivia Night",
-        "description": "Christian Trivia Night is hosted by the Most Precious Blood Knights of Columbus; teams may have up to eight people, and the cost is $10 per person.",
+        "description": "Christian Trivia Night is hosted by the Most Precious Blood Knights of Columbus. Teams may have up to eight people, and the cost is $10 per person.",
         "church_id": "most-precious-blood-windsor",
         "church_name": "Most Precious Blood",
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -11024,7 +11024,7 @@
     },
     {
         "title": "Belle River Kay-Celles Meeting",
-        "description": "Doors open at 6:30 PM; meeting at 7:00 PM.",
+        "description": "Doors open at 6:30 PM. Meeting at 7:00 PM.",
         "church_id": null,
         "church_name": "Belle River",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -11097,7 +11097,7 @@
     },
     {
         "title": "40 Days for Life Challenge Begins",
-        "description": "The St. Michael parish group begins its two-hour Tuesday morning prayer and witness for the 40 Days for Life campaign; participants meet around 9:00 a.m. and carpool to Windsor.",
+        "description": "The St. Michael parish group begins its two-hour Tuesday morning prayer and witness for the 40 Days for Life campaign. Participants meet around 9:00 AM and carpool to Windsor.",
         "church_id": "st-michaels-leamington",
         "church_name": "St. Michael",
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -11319,7 +11319,7 @@
     },
     {
         "title": "Corpus Christi CWL Bake, Browse and Buy",
-        "description": "CWL bazaar with baked goods, crafts, and treasures; proceeds support charities.",
+        "description": "CWL bazaar with baked goods, crafts, and treasures. Proceeds support charities.",
         "church_id": "corpus-christi-windsor",
         "church_name": "Corpus Christi",
         "family_of_parishes": "South Windsor Catholic Family of Parishes",
@@ -11338,7 +11338,7 @@
     },
     {
         "title": "Corpus Christi CWL Bake, Browse and Buy",
-        "description": "CWL bazaar with baked goods, crafts, and treasures; proceeds support charities.",
+        "description": "CWL bazaar with baked goods, crafts, and treasures. Proceeds support charities.",
         "church_id": "corpus-christi-windsor",
         "church_name": "Corpus Christi",
         "family_of_parishes": "South Windsor Catholic Family of Parishes",
@@ -11468,7 +11468,7 @@
     },
     {
         "title": "Open Streets Windsor",
-        "description": "Open Streets Windsor closes Wyandotte Street East to motor traffic from 9:00 a.m.–3:00 p.m.; attendees can follow the route information in the bulletin.",
+        "description": "Open Streets Windsor closes Wyandotte Street East to motor traffic from 9:00 AM–3:00 PM. Attendees can follow the route information in the bulletin.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -11767,7 +11767,7 @@
     },
     {
         "title": "Cursillo Ultreya",
-        "description": "Cursillo gathering; all Cursillistas are welcome.",
+        "description": "Cursillo gathering. All Cursillistas are welcome.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
@@ -11786,7 +11786,7 @@
     },
     {
         "title": "GriefShare Fall Program Begins",
-        "description": "GriefShare is a thirteen-week program for people who have lost a loved one and want tools to help manage their grief; participants may attend either the Wednesday or Thursday session.",
+        "description": "GriefShare is a thirteen-week program for people who have lost a loved one and want tools to help manage their grief. Participants may attend either the Wednesday or Thursday session.",
         "church_id": "st-michaels-leamington",
         "church_name": "St. Michael's",
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -12163,7 +12163,7 @@
     },
     {
         "title": "Marie Rose Place: The Pianist",
-        "description": "Presentation with Anne Shore; lunch/registration 11:30 a.m.; program ends about 3:30 p.m.",
+        "description": "Presentation with Anne Shore. Lunch/registration 11:30 AM. Program ends about 3:30 PM.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "South Windsor Catholic Family of Parishes",
@@ -12182,7 +12182,7 @@
     },
     {
         "title": "Anointing Mass and Luncheon",
-        "description": "The Anointing Mass is followed by a Catholic Women’s League-sponsored luncheon; luncheon registration is required by October 20.",
+        "description": "The Anointing Mass is followed by a Catholic Women’s League-sponsored luncheon. Luncheon registration is required by October 20.",
         "church_id": "our-lady-of-guadalupe-windsor",
         "church_name": "Our Lady of Guadalupe / San Juan Diego",
         "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
@@ -12313,7 +12313,7 @@
     },
     {
         "title": "Central Essex Rosary Rally",
-        "description": "The Central Essex Rosary Rally invites participants to bring a rosary and lawn chair; the gathering moves indoors if the weather is poor.",
+        "description": "The Central Essex Rosary Rally invites participants to bring a rosary and lawn chair. The gathering moves indoors if the weather is poor.",
         "church_id": "st-john-the-evangelist-woodslee",
         "church_name": "St. John the Evangelist",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -12331,7 +12331,7 @@
     },
     {
         "title": "Central Essex Rosary Rally",
-        "description": "Bring a rosary and lawn chair; gathering moves inside in inclement weather.",
+        "description": "Bring a rosary and lawn chair. Gathering moves inside in inclement weather.",
         "church_id": "st-clement-mcgregor",
         "church_name": "St. Clement",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -12460,7 +12460,7 @@
     },
     {
         "title": "St. Alphonsus Cares Volunteer Training",
-        "description": "Training for volunteers with police clearance; lunch provided. RSVP to Sr. Connie.",
+        "description": "Training for volunteers with police clearance. Lunch provided. RSVP to Sr. Connie.",
         "church_id": "st-alphonsus-windsor",
         "church_name": "St. Alphonsus",
         "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
@@ -12515,7 +12515,7 @@
     },
     {
         "title": "St. Jerome Outdoor Mass",
-        "description": "St. Jerome’s outdoor Mass celebrates the anniversary of St. Francis of Assisi; bring a lawn chair, and pets may also receive a blessing.",
+        "description": "St. Jerome’s outdoor Mass celebrates the anniversary of St. Francis of Assisi. Bring a lawn chair, and pets may also receive a blessing.",
         "church_id": "st-jerome-windsor",
         "church_name": "St. Jerome",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -12571,7 +12571,7 @@
     },
     {
         "title": "School Rosary: St. Louis",
-        "description": "The school Rosary gathers students, teachers and staff at St. Louis School; bring a rosary and meet at the front doors, or pray inside if the weather is poor.",
+        "description": "The school Rosary gathers students, teachers and staff at St. Louis School. Bring a rosary and meet at the front doors, or pray inside if the weather is poor.",
         "church_id": "st-michaels-leamington",
         "church_name": "St. Michael's",
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -12589,7 +12589,7 @@
     },
     {
         "title": "School Rosary: Cardinal Carter",
-        "description": "The school Rosary gathers students, teachers and staff at Cardinal Carter in the school chapel; bring a rosary, and pray inside if the weather is poor.",
+        "description": "The school Rosary gathers students, teachers and staff at Cardinal Carter in the school chapel. Bring a rosary, and pray inside if the weather is poor.",
         "church_id": "st-michaels-leamington",
         "church_name": "St. Michael's",
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -12738,7 +12738,7 @@
     },
     {
         "title": "Erie Shores South CWL Rosary Rallies",
-        "description": "The Catholic Women’s League hosts Rosary rallies at four Erie Shores South parish locations; the Our Lady of Lebanon Shrine rally includes guest speaker Fr. Charbel Bousamra.",
+        "description": "The Catholic Women’s League hosts Rosary rallies at four Erie Shores South parish locations. The Our Lady of Lebanon Shrine rally includes guest speaker Fr. Charbel Bousamra.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -13035,7 +13035,7 @@
     },
     {
         "title": "Children’s Church Begins",
-        "description": "Children’s Church welcomes ages 4–7; children are called up at the beginning of Mass and return to their families at the Offertory.",
+        "description": "Children’s Church welcomes ages 4–7. Children are called up at the beginning of Mass and return to their families at the Offertory.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -13054,7 +13054,7 @@
     },
     {
         "title": "Young Adult Charity Baby Shower",
-        "description": "The Young Adult Charity Baby Shower offers games, fellowship and fun while supporting Windsor-Essex Right to Life, Our Lady of Guadalupe Home and Hiatus House; it is for ages 18–35.",
+        "description": "The Young Adult Charity Baby Shower offers games, fellowship and fun while supporting Windsor-Essex Right to Life, Our Lady of Guadalupe Home and Hiatus House. It is for ages 18–35.",
         "church_id": "ste-anne-tecumseh",
         "church_name": "Ste. Anne",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -13074,7 +13074,7 @@
     },
     {
         "title": "Elementary Youth Ministry Volunteer Meet & Greet",
-        "description": "The Elementary Youth Ministry volunteer meet-and-greet is a chance to learn more, meet others and explore ways to help; there is no commitment required.",
+        "description": "The Elementary Youth Ministry volunteer meet-and-greet is a chance to learn more, meet others and explore ways to help. There is no commitment required.",
         "church_id": "ste-anne-tecumseh",
         "church_name": "Ste. Anne",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
@@ -13188,7 +13188,7 @@
     },
     {
         "title": "St. Clement CWL Breakfast",
-        "description": "The St. Clement CWL breakfast follows Mass at the Columbian Club in McGregor; tickets are required.",
+        "description": "The St. Clement CWL breakfast follows Mass at the Columbian Club in McGregor. Tickets are required.",
         "church_id": "st-clement-mcgregor",
         "church_name": "St. Clement",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -13355,7 +13355,7 @@
     },
     {
         "title": "St. Michael’s Trunk or Treat",
-        "description": "Halloween event in the church parking lot; RSVP required.",
+        "description": "Halloween event in the church parking lot. RSVP required.",
         "church_id": "immaculate-heart-windsor",
         "church_name": "St. Michael’s",
         "family_of_parishes": "Rose City Central Catholic Family of Parishes",
