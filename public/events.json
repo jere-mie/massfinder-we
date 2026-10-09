@@ -8422,22 +8422,22 @@
     },
     {
         "title": "Bishop's Dinner 2026",
-        "description": "The Bishop’s Dinner supports St. Peter’s Seminary and the formation of priests, deacons and lay ministers. It takes place at the Ciociaro Club in Windsor.",
+        "description": "The Windsor-Essex Bishop’s Dinner welcomes Bishop Daniel Miehm and honours Bishop Ronald P. Fabbro for 24 years of service. The dinner is at the Ciociaro Club, costs $175 per person, and supports St. Peter’s Seminary.",
         "church_id": null,
         "church_name": null,
-        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
         "date": "2026-10-29",
-        "start_time": null,
+        "start_time": "1900",
         "end_time": null,
         "location": "Ciociaro Club, 3745 N Talbot Rd., Windsor",
-        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20260927.pdf?t=1790353270000",
-        "source_bulletin_date": "2026-09-27",
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/10/WLSC%20Weekly%20Bulletin%20Octo%2011%202026.pdf?t=1791560287000",
+        "source_bulletin_date": "2026-10-11",
         "tags": [
             "fundraiser",
             "social"
         ],
         "id": "e7c1a904",
-        "extracted_at": "2026-09-28T00:00:00-04:00"
+        "extracted_at": "2026-10-09T18:05:00-04:00"
     },
     {
         "title": "St. John de Brebeuf Feast Day Celebration",
@@ -9322,22 +9322,21 @@
     },
     {
         "title": "Trunk or Treat",
-        "description": "The Family Trunk or Treat celebration brings decorated vehicles, candy and Halloween fun to the Assumption parking lot.",
+        "description": "Families are invited to decorate their vehicles and hand out treats in the Assumption parking lot. Prizes will be awarded for the best trunks; candy donations and volunteers are welcome.",
         "church_id": "our-lady-of-the-assumption-windsor",
         "church_name": "Our Lady of the Assumption",
         "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
         "date": "2026-10-31",
         "start_time": "1200",
         "end_time": "1400",
-        "location": "Assumption Church parking lot",
-        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/September%2027%202026.pdf",
-        "source_bulletin_date": "2026-09-27",
+        "location": "Assumption Parking Lot",
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/October 11 2026.pdf",
+        "source_bulletin_date": "2026-10-11",
         "tags": [
-            "seasonal",
             "social"
         ],
         "id": "5576dd60",
-        "extracted_at": "2026-09-28T00:00:00-04:00"
+        "extracted_at": "2026-10-09T16:55:00-04:00"
     },
     {
         "title": "Windsor Symphony & UWindsor Christmas Concert",
@@ -9532,22 +9531,22 @@
     },
     {
         "title": "The Crooners & the Bettys Fundraiser Concert",
-        "description": "Fundraising concert for the Windsor/Essex Diocesan 2027 CWL Convention.",
+        "description": "The concert fundraiser supports the Windsor/Essex Diocesan 2027 CWL convention, with performances at 2:00 p.m. and 7:00 p.m. Tickets are $45 per person and are available after weekend Masses.",
         "church_id": "st-simon-st-jude-belle-river",
         "church_name": "St. Simon & St. Jude",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
         "date": "2026-11-29",
-        "start_time": null,
+        "start_time": "1400",
         "end_time": null,
-        "location": "St. Simon & St. Jude Parish Hall",
-        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/8/WLSC%20Weekly%20Bulletin%20August%209%20and%2016%202026.pdf?t=1786044028000",
-        "source_bulletin_date": "2026-08-09",
+        "location": "St. Simon & St. Jude Parish Hall, Belle River",
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/10/WLSC%20Weekly%20Bulletin%20Octo%2011%202026.pdf?t=1791560287000",
+        "source_bulletin_date": "2026-10-11",
         "tags": [
             "fundraiser",
             "music_arts"
         ],
         "id": "601856f7",
-        "extracted_at": "2026-08-14T12:00:00-04:00"
+        "extracted_at": "2026-10-09T16:55:00-04:00"
     },
     {
         "title": "RCIA Program Begins",
@@ -10169,7 +10168,7 @@
     },
     {
         "title": "OLPH 80th Anniversary Celebration",
-        "description": "10:30 AM Mass, second Mass at 3:30 PM, followed by dinner at 6:00 PM at Fogolar Furlan Club.",
+        "description": "The parish marks its 80th anniversary with Masses at 10:30 a.m. and 3:30 p.m.; Bishop Ronald Fabbro will celebrate the 3:30 p.m. Mass. An anniversary dinner will be held at the Fogolar Furlan Club, with tickets listed at $80 for adults and $55 for children ages 3–12; the bulletin does not give the dinner time.",
         "church_id": "our-lady-of-perpetual-help-windsor",
         "church_name": "Our Lady of Perpetual Help",
         "family_of_parishes": "Rose City Central Catholic Family of Parishes",
@@ -10181,9 +10180,9 @@
             "social",
             "liturgy"
         ],
-        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20260906.pdf?t=1788535627000",
-        "source_bulletin_date": "2026-09-06",
-        "extracted_at": "2026-09-09T00:00:00-04:00",
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20261011.pdf?t=1791563439000",
+        "source_bulletin_date": "2026-10-11",
+        "extracted_at": "2026-10-09T17:35:00-04:00",
         "id": "00zaqnak"
     },
     {
@@ -10728,21 +10727,21 @@
     },
     {
         "title": "Final Mass and Closing Celebration of St. Anthony of Padua Hungarian Parish",
-        "description": "The final Mass for St. Anthony of Padua Hungarian Parish is followed by a light reception in the St. John Vianney Parish Hall.",
+        "description": "Bishop Daniel Miehm will celebrate the community’s final Mass at St. John Vianney, followed by a light reception in the parish hall. All are welcome to join the celebration and pray for the parish community.",
         "church_id": "st-john-vianney-windsor",
         "church_name": "St. John Vianney",
         "family_of_parishes": "East Windsor Catholic Family of Parishes",
         "date": "2026-10-18",
         "start_time": "1330",
         "end_time": null,
-        "location": "St. John Vianney Church",
+        "location": "St. John Vianney Church and Parish Hall",
         "tags": [
             "liturgy",
             "social"
         ],
-        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/September%2027%202026.pdf",
-        "source_bulletin_date": "2026-09-27",
-        "extracted_at": "2026-09-28T00:00:00-04:00",
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/October 11 2026.pdf",
+        "source_bulletin_date": "2026-10-11",
+        "extracted_at": "2026-10-09T16:55:00-04:00",
         "id": "005lv37u"
     },
     {
@@ -11675,21 +11674,20 @@
     },
     {
         "title": "Trunk or Treat",
-        "description": "Safe Halloween event with decorated cars and candy.",
+        "description": "Children are invited to dress up and collect candy in a safe parking lot setting. Families can find event details at CatholicFamily.ca/halloween.",
         "church_id": "st-simon-st-jude-belle-river",
         "church_name": "St. Simon & St. Jude",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
         "date": "2026-10-23",
         "start_time": "1800",
         "end_time": "1900",
-        "location": "St. Simon & St. Jude parking lot",
-        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/9/WLSC Weekly Bulletin September 13 2026.pdf",
-        "source_bulletin_date": "2026-09-13",
+        "location": "St. Simon & St. Jude Church parking lot, Belle River",
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/10/WLSC%20Weekly%20Bulletin%20Octo%2011%202026.pdf?t=1791560287000",
+        "source_bulletin_date": "2026-10-11",
         "tags": [
-            "social",
-            "outreach"
+            "social"
         ],
-        "extracted_at": "2026-09-14T00:00:00-04:00",
+        "extracted_at": "2026-10-09T16:55:00-04:00",
         "id": "01assv8x"
     },
     {
@@ -11945,14 +11943,14 @@
         "start_time": "1400",
         "end_time": null,
         "location": "Riverside Place",
-        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/September%2027%202026.pdf",
-        "source_bulletin_date": "2026-09-27",
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/October 4 2026.pdf",
+        "source_bulletin_date": "2026-10-04",
         "tags": [
             "liturgy",
             "outreach"
         ],
         "id": "02nurse6r",
-        "extracted_at": "2026-09-28T00:00:00-04:00"
+        "extracted_at": "2026-10-09T18:05:00-04:00"
     },
     {
         "title": "Nursing Home Mass (Heron Terrace)",
@@ -11964,14 +11962,14 @@
         "start_time": "1400",
         "end_time": null,
         "location": "Heron Terrace",
-        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/September%2027%202026.pdf",
-        "source_bulletin_date": "2026-09-27",
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/October 11 2026.pdf",
+        "source_bulletin_date": "2026-10-11",
         "tags": [
             "liturgy",
             "outreach"
         ],
         "id": "02nurse1h",
-        "extracted_at": "2026-09-28T00:00:00-04:00"
+        "extracted_at": "2026-10-09T18:05:00-04:00"
     },
     {
         "title": "South Windsor Youth Group Begins",
@@ -12077,14 +12075,14 @@
         "start_time": "1700",
         "end_time": "1900",
         "location": "St. Mary Hall",
-        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20260927.pdf?t=1790341433000",
-        "source_bulletin_date": "2026-09-27",
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20261004.pdf?t=1790951436000",
+        "source_bulletin_date": "2026-10-04",
         "tags": [
             "fundraiser",
             "social"
         ],
         "id": "6de3afb8",
-        "extracted_at": "2026-09-28T00:00:00-04:00"
+        "extracted_at": "2026-10-09T18:05:00-04:00"
     },
     {
         "title": "St. Joseph Cemetery Sunday",
@@ -12115,14 +12113,14 @@
         "start_time": "1030",
         "end_time": null,
         "location": "St. Joseph Church",
-        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2026/9/September%2027%202026.pdf?t=1790364392000",
-        "source_bulletin_date": "2026-09-27",
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2026/10/October%204%202026.pdf?t=1790968591000",
+        "source_bulletin_date": "2026-10-04",
         "tags": [
             "liturgy",
             "outreach"
         ],
         "id": "43d1d7c2",
-        "extracted_at": "2026-09-28T00:00:00-04:00"
+        "extracted_at": "2026-10-09T18:05:00-04:00"
     },
     {
         "title": "Anointing Mass at Sacred Heart",
@@ -12134,37 +12132,37 @@
         "start_time": "1030",
         "end_time": null,
         "location": "Sacred Heart Church",
-        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2026/9/September%2027%202026.pdf?t=1790364392000",
-        "source_bulletin_date": "2026-09-27",
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2026/10/October%204%202026.pdf?t=1790968591000",
+        "source_bulletin_date": "2026-10-04",
         "tags": [
             "liturgy",
             "outreach"
         ],
         "id": "a858093b",
-        "extracted_at": "2026-09-28T00:00:00-04:00"
+        "extracted_at": "2026-10-09T18:05:00-04:00"
     },
     {
         "title": "South Windsor CWL General Meeting",
-        "description": "The South Windsor CWL general meeting includes the final lottery draw and a presentation by Russell Nahdee, with all ladies welcome.",
-        "church_id": null,
-        "church_name": null,
+        "description": "The meeting includes the final lottery draw and a presentation by Russell Nahdee of the Aboriginal Children’s Resource Centre; all ladies are welcome. Attendees are invited to wear orange for Truth and Reconciliation Day, and the league is collecting $35 dues for 2027.",
+        "church_id": "corpus-christi-windsor",
+        "church_name": "Corpus Christi",
         "family_of_parishes": "South Windsor Catholic Family of Parishes",
         "date": "2026-10-05",
         "start_time": "1900",
         "end_time": null,
-        "location": "South Windsor Catholic Family of Parishes",
-        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20260927.pdf?t=1790353270000",
-        "source_bulletin_date": "2026-09-27",
+        "location": "Corpus Christi Church, Windsor",
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20261004.pdf?t=1790890805000",
+        "source_bulletin_date": "2026-10-04",
         "tags": [
             "meeting",
             "faith_formation"
         ],
         "id": "b91d1493",
-        "extracted_at": "2026-09-28T00:00:00-04:00"
+        "extracted_at": "2026-10-09T18:05:00-04:00"
     },
     {
         "title": "Marie Rose Place: The Pianist",
-        "description": "Presentation with Anne Shore. Lunch/registration 11:30 AM. Program ends about 3:30 PM.",
+        "description": "Anne Shore presents The Pianist at Marie Rose Place. Lunch and registration begin at 11:30 a.m., the program ends around 3:30 p.m., and the suggested offering is $15.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "South Windsor Catholic Family of Parishes",
@@ -12172,14 +12170,14 @@
         "start_time": "1130",
         "end_time": "1530",
         "location": "Marie Rose Place, Windsor",
-        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20260927.pdf?t=1790353270000",
-        "source_bulletin_date": "2026-09-27",
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20261004.pdf?t=1790890805000",
+        "source_bulletin_date": "2026-10-04",
         "tags": [
             "faith_formation",
             "music_arts"
         ],
         "id": "624b9b05",
-        "extracted_at": "2026-09-28T00:00:00-04:00"
+        "extracted_at": "2026-10-09T18:05:00-04:00"
     },
     {
         "title": "Anointing Mass and Luncheon",
@@ -12277,7 +12275,7 @@
     },
     {
         "title": "Portuguese Malasadas Fundraiser Pickup",
-        "description": "Pre-ordered Portuguese malasadas are available for pickup after 11:00 a.m., with proceeds supporting church decorations and flowers.",
+        "description": "Preordered malasadas are available for pickup after 11:00 a.m.; a dozen costs $25, and proceeds support church decorations and flowers. The parish is also accepting donations of flour and Mazola corn oil.",
         "church_id": "our-lady-of-the-most-blessed-sacrament-wheatley",
         "church_name": "Our Lady of the Most Blessed Sacrament",
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -12285,18 +12283,18 @@
         "start_time": "1100",
         "end_time": null,
         "location": "Our Lady of the Blessed Sacrament Church, Wheatley",
-        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/September%2027%202026.pdf",
-        "source_bulletin_date": "2026-09-27",
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/October 4 2026.pdf",
+        "source_bulletin_date": "2026-10-04",
         "tags": [
             "fundraiser",
             "social"
         ],
         "id": "73db5f68",
-        "extracted_at": "2026-09-28T00:00:00-04:00"
+        "extracted_at": "2026-10-09T18:05:00-04:00"
     },
     {
         "title": "Mass with Bishop Miehm",
-        "description": "All are welcome to Mass with Bishop Miehm.",
+        "description": "Bishop Daniel Miehm will celebrate Mass at St. Clement Church. All are welcome.",
         "church_id": "st-clement-mcgregor",
         "church_name": "St. Clement",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -12304,13 +12302,13 @@
         "start_time": "1700",
         "end_time": null,
         "location": "St. Clement Church",
-        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20260927.pdf?t=1790341433000",
-        "source_bulletin_date": "2026-09-27",
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20261011.pdf?t=1791554287000",
+        "source_bulletin_date": "2026-10-11",
         "tags": [
             "liturgy"
         ],
         "id": "0452c160",
-        "extracted_at": "2026-09-28T00:00:00-04:00"
+        "extracted_at": "2026-10-09T16:55:00-04:00"
     },
     {
         "title": "Central Essex Rosary Rally",
@@ -12322,13 +12320,13 @@
         "start_time": "1900",
         "end_time": null,
         "location": "St. John the Evangelist Church",
-        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20260927.pdf?t=1790341433000",
-        "source_bulletin_date": "2026-09-27",
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20261004.pdf?t=1790951436000",
+        "source_bulletin_date": "2026-10-04",
         "tags": [
             "devotion"
         ],
         "id": "999f6f49",
-        "extracted_at": "2026-09-28T00:00:00-04:00"
+        "extracted_at": "2026-10-09T18:05:00-04:00"
     },
     {
         "title": "Central Essex Rosary Rally",
@@ -12340,13 +12338,13 @@
         "start_time": "1200",
         "end_time": null,
         "location": "St. Clement Church",
-        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20260927.pdf?t=1790341433000",
-        "source_bulletin_date": "2026-09-27",
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20261004.pdf?t=1790951436000",
+        "source_bulletin_date": "2026-10-04",
         "tags": [
             "devotion"
         ],
         "id": "9317a9b2",
-        "extracted_at": "2026-09-28T00:00:00-04:00"
+        "extracted_at": "2026-10-09T18:05:00-04:00"
     },
     {
         "title": "Grieving with Great Hope Retreat",
@@ -12396,13 +12394,13 @@
         "start_time": "1830",
         "end_time": null,
         "location": "Our Lady of Mount Carmel Church",
-        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20260927.pdf?t=1790353270000",
-        "source_bulletin_date": "2026-09-27",
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20261004.pdf?t=1790890805000",
+        "source_bulletin_date": "2026-10-04",
         "tags": [
             "faith_formation"
         ],
         "id": "c5b7cc3d",
-        "extracted_at": "2026-09-28T00:00:00-04:00"
+        "extracted_at": "2026-10-09T18:05:00-04:00"
     },
     {
         "title": "Thanksgiving Food Drive",
@@ -12414,13 +12412,13 @@
         "start_time": "1700",
         "end_time": null,
         "location": "Our Lady of Mount Carmel Church",
-        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20260927.pdf?t=1790353270000",
-        "source_bulletin_date": "2026-09-27",
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20261004.pdf?t=1790890805000",
+        "source_bulletin_date": "2026-10-04",
         "tags": [
             "outreach"
         ],
         "id": "2e62bdb4",
-        "extracted_at": "2026-09-28T00:00:00-04:00"
+        "extracted_at": "2026-10-09T18:05:00-04:00"
     },
     {
         "title": "Thanksgiving Food Drive",
@@ -12432,13 +12430,13 @@
         "start_time": "0900",
         "end_time": null,
         "location": "Our Lady of Mount Carmel Church",
-        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20260927.pdf?t=1790353270000",
-        "source_bulletin_date": "2026-09-27",
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20261004.pdf?t=1790890805000",
+        "source_bulletin_date": "2026-10-04",
         "tags": [
             "outreach"
         ],
         "id": "86932446",
-        "extracted_at": "2026-09-28T00:00:00-04:00"
+        "extracted_at": "2026-10-09T18:05:00-04:00"
     },
     {
         "title": "In Thanksgiving: Mass and Soup",
@@ -12739,7 +12737,7 @@
     },
     {
         "title": "Erie Shores South CWL Rosary Rallies",
-        "description": "The Catholic Women’s League hosts Rosary rallies at four Erie Shores South parish locations. The Our Lady of Lebanon Shrine rally includes guest speaker Fr. Charbel Bousamra.",
+        "description": "The Catholic Women’s League holds Rosary rallies at noon at Our Lady of Lebanon Shrine, St. Michael’s, St. John de Brébeuf, and Our Lady of the Blessed Sacrament; Fr. Charbel Bousamra is the guest speaker at the shrine.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
@@ -12747,13 +12745,13 @@
         "start_time": "1200",
         "end_time": null,
         "location": "Our Lady of Lebanon Shrine; St. Michael’s; St. John de Brébeuf; Our Lady of the Blessed Sacrament",
-        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/September%2027%202026.pdf",
-        "source_bulletin_date": "2026-09-27",
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/October 4 2026.pdf",
+        "source_bulletin_date": "2026-10-04",
         "tags": [
             "devotion"
         ],
         "id": "3ee05351",
-        "extracted_at": "2026-09-28T00:00:00-04:00"
+        "extracted_at": "2026-10-09T18:05:00-04:00"
     },
     {
         "title": "Our Lady of the Atonement Pet Blessing",
@@ -12794,7 +12792,7 @@
     },
     {
         "title": "Cemetery Sunday at St. Francis Mausoleum",
-        "description": "Cemetery Sunday with Bishop Daniel Miehm.",
+        "description": "Bishop Daniel Miehm will lead the Cemetery Sunday observance at St. Francis Mausoleum. Everyone is welcome.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "East Windsor Catholic Family of Parishes",
@@ -12802,14 +12800,14 @@
         "start_time": "1500",
         "end_time": null,
         "location": "St. Francis Mausoleum, Heavenly Rest Cemetery",
-        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/September%2027%202026.pdf",
-        "source_bulletin_date": "2026-09-27",
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/October 11 2026.pdf",
+        "source_bulletin_date": "2026-10-11",
         "tags": [
             "liturgy",
-            "devotion"
+            "seasonal"
         ],
         "id": "ddabde59",
-        "extracted_at": "2026-09-28T00:00:00-04:00"
+        "extracted_at": "2026-10-09T16:55:00-04:00"
     },
     {
         "title": "Ste. Anne Knights of Columbus Meeting",
@@ -12849,21 +12847,21 @@
     },
     {
         "title": "Fourth Degree Knights of Columbus Meeting",
-        "description": "Assembly 1789 meeting.",
+        "description": "Assembly 1789 meets in the Ste. Anne hall.",
         "church_id": "ste-anne-tecumseh",
         "church_name": "Ste. Anne",
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
         "date": "2026-10-20",
         "start_time": "1900",
         "end_time": null,
-        "location": "Ste. Anne parish hall",
-        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/9/WLSC%20Weekly%20Bulletin%20Sept%20%2027%202026.pdf?t=1790279543000",
-        "source_bulletin_date": "2026-09-27",
+        "location": "Ste. Anne Parish Hall",
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/10/WLSC%20Weekly%20Bulletin%20Octo%204%202026.pdf?t=1790881282000",
+        "source_bulletin_date": "2026-10-04",
         "tags": [
             "meeting"
         ],
         "id": "405ca5a1",
-        "extracted_at": "2026-09-28T00:00:00-04:00"
+        "extracted_at": "2026-10-09T18:05:00-04:00"
     },
     {
         "title": "Ste. Anne CWL General Meeting",
@@ -13036,22 +13034,21 @@
     },
     {
         "title": "Children’s Church Begins",
-        "description": "Children’s Church welcomes ages 4–7. Children are called up at the beginning of Mass and return to their families at the Offertory.",
+        "description": "Children’s Church begins for ages 4–7 at Ste. Anne and Good Shepherd; children are called up at the beginning of Mass and return to their families at the Offertory.",
         "church_id": null,
         "church_name": null,
         "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
         "date": "2026-10-04",
         "start_time": null,
         "end_time": null,
-        "location": "Ste. Anne and Good Shepherd",
-        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/9/WLSC%20Weekly%20Bulletin%20Sept%20%2027%202026.pdf?t=1790279543000",
-        "source_bulletin_date": "2026-09-27",
+        "location": "Ste. Anne and Good Shepherd parishes",
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/10/WLSC%20Weekly%20Bulletin%20Octo%204%202026.pdf?t=1790881282000",
+        "source_bulletin_date": "2026-10-04",
         "tags": [
-            "faith_formation",
-            "children"
+            "faith_formation"
         ],
         "id": "f1uu0fnn",
-        "extracted_at": "2026-09-28T00:00:00-04:00"
+        "extracted_at": "2026-10-09T18:05:00-04:00"
     },
     {
         "title": "Young Adult Charity Baby Shower",
@@ -13189,7 +13186,7 @@
     },
     {
         "title": "St. Clement CWL Breakfast",
-        "description": "The St. Clement CWL breakfast follows Mass at the Columbian Club in McGregor. Tickets are required.",
+        "description": "The St. Clement Catholic Women’s League breakfast follows Mass at the Columbian Club. Tickets are $15 per adult and $5 for children under 12; tickets are not sold at the door.",
         "church_id": "st-clement-mcgregor",
         "church_name": "St. Clement",
         "family_of_parishes": "Central Essex County Catholic Family of Parishes",
@@ -13197,14 +13194,14 @@
         "start_time": null,
         "end_time": null,
         "location": "Columbian Club, McGregor",
-        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20260927.pdf?t=1790341433000",
-        "source_bulletin_date": "2026-09-27",
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20261011.pdf?t=1791554287000",
+        "source_bulletin_date": "2026-10-11",
         "tags": [
-            "fundraiser",
-            "social"
+            "social",
+            "fundraiser"
         ],
         "id": "9etxmozd",
-        "extracted_at": "2026-09-28T00:00:00-04:00"
+        "extracted_at": "2026-10-09T16:55:00-04:00"
     },
     {
         "title": "St. Michael Bingo",
@@ -13226,21 +13223,21 @@
     },
     {
         "title": "St. Michael Bingo",
-        "description": "St. Michael’s assigned parish bingo session supports the parish through bingo proceeds.",
+        "description": "St. Michael’s assigned parish bingo session runs from 8:00 to 10:00 p.m. at All Star Gaming Centre and supports the parish.",
         "church_id": "immaculate-heart-windsor",
         "church_name": "St. Michael's",
         "family_of_parishes": "Rose City Central Catholic Family of Parishes",
         "date": "2026-10-25",
         "start_time": "2000",
         "end_time": "2200",
-        "location": "All Star Gaming Centre",
-        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20260927.pdf?t=1790350429000",
-        "source_bulletin_date": "2026-09-27",
+        "location": "All Star Gaming Centre, Walker Road, Windsor",
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20261011.pdf?t=1791563439000",
+        "source_bulletin_date": "2026-10-11",
         "tags": [
             "fundraiser"
         ],
         "id": "lnnz2mbi",
-        "extracted_at": "2026-09-28T00:00:00-04:00"
+        "extracted_at": "2026-10-09T17:35:00-04:00"
     },
     {
         "title": "Blessing of Pets at Our Lady of Guadalupe",
@@ -13337,22 +13334,22 @@
         "extracted_at": "2026-09-28T00:00:00-04:00"
     },
     {
-        "title": "OLPH Bingo",
-        "description": "OLPH Bingo is an assigned bingo and gaming fundraiser at All Star Gaming Centre on Walker Road.",
+        "title": "Bingo and Gaming at OLPH",
+        "description": "OLPH’s assigned bingo and gaming session runs from 2:00 to 4:00 p.m. at All Star Gaming Centre on Walker Road.",
         "church_id": "our-lady-of-perpetual-help-windsor",
         "church_name": "Our Lady of Perpetual Help",
         "family_of_parishes": "Rose City Central Catholic Family of Parishes",
         "date": "2026-10-24",
         "start_time": "1400",
         "end_time": "1600",
-        "location": "All Star Gaming Centre",
-        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20260927.pdf?t=1790350429000",
-        "source_bulletin_date": "2026-09-27",
+        "location": "All Star Gaming Centre on Walker Road, Windsor",
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20261011.pdf?t=1791563439000",
+        "source_bulletin_date": "2026-10-11",
         "tags": [
             "fundraiser"
         ],
         "id": "b72yho7o",
-        "extracted_at": "2026-09-28T00:00:00-04:00"
+        "extracted_at": "2026-10-09T17:35:00-04:00"
     },
     {
         "title": "St. Michael’s Trunk or Treat",
@@ -13410,5 +13407,1342 @@
         ],
         "id": "fs9exavp",
         "extracted_at": "2026-09-28T00:00:00-04:00"
+    },
+    {
+        "title": "Day of Many Miracles Rosary Procession",
+        "date": "2026-10-13",
+        "start_time": "1930",
+        "end_time": null,
+        "location": "St. Clement Parish, McGregor",
+        "church_id": "st-clement-mcgregor",
+        "church_name": "St. Clement",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "description": "Join the Canadian Ambassadors of the Sacred Hearts of Jesus and Mary for a Rosary procession with the Our Lady of Fatima statue, following the 7:00 p.m. Mass.",
+        "tags": [
+            "devotion"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20261011.pdf?t=1791554287000",
+        "source_bulletin_date": "2026-10-11",
+        "id": "xnkzmo9q",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "Essex SSVP Food Drive at No Frills",
+        "date": "2026-10-17",
+        "start_time": null,
+        "end_time": null,
+        "location": "No Frills, Essex; donations also accepted at Holy Name of Jesus Church",
+        "church_id": "holy-name-of-jesus-essex",
+        "church_name": "Holy Name of Jesus",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "description": "The Essex St. Vincent de Paul Society will collect donations at No Frills. Non-perishable food donations can also be left at Holy Name of Jesus Church.",
+        "tags": [
+            "outreach"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20261011.pdf?t=1791554287000",
+        "source_bulletin_date": "2026-10-11",
+        "id": "xslonnh9",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "McGregor Squirettes Food Drive",
+        "date": "2026-10-25",
+        "start_time": "1100",
+        "end_time": "1400",
+        "location": "McGregor town core and St. Clement Church",
+        "church_id": "st-clement-mcgregor",
+        "church_name": "St. Clement",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "description": "The McGregor Squirettes will collect canned goods in the town core. Donations can also be left at the St. Clement Church food bank.",
+        "tags": [
+            "outreach"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20261011.pdf?t=1791554287000",
+        "source_bulletin_date": "2026-10-11",
+        "id": "lk8dy2za",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "Walk with Mary",
+        "date": "2026-10-24",
+        "start_time": "0800",
+        "end_time": "1300",
+        "location": "South Windsor, visiting five churches and one chapel",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "description": "Join a 10 km Rosary-based walking pilgrimage to five churches and one chapel, with Mass celebrated along the route. Registration is $10 per person.",
+        "tags": [
+            "devotion"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20261011.pdf?t=1791554287000",
+        "source_bulletin_date": "2026-10-11",
+        "id": "uqh6pjtb",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "Guatemala Hope Dinner & Auction",
+        "date": "2026-10-24",
+        "start_time": "1700",
+        "end_time": null,
+        "location": "St. Mary’s Hall, Maidstone",
+        "church_id": "st-marys-maidstone",
+        "church_name": "St. Mary",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "description": "Dinner and auction benefiting Guatemala Hope will be held at St. Mary’s Hall. Tickets are $50 per person; contact the parish for reservations.",
+        "tags": [
+            "fundraiser",
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20261011.pdf?t=1791554287000",
+        "source_bulletin_date": "2026-10-11",
+        "id": "j50oin1z",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "Thanksgiving Day Mass at Assumption",
+        "date": "2026-10-12",
+        "start_time": "0900",
+        "end_time": null,
+        "location": "Our Lady of the Assumption Church",
+        "church_id": "our-lady-of-the-assumption-windsor",
+        "church_name": "Our Lady of the Assumption",
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "description": "A special Thanksgiving Day Mass will be celebrated at Assumption Church. All are welcome.",
+        "tags": [
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/October 11 2026.pdf",
+        "source_bulletin_date": "2026-10-11",
+        "id": "gb0stm50",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "Unlocking the Mystery of the Bible at Assumption",
+        "date": "2026-10-13",
+        "start_time": "1830",
+        "end_time": "2000",
+        "location": "Rosary Hall, Assumption Parish",
+        "church_id": "our-lady-of-the-assumption-windsor",
+        "church_name": "Our Lady of the Assumption",
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "description": "This eight-session Bible study explores the story of Scripture from Adam and Eve through Christ and the Church. Sessions begin Tuesday evening, October 13, at Rosary Hall.",
+        "tags": [
+            "faith_formation"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/October 11 2026.pdf",
+        "source_bulletin_date": "2026-10-11",
+        "id": "sa4vaoax",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "Unlocking the Mystery of the Bible at St. Alphonsus",
+        "date": "2026-10-14",
+        "start_time": "1330",
+        "end_time": "1500",
+        "location": "St. Alphonsus Parish Hall",
+        "church_id": "st-alphonsus-windsor",
+        "church_name": "St. Alphonsus",
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "description": "This eight-session Bible study explores the story of Scripture from Adam and Eve through Christ and the Church. Sessions begin Wednesday afternoon, October 14, at St. Alphonsus Parish Hall.",
+        "tags": [
+            "faith_formation"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/October 11 2026.pdf",
+        "source_bulletin_date": "2026-10-11",
+        "id": "1uk71ctv",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "Assumption Bingo",
+        "date": "2026-10-15",
+        "start_time": "1230",
+        "end_time": null,
+        "location": "Assumption Parish",
+        "church_id": "our-lady-of-the-assumption-windsor",
+        "church_name": "Our Lady of the Assumption",
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "description": "Assumption’s community bingo begins at 12:30 p.m. and is also scheduled for October 29.",
+        "tags": [
+            "social"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/October 11 2026.pdf",
+        "source_bulletin_date": "2026-10-11",
+        "id": "6audkdkj",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "Assumption Bingo",
+        "date": "2026-10-29",
+        "start_time": "1230",
+        "end_time": null,
+        "location": "Assumption Parish",
+        "church_id": "our-lady-of-the-assumption-windsor",
+        "church_name": "Our Lady of the Assumption",
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "description": "Assumption’s community bingo begins at 12:30 p.m. and is also scheduled for October 15.",
+        "tags": [
+            "social"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/October 11 2026.pdf",
+        "source_bulletin_date": "2026-10-11",
+        "id": "qf5a1dr7",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "St. Alphonsus Sunday Social",
+        "date": "2026-10-25",
+        "start_time": null,
+        "end_time": null,
+        "location": "St. Alphonsus Parish",
+        "church_id": "st-alphonsus-windsor",
+        "church_name": "St. Alphonsus",
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "description": "Parishioners are invited to gather for the monthly Sunday social after the noon Mass. Volunteers are also welcome to help.",
+        "tags": [
+            "social"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/October 11 2026.pdf",
+        "source_bulletin_date": "2026-10-11",
+        "id": "s713dfnw",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "Thanksgiving Day Mass at St. Joseph",
+        "date": "2026-10-12",
+        "start_time": "0930",
+        "end_time": null,
+        "location": "St. Joseph Church, River Canard",
+        "church_id": "st-joseph-river-canard",
+        "church_name": "St. Joseph",
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "description": "Celebrate Thanksgiving with a bilingual Mass at St. Joseph. The parish invites the community to give thanks together.",
+        "tags": [
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2026/10/October%2011%202026-2.pdf?t=1791572526000",
+        "source_bulletin_date": "2026-10-11",
+        "id": "zx38dj8e",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "Sacred Heart Altar Server Training",
+        "date": "2026-10-15",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "Sacred Heart Church, LaSalle",
+        "church_id": "sacred-heart-lasalle",
+        "church_name": "Sacred Heart",
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "description": "Training is offered for new altar servers, and current servers are welcome to attend for a refresher.",
+        "tags": [
+            "faith_formation",
+            "volunteer"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2026/10/October%2011%202026-2.pdf?t=1791572526000",
+        "source_bulletin_date": "2026-10-11",
+        "id": "v89kgnid",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "Youth Group Nature Walk",
+        "date": "2026-10-18",
+        "start_time": null,
+        "end_time": null,
+        "location": "Sacred Heart Church, LaSalle",
+        "church_id": "sacred-heart-lasalle",
+        "church_name": "Sacred Heart",
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "description": "The youth group is invited to meet at the church for a nature walk followed by ice cream.",
+        "tags": [
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2026/10/October%2011%202026-2.pdf?t=1791572526000",
+        "source_bulletin_date": "2026-10-11",
+        "id": "257bopv1",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "Youth Group Pumpkin Carving Party",
+        "date": "2026-10-25",
+        "start_time": null,
+        "end_time": null,
+        "location": "Sacred Heart Church, LaSalle",
+        "church_id": "sacred-heart-lasalle",
+        "church_name": "Sacred Heart",
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "description": "Join the youth group for a pumpkin carving party; pumpkins will be provided.",
+        "tags": [
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2026/10/October%2011%202026-2.pdf?t=1791572526000",
+        "source_bulletin_date": "2026-10-11",
+        "id": "bzww8rwm",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "Trunk or Treat",
+        "date": "2026-10-24",
+        "start_time": "1500",
+        "end_time": "1600",
+        "location": "Sacred Heart Church, LaSalle",
+        "church_id": "sacred-heart-lasalle",
+        "church_name": "Sacred Heart",
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "description": "Families are invited to decorate their vehicles and hand out treats to children. Volunteers are needed to provide and distribute the treats.",
+        "tags": [
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2026/10/October%2011%202026-2.pdf?t=1791572526000",
+        "source_bulletin_date": "2026-10-11",
+        "id": "gjc79e7n",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "Erie Shores SSVP Thanksgiving Food Drive",
+        "date": "2026-10-10",
+        "start_time": null,
+        "end_time": null,
+        "location": "Weekend Masses across Erie Shores South parishes",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "description": "The Society of Saint Vincent de Paul collects canned goods at Masses from October 10–12; parishioners may bring donations forward during the procession. All items are welcome.",
+        "tags": [
+            "outreach"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/October 11 2026.pdf",
+        "source_bulletin_date": "2026-10-11",
+        "id": "ebtg6kqw",
+        "extracted_at": "2026-10-09T18:05:00-04:00"
+    },
+    {
+        "title": "St. Michael’s CWL Apple Pie Fundraiser Pickup",
+        "date": "2026-10-31",
+        "start_time": "1100",
+        "end_time": "1500",
+        "location": "St. Michael’s Church Hall, Leamington",
+        "church_id": "st-michaels-leamington",
+        "church_name": "St. Michael’s",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "description": "Pre-ordered apple pies can be picked up at the church hall; orders are due by Tuesday, October 27. Volunteers are also needed to prepare and distribute the pies.",
+        "tags": [
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/October 11 2026.pdf",
+        "source_bulletin_date": "2026-10-11",
+        "id": "yv43swn9",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "40 Days for Life Prayer and Witness",
+        "date": "2026-10-13",
+        "start_time": "0900",
+        "end_time": null,
+        "location": "St. Michael’s Church, Leamington, then carpool to Windsor",
+        "church_id": "st-michaels-leamington",
+        "church_name": "St. Michael’s",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "description": "Join the parish group for two hours of peaceful prayer and witness. Participants meet at St. Michael’s around 9:00 a.m. and carpool to Windsor.",
+        "tags": [
+            "devotion",
+            "outreach"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/October 11 2026.pdf",
+        "source_bulletin_date": "2026-10-11",
+        "id": "8j6fcizi",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "40 Days for Life Prayer and Witness",
+        "date": "2026-10-06",
+        "start_time": "0900",
+        "end_time": null,
+        "location": "St. Michael’s Church, Leamington, then carpool to Windsor",
+        "church_id": "st-michaels-leamington",
+        "church_name": "St. Michael’s",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "description": "Join the parish group for two hours of peaceful prayer and witness. Participants meet at St. Michael’s around 9:00 a.m. and carpool to Windsor.",
+        "tags": [
+            "devotion",
+            "outreach"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/October 4 2026.pdf",
+        "source_bulletin_date": "2026-10-04",
+        "id": "2263a118",
+        "extracted_at": "2026-10-09T18:05:00-04:00"
+    },
+    {
+        "title": "40 Days for Life Prayer and Witness",
+        "date": "2026-10-20",
+        "start_time": "0900",
+        "end_time": null,
+        "location": "St. Michael’s Church, Leamington, then carpool to Windsor",
+        "church_id": "st-michaels-leamington",
+        "church_name": "St. Michael’s",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "description": "Join the parish group for two hours of peaceful prayer and witness. Participants meet at St. Michael’s around 9:00 a.m. and carpool to Windsor.",
+        "tags": [
+            "devotion",
+            "outreach"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/October 11 2026.pdf",
+        "source_bulletin_date": "2026-10-11",
+        "id": "73fdk5h5",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "40 Days for Life Prayer and Witness",
+        "date": "2026-10-27",
+        "start_time": "0900",
+        "end_time": null,
+        "location": "St. Michael’s Church, Leamington, then carpool to Windsor",
+        "church_id": "st-michaels-leamington",
+        "church_name": "St. Michael’s",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "description": "Join the parish group for two hours of peaceful prayer and witness. Participants meet at St. Michael’s around 9:00 a.m. and carpool to Windsor.",
+        "tags": [
+            "devotion",
+            "outreach"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/October 11 2026.pdf",
+        "source_bulletin_date": "2026-10-11",
+        "id": "ute3zw09",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "Holy Name of Jesus CWL Meeting",
+        "date": "2026-10-14",
+        "start_time": "1830",
+        "end_time": null,
+        "location": "Meeting Room A, Holy Name of Jesus Church",
+        "church_id": "holy-name-of-jesus-essex",
+        "church_name": "Holy Name of Jesus",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "description": "The Holy Name of Jesus Catholic Women’s League meets in Meeting Room A. New members are welcome.",
+        "tags": [
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20261011.pdf?t=1791554287000",
+        "source_bulletin_date": "2026-10-11",
+        "id": "m8g0yosg",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "Central Essex Family of Parishes Breakfast",
+        "date": "2026-10-25",
+        "start_time": "1200",
+        "end_time": null,
+        "location": "Holy Name of Jesus parish hall",
+        "church_id": "holy-name-of-jesus-essex",
+        "church_name": "Holy Name of Jesus",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "description": "The Essex Knights of Columbus and Catholic Women’s League host a family breakfast at Holy Name of Jesus parish hall. A free-will offering is appreciated.",
+        "tags": [
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20261011.pdf?t=1791554287000",
+        "source_bulletin_date": "2026-10-11",
+        "id": "z6oh0wrj",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "Holy Land Olive Wood Works of Art Sale",
+        "date": "2026-10-24",
+        "start_time": null,
+        "end_time": null,
+        "location": "Our Lady of the Atonement and St. John Vianney Churches",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "East Windsor Catholic Family of Parishes",
+        "description": "Browse hand-carved olive wood items made by Christian families in the Holy Land after Masses at both churches on October 24 and 25. Purchases support Christian families and help sustain their tradition of craftsmanship.",
+        "tags": [
+            "outreach",
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/October 11 2026.pdf",
+        "source_bulletin_date": "2026-10-11",
+        "id": "47s3cuh2",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "Aspen Lake Nursing Home Mass",
+        "date": "2026-10-27",
+        "start_time": "1400",
+        "end_time": null,
+        "location": "Aspen Lake",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "East Windsor Catholic Family of Parishes",
+        "description": "The Family of Parishes will celebrate Mass at Aspen Lake.",
+        "tags": [
+            "liturgy",
+            "outreach"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/October 11 2026.pdf",
+        "source_bulletin_date": "2026-10-11",
+        "id": "spabywt4",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "Women at the Well: Marian Apparitions",
+        "date": "2026-10-19",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "Good Shepherd Parish, Lakeshore",
+        "church_id": "good-shepherd-tecumseh",
+        "church_name": "Good Shepherd",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "description": "Women are invited to explore Marian apparitions in a welcoming space for faith, friendship, and conversation. Registration is available through CatholicFamily.ca/womenatthewell.",
+        "tags": [
+            "faith_formation",
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/10/WLSC%20Weekly%20Bulletin%20Octo%2011%202026.pdf?t=1791560287000",
+        "source_bulletin_date": "2026-10-11",
+        "id": "hu22fbt9",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "Catholic in Recovery",
+        "date": "2026-10-13",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "Ste. Anne Church, Tecumseh",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "description": "This confidential gathering offers recovery support through 12-step principles, Catholic faith, Scripture, and the sacraments. The group meets every other Tuesday; the next meeting is October 13.",
+        "tags": [
+            "faith_formation"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/10/WLSC%20Weekly%20Bulletin%20Octo%2011%202026.pdf?t=1791560287000",
+        "source_bulletin_date": "2026-10-11",
+        "id": "ow5d4nqy",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "Ste. Anne SSVP Thanksgiving Food Drive",
+        "date": "2026-10-10",
+        "start_time": null,
+        "end_time": null,
+        "location": "Ste. Anne Parish, Tecumseh",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "description": "The Society of St. Vincent de Paul will collect non-perishable food after all Masses over Thanksgiving weekend. Donations should be unexpired; macaroni and cheese, jam, canned fruit, and other items are especially welcome.",
+        "tags": [
+            "outreach"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/10/WLSC%20Weekly%20Bulletin%20Octo%2011%202026.pdf?t=1791560287000",
+        "source_bulletin_date": "2026-10-11",
+        "id": "e9c63e00",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "St. Simon & St. Jude Christmas Craft Show",
+        "date": "2026-10-17",
+        "start_time": "1000",
+        "end_time": "1600",
+        "location": "St. Simon & St. Jude Event Centre, Belle River",
+        "church_id": "st-simon-st-jude-belle-river",
+        "church_name": "St. Simon & St. Jude",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "description": "Browse gifts and support local vendors at the Christmas Craft Show. The event is held at the St. Simon & St. Jude Event Centre.",
+        "tags": [
+            "social",
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/10/WLSC%20Weekly%20Bulletin%20Octo%2011%202026.pdf?t=1791560287000",
+        "source_bulletin_date": "2026-10-11",
+        "id": "ynrgptd6",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "Healing Mass at Académie Ste. Cécile",
+        "date": "2026-10-21",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "Académie Ste. Cécile Chapel, 925 Cousineau Rd., Windsor",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "description": "The Sharers of the Word invite the community to pray the Rosary at 7:00 p.m., followed by a healing Mass and individual prayer at 7:30 p.m.",
+        "tags": [
+            "liturgy",
+            "devotion"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/10/WLSC%20Weekly%20Bulletin%20Octo%2011%202026.pdf?t=1791560287000",
+        "source_bulletin_date": "2026-10-11",
+        "id": "x4k338mo",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "Ste. Anne Cemetery Remembrance Day Service",
+        "date": "2026-11-11",
+        "start_time": "1100",
+        "end_time": null,
+        "location": "Ste. Anne Cemetery, Tecumseh",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "description": "Gather for prayer and remembrance to honor those who served and sacrificed for the country. Everyone is welcome.",
+        "tags": [
+            "social",
+            "devotion"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/10/WLSC%20Weekly%20Bulletin%20Octo%2011%202026.pdf?t=1791560287000",
+        "source_bulletin_date": "2026-10-11",
+        "id": "m8v8yd32",
+        "extracted_at": "2026-10-09T16:55:00-04:00"
+    },
+    {
+        "title": "Amherstburg-Harrow Trunk or Treat",
+        "description": "Families can decorate their vehicles and hand out treats to children in the St. John the Baptist parking lot after the 5:00 p.m. Mass. Children are invited to wear costumes, and treat donations can be dropped at the parish office.",
+        "church_id": "st-john-the-baptist-amherstburg",
+        "church_name": "St. John the Baptist",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2026-10-24",
+        "start_time": "1700",
+        "end_time": null,
+        "location": "St. John the Baptist parking lot",
+        "tags": [
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20261004.pdf?t=1790963014000",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "016fdd27"
+    },
+    {
+        "title": "Grade 5/6 Youth Group",
+        "description": "The specific location-change notice schedules this meeting at St. John the Baptist Church from 7:00 to 8:30 p.m.; the weekly calendar separately lists a 6:00 p.m. meeting at Stella Maris.",
+        "church_id": "st-john-the-baptist-amherstburg",
+        "church_name": "St. John the Baptist",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2026-10-14",
+        "start_time": "1900",
+        "end_time": "2030",
+        "location": "St. John the Baptist Church",
+        "tags": [
+            "youth"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20261011.pdf?t=1791556137000",
+        "source_bulletin_date": "2026-10-11",
+        "extracted_at": "2026-10-09T17:35:00-04:00",
+        "id": "eee002bb"
+    },
+    {
+        "title": "High School Youth Group",
+        "description": "The specific event notice lists a 7:00–8:30 p.m. meeting in the Fr. Martin Room; the weekly calendar lists a 6:00 p.m. start in that room.",
+        "church_id": "st-john-the-baptist-amherstburg",
+        "church_name": "St. John the Baptist",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2026-10-18",
+        "start_time": "1900",
+        "end_time": "2030",
+        "location": "Fr. Martin Room, St. John the Baptist",
+        "tags": [
+            "youth"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20261011.pdf?t=1791556137000",
+        "source_bulletin_date": "2026-10-11",
+        "extracted_at": "2026-10-09T17:35:00-04:00",
+        "id": "216536f5"
+    },
+    {
+        "title": "AHCFOP CWL Meeting",
+        "description": "The Amherstburg-Harrow Catholic Women’s League welcomes members and visitors to its meeting at the St. John the Baptist Parish Centre.",
+        "church_id": "st-john-the-baptist-amherstburg",
+        "church_name": "St. John the Baptist",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2026-10-20",
+        "start_time": "1845",
+        "end_time": null,
+        "location": "St. John the Baptist Parish Centre",
+        "tags": [
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20261011.pdf?t=1791556137000",
+        "source_bulletin_date": "2026-10-11",
+        "extracted_at": "2026-10-09T17:35:00-04:00",
+        "id": "9f2a4c64"
+    },
+    {
+        "title": "New and Current Altar Server Training",
+        "description": "A mandatory training session is scheduled for new and current altar servers, followed by a pizza lunch.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2026-11-21",
+        "start_time": "1100",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "faith_formation",
+            "volunteer"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20261011.pdf?t=1791556137000",
+        "source_bulletin_date": "2026-10-11",
+        "extracted_at": "2026-10-09T17:35:00-04:00",
+        "id": "402c552b"
+    },
+    {
+        "title": "Holy Hour at St. Anthony of Padua",
+        "description": "Spend an hour in prayer with Scripture reflection, music, and quiet prayer before the Blessed Sacrament. All are welcome.",
+        "church_id": "st-anthony-of-padua-harrow",
+        "church_name": "St. Anthony of Padua",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2026-10-25",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "St. Anthony of Padua Church",
+        "tags": [
+            "devotion"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20261011.pdf?t=1791556137000",
+        "source_bulletin_date": "2026-10-11",
+        "extracted_at": "2026-10-09T17:35:00-04:00",
+        "id": "9d43857f"
+    },
+    {
+        "title": "Seniors Dance and Dinner",
+        "description": "The dance runs from 3:00 to 5:00 p.m., followed by dinner from 5:00 to 6:00 p.m., with music by Crow Bar. Tickets are a $12 donation with dinner or a $5 cover charge for the dance only.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2026-10-15",
+        "start_time": "1500",
+        "end_time": "1800",
+        "location": "Columbus Community Hall, 190 Richmond Street, Amherstburg",
+        "tags": [
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20261011.pdf?t=1791556137000",
+        "source_bulletin_date": "2026-10-11",
+        "extracted_at": "2026-10-09T17:35:00-04:00",
+        "id": "7ee6ff01"
+    },
+    {
+        "title": "Thanksgiving Day Mass at St. Anthony School",
+        "description": "A Thanksgiving Day Mass is listed at St. Anthony School in the parish’s weekly calendar.",
+        "church_id": "st-anthony-of-padua-harrow",
+        "church_name": "St. Anthony of Padua",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2026-10-16",
+        "start_time": "1115",
+        "end_time": null,
+        "location": "St. Anthony School",
+        "tags": [
+            "liturgy"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20261011.pdf?t=1791556137000",
+        "source_bulletin_date": "2026-10-11",
+        "extracted_at": "2026-10-09T17:35:00-04:00",
+        "id": "a6d66564"
+    },
+    {
+        "title": "Baptismal Class",
+        "description": "A baptismal class is scheduled in the Fr. Martin Room.",
+        "church_id": "st-john-the-baptist-amherstburg",
+        "church_name": "St. John the Baptist",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2026-10-13",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "Fr. Martin Room, St. John the Baptist",
+        "tags": [
+            "faith_formation"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20261011.pdf?t=1791556137000",
+        "source_bulletin_date": "2026-10-11",
+        "extracted_at": "2026-10-09T17:35:00-04:00",
+        "id": "69334002"
+    },
+    {
+        "title": "Divine Mercy Prayer",
+        "description": "Join the parish for Divine Mercy prayer in the St. John the Baptist Adoration Chapel.",
+        "church_id": "st-john-the-baptist-amherstburg",
+        "church_name": "St. John the Baptist",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2026-10-16",
+        "start_time": "1500",
+        "end_time": null,
+        "location": "St. John the Baptist Adoration Chapel",
+        "tags": [
+            "devotion"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/26217/bulletins/20261011.pdf?t=1791556137000",
+        "source_bulletin_date": "2026-10-11",
+        "extracted_at": "2026-10-09T17:35:00-04:00",
+        "id": "08eb87b9"
+    },
+    {
+        "title": "OLPH Bingo and Gaming",
+        "description": "OLPH’s assigned bingo and gaming session runs from 8:00 to 10:00 p.m. at All Star Gaming Centre on Walker Road.",
+        "church_id": "our-lady-of-perpetual-help-windsor",
+        "church_name": "Our Lady of Perpetual Help",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2026-11-13",
+        "start_time": "2000",
+        "end_time": "2200",
+        "location": "All Star Gaming Centre on Walker Road, Windsor",
+        "tags": [
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20261011.pdf?t=1791563439000",
+        "source_bulletin_date": "2026-10-11",
+        "extracted_at": "2026-10-09T17:35:00-04:00",
+        "id": "401ea2b6"
+    },
+    {
+        "title": "St. Michael Bingo",
+        "description": "St. Michael’s assigned parish bingo session runs from 8:30 to 10:00 a.m. at All Star Gaming Centre and supports the parish.",
+        "church_id": "immaculate-heart-windsor",
+        "church_name": "St. Michael’s",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2026-11-04",
+        "start_time": "0830",
+        "end_time": "1000",
+        "location": "All Star Gaming Centre, Walker Road, Windsor",
+        "tags": [
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20261011.pdf?t=1791563439000",
+        "source_bulletin_date": "2026-10-11",
+        "extracted_at": "2026-10-09T17:35:00-04:00",
+        "id": "e66ea354"
+    },
+    {
+        "title": "On Golden Pond at Marie Rose Place",
+        "description": "Sister Janine Rocheleau presents “On Golden Pond” at Marie Rose Place. The day begins with lunch at 11:30 a.m. and ends around 3:30 p.m.; the suggested offering is $15 and registration is required.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2026-10-20",
+        "start_time": "1130",
+        "end_time": "1530",
+        "location": "Marie Rose Place, Windsor",
+        "tags": [
+            "faith_formation",
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20261011.pdf?t=1791563439000",
+        "source_bulletin_date": "2026-10-11",
+        "extracted_at": "2026-10-09T17:35:00-04:00",
+        "id": "0355bdbf"
+    },
+    {
+        "title": "Alpha at Our Lady of Mount Carmel",
+        "description": "The second Alpha session meets at Our Lady of Mount Carmel. The bulletin notes that the first evening welcomed 80 guests and asks participants to register so the parish can plan for food.",
+        "church_id": "our-lady-of-mt-carmel-windsor",
+        "church_name": "Our Lady of Mount Carmel",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2026-10-14",
+        "start_time": null,
+        "end_time": null,
+        "location": "Our Lady of Mount Carmel Church",
+        "tags": [
+            "faith_formation",
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20261011.pdf?t=1791571818000",
+        "source_bulletin_date": "2026-10-11",
+        "extracted_at": "2026-10-09T17:35:00-04:00",
+        "id": "6eba5999"
+    },
+    {
+        "title": "St. Mary’s Dinner and Raffles",
+        "description": "St. Mary’s Hall hosts dinner and raffles from 4:00 to 7:00 p.m., with tickets available at the door. Admission is $15 for adults and $10 for children.",
+        "church_id": "st-marys-maidstone",
+        "church_name": "St. Mary’s",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2026-10-18",
+        "start_time": "1600",
+        "end_time": "1900",
+        "location": "St. Mary’s Hall, Maidstone",
+        "tags": [
+            "social",
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20261004.pdf?t=1790951436000",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "05bdb0b1"
+    },
+    {
+        "title": "Fr. Danny’s Marathon Fundraiser",
+        "description": "Fr. Danny is running a marathon on October 18, with proceeds directed to the capital fund for each church in the family. The bulletin invites parishioners to support the fundraiser.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2026-10-18",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/18911/bulletins/20261004.pdf?t=1790951436000",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "16d2880f"
+    },
+    {
+        "title": "First Reconciliation Preparation Session",
+        "description": "This is one of four mandatory preparation sessions for First Reconciliation; each child must attend at least two sessions in person.",
+        "church_id": "st-joseph-river-canard",
+        "church_name": "St. Joseph",
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "date": "2026-10-10",
+        "start_time": "0930",
+        "end_time": "1100",
+        "location": "St. Joseph Church, River Canard",
+        "tags": [
+            "faith_formation"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2026/10/October%204%202026.pdf?t=1790968591000",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "e76acf18"
+    },
+    {
+        "title": "First Reconciliation Preparation Session",
+        "description": "This is one of four mandatory preparation sessions for First Reconciliation; each child must attend at least two sessions in person.",
+        "church_id": "st-joseph-river-canard",
+        "church_name": "St. Joseph",
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "date": "2026-10-17",
+        "start_time": "0930",
+        "end_time": "1100",
+        "location": "St. Joseph Church, River Canard",
+        "tags": [
+            "faith_formation"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2026/10/October%204%202026.pdf?t=1790968591000",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "e0b28d79"
+    },
+    {
+        "title": "First Reconciliation Preparation Session",
+        "description": "This is one of four mandatory preparation sessions for First Reconciliation; each child must attend at least two sessions in person.",
+        "church_id": "st-joseph-river-canard",
+        "church_name": "St. Joseph",
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "date": "2026-10-24",
+        "start_time": "0930",
+        "end_time": "1100",
+        "location": "St. Joseph Church, River Canard",
+        "tags": [
+            "faith_formation"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2026/10/October%204%202026.pdf?t=1790968591000",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "9e97862a"
+    },
+    {
+        "title": "First Reconciliation Preparation Session",
+        "description": "This is one of four mandatory preparation sessions for First Reconciliation; each child must attend at least two sessions in person.",
+        "church_id": "st-joseph-river-canard",
+        "church_name": "St. Joseph",
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "date": "2026-11-07",
+        "start_time": "0930",
+        "end_time": "1100",
+        "location": "St. Joseph Church, River Canard",
+        "tags": [
+            "faith_formation"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2026/10/October%204%202026.pdf?t=1790968591000",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "e6047594"
+    },
+    {
+        "title": "Windsor-Essex Right to Life 53rd Annual Dinner",
+        "description": "Doors open at 5:00 p.m., the program begins at 5:45 p.m., and dinner is served at 6:00 p.m. Tickets are $75 per person; reservations are required by October 28.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2026-11-06",
+        "start_time": "1700",
+        "end_time": null,
+        "location": "Ciociaro Club, Windsor",
+        "tags": [
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/21089/bulletins/20261004.pdf?t=1790890805000",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "a4062c69"
+    },
+    {
+        "title": "OLPH CWL General Meeting",
+        "description": "The meeting follows the 6:00 p.m. Mass, and members are invited to bring their 2027 dues.",
+        "church_id": "our-lady-of-perpetual-help-windsor",
+        "church_name": "Our Lady of Perpetual Help",
+        "family_of_parishes": "Rose City Central Catholic Family of Parishes",
+        "date": "2026-10-06",
+        "start_time": "1845",
+        "end_time": null,
+        "location": "Our Lady of Perpetual Help Church",
+        "tags": [
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/20008/bulletins/20261004.pdf?t=1790961085000",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "6f0363c3"
+    },
+    {
+        "title": "Foodies Cooking Class",
+        "description": "Assumption Cares hosts its Foodies Cooking Class at noon.",
+        "church_id": "our-lady-of-the-assumption-windsor",
+        "church_name": "Our Lady of the Assumption",
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "date": "2026-10-16",
+        "start_time": "1200",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "social"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/October 4 2026.pdf",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "da14b346"
+    },
+    {
+        "title": "St. Alphonsus Cares Social Group Volunteer Training",
+        "description": "Training for police-cleared volunteers supporting the social group for people experiencing early signs of memory loss begins at 11:00 a.m. Lunch follows, and volunteers are asked to RSVP to Sr. Connie.",
+        "church_id": "st-alphonsus-windsor",
+        "church_name": "St. Alphonsus",
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "date": "2026-10-19",
+        "start_time": "1100",
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "volunteer",
+            "community"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/October 4 2026.pdf",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "493f6ac8"
+    },
+    {
+        "title": "Religious Article Sale at Assumption",
+        "description": "The Knights of Columbus will hold the religious article sale at the 9:00 a.m. and 11:00 a.m. Masses.",
+        "church_id": "our-lady-of-the-assumption-windsor",
+        "church_name": "Our Lady of the Assumption",
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "date": "2026-10-18",
+        "start_time": "0900",
+        "end_time": null,
+        "location": "Our Lady of the Assumption",
+        "tags": [
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/October 4 2026.pdf",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "1474a4c8"
+    },
+    {
+        "title": "Religious Article Sale at St. Alphonsus",
+        "description": "The Knights of Columbus will hold the religious article sale before and after the noon Mass.",
+        "church_id": "st-alphonsus-windsor",
+        "church_name": "St. Alphonsus",
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "date": "2026-10-25",
+        "start_time": "1200",
+        "end_time": null,
+        "location": "St. Alphonsus",
+        "tags": [
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/October 4 2026.pdf",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "f1c6aa9a"
+    },
+    {
+        "title": "Religious Article Sale at Assumption",
+        "description": "The Knights of Columbus will hold the religious article sale at the 9:00 a.m. and 11:00 a.m. Masses.",
+        "church_id": "our-lady-of-the-assumption-windsor",
+        "church_name": "Our Lady of the Assumption",
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "date": "2026-11-15",
+        "start_time": "0900",
+        "end_time": null,
+        "location": "Our Lady of the Assumption",
+        "tags": [
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/October 4 2026.pdf",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "fc7edbd1"
+    },
+    {
+        "title": "Religious Article Sale at St. Alphonsus",
+        "description": "The Knights of Columbus will hold the religious article sale before and after the noon Mass. The November 29 date is tentative.",
+        "church_id": "st-alphonsus-windsor",
+        "church_name": "St. Alphonsus",
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "date": "2026-11-29",
+        "start_time": "1200",
+        "end_time": null,
+        "location": "St. Alphonsus",
+        "tags": [
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/October 4 2026.pdf",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "712e1bfa"
+    },
+    {
+        "title": "Religious Article Sale at Holy Name of Mary",
+        "description": "The Knights of Columbus will hold the religious article sale before and after the 3:00 p.m. Mass.",
+        "church_id": "holy-name-of-mary-windsor",
+        "church_name": "Holy Name of Mary / St. Benedict",
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "date": "2026-11-01",
+        "start_time": "1500",
+        "end_time": null,
+        "location": "Holy Name of Mary, Windsor",
+        "tags": [
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179/October 4 2026.pdf",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "143602aa"
+    },
+    {
+        "title": "Parish Mission Partners Pasta Fundraising Dinner",
+        "description": "The family invites parishioners to a pasta fundraising dinner supporting its mission partners. Donations of gift cards and raffle prizes are also requested.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "East Windsor Catholic Family of Parishes",
+        "date": "2026-11-01",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "tags": [
+            "fundraiser",
+            "social"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/October 4 2026.pdf",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "e292f1ce"
+    },
+    {
+        "title": "Fruit Pie Sale at Our Lady of the Atonement",
+        "description": "Fruit pies will be available for sale after the Thanksgiving weekend Masses.",
+        "church_id": "our-lady-of-the-atonement-windsor",
+        "church_name": "Our Lady of the Atonement",
+        "family_of_parishes": "East Windsor Catholic Family of Parishes",
+        "date": "2026-10-17",
+        "start_time": null,
+        "end_time": null,
+        "location": "Our Lady of the Atonement",
+        "tags": [
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/October 4 2026.pdf",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "a6e3f518"
+    },
+    {
+        "title": "Fruit Pie Sale at Our Lady of the Atonement",
+        "description": "Fruit pies will be available for sale after the Thanksgiving weekend Masses.",
+        "church_id": "our-lady-of-the-atonement-windsor",
+        "church_name": "Our Lady of the Atonement",
+        "family_of_parishes": "East Windsor Catholic Family of Parishes",
+        "date": "2026-10-18",
+        "start_time": null,
+        "end_time": null,
+        "location": "Our Lady of the Atonement",
+        "tags": [
+            "fundraiser"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/October 4 2026.pdf",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "7350ad42"
+    },
+    {
+        "title": "Cornerstone Weekend Retreat",
+        "description": "The retreat runs November 20–22 at St. Simon & St. Jude Parish and is open to students in Grade 10 through age 19. Registration is $60, financial assistance is available, and applications are required.",
+        "church_id": "st-simon-st-jude-belle-river",
+        "church_name": "St. Simon & St. Jude",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2026-11-20",
+        "start_time": null,
+        "end_time": null,
+        "location": "St. Simon & St. Jude Parish, Belle River",
+        "tags": [
+            "retreat",
+            "faith_formation"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/10/WLSC%20Weekly%20Bulletin%20Octo%204%202026.pdf?t=1790881282000",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "6fa34102"
+    },
+    {
+        "title": "WLSC Life Chain",
+        "description": "Join the peaceful pro-life witness from 2:00 to 3:00 p.m. on Tecumseh Road in front of Met Hospital.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2026-10-04",
+        "start_time": "1400",
+        "end_time": "1500",
+        "location": "Tecumseh Road in front of Met Hospital, Windsor",
+        "tags": [
+            "devotion",
+            "community"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/10/WLSC%20Weekly%20Bulletin%20Octo%204%202026.pdf?t=1790881282000",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "8dbf97c8"
+    },
+    {
+        "title": "Soup and Social at Good Shepherd",
+        "description": "Enjoy a free lunch and fellowship following the 12:15 p.m. Mass. The October 11 bulletin moves the next gathering to November 18.",
+        "church_id": "good-shepherd-tecumseh",
+        "church_name": "Good Shepherd",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2026-11-18",
+        "start_time": "1245",
+        "end_time": null,
+        "location": "Good Shepherd Parish",
+        "tags": [
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/10/WLSC%20Weekly%20Bulletin%20Octo%2011%202026.pdf?t=1791560287000",
+        "source_bulletin_date": "2026-10-11",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "f7234b70"
+    },
+    {
+        "title": "Good Shepherd Knights of Columbus Meeting",
+        "description": "Council 9671 meets in the back half of the parish hall.",
+        "church_id": "good-shepherd-tecumseh",
+        "church_name": "Good Shepherd",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2026-10-27",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "Good Shepherd Parish Hall",
+        "tags": [
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/10/WLSC%20Weekly%20Bulletin%20Octo%204%202026.pdf?t=1790881282000",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "fc1b1894"
+    },
+    {
+        "title": "St. Simon & St. Jude CWL Meeting",
+        "description": "The Catholic Women’s League meets in the parish hall; members may bring their $35 membership dues.",
+        "church_id": "st-simon-st-jude-belle-river",
+        "church_name": "St. Simon & St. Jude",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2026-10-05",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "St. Simon & St. Jude Parish Hall",
+        "tags": [
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/10/WLSC%20Weekly%20Bulletin%20Octo%204%202026.pdf?t=1790881282000",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "1bdf0d7e"
+    },
+    {
+        "title": "Good Shepherd CWL Meeting",
+        "description": "The Catholic Women’s League meeting follows the 6:30 p.m. Mass, at approximately 7:15 p.m.",
+        "church_id": "good-shepherd-tecumseh",
+        "church_name": "Good Shepherd",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2026-10-15",
+        "start_time": "1915",
+        "end_time": null,
+        "location": "Good Shepherd Parish",
+        "tags": [
+            "meeting"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/10/WLSC%20Weekly%20Bulletin%20Octo%204%202026.pdf?t=1790881282000",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "4da5c6db"
+    },
+    {
+        "title": "Belle River Kay-Celles Potluck Meeting",
+        "description": "Doors open at 6:30 p.m. for the Kay-Celles potluck meeting.",
+        "church_id": "st-simon-st-jude-belle-river",
+        "church_name": "St. Simon & St. Jude",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2026-10-14",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "St. Simon & St. Jude Parish Hall",
+        "tags": [
+            "meeting",
+            "social"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/10/WLSC%20Weekly%20Bulletin%20Octo%204%202026.pdf?t=1790881282000",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "bf664ec3"
+    },
+    {
+        "title": "St. Simon & St. Jude SSVP Meeting",
+        "description": "The Society of Saint Vincent de Paul meets in the blue room in the parish hall.",
+        "church_id": "st-simon-st-jude-belle-river",
+        "church_name": "St. Simon & St. Jude",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2026-10-20",
+        "start_time": "1500",
+        "end_time": null,
+        "location": "Blue Room, St. Simon & St. Jude Parish Hall",
+        "tags": [
+            "meeting",
+            "service"
+        ],
+        "source_bulletin_link": "https://files.ecatholic.com/30786/documents/2026/10/WLSC%20Weekly%20Bulletin%20Octo%204%202026.pdf?t=1790881282000",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "182ecd21"
+    },
+    {
+        "title": "Erie Shores Life Chain",
+        "description": "Join a peaceful, prayerful pro-life witness from 2:00 to 3:00 p.m. at either Erie and Talbot in Leamington or Main and Division in Kingsville.",
+        "church_id": null,
+        "church_name": null,
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2026-10-04",
+        "start_time": "1400",
+        "end_time": "1500",
+        "location": "Erie and Talbot, Leamington; or Main and Division, Kingsville",
+        "tags": [
+            "devotion",
+            "community"
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/October 4 2026.pdf",
+        "source_bulletin_date": "2026-10-04",
+        "extracted_at": "2026-10-09T18:05:00-04:00",
+        "id": "f509dd8e"
     }
 ]
