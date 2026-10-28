@@ -13657,8 +13657,8 @@
         "tags": [
             "social"
         ],
-        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2026/10/October%2011%202026-2.pdf?t=1791572526000",
-        "source_bulletin_date": "2026-10-11",
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2026/10/October%204%202026.pdf?t=1790968591000",
+        "source_bulletin_date": "2026-10-04",
         "id": "257bopv1",
         "extracted_at": "2026-10-09T16:55:00-04:00"
     },
@@ -13675,8 +13675,8 @@
         "tags": [
             "social"
         ],
-        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2026/10/October%2011%202026-2.pdf?t=1791572526000",
-        "source_bulletin_date": "2026-10-11",
+        "source_bulletin_link": "https://files.ecatholic.com/21238/documents/2026/10/October%204%202026.pdf?t=1790968591000",
+        "source_bulletin_date": "2026-10-04",
         "id": "bzww8rwm",
         "extracted_at": "2026-10-09T16:55:00-04:00"
     },
@@ -14744,5 +14744,271 @@
         "source_bulletin_date": "2026-10-04",
         "extracted_at": "2026-10-09T18:05:00-04:00",
         "id": "f509dd8e"
+    },
+    {
+        "id": "a1h26b01",
+        "title": "High School Youth Group",
+        "description": "High school students are invited to meet for youth group, prayer and fellowship. The next meeting is Sunday, November 1 from 7:00 to 8:30 p.m. in the Fr. Martin Room.",
+        "church_id": null,
+        "church_name": "St. John the Baptist Parish Centre",
+        "family_of_parishes": "Amherstburg-Harrow Catholic Family of Parishes",
+        "date": "2026-11-01",
+        "start_time": "1900",
+        "end_time": "2030",
+        "location": "Fr. Martin Room, St. John the Baptist Parish Centre",
+        "source_bulletin_link": "https://www.ahcfop.ca/bulletins",
+        "source_bulletin_date": "2026-10-25",
+        "tags": [
+            "youth",
+            "faith_formation"
+        ],
+        "extracted_at": "2026-10-28T11:26:48-04:00"
+    },
+    {
+        "id": "ce26psta",
+        "title": "Theology Uncorked",
+        "description": "Father Danny will lead a discussion about exorcisms and what Catholics believe about Halloween. The event is for adults ages 19 and up on Friday, October 30 at 7:00 p.m. at Holy Name of Jesus.",
+        "church_id": "holy-name-of-jesus-essex",
+        "church_name": "Holy Name of Jesus",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2026-10-30",
+        "start_time": "1900",
+        "end_time": null,
+        "location": "Holy Name of Jesus Church",
+        "source_bulletin_link": "https://5q3p4a.sites.ecatholic.com/bulletins",
+        "source_bulletin_date": "2026-10-25",
+        "tags": [
+            "faith_formation",
+            "social"
+        ],
+        "extracted_at": "2026-10-28T11:26:48-04:00"
+    },
+    {
+        "id": "ce26pstb",
+        "title": "All-You-Can-Eat Pasta Dinner",
+        "description": "St. Mary’s Altar Society hosts a pasta dinner with takeout available. Join the parish community on Monday, November 2 from 4:30 to 6:30 p.m. in St. Mary’s Hall.",
+        "church_id": "st-marys-maidstone",
+        "church_name": "St. Mary’s",
+        "family_of_parishes": "Central Essex County Catholic Family of Parishes",
+        "date": "2026-11-02",
+        "start_time": "1630",
+        "end_time": "1830",
+        "location": "St. Mary’s Hall, Maidstone",
+        "source_bulletin_link": "https://5q3p4a.sites.ecatholic.com/bulletins",
+        "source_bulletin_date": "2026-10-25",
+        "tags": [
+            "fundraiser",
+            "social"
+        ],
+        "extracted_at": "2026-10-28T11:26:48-04:00"
+    },
+    {
+        "id": "lr26cap1",
+        "title": "St. Joseph Bell Tower Capital Campaign Information Session",
+        "description": "St. Joseph parishioners can attend a presentation about the campaign to replace the church bell towers, with information packages and pledge cards available. The first session follows the 11:00 a.m. Mass on November 1; additional sessions follow Masses on November 7 and 8.",
+        "church_id": "st-joseph-river-canard",
+        "church_name": "St. Joseph",
+        "family_of_parishes": "LaSalle River Canard Catholic Family of Parishes",
+        "date": "2026-11-01",
+        "start_time": null,
+        "end_time": null,
+        "location": "St. Joseph Parish Hall, River Canard",
+        "source_bulletin_link": "https://4e1jla.sites.ecatholic.com/bulletin",
+        "source_bulletin_date": "2026-10-25",
+        "tags": [
+            "fundraiser",
+            "parish"
+        ],
+        "extracted_at": "2026-10-28T11:26:48-04:00"
+    },
+    {
+        "id": "sw26adv1",
+        "title": "Advent Consecration Book Study",
+        "description": "This 33-day Advent prayer journey uses Fr. Boniface Hicks’s book on preparation for consecration to Jesus and invites participants to spend about 10 minutes a day in prayer and reflection. It begins November 29 and concludes January 1, with optional weekly meetings.",
+        "church_id": null,
+        "church_name": "South Windsor Catholic Family of Parishes",
+        "family_of_parishes": "South Windsor Catholic Family of Parishes",
+        "date": "2026-11-29",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "source_bulletin_link": "https://ly42ja.sites.ecatholic.com/bulletins",
+        "source_bulletin_date": "2026-10-25",
+        "tags": [
+            "faith_formation",
+            "devotion"
+        ],
+        "extracted_at": "2026-10-28T11:26:48-04:00"
+    },
+    {
+        "id": "nc26koc1",
+        "title": "Our Lady of Guadalupe Knights of Columbus Memorial Mass and Dinner",
+        "description": "The Knights of Columbus and Our Lady of Guadalupe CWL invite parishioners to a Memorial Mass followed by dinner in the parish hall. Mass begins at 5:00 p.m. on Saturday, November 7; dinner tickets are $25 and must be purchased in advance by October 31.",
+        "church_id": "our-lady-of-guadalupe-windsor",
+        "church_name": "Our Lady of Guadalupe / San Juan Diego",
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2026-11-07",
+        "start_time": "1700",
+        "end_time": null,
+        "location": "Our Lady of Guadalupe Church and parish hall",
+        "source_bulletin_link": "https://z253oa.sites.ecatholic.com/bulletins",
+        "source_bulletin_date": "2026-10-25",
+        "tags": [
+            "liturgy",
+            "social"
+        ],
+        "extracted_at": "2026-10-28T11:26:48-04:00"
+    },
+    {
+        "id": "nc26baz1",
+        "title": "Most Precious Blood CWL Fall Bazaar",
+        "description": "The CWL bazaar features baked goods, meat pies, jewellery and other items, with parishioners invited to get an early start on Christmas shopping. It runs Saturday, November 7 from 10:00 a.m. to 3:00 p.m. in Most Precious Blood Hall.",
+        "church_id": "most-precious-blood-windsor",
+        "church_name": "Most Precious Blood",
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2026-11-07",
+        "start_time": "1000",
+        "end_time": "1500",
+        "location": "Most Precious Blood Hall",
+        "source_bulletin_link": "https://z253oa.sites.ecatholic.com/bulletins",
+        "source_bulletin_date": "2026-10-25",
+        "tags": [
+            "fundraiser",
+            "social"
+        ],
+        "extracted_at": "2026-10-28T11:26:48-04:00"
+    },
+    {
+        "id": "nc26dpw1",
+        "title": "Development and Peace Windsor-Essex Workshop",
+        "description": "Development and Peace–Caritas Canada invites participants to discuss Canada’s role in international development and the importance of Canadian aid. The workshop is scheduled for November 14; the bulletin lists the time and location as to be announced.",
+        "church_id": null,
+        "church_name": "Windsor-Essex",
+        "family_of_parishes": "North Central Windsor Catholic Family of Parishes",
+        "date": "2026-11-14",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "source_bulletin_link": "https://z253oa.sites.ecatholic.com/bulletins",
+        "source_bulletin_date": "2026-10-25",
+        "tags": [
+            "faith_formation",
+            "community"
+        ],
+        "extracted_at": "2026-10-28T11:26:48-04:00"
+    },
+    {
+        "id": "wh26yam1",
+        "title": "Young Adult Ministry Planning Meeting",
+        "description": "Young adults ages 18 to 35 are invited to an organizational meeting to plan activities for the ministry. The meeting is Sunday, November 8 at 1:00 p.m. in Assumption’s Rosary Hall.",
+        "church_id": "our-lady-of-the-assumption-windsor",
+        "church_name": "Our Lady of the Assumption",
+        "family_of_parishes": "Windsor Heritage Catholic Family of Parishes",
+        "date": "2026-11-08",
+        "start_time": "1300",
+        "end_time": null,
+        "location": "Rosary Hall, Our Lady of the Assumption",
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/179",
+        "source_bulletin_date": "2026-10-25",
+        "tags": [
+            "youth",
+            "community"
+        ],
+        "extracted_at": "2026-10-28T11:26:48-04:00"
+    },
+    {
+        "id": "wl26gen1",
+        "title": "Genesis Youth Group",
+        "description": "Students in Grades 3 to 6 are invited to a drop-in evening of prayer, games, friendship and faith at Ste. Anne Parish. The six-week program meets Thursdays from November 5 to December 10, 6:30 to 7:30 p.m.; children may attend any week.",
+        "church_id": "ste-anne-tecumseh",
+        "church_name": "Ste. Anne",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2026-11-05",
+        "start_time": "1830",
+        "end_time": "1930",
+        "location": "Ste. Anne Parish",
+        "source_bulletin_link": "https://catholicfamily.ca",
+        "source_bulletin_date": "2026-10-25",
+        "tags": [
+            "youth",
+            "faith_formation"
+        ],
+        "extracted_at": "2026-10-28T11:26:48-04:00"
+    },
+    {
+        "id": "wl26waw1",
+        "title": "Women at the Well: Ask a Priest",
+        "description": "Women are invited to an evening of conversation and faith-based activities with Father Matt, who will answer questions about the Catholic faith. The gathering is Monday, November 2 at Good Shepherd.",
+        "church_id": "good-shepherd-tecumseh",
+        "church_name": "Good Shepherd",
+        "family_of_parishes": "Windsor-Lake St. Clair Catholic Family of Parishes",
+        "date": "2026-11-02",
+        "start_time": null,
+        "end_time": null,
+        "location": "Good Shepherd Parish",
+        "source_bulletin_link": "https://catholicfamily.ca",
+        "source_bulletin_date": "2026-10-25",
+        "tags": [
+            "faith_formation",
+            "community"
+        ],
+        "extracted_at": "2026-10-28T11:26:48-04:00"
+    },
+    {
+        "id": "es26koc1",
+        "title": "Leamington Knights of Columbus Annual Banquet",
+        "description": "Knights of Columbus Council 4501 hosts an evening of food and fellowship featuring chicken, pasta, pickerel, salad and dessert. The banquet is Saturday, November 21 at 6:00 p.m. in St. Michael’s Parish Hall, and tickets are $50 per person.",
+        "church_id": "st-michaels-leamington",
+        "church_name": "St. Michael’s",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2026-11-21",
+        "start_time": "1800",
+        "end_time": null,
+        "location": "St. Michael’s Parish Hall, Leamington",
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076",
+        "source_bulletin_date": "2026-10-25",
+        "tags": [
+            "fundraiser",
+            "social"
+        ],
+        "extracted_at": "2026-10-28T11:26:48-04:00"
+    },
+    {
+        "id": "es26cwl1",
+        "title": "CWL Advent Retreat: Beloved of God",
+        "description": "This day of prayer, reflection and fellowship explores the identity of participants as beloved children of God through Mary’s example of faith and trust. It runs Saturday, November 28 from 8:30 a.m. to 2:00 p.m.; lunch and refreshments will be provided.",
+        "church_id": null,
+        "church_name": "Leamington CWL",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2026-11-28",
+        "start_time": "0830",
+        "end_time": "1400",
+        "location": null,
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076",
+        "source_bulletin_date": "2026-10-25",
+        "tags": [
+            "faith_formation",
+            "retreat"
+        ],
+        "extracted_at": "2026-10-28T11:26:48-04:00"
+    },
+    {
+        "id": "es26wyd1",
+        "title": "Miles for Our Mission Christmas Fundraiser",
+        "description": "Join Bishop Daniel Miehm for a Christmas fundraising dinner supporting more than 50 young pilgrims from the Diocese of London preparing for World Youth Day 2027 in Seoul. Tickets are $120 per adult (ages 13 and up), $40 for ages 5 to 12, and free for children under 5.",
+        "church_id": null,
+        "church_name": "Erie Shores South Catholic Family of Parishes",
+        "family_of_parishes": "Erie Shores South Catholic Family of Parishes",
+        "date": "2026-12-05",
+        "start_time": null,
+        "end_time": null,
+        "location": null,
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076",
+        "source_bulletin_date": "2026-10-25",
+        "tags": [
+            "fundraiser",
+            "youth"
+        ],
+        "extracted_at": "2026-10-28T11:26:48-04:00"
     }
 ]
