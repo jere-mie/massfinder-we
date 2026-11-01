@@ -39759,5 +39759,1408 @@
         "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032",
         "source_bulletin_date": "2026-10-25",
         "extracted_at": "2026-10-28T11:26:48-04:00"
+    },
+    {
+        "church_id": "st-anthony-of-padua-harrow",
+        "date": "2026-11-03",
+        "time": "1800",
+        "intentions": [
+            {
+                "for": "Sizaltina de Abreu",
+                "by": "Daughter Maria"
+            },
+            {
+                "for": "Norberto Cacilhas",
+                "by": "The Family"
+            },
+            {
+                "for": "Frank Montello",
+                "by": "The Family"
+            },
+            {
+                "for": "Lucy Liberato",
+                "by": "Manuel & Rosa Pereira"
+            },
+            {
+                "for": "Susie Furtado",
+                "by": "Joe & Fern Nascimento"
+            },
+            {
+                "for": "Joaquina Sequina",
+                "by": "Eugenia Pedro"
+            }
+        ],
+        "source_bulletin_link": "https://www.ahcfop.ca/bulletins",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "st-john-the-baptist-amherstburg",
+        "date": "2026-11-04",
+        "time": "0900",
+        "intentions": [
+            {
+                "for": "Antonio Dinunzio",
+                "by": "Ann, Dan, Mary Ann & Family"
+            },
+            {
+                "for": "Beniamino DeThomasis",
+                "by": "The Family"
+            },
+            {
+                "for": "Marilyn Goggin",
+                "by": "Sue"
+            },
+            {
+                "for": "Special Intentions",
+                "by": "Michelina Cristofaro"
+            },
+            {
+                "for": "Susan Pouget",
+                "by": "Sue"
+            },
+            {
+                "for": "Ingrid (Horn) Sherrer",
+                "by": "Carole Jones"
+            }
+        ],
+        "source_bulletin_link": "https://www.ahcfop.ca/bulletins",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "st-anthony-of-padua-harrow",
+        "date": "2026-11-05",
+        "time": "0900",
+        "intentions": [
+            {
+                "for": "Hortense Pereira (9th Anniversary)",
+                "by": "Regina & Viriato Carreira"
+            },
+            {
+                "for": "Frank Montello",
+                "by": "The Family"
+            },
+            {
+                "for": "Joe Liberato",
+                "by": "Lisa Craig"
+            },
+            {
+                "for": "Lucy Liberato",
+                "by": "Roger Dias"
+            },
+            {
+                "for": "Val Ferreira",
+                "by": "Eugenia Pedro"
+            },
+            {
+                "for": "Ronald Laporte",
+                "by": "Viriato Carreira"
+            }
+        ],
+        "source_bulletin_link": "https://www.ahcfop.ca/bulletins",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "st-john-the-baptist-amherstburg",
+        "date": "2026-11-06",
+        "time": "0900",
+        "intentions": [
+            {
+                "for": "Bill Laing (44th Anniversary)",
+                "by": "Pat & Karen Coyle"
+            },
+            {
+                "for": "Carl Gyori",
+                "by": "AHCFOP"
+            },
+            {
+                "for": "Linda Doforno",
+                "by": "Manny & Family"
+            },
+            {
+                "for": "Michael Matte",
+                "by": "Ila Colombe"
+            },
+            {
+                "for": "Edgar Morrison",
+                "by": "Gina Morrison"
+            },
+            {
+                "for": "Dominico Gabales Jr.",
+                "by": "Gina Morrison"
+            },
+            {
+                "for": "Violet Mannino & Patricia Zeppa",
+                "by": "Larry & Nancy Renaud"
+            }
+        ],
+        "source_bulletin_link": "https://www.ahcfop.ca/bulletins",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "st-john-the-baptist-amherstburg",
+        "date": "2026-11-07",
+        "time": "0900",
+        "intentions": [
+            {
+                "for": "Carlo Attilio Pacitti",
+                "by": "Ersilia Cervi"
+            },
+            {
+                "for": "Holy Souls in Purgatory",
+                "by": "Parishioner"
+            },
+            {
+                "for": "Marilyn Goggin",
+                "by": "Laura Vitella"
+            },
+            {
+                "for": "Intentions of Joseph Menna",
+                "by": "Evelyn"
+            },
+            {
+                "for": "Paul Kulik",
+                "by": "The Family"
+            },
+            {
+                "for": "Gregorio & Eduvigis Llorca",
+                "by": "Jo Ascunsion"
+            }
+        ],
+        "source_bulletin_link": "https://www.ahcfop.ca/bulletins",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "st-clement-mcgregor",
+        "date": "2026-11-03",
+        "time": "1900",
+        "intentions": [
+            {
+                "for": "Intentions of Alex & Diane Begin",
+                "by": "Friend"
+            },
+            {
+                "for": "Holy Souls",
+                "by": "Parishioner"
+            },
+            {
+                "for": "Deceased Members of Grondin Family",
+                "by": "JoAnn"
+            },
+            {
+                "for": "John Martin",
+                "by": "Family"
+            },
+            {
+                "for": "Gary Deehan",
+                "by": "Leanne Charette"
+            },
+            {
+                "for": "Carol Ann Dennis",
+                "by": "Gerard & Lorraine Beaulieu"
+            }
+        ],
+        "source_bulletin_link": "https://5q3p4a.sites.ecatholic.com/bulletins",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "st-john-the-evangelist-woodslee",
+        "date": "2026-11-04",
+        "time": "0930",
+        "intentions": [
+            {
+                "for": "Intentions of the Murawski Family",
+                "by": "Ted & Mary Ellen Lemire"
+            },
+            {
+                "for": "Intentions of Danielle Rankin",
+                "by": "Family"
+            },
+            {
+                "for": "Jennifer Russell (9th Anniversary)",
+                "by": "McCreary Family"
+            },
+            {
+                "for": "Cathy Strong",
+                "by": "Family"
+            },
+            {
+                "for": "Lou Mullins",
+                "by": "Family"
+            },
+            {
+                "for": "Pat Beaulieu",
+                "by": "Claire Renaud & Family"
+            }
+        ],
+        "source_bulletin_link": "https://5q3p4a.sites.ecatholic.com/bulletins",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "st-marys-maidstone",
+        "date": "2026-11-05",
+        "time": "0930",
+        "intentions": [
+            {
+                "for": "Intentions of Bishops Fabbro & Miehm",
+                "by": "Family of Parishes"
+            },
+            {
+                "for": "Gerry Lavin",
+                "by": "Agnes"
+            },
+            {
+                "for": "Jerry O'Neil",
+                "by": "Isabel"
+            },
+            {
+                "for": "Brian McGuire",
+                "by": "Mike & Deb Bissonnette"
+            },
+            {
+                "for": "Todd Kavanagh",
+                "by": "Tom & Ruth Anne Fuerth"
+            },
+            {
+                "for": "Gary & Elaine Deehan",
+                "by": "Paul & Beth Cunningham"
+            }
+        ],
+        "source_bulletin_link": "https://5q3p4a.sites.ecatholic.com/bulletins",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "holy-name-of-jesus-essex",
+        "date": "2026-11-06",
+        "time": "0945",
+        "intentions": [
+            {
+                "for": "Carrie Thain",
+                "by": "Eric & Michelle Rousseau"
+            },
+            {
+                "for": "Carl Smith",
+                "by": "Tony & Agnes D'Andrea"
+            },
+            {
+                "for": "Jose Fernandes",
+                "by": "Family"
+            },
+            {
+                "for": "Peter Szabo Sr.",
+                "by": "Marilyn McManus"
+            },
+            {
+                "for": "Frances Kolla",
+                "by": "Rosella Brockman"
+            },
+            {
+                "for": "Peter Camallari",
+                "by": "Gail Lykoff"
+            }
+        ],
+        "source_bulletin_link": "https://5q3p4a.sites.ecatholic.com/bulletins",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "holy-name-of-jesus-essex",
+        "date": "2026-11-07",
+        "time": "0830",
+        "intentions": [
+            {
+                "for": "In Thanksgiving to St. Jude - all who have invoked his aid"
+            },
+            {
+                "for": "Leonard O'Neil",
+                "by": "Richard Noel"
+            },
+            {
+                "for": "Audrey O'Neil",
+                "by": "Family"
+            },
+            {
+                "for": "Nino & Maria Manfredi",
+                "by": "Mollo Family"
+            },
+            {
+                "for": "Curcio Emilia & Family",
+                "by": "Mollo Family"
+            },
+            {
+                "for": "Jay & Patricia Blanchette",
+                "by": "Friends"
+            }
+        ],
+        "source_bulletin_link": "https://5q3p4a.sites.ecatholic.com/bulletins",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "st-joseph-river-canard",
+        "date": "2026-11-03",
+        "time": "1830",
+        "intentions": [
+            {
+                "for": "Maria Pozzo Chiandussi",
+                "by": "The family"
+            },
+            {
+                "for": "Giuseppe Chiandussi",
+                "by": "The family"
+            },
+            {
+                "for": "Deceased Members of the Spadafora & Stellaro Families",
+                "by": "Rosa"
+            },
+            {
+                "for": "Deceased Members of the Tedesco & Mele Families",
+                "by": "Rosa"
+            }
+        ],
+        "source_bulletin_link": "https://4e1jla.sites.ecatholic.com/bulletin",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "st-joseph-river-canard",
+        "date": "2026-11-04",
+        "time": "0930",
+        "intentions": [
+            {
+                "for": "Luce Monforton",
+                "by": "Louis Blais"
+            },
+            {
+                "for": "Ed Seguin",
+                "by": "Donna Bastien"
+            },
+            {
+                "for": "Deceased Members of the Beneteau & Seguin Families",
+                "by": "MA Seguin"
+            },
+            {
+                "for": "Intentions of Shelley Deslippe",
+                "by": "Fred & Edna"
+            }
+        ],
+        "source_bulletin_link": "https://4e1jla.sites.ecatholic.com/bulletin",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "sacred-heart-lasalle",
+        "date": "2026-11-05",
+        "time": "1830",
+        "intentions": [
+            {
+                "for": "Joanne Hagman",
+                "by": "Her family"
+            },
+            {
+                "for": "David Blanchette",
+                "by": "Anna Antonucci"
+            },
+            {
+                "for": "Josephine Cacciotolo",
+                "by": "Margaret & family"
+            },
+            {
+                "for": "Pasquale & Maria Faraci",
+                "by": "Vince & Mary Mistretta"
+            }
+        ],
+        "source_bulletin_link": "https://4e1jla.sites.ecatholic.com/bulletin",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "sacred-heart-lasalle",
+        "date": "2026-11-06",
+        "time": "0900",
+        "intentions": [
+            {
+                "for": "Fernando Mazzoni (2nd Anniversary)",
+                "by": "Joyce & family"
+            },
+            {
+                "for": "Carmello Azzopardi (33rd Anniversary)",
+                "by": "The family"
+            },
+            {
+                "for": "Ray-Al St. Germain (49th Anniversary)",
+                "by": "Brenda & family"
+            },
+            {
+                "for": "Elasio B. Cabrera",
+                "by": "Emelina Cabrera"
+            }
+        ],
+        "source_bulletin_link": "https://4e1jla.sites.ecatholic.com/bulletin",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "st-joseph-river-canard",
+        "date": "2026-11-07",
+        "time": "1630",
+        "intentions": [
+            {
+                "for": "For the intentions of the people of God"
+            }
+        ],
+        "source_bulletin_link": "https://4e1jla.sites.ecatholic.com/bulletin",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "sacred-heart-lasalle",
+        "date": "2026-11-08",
+        "time": "0900",
+        "intentions": [
+            {
+                "for": "For the intentions of the people of God"
+            }
+        ],
+        "source_bulletin_link": "https://4e1jla.sites.ecatholic.com/bulletin",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "st-joseph-river-canard",
+        "date": "2026-11-08",
+        "time": "1100",
+        "intentions": [
+            {
+                "for": "For the intentions of the people of God"
+            }
+        ],
+        "source_bulletin_link": "https://4e1jla.sites.ecatholic.com/bulletin",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "our-lady-of-perpetual-help-windsor",
+        "date": "2026-11-02",
+        "time": "1800",
+        "intentions": [
+            {
+                "for": "For all the deceased parishioners from Our Lady of Perpetual Help & St. Michael’s Parishes"
+            }
+        ],
+        "source_bulletin_link": "https://www.olph.dionet.org/bulletins",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "our-lady-of-perpetual-help-windsor",
+        "date": "2026-11-03",
+        "time": "1800",
+        "intentions": [
+            {
+                "for": "Intentions for Shannon Power",
+                "by": "Mary Power"
+            },
+            {
+                "for": "Antonio Vani & Alesandro & Giuseppa Conte",
+                "by": "Bianca Vani & Family"
+            },
+            {
+                "for": "Enio Benedet",
+                "by": "Diane Baska"
+            },
+            {
+                "for": "Nello Modolo",
+                "by": "Domenica DiBattista"
+            },
+            {
+                "for": "Fiorigi Fiorino",
+                "by": "Wife"
+            },
+            {
+                "for": "Gabriella Fiorino Daher",
+                "by": "Mother"
+            }
+        ],
+        "source_bulletin_link": "https://www.olph.dionet.org/bulletins",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "immaculate-heart-windsor",
+        "date": "2026-11-04",
+        "time": "1200",
+        "intentions": [
+            {
+                "for": "Intentions of John Nabben",
+                "by": "Family"
+            },
+            {
+                "for": "Intentions of Justyna Cajmer",
+                "by": "Cowan Family"
+            },
+            {
+                "for": "Intentions of John Pretti",
+                "by": "John & Jackie Nabben"
+            },
+            {
+                "for": "Intentions of Susan Richards",
+                "by": "Brenda Roehler"
+            },
+            {
+                "for": "Rev. Mitch Kaminski",
+                "by": "STM CWL"
+            },
+            {
+                "for": "Deceased Members of Masotti Family",
+                "by": "Family"
+            }
+        ],
+        "source_bulletin_link": "https://www.olph.dionet.org/bulletins",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "our-lady-of-perpetual-help-windsor",
+        "date": "2026-11-05",
+        "time": "1800",
+        "intentions": [
+            {
+                "for": "Caridad McKay, Rodrigo & Rufo Baldovino",
+                "by": "Mel Almeida & Family"
+            },
+            {
+                "for": "Celina Hogue",
+                "by": "Clark Hogue"
+            },
+            {
+                "for": "Alma Twaddle",
+                "by": "Clark Hogue"
+            }
+        ],
+        "source_bulletin_link": "https://www.olph.dionet.org/bulletins",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "immaculate-heart-windsor",
+        "date": "2026-11-06",
+        "time": "0800",
+        "intentions": [
+            {
+                "for": "In Thanksgiving",
+                "by": "Armand Enriquez"
+            },
+            {
+                "for": "Intentions of Dianne Poisson",
+                "by": "Cowan Family"
+            },
+            {
+                "for": "Bruno & Norma Corrente",
+                "by": "Family"
+            },
+            {
+                "for": "Michael Hardstone",
+                "by": "Paulette"
+            },
+            {
+                "for": "Virginia Rahrig",
+                "by": "Paulette"
+            }
+        ],
+        "source_bulletin_link": "https://www.olph.dionet.org/bulletins",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "st-theresas-windsor",
+        "date": "2026-11-03",
+        "time": "1900",
+        "intentions": [
+            {
+                "for": "Dennis Stephenson",
+                "by": "Wife, Jean & Family"
+            },
+            {
+                "for": "Katarina Rocnik (40th Anniversary)",
+                "by": "Rocnik Family"
+            },
+            {
+                "for": "Maria Cian",
+                "by": "Cheryl Boily"
+            },
+            {
+                "for": "Deceased Members of the Rocnik Family"
+            },
+            {
+                "for": "Deceased Members of the Grebenc Family"
+            },
+            {
+                "for": "Intentions of Theresa Avignoni",
+                "by": "Colette Comtois"
+            }
+        ],
+        "source_bulletin_link": "https://z253oa.sites.ecatholic.com/bulletins",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "our-lady-of-guadalupe-windsor",
+        "date": "2026-11-04",
+        "time": "0930",
+        "intentions": [
+            {
+                "for": "Bernard Lesperance (25th Anniversary)",
+                "by": "Claudette & Family"
+            },
+            {
+                "for": "Larry Lefaive",
+                "by": "Carol D'hondt & Family"
+            },
+            {
+                "for": "Michael Sandela"
+            },
+            {
+                "for": "Alexander Costaris",
+                "by": "Andy & Mary Matos"
+            },
+            {
+                "for": "Deceased Members of the OLOG CWL"
+            },
+            {
+                "for": "Deceased Members of the Koresec Family",
+                "by": "Andy & Mary Matos"
+            }
+        ],
+        "source_bulletin_link": "https://z253oa.sites.ecatholic.com/bulletins",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "most-precious-blood-windsor",
+        "date": "2026-11-05",
+        "time": "0830",
+        "intentions": [
+            {
+                "for": "Joaquim Bartolo",
+                "by": "Santos Family"
+            },
+            {
+                "for": "Anna Grizan",
+                "by": "Mary Grizan"
+            },
+            {
+                "for": "Antoni Grizan",
+                "by": "Mary Grizan"
+            },
+            {
+                "for": "Renzo Cattai",
+                "by": "Deb Seeger"
+            },
+            {
+                "for": "Intentions of Mazin Bannou",
+                "by": "Teresa Khidir"
+            },
+            {
+                "for": "Intentions of MPB CWL Members"
+            }
+        ],
+        "source_bulletin_link": "https://z253oa.sites.ecatholic.com/bulletins",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "most-precious-blood-windsor",
+        "date": "2026-11-06",
+        "time": "0830",
+        "intentions": [
+            {
+                "for": "Peter Heynsbroek",
+                "by": "Brad Chyz"
+            },
+            {
+                "for": "Frank Vadori",
+                "by": "Wife, Adeline & Family"
+            },
+            {
+                "for": "Simonne Chiasson",
+                "by": "Victor & Family"
+            },
+            {
+                "for": "Kevin Chiasson",
+                "by": "Victor & Family"
+            },
+            {
+                "for": "Nemesio Adriano",
+                "by": "Rabanes Family"
+            },
+            {
+                "for": "Deceased Members of the Belanger Family",
+                "by": "Doris"
+            }
+        ],
+        "source_bulletin_link": "https://z253oa.sites.ecatholic.com/bulletins",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "our-lady-of-the-atonement-windsor",
+        "date": "2026-11-02",
+        "time": "1830",
+        "intentions": [
+            {
+                "for": "Deceased Parishioners of our Family of Parishes"
+            }
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "st-john-vianney-windsor",
+        "date": "2026-11-03",
+        "time": "0900",
+        "intentions": [
+            {
+                "for": "Deceased Members of the Patella & Ferrari Families"
+            },
+            {
+                "for": "Deceased Members of the Dumlao & Lamug Families"
+            },
+            {
+                "for": "Mimma Gallucci",
+                "by": "Italo & Silvana Patella & Family"
+            },
+            {
+                "for": "Erminia Gallucci",
+                "by": "Brother, Italo & Family"
+            },
+            {
+                "for": "Rene Vachon",
+                "by": "Richard Normandeau"
+            },
+            {
+                "for": "Rob Morneau (10th Anniversary)",
+                "by": "The Morneau Family"
+            }
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "our-lady-of-the-atonement-windsor",
+        "date": "2026-11-04",
+        "time": "0900",
+        "intentions": [
+            {
+                "for": "Deceased Members of the Cesnic & Tencic Families"
+            },
+            {
+                "for": "Max Elahee",
+                "by": "Bonita Elahee-Kearns"
+            },
+            {
+                "for": "Bruno Galizio",
+                "by": "Wife, Susan"
+            },
+            {
+                "for": "Giacomo Trotti",
+                "by": "His Family"
+            },
+            {
+                "for": "Pasquale Muscedere",
+                "by": "Wife, Antonia & Family"
+            },
+            {
+                "for": "Souls in Purgatory",
+                "by": "Susan, Cecile, Lina & Jun"
+            }
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "st-john-vianney-windsor",
+        "date": "2026-11-05",
+        "time": "0900",
+        "intentions": [
+            {
+                "for": "In Thanksgiving to the Father of All Human Kind"
+            },
+            {
+                "for": "Bernie Lesperance",
+                "by": "Richard Normandeau"
+            },
+            {
+                "for": "Dennis Guilbeault",
+                "by": "Mary Santarossa"
+            },
+            {
+                "for": "Leonardo Patolot",
+                "by": "Family"
+            },
+            {
+                "for": "Leonardo Oliverio",
+                "by": "Louie & Lori Oliverio"
+            },
+            {
+                "for": "Real Belanger",
+                "by": "Wife, Monique"
+            }
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "our-lady-of-the-atonement-windsor",
+        "date": "2026-11-06",
+        "time": "0900",
+        "intentions": [
+            {
+                "for": "In Thanksgiving for Mary & Henry Bellemore for 70 years of Marriage"
+            },
+            {
+                "for": "Don Kearns",
+                "by": "Wife, Bonita"
+            },
+            {
+                "for": "Gene & Gerry Dalton",
+                "by": "Dan & Joan Soulliere"
+            },
+            {
+                "for": "Leo & Dorothy Soulliere",
+                "by": "Dan & Joan Soulliere"
+            },
+            {
+                "for": "Anne DeRoche",
+                "by": "Arthur & Brenda Christie"
+            },
+            {
+                "for": "Deceased Members of the Garcia & Maroon Families",
+                "by": "Most Rev. Ronald Fabbro, CSB"
+            }
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/032/",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "ste-anne-tecumseh",
+        "date": "2026-11-02",
+        "time": "0830",
+        "intentions": [
+            {
+                "for": "Ettore & Antonia DeSantis",
+                "by": "Daughter & family"
+            },
+            {
+                "for": "Antonio & Marianna Tiberia",
+                "by": "The family"
+            },
+            {
+                "for": "Michaelangela & Antonio Ferri",
+                "by": "The family"
+            },
+            {
+                "for": "Deceased Members of Lesperance-Poisson Families",
+                "by": "The family"
+            },
+            {
+                "for": "Steve Gombai Sr.",
+                "by": "His loving family"
+            },
+            {
+                "for": "Claudio LaCivita",
+                "by": "Nardone Family"
+            }
+        ],
+        "source_bulletin_link": "https://catholicfamily.ca/bulletin",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "ste-anne-tecumseh",
+        "date": "2026-11-03",
+        "time": "0830",
+        "intentions": [
+            {
+                "for": "Claire Pomerleau",
+                "by": "The family"
+            },
+            {
+                "for": "Solange Bellehumeur",
+                "by": "Jacqueline & Désiré Pelchat"
+            },
+            {
+                "for": "Thelma Poisson",
+                "by": "The family"
+            },
+            {
+                "for": "Pietro Mastromattei",
+                "by": "Wife Rita"
+            },
+            {
+                "for": "Robert Couture",
+                "by": "T. Quenneville"
+            },
+            {
+                "for": "Evelyn Couture",
+                "by": "T. Quenneville"
+            }
+        ],
+        "source_bulletin_link": "https://catholicfamily.ca/bulletin",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "ste-anne-tecumseh",
+        "date": "2026-11-04",
+        "time": "0830",
+        "intentions": [
+            {
+                "for": "Matteo Muscedere",
+                "by": "Muscedere & Ferrone Families"
+            },
+            {
+                "for": "Sarah Whitehead",
+                "by": "Rose M. Laforet"
+            },
+            {
+                "for": "Celestina Abdegano",
+                "by": "Yoleima Gow"
+            },
+            {
+                "for": "Norman Nadon",
+                "by": "Marie"
+            },
+            {
+                "for": "Zachary D'Souza",
+                "by": "The family"
+            },
+            {
+                "for": "Rose, Frank & Roberto Licata",
+                "by": "Gratitude"
+            }
+        ],
+        "source_bulletin_link": "https://catholicfamily.ca/bulletin",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "ste-anne-tecumseh",
+        "date": "2026-11-05",
+        "time": "0830",
+        "intentions": [
+            {
+                "for": "António DeSousa",
+                "by": "Deolinda & Daughters Maria & Amelia"
+            },
+            {
+                "for": "Intentions of the Loop Family",
+                "by": "Joshua and Joanna"
+            },
+            {
+                "for": "Elaine LeBlanc",
+                "by": "Pat & Claude"
+            },
+            {
+                "for": "Souls in purgatory",
+                "by": "Lucy & Bob"
+            },
+            {
+                "for": "Glen Murphy",
+                "by": "Jackie Lalonde"
+            },
+            {
+                "for": "Intentions of Charles Jamail (90th Birthday)",
+                "by": "Roy & Virginia Brothers"
+            }
+        ],
+        "source_bulletin_link": "https://catholicfamily.ca/bulletin",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "ste-anne-tecumseh",
+        "date": "2026-11-06",
+        "time": "0830",
+        "intentions": [
+            {
+                "for": "Leonardo Patolot",
+                "by": "The Case Family"
+            },
+            {
+                "for": "Mary Alphonsus Sutherland",
+                "by": "Corinne & Gary Nikota"
+            },
+            {
+                "for": "Lawrence Shepherd",
+                "by": "Adrianna Costa"
+            },
+            {
+                "for": "Roger Donald Hamel",
+                "by": "Marie-Anne Gagnier"
+            },
+            {
+                "for": "Carl Smith",
+                "by": "Rose-Marie & Marie-Anne Gagnier"
+            },
+            {
+                "for": "Larry Bacon",
+                "by": "The Companions"
+            }
+        ],
+        "source_bulletin_link": "https://catholicfamily.ca/bulletin",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "ste-anne-tecumseh",
+        "date": "2026-11-07",
+        "time": "0830",
+        "intentions": [
+            {
+                "for": "Intentions of Gabrielle (Birthday)",
+                "by": "Mom & Dad"
+            },
+            {
+                "for": "Giovanni Bachetti",
+                "by": "Wife & family"
+            },
+            {
+                "for": "Deceased family members",
+                "by": "W. Juricic"
+            },
+            {
+                "for": "Intentions of Dan Thrasher",
+                "by": "Ron H. Couvillion"
+            },
+            {
+                "for": "Husband Jack Moceri",
+                "by": "Wife Jean"
+            },
+            {
+                "for": "Marie Ratter (repose of the soul)",
+                "by": "Bob"
+            }
+        ],
+        "source_bulletin_link": "https://catholicfamily.ca/bulletin",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "st-simon-st-jude-belle-river",
+        "date": "2026-11-03",
+        "time": "0830",
+        "intentions": [
+            {
+                "for": "4th Degree Knights of Columbus members, sick or deceased"
+            },
+            {
+                "for": "3rd Degree Knights of Columbus members, sick, deceased or distressed"
+            },
+            {
+                "for": "Marcel & Marcella Sylvestre",
+                "by": "Gary, Claudia & family"
+            },
+            {
+                "for": "Yvette G. Campeau",
+                "by": "Richard & Theresa Barrette"
+            },
+            {
+                "for": "Gary Gilhuly",
+                "by": "Ron & Kathy Peltier"
+            }
+        ],
+        "source_bulletin_link": "https://catholicfamily.ca/bulletin",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "st-simon-st-jude-belle-river",
+        "date": "2026-11-05",
+        "time": "0830",
+        "intentions": [
+            {
+                "for": "Souls in purgatory",
+                "by": "Ferenc Vereb"
+            },
+            {
+                "for": "Special intention",
+                "by": "Robert Labbé"
+            },
+            {
+                "for": "Marie (Sally) Sauve",
+                "by": "Pete and family"
+            }
+        ],
+        "source_bulletin_link": "https://catholicfamily.ca/bulletin",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "st-simon-st-jude-belle-river",
+        "date": "2026-11-06",
+        "time": "0930",
+        "intentions": [
+            {
+                "for": "John Lauzon",
+                "by": "Dianne Poisson"
+            },
+            {
+                "for": "Tony Butler",
+                "by": "Brother Gene"
+            },
+            {
+                "for": "Yvette G. Campeau",
+                "by": "C.W.L."
+            },
+            {
+                "for": "For the rejected, the despised, and the forgotten",
+                "by": "A parishioner"
+            },
+            {
+                "for": "Souls in purgatory",
+                "by": "A parishioner"
+            },
+            {
+                "for": "In thanksgiving of Richard & Elaine's 60th Anniversary",
+                "by": "The family"
+            }
+        ],
+        "source_bulletin_link": "https://catholicfamily.ca/bulletin",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "good-shepherd-tecumseh",
+        "date": "2026-11-04",
+        "time": "1215",
+        "intentions": [
+            {
+                "for": "Mary Prochazka (17th Anniversary)",
+                "by": "Her daughters"
+            },
+            {
+                "for": "Theresa Nassar",
+                "by": "The family"
+            },
+            {
+                "for": "Theresa Beneteau",
+                "by": "V. L. Ross"
+            },
+            {
+                "for": "Marcus Sebou",
+                "by": "Dominic Zoora"
+            },
+            {
+                "for": "Mary Jane Ferrante",
+                "by": "Frank & Nelly Marcon"
+            },
+            {
+                "for": "For our parents",
+                "by": "Jerry & Joan Zima"
+            }
+        ],
+        "source_bulletin_link": "https://catholicfamily.ca/bulletin",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "good-shepherd-tecumseh",
+        "date": "2026-11-05",
+        "time": "1830",
+        "intentions": [
+            {
+                "for": "Marge Fuerth",
+                "by": "The family"
+            },
+            {
+                "for": "Gaetano Piraine",
+                "by": "Maria Piraine"
+            },
+            {
+                "for": "Donato Luciani",
+                "by": "Maria Piraine"
+            },
+            {
+                "for": "Antonino Capraro (Heavenly Birthday)",
+                "by": "His daughter"
+            },
+            {
+                "for": "Segundo Tayag",
+                "by": "Cora"
+            },
+            {
+                "for": "Luigina Gesuale",
+                "by": "Her sister"
+            }
+        ],
+        "source_bulletin_link": "https://catholicfamily.ca/bulletin",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "st-michaels-leamington",
+        "date": "2026-11-02",
+        "time": "1700",
+        "intentions": [
+            {
+                "for": "All Holy Souls in Purgatory"
+            }
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "st-michaels-leamington",
+        "date": "2026-11-03",
+        "time": "1830",
+        "intentions": [
+            {
+                "for": "Maria Santos, Manuel Santos Sr. & Manuel Santos Jr."
+            },
+            {
+                "for": "Gilbert Farias & Maria & Antonio Mariano"
+            },
+            {
+                "for": "Duarte DeMelo, Albina Ferreira & Souls in Purgatory",
+                "by": "Filipe Almeida"
+            },
+            {
+                "for": "John Abbruzzese & Deceased Family Members",
+                "by": "Eva Rung"
+            }
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "st-john-de-brebeuf-kingsville",
+        "date": "2026-11-04",
+        "time": "0830",
+        "intentions": [
+            {
+                "for": "Joao \"John\" Cabral & Deceased Family Members"
+            },
+            {
+                "for": "Sylvia McCormick & Rocco Patamia"
+            },
+            {
+                "for": "Belmiro Norgueira"
+            },
+            {
+                "for": "Maria Araujo & Avelino Piminta"
+            },
+            {
+                "for": "Aurilio Senior Cahoy, Demitrio Cahoy & Anaclita Cahoy"
+            },
+            {
+                "for": "Dennis Koestler"
+            },
+            {
+                "for": "Rogerio Mauricio"
+            }
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "our-lady-of-the-most-blessed-sacrament-wheatley",
+        "date": "2026-11-04",
+        "time": "1830",
+        "intentions": [
+            {
+                "for": "Filomena & Antonio Marques & Olivia DeMelo"
+            },
+            {
+                "for": "Carlos & Alzira Rebelo"
+            },
+            {
+                "for": "Manuel DeSousa & All Living & Deceased Family Members"
+            },
+            {
+                "for": "Alice & Francisco Amaral & All Living & Deceased Family Members"
+            },
+            {
+                "for": "Leila Khoury & Living and Deceased Family Members"
+            },
+            {
+                "for": "Manuel Mauricio & Conceicao DeMelo & Duarte DeMelo"
+            }
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "st-michaels-leamington",
+        "date": "2026-11-05",
+        "time": "0830",
+        "intentions": [
+            {
+                "for": "Mary, Ralph & Roger Verbeke"
+            },
+            {
+                "for": "Giuseppina Fratacangeli"
+            },
+            {
+                "for": "Margarida Ernesto"
+            }
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "st-john-de-brebeuf-kingsville",
+        "date": "2026-11-05",
+        "time": "1030",
+        "intentions": [
+            {
+                "for": "Frank Farias, Joe Farias & Margaret Cabral"
+            },
+            {
+                "for": "All Souls in Purgatory"
+            },
+            {
+                "for": "Lauriano Alberto, Nelly Wolbers & Durvalina Mare"
+            }
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
+    },
+    {
+        "church_id": "st-john-de-brebeuf-kingsville",
+        "date": "2026-11-06",
+        "time": "0930",
+        "intentions": [
+            {
+                "for": "Manuel & Normenia Teixeira"
+            },
+            {
+                "for": "Tom Boutros"
+            },
+            {
+                "for": "Robert & Maria Gaffan & All Souls in Purgatory"
+            }
+        ],
+        "source_bulletin_link": "https://www.parishbulletins.com/bulletins/076/",
+        "source_bulletin_date": "2026-11-01",
+        "extracted_at": "2026-11-01T11:13:04-04:00"
     }
 ]
