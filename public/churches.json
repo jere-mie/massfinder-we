@@ -521,27 +521,33 @@
         "phone": "+15197348044",
         "masses": [
             {
-                "day": "Sunday",
-                "time": "1015",
-                "note": "French"
+                "day": "Saturday",
+                "time": "1630",
+                "note": "Bilingual"
             },
             {
                 "day": "Sunday",
-                "time": "1200"
+                "time": "1100"
             }
         ],
         "daily_masses": [
             {
-                "day": "Wednesday",
-                "time": "0900"
+                "day": "Tuesday",
+                "time": "1830"
             },
             {
-                "day": "Friday",
+                "day": "Wednesday",
                 "time": "0930",
-                "note": "In French. Every second Friday, Mass is celebrated at Mon Augustine Caron."
+                "note": "Alternating weeks; check bulletin."
             }
         ],
-        "confession": [],
+        "confession": [
+            {
+                "day": "Tuesday",
+                "start": "1745",
+                "end": "1815"
+            }
+        ],
         "adoration": [
             {
                 "day": "Wednesday",
@@ -627,25 +633,25 @@
         "phone": "+15197348044",
         "masses": [
             {
-                "day": "Saturday",
-                "time": "1630"
-            },
-            {
                 "day": "Sunday",
-                "time": "0830"
+                "time": "0900"
             }
         ],
         "daily_masses": [
             {
                 "day": "Thursday",
+                "time": "1830"
+            },
+            {
+                "day": "Friday",
                 "time": "0900"
             }
         ],
         "confession": [
             {
-                "day": "Saturday",
-                "start": "1100",
-                "end": "1145"
+                "day": "Thursday",
+                "start": "1745",
+                "end": "1815"
             }
         ],
         "adoration": [
@@ -1748,7 +1754,7 @@
             {
                 "day": "Sunday",
                 "start": "1830",
-                "end": "1915",
+                "end": "1920",
                 "note": "In rosary chapel."
             }
         ],
@@ -1760,20 +1766,9 @@
                 "note": "Rosary Chapel is open until 4:00 PM for prayers"
             },
             {
-                "day": "Wednesday",
-                "start": "0830",
-                "end": "1600"
-            },
-            {
-                "day": "Thursday",
-                "start": "0830",
-                "end": "1600",
-                "note": "Rosary Chapel is open until 4:00 PM for prayers"
-            },
-            {
                 "day": "Friday",
                 "start": "0830",
-                "end": "1900"
+                "end": "0930"
             }
         ],
         "offices": [
@@ -2551,7 +2546,8 @@
             {
                 "day": "Friday",
                 "start": "0900",
-                "end": "2100"
+                "end": "2100",
+                "note": "Except first Friday, when adoration is 24 hours."
             }
         ],
         "offices": [
@@ -2763,6 +2759,11 @@
             }
         ],
         "confession": [
+            {
+                "day": "Tuesday",
+                "start": "1100",
+                "end": "1145"
+            },
             {
                 "day": "Saturday",
                 "start": "1100",
